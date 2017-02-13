@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+﻿  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib
+=======
+<<<<<<< HEAD
 ﻿Build started 2/13/2017 4:35:37 PM.
      1>Project "C:\Users\162697M\Desktop\SP2\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>Lib:
@@ -15,3 +18,4 @@ Time Elapsed 00:00:00.03
   Vector3.cpp
   Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib
 >>>>>>> 88008add26d5223c39aa15f4857c6d851b1ad8d6
+>>>>>>> f55bbedeb831cafc886da5decf38b0118532c2c2

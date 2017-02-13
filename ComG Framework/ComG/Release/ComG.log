@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+﻿  ItemFactory.cpp
+  Generating code
+  Finished generating code
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
+=======
 ﻿Build started 2/13/2017 5:27:42 PM.
      1>Project "C:\Users\162697M\Desktop\SP2\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -61,3 +67,4 @@
 Build succeeded.
 
 Time Elapsed 00:00:03.53
+>>>>>>> f55bbedeb831cafc886da5decf38b0118532c2c2
