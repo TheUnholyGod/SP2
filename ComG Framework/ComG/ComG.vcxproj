@@ -87,6 +87,14 @@
     <None Include="Shader\SimpleVertexShader.vertexshader" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Adhesives.cpp" />
+    <ClCompile Include="Biomass.cpp" />
+    <ClCompile Include="CircuitBoards.cpp" />
+    <ClCompile Include="Cloth.cpp" />
+    <ClCompile Include="Copper.cpp" />
+    <ClCompile Include="Gold.cpp" />
+    <ClCompile Include="Iron.cpp" />
+    <ClCompile Include="MetalScraps.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera2.cpp" />
@@ -107,8 +115,19 @@
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
     <ClCompile Include="Source\Weapon.cpp" />
+    <ClCompile Include="Stone.cpp" />
+    <ClCompile Include="Water.cpp" />
+    <ClCompile Include="Wood.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Adhesives.h" />
+    <ClInclude Include="Biomass.h" />
+    <ClInclude Include="CircuitBoards.h" />
+    <ClInclude Include="Cloth.h" />
+    <ClInclude Include="Copper.h" />
+    <ClInclude Include="Gold.h" />
+    <ClInclude Include="Iron.h" />
+    <ClInclude Include="MetalScraps.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera2.h" />
@@ -132,6 +151,9 @@
     <ClInclude Include="Source\Utility.h" />
     <ClInclude Include="Source\Vertex.h" />
     <ClInclude Include="Source\Weapon.h" />
+    <ClInclude Include="Stone.h" />
+    <ClInclude Include="Water.h" />
+    <ClInclude Include="Wood.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

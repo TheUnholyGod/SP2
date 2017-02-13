@@ -6,13 +6,19 @@
 
 class Resources : public Item
 {
-public:
-	Resources();
-	~Resources();
-private:
-	int rarity;
-	std::string type;
+protected:
+	enum RESOURCETYPE
+	{
+		MINING,
+		NATURE,
+		LOOT,
+	};
+	const RESOURCETYPE kTYPE_;
+	const int krarity_;
 	//float weight;(optional)
+public:
+	Resources(std::string, RESOURCETYPE, int);
+	~Resources();
 };
 
 #endif
