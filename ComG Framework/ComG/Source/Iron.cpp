@@ -2,7 +2,7 @@
 
 
 
-Iron::Iron() : Resources("Iron", MINING, 1)
+Iron::Iron() : Resources(202,"Iron", MINING, 1)
 {
 }
 

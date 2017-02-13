@@ -14,7 +14,7 @@ protected:
 	float nutrition_;//Hunger Replenishment
 	float shelf_life_;//Storage Time
 public:
-	Food(std::string,FOODTYPE,float,float);
+	Food(int,std::string,FOODTYPE,float,float);
 	~Food();
 
 };

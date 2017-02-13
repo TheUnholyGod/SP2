@@ -1,5 +1,5 @@
 #include "Item.h"
 
-Item::Item(std::string name) :kname_(name) {}
+Item::Item(int no, std::string name) :GameObject(no), kname_(name) {}
 
 Item::~Item() {}
