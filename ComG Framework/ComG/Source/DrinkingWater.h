@@ -8,6 +8,8 @@ class DrinkingWater :
 public:
 	DrinkingWater();
 	~DrinkingWater();
+
+	virtual void Eat();
 };
 
 #endif

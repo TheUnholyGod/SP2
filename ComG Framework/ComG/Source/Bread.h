@@ -8,6 +8,8 @@ class Bread :
 public:
 	Bread();
 	~Bread();
+	
+	virtual void Eat();
 };
 
 #endif

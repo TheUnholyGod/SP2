@@ -8,6 +8,8 @@ class Cabbage :
 public:
 	Cabbage();
 	~Cabbage();
+
+	virtual void Eat();
 };
 
 #endif

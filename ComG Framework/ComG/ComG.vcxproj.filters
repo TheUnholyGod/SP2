@@ -121,6 +121,12 @@
     <Filter Include="Header Files\Items\Food\Craftables">
       <UniqueIdentifier>{279e2969-3e2f-474e-ada5-37e04fb56cda}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Player">
+      <UniqueIdentifier>{ea5d1133-c105-4c3e-bd53-60c5365e3d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Player">
+      <UniqueIdentifier>{2f53560b-829f-4584-88d6-503c5246a573}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\SimpleFragmentShader.fragmentshader">
@@ -271,6 +277,12 @@
     </ClCompile>
     <ClCompile Include="Source\GameObject.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Food.cpp">
+      <Filter>Source Files\Items\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Player.cpp">
+      <Filter>Source Files\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -426,6 +438,9 @@
     </ClInclude>
     <ClInclude Include="Source\GameObject.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Player.h">
+      <Filter>Header Files\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

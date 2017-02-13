@@ -8,6 +8,8 @@ class Wheat :
 public:
 	Wheat();
 	~Wheat();
+
+	virtual void Eat();
 };
 
 #endif

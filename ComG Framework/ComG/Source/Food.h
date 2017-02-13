@@ -17,6 +17,7 @@ public:
 	Food(int,std::string,FOODTYPE,float,float);
 	~Food();
 
+	virtual void Eat()=0;
 };
 
 #endif

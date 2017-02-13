@@ -103,6 +103,7 @@
     <ClCompile Include="Source\Copper.cpp" />
     <ClCompile Include="Source\DrinkingWater.cpp" />
     <ClCompile Include="Source\Farming_Hoe.cpp" />
+    <ClCompile Include="Source\Food.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
     <ClCompile Include="Source\Glock_17C.cpp" />
     <ClCompile Include="Source\Gold.cpp" />
@@ -118,6 +119,7 @@
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
     <ClCompile Include="Source\MetalScraps.cpp" />
+    <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Potato.cpp" />
     <ClCompile Include="Source\Resources.cpp" />
     <ClCompile Include="Source\Salad.cpp" />
@@ -171,6 +173,7 @@
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
     <ClInclude Include="Source\MetalScraps.h" />
+    <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Potato.h" />
     <ClInclude Include="Source\Resources.h" />
     <ClInclude Include="Source\Salad.h" />

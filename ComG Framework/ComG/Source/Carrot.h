@@ -8,6 +8,8 @@ class Carrot :
 public:
 	Carrot();
 	~Carrot();
+
+	virtual void Eat();
 };
 
 #endif

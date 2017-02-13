@@ -8,6 +8,8 @@ class CarrotJuice : public Food
 public:
 	CarrotJuice();
 	~CarrotJuice();
+
+	virtual void Eat();
 };
 
 #endif
