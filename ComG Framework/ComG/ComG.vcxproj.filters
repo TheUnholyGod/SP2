@@ -297,11 +297,7 @@
       <Filter>Source Files\GameObject\Items\Food</Filter>
     </ClCompile>
     <ClCompile Include="Source\Food.cpp">
-<<<<<<< HEAD
-      <Filter>Source Files\GameObject\Items\Food</Filter>
-=======
       <Filter>Source Files</Filter>
->>>>>>> 88008add26d5223c39aa15f4857c6d851b1ad8d6
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
       <Filter>Source Files\Framework</Filter>
