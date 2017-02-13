@@ -10,10 +10,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "SceneModel.h"
-#include "SceneUI.h"
 #include "Scene.h"
 #include "SceneManager.h"
+#include "ItemDataBase.h"
+#include <iostream>
 
 const unsigned char Application::FPS = 60; // FPS of this game
 const unsigned int Application::frameTime = 1000 / FPS; // time for each frame
@@ -98,12 +98,14 @@ void Application::Init()
 	}
 
 	glfwSetWindowSizeCallback(Application::m_window, resize_callback);
+	SceneManager::getSceneManger()->init(DEFAULT);
+	ItemDataBase::getItemDB();
 }
 
 void Application::Run()
 {
 	//Main Loop
-	SceneManager::getSceneManger()->init(DEFAULT);
+
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 	while (!glfwWindowShouldClose(Application::m_window) && !IsKeyPressed(VK_ESCAPE))
 	{

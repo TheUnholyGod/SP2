@@ -61,8 +61,6 @@ Source\MeshBuilder.cpp(597): warning C4244: 'argument' : conversion from 'float'
   Resources.cpp
   Salad.cpp
   Scar-H.cpp
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\Scar-H.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\Scar-H.h(2): error C2008: '-' : unexpected in macro definition
   SceneManager.cpp
 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
           C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
@@ -254,8 +252,8 @@ Source\SceneUI.cpp(1308): warning C4244: '+=' : conversion from 'double' to 'int
   VegetableStew.cpp
   Water.cpp
   Weapon.cpp
-Source\Weapon.cpp(4): error C2664: 'Item::Item(const Item &)' : cannot convert argument 1 from 'std::string' to 'const Item &'
-          Reason: cannot convert from 'std::string' to 'const Item'
-          No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   Wheat.cpp
   Wood.cpp
+  Generating code
+  Finished generating code
+  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\ComG.exe

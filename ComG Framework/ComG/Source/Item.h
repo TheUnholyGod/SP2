@@ -10,7 +10,8 @@ protected:
 	const std::string kname_;
 public:
 	Item(int,std::string);
-	~Item();
+	virtual ~Item();
+	const std::string getName() { return kname_; }
 };
 
 #endif

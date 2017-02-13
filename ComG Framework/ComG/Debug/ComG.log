@@ -1,150 +1,37 @@
-﻿Build started 2/9/2017 12:10:58 PM.
-     1>Project "C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\\glew\include" /I"C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\\glfw\include" /I"C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\\Common\Source" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Application.cpp Source\Camera.cpp Source\Camera2.cpp Source\Camera3.cpp Source\LoadOBJ.cpp Source\LoadTGA.cpp Source\main.cpp Source\Mesh.cpp Source\MeshBuilder.cpp Source\SceneModel.cpp Source\shader.cpp Source\Utility.cpp
-         Utility.cpp
-         shader.cpp
-         SceneModel.cpp
-     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(86): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(88): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(260): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(289): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(298): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(307): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(317): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(329): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(331): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(496): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(506): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(514): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(518): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(529): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(533): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(537): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(541): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(650): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(769): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(770): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(771): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(772): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(812): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(817): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(826): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(850): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(852): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(941): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(895) : definition of 'i' ignored
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(845) : definition of 'i' used
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(944): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(895) : definition of 'i' ignored
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(845) : definition of 'i' used
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(959): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(895) : definition of 'i' ignored
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(845) : definition of 'i' used
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(962): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(895) : definition of 'i' ignored
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(845) : definition of 'i' used
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(977): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(895) : definition of 'i' ignored
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(845) : definition of 'i' used
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(980): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(895) : definition of 'i' ignored
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(845) : definition of 'i' used
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(995): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(895) : definition of 'i' ignored
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(845) : definition of 'i' used
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(998): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(895) : definition of 'i' ignored
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(845) : definition of 'i' used
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1055): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1056): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1068): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1077): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1099): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1100): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1112): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1121): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1155): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1156): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1157): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1158): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1173): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1174): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1175): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1176): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1191): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1192): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1193): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1194): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1213): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1214): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1215): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1216): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1230): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1231): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1232): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1233): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1247): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1248): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1249): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1250): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1296): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1301): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\scenemodel.cpp(1306): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
-         MeshBuilder.cpp
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(190): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(192): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(201): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(226): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(227): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(234): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(251): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(276): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(279): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(292): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(317): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(318): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(322): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(325): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(342): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(349): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(496): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(497): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(498): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(499): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\meshbuilder.cpp(597): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
-         Mesh.cpp
-         main.cpp
-         LoadTGA.cpp
-         LoadOBJ.cpp
-         Camera3.cpp
-     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\camera3.cpp(74): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\theunholygod\documents\school\year 1 semester 2\computer graphics\assignment 3\comg framework\comg\source\camera3.cpp(83): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-         Camera2.cpp
-         Camera.cpp
-         Application.cpp
-         Generating Code...
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\Debug\ComG.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\\glew\lib" /LIBPATH:"C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\Debug" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\Debug\ComG.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\Debug\ComG.lib" /MACHINE:X86 Debug\Application.obj
-         Debug\Camera.obj
-         Debug\Camera2.obj
-         Debug\Camera3.obj
-         Debug\LoadOBJ.obj
-         Debug\LoadTGA.obj
-         Debug\main.obj
-         Debug\Mesh.obj
-         Debug\MeshBuilder.obj
-         Debug\SceneModel.obj
-         Debug\shader.obj
-         Debug\Utility.obj
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\Debug\ComG.exe
-     1>Done Building Project "C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Computer Graphics\Assignment 3\ComG Framework\ComG\ComG.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:14.46
+﻿  Application.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Wood.cpp
+  Wheat.cpp
+  Weapon.cpp
+  Water.cpp
+  VegetableStew.cpp
+  Stone.cpp
+  Scar-H.cpp
+  Salad.cpp
+  Resources.cpp
+  Potato.cpp
+  MetalScraps.cpp
+  M200_CheyTac_Intervention.cpp
+  Kitchen_Knife.cpp
+  Katana_Sword.cpp
+  ItemDataBase.cpp
+  Item.cpp
+  Iron.cpp
+  Gold.cpp
+  Glock_17C.cpp
+  Food.cpp
+  Farming_Hoe.cpp
+  DrinkingWater.cpp
+  Copper.cpp
+  Compound_Bow.cpp
+  Cloth.cpp
+  CircuitBoards.cpp
+  CarrotJuice.cpp
+  Carrot.cpp
+  Cabbage.cpp
+  Bread.cpp
+  Biomass.cpp
+  Adhesives.cpp
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe

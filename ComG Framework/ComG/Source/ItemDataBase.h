@@ -6,14 +6,17 @@
 
 class ItemDataBase
 {
+public:
+	typedef std::map<int, Item*> idb;
 private:
-	std::map<int, Item*> itemdatabase_;
+	idb itemdatabase_;
 	ItemDataBase();
 	static ItemDataBase* itemdb_;
 public:
 	~ItemDataBase();
 	static ItemDataBase* getItemDB();
 	Item* getItem(int key);
+	idb& getDataBase();
 };
 
 #endif
