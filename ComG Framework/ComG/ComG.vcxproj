@@ -89,12 +89,19 @@
   <ItemGroup>
     <ClCompile Include="Adhesives.cpp" />
     <ClCompile Include="Biomass.cpp" />
+    <ClCompile Include="Bread.cpp" />
+    <ClCompile Include="Cabbage.cpp" />
+    <ClCompile Include="Carrot.cpp" />
+    <ClCompile Include="CarrotJuice.cpp" />
     <ClCompile Include="CircuitBoards.cpp" />
     <ClCompile Include="Cloth.cpp" />
     <ClCompile Include="Copper.cpp" />
+    <ClCompile Include="DrinkingWater.cpp" />
     <ClCompile Include="Gold.cpp" />
     <ClCompile Include="Iron.cpp" />
     <ClCompile Include="MetalScraps.cpp" />
+    <ClCompile Include="Potato.cpp" />
+    <ClCompile Include="Salad.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera2.cpp" />
@@ -116,18 +123,27 @@
     <ClCompile Include="Source\Utility.cpp" />
     <ClCompile Include="Source\Weapon.cpp" />
     <ClCompile Include="Stone.cpp" />
+    <ClCompile Include="VegetableStew.cpp" />
     <ClCompile Include="Water.cpp" />
+    <ClCompile Include="Wheat.cpp" />
     <ClCompile Include="Wood.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Adhesives.h" />
     <ClInclude Include="Biomass.h" />
+    <ClInclude Include="Bread.h" />
+    <ClInclude Include="Cabbage.h" />
+    <ClInclude Include="Carrot.h" />
+    <ClInclude Include="CarrotJuice.h" />
     <ClInclude Include="CircuitBoards.h" />
     <ClInclude Include="Cloth.h" />
     <ClInclude Include="Copper.h" />
+    <ClInclude Include="DrinkingWater.h" />
     <ClInclude Include="Gold.h" />
     <ClInclude Include="Iron.h" />
     <ClInclude Include="MetalScraps.h" />
+    <ClInclude Include="Potato.h" />
+    <ClInclude Include="Salad.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera2.h" />
@@ -152,7 +168,9 @@
     <ClInclude Include="Source\Vertex.h" />
     <ClInclude Include="Source\Weapon.h" />
     <ClInclude Include="Stone.h" />
+    <ClInclude Include="VegetableStew.h" />
     <ClInclude Include="Water.h" />
+    <ClInclude Include="Wheat.h" />
     <ClInclude Include="Wood.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
