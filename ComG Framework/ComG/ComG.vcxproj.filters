@@ -305,6 +305,48 @@
     <ClCompile Include="ItemFactory.cpp">
       <Filter>Source Files\Factory</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Acrid_Plant.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Ant_Hill.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Centipede.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CybordMutt.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Deer.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Drone.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Enemy.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Goat.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lizard.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Molerat.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PatrolBot.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RogueMech.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scarecrow_Mech.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Wildboar.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -466,8 +508,50 @@
     <ClInclude Include="Renderer.h">
       <Filter>Header Files\Framework</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Wildboar.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Ant_Hill.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Centipede.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CyborgMutt.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Deer.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Drone.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Enemy.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Goat.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lizard.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Molerat.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PatrolBot.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RogueMech.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scarecrow_Mech.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Acrid_Plant.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
     <ClInclude Include="ItemFactory.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Factory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
