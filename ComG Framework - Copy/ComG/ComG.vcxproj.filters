@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{1f633f1b-bb99-458f-943f-16ec986d8cce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Framework">
+      <UniqueIdentifier>{a4f1b816-8724-473d-88d7-8ccc537d78fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Framework\Rendering and  Lighting">
+      <UniqueIdentifier>{cf0a39a8-635a-4f8c-8bf2-0fd3a95e06e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{3afe42f8-1d14-4807-b7f6-e1af1b34a26d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Framework">
+      <UniqueIdentifier>{3f937200-0617-407f-9a62-a1426c37f588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Framework\Rendering and  Lighting">
+      <UniqueIdentifier>{e063b6fe-11f3-41f6-92b2-845653e9e2ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Camera">
+      <UniqueIdentifier>{dabf2fc3-8530-48d5-922a-d61604d75215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Camera">
+      <UniqueIdentifier>{fb8b4ba9-e866-46dc-9345-aa96e674257f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{0e317bb2-2219-4890-8f93-b6be925c678f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject">
+      <UniqueIdentifier>{89484eb5-fbda-4f68-a4a9-b4780681f024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items">
+      <UniqueIdentifier>{d3ac2892-7f73-464c-a816-15fa6f2c25cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Food">
+      <UniqueIdentifier>{a9d8f78d-8ecb-4803-a24e-c9de27bb77df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Food\Farmables">
+      <UniqueIdentifier>{1db3f3b8-0d2e-488c-bd11-57b1597eaf5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Food\Craftables">
+      <UniqueIdentifier>{279e2969-3e2f-474e-ada5-37e04fb56cda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Resources">
+      <UniqueIdentifier>{a885264f-68a9-44e1-8e23-290874bb4f4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Resources\Mining">
+      <UniqueIdentifier>{c4256753-a5b5-4371-a3e2-ead41d5bfcde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Resources\Nature">
+      <UniqueIdentifier>{7ba5f785-bbea-4948-8831-2e14625a6721}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Resources\Loot">
+      <UniqueIdentifier>{087938cc-0f87-48d2-937a-7177b6743052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Weapons">
+      <UniqueIdentifier>{10a89489-5ad0-4512-a4c0-73f0f10b03d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Weapons\Melee">
+      <UniqueIdentifier>{d585d4ef-ba80-4f95-822b-c75dd65cfb74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Weapons\Firearms">
+      <UniqueIdentifier>{fb8c9d43-e1bc-477b-b9eb-8daf68c6bb52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Items\Armour">
+      <UniqueIdentifier>{8087213a-700a-4bb5-af3b-d987268a705f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Enemy">
+      <UniqueIdentifier>{3f8fed93-b34b-4a92-aab0-be5dd97edd78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Buildings">
+      <UniqueIdentifier>{05a3f971-0efc-451c-86fb-078d09aa209f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject">
+      <UniqueIdentifier>{0ab75426-cb75-4874-87ed-ab9233964f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items">
+      <UniqueIdentifier>{24bb8be2-bf85-40d4-b4b6-b6153d7e016c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items\Food">
+      <UniqueIdentifier>{e5c9a467-42f0-4b4a-9b95-7f329229b217}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items\Food\Farmables">
+      <UniqueIdentifier>{860b7191-eefb-4b6e-a2d4-232e93974c4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items\Food\Craftables">
+      <UniqueIdentifier>{8bd553fa-4166-435a-9c19-1da4e55348d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items\Resources">
+      <UniqueIdentifier>{98d5f60d-025d-4e37-b933-f249cb05e459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items\Resources\Mining">
+      <UniqueIdentifier>{cd0e11e5-a5b4-4efb-9ae4-163b3610c472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items\Resources\Nature">
+      <UniqueIdentifier>{d36f3bf0-bedc-438c-93c0-08caa12a6c81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items\Resources\Loot">
+      <UniqueIdentifier>{4d8e0310-e3d7-4f4c-94e1-bafc3100d971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items\Weapon">
+      <UniqueIdentifier>{c42bf257-18d3-4bc5-82e3-1236a1d6cdac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items\Weapon\Melee">
+      <UniqueIdentifier>{8b613ae9-68f7-4c6c-9e52-edeacacff7c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Items\Weapon\Firearms">
+      <UniqueIdentifier>{cd8db786-1ebf-4faf-8ab0-cb148e6a4ec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Enemy">
+      <UniqueIdentifier>{3c75dd97-fcab-407c-a255-68954ae1fb4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Buildings">
+      <UniqueIdentifier>{5ccd9671-3add-4fe0-8cc7-6755b9aca1da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Player">
+      <UniqueIdentifier>{ea5d1133-c105-4c3e-bd53-60c5365e3d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Player">
+      <UniqueIdentifier>{2f53560b-829f-4584-88d6-503c5246a573}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\SimpleFragmentShader.fragmentshader">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\SimpleVertexShader.vertexshader">
+      <Filter>Shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Application.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneManager.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LoadOBJ.cpp">
+      <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LoadTGA.cpp">
+      <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mesh.cpp">
+      <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MeshBuilder.cpp">
+      <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\shader.cpp">
+      <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility.cpp">
+      <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera2.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera3.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneModel.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneUI.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneSplashScreen.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Resources.cpp">
+      <Filter>Source Files\GameObject\Items\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Weapon.cpp">
+      <Filter>Source Files\GameObject\Items\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ItemDataBase.cpp">
+      <Filter>Source Files\GameObject\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Item.cpp">
+      <Filter>Source Files\GameObject\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Adhesives.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Loot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CircuitBoards.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Loot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Cloth.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Loot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MetalScraps.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Loot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Copper.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Mining</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Gold.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Mining</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Iron.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Mining</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Stone.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Mining</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Biomass.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Nature</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Water.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Nature</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Wood.cpp">
+      <Filter>Source Files\GameObject\Items\Resources\Nature</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Kitchen_Knife.cpp">
+      <Filter>Source Files\GameObject\Items\Weapon\Melee</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Katana_Sword.cpp">
+      <Filter>Source Files\GameObject\Items\Weapon\Melee</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Farming_Hoe.cpp">
+      <Filter>Source Files\GameObject\Items\Weapon\Melee</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Glock_17C.cpp">
+      <Filter>Source Files\GameObject\Items\Weapon\Firearms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scar-H.cpp">
+      <Filter>Source Files\GameObject\Items\Weapon\Firearms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\M200_CheyTac_Intervention.cpp">
+      <Filter>Source Files\GameObject\Items\Weapon\Firearms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Compound_Bow.cpp">
+      <Filter>Source Files\GameObject\Items\Weapon\Firearms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Bread.cpp">
+      <Filter>Source Files\GameObject\Items\Food\Craftables</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CarrotJuice.cpp">
+      <Filter>Source Files\GameObject\Items\Food\Craftables</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DrinkingWater.cpp">
+      <Filter>Source Files\GameObject\Items\Food\Craftables</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Salad.cpp">
+      <Filter>Source Files\GameObject\Items\Food\Craftables</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\VegetableStew.cpp">
+      <Filter>Source Files\GameObject\Items\Food\Craftables</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Cabbage.cpp">
+      <Filter>Source Files\GameObject\Items\Food\Farmables</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Carrot.cpp">
+      <Filter>Source Files\GameObject\Items\Food\Farmables</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Potato.cpp">
+      <Filter>Source Files\GameObject\Items\Food\Farmables</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Wheat.cpp">
+      <Filter>Source Files\GameObject\Items\Food\Farmables</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObject.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Player.cpp">
+      <Filter>Source Files\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Food.cpp">
+      <Filter>Source Files\GameObject\Items\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Food.cpp">
+      <Filter>Source Files\GameObject\Items\Food</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Application.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneManager.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vertex.h">
+      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mesh.h">
+      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\shader.hpp">
+      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utility.h">
+      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Material.h">
+      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Light.h">
+      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LoadTGA.h">
+      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LoadOBJ.h">
+      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MeshBuilder.h">
+      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera3.h">
+      <Filter>Header Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera.h">
+      <Filter>Header Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera2.h">
+      <Filter>Header Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneUI.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneModel.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneSplashScreen.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Food.h">
+      <Filter>Header Files\GameObject\Items\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Weapon.h">
+      <Filter>Header Files\GameObject\Items\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Resources.h">
+      <Filter>Header Files\GameObject\Items\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Item.h">
+      <Filter>Header Files\GameObject\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ItemDataBase.h">
+      <Filter>Header Files\GameObject\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Adhesives.h">
+      <Filter>Header Files\GameObject\Items\Resources\Loot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CircuitBoards.h">
+      <Filter>Header Files\GameObject\Items\Resources\Loot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Cloth.h">
+      <Filter>Header Files\GameObject\Items\Resources\Loot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MetalScraps.h">
+      <Filter>Header Files\GameObject\Items\Resources\Loot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Copper.h">
+      <Filter>Header Files\GameObject\Items\Resources\Mining</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Gold.h">
+      <Filter>Header Files\GameObject\Items\Resources\Mining</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Iron.h">
+      <Filter>Header Files\GameObject\Items\Resources\Mining</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Stone.h">
+      <Filter>Header Files\GameObject\Items\Resources\Mining</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Biomass.h">
+      <Filter>Header Files\GameObject\Items\Resources\Nature</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Water.h">
+      <Filter>Header Files\GameObject\Items\Resources\Nature</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Wood.h">
+      <Filter>Header Files\GameObject\Items\Resources\Nature</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Kitchen_Knife.h">
+      <Filter>Header Files\GameObject\Items\Weapons\Melee</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Katana_Sword.h">
+      <Filter>Header Files\GameObject\Items\Weapons\Melee</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Farming_Hoe.h">
+      <Filter>Header Files\GameObject\Items\Weapons\Melee</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Glock_17C.h">
+      <Filter>Header Files\GameObject\Items\Weapons\Firearms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scar-H.h">
+      <Filter>Header Files\GameObject\Items\Weapons\Firearms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\M200_CheyTac_Intervention.h">
+      <Filter>Header Files\GameObject\Items\Weapons\Firearms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Compound_Bow.h">
+      <Filter>Header Files\GameObject\Items\Weapons\Firearms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Cabbage.h">
+      <Filter>Header Files\GameObject\Items\Food\Farmables</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Carrot.h">
+      <Filter>Header Files\GameObject\Items\Food\Farmables</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Potato.h">
+      <Filter>Header Files\GameObject\Items\Food\Farmables</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Wheat.h">
+      <Filter>Header Files\GameObject\Items\Food\Farmables</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Bread.h">
+      <Filter>Header Files\GameObject\Items\Food\Craftables</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CarrotJuice.h">
+      <Filter>Header Files\GameObject\Items\Food\Craftables</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DrinkingWater.h">
+      <Filter>Header Files\GameObject\Items\Food\Craftables</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Salad.h">
+      <Filter>Header Files\GameObject\Items\Food\Craftables</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\VegetableStew.h">
+      <Filter>Header Files\GameObject\Items\Food\Craftables</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObject.h">
+      <Filter>Header Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Player.h">
+      <Filter>Header Files\Player</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
