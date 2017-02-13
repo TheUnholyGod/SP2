@@ -133,8 +133,17 @@
     <Filter Include="Header Files\GameObject\Player">
       <UniqueIdentifier>{ea5d1133-c105-4c3e-bd53-60c5365e3d86}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameObject\Enemy\Abilities">
-      <UniqueIdentifier>{f9465099-5311-4551-9bae-07c7c2cbaaec}</UniqueIdentifier>
+    <Filter Include="Source Files\Factory">
+      <UniqueIdentifier>{d071f17b-9d9f-42c2-af32-1fa6af05877a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Factory">
+      <UniqueIdentifier>{b0b6c07d-03ae-43e2-a2d4-4b3c9cac5e44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Ability">
+      <UniqueIdentifier>{bcb1d94a-d8d0-43bb-8d6c-e62916108db4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Ability">
+      <UniqueIdentifier>{c767237a-fb73-410a-a590-35780f499772}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -296,6 +305,69 @@
     <ClCompile Include="Source\Food.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Acrid_Plant.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Ant_Hill.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Centipede.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CybordMutt.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Deer.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Drone.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Enemy.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Goat.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lizard.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Molerat.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PatrolBot.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RogueMech.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scarecrow_Mech.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Wildboar.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ItemFactory.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Renderer.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Ability.cpp">
+      <Filter>Source Files\GameObject\Ability</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Burrowing.cpp">
+      <Filter>Source Files\GameObject\Ability</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Corrosive.cpp">
+      <Filter>Source Files\GameObject\Ability</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Radioactive.cpp">
+      <Filter>Source Files\GameObject\Ability</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Teleporting.cpp">
+      <Filter>Source Files\GameObject\Ability</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -454,8 +526,68 @@
     <ClInclude Include="Source\Player.h">
       <Filter>Header Files\GameObject\Player</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Wildboar.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Ant_Hill.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Centipede.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CyborgMutt.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Deer.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Drone.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Enemy.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Goat.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lizard.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Molerat.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PatrolBot.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RogueMech.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scarecrow_Mech.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Acrid_Plant.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Ability.h">
-      <Filter>Header Files\GameObject\Enemy\Abilities</Filter>
+      <Filter>Header Files\GameObject\Ability</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Burrowing.h">
+      <Filter>Header Files\GameObject\Ability</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Corrosive.h">
+      <Filter>Header Files\GameObject\Ability</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Radioactive.h">
+      <Filter>Header Files\GameObject\Ability</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Teleporting.h">
+      <Filter>Header Files\GameObject\Ability</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ItemFactory.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Renderer.h">
+      <Filter>Header Files\Framework</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
