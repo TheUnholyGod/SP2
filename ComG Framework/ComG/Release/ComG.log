@@ -7,7 +7,7 @@
   Camera2.cpp
   Camera3.cpp
 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
 Source\Camera3.cpp(74): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
 Source\Camera3.cpp(83): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
   Carrot.cpp
@@ -63,10 +63,10 @@ Source\MeshBuilder.cpp(597): warning C4244: 'argument' : conversion from 'float'
   Scar-H.cpp
   SceneManager.cpp
 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
   SceneModel.cpp
 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
 Source\SceneModel.cpp(87): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
 Source\SceneModel.cpp(89): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
 Source\SceneModel.cpp(265): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
@@ -155,11 +155,11 @@ Source\SceneModel.cpp(1306): warning C4244: '+=' : conversion from 'double' to '
 Source\SceneModel.cpp(1311): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
   SceneSplashScreen.cpp
 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
   Compiling...
   SceneUI.cpp
 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
 Source\SceneUI.cpp(86): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
 Source\SceneUI.cpp(88): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
 Source\SceneUI.cpp(260): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
@@ -256,4 +256,4 @@ Source\SceneUI.cpp(1308): warning C4244: '+=' : conversion from 'double' to 'int
   Wood.cpp
   Generating code
   Finished generating code
-  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\ComG.exe
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
