@@ -97,6 +97,7 @@
     <ClCompile Include="Cloth.cpp" />
     <ClCompile Include="Copper.cpp" />
     <ClCompile Include="DrinkingWater.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Gold.cpp" />
     <ClCompile Include="Iron.cpp" />
     <ClCompile Include="MetalScraps.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="Cloth.h" />
     <ClInclude Include="Copper.h" />
     <ClInclude Include="DrinkingWater.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Gold.h" />
     <ClInclude Include="Iron.h" />
     <ClInclude Include="MetalScraps.h" />

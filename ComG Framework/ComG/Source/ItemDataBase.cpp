@@ -5,7 +5,7 @@ ItemDataBase* ItemDataBase::itemdb_;
 
 ItemDataBase::ItemDataBase()
 {
-	
+
 }
 
 ItemDataBase::~ItemDataBase()

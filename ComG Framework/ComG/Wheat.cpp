@@ -2,7 +2,7 @@
 
 
 
-Wheat::Wheat() :Food("Carrot", FARMABLE, 10, 10)
+Wheat::Wheat() :Food(104,"Wheat", FARMABLE, 10, 10)
 {
 }
 

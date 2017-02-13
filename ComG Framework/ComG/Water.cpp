@@ -2,7 +2,7 @@
 
 
 
-Water::Water() : Resources("Water", NATURE, 1)
+Water::Water() : Resources(205,"Water", NATURE, 1)
 {
 }
 

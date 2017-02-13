@@ -37,77 +37,83 @@
     <Filter Include="Header Files\Camera">
       <UniqueIdentifier>{fb8b4ba9-e866-46dc-9345-aa96e674257f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Items">
-      <UniqueIdentifier>{d3ac2892-7f73-464c-a816-15fa6f2c25cb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Items">
-      <UniqueIdentifier>{24bb8be2-bf85-40d4-b4b6-b6153d7e016c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Scenes">
       <UniqueIdentifier>{0e317bb2-2219-4890-8f93-b6be925c678f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Enemy">
-      <UniqueIdentifier>{3c75dd97-fcab-407c-a255-68954ae1fb4f}</UniqueIdentifier>
+    <Filter Include="Source Files\GameObjects">
+      <UniqueIdentifier>{6ff743ed-b57a-4fc4-9368-67df84ff0aee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Enemy">
-      <UniqueIdentifier>{3f8fed93-b34b-4a92-aab0-be5dd97edd78}</UniqueIdentifier>
+    <Filter Include="Source Files\GameObjects\Items">
+      <UniqueIdentifier>{24bb8be2-bf85-40d4-b4b6-b6153d7e016c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Buildings">
-      <UniqueIdentifier>{05a3f971-0efc-451c-86fb-078d09aa209f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Buuildings">
-      <UniqueIdentifier>{5ccd9671-3add-4fe0-8cc7-6755b9aca1da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Items\Food">
-      <UniqueIdentifier>{a9d8f78d-8ecb-4803-a24e-c9de27bb77df}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Items\Resources">
-      <UniqueIdentifier>{a885264f-68a9-44e1-8e23-290874bb4f4f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Items\Weapons">
-      <UniqueIdentifier>{10a89489-5ad0-4512-a4c0-73f0f10b03d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Items\Armour">
-      <UniqueIdentifier>{8087213a-700a-4bb5-af3b-d987268a705f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Items\Food">
+    <Filter Include="Source Files\GameObjects\Items\Food">
       <UniqueIdentifier>{e5c9a467-42f0-4b4a-9b95-7f329229b217}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Items\Resources">
-      <UniqueIdentifier>{98d5f60d-025d-4e37-b933-f249cb05e459}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Items\Weapon">
-      <UniqueIdentifier>{c42bf257-18d3-4bc5-82e3-1236a1d6cdac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Items\Resources\Mining">
-      <UniqueIdentifier>{cd0e11e5-a5b4-4efb-9ae4-163b3610c472}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Items\Resources\Nature">
-      <UniqueIdentifier>{d36f3bf0-bedc-438c-93c0-08caa12a6c81}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Items\Resources\Loot">
-      <UniqueIdentifier>{4d8e0310-e3d7-4f4c-94e1-bafc3100d971}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Items\Resources\Mining">
-      <UniqueIdentifier>{c4256753-a5b5-4371-a3e2-ead41d5bfcde}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Items\Resources\Nature">
-      <UniqueIdentifier>{7ba5f785-bbea-4948-8831-2e14625a6721}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Items\Resources\Loot">
-      <UniqueIdentifier>{087938cc-0f87-48d2-937a-7177b6743052}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Items\Food\Farmable">
-      <UniqueIdentifier>{7003c88f-557e-4d94-8237-0bba2db63c47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Items\Food\Craftable">
-      <UniqueIdentifier>{f2cb1de3-311a-41a4-b9ab-373d4e375932}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Items\Food\Craftable">
+    <Filter Include="Source Files\GameObjects\Items\Food\Craftable">
       <UniqueIdentifier>{e90d24c1-90a9-4a2e-8318-afda1bef8e2d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Items\Food\Farmable">
+    <Filter Include="Source Files\GameObjects\Items\Food\Farmable">
       <UniqueIdentifier>{7afaa123-0142-44d7-95e4-f5048e8e30c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Items\Resources">
+      <UniqueIdentifier>{98d5f60d-025d-4e37-b933-f249cb05e459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Items\Resources\Mining">
+      <UniqueIdentifier>{cd0e11e5-a5b4-4efb-9ae4-163b3610c472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Items\Resources\Nature">
+      <UniqueIdentifier>{d36f3bf0-bedc-438c-93c0-08caa12a6c81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Items\Resources\Loot">
+      <UniqueIdentifier>{4d8e0310-e3d7-4f4c-94e1-bafc3100d971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Items\Weapon">
+      <UniqueIdentifier>{c42bf257-18d3-4bc5-82e3-1236a1d6cdac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Enemy">
+      <UniqueIdentifier>{3c75dd97-fcab-407c-a255-68954ae1fb4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Buuildings">
+      <UniqueIdentifier>{5ccd9671-3add-4fe0-8cc7-6755b9aca1da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects">
+      <UniqueIdentifier>{36395068-983d-46df-b7bb-5485aa3e2995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Items">
+      <UniqueIdentifier>{d3ac2892-7f73-464c-a816-15fa6f2c25cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Items\Food">
+      <UniqueIdentifier>{a9d8f78d-8ecb-4803-a24e-c9de27bb77df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Items\Food\Farmable">
+      <UniqueIdentifier>{7003c88f-557e-4d94-8237-0bba2db63c47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Items\Food\Craftable">
+      <UniqueIdentifier>{f2cb1de3-311a-41a4-b9ab-373d4e375932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Items\Resources">
+      <UniqueIdentifier>{a885264f-68a9-44e1-8e23-290874bb4f4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Items\Resources\Mining">
+      <UniqueIdentifier>{c4256753-a5b5-4371-a3e2-ead41d5bfcde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Items\Resources\Nature">
+      <UniqueIdentifier>{7ba5f785-bbea-4948-8831-2e14625a6721}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Items\Resources\Loot">
+      <UniqueIdentifier>{087938cc-0f87-48d2-937a-7177b6743052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Items\Weapons">
+      <UniqueIdentifier>{10a89489-5ad0-4512-a4c0-73f0f10b03d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Items\Armour">
+      <UniqueIdentifier>{8087213a-700a-4bb5-af3b-d987268a705f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Buildings">
+      <UniqueIdentifier>{05a3f971-0efc-451c-86fb-078d09aa209f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Enemy">
+      <UniqueIdentifier>{3f8fed93-b34b-4a92-aab0-be5dd97edd78}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -165,79 +171,82 @@
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="Source\Food.cpp">
-      <Filter>Source Files\Items\Food</Filter>
+      <Filter>Source Files\GameObjects\Items\Food</Filter>
     </ClCompile>
     <ClCompile Include="Source\Resources.cpp">
-      <Filter>Source Files\Items\Resources</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources</Filter>
     </ClCompile>
     <ClCompile Include="Source\Weapon.cpp">
-      <Filter>Source Files\Items\Weapon</Filter>
+      <Filter>Source Files\GameObjects\Items\Weapon</Filter>
     </ClCompile>
     <ClCompile Include="Source\ItemDataBase.cpp">
-      <Filter>Source Files\Items</Filter>
+      <Filter>Source Files\GameObjects\Items</Filter>
     </ClCompile>
     <ClCompile Include="Source\Item.cpp">
-      <Filter>Source Files\Items</Filter>
+      <Filter>Source Files\GameObjects\Items</Filter>
     </ClCompile>
     <ClCompile Include="Adhesives.cpp">
-      <Filter>Source Files\Items\Resources\Loot</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Loot</Filter>
     </ClCompile>
     <ClCompile Include="Biomass.cpp">
-      <Filter>Source Files\Items\Resources\Nature</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Nature</Filter>
     </ClCompile>
     <ClCompile Include="CircuitBoards.cpp">
-      <Filter>Source Files\Items\Resources\Loot</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Loot</Filter>
     </ClCompile>
     <ClCompile Include="Cloth.cpp">
-      <Filter>Source Files\Items\Resources\Loot</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Loot</Filter>
     </ClCompile>
     <ClCompile Include="Copper.cpp">
-      <Filter>Source Files\Items\Resources\Mining</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Mining</Filter>
     </ClCompile>
     <ClCompile Include="Gold.cpp">
-      <Filter>Source Files\Items\Resources\Mining</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Mining</Filter>
     </ClCompile>
     <ClCompile Include="Iron.cpp">
-      <Filter>Source Files\Items\Resources\Mining</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Mining</Filter>
     </ClCompile>
     <ClCompile Include="MetalScraps.cpp">
-      <Filter>Source Files\Items\Resources\Loot</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Loot</Filter>
     </ClCompile>
     <ClCompile Include="Stone.cpp">
-      <Filter>Source Files\Items\Resources\Mining</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Mining</Filter>
     </ClCompile>
     <ClCompile Include="Water.cpp">
-      <Filter>Source Files\Items\Resources\Nature</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Nature</Filter>
     </ClCompile>
     <ClCompile Include="Wood.cpp">
-      <Filter>Source Files\Items\Resources\Nature</Filter>
+      <Filter>Source Files\GameObjects\Items\Resources\Nature</Filter>
     </ClCompile>
     <ClCompile Include="Bread.cpp">
-      <Filter>Source Files\Items\Food\Craftable</Filter>
+      <Filter>Source Files\GameObjects\Items\Food\Craftable</Filter>
     </ClCompile>
     <ClCompile Include="Cabbage.cpp">
-      <Filter>Source Files\Items\Food\Farmable</Filter>
+      <Filter>Source Files\GameObjects\Items\Food\Farmable</Filter>
     </ClCompile>
     <ClCompile Include="Carrot.cpp">
-      <Filter>Source Files\Items\Food\Farmable</Filter>
+      <Filter>Source Files\GameObjects\Items\Food\Farmable</Filter>
     </ClCompile>
     <ClCompile Include="CarrotJuice.cpp">
-      <Filter>Source Files\Items\Food\Craftable</Filter>
+      <Filter>Source Files\GameObjects\Items\Food\Craftable</Filter>
     </ClCompile>
     <ClCompile Include="DrinkingWater.cpp">
-      <Filter>Source Files\Items\Food\Craftable</Filter>
+      <Filter>Source Files\GameObjects\Items\Food\Craftable</Filter>
     </ClCompile>
     <ClCompile Include="Potato.cpp">
-      <Filter>Source Files\Items\Food\Farmable</Filter>
+      <Filter>Source Files\GameObjects\Items\Food\Farmable</Filter>
     </ClCompile>
     <ClCompile Include="Salad.cpp">
-      <Filter>Source Files\Items\Food\Craftable</Filter>
+      <Filter>Source Files\GameObjects\Items\Food\Craftable</Filter>
     </ClCompile>
     <ClCompile Include="VegetableStew.cpp">
-      <Filter>Source Files\Items\Food\Craftable</Filter>
+      <Filter>Source Files\GameObjects\Items\Food\Craftable</Filter>
     </ClCompile>
     <ClCompile Include="Wheat.cpp">
-      <Filter>Source Files\Items\Food\Farmable</Filter>
+      <Filter>Source Files\GameObjects\Items\Food\Farmable</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -296,79 +305,82 @@
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="Source\Food.h">
-      <Filter>Header Files\Items\Food</Filter>
+      <Filter>Header Files\GameObjects\Items\Food</Filter>
     </ClInclude>
     <ClInclude Include="Source\Weapon.h">
-      <Filter>Header Files\Items\Weapons</Filter>
+      <Filter>Header Files\GameObjects\Items\Weapons</Filter>
     </ClInclude>
     <ClInclude Include="Source\Resources.h">
-      <Filter>Header Files\Items\Resources</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources</Filter>
     </ClInclude>
     <ClInclude Include="Source\Item.h">
-      <Filter>Header Files\Items</Filter>
+      <Filter>Header Files\GameObjects\Items</Filter>
     </ClInclude>
     <ClInclude Include="Source\ItemDataBase.h">
-      <Filter>Header Files\Items</Filter>
+      <Filter>Header Files\GameObjects\Items</Filter>
     </ClInclude>
     <ClInclude Include="Copper.h">
-      <Filter>Header Files\Items\Resources\Mining</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Mining</Filter>
     </ClInclude>
     <ClInclude Include="Gold.h">
-      <Filter>Header Files\Items\Resources\Mining</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Mining</Filter>
     </ClInclude>
     <ClInclude Include="Iron.h">
-      <Filter>Header Files\Items\Resources\Mining</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Mining</Filter>
     </ClInclude>
     <ClInclude Include="Stone.h">
-      <Filter>Header Files\Items\Resources\Mining</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Mining</Filter>
     </ClInclude>
     <ClInclude Include="Biomass.h">
-      <Filter>Header Files\Items\Resources\Nature</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Nature</Filter>
     </ClInclude>
     <ClInclude Include="Water.h">
-      <Filter>Header Files\Items\Resources\Nature</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Nature</Filter>
     </ClInclude>
     <ClInclude Include="Wood.h">
-      <Filter>Header Files\Items\Resources\Nature</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Nature</Filter>
     </ClInclude>
     <ClInclude Include="Adhesives.h">
-      <Filter>Header Files\Items\Resources\Loot</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Loot</Filter>
     </ClInclude>
     <ClInclude Include="CircuitBoards.h">
-      <Filter>Header Files\Items\Resources\Loot</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Loot</Filter>
     </ClInclude>
     <ClInclude Include="Cloth.h">
-      <Filter>Header Files\Items\Resources\Loot</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Loot</Filter>
     </ClInclude>
     <ClInclude Include="MetalScraps.h">
-      <Filter>Header Files\Items\Resources\Loot</Filter>
+      <Filter>Header Files\GameObjects\Items\Resources\Loot</Filter>
     </ClInclude>
     <ClInclude Include="Bread.h">
-      <Filter>Header Files\Items\Food\Craftable</Filter>
+      <Filter>Header Files\GameObjects\Items\Food\Craftable</Filter>
     </ClInclude>
     <ClInclude Include="CarrotJuice.h">
-      <Filter>Header Files\Items\Food\Craftable</Filter>
+      <Filter>Header Files\GameObjects\Items\Food\Craftable</Filter>
     </ClInclude>
     <ClInclude Include="DrinkingWater.h">
-      <Filter>Header Files\Items\Food\Craftable</Filter>
+      <Filter>Header Files\GameObjects\Items\Food\Craftable</Filter>
     </ClInclude>
     <ClInclude Include="Salad.h">
-      <Filter>Header Files\Items\Food\Craftable</Filter>
+      <Filter>Header Files\GameObjects\Items\Food\Craftable</Filter>
     </ClInclude>
     <ClInclude Include="VegetableStew.h">
-      <Filter>Header Files\Items\Food\Craftable</Filter>
+      <Filter>Header Files\GameObjects\Items\Food\Craftable</Filter>
     </ClInclude>
     <ClInclude Include="Potato.h">
-      <Filter>Header Files\Items\Food\Farmable</Filter>
+      <Filter>Header Files\GameObjects\Items\Food\Farmable</Filter>
     </ClInclude>
     <ClInclude Include="Wheat.h">
-      <Filter>Header Files\Items\Food\Farmable</Filter>
+      <Filter>Header Files\GameObjects\Items\Food\Farmable</Filter>
     </ClInclude>
     <ClInclude Include="Carrot.h">
-      <Filter>Header Files\Items\Food\Farmable</Filter>
+      <Filter>Header Files\GameObjects\Items\Food\Farmable</Filter>
     </ClInclude>
     <ClInclude Include="Cabbage.h">
-      <Filter>Header Files\Items\Food\Farmable</Filter>
+      <Filter>Header Files\GameObjects\Items\Food\Farmable</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

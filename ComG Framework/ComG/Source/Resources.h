@@ -17,7 +17,7 @@ protected:
 	const int krarity_;
 	//float weight;(optional)
 public:
-	Resources(std::string, RESOURCETYPE, int);
+	Resources(int,std::string, RESOURCETYPE, int);
 	~Resources();
 };
 
