@@ -269,7 +269,7 @@
     <ClCompile Include="Source\Wheat.cpp">
       <Filter>Source Files\Items\Food\Farmables</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
+    <ClCompile Include="Source\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -424,7 +424,7 @@
     <ClInclude Include="Source\VegetableStew.h">
       <Filter>Header Files\Items\Food\Craftables</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
+    <ClInclude Include="Source\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -88,7 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Adhesives.cpp" />
-    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Biomass.cpp" />
     <ClCompile Include="Source\Bread.cpp" />
@@ -104,6 +103,7 @@
     <ClCompile Include="Source\Copper.cpp" />
     <ClCompile Include="Source\DrinkingWater.cpp" />
     <ClCompile Include="Source\Farming_Hoe.cpp" />
+    <ClCompile Include="Source\GameObject.cpp" />
     <ClCompile Include="Source\Glock_17C.cpp" />
     <ClCompile Include="Source\Gold.cpp" />
     <ClCompile Include="Source\Iron.cpp" />
@@ -139,7 +139,6 @@
     <ClInclude Include="Source\Adhesives.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Biomass.h" />
     <ClInclude Include="Source\Bread.h" />
@@ -156,6 +155,7 @@
     <ClInclude Include="Source\DrinkingWater.h" />
     <ClInclude Include="Source\Farming_Hoe.h" />
     <ClInclude Include="Source\Food.h" />
+    <ClInclude Include="Source\GameObject.h" />
     <ClInclude Include="Source\Glock_17C.h" />
     <ClInclude Include="Source\Gold.h" />
     <ClInclude Include="Source\Iron.h" />
