@@ -123,13 +123,10 @@
     <ClCompile Include="Source\Utility.cpp" />
     <ClCompile Include="Source\Vegetable_Stew.cpp" />
     <ClCompile Include="Source\Weapon.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="Source\Wheat.cpp" />
-=======
     <ClCompile Include="Stone.cpp" />
     <ClCompile Include="Water.cpp" />
     <ClCompile Include="Wood.cpp" />
->>>>>>> cc9e1914db1c2bbda705e273eb26ca3b106ad83a
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Adhesives.h" />
@@ -171,13 +168,10 @@
     <ClInclude Include="Source\Vegetable_Stew.h" />
     <ClInclude Include="Source\Vertex.h" />
     <ClInclude Include="Source\Weapon.h" />
-<<<<<<< HEAD
     <ClInclude Include="Source\Wheat.h" />
-=======
     <ClInclude Include="Stone.h" />
     <ClInclude Include="Water.h" />
     <ClInclude Include="Wood.h" />
->>>>>>> cc9e1914db1c2bbda705e273eb26ca3b106ad83a
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
