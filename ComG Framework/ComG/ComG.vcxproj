@@ -88,32 +88,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Adhesives.cpp" />
-    <ClCompile Include="Adhesives.cpp" />
-    <ClCompile Include="Biomass.cpp" />
-    <ClCompile Include="Bread.cpp" />
-    <ClCompile Include="Cabbage.cpp" />
-    <ClCompile Include="Carrot.cpp" />
-    <ClCompile Include="CarrotJuice.cpp" />
-    <ClCompile Include="CircuitBoards.cpp" />
-    <ClCompile Include="Cloth.cpp" />
-    <ClCompile Include="Copper.cpp" />
-    <ClCompile Include="DrinkingWater.cpp" />
-    <ClCompile Include="Gold.cpp" />
-    <ClCompile Include="Iron.cpp" />
-    <ClCompile Include="MetalScraps.cpp" />
-    <ClCompile Include="Potato.cpp" />
-    <ClCompile Include="Salad.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Biomass.cpp" />
+    <ClCompile Include="Source\Bread.cpp" />
+    <ClCompile Include="Source\Cabbage.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera2.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
+    <ClCompile Include="Source\Carrot.cpp" />
+    <ClCompile Include="Source\CarrotJuice.cpp" />
     <ClCompile Include="Source\CircuitBoards.cpp" />
     <ClCompile Include="Source\Cloth.cpp" />
     <ClCompile Include="Source\Compound_Bow.cpp" />
     <ClCompile Include="Source\Copper.cpp" />
+    <ClCompile Include="Source\DrinkingWater.cpp" />
     <ClCompile Include="Source\Farming_Hoe.cpp" />
-    <ClCompile Include="Source\Food.cpp" />
     <ClCompile Include="Source\Glock_17C.cpp" />
     <ClCompile Include="Source\Gold.cpp" />
     <ClCompile Include="Source\Iron.cpp" />
@@ -128,7 +117,9 @@
     <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\MeshBuilder.cpp" />
     <ClCompile Include="Source\MetalScraps.cpp" />
+    <ClCompile Include="Source\Potato.cpp" />
     <ClCompile Include="Source\Resources.cpp" />
+    <ClCompile Include="Source\Salad.cpp" />
     <ClCompile Include="Source\Scar-H.cpp" />
     <ClCompile Include="Source\SceneManager.cpp" />
     <ClCompile Include="Source\SceneModel.cpp" />
@@ -137,6 +128,7 @@
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Stone.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
+    <ClCompile Include="Source\VegetableStew.cpp" />
     <ClCompile Include="Source\Water.cpp" />
     <ClCompile Include="Source\Weapon.cpp" />
     <ClCompile Include="Source\Wheat.cpp" />
@@ -144,37 +136,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Adhesives.h" />
-    <ClCompile Include="Stone.cpp" />
-    <ClCompile Include="VegetableStew.cpp" />
-    <ClCompile Include="Water.cpp" />
-    <ClCompile Include="Wheat.cpp" />
-    <ClCompile Include="Wood.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Adhesives.h" />
-    <ClInclude Include="Biomass.h" />
-    <ClInclude Include="Bread.h" />
-    <ClInclude Include="Cabbage.h" />
-    <ClInclude Include="Carrot.h" />
-    <ClInclude Include="CarrotJuice.h" />
-    <ClInclude Include="CircuitBoards.h" />
-    <ClInclude Include="Cloth.h" />
-    <ClInclude Include="Copper.h" />
-    <ClInclude Include="DrinkingWater.h" />
-    <ClInclude Include="Gold.h" />
-    <ClInclude Include="Iron.h" />
-    <ClInclude Include="MetalScraps.h" />
-    <ClInclude Include="Potato.h" />
-    <ClInclude Include="Salad.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Biomass.h" />
+    <ClInclude Include="Source\Bread.h" />
+    <ClInclude Include="Source\Cabbage.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera2.h" />
     <ClInclude Include="Source\Camera3.h" />
+    <ClInclude Include="Source\Carrot.h" />
+    <ClInclude Include="Source\CarrotJuice.h" />
     <ClInclude Include="Source\CircuitBoards.h" />
     <ClInclude Include="Source\Cloth.h" />
     <ClInclude Include="Source\Compound_Bow.h" />
     <ClInclude Include="Source\Copper.h" />
+    <ClInclude Include="Source\DrinkingWater.h" />
     <ClInclude Include="Source\Farming_Hoe.h" />
     <ClInclude Include="Source\Food.h" />
     <ClInclude Include="Source\Glock_17C.h" />
@@ -192,7 +169,9 @@
     <ClInclude Include="Source\Mesh.h" />
     <ClInclude Include="Source\MeshBuilder.h" />
     <ClInclude Include="Source\MetalScraps.h" />
+    <ClInclude Include="Source\Potato.h" />
     <ClInclude Include="Source\Resources.h" />
+    <ClInclude Include="Source\Salad.h" />
     <ClInclude Include="Source\Scar-H.h" />
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\SceneManager.h" />
@@ -202,15 +181,12 @@
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\Stone.h" />
     <ClInclude Include="Source\Utility.h" />
+    <ClInclude Include="Source\VegetableStew.h" />
     <ClInclude Include="Source\Vertex.h" />
     <ClInclude Include="Source\Water.h" />
     <ClInclude Include="Source\Weapon.h" />
+    <ClInclude Include="Source\Wheat.h" />
     <ClInclude Include="Source\Wood.h" />
-    <ClInclude Include="Stone.h" />
-    <ClInclude Include="VegetableStew.h" />
-    <ClInclude Include="Water.h" />
-    <ClInclude Include="Wheat.h" />
-    <ClInclude Include="Wood.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
