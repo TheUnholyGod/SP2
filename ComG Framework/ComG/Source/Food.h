@@ -5,12 +5,18 @@
 
 class Food : public Item
 {
-public:
-	Food();
-	~Food();
-private:
-	float nutrition;//Hunger Replenishment
+protected:
+	enum FOODTYPE
+	{
+		FARMABLE,
+		CRAFTABLE,
+	}TYPE;
+	float nutrition_;//Hunger Replenishment
 	float shelf_life_;//Storage Time
+public:
+	Food(std::string,FOODTYPE,float,float);
+	~Food();
+
 };
 
 #endif

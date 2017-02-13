@@ -97,6 +97,7 @@
     <Filter Include="Header Files\Items\Resources\Loot">
       <UniqueIdentifier>{087938cc-0f87-48d2-937a-7177b6743052}</UniqueIdentifier>
     </Filter>
+<<<<<<< HEAD
     <Filter Include="Header Files\Items\Weapons\Melee">
       <UniqueIdentifier>{d585d4ef-ba80-4f95-822b-c75dd65cfb74}</UniqueIdentifier>
     </Filter>
@@ -108,6 +109,19 @@
     </Filter>
     <Filter Include="Source Files\Items\Weapon\Firearms">
       <UniqueIdentifier>{cd8db786-1ebf-4faf-8ab0-cb148e6a4ec2}</UniqueIdentifier>
+=======
+    <Filter Include="Header Files\Items\Food\Farmable">
+      <UniqueIdentifier>{7003c88f-557e-4d94-8237-0bba2db63c47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Food\Craftable">
+      <UniqueIdentifier>{f2cb1de3-311a-41a4-b9ab-373d4e375932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Food\Craftable">
+      <UniqueIdentifier>{e90d24c1-90a9-4a2e-8318-afda1bef8e2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Food\Farmable">
+      <UniqueIdentifier>{7afaa123-0142-44d7-95e4-f5048e8e30c2}</UniqueIdentifier>
+>>>>>>> 1c3990edb39aeb6e6327967f9efcdd26c1d7b598
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -212,6 +226,7 @@
     <ClCompile Include="Source\Water.cpp">
       <Filter>Source Files\Items\Resources\Nature</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Source\Wood.cpp">
       <Filter>Source Files\Items\Resources\Nature</Filter>
     </ClCompile>
@@ -235,6 +250,34 @@
     </ClCompile>
     <ClCompile Include="Source\Compound_Bow.cpp">
       <Filter>Source Files\Items\Weapon\Firearms</Filter>
+=======
+    <ClCompile Include="Bread.cpp">
+      <Filter>Source Files\Items\Food\Craftable</Filter>
+    </ClCompile>
+    <ClCompile Include="Cabbage.cpp">
+      <Filter>Source Files\Items\Food\Farmable</Filter>
+    </ClCompile>
+    <ClCompile Include="Carrot.cpp">
+      <Filter>Source Files\Items\Food\Farmable</Filter>
+    </ClCompile>
+    <ClCompile Include="CarrotJuice.cpp">
+      <Filter>Source Files\Items\Food\Craftable</Filter>
+    </ClCompile>
+    <ClCompile Include="DrinkingWater.cpp">
+      <Filter>Source Files\Items\Food\Craftable</Filter>
+    </ClCompile>
+    <ClCompile Include="Potato.cpp">
+      <Filter>Source Files\Items\Food\Farmable</Filter>
+    </ClCompile>
+    <ClCompile Include="Salad.cpp">
+      <Filter>Source Files\Items\Food\Craftable</Filter>
+    </ClCompile>
+    <ClCompile Include="VegetableStew.cpp">
+      <Filter>Source Files\Items\Food\Craftable</Filter>
+    </ClCompile>
+    <ClCompile Include="Wheat.cpp">
+      <Filter>Source Files\Items\Food\Farmable</Filter>
+>>>>>>> 1c3990edb39aeb6e6327967f9efcdd26c1d7b598
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +403,33 @@
     </ClInclude>
     <ClInclude Include="Source\Compound_Bow.h">
       <Filter>Header Files\Items\Weapons\Firearms</Filter>
+    </ClInclude>
+    <ClInclude Include="Bread.h">
+      <Filter>Header Files\Items\Food\Craftable</Filter>
+    </ClInclude>
+    <ClInclude Include="CarrotJuice.h">
+      <Filter>Header Files\Items\Food\Craftable</Filter>
+    </ClInclude>
+    <ClInclude Include="DrinkingWater.h">
+      <Filter>Header Files\Items\Food\Craftable</Filter>
+    </ClInclude>
+    <ClInclude Include="Salad.h">
+      <Filter>Header Files\Items\Food\Craftable</Filter>
+    </ClInclude>
+    <ClInclude Include="VegetableStew.h">
+      <Filter>Header Files\Items\Food\Craftable</Filter>
+    </ClInclude>
+    <ClInclude Include="Potato.h">
+      <Filter>Header Files\Items\Food\Farmable</Filter>
+    </ClInclude>
+    <ClInclude Include="Wheat.h">
+      <Filter>Header Files\Items\Food\Farmable</Filter>
+    </ClInclude>
+    <ClInclude Include="Carrot.h">
+      <Filter>Header Files\Items\Food\Farmable</Filter>
+    </ClInclude>
+    <ClInclude Include="Cabbage.h">
+      <Filter>Header Files\Items\Food\Farmable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 #include "Food.h"
 
-Food::Food()
+Food::Food(std::string name, FOODTYPE type, float nutrval, float shlv) :Item(name), TYPE(type), nutrition_(nutrval), shelf_life_(shlv)
 {
 
 }
