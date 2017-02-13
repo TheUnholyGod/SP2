@@ -58,6 +58,27 @@
     <Filter Include="Source Files\Buuildings">
       <UniqueIdentifier>{5ccd9671-3add-4fe0-8cc7-6755b9aca1da}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Items\Food">
+      <UniqueIdentifier>{a9d8f78d-8ecb-4803-a24e-c9de27bb77df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Resources">
+      <UniqueIdentifier>{a885264f-68a9-44e1-8e23-290874bb4f4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Weapons">
+      <UniqueIdentifier>{10a89489-5ad0-4512-a4c0-73f0f10b03d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Armour">
+      <UniqueIdentifier>{8087213a-700a-4bb5-af3b-d987268a705f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Food">
+      <UniqueIdentifier>{e5c9a467-42f0-4b4a-9b95-7f329229b217}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Resources">
+      <UniqueIdentifier>{98d5f60d-025d-4e37-b933-f249cb05e459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Weapon">
+      <UniqueIdentifier>{c42bf257-18d3-4bc5-82e3-1236a1d6cdac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\SimpleFragmentShader.fragmentshader">
@@ -113,11 +134,20 @@
     <ClCompile Include="Source\SceneSplashScreen.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="ItemDataBase.cpp">
+    <ClCompile Include="Source\Item.cpp">
       <Filter>Source Files\Items</Filter>
     </ClCompile>
-    <ClCompile Include="Item.cpp">
+    <ClCompile Include="Source\ItemDataBase.cpp">
       <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Food.cpp">
+      <Filter>Source Files\Items\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Resources.cpp">
+      <Filter>Source Files\Items\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Weapon.cpp">
+      <Filter>Source Files\Items\Weapon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -175,11 +205,20 @@
     <ClInclude Include="Source\SceneSplashScreen.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>Header Files\Items</Filter>
+    <ClInclude Include="Source\Food.h">
+      <Filter>Header Files\Items\Food</Filter>
     </ClInclude>
-    <ClInclude Include="ItemDataBase.h">
-      <Filter>Header Files\Items</Filter>
+    <ClInclude Include="Source\Weapon.h">
+      <Filter>Header Files\Items\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Resources.h">
+      <Filter>Header Files\Items\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ItemDataBase.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
