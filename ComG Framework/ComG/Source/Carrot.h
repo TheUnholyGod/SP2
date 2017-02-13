@@ -1,0 +1,14 @@
+#ifndef _CARROT_H
+#define _CARROT_H
+
+#include "Food.h"
+#include <string>
+
+class Carrot : public Food
+{
+public:
+	Carrot();
+	~Carrot();
+};
+
+#endif
