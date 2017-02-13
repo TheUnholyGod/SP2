@@ -127,11 +127,11 @@
     <Filter Include="Source Files\GameObject\Buildings">
       <UniqueIdentifier>{5ccd9671-3add-4fe0-8cc7-6755b9aca1da}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Player">
-      <UniqueIdentifier>{ea5d1133-c105-4c3e-bd53-60c5365e3d86}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Player">
+    <Filter Include="Source Files\GameObject\Player">
       <UniqueIdentifier>{2f53560b-829f-4584-88d6-503c5246a573}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Player">
+      <UniqueIdentifier>{ea5d1133-c105-4c3e-bd53-60c5365e3d86}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -285,13 +285,17 @@
       <Filter>Source Files\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="Source\Player.cpp">
-      <Filter>Source Files\Player</Filter>
+      <Filter>Source Files\GameObject\Player</Filter>
     </ClCompile>
     <ClCompile Include="Source\Food.cpp">
       <Filter>Source Files\GameObject\Items\Food</Filter>
     </ClCompile>
     <ClCompile Include="Source\Food.cpp">
+<<<<<<< HEAD
       <Filter>Source Files\GameObject\Items\Food</Filter>
+=======
+      <Filter>Source Files</Filter>
+>>>>>>> 88008add26d5223c39aa15f4857c6d851b1ad8d6
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -449,7 +453,7 @@
       <Filter>Header Files\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="Source\Player.h">
-      <Filter>Header Files\Player</Filter>
+      <Filter>Header Files\GameObject\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

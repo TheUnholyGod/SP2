@@ -1,20 +1,48 @@
-//#include "Player.h"
-//
-//Player::Player()
-//{
-//
-//}
-//
-//Player::~Player()
-//{
-//
-//}
-//
-//Player* Player::getplayer() 
-//{
-//	if (!player) {
-//		player = new Player();
-//	}
-//
-//	return player;
-//}
+#include "Player.h"
+
+Player* Player::player;
+
+Player::Player(int no) : GameObject(no)
+{
+
+}
+
+Player* Player::getplayer(int no) 
+{
+	if (!player) {
+		player = new Player(no);
+	}
+
+	return player;
+}
+
+const int Player::gethealth()
+{
+
+}
+
+const int Player::gethunger()
+{
+
+}
+
+const int Player::getattack()
+{
+
+}
+
+void Player::receivedamage()
+{
+
+}
+
+bool Player::isDead()
+{
+
+}
+
+Player::~Player()
+{
+
+}
+

@@ -1,96 +1,8 @@
-﻿Build started 2/13/2017 5:19:22 PM.
+﻿Build started 2/13/2017 5:27:42 PM.
      1>Project "C:\Users\162697M\Desktop\SP2\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\162697M\Desktop\SP2\ComG Framework\\glew\include" /I"C:\Users\162697M\Desktop\SP2\ComG Framework\\glfw\include" /I"C:\Users\162697M\Desktop\SP2\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneModel.cpp
-         SceneModel.cpp
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 C:\Users\162697M\Desktop\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>Source\SceneModel.cpp(89): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(91): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(267): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(296): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(305): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(314): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(324): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(336): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(338): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(592): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(602): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(610): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(614): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(625): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(629): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(633): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(637): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(746): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(878): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(879): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(880): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(881): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(921): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
-     1>Source\SceneModel.cpp(926): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
-     1>Source\SceneModel.cpp(935): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(959): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>Source\SceneModel.cpp(961): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1050): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 Source\SceneModel.cpp(1004) : definition of 'i' ignored
-                 Source\SceneModel.cpp(954) : definition of 'i' used
-     1>Source\SceneModel.cpp(1053): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 Source\SceneModel.cpp(1004) : definition of 'i' ignored
-                 Source\SceneModel.cpp(954) : definition of 'i' used
-     1>Source\SceneModel.cpp(1068): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 Source\SceneModel.cpp(1004) : definition of 'i' ignored
-                 Source\SceneModel.cpp(954) : definition of 'i' used
-     1>Source\SceneModel.cpp(1071): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 Source\SceneModel.cpp(1004) : definition of 'i' ignored
-                 Source\SceneModel.cpp(954) : definition of 'i' used
-     1>Source\SceneModel.cpp(1086): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 Source\SceneModel.cpp(1004) : definition of 'i' ignored
-                 Source\SceneModel.cpp(954) : definition of 'i' used
-     1>Source\SceneModel.cpp(1089): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 Source\SceneModel.cpp(1004) : definition of 'i' ignored
-                 Source\SceneModel.cpp(954) : definition of 'i' used
-     1>Source\SceneModel.cpp(1104): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 Source\SceneModel.cpp(1004) : definition of 'i' ignored
-                 Source\SceneModel.cpp(954) : definition of 'i' used
-     1>Source\SceneModel.cpp(1107): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
-                 Source\SceneModel.cpp(1004) : definition of 'i' ignored
-                 Source\SceneModel.cpp(954) : definition of 'i' used
-     1>Source\SceneModel.cpp(1164): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1165): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1177): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1186): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1208): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1209): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1221): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1230): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1264): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1265): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1266): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1267): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1282): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1283): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1284): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1285): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1300): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1301): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1302): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1303): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1322): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1323): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1324): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1325): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1339): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1340): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1341): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1342): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1356): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1357): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1358): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1359): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>Source\SceneModel.cpp(1405): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\SceneModel.cpp(1410): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\SceneModel.cpp(1415): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\162697M\Desktop\SP2\ComG Framework\\glew\include" /I"C:\Users\162697M\Desktop\SP2\ComG Framework\\glfw\include" /I"C:\Users\162697M\Desktop\SP2\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Player.cpp
+         Player.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\162697M\Desktop\SP2\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\162697M\Desktop\SP2\ComG Framework\\glew\lib" /LIBPATH:"C:\Users\162697M\Desktop\SP2\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"C:\Users\162697M\Desktop\SP2\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\162697M\Desktop\SP2\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\162697M\Desktop\SP2\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Adhesives.obj
          Release\Application.obj
@@ -148,4 +60,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.76
+Time Elapsed 00:00:03.53
