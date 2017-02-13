@@ -97,6 +97,18 @@
     <Filter Include="Header Files\Items\Resources\Loot">
       <UniqueIdentifier>{087938cc-0f87-48d2-937a-7177b6743052}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Items\Weapons\Melee">
+      <UniqueIdentifier>{d585d4ef-ba80-4f95-822b-c75dd65cfb74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items\Weapons\Firearms">
+      <UniqueIdentifier>{fb8c9d43-e1bc-477b-b9eb-8daf68c6bb52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Weapon\Melee">
+      <UniqueIdentifier>{8b613ae9-68f7-4c6c-9e52-edeacacff7c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items\Weapon\Firearms">
+      <UniqueIdentifier>{cd8db786-1ebf-4faf-8ab0-cb148e6a4ec2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\SimpleFragmentShader.fragmentshader">
@@ -167,38 +179,62 @@
     <ClCompile Include="Source\Item.cpp">
       <Filter>Source Files\Items</Filter>
     </ClCompile>
-    <ClCompile Include="Adhesives.cpp">
+    <ClCompile Include="Source\Wheat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Adhesives.cpp">
       <Filter>Source Files\Items\Resources\Loot</Filter>
     </ClCompile>
-    <ClCompile Include="Biomass.cpp">
+    <ClCompile Include="Source\CircuitBoards.cpp">
+      <Filter>Source Files\Items\Resources\Loot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Cloth.cpp">
+      <Filter>Source Files\Items\Resources\Loot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MetalScraps.cpp">
+      <Filter>Source Files\Items\Resources\Loot</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Copper.cpp">
+      <Filter>Source Files\Items\Resources\Mining</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Gold.cpp">
+      <Filter>Source Files\Items\Resources\Mining</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Iron.cpp">
+      <Filter>Source Files\Items\Resources\Mining</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Stone.cpp">
+      <Filter>Source Files\Items\Resources\Mining</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Biomass.cpp">
       <Filter>Source Files\Items\Resources\Nature</Filter>
     </ClCompile>
-    <ClCompile Include="CircuitBoards.cpp">
-      <Filter>Source Files\Items\Resources\Loot</Filter>
-    </ClCompile>
-    <ClCompile Include="Cloth.cpp">
-      <Filter>Source Files\Items\Resources\Loot</Filter>
-    </ClCompile>
-    <ClCompile Include="Copper.cpp">
-      <Filter>Source Files\Items\Resources\Mining</Filter>
-    </ClCompile>
-    <ClCompile Include="Gold.cpp">
-      <Filter>Source Files\Items\Resources\Mining</Filter>
-    </ClCompile>
-    <ClCompile Include="Iron.cpp">
-      <Filter>Source Files\Items\Resources\Mining</Filter>
-    </ClCompile>
-    <ClCompile Include="MetalScraps.cpp">
-      <Filter>Source Files\Items\Resources\Loot</Filter>
-    </ClCompile>
-    <ClCompile Include="Stone.cpp">
-      <Filter>Source Files\Items\Resources\Mining</Filter>
-    </ClCompile>
-    <ClCompile Include="Water.cpp">
+    <ClCompile Include="Source\Water.cpp">
       <Filter>Source Files\Items\Resources\Nature</Filter>
     </ClCompile>
-    <ClCompile Include="Wood.cpp">
+    <ClCompile Include="Source\Wood.cpp">
       <Filter>Source Files\Items\Resources\Nature</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Kitchen_Knife.cpp">
+      <Filter>Source Files\Items\Weapon\Melee</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Katana_Sword.cpp">
+      <Filter>Source Files\Items\Weapon\Melee</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Farming_Hoe.cpp">
+      <Filter>Source Files\Items\Weapon\Melee</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Glock_17C.cpp">
+      <Filter>Source Files\Items\Weapon\Firearms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scar-H.cpp">
+      <Filter>Source Files\Items\Weapon\Firearms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\M200_CheyTac_Intervention.cpp">
+      <Filter>Source Files\Items\Weapon\Firearms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Compound_Bow.cpp">
+      <Filter>Source Files\Items\Weapon\Firearms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -271,38 +307,59 @@
     <ClInclude Include="Source\ItemDataBase.h">
       <Filter>Header Files\Items</Filter>
     </ClInclude>
-    <ClInclude Include="Copper.h">
+    <ClInclude Include="Source\Adhesives.h">
+      <Filter>Header Files\Items\Resources\Loot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CircuitBoards.h">
+      <Filter>Header Files\Items\Resources\Loot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Cloth.h">
+      <Filter>Header Files\Items\Resources\Loot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MetalScraps.h">
+      <Filter>Header Files\Items\Resources\Loot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Copper.h">
       <Filter>Header Files\Items\Resources\Mining</Filter>
     </ClInclude>
-    <ClInclude Include="Gold.h">
+    <ClInclude Include="Source\Gold.h">
       <Filter>Header Files\Items\Resources\Mining</Filter>
     </ClInclude>
-    <ClInclude Include="Iron.h">
+    <ClInclude Include="Source\Iron.h">
       <Filter>Header Files\Items\Resources\Mining</Filter>
     </ClInclude>
-    <ClInclude Include="Stone.h">
+    <ClInclude Include="Source\Stone.h">
       <Filter>Header Files\Items\Resources\Mining</Filter>
     </ClInclude>
-    <ClInclude Include="Biomass.h">
+    <ClInclude Include="Source\Biomass.h">
       <Filter>Header Files\Items\Resources\Nature</Filter>
     </ClInclude>
-    <ClInclude Include="Water.h">
+    <ClInclude Include="Source\Water.h">
       <Filter>Header Files\Items\Resources\Nature</Filter>
     </ClInclude>
-    <ClInclude Include="Wood.h">
+    <ClInclude Include="Source\Wood.h">
       <Filter>Header Files\Items\Resources\Nature</Filter>
     </ClInclude>
-    <ClInclude Include="Adhesives.h">
-      <Filter>Header Files\Items\Resources\Loot</Filter>
+    <ClInclude Include="Source\Kitchen_Knife.h">
+      <Filter>Header Files\Items\Weapons\Melee</Filter>
     </ClInclude>
-    <ClInclude Include="CircuitBoards.h">
-      <Filter>Header Files\Items\Resources\Loot</Filter>
+    <ClInclude Include="Source\Katana_Sword.h">
+      <Filter>Header Files\Items\Weapons\Melee</Filter>
     </ClInclude>
-    <ClInclude Include="Cloth.h">
-      <Filter>Header Files\Items\Resources\Loot</Filter>
+    <ClInclude Include="Source\Farming_Hoe.h">
+      <Filter>Header Files\Items\Weapons\Melee</Filter>
     </ClInclude>
-    <ClInclude Include="MetalScraps.h">
-      <Filter>Header Files\Items\Resources\Loot</Filter>
+    <ClInclude Include="Source\Glock_17C.h">
+      <Filter>Header Files\Items\Weapons\Firearms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scar-H.h">
+      <Filter>Header Files\Items\Weapons\Firearms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\M200_CheyTac_Intervention.h">
+      <Filter>Header Files\Items\Weapons\Firearms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Compound_Bow.h">
+      <Filter>Header Files\Items\Weapons\Firearms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
