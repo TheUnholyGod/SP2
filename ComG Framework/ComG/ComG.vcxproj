@@ -103,6 +103,7 @@
     <ClCompile Include="Source\Copper.cpp" />
     <ClCompile Include="Source\DrinkingWater.cpp" />
     <ClCompile Include="Source\Farming_Hoe.cpp" />
+    <ClCompile Include="Source\Food.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
     <ClCompile Include="Source\Glock_17C.cpp" />
     <ClCompile Include="Source\Gold.cpp" />

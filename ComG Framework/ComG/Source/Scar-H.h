@@ -1,5 +1,5 @@
-#ifndef _SCAR-H_H
-#define _SCAR-H_H
+#ifndef _SCAR_H_H
+#define _SCAR_H_H
 
 #include "Weapon.h"
 #include <string>

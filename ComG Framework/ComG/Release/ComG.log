@@ -1,14 +1,37 @@
-<<<<<<< HEAD
 ﻿  Adhesives.cpp
+  Application.cpp
+  Biomass.cpp
+  Bread.cpp
+  Cabbage.cpp
+  Carrot.cpp
+  CarrotJuice.cpp
+  CircuitBoards.cpp
+  Cloth.cpp
+  Compound_Bow.cpp
+  Copper.cpp
+  DrinkingWater.cpp
+  Farming_Hoe.cpp
   Food.cpp
-Source\Food.cpp(4): error C2512: 'Item' : no appropriate default constructor available
+  Glock_17C.cpp
   Gold.cpp
-  Weapon.cpp
-Source\Weapon.cpp(4): error C2512: 'Item' : no appropriate default constructor available
-  Wheat.cpp
-c1xx : fatal error C1083: Cannot open source file: 'Source\Wheat.cpp': No such file or directory
-=======
-﻿  Weapon.cpp
-Source\Weapon.cpp(4): error C2512: 'Item' : no appropriate default constructor available
+  Iron.cpp
+  Item.cpp
+  ItemDataBase.cpp
+  Katana_Sword.cpp
+  Compiling...
+  Kitchen_Knife.cpp
+  M200_CheyTac_Intervention.cpp
+  MetalScraps.cpp
+  Potato.cpp
+  Resources.cpp
+  Salad.cpp
+  Scar-H.cpp
+  Stone.cpp
   VegetableStew.cpp
->>>>>>> 1c3990edb39aeb6e6327967f9efcdd26c1d7b598
+  Water.cpp
+  Weapon.cpp
+  Wheat.cpp
+  Wood.cpp
+  Generating code
+  Finished generating code
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
