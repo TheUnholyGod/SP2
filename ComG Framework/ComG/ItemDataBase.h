@@ -13,6 +13,7 @@ private:
 public:
 	~ItemDataBase();
 	static ItemDataBase* getItemDB();
+	Item* getItem(int key);
 };
 
 #endif
