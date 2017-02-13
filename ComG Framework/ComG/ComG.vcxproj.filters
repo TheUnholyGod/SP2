@@ -139,6 +139,36 @@
     <Filter Include="Header Files\Factory">
       <UniqueIdentifier>{b0b6c07d-03ae-43e2-a2d4-4b3c9cac5e44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameObject\Enemy\Normal">
+      <UniqueIdentifier>{82bb3d78-e469-4aa2-8607-ac28f7e941b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Enemy\Boss">
+      <UniqueIdentifier>{b05b6c88-997b-42ee-87fa-f9095d0ef4f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Enemy\Normal">
+      <UniqueIdentifier>{d79f7349-ac08-4d68-9abd-4465a6227fad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Enemy\Boss">
+      <UniqueIdentifier>{b9f0954e-461b-436b-97b8-f7df23f6aa5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Enemy\Normal\Base">
+      <UniqueIdentifier>{786e2bb3-6758-4844-8246-1eb9caef3910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Enemy\Normal\Base">
+      <UniqueIdentifier>{111b757b-d851-430d-8e2b-a0b390ee3dd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Enemy\Normal\City">
+      <UniqueIdentifier>{2f544f71-d27d-4f69-ba2f-184022aa96c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Enemy\Normal\City">
+      <UniqueIdentifier>{4c1dba96-86a5-4dfe-9835-1f3beda2009c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Enemy\Normal\Forest">
+      <UniqueIdentifier>{e71ce8ee-73a3-4520-9854-81023daca226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Enemy\Normal\Forest">
+      <UniqueIdentifier>{bd70190b-30d1-47ec-8eec-85327bae92dc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\SimpleFragmentShader.fragmentshader">
@@ -303,7 +333,49 @@
       <Filter>Source Files\Framework</Filter>
     </ClCompile>
     <ClCompile Include="ItemFactory.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Enemy.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CybordMutt.cpp">
+      <Filter>Source Files\GameObject\Enemy\Normal\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lizard.cpp">
+      <Filter>Source Files\GameObject\Enemy\Normal\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Molerat.cpp">
+      <Filter>Source Files\GameObject\Enemy\Normal\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Drone.cpp">
+      <Filter>Source Files\GameObject\Enemy\Normal\City</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RogueMech.cpp">
+      <Filter>Source Files\GameObject\Enemy\Normal\City</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PatrolBot.cpp">
+      <Filter>Source Files\GameObject\Enemy\Normal\City</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Deer.cpp">
+      <Filter>Source Files\GameObject\Enemy\Normal\Forest</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Goat.cpp">
+      <Filter>Source Files\GameObject\Enemy\Normal\Forest</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Wildboar.cpp">
+      <Filter>Source Files\GameObject\Enemy\Normal\Forest</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Centipede.cpp">
+      <Filter>Source Files\GameObject\Enemy\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Acrid_Plant.cpp">
+      <Filter>Source Files\GameObject\Enemy\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Ant_Hill.cpp">
+      <Filter>Source Files\GameObject\Enemy\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scarecrow_Mech.cpp">
+      <Filter>Source Files\GameObject\Enemy\Boss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -468,6 +540,48 @@
     </ClInclude>
     <ClInclude Include="ItemFactory.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Enemy.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CyborgMutt.h">
+      <Filter>Header Files\GameObject\Enemy\Normal\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lizard.h">
+      <Filter>Header Files\GameObject\Enemy\Normal\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Molerat.h">
+      <Filter>Header Files\GameObject\Enemy\Normal\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Drone.h">
+      <Filter>Header Files\GameObject\Enemy\Normal\City</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RogueMech.h">
+      <Filter>Header Files\GameObject\Enemy\Normal\City</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PatrolBot.h">
+      <Filter>Header Files\GameObject\Enemy\Normal\City</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Deer.h">
+      <Filter>Header Files\GameObject\Enemy\Normal\Forest</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Goat.h">
+      <Filter>Header Files\GameObject\Enemy\Normal\Forest</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Wildboar.h">
+      <Filter>Header Files\GameObject\Enemy\Normal\Forest</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Centipede.h">
+      <Filter>Header Files\GameObject\Enemy\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Acrid_Plant.h">
+      <Filter>Header Files\GameObject\Enemy\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Ant_Hill.h">
+      <Filter>Header Files\GameObject\Enemy\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scarecrow_Mech.h">
+      <Filter>Header Files\GameObject\Enemy\Boss</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
