@@ -371,6 +371,12 @@
     <ClCompile Include="Source\Lighting.cpp">
       <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EnemyFactory.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EnemyDataBase.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -594,6 +600,12 @@
     </ClInclude>
     <ClInclude Include="Source\Lighting.h">
       <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EnemyDataBase.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EnemyFactory.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

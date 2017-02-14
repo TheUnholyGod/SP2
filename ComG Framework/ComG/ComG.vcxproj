@@ -112,6 +112,8 @@
     <ClCompile Include="Source\DrinkingWater.cpp" />
     <ClCompile Include="Source\Drone.cpp" />
     <ClCompile Include="Source\Enemy.cpp" />
+    <ClCompile Include="Source\EnemyDataBase.cpp" />
+    <ClCompile Include="Source\EnemyFactory.cpp" />
     <ClCompile Include="Source\Farming_Hoe.cpp" />
     <ClCompile Include="Source\Food.cpp" />
     <ClCompile Include="Source\GameObject.cpp" />
@@ -187,6 +189,8 @@
     <ClInclude Include="Source\DrinkingWater.h" />
     <ClInclude Include="Source\Drone.h" />
     <ClInclude Include="Source\Enemy.h" />
+    <ClInclude Include="Source\EnemyDataBase.h" />
+    <ClInclude Include="Source\EnemyFactory.h" />
     <ClInclude Include="Source\Farming_Hoe.h" />
     <ClInclude Include="Source\Food.h" />
     <ClInclude Include="Source\GameObject.h" />

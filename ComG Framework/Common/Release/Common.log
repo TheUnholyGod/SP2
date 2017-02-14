@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 ﻿  Common.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\Common.lib
+=======
+﻿  MatrixStack.cpp
+  Mtx44.cpp
+  timer.cpp
+  Vector3.cpp
+  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib
+>>>>>>> 15cd184ff29ad0a2222cfaa6a0c3118d17e7cf77

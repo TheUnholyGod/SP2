@@ -23,6 +23,6 @@ ItemFactory* ItemFactory::getItemFactory()
 
 Item* ItemFactory::generateItem(int key)
 {
-	Item* temp = ItemDataBase::getItemDB()->getItem(key);
+	Item* temp = new Item(*(ItemDataBase::getItemDB()->getItem(key)));
 	return temp;
 }
