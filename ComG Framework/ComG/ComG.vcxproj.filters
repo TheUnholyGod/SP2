@@ -145,6 +145,12 @@
     <Filter Include="Source Files\GameObject\Ability">
       <UniqueIdentifier>{c767237a-fb73-410a-a590-35780f499772}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameObject\Ability\Ability List">
+      <UniqueIdentifier>{dcc63ce4-5e21-4bef-8d19-6b77bc36cf8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Ability\Abiltiy List">
+      <UniqueIdentifier>{0f4fad95-6e01-44d2-976b-9e0981b1c9ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\SimpleFragmentShader.fragmentshader">
@@ -356,18 +362,6 @@
     <ClCompile Include="Source\Ability.cpp">
       <Filter>Source Files\GameObject\Ability</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Burrowing.cpp">
-      <Filter>Source Files\GameObject\Ability</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Corrosive.cpp">
-      <Filter>Source Files\GameObject\Ability</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Radioactive.cpp">
-      <Filter>Source Files\GameObject\Ability</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Teleporting.cpp">
-      <Filter>Source Files\GameObject\Ability</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Lighting.cpp">
       <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
     </ClCompile>
@@ -415,6 +409,27 @@
     </ClCompile>
     <ClCompile Include="Source\WaterWell.cpp">
       <Filter>Source Files\GameObject\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Teleporting.cpp">
+      <Filter>Source Files\GameObject\Ability\Ability List</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Burrowing.cpp">
+      <Filter>Source Files\GameObject\Ability\Ability List</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Corrosive.cpp">
+      <Filter>Source Files\GameObject\Ability\Ability List</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Radioactive.cpp">
+      <Filter>Source Files\GameObject\Ability\Ability List</Filter>
+    </ClCompile>
+    <ClCompile Include="AbilityDataBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingDataBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingFactory.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -619,18 +634,6 @@
     <ClInclude Include="Source\Ability.h">
       <Filter>Header Files\GameObject\Ability</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Burrowing.h">
-      <Filter>Header Files\GameObject\Ability</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Corrosive.h">
-      <Filter>Header Files\GameObject\Ability</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Radioactive.h">
-      <Filter>Header Files\GameObject\Ability</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Teleporting.h">
-      <Filter>Header Files\GameObject\Ability</Filter>
-    </ClInclude>
     <ClInclude Include="Source\ItemFactory.h">
       <Filter>Header Files\Factory</Filter>
     </ClInclude>
@@ -641,9 +644,6 @@
       <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
     </ClInclude>
     <ClInclude Include="Source\EnemyDataBase.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EnemyFactory.h">
       <Filter>Header Files\GameObject\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="Source\Barn.h">
@@ -684,6 +684,30 @@
     </ClInclude>
     <ClInclude Include="Source\WaterWell.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EnemyFactory.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Burrowing.h">
+      <Filter>Header Files\GameObject\Ability\Abiltiy List</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Corrosive.h">
+      <Filter>Header Files\GameObject\Ability\Abiltiy List</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Radioactive.h">
+      <Filter>Header Files\GameObject\Ability\Abiltiy List</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Teleporting.h">
+      <Filter>Header Files\GameObject\Ability\Abiltiy List</Filter>
+    </ClInclude>
+    <ClInclude Include="AbilityDataBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingDataBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingFactory.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,16 +1,299 @@
-﻿  Barn.cpp
+﻿  AbilityDataBase.cpp
+  Ability.cpp
+  Acrid_Plant.cpp
+  Adhesives.cpp
+  Ant_Hill.cpp
+  Application.cpp
+  Barn.cpp
+  Biomass.cpp
+  Bread.cpp
   Building.cpp
+  Burrowing.cpp
+  Cabbage.cpp
+  Camera.cpp
+  Camera2.cpp
+  Camera3.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\Camera3.cpp(74): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\Camera3.cpp(83): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+  Carrot.cpp
+  CarrotJuice.cpp
+  Centipede.cpp
+  CircuitBoards.cpp
+  Cloth.cpp
+  Compiling...
+  Compound_Bow.cpp
+  Copper.cpp
+  Corrosive.cpp
   Crafting.cpp
+  CybordMutt.cpp
+  Deer.cpp
   DefenceTower.cpp
   DefensiveWalls.cpp
+  DrinkingWater.cpp
+  Drone.cpp
+  Enemy.cpp
+  EnemyDataBase.cpp
+  EnemyFactory.cpp
+  Farming_Hoe.cpp
   FastTravelRoom.cpp
+  Food.cpp
+  GameObject.cpp
+  Glock_17C.cpp
+  Goat.cpp
+  Gold.cpp
+  Compiling...
   InventoryWarehouse.cpp
+  Iron.cpp
+  Item.cpp
+  ItemDataBase.cpp
+  ItemFactory.cpp
+  Katana_Sword.cpp
+  Kitchen_Knife.cpp
+  Lighting.cpp
+  Lizard.cpp
+  LoadOBJ.cpp
+  LoadTGA.cpp
+  M200_CheyTac_Intervention.cpp
+  main.cpp
+  Mesh.cpp
+  MeshBuilder.cpp
+Source\MeshBuilder.cpp(190): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+Source\MeshBuilder.cpp(192): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
+Source\MeshBuilder.cpp(201): warning C4018: '<=' : signed/unsigned mismatch
+Source\MeshBuilder.cpp(226): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+Source\MeshBuilder.cpp(227): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+Source\MeshBuilder.cpp(234): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+Source\MeshBuilder.cpp(251): warning C4018: '<=' : signed/unsigned mismatch
+Source\MeshBuilder.cpp(276): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+Source\MeshBuilder.cpp(279): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
+Source\MeshBuilder.cpp(292): warning C4018: '<' : signed/unsigned mismatch
+Source\MeshBuilder.cpp(317): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+Source\MeshBuilder.cpp(318): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+Source\MeshBuilder.cpp(322): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+Source\MeshBuilder.cpp(325): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+Source\MeshBuilder.cpp(342): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+Source\MeshBuilder.cpp(349): warning C4018: '<=' : signed/unsigned mismatch
+Source\MeshBuilder.cpp(496): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\MeshBuilder.cpp(497): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\MeshBuilder.cpp(498): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\MeshBuilder.cpp(499): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\MeshBuilder.cpp(597): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+  MetalScraps.cpp
+  Molerat.cpp
   NPCHouse.cpp
   OreMines.cpp
+  PatrolBot.cpp
+  Compiling...
+  Player.cpp
+  Potato.cpp
   PowerGenerator.cpp
+  Radioactive.cpp
+  Renderer.cpp
+  Resources.cpp
+  RogueMech.cpp
+  Salad.cpp
+  Scar-H.cpp
+  Scarecrow_Mech.cpp
+  SceneManager.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+  SceneModel.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneModel.cpp(89): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(91): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(267): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(296): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneModel.cpp(305): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneModel.cpp(314): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneModel.cpp(324): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneModel.cpp(336): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(338): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(592): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(602): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(610): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(614): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(625): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(629): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(633): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(637): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(746): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(878): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(879): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(880): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(881): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(921): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+Source\SceneModel.cpp(926): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+Source\SceneModel.cpp(935): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneModel.cpp(959): warning C4305: 'argument' : truncation from 'double' to 'float'
+Source\SceneModel.cpp(961): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1050): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(1004) : definition of 'i' ignored
+          Source\SceneModel.cpp(954) : definition of 'i' used
+Source\SceneModel.cpp(1053): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(1004) : definition of 'i' ignored
+          Source\SceneModel.cpp(954) : definition of 'i' used
+Source\SceneModel.cpp(1068): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(1004) : definition of 'i' ignored
+          Source\SceneModel.cpp(954) : definition of 'i' used
+Source\SceneModel.cpp(1071): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(1004) : definition of 'i' ignored
+          Source\SceneModel.cpp(954) : definition of 'i' used
+Source\SceneModel.cpp(1086): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(1004) : definition of 'i' ignored
+          Source\SceneModel.cpp(954) : definition of 'i' used
+Source\SceneModel.cpp(1089): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(1004) : definition of 'i' ignored
+          Source\SceneModel.cpp(954) : definition of 'i' used
+Source\SceneModel.cpp(1104): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(1004) : definition of 'i' ignored
+          Source\SceneModel.cpp(954) : definition of 'i' used
+Source\SceneModel.cpp(1107): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(1004) : definition of 'i' ignored
+          Source\SceneModel.cpp(954) : definition of 'i' used
+Source\SceneModel.cpp(1164): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1165): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1177): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1186): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1208): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1209): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1221): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1230): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1264): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1265): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1266): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1267): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1282): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1283): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1284): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1285): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1300): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1301): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1302): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1303): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1322): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1323): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1324): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1325): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1339): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1340): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1341): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1342): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1356): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1357): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1358): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1359): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1405): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+Source\SceneModel.cpp(1410): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+Source\SceneModel.cpp(1415): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+  SceneSplashScreen.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+  SceneUI.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneUI.cpp(86): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(88): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(260): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(289): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneUI.cpp(298): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneUI.cpp(307): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneUI.cpp(317): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneUI.cpp(329): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(331): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(498): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(508): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(516): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(520): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(531): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(535): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(539): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(543): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(652): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(771): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(772): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(773): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(774): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(814): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+Source\SceneUI.cpp(819): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+Source\SceneUI.cpp(828): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneUI.cpp(852): warning C4305: 'argument' : truncation from 'double' to 'float'
+Source\SceneUI.cpp(854): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(943): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(897) : definition of 'i' ignored
+          Source\SceneUI.cpp(847) : definition of 'i' used
+Source\SceneUI.cpp(946): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(897) : definition of 'i' ignored
+          Source\SceneUI.cpp(847) : definition of 'i' used
+Source\SceneUI.cpp(961): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(897) : definition of 'i' ignored
+          Source\SceneUI.cpp(847) : definition of 'i' used
+Source\SceneUI.cpp(964): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(897) : definition of 'i' ignored
+          Source\SceneUI.cpp(847) : definition of 'i' used
+Source\SceneUI.cpp(979): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(897) : definition of 'i' ignored
+          Source\SceneUI.cpp(847) : definition of 'i' used
+Source\SceneUI.cpp(982): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(897) : definition of 'i' ignored
+          Source\SceneUI.cpp(847) : definition of 'i' used
+Source\SceneUI.cpp(997): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(897) : definition of 'i' ignored
+          Source\SceneUI.cpp(847) : definition of 'i' used
+Source\SceneUI.cpp(1000): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(897) : definition of 'i' ignored
+          Source\SceneUI.cpp(847) : definition of 'i' used
+Source\SceneUI.cpp(1057): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1058): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1070): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1079): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1101): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1102): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1114): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1123): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1157): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1158): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1159): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1160): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1175): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1176): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1177): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1178): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1193): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1194): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1195): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1196): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1215): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1216): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1217): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1218): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1232): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1233): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1234): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1235): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1249): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1250): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1251): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1252): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1298): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+Source\SceneUI.cpp(1303): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+Source\SceneUI.cpp(1308): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+  shader.cpp
+  Stone.cpp
+  Teleporting.cpp
   TilledSoil.cpp
   TrophyRoom.cpp
+  Utility.cpp
+  Compiling...
+  VegetableStew.cpp
+  Water.cpp
   WaterWell.cpp
+  Weapon.cpp
+  Wheat.cpp
+  Wildboar.cpp
+  Wood.cpp
   Generating code
   Finished generating code
-  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\ComG.exe
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
