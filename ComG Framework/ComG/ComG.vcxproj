@@ -87,10 +87,8 @@
     <None Include="Shader\SimpleVertexShader.vertexshader" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AbilityDataBase.cpp" />
-    <ClCompile Include="BuildingDataBase.cpp" />
-    <ClCompile Include="BuildingFactory.cpp" />
     <ClCompile Include="Source\Ability.cpp" />
+    <ClCompile Include="Source\AbilityDataBase.cpp" />
     <ClCompile Include="Source\Acrid_Plant.cpp" />
     <ClCompile Include="Source\Adhesives.cpp" />
     <ClCompile Include="Source\Ant_Hill.cpp" />
@@ -99,6 +97,8 @@
     <ClCompile Include="Source\Biomass.cpp" />
     <ClCompile Include="Source\Bread.cpp" />
     <ClCompile Include="Source\Building.cpp" />
+    <ClCompile Include="Source\BuildingDataBase.cpp" />
+    <ClCompile Include="Source\BuildingFactory.cpp" />
     <ClCompile Include="Source\Burrowing.cpp" />
     <ClCompile Include="Source\Cabbage.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
@@ -178,10 +178,8 @@
     <ClCompile Include="Source\Wood.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbilityDataBase.h" />
-    <ClInclude Include="BuildingDataBase.h" />
-    <ClInclude Include="BuildingFactory.h" />
     <ClInclude Include="Source\Ability.h" />
+    <ClInclude Include="Source\AbilityDataBase.h" />
     <ClInclude Include="Source\Acrid_Plant.h" />
     <ClInclude Include="Source\Adhesives.h" />
   </ItemGroup>
@@ -192,6 +190,7 @@
     <ClInclude Include="Source\Biomass.h" />
     <ClInclude Include="Source\Bread.h" />
     <ClInclude Include="Source\Building.h" />
+    <ClInclude Include="Source\BuildingFactory.h" />
     <ClInclude Include="Source\Burrowing.h" />
     <ClInclude Include="Source\Cabbage.h" />
     <ClInclude Include="Source\Camera.h" />

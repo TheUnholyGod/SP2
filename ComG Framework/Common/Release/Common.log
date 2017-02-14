@@ -1,17 +1,1 @@
-<<<<<<< HEAD
-﻿Build started 14/2/2017 11:49:16 AM.
-     1>Project "C:\Users\ValuedAcerCustomer\Documents\SP2\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
-         Common.vcxproj -> C:\Users\ValuedAcerCustomer\Documents\SP2\ComG Framework\Release\Common.lib
-     1>Done Building Project "C:\Users\ValuedAcerCustomer\Documents\SP2\ComG Framework\Common\Common.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.04
-=======
-﻿  MatrixStack.cpp
-  Mtx44.cpp
-  timer.cpp
-  Vector3.cpp
-  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib
->>>>>>> 282a99a219e5725de8623fa711b68f7268a7ff3e
+﻿  Common.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\Common.lib

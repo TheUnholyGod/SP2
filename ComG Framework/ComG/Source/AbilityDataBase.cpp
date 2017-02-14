@@ -1,8 +1,8 @@
 #include "AbilityDataBase.h"
-#include "Source\Corrosive.h"
-#include "Source\Radioactive.h"
-#include "Source\Teleporting.h"
-#include "Source\Burrowing.h"
+#include "Corrosive.h"
+#include "Radioactive.h"
+#include "Teleporting.h"
+#include "Burrowing.h"
 
 AbilityDataBase* AbilityDataBase::Abilitydb_;
 

@@ -1,7 +1,7 @@
 #ifndef _BUILDINGFACTORY_H
 #define _BUILDINGFACTORY_H
 
-#include "Source\Building.h"
+#include "Building.h"
 
 class BuildingFactory
 {
