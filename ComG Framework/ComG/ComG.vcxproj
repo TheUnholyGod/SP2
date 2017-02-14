@@ -124,6 +124,7 @@
     <ClCompile Include="Source\ItemFactory.cpp" />
     <ClCompile Include="Source\Katana_Sword.cpp" />
     <ClCompile Include="Source\Kitchen_Knife.cpp" />
+    <ClCompile Include="Source\Lighting.cpp" />
     <ClCompile Include="Source\Lizard.cpp" />
     <ClCompile Include="Source\LoadOBJ.cpp" />
     <ClCompile Include="Source\LoadTGA.cpp" />
@@ -199,6 +200,7 @@
     <ClInclude Include="Source\Katana_Sword.h" />
     <ClInclude Include="Source\Kitchen_Knife.h" />
     <ClInclude Include="Source\Light.h" />
+    <ClInclude Include="Source\Lighting.h" />
     <ClInclude Include="Source\Lizard.h" />
     <ClInclude Include="Source\LoadOBJ.h" />
     <ClInclude Include="Source\LoadTGA.h" />

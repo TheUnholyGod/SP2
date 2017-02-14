@@ -368,6 +368,9 @@
     <ClCompile Include="Source\Teleporting.cpp">
       <Filter>Source Files\GameObject\Ability</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Lighting.cpp">
+      <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -588,6 +591,9 @@
     </ClInclude>
     <ClInclude Include="Source\Renderer.h">
       <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lighting.h">
+      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
