@@ -1,0 +1,22 @@
+#ifndef INVENTORYWAREHOUSE_H
+#define INVENTORYWAREHOUSE_H
+
+#include "Building.h"
+#include <string>
+
+class InventoryWarehouse : public Building
+{
+protected:
+
+	const std::string kName_;
+	int health_;
+	bool enter_;
+public:
+	InventoryWarehouse(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	virtual ~InventoryWarehouse();
+
+	int get_Health();
+
+};
+
+#endif
