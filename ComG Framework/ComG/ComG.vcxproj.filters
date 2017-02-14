@@ -374,7 +374,6 @@
     <ClCompile Include="Source\EnemyFactory.cpp">
       <Filter>Source Files\GameObject\Enemy</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Source\EnemyDataBase.cpp">
       <Filter>Source Files\GameObject\Enemy</Filter>
     </ClCompile>
@@ -416,10 +415,6 @@
     </ClCompile>
     <ClCompile Include="Source\WaterWell.cpp">
       <Filter>Source Files\GameObject\Buildings</Filter>
-=======
-    <ClCompile Include="EnemyFactory.cpp">
-      <Filter>Source Files\Factory</Filter>
->>>>>>> 5cb45bbda8747a5d1eb272d4b144c7d83717f726
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -651,7 +646,6 @@
     <ClInclude Include="Source\EnemyFactory.h">
       <Filter>Header Files\GameObject\Enemy</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="Source\Barn.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
     </ClInclude>
@@ -690,10 +684,6 @@
     </ClInclude>
     <ClInclude Include="Source\WaterWell.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
-=======
-    <ClInclude Include="EnemyFactory.h">
-      <Filter>Header Files\Factory</Filter>
->>>>>>> 5cb45bbda8747a5d1eb272d4b144c7d83717f726
     </ClInclude>
   </ItemGroup>
 </Project>
