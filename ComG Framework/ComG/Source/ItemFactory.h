@@ -1,7 +1,7 @@
 #ifndef _ITEMFACTORY_H
 #define _ITEMFACTORY_H
 
-#include "Source\Item.h"
+#include "Item.h"
 
 class ItemFactory
 {
