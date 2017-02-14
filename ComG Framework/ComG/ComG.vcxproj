@@ -88,6 +88,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AbilityDataBase.cpp" />
+    <ClCompile Include="BuildingDataBase.cpp" />
+    <ClCompile Include="BuildingFactory.cpp" />
     <ClCompile Include="Source\Ability.cpp" />
     <ClCompile Include="Source\Acrid_Plant.cpp" />
     <ClCompile Include="Source\Adhesives.cpp" />
@@ -177,6 +179,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbilityDataBase.h" />
+    <ClInclude Include="BuildingDataBase.h" />
+    <ClInclude Include="BuildingFactory.h" />
     <ClInclude Include="Source\Ability.h" />
     <ClInclude Include="Source\Acrid_Plant.h" />
     <ClInclude Include="Source\Adhesives.h" />

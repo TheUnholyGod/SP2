@@ -2,9 +2,7 @@
 #define _ENEMY_H
 
 #include "GameObject.h"
-#include "Ability.h"
 #include <string>
-#include <list>
 
 class Enemy : public GameObject
 {
@@ -18,7 +16,7 @@ protected:
 	float health_;			//Enemy HP
 	float defence_;			//Enemy Armour
 	float attack_;			//Enemy Damage
-	const std::list<Ability*> Abilities; //Enemy Abilities
+
 	const std::string kname_;	//Name of Object
 public:
 	Enemy(int, std::string, ENEMYTYPE, std::string, float, float, float);
