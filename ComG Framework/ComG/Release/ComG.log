@@ -1,5 +1,16 @@
-﻿  ItemFactory.cpp
-  Renderer.cpp
+﻿  Barn.cpp
+  Building.cpp
+  Crafting.cpp
+  DefenceTower.cpp
+  DefensiveWalls.cpp
+  FastTravelRoom.cpp
+  InventoryWarehouse.cpp
+  NPCHouse.cpp
+  OreMines.cpp
+  PowerGenerator.cpp
+  TilledSoil.cpp
+  TrophyRoom.cpp
+  WaterWell.cpp
   Generating code
   Finished generating code
   ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\ComG.exe
