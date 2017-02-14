@@ -87,6 +87,8 @@
     <None Include="Shader\SimpleVertexShader.vertexshader" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EnemyDataBase.cpp" />
+    <ClCompile Include="EnemyFactory.cpp" />
     <ClCompile Include="ItemFactory.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Source\Acrid_Plant.cpp" />
@@ -154,6 +156,8 @@
     <ClCompile Include="Source\Wood.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EnemyDataBase.h" />
+    <ClInclude Include="EnemyFactory.h" />
     <ClInclude Include="ItemFactory.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Source\Acrid_Plant.h" />

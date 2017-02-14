@@ -1,9 +1,5 @@
-﻿Build started 2/13/2017 9:36:14 PM.
-     1>Project "F:\Work\Studio Project\SP2Framework\SP2-Git\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
-         Common.vcxproj -> F:\Work\Studio Project\SP2Framework\SP2-Git\ComG Framework\Release\Common.lib
-     1>Done Building Project "F:\Work\Studio Project\SP2Framework\SP2-Git\ComG Framework\Common\Common.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.17
+﻿  MatrixStack.cpp
+  Mtx44.cpp
+  timer.cpp
+  Vector3.cpp
+  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib
