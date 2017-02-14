@@ -157,7 +157,7 @@
     <ClCompile Include="Source\Scar-H.cpp" />
     <ClCompile Include="Source\Scarecrow_Mech.cpp" />
     <ClCompile Include="Source\SceneManager.cpp" />
-    <ClCompile Include="Source\SceneModel.cpp" />
+    <ClCompile Include="Source\SceneBase.cpp" />
     <ClCompile Include="Source\SceneSplashScreen.cpp" />
     <ClCompile Include="Source\SceneUI.cpp" />
     <ClCompile Include="Source\shader.cpp" />
@@ -249,7 +249,7 @@
     <ClInclude Include="Source\Scarecrow_Mech.h" />
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\SceneManager.h" />
-    <ClInclude Include="Source\SceneModel.h" />
+    <ClInclude Include="Source\SceneBase.h" />
     <ClInclude Include="Source\SceneSplashScreen.h" />
     <ClInclude Include="Source\SceneUI.h" />
     <ClInclude Include="Source\shader.hpp" />

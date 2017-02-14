@@ -191,9 +191,6 @@
     <ClCompile Include="Source\Camera3.cpp">
       <Filter>Source Files\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Source\SceneModel.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="Source\SceneUI.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
@@ -416,6 +413,9 @@
     <ClCompile Include="Source\WaterWell.cpp">
       <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
+    <ClCompile Include="Source\SceneBase.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -464,9 +464,6 @@
       <Filter>Header Files\Camera</Filter>
     </ClInclude>
     <ClInclude Include="Source\SceneUI.h">
-      <Filter>Header Files\Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\SceneModel.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="Source\SceneSplashScreen.h">
@@ -684,6 +681,9 @@
     </ClInclude>
     <ClInclude Include="Source\WaterWell.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneBase.h">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
