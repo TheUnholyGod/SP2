@@ -29,55 +29,7 @@ void SceneModel::Init()
 	// Init VBO here
 
 	// Set background color to dark blue
-	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
-
-	//Enable depth buffer and depth testing
-	glEnable(GL_DEPTH_TEST);
-
-	//Enable back face culling
-	glEnable(GL_CULL_FACE);
-
-	//Default to fill mode
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-	// Generate a default VAO for now
-	glGenVertexArrays(1, &m_vertexArrayID);
-	glBindVertexArray(m_vertexArrayID);
-
-	// Enable blending
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-	m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
-
-	m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
-	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
-	m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
-	m_parameters[U_MATERIAL_AMBIENT] = glGetUniformLocation(m_programID, "material.kAmbient");
-	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
-	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
-	m_parameters[U_MATERIAL_SHININESS] = glGetUniformLocation(m_programID, "material.kShininess");
-	m_parameters[U_LIGHT0_POSITION] = glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
-	m_parameters[U_LIGHT0_COLOR] = glGetUniformLocation(m_programID, "lights[0].color");
-	m_parameters[U_LIGHT0_POWER] = glGetUniformLocation(m_programID, "lights[0].power");
-	m_parameters[U_LIGHT0_KC] = glGetUniformLocation(m_programID, "lights[0].kC");
-	m_parameters[U_LIGHT0_KL] = glGetUniformLocation(m_programID, "lights[0].kL");
-	m_parameters[U_LIGHT0_KQ] = glGetUniformLocation(m_programID, "lights[0].kQ");
-	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
-	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
-	m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
-	m_parameters[U_LIGHT0_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[0].spotDirection");
-	m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
-	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
-	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
-	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
-	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
-	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
-	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
-
-
-
-	glUseProgram(m_programID);
+	
 
 	// Make sure you pass uniform parameters after glUseProgram()
 	glUniform1i(m_parameters[U_NUMLIGHTS], 1);
@@ -230,7 +182,7 @@ void SceneModel::Render()
 			fp_camera.position.z, fp_camera.target.x, fp_camera.target.y,
 			fp_camera.target.z, fp_camera.up.x, fp_camera.up.y, fp_camera.up.z);
 	}
-	modelStack.LoadIdentity();
+	Scene::modelStack.LoadIdentity();
 
 	if (light[0].type == Light::LIGHT_DIRECTIONAL)
 	{
@@ -255,89 +207,89 @@ void SceneModel::Render()
 
 	RenderSkybox();
 
-	modelStack.PushMatrix();
-	modelStack.Scale(1000, 1000, 1000);
+	Scene::modelStack.PushMatrix();
+	Scene::modelStack.Scale(1000, 1000, 1000);
 	RenderMesh(meshList[GEO_QUAD], true);
-	modelStack.PopMatrix();
+	Scene::modelStack.PopMatrix();
 
 	if (!fps)
 	{
-		modelStack.PushMatrix();
-		modelStack.Translate(charpos.x, charpos.y - 10, charpos.z);
-		modelStack.Rotate(y, 0, 1, 0);
-		modelStack.Scale(5, 5, 5);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.Translate(charpos.x, charpos.y - 10, charpos.z);
+		Scene::modelStack.Rotate(y, 0, 1, 0);
+		Scene::modelStack.Scale(5, 5, 5);
 		RenderMesh(meshList[GEO_CHARACTERMODEL], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 	}
 
-	//modelStack.PushMatrix();
-	//modelStack.Rotate(90, 1, 0, 0);
-	////modelStack.Rotate(180, 0, 1, 0);
-	////modelStack.Rotate(90, 0, 0, 1);
-	//modelStack.Scale(10, 0, 10);
+	//Scene::modelStack.PushMatrix();
+	//Scene::modelStack.Rotate(90, 1, 0, 0);
+	////Scene::modelStack.Rotate(180, 0, 1, 0);
+	////Scene::modelStack.Rotate(90, 0, 0, 1);
+	//Scene::modelStack.Scale(10, 0, 10);
 	//RenderText(meshList[GEO_TEXT], "Hello World", Color(0, 1, 0));
-	//modelStack.PopMatrix();
+	//Scene::modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-	modelStack.Translate(-220, 0, 210);
-	modelStack.Scale(4, 4, 4);
+	Scene::modelStack.PushMatrix();
+	Scene::modelStack.Translate(-220, 0, 210);
+	Scene::modelStack.Scale(4, 4, 4);
 	RenderMesh(meshList[GEO_BED], true);
-	modelStack.PopMatrix();
+	Scene::modelStack.PopMatrix();
 
-	modelStack.PushMatrix();
-//	modelStack.Translate(-200, 0, 200);
-	modelStack.Scale(4, 4, 4);
+	Scene::modelStack.PushMatrix();
+//	Scene::modelStack.Translate(-200, 0, 200);
+	Scene::modelStack.Scale(4, 4, 4);
 	RenderMesh(meshList[GEO_BARNMODEL], true);
-	modelStack.PopMatrix();
+	Scene::modelStack.PopMatrix();
 
 	for (int i = -250; i <= 250; i += 10)
 	{
-		modelStack.PushMatrix();
-		modelStack.Translate(i, 0, -250);
-		modelStack.Scale(4, 4, 4);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.Translate(i, 0, -250);
+		Scene::modelStack.Scale(4, 4, 4);
 		RenderMesh(meshList[GEO_FENCE], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 	}
 
 	for (int i = -250; i <= 250; i += 10)
 	{
-		modelStack.PushMatrix();
-		modelStack.Translate(i, 0, 250);
-		modelStack.Scale(4, 4, 4);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.Translate(i, 0, 250);
+		Scene::modelStack.Scale(4, 4, 4);
 		RenderMesh(meshList[GEO_FENCE], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 	}
 
 	for (int i = -250; i <= 250; i += 10)
 	{
-		modelStack.PushMatrix();
-		modelStack.Translate(250, 0, i);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Scale(4, 4, 4);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.Translate(250, 0, i);
+		Scene::modelStack.Rotate(90, 0, 1, 0);
+		Scene::modelStack.Scale(4, 4, 4);
 		RenderMesh(meshList[GEO_FENCE], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 	}
 
 	for (int i = -250; i <= 250; i += 10)
 	{
-		modelStack.PushMatrix();
-		modelStack.Translate(-250, 0, i);
-		modelStack.Rotate(90, 0, 1, 0);
-		modelStack.Scale(4, 4, 4);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.Translate(-250, 0, i);
+		Scene::modelStack.Rotate(90, 0, 1, 0);
+		Scene::modelStack.Scale(4, 4, 4);
 		RenderMesh(meshList[GEO_FENCE], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 	}
 
 	for (auto &i : allvegetables)
 	{
-		modelStack.PushMatrix();
-		modelStack.Translate(i->vegepos.x, i->vegepos.y, i->vegepos.z);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.Translate(i->vegepos.x, i->vegepos.y, i->vegepos.z);
 		if (!i->picked)
-			modelStack.Scale(i->growpotato, i->growpotato, i->growpotato);
+			Scene::modelStack.Scale(i->growpotato, i->growpotato, i->growpotato);
 		else
-			modelStack.Scale(i->growpotato*0.1, i->growpotato*0.1, i->growpotato*0.1);
+			Scene::modelStack.Scale(i->growpotato*0.1, i->growpotato*0.1, i->growpotato*0.1);
 		RenderMesh(meshList[i->numtype], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 	}
 
 	RenderTextOnScreen(meshList[GEO_TEXT], charx, Color(0, 1, 0), 3, 1, 3);
@@ -372,9 +324,9 @@ void SceneModel::RenderMesh(Mesh *mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 
-	MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top();
+	MVP = projectionStack.Top() * viewStack.Top() * Scene::modelStack.Top();
 	glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
-	modelView = viewStack.Top() * modelStack.Top();
+	modelView = viewStack.Top() * Scene::modelStack.Top();
 	glUniformMatrix4fv(m_parameters[U_MODELVIEW], 1, GL_FALSE, &modelView.a[0]);
 	if (enableLight)
 	{
@@ -475,14 +427,14 @@ void SceneModel::LoadSkybox()
 
 void SceneModel::RenderSkybox()
 {
-	modelStack.PushMatrix();
-	modelStack.Translate(charpos.x, 0, charpos.z);
-	modelStack.PushMatrix();
-	modelStack.Scale(1000, 1000, 1000);
-	modelStack.PushMatrix();
-	modelStack.Rotate(90, 0, 0, 1);
-	modelStack.Rotate(270, 1, 0, 0);
-	modelStack.Translate(0, 0.5, 0);
+	Scene::modelStack.PushMatrix();
+	Scene::modelStack.Translate(charpos.x, 0, charpos.z);
+	Scene::modelStack.PushMatrix();
+	Scene::modelStack.Scale(1000, 1000, 1000);
+	Scene::modelStack.PushMatrix();
+	Scene::modelStack.Rotate(90, 0, 0, 1);
+	Scene::modelStack.Rotate(270, 1, 0, 0);
+	Scene::modelStack.Translate(0, 0.5, 0);
 
 	if (sunup == 1)
 		RenderMesh(meshList[GEO_LEFT], false);
@@ -493,11 +445,11 @@ void SceneModel::RenderSkybox()
 	else if (sunup == 3)
 		RenderMesh(meshList[GEO_LEFT2], false);
 
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Translate(0, -0.5, 0);
-	modelStack.Scale(1, 1, -1);
+	Scene::modelStack.PopMatrix();
+	Scene::modelStack.PushMatrix();
+	Scene::modelStack.Rotate(-90, 0, 1, 0);
+	Scene::modelStack.Translate(0, -0.5, 0);
+	Scene::modelStack.Scale(1, 1, -1);
 
 	if (sunup == 1)
 		RenderMesh(meshList[GEO_BOTTOM], false);
@@ -508,11 +460,11 @@ void SceneModel::RenderSkybox()
 	else if (sunup == 3)
 		RenderMesh(meshList[GEO_BOTTOM2], false);
 
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Rotate(90, 0, 0, 1);
-	modelStack.Rotate(90, 1, 0, 0);
-	modelStack.Translate(0, 0.5, 0);
+	Scene::modelStack.PopMatrix();
+	Scene::modelStack.PushMatrix();
+	Scene::modelStack.Rotate(90, 0, 0, 1);
+	Scene::modelStack.Rotate(90, 1, 0, 0);
+	Scene::modelStack.Translate(0, 0.5, 0);
 
 	if (sunup == 1)
 		RenderMesh(meshList[GEO_RIGHT], false);
@@ -523,11 +475,11 @@ void SceneModel::RenderSkybox()
 	else if (sunup == 3)
 		RenderMesh(meshList[GEO_RIGHT2], false);
 
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(0.5, 0, 0);
-	modelStack.Rotate(90, 0, 0, 1);
-	modelStack.Rotate(180, 1, 0, 0);
+	Scene::modelStack.PopMatrix();
+	Scene::modelStack.PushMatrix();
+	Scene::modelStack.Translate(0.5, 0, 0);
+	Scene::modelStack.Rotate(90, 0, 0, 1);
+	Scene::modelStack.Rotate(180, 1, 0, 0);
 
 	if (sunup == 1)
 		RenderMesh(meshList[GEO_BACK], false);
@@ -538,10 +490,10 @@ void SceneModel::RenderSkybox()
 	else if (sunup == 3)
 		RenderMesh(meshList[GEO_BACK2], false);
 
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Translate(0, 0.5, 0);
+	Scene::modelStack.PopMatrix();
+	Scene::modelStack.PushMatrix();
+	Scene::modelStack.Rotate(90, 0, 1, 0);
+	Scene::modelStack.Translate(0, 0.5, 0);
 
 	if (sunup == 1)
 		RenderMesh(meshList[GEO_TOP], false);
@@ -552,9 +504,9 @@ void SceneModel::RenderSkybox()
 	else if (sunup == 3)
 		RenderMesh(meshList[GEO_TOP2], false);
 
-	modelStack.PopMatrix();
-	modelStack.Translate(-0.5, 0, 0);
-	modelStack.Rotate(90, 0, 0, 1);
+	Scene::modelStack.PopMatrix();
+	Scene::modelStack.Translate(-0.5, 0, 0);
+	Scene::modelStack.Rotate(90, 0, 0, 1);
 
 	if (sunup == 1)
 		RenderMesh(meshList[GEO_FRONT], false);
@@ -565,8 +517,8 @@ void SceneModel::RenderSkybox()
 	else if (sunup == 3)
 		RenderMesh(meshList[GEO_FRONT2], false);
 
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
+	Scene::modelStack.PopMatrix();
+	Scene::modelStack.PopMatrix();
 }
 
 void SceneModel::DebugMode(double dt)
@@ -683,7 +635,7 @@ void SceneModel::RenderText(Mesh* mesh, std::string text, Color color)
 	{
 		Mtx44 characterSpacing;
 		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
-		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
+		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * Scene::modelStack.Top() * characterSpacing;
 		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
 		mesh->Render((unsigned)text[i] * 6, 6);
@@ -705,10 +657,10 @@ void SceneModel::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 		projectionStack.LoadMatrix(ortho);
 		viewStack.PushMatrix();
 		viewStack.LoadIdentity(); //No need camera for ortho mode
-		modelStack.PushMatrix();
-		modelStack.LoadIdentity(); //Reset modelStack
-		modelStack.Scale(size, size, size);
-		modelStack.Translate(x, y, 0);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.LoadIdentity(); //Reset Scene::modelStack
+		Scene::modelStack.Scale(size, size, size);
+		Scene::modelStack.Translate(x, y, 0);
 
 		glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 		glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
@@ -721,7 +673,7 @@ void SceneModel::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 		{
 			Mtx44 characterSpacing;
 			characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
-			Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
+			Mtx44 MVP = projectionStack.Top() * viewStack.Top() * Scene::modelStack.Top() * characterSpacing;
 			glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
 			mesh->Render((unsigned)text[i] * 6, 6);
@@ -731,7 +683,7 @@ void SceneModel::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, f
 
 		projectionStack.PopMatrix();
 		viewStack.PopMatrix();
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 		glEnable(GL_DEPTH_TEST);
 }
 
@@ -953,177 +905,177 @@ void SceneModel::renderGoat()
 {
 	for (auto &i : allgoats)
 	{
-		modelStack.PushMatrix();
-		modelStack.Translate(i->goatspos.x, i->goatspos.y + 5, i->goatspos.z);
-		modelStack.Rotate(i->yrotate, 0, 1, 0);
-		modelStack.Scale(0.1, 0.1, 0.1);
-		modelStack.PushMatrix();
-		modelStack.Translate(x, 0, z);
-		modelStack.PushMatrix(); //Body
-		modelStack.PushMatrix(); //Body Cylinder
-		modelStack.PushMatrix(); //Body Front Sphere
-		modelStack.Translate(0, 0, -20);
-		modelStack.PushMatrix();//Neck
-		modelStack.Translate(0, 0, -20);
-		modelStack.PushMatrix(); //Head
-		modelStack.Rotate(25, 1, 0, 0);
-		modelStack.PushMatrix(); //Head
-		modelStack.Translate(0, 10, -20);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.Translate(i->goatspos.x, i->goatspos.y + 5, i->goatspos.z);
+		Scene::modelStack.Rotate(i->yrotate, 0, 1, 0);
+		Scene::modelStack.Scale(0.1, 0.1, 0.1);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.Translate(x, 0, z);
+		Scene::modelStack.PushMatrix(); //Body
+		Scene::modelStack.PushMatrix(); //Body Cylinder
+		Scene::modelStack.PushMatrix(); //Body Front Sphere
+		Scene::modelStack.Translate(0, 0, -20);
+		Scene::modelStack.PushMatrix();//Neck
+		Scene::modelStack.Translate(0, 0, -20);
+		Scene::modelStack.PushMatrix(); //Head
+		Scene::modelStack.Rotate(25, 1, 0, 0);
+		Scene::modelStack.PushMatrix(); //Head
+		Scene::modelStack.Translate(0, 10, -20);
 
-		modelStack.PushMatrix();//Eyes
-		modelStack.Translate(5, 6, -5.5f);
+		Scene::modelStack.PushMatrix();//Eyes
+		Scene::modelStack.Translate(5, 6, -5.5f);
 		RenderMesh(meshList[GEO_EYES], true);
-		modelStack.PushMatrix();//Pupil
-		modelStack.Translate(1.f, 0, -1.f);
-		modelStack.Scale(0.75f, 0.1f, 1);
+		Scene::modelStack.PushMatrix();//Pupil
+		Scene::modelStack.Translate(1.f, 0, -1.f);
+		Scene::modelStack.Scale(0.75f, 0.1f, 1);
 		RenderMesh(meshList[GEO_EYEPUPIL], true);
-		modelStack.PopMatrix();
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 
-		modelStack.PushMatrix();//Eyes
-		modelStack.Translate(-5, 6, -5.5f);
+		Scene::modelStack.PushMatrix();//Eyes
+		Scene::modelStack.Translate(-5, 6, -5.5f);
 		RenderMesh(meshList[GEO_EYES], true);
-		modelStack.PushMatrix();//Pupil
-		modelStack.Translate(-1.f, 0, -1.f);
-		modelStack.Scale(0.75f, 0.1f, 1);
+		Scene::modelStack.PushMatrix();//Pupil
+		Scene::modelStack.Translate(-1.f, 0, -1.f);
+		Scene::modelStack.Scale(0.75f, 0.1f, 1);
 		RenderMesh(meshList[GEO_EYEPUPIL], true);
-		modelStack.PopMatrix();
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 		for (float i = 0; i < 30; i += 0.5f) //Horn1
 		{
-			modelStack.PushMatrix();
-			modelStack.Translate(4, 10, 0);
-			modelStack.PushMatrix();
-			modelStack.Rotate(i, 1, 0, 0);
-			modelStack.Translate(0, i, 0);
-			modelStack.Scale(0.5f, 0.3f, 0.5f);
+			Scene::modelStack.PushMatrix();
+			Scene::modelStack.Translate(4, 10, 0);
+			Scene::modelStack.PushMatrix();
+			Scene::modelStack.Rotate(i, 1, 0, 0);
+			Scene::modelStack.Translate(0, i, 0);
+			Scene::modelStack.Scale(0.5f, 0.3f, 0.5f);
 			RenderMesh(meshList[GEO_HORN1], true);
-			modelStack.PopMatrix();
-			modelStack.PopMatrix();
+			Scene::modelStack.PopMatrix();
+			Scene::modelStack.PopMatrix();
 		}
 		for (float i = 0; i < 15; i += 0.5f) //Horn2
 		{
-			modelStack.PushMatrix();
-			modelStack.Translate(-4, 10, 0);
-			modelStack.PushMatrix();
-			modelStack.Rotate(i, 1, 0, 0);
-			modelStack.Translate(0, i, 0);
-			modelStack.Scale(0.5f, 0.7f, 0.5f);
+			Scene::modelStack.PushMatrix();
+			Scene::modelStack.Translate(-4, 10, 0);
+			Scene::modelStack.PushMatrix();
+			Scene::modelStack.Rotate(i, 1, 0, 0);
+			Scene::modelStack.Translate(0, i, 0);
+			Scene::modelStack.Scale(0.5f, 0.7f, 0.5f);
 			RenderMesh(meshList[GEO_HORN2], true);
-			modelStack.PopMatrix();
-			modelStack.PopMatrix();
+			Scene::modelStack.PopMatrix();
+			Scene::modelStack.PopMatrix();
 		}
-		modelStack.PushMatrix(); //HeadTop
-		modelStack.Translate(0, 10, 0);
-		modelStack.PushMatrix();
-		modelStack.Translate(0, -20, 0);
-		modelStack.PushMatrix();
-		modelStack.Rotate(180, 1, 0, 0);
-		modelStack.Scale(1.25f, 1.25f, 1.25f);
+		Scene::modelStack.PushMatrix(); //HeadTop
+		Scene::modelStack.Translate(0, 10, 0);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.Translate(0, -20, 0);
+		Scene::modelStack.PushMatrix();
+		Scene::modelStack.Rotate(180, 1, 0, 0);
+		Scene::modelStack.Scale(1.25f, 1.25f, 1.25f);
 		RenderMesh(meshList[GEO_HEADCONE], true);
-		modelStack.PopMatrix();
-		modelStack.Scale(1.25f, 1.25f, 1.25f);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.Scale(1.25f, 1.25f, 1.25f);
 		RenderMesh(meshList[GEO_HEADSPHERE], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 		RenderMesh(meshList[GEO_HEADSPHERE], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 		RenderMesh(meshList[GEO_HEADCYLINDER], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 
-		modelStack.PopMatrix(); //Head End
-		modelStack.Rotate(-45, 1, 0, 0);
-		modelStack.Scale(1, 2, 1);
+		Scene::modelStack.PopMatrix(); //Head End
+		Scene::modelStack.Rotate(-45, 1, 0, 0);
+		Scene::modelStack.Scale(1, 2, 1);
 		RenderMesh(meshList[GEO_NECK], true);
-		modelStack.PopMatrix();
-		modelStack.Scale(1.875f, 2.5f, 1.875f);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.Scale(1.875f, 2.5f, 1.875f);
 		RenderMesh(meshList[GEO_BODYSPHERE], true);
-		modelStack.PopMatrix();
-		modelStack.PushMatrix(); //Body Back Sphere
-		modelStack.Translate(0, 0, 20);
-		modelStack.Scale(1.875f, 2.5f, 1.875f);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.PushMatrix(); //Body Back Sphere
+		Scene::modelStack.Translate(0, 0, 20);
+		Scene::modelStack.Scale(1.875f, 2.5f, 1.875f);
 		RenderMesh(meshList[GEO_BODYSPHERE], true);
-		modelStack.PopMatrix();
-		modelStack.PushMatrix(); //Legs
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.PushMatrix(); //Legs
 
-		modelStack.PushMatrix(); //Legs Top Cylinder (Front Right Leg)
-		modelStack.Translate(8, -20, -20);
-		modelStack.Rotate(i->legrotate1, 1, 0, 0);
-		modelStack.PushMatrix(); //Legs Sphere
-		modelStack.Translate(0, -12.5, 0);
-		modelStack.Rotate(i->legrotate2, 1, 0, 0);
-		modelStack.PushMatrix(); //Legs Bottom Cylinder
-		modelStack.Translate(0, -12.5, 0);
-		modelStack.Scale(2.5, 5, 2.5);
+		Scene::modelStack.PushMatrix(); //Legs Top Cylinder (Front Right Leg)
+		Scene::modelStack.Translate(8, -20, -20);
+		Scene::modelStack.Rotate(i->legrotate1, 1, 0, 0);
+		Scene::modelStack.PushMatrix(); //Legs Sphere
+		Scene::modelStack.Translate(0, -12.5, 0);
+		Scene::modelStack.Rotate(i->legrotate2, 1, 0, 0);
+		Scene::modelStack.PushMatrix(); //Legs Bottom Cylinder
+		Scene::modelStack.Translate(0, -12.5, 0);
+		Scene::modelStack.Scale(2.5, 5, 2.5);
 		RenderMesh(meshList[GEO_LEGCYLINDER], true);
-		modelStack.PopMatrix();
-		modelStack.Scale(2.5, 2.5, 2.5);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.Scale(2.5, 2.5, 2.5);
 		RenderMesh(meshList[GEO_LEGSPHERE], true);
-		modelStack.PopMatrix();
-		modelStack.Scale(2.5, 5, 2.5);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.Scale(2.5, 5, 2.5);
 		RenderMesh(meshList[GEO_LEGCYLINDER], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 
-		modelStack.PushMatrix(); //Legs Top Cylinder (Front Left Leg)
-		modelStack.Translate(-8, -20, -20);
-		modelStack.Rotate(i->legrotate2, 1, 0, 0);
-		modelStack.PushMatrix(); //Legs Sphere
-		modelStack.Translate(0, -12.5, 0);
-		modelStack.Rotate(i->legrotate1, 1, 0, 0);
-		modelStack.PushMatrix(); //Legs Bottom Cylinder
-		modelStack.Translate(0, -12.5, 0);
-		modelStack.Scale(2.5, 5, 2.5);
+		Scene::modelStack.PushMatrix(); //Legs Top Cylinder (Front Left Leg)
+		Scene::modelStack.Translate(-8, -20, -20);
+		Scene::modelStack.Rotate(i->legrotate2, 1, 0, 0);
+		Scene::modelStack.PushMatrix(); //Legs Sphere
+		Scene::modelStack.Translate(0, -12.5, 0);
+		Scene::modelStack.Rotate(i->legrotate1, 1, 0, 0);
+		Scene::modelStack.PushMatrix(); //Legs Bottom Cylinder
+		Scene::modelStack.Translate(0, -12.5, 0);
+		Scene::modelStack.Scale(2.5, 5, 2.5);
 		RenderMesh(meshList[GEO_LEGCYLINDER], true);
-		modelStack.PopMatrix();
-		modelStack.Scale(2.5, 2.5, 2.5);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.Scale(2.5, 2.5, 2.5);
 		RenderMesh(meshList[GEO_LEGSPHERE], true);
-		modelStack.PopMatrix();
-		modelStack.Scale(2.5, 5, 2.5);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.Scale(2.5, 5, 2.5);
 		RenderMesh(meshList[GEO_LEGCYLINDER], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 
-		modelStack.PushMatrix(); //Legs Top Cylinder (Back Right Leg)
-		modelStack.Translate(8, -20, 20);
-		modelStack.Rotate(i->legrotate2, 1, 0, 0);
-		modelStack.PushMatrix(); //Legs Sphere
-		modelStack.Translate(0, -12.5, 0);
-		modelStack.Rotate(i->legrotate1, 1, 0, 0);
-		modelStack.PushMatrix(); //Legs Bottom Cylinder
-		modelStack.Translate(0, -12.5, 0);
-		modelStack.Scale(2.5, 5, 2.5);
+		Scene::modelStack.PushMatrix(); //Legs Top Cylinder (Back Right Leg)
+		Scene::modelStack.Translate(8, -20, 20);
+		Scene::modelStack.Rotate(i->legrotate2, 1, 0, 0);
+		Scene::modelStack.PushMatrix(); //Legs Sphere
+		Scene::modelStack.Translate(0, -12.5, 0);
+		Scene::modelStack.Rotate(i->legrotate1, 1, 0, 0);
+		Scene::modelStack.PushMatrix(); //Legs Bottom Cylinder
+		Scene::modelStack.Translate(0, -12.5, 0);
+		Scene::modelStack.Scale(2.5, 5, 2.5);
 		RenderMesh(meshList[GEO_LEGCYLINDER], true);
-		modelStack.PopMatrix();
-		modelStack.Scale(2.5, 2.5, 2.5);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.Scale(2.5, 2.5, 2.5);
 		RenderMesh(meshList[GEO_LEGSPHERE], true);
-		modelStack.PopMatrix();
-		modelStack.Scale(2.5, 5, 2.5);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.Scale(2.5, 5, 2.5);
 		RenderMesh(meshList[GEO_LEGCYLINDER], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 
-		modelStack.PushMatrix(); //Legs Top Cylinder (Back Left Leg)
-		modelStack.Translate(-8, -20, 20);
-		modelStack.Rotate(i->legrotate1, 1, 0, 0);
-		modelStack.PushMatrix(); //Legs Sphere
-		modelStack.Translate(0, -12.5, 0);
-		modelStack.Rotate(i->legrotate2, 1, 0, 0);
-		modelStack.PushMatrix(); //Legs Bottom Cylinder
-		modelStack.Translate(0, -12.5, 0);
-		modelStack.Scale(2.5, 5, 2.5);
+		Scene::modelStack.PushMatrix(); //Legs Top Cylinder (Back Left Leg)
+		Scene::modelStack.Translate(-8, -20, 20);
+		Scene::modelStack.Rotate(i->legrotate1, 1, 0, 0);
+		Scene::modelStack.PushMatrix(); //Legs Sphere
+		Scene::modelStack.Translate(0, -12.5, 0);
+		Scene::modelStack.Rotate(i->legrotate2, 1, 0, 0);
+		Scene::modelStack.PushMatrix(); //Legs Bottom Cylinder
+		Scene::modelStack.Translate(0, -12.5, 0);
+		Scene::modelStack.Scale(2.5, 5, 2.5);
 		RenderMesh(meshList[GEO_LEGCYLINDER], true);
-		modelStack.PopMatrix();
-		modelStack.Scale(2.5, 2.5, 2.5);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.Scale(2.5, 2.5, 2.5);
 		RenderMesh(meshList[GEO_LEGSPHERE], true);
-		modelStack.PopMatrix();
-		modelStack.Scale(2.5, 5, 2.5);
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.Scale(2.5, 5, 2.5);
 		RenderMesh(meshList[GEO_LEGCYLINDER], true);
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
 
-		modelStack.PopMatrix(); //Legs End
-		modelStack.Rotate(90, 1, 0, 0);
-		modelStack.Scale(1.875f, 2, 2.5f);
+		Scene::modelStack.PopMatrix(); //Legs End
+		Scene::modelStack.Rotate(90, 1, 0, 0);
+		Scene::modelStack.Scale(1.875f, 2, 2.5f);
 		RenderMesh(meshList[GEO_BODYCYLINDER], true);
-		modelStack.PopMatrix();
-		modelStack.PopMatrix(); //Body End
-		modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix();
+		Scene::modelStack.PopMatrix(); //Body End
+		Scene::modelStack.PopMatrix();
 	}
 }
 

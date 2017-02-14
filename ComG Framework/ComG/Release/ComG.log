@@ -1,16 +1,251 @@
-﻿  Barn.cpp
-  Building.cpp
-  Crafting.cpp
-  DefenceTower.cpp
-  DefensiveWalls.cpp
-  FastTravelRoom.cpp
-  InventoryWarehouse.cpp
-  NPCHouse.cpp
-  OreMines.cpp
-  PowerGenerator.cpp
-  TilledSoil.cpp
-  TrophyRoom.cpp
-  WaterWell.cpp
-  Generating code
-  Finished generating code
-  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\ComG.exe
+﻿  Application.cpp
+  Camera.cpp
+  Camera2.cpp
+  Camera3.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\Camera3.cpp(74): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\Camera3.cpp(83): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+  SceneManager.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+  SceneModel.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneModel.cpp(41): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(43): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(219): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(248): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneModel.cpp(257): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneModel.cpp(266): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneModel.cpp(276): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneModel.cpp(288): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(290): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(544): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(554): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(562): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(566): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(577): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(581): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(585): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(589): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(698): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(830): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(831): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(832): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(833): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(873): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+Source\SceneModel.cpp(878): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+Source\SceneModel.cpp(887): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneModel.cpp(911): warning C4305: 'argument' : truncation from 'double' to 'float'
+Source\SceneModel.cpp(913): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1002): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(956) : definition of 'i' ignored
+          Source\SceneModel.cpp(906) : definition of 'i' used
+Source\SceneModel.cpp(1005): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(956) : definition of 'i' ignored
+          Source\SceneModel.cpp(906) : definition of 'i' used
+Source\SceneModel.cpp(1020): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(956) : definition of 'i' ignored
+          Source\SceneModel.cpp(906) : definition of 'i' used
+Source\SceneModel.cpp(1023): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(956) : definition of 'i' ignored
+          Source\SceneModel.cpp(906) : definition of 'i' used
+Source\SceneModel.cpp(1038): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(956) : definition of 'i' ignored
+          Source\SceneModel.cpp(906) : definition of 'i' used
+Source\SceneModel.cpp(1041): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(956) : definition of 'i' ignored
+          Source\SceneModel.cpp(906) : definition of 'i' used
+Source\SceneModel.cpp(1056): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(956) : definition of 'i' ignored
+          Source\SceneModel.cpp(906) : definition of 'i' used
+Source\SceneModel.cpp(1059): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneModel.cpp(956) : definition of 'i' ignored
+          Source\SceneModel.cpp(906) : definition of 'i' used
+Source\SceneModel.cpp(1116): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1117): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1129): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1138): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1160): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1161): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1173): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1182): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1216): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1217): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1218): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1219): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1234): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1235): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1236): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1237): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1252): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1253): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1254): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1255): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1274): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1275): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1276): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1277): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1291): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1292): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1293): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1294): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1308): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1309): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1310): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1311): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneModel.cpp(1357): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+Source\SceneModel.cpp(1362): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+Source\SceneModel.cpp(1367): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+  SceneSplashScreen.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+  SceneUI.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneUI.cpp(39): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(41): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(213): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(242): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneUI.cpp(251): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneUI.cpp(260): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneUI.cpp(270): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneUI.cpp(282): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(284): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(451): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(461): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(469): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(473): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(484): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(488): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(492): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(496): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(605): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(724): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(725): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(726): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(727): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(767): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+Source\SceneUI.cpp(772): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+Source\SceneUI.cpp(781): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneUI.cpp(805): warning C4305: 'argument' : truncation from 'double' to 'float'
+Source\SceneUI.cpp(807): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(896): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(850) : definition of 'i' ignored
+          Source\SceneUI.cpp(800) : definition of 'i' used
+Source\SceneUI.cpp(899): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(850) : definition of 'i' ignored
+          Source\SceneUI.cpp(800) : definition of 'i' used
+Source\SceneUI.cpp(914): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(850) : definition of 'i' ignored
+          Source\SceneUI.cpp(800) : definition of 'i' used
+Source\SceneUI.cpp(917): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(850) : definition of 'i' ignored
+          Source\SceneUI.cpp(800) : definition of 'i' used
+Source\SceneUI.cpp(932): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(850) : definition of 'i' ignored
+          Source\SceneUI.cpp(800) : definition of 'i' used
+Source\SceneUI.cpp(935): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(850) : definition of 'i' ignored
+          Source\SceneUI.cpp(800) : definition of 'i' used
+Source\SceneUI.cpp(950): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(850) : definition of 'i' ignored
+          Source\SceneUI.cpp(800) : definition of 'i' used
+Source\SceneUI.cpp(953): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+          Source\SceneUI.cpp(850) : definition of 'i' ignored
+          Source\SceneUI.cpp(800) : definition of 'i' used
+Source\SceneUI.cpp(1010): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1011): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1023): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1032): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1054): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1055): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1067): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1076): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1110): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1111): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1112): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1113): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1128): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1129): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1130): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1131): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1146): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1147): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1148): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1149): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1168): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1169): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1170): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1171): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1185): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1186): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1187): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1188): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1202): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1203): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1204): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1205): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+Source\SceneUI.cpp(1251): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+Source\SceneUI.cpp(1256): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+Source\SceneUI.cpp(1261): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+  main.cpp
+Camera.obj : error LNK2005: "public: static unsigned int Scene::m_programID" (?m_programID@Scene@@2IA) already defined in Application.obj
+Camera.obj : error LNK2005: "public: static class MS Scene::viewStack" (?viewStack@Scene@@2VMS@@A) already defined in Application.obj
+Camera.obj : error LNK2005: "public: static class MS Scene::modelStack" (?modelStack@Scene@@2VMS@@A) already defined in Application.obj
+Camera.obj : error LNK2005: "public: static unsigned int Scene::m_vertexArrayID" (?m_vertexArrayID@Scene@@2IA) already defined in Application.obj
+Camera.obj : error LNK2005: "public: static unsigned int * Scene::m_parameters" (?m_parameters@Scene@@2PAIA) already defined in Application.obj
+Camera.obj : error LNK2005: "class Mesh Scene::* * meshList" (?meshList@@3PAPQScene@@VMesh@@A) already defined in Application.obj
+Camera.obj : error LNK2005: "public: static class MS Scene::projectionStack" (?projectionStack@Scene@@2VMS@@A) already defined in Application.obj
+Camera2.obj : error LNK2005: "public: static unsigned int Scene::m_programID" (?m_programID@Scene@@2IA) already defined in Application.obj
+Camera2.obj : error LNK2005: "public: static class MS Scene::viewStack" (?viewStack@Scene@@2VMS@@A) already defined in Application.obj
+Camera2.obj : error LNK2005: "public: static class MS Scene::modelStack" (?modelStack@Scene@@2VMS@@A) already defined in Application.obj
+Camera2.obj : error LNK2005: "public: static unsigned int Scene::m_vertexArrayID" (?m_vertexArrayID@Scene@@2IA) already defined in Application.obj
+Camera2.obj : error LNK2005: "public: static unsigned int * Scene::m_parameters" (?m_parameters@Scene@@2PAIA) already defined in Application.obj
+Camera2.obj : error LNK2005: "class Mesh Scene::* * meshList" (?meshList@@3PAPQScene@@VMesh@@A) already defined in Application.obj
+Camera2.obj : error LNK2005: "public: static class MS Scene::projectionStack" (?projectionStack@Scene@@2VMS@@A) already defined in Application.obj
+Camera3.obj : error LNK2005: "public: static unsigned int Scene::m_programID" (?m_programID@Scene@@2IA) already defined in Application.obj
+Camera3.obj : error LNK2005: "public: static class MS Scene::viewStack" (?viewStack@Scene@@2VMS@@A) already defined in Application.obj
+Camera3.obj : error LNK2005: "public: static class MS Scene::modelStack" (?modelStack@Scene@@2VMS@@A) already defined in Application.obj
+Camera3.obj : error LNK2005: "public: static unsigned int Scene::m_vertexArrayID" (?m_vertexArrayID@Scene@@2IA) already defined in Application.obj
+Camera3.obj : error LNK2005: "public: static unsigned int * Scene::m_parameters" (?m_parameters@Scene@@2PAIA) already defined in Application.obj
+Camera3.obj : error LNK2005: "class Mesh Scene::* * meshList" (?meshList@@3PAPQScene@@VMesh@@A) already defined in Application.obj
+Camera3.obj : error LNK2005: "public: static class MS Scene::projectionStack" (?projectionStack@Scene@@2VMS@@A) already defined in Application.obj
+main.obj : error LNK2005: "public: static unsigned int Scene::m_programID" (?m_programID@Scene@@2IA) already defined in Application.obj
+main.obj : error LNK2005: "public: static class MS Scene::viewStack" (?viewStack@Scene@@2VMS@@A) already defined in Application.obj
+main.obj : error LNK2005: "public: static class MS Scene::modelStack" (?modelStack@Scene@@2VMS@@A) already defined in Application.obj
+main.obj : error LNK2005: "public: static unsigned int Scene::m_vertexArrayID" (?m_vertexArrayID@Scene@@2IA) already defined in Application.obj
+main.obj : error LNK2005: "public: static unsigned int * Scene::m_parameters" (?m_parameters@Scene@@2PAIA) already defined in Application.obj
+main.obj : error LNK2005: "class Mesh Scene::* * meshList" (?meshList@@3PAPQScene@@VMesh@@A) already defined in Application.obj
+main.obj : error LNK2005: "public: static class MS Scene::projectionStack" (?projectionStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneManager.obj : error LNK2005: "public: static unsigned int Scene::m_programID" (?m_programID@Scene@@2IA) already defined in Application.obj
+SceneManager.obj : error LNK2005: "public: static class MS Scene::viewStack" (?viewStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneManager.obj : error LNK2005: "public: static class MS Scene::modelStack" (?modelStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneManager.obj : error LNK2005: "public: static unsigned int Scene::m_vertexArrayID" (?m_vertexArrayID@Scene@@2IA) already defined in Application.obj
+SceneManager.obj : error LNK2005: "public: static unsigned int * Scene::m_parameters" (?m_parameters@Scene@@2PAIA) already defined in Application.obj
+SceneManager.obj : error LNK2005: "class Mesh Scene::* * meshList" (?meshList@@3PAPQScene@@VMesh@@A) already defined in Application.obj
+SceneManager.obj : error LNK2005: "public: static class MS Scene::projectionStack" (?projectionStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneModel.obj : error LNK2005: "public: static unsigned int Scene::m_programID" (?m_programID@Scene@@2IA) already defined in Application.obj
+SceneModel.obj : error LNK2005: "public: static class MS Scene::viewStack" (?viewStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneModel.obj : error LNK2005: "public: static class MS Scene::modelStack" (?modelStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneModel.obj : error LNK2005: "public: static unsigned int Scene::m_vertexArrayID" (?m_vertexArrayID@Scene@@2IA) already defined in Application.obj
+SceneModel.obj : error LNK2005: "public: static unsigned int * Scene::m_parameters" (?m_parameters@Scene@@2PAIA) already defined in Application.obj
+SceneModel.obj : error LNK2005: "class Mesh Scene::* * meshList" (?meshList@@3PAPQScene@@VMesh@@A) already defined in Application.obj
+SceneModel.obj : error LNK2005: "public: static class MS Scene::projectionStack" (?projectionStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneSplashScreen.obj : error LNK2005: "public: static unsigned int Scene::m_programID" (?m_programID@Scene@@2IA) already defined in Application.obj
+SceneSplashScreen.obj : error LNK2005: "public: static class MS Scene::viewStack" (?viewStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneSplashScreen.obj : error LNK2005: "public: static class MS Scene::modelStack" (?modelStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneSplashScreen.obj : error LNK2005: "public: static unsigned int Scene::m_vertexArrayID" (?m_vertexArrayID@Scene@@2IA) already defined in Application.obj
+SceneSplashScreen.obj : error LNK2005: "public: static unsigned int * Scene::m_parameters" (?m_parameters@Scene@@2PAIA) already defined in Application.obj
+SceneSplashScreen.obj : error LNK2005: "class Mesh Scene::* * meshList" (?meshList@@3PAPQScene@@VMesh@@A) already defined in Application.obj
+SceneSplashScreen.obj : error LNK2005: "public: static class MS Scene::projectionStack" (?projectionStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneUI.obj : error LNK2005: "public: static unsigned int Scene::m_programID" (?m_programID@Scene@@2IA) already defined in Application.obj
+SceneUI.obj : error LNK2005: "public: static class MS Scene::viewStack" (?viewStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneUI.obj : error LNK2005: "public: static class MS Scene::modelStack" (?modelStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneUI.obj : error LNK2005: "public: static unsigned int Scene::m_vertexArrayID" (?m_vertexArrayID@Scene@@2IA) already defined in Application.obj
+SceneUI.obj : error LNK2005: "public: static unsigned int * Scene::m_parameters" (?m_parameters@Scene@@2PAIA) already defined in Application.obj
+SceneUI.obj : error LNK2005: "class Mesh Scene::* * meshList" (?meshList@@3PAPQScene@@VMesh@@A) already defined in Application.obj
+SceneUI.obj : error LNK2005: "public: static class MS Scene::projectionStack" (?projectionStack@Scene@@2VMS@@A) already defined in Application.obj
+SceneModel.obj : error LNK2001: unresolved external symbol "public: static class Mesh * * Scene::meshList" (?meshList@Scene@@2PAPAVMesh@@A)
+C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe : fatal error LNK1120: 1 unresolved externals

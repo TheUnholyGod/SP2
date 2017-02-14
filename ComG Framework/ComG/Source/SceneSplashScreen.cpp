@@ -18,8 +18,6 @@ SceneSplashScreen::~SceneSplashScreen()
 
 void SceneSplashScreen::Init()
 {
-
-	essentials();
 	//Initialize camera settings
 	camera.Init(40, 30, 30);
 
@@ -47,7 +45,7 @@ void SceneSplashScreen::Render()
 			camera.position.z, camera.target.x, camera.target.y,
 			camera.target.z, camera.up.x, camera.up.y, camera.up.z);
 
-	SplashScreenStack.LoadIdentity();
+	modelStack.LoadIdentity();
 
 }
 
@@ -61,9 +59,9 @@ void SceneSplashScreen::RenderMesh(Mesh *mesh, bool enableLight)
 {
 	Mtx44 MVP, SplashScreenView, SplashScreenView_inverse_transpose;
 
-	MVP = projectionStack.Top() * viewStack.Top() * SplashScreenStack.Top();
+	MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top();
 	glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
-	SplashScreenView = viewStack.Top() * SplashScreenStack.Top();
+	SplashScreenView = viewStack.Top() * modelStack.Top();
 	glUniformMatrix4fv(m_parameters[U_MODELVIEW], 1, GL_FALSE, &SplashScreenView.a[0]);
 	if (enableLight)
 	{
@@ -118,7 +116,7 @@ void SceneSplashScreen::RenderText(Mesh* mesh, std::string text, Color color)
 	{
 		Mtx44 characterSpacing;
 		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
-		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * SplashScreenStack.Top() * characterSpacing;
+		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
 		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
 		mesh->Render((unsigned)text[i] * 6, 6);
@@ -140,10 +138,10 @@ void SceneSplashScreen::RenderTextOnScreen(Mesh* mesh, std::string text, Color c
 	projectionStack.LoadMatrix(ortho);
 	viewStack.PushMatrix();
 	viewStack.LoadIdentity(); //No need camera for ortho mode
-	SplashScreenStack.PushMatrix();
-	SplashScreenStack.LoadIdentity(); //Reset SplashScreenStack
-	SplashScreenStack.Scale(size, size, size);
-	SplashScreenStack.Translate(x, y, 0);
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+	modelStack.Scale(size, size, size);
+	modelStack.Translate(x, y, 0);
 
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
@@ -156,7 +154,7 @@ void SceneSplashScreen::RenderTextOnScreen(Mesh* mesh, std::string text, Color c
 	{
 		Mtx44 characterSpacing;
 		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
-		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * SplashScreenStack.Top() * characterSpacing;
+		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
 		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
 		mesh->Render((unsigned)text[i] * 6, 6);
@@ -166,58 +164,6 @@ void SceneSplashScreen::RenderTextOnScreen(Mesh* mesh, std::string text, Color c
 
 	projectionStack.PopMatrix();
 	viewStack.PopMatrix();
-	SplashScreenStack.PopMatrix();
+	modelStack.PopMatrix();
 	glEnable(GL_DEPTH_TEST);
-}
-
-void SceneSplashScreen::essentials()
-{
-	// Set background color to dark blue
-	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
-
-	//Enable depth buffer and depth testing
-	glEnable(GL_DEPTH_TEST);
-
-	//Enable back face culling
-	glEnable(GL_CULL_FACE);
-
-	//Default to fill mode
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-	// Generate a default VAO for now
-	glGenVertexArrays(1, &m_vertexArrayID);
-	glBindVertexArray(m_vertexArrayID);
-
-	// Enable blending
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-	m_programID = LoadShaders("Shader//Texture.vertexshader", "Shader//Text.fragmentshader");
-
-	m_parameters[U_MVP] = glGetUniformLocation(m_programID, "MVP");
-	m_parameters[U_MODELVIEW] = glGetUniformLocation(m_programID, "MV");
-	m_parameters[U_MODELVIEW_INVERSE_TRANSPOSE] = glGetUniformLocation(m_programID, "MV_inverse_transpose");
-	m_parameters[U_MATERIAL_AMBIENT] = glGetUniformLocation(m_programID, "material.kAmbient");
-	m_parameters[U_MATERIAL_DIFFUSE] = glGetUniformLocation(m_programID, "material.kDiffuse");
-	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
-	m_parameters[U_MATERIAL_SHININESS] = glGetUniformLocation(m_programID, "material.kShininess");
-	m_parameters[U_LIGHT0_POSITION] = glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
-	m_parameters[U_LIGHT0_COLOR] = glGetUniformLocation(m_programID, "lights[0].color");
-	m_parameters[U_LIGHT0_POWER] = glGetUniformLocation(m_programID, "lights[0].power");
-	m_parameters[U_LIGHT0_KC] = glGetUniformLocation(m_programID, "lights[0].kC");
-	m_parameters[U_LIGHT0_KL] = glGetUniformLocation(m_programID, "lights[0].kL");
-	m_parameters[U_LIGHT0_KQ] = glGetUniformLocation(m_programID, "lights[0].kQ");
-	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
-	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
-	m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
-	m_parameters[U_LIGHT0_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[0].spotDirection");
-	m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
-	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
-	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
-	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
-	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
-	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
-	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
-
-	glUseProgram(m_programID);
 }
