@@ -1,5 +1,5 @@
 #include "SceneManager.h"
-#include "SceneModel.h"
+#include "SceneBase.h"
 #include "SceneUI.h"
 #include "Application.h"
 
@@ -10,7 +10,7 @@ int SceneManager::currScene = DEFAULT;
 SceneManager::SceneManager()
 {
 	prevScene = DEFAULT;
-	SceneDataBase[1] = new SceneModel();
+	SceneDataBase[1] = new SceneBase();
 	SceneDataBase[2] = new SceneUI();
 }
 

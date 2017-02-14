@@ -18,7 +18,6 @@ class SceneUI : public Scene
 		GEO_AXES,
 		GEO_TEXT,
 		GEO_QUAD,
-		GEO_BED,
 		//SkyBox
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -27,31 +26,7 @@ class SceneUI : public Scene
 		GEO_FRONT,
 		GEO_BACK,
 
-		GEO_CHARACTERMODEL,
-		GEO_BARNMODEL,
 		GEO_SUN,
-		GEO_FENCE,
-		GEO_POTATO,
-		GEO_CARROT,
-		GEO_CABBAGE,
-
-		//---Horns---//
-		GEO_HORN1,
-		GEO_HORN2,
-		//---Head---//
-		GEO_HEADCYLINDER,
-		GEO_HEADSPHERE,
-		GEO_HEADCONE,
-		GEO_EYES,
-		GEO_EYEPUPIL,
-		//---Neck---//
-		GEO_NECK,
-		//---Body---//
-		GEO_BODYSPHERE,
-		GEO_BODYCYLINDER,
-		//---Legs---//
-		GEO_LEGCYLINDER,
-		GEO_LEGSPHERE,
 
 		NUM_GEOMETRY,
 	};
@@ -103,12 +78,6 @@ private:
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
-
-	struct bounds
-	{
-		float max_x, max_z, min_x, min_z;
-	}barnwall1, bed, fence1, fence2, fence3, fence4, barnwall2, barnwall3, barnwall4;
-
 	MS modelStack, viewStack, projectionStack;
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
@@ -118,77 +87,20 @@ private:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	float LSPEED;
 
-	double y, x, z;
-
 	void LoadSkybox();
 	void RenderSkybox();
 
-	void UpdateCharacter(double dt);
-	Vector3 charpos;
-
 	void DebugMode(double dt);
-	bool ifInDebug;
-
-	void cameraupdates(double dt);
 	bool fps;
 
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 
-	void LightUpdate(double dt);
 	double lightrotate, sunrotate;
 	Mtx44 LightPos;
 	bool sunup;
 
-	std::vector<bounds> walls;
-	bool loadBounds();
-	bool ifBounds(Vector3 forwhat);
-	bool sleep(Vector3 forwhat);
-	void LightReset(double dt);
-	bool reset;
-	float suntimer;
-	void growVege(double dt);
-	void plantVege(int vegeno);
-	void textupdates();
-	std::string charx, chary, charz, carrotstr, cabbagestr, potatostr;
-	void generateGoat();
-	void renderGoat();
-	void updateGoat(double dt, Vector3 forwhat);
-	struct vegegrowth
-	{
-		double growpotato;
-		double maxsize;
-		Vector3 vegepos;
-		int numtype;
-		bool picked, onhotbar;
-		float max_x, max_z, min_x, min_z;
-	};
-	std::vector<vegegrowth*>  allvegetables;
-	int potatoseeds;
-	int carrotseeds;
-	int cabbageseeds;
-	int potato;
-	int carrot;
-	int cabbage;
-	void vegepicked(Vector3 forwhat);
-	double cooldown;
-
-	struct goats
-	{
-		float max_x, max_z, min_x, min_z;
-		Vector3 goatspos;
-		float yrotate;
-		float legrotate1, legrotate2;
-		float outermax_x, outermax_z, outermin_x, outermin_z;
-		bool frontorreverse;
-		bool facechar;
-	};
-
-	std::vector<goats*> allgoats;
-	bool holdingvege;
-	void feedgoat(int no);
-	void RenderMeshOnScreen(Mesh* mesh, int x, int y, int
-		sizex, int sizey);
+	void RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey);
 };
 
 #endif

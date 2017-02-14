@@ -18,7 +18,6 @@ SceneSplashScreen::~SceneSplashScreen()
 
 void SceneSplashScreen::Init()
 {
-
 	essentials();
 	//Initialize camera settings
 	camera.Init(40, 30, 30);
