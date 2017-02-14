@@ -375,7 +375,7 @@
       <Filter>Source Files\GameObject\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="EnemyFactory.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Factory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -587,7 +587,7 @@
       <Filter>Header Files\GameObject\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="EnemyFactory.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Factory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
