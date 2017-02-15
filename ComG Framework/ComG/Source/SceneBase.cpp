@@ -8,6 +8,7 @@
 #include "SceneManager.h"
 #include "EnemyFactory.h"
 #include "Player.h"
+#include "EnemyDataBase.h"
 
 #include <sstream>
 
@@ -85,8 +86,11 @@ void SceneBase::Init()
 	meshList[GEO_QUAD]->textureID = LoadTGA("Image//ground.tga");
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
-	enemyMeshList[GEO_MOLERAT] = MeshBuilder::GenerateOBJ("molerat", "OBJ//MoleRat.obj");
-	enemyMeshList[GEO_LIZARD] = MeshBuilder::GenerateOBJ("lizard", "OBJ//Lizard.obj");
+
+	for (int i = 0;i<enemyMeshList.size();i++)
+	{
+		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i+1)->getName(),EnemyDataBase::getEnemyDB()->getEnemy(i+1)->getSourceLocation());
+	}
 	suntimer = 1;
 	LoadSkybox();
 }
@@ -130,7 +134,7 @@ void SceneBase::Render()
 
 	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getRenderer().getMatrix());
-	RenderMesh(meshList[0], true);
+	//RenderMesh(meshList[0], true);
 	modelStack.PopMatrix();
 
 	RenderEnemy();
