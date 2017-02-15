@@ -6,6 +6,7 @@ Player* Player::player;
 Player::Player() : GameObject(0,"")
 {
 	playerRender = new Renderer(Vector3(0,0,0),Vector3(1,0,0));
+	Inventory::getinventory();
 }
 
 Player* Player::getplayer() 
