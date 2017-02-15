@@ -6,6 +6,8 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
+#include "EnemyFactory.h"
+#include "Player.h"
 
 #include <sstream>
 
@@ -60,9 +62,11 @@ void SceneBase::Init()
 	light[0].LightInit(m_programID);
 	//glUseProgram(m_programID);
 	forward.z = 1;
+	reset = false;
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
-	camera.Init(-forward * 20, Vector3(0, 0, 0), Vector3(0, 1, 0));
+	Player::getplayer();
+	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() , Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -72,6 +76,8 @@ void SceneBase::Init()
 
 	// Make sure you pass uniform parameters after glUseProgram()
 
+	meshList[Player::getplayer()->getID()] = MeshBuilder::GenerateOBJ("player", "OBJ//player.obj");
+
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
@@ -79,6 +85,9 @@ void SceneBase::Init()
 	meshList[GEO_QUAD]->textureID = LoadTGA("Image//ground.tga");
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
+	enemyMeshList[GEO_MOLERAT] = MeshBuilder::GenerateOBJ("molerat", "OBJ//MoleRat.obj");
+	enemyMeshList[GEO_LIZARD] = MeshBuilder::GenerateOBJ("lizard", "OBJ//Lizard.obj");
+	suntimer = 1;
 	LoadSkybox();
 }
 
@@ -89,9 +98,10 @@ void SceneBase::Update(double dt)
 	{
 		SceneManager::currScene = 2;
 	}
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	SpawnEnemy();
+	Player::getplayer()->Update(camForward, camRight, dt);
 	light[0].LightUpdate(dt);
-
-	camera.Update(dt, Vector3(0, 0, 0));
 }
 
 void SceneBase::Render()
@@ -117,6 +127,13 @@ void SceneBase::Render()
 	modelStack.Scale(1000, 1000, 1000);
 	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.LoadMatrix(Player::getplayer()->getRenderer().getMatrix());
+	RenderMesh(meshList[0], true);
+	modelStack.PopMatrix();
+
+	RenderEnemy();
 }
 
 void SceneBase::Exit()
@@ -405,4 +422,23 @@ void SceneBase::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 		viewStack.PopMatrix();
 		modelStack.PopMatrix();
 		glEnable(GL_DEPTH_TEST);
+}
+
+void SceneBase::SpawnEnemy()
+{
+	if (BaseEnemy.size() < 5)
+		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+}
+
+void SceneBase::RenderEnemy()
+{
+	int y = 0;
+	for (auto &i : BaseEnemy)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(0, y, 0);
+		RenderMesh(enemyMeshList[i->getID()], true);
+		modelStack.PopMatrix();
+		y++;
+	}
 }

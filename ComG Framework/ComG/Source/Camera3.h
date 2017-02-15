@@ -24,7 +24,7 @@ public:
 	Camera3();
 	~Camera3();
 	virtual void Init(const Vector3& pos, const Vector3& target, const Vector3& up);
-	virtual void Update(double dt, Vector3 charpos, Vector3 righto, Vector3 for_what, double* rotate, Vector3*camForward,Vector3*camRight);
+	virtual void Update(double dt, Vector3 charpos, Vector3 righto, Vector3 for_what, Vector3*camForward,Vector3*camRight);
 	virtual void Reset();
 
 };

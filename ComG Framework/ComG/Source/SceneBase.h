@@ -9,6 +9,9 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "Utility.h"
+#include <list>
+#include "Building.h"
+#include "Enemy.h"
 #include "Lighting.h"
 #include <vector>
 
@@ -16,6 +19,7 @@ class SceneBase : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
+		GEO_PLAYER,
 		GEO_AXES,
 		GEO_TEXT,
 		GEO_QUAD,
@@ -61,7 +65,12 @@ class SceneBase : public Scene
 
 		U_TOTAL,
 	};
-
+	enum ENEMYMESHLIST
+	{
+		GEO_MOLERAT,
+		GEO_LIZARD,
+		NUM_ENEMYGEOMETRY,
+	};
 
 public:
 	SceneBase();
@@ -74,6 +83,7 @@ public:
 private:
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
+	Mesh *enemyMeshList[NUM_ENEMYGEOMETRY];
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
@@ -89,8 +99,17 @@ private:
 	void DebugMode(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-};
+	double lightrotate,sunrotate;
+	Mtx44 LightPos;
 
-extern GLFWwindow* m_window;
+	int sunup;
+	float suntimer;
+	bool reset;
+
+	std::list<Enemy*> BaseEnemy;
+	std::list<Building*> BaseBuildings;
+	void SpawnEnemy();
+	void RenderEnemy();
+};
 
 #endif
