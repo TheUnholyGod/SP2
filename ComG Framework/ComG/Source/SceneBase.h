@@ -14,6 +14,7 @@
 #include "Enemy.h"
 #include "Lighting.h"
 #include <vector>
+#include <array>
 
 class SceneBase : public Scene
 {
@@ -82,8 +83,8 @@ public:
 	virtual void Exit();
 private:
 	unsigned m_vertexArrayID;
-	Mesh *meshList[NUM_GEOMETRY];
-	Mesh *enemyMeshList[NUM_ENEMYGEOMETRY];
+	std::array<Mesh*, NUM_GEOMETRY> meshList;
+	std::array<Mesh*, NUM_ENEMYGEOMETRY> enemyMeshList;
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];

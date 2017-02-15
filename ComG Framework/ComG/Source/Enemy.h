@@ -21,7 +21,7 @@ protected:
 	const std::list<Ability*> Abilities;
 	const std::string kname_;	//Name of Object
 public:
-	Enemy(int, std::string, ENEMYTYPE, std::string, float, float, float);
+	Enemy(int, std::string, std::string, ENEMYTYPE, std::string, float, float, float);
 	virtual ~Enemy();
 
 	const std::string getName() { return kname_; }
