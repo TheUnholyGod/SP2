@@ -65,7 +65,8 @@ void SceneBase::Init()
 	reset = false;
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
-	fp_camera.Init(Vector3(20, 10, 0), Vector3(3, 10, 0), Vector3(0, 1, 0));
+	Player::getplayer();
+	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() , Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -74,6 +75,8 @@ void SceneBase::Init()
 	projectionStack.LoadMatrix(projection);
 
 	// Make sure you pass uniform parameters after glUseProgram()
+
+	meshList[Player::getplayer()->getID()] = MeshBuilder::GenerateOBJ("player", "OBJ//player.obj");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
@@ -86,7 +89,6 @@ void SceneBase::Init()
 	enemyMeshList[GEO_LIZARD] = MeshBuilder::GenerateOBJ("lizard", "OBJ//Lizard.obj");
 	suntimer = 1;
 	LoadSkybox();
-	Player::getplayer();
 }
 
 void SceneBase::Update(double dt)
@@ -100,8 +102,6 @@ void SceneBase::Update(double dt)
 	SpawnEnemy();
 	Player::getplayer()->Update(camForward, camRight, dt);
 	light[0].LightUpdate(dt);
-
-	camera.Update(dt, Vector3(0, 0, 0));
 }
 
 void SceneBase::Render()
@@ -126,6 +126,11 @@ void SceneBase::Render()
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
 	RenderMesh(meshList[GEO_QUAD], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.LoadMatrix(Player::getplayer()->getRenderer().getMatrix());
+	RenderMesh(meshList[0], true);
 	modelStack.PopMatrix();
 
 	RenderEnemy();

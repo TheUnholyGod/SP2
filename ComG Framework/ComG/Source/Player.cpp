@@ -5,7 +5,7 @@ Player* Player::player;
 
 Player::Player() : GameObject(0)
 {
-
+	playerRender = new Renderer(Vector3(0,0,0),Vector3(1,0,0));
 }
 
 Player* Player::getplayer() 
@@ -29,7 +29,7 @@ const int Player::gethunger()
 
 const int Player::getattack()
 {
-
+	
 }
 
 void Player::receivedamage()

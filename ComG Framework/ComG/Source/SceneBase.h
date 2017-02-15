@@ -19,6 +19,7 @@ class SceneBase : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
+		GEO_PLAYER,
 		GEO_AXES,
 		GEO_TEXT,
 		GEO_QUAD,
