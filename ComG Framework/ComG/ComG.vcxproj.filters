@@ -373,9 +373,6 @@
     <ClCompile Include="Source\Ability.cpp">
       <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
     </ClCompile>
-    <ClCompile Include="AbilityDataBase.cpp">
-      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Burrowing.cpp">
       <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
     </ClCompile>
@@ -392,9 +389,6 @@
       <Filter>Source Files\Factory\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\Building.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="BuildingDataBase.cpp">
       <Filter>Source Files\Factory\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\Crafting.cpp">
@@ -430,9 +424,6 @@
     <ClCompile Include="Source\WaterWell.cpp">
       <Filter>Source Files\Factory\Buildings</Filter>
     </ClCompile>
-    <ClCompile Include="BuildingFactory.cpp">
-      <Filter>Source Files\Factory</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EnemyFactory.cpp">
       <Filter>Source Files\Factory</Filter>
     </ClCompile>
@@ -445,6 +436,33 @@
     <ClCompile Include="Source\SceneBase.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Source\AbilityDataBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BuildingDataBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BuildingFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="Source\SceneCity.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneMainMenu.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneTest.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneWildLife.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+=======
+    <ClCompile Include="Source\SceneTest.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+>>>>>>> e96b92c3032a7e275c841640585fcee2205b81f2
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -645,9 +663,6 @@
     <ClInclude Include="Source\Ability.h">
       <Filter>Header Files\GameObject\Ability</Filter>
     </ClInclude>
-    <ClInclude Include="AbilityDataBase.h">
-      <Filter>Header Files\GameObject\Ability</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Burrowing.h">
       <Filter>Header Files\GameObject\Ability</Filter>
     </ClInclude>
@@ -664,9 +679,6 @@
       <Filter>Header Files\GameObject\Buildings</Filter>
     </ClInclude>
     <ClInclude Include="Source\Building.h">
-      <Filter>Header Files\GameObject\Buildings</Filter>
-    </ClInclude>
-    <ClInclude Include="BuildingDataBase.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
     </ClInclude>
     <ClInclude Include="Source\Crafting.h">
@@ -705,9 +717,6 @@
     <ClInclude Include="Source\EnemyDataBase.h">
       <Filter>Header Files\GameObject\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="BuildingFactory.h">
-      <Filter>Header Files\Factory</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EnemyFactory.h">
       <Filter>Header Files\Factory</Filter>
     </ClInclude>
@@ -722,6 +731,29 @@
     </ClInclude>
     <ClInclude Include="Source\SceneBase.h">
       <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AbilityDataBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BuildingFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="Source\SceneCity.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneMainMenu.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scenetest.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneWildLife.h">
+      <Filter>Header Files\Scenes</Filter>
+=======
+    <ClInclude Include="Source\Scenetest.h">
+      <Filter>Header Files</Filter>
+>>>>>>> e96b92c3032a7e275c841640585fcee2205b81f2
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 #include "Lighting.h"
 #include "GL\glew.h"
+#include "MyMath.h"
 
 void Lighting::LightInit(unsigned int &m_pogramID)
 {
@@ -25,37 +26,38 @@ void Lighting::LightInit(unsigned int &m_pogramID)
 
 	lighting.y = 1.f;
 	reset = false;
-	sunup = true;
+	start = true;
+	Day = 0;
 }
 
 void Lighting::LightInit1(unsigned int &m_pogramID)
 {
 
-	light[0].type = Lighting::LIGHT_DIRECTIONAL;
-	light[0].position.Set(0, 100, 0);
-	light[0].color.Set(1, 1, 1);
-	light[0].power = 1.f;
-	light[0].kC = 100.f;
-	light[0].kL = 0.01f;
-	light[0].kQ = 0.001f;
-	light[0].cosCutoff = cos(Math::DegreeToRadian(45));
-	light[0].cosInner = cos(Math::DegreeToRadian(30));
-	light[0].exponent = 3.f;
-	light[0].spotDirection.Set(0.f, 1.f, 0.f);
+	 type = Lighting::LIGHT_DIRECTIONAL;
+	 position.Set(0, 1, 0);
+	 color.Set(1, 1, 1);
+	 power = 0.f;
+	 kC = 100.f;
+	 kL = 0.01f;
+	 kQ = 0.001f;
+	 cosCutoff = cos(Math::DegreeToRadian(45));
+	 cosInner = cos(Math::DegreeToRadian(30));
+	 exponent = 3.f;
+	 spotDirection.Set(0.f, 1.f, 0.f);
 
 	// Make sure you pass uniform parameters after glUseProgram()
-	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
-	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
-	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
-	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
-	glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
-	glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF], light[0].cosCutoff);
-	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
-	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
+	glUniform1i(m_parameters[U_LIGHT0_TYPE],  type);
+	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, & color.r);
+	glUniform1f(m_parameters[U_LIGHT0_POWER],  power);
+	glUniform1f(m_parameters[U_LIGHT0_KC],  kC);
+	glUniform1f(m_parameters[U_LIGHT0_KL],  kL);
+	glUniform1f(m_parameters[U_LIGHT0_KQ],  kQ);
+	glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF],  cosCutoff);
+	glUniform1f(m_parameters[U_LIGHT0_COSINNER],  cosInner);
+	glUniform1f(m_parameters[U_LIGHT0_EXPONENT],  exponent);
 	glUniform1i(m_parameters[U_NUMLIGHTS], 1);
 
-	suntimer = 1;
+	suntimer = 0;
 }
 
 void Lighting::LightUpdate(double dt)
@@ -70,8 +72,8 @@ void Lighting::LightUpdate(double dt)
 	lighting = LightPos * lighting;
 	if (lighting.y <= 0)
 	{
-		light[0].power = 0;
-		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+		 power = 0;
+		glUniform1f(m_parameters[U_LIGHT0_POWER],  power);
 		if (lighting.y >= 0 && lighting.y <= 0.5)
 		{
 			sunup = 3;
@@ -85,10 +87,10 @@ void Lighting::LightUpdate(double dt)
 	}
 	else
 	{
-		light[0].type = Lighting::LIGHT_DIRECTIONAL;
-		light[0].position.Set(lighting.x, lighting.y, lighting.z);
-		light[0].power = 1;
-		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+		 type = Lighting::LIGHT_DIRECTIONAL;
+		 position.Set(lighting.x, lighting.y, lighting.z);
+		 power = 1;
+		glUniform1f(m_parameters[U_LIGHT0_POWER],  power);
 
 		if (lighting.y >= 0 && lighting.y < 0.5)
 		{
@@ -99,28 +101,35 @@ void Lighting::LightUpdate(double dt)
 			sunup = 1;
 		}
 	}
+	if (sunrotate >= 390)
+	{
+		sunrotate -= 390;
+		Day++;
+	}
 
-	std::cout << "Lighting Level: " << lighting.y << std::endl;
+	//std::cout << "Lighting Level: " << lighting.y << std::endl;
+	std::cout << "sunrotate: " << sunrotate << std::endl;
+	std::cout << "Days: " << Day << std::endl;
 }
 
 void Lighting::LightRender(MS viewStack)
 {
-	if (light[0].type == Lighting::LIGHT_DIRECTIONAL)
+	if ( type == Lighting::LIGHT_DIRECTIONAL)
 	{
-		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
+		Vector3 lightDir( position.x,  position.y,  position.z);
 		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
 	}
-	else if (light[0].type == Lighting::LIGHT_SPOT)
+	else if ( type == Lighting::LIGHT_SPOT)
 	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
+		Position lightPosition_cameraspace = viewStack.Top() *  position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
-		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
+		Vector3 spotDirection_cameraspace = viewStack.Top() *  spotDirection;
 		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
 	}
 	else
 	{
-		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
+		Position lightPosition_cameraspace = viewStack.Top() *  position;
 		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
 	}
 }

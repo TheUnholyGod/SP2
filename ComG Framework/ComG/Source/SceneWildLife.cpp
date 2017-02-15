@@ -1,4 +1,4 @@
-#include "SceneSplashScreen.h"
+#include "SceneWildLife.h"
 #include "GL\glew.h"
 #include "shader.hpp"
 #include "Mtx44.h"
@@ -11,15 +11,15 @@
 
 #include <sstream>
 
-SceneSplashScreen::SceneSplashScreen()
+SceneWildLife::SceneWildLife()
 {
 }
 
-SceneSplashScreen::~SceneSplashScreen()
+SceneWildLife::~SceneWildLife()
 {
 }
 
-void SceneSplashScreen::Init()
+void SceneWildLife::Init()
 {
 	LSPEED = 10.f;
 	// Init VBO here
@@ -91,7 +91,7 @@ void SceneSplashScreen::Init()
 	LoadSkybox();
 }
 
-void SceneSplashScreen::Update(double dt)
+void SceneWildLife::Update(double dt)
 {
 	DebugMode(dt);
 	if (Application::IsKeyPressed('E'))
@@ -104,7 +104,7 @@ void SceneSplashScreen::Update(double dt)
 	light[0].LightUpdate(dt);
 }
 
-void SceneSplashScreen::Render()
+void SceneWildLife::Render()
 {
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -136,13 +136,13 @@ void SceneSplashScreen::Render()
 	RenderEnemy();
 }
 
-void SceneSplashScreen::Exit()
+void SceneWildLife::Exit()
 {
 	glDeleteProgram(m_programID);
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 }
 
-void SceneSplashScreen::RenderMesh(Mesh *mesh, bool enableLight)
+void SceneWildLife::RenderMesh(Mesh *mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 
@@ -186,7 +186,7 @@ void SceneSplashScreen::RenderMesh(Mesh *mesh, bool enableLight)
 
 }
 
-void SceneSplashScreen::LoadSkybox()
+void SceneWildLife::LoadSkybox()
 {
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//Skybox-Day//left.tga");
@@ -247,7 +247,7 @@ void SceneSplashScreen::LoadSkybox()
 	meshList[GEO_TOP2]->textureID = LoadTGA("Image//Skybox-Transition//trantop.tga");
 }
 
-void SceneSplashScreen::RenderSkybox()
+void SceneWildLife::RenderSkybox()
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(10, 0, 10);
@@ -343,7 +343,7 @@ void SceneSplashScreen::RenderSkybox()
 	modelStack.PopMatrix();
 }
 
-void SceneSplashScreen::DebugMode(double dt)
+void SceneWildLife::DebugMode(double dt)
 {
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -355,7 +355,7 @@ void SceneSplashScreen::DebugMode(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 }
 
-void SceneSplashScreen::RenderText(Mesh* mesh, std::string text, Color color)
+void SceneWildLife::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -382,7 +382,7 @@ void SceneSplashScreen::RenderText(Mesh* mesh, std::string text, Color color)
 	glEnable(GL_DEPTH_TEST);
 }
 
-void SceneSplashScreen::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
+void SceneWildLife::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -424,13 +424,13 @@ void SceneSplashScreen::RenderTextOnScreen(Mesh* mesh, std::string text, Color c
 	glEnable(GL_DEPTH_TEST);
 }
 
-void SceneSplashScreen::SpawnEnemy()
+void SceneWildLife::SpawnEnemy()
 {
 	if (BaseEnemy.size() < 5)
 		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
 }
 
-void SceneSplashScreen::RenderEnemy()
+void SceneWildLife::RenderEnemy()
 {
 	int y = 0;
 	for (auto &i : BaseEnemy)
