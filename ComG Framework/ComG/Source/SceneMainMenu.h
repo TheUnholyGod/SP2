@@ -1,5 +1,5 @@
-#ifndef SCENE_SPLASH_SCREEN_H
-#define SCENE_SPLASH_SCREEN_H
+#ifndef SCENE_MAIN_MENU_H
+#define SCENE_MAIN_MENU_H
 
 #include "Scene.h"
 #include "Camera.h"
@@ -15,7 +15,7 @@
 #include "Lighting.h"
 #include <vector>
 
-class SceneSplashScreen : public Scene
+class SceneMainMenu : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
@@ -73,8 +73,8 @@ class SceneSplashScreen : public Scene
 	};
 
 public:
-	SceneSplashScreen();
-	~SceneSplashScreen();
+	SceneMainMenu();
+	~SceneMainMenu();
 
 	virtual void Init();
 	virtual void Update(double dt);
