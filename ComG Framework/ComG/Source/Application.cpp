@@ -13,6 +13,7 @@
 #include "Scene.h"
 #include "SceneManager.h"
 #include "ItemDataBase.h"
+#include "EnemyDataBase.h"
 #include <iostream>
 
 const unsigned char Application::FPS = 60; // FPS of this game
@@ -100,6 +101,7 @@ void Application::Init()
 	glfwSetWindowSizeCallback(Application::m_window, resize_callback);
 	SceneManager::getSceneManger()->init(DEFAULT);
 	ItemDataBase::getItemDB();
+	EnemyDataBase::getEnemyDB();
 }
 
 void Application::Run()

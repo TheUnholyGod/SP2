@@ -36,7 +36,7 @@ void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 	anchorY = point.y;
 }
 
-void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,double* rotate,Vector3*camForward,Vector3*camRight)
+void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,Vector3*camForward,Vector3*camRight)
 {
 	static const float CAMERA_SPEED = 10.f;
 	static const float CAMERA_SPEED_2 = 125.f;
@@ -56,7 +56,6 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 		rotation.SetToRotation(yaw, 0, 1, 0);
 		temp = rotation * temp;
 		up = rotation * up;
-		*rotate += yaw;
 	}
 
 	if (anchorX < point.x)
@@ -66,7 +65,6 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 		rotation.SetToRotation(yaw, 0, 1, 0);
 		temp = rotation * temp;
 		up = rotation * up;
-		*rotate += yaw;
 	}
 
 	if (pitchLimit < 160 && point.y < anchorY)

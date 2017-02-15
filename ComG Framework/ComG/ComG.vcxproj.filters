@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Shader">
       <UniqueIdentifier>{1f633f1b-bb99-458f-943f-16ec986d8cce}</UniqueIdentifier>
     </Filter>
@@ -21,9 +17,6 @@
     </Filter>
     <Filter Include="Header Files\Framework\Rendering and  Lighting">
       <UniqueIdentifier>{cf0a39a8-635a-4f8c-8bf2-0fd3a95e06e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Scenes">
-      <UniqueIdentifier>{3afe42f8-1d14-4807-b7f6-e1af1b34a26d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Framework">
       <UniqueIdentifier>{3f937200-0617-407f-9a62-a1426c37f588}</UniqueIdentifier>
@@ -124,9 +117,6 @@
     <Filter Include="Source Files\GameObject\Enemy">
       <UniqueIdentifier>{3c75dd97-fcab-407c-a255-68954ae1fb4f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GameObject\Buildings">
-      <UniqueIdentifier>{5ccd9671-3add-4fe0-8cc7-6755b9aca1da}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\GameObject\Player">
       <UniqueIdentifier>{2f53560b-829f-4584-88d6-503c5246a573}</UniqueIdentifier>
     </Filter>
@@ -139,17 +129,41 @@
     <Filter Include="Header Files\Factory">
       <UniqueIdentifier>{b0b6c07d-03ae-43e2-a2d4-4b3c9cac5e44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameObject\Enemy\Base">
+      <UniqueIdentifier>{ce200181-769b-4c51-a8df-5d5054e96e4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Enemy\Forest">
+      <UniqueIdentifier>{a3682b03-d720-42a3-a428-b826b3c854d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Enemy\Bosses">
+      <UniqueIdentifier>{3973f9a7-2ade-4ac7-b5c2-fe694a7a6b46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObject\Enemy\City">
+      <UniqueIdentifier>{8cd6b11e-ac6f-46f2-bb44-edd008495119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Enemy\City">
+      <UniqueIdentifier>{1f15c594-e84b-4071-ab80-21efd241d9e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Enemy\Base">
+      <UniqueIdentifier>{da4f5ba9-1968-400f-b9cb-e50abb4d600e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Enemy\Forest">
+      <UniqueIdentifier>{e4af8441-3679-43e4-95c8-ca8e6556b322}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Enemy\Bosses">
+      <UniqueIdentifier>{8887882c-0304-45f3-a86d-1bf27fca9376}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\GameObject\Ability">
-      <UniqueIdentifier>{bcb1d94a-d8d0-43bb-8d6c-e62916108db4}</UniqueIdentifier>
+      <UniqueIdentifier>{2a0143e3-a78c-407b-89a5-33c35606ced9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GameObject\Ability">
-      <UniqueIdentifier>{c767237a-fb73-410a-a590-35780f499772}</UniqueIdentifier>
+    <Filter Include="Source Files\Factory\Buildings">
+      <UniqueIdentifier>{5ccd9671-3add-4fe0-8cc7-6755b9aca1da}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GameObject\Ability\Ability List">
-      <UniqueIdentifier>{dcc63ce4-5e21-4bef-8d19-6b77bc36cf8b}</UniqueIdentifier>
+    <Filter Include="Source Files\Factory\Buildings\Abilitiy">
+      <UniqueIdentifier>{731495e0-2844-4e88-a9bf-9f292e1b43ea}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameObject\Ability\Abiltiy List">
-      <UniqueIdentifier>{0f4fad95-6e01-44d2-976b-9e0981b1c9ca}</UniqueIdentifier>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{3afe42f8-1d14-4807-b7f6-e1af1b34a26d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -308,130 +322,128 @@
     <ClCompile Include="Source\Food.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Acrid_Plant.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Ant_Hill.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Centipede.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CybordMutt.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Deer.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Drone.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Enemy.cpp">
       <Filter>Source Files\GameObject\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Goat.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
+    <ClCompile Include="Source\Acrid_Plant.cpp">
+      <Filter>Source Files\GameObject\Enemy\Bosses</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Lizard.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
+    <ClCompile Include="Source\Ant_Hill.cpp">
+      <Filter>Source Files\GameObject\Enemy\Bosses</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Molerat.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PatrolBot.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\RogueMech.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
+    <ClCompile Include="Source\Centipede.cpp">
+      <Filter>Source Files\GameObject\Enemy\Bosses</Filter>
     </ClCompile>
     <ClCompile Include="Source\Scarecrow_Mech.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
+      <Filter>Source Files\GameObject\Enemy\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CybordMutt.cpp">
+      <Filter>Source Files\GameObject\Enemy\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lizard.cpp">
+      <Filter>Source Files\GameObject\Enemy\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Molerat.cpp">
+      <Filter>Source Files\GameObject\Enemy\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Deer.cpp">
+      <Filter>Source Files\GameObject\Enemy\Forest</Filter>
     </ClCompile>
     <ClCompile Include="Source\Wildboar.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
+      <Filter>Source Files\GameObject\Enemy\Forest</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ItemFactory.cpp">
-      <Filter>Source Files\Factory</Filter>
+    <ClCompile Include="Source\Drone.cpp">
+      <Filter>Source Files\GameObject\Enemy\City</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PatrolBot.cpp">
+      <Filter>Source Files\GameObject\Enemy\City</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RogueMech.cpp">
+      <Filter>Source Files\GameObject\Enemy\City</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Goat.cpp">
+      <Filter>Source Files\GameObject\Enemy\Forest</Filter>
     </ClCompile>
     <ClCompile Include="Source\Renderer.cpp">
       <Filter>Source Files\Framework</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Ability.cpp">
-      <Filter>Source Files\GameObject\Ability</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Lighting.cpp">
-      <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Ability.cpp">
+      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+    </ClCompile>
+    <ClCompile Include="AbilityDataBase.cpp">
+      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Burrowing.cpp">
+      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Corrosive.cpp">
+      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Teleporting.cpp">
+      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Radioactive.cpp">
+      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Barn.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Building.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingDataBase.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Crafting.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DefenceTower.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DefensiveWalls.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FastTravelRoom.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\InventoryWarehouse.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\NPCHouse.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\OreMines.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PowerGenerator.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TilledSoil.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TrophyRoom.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\WaterWell.cpp">
+      <Filter>Source Files\Factory\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingFactory.cpp">
+      <Filter>Source Files\Factory</Filter>
     </ClCompile>
     <ClCompile Include="Source\EnemyFactory.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ItemFactory.cpp">
+      <Filter>Source Files\Factory</Filter>
     </ClCompile>
     <ClCompile Include="Source\EnemyDataBase.cpp">
       <Filter>Source Files\GameObject\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Barn.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Building.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Crafting.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\DefenceTower.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\DefensiveWalls.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\FastTravelRoom.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\InventoryWarehouse.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\NPCHouse.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\OreMines.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PowerGenerator.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\TilledSoil.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\TrophyRoom.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\WaterWell.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Source\SceneBase.cpp">
       <Filter>Source Files\Scenes</Filter>
-=======
-    <ClCompile Include="Source\Teleporting.cpp">
-      <Filter>Source Files\GameObject\Ability\Ability List</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Burrowing.cpp">
-      <Filter>Source Files\GameObject\Ability\Ability List</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Corrosive.cpp">
-      <Filter>Source Files\GameObject\Ability\Ability List</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Radioactive.cpp">
-      <Filter>Source Files\GameObject\Ability\Ability List</Filter>
-    </ClCompile>
-    <ClCompile Include="AbilityDataBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BuildingDataBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BuildingFactory.cpp">
-      <Filter>Source Files</Filter>
->>>>>>> 282a99a219e5725de8623fa711b68f7268a7ff3e
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -588,62 +600,65 @@
     <ClInclude Include="Source\Player.h">
       <Filter>Header Files\GameObject\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Wildboar.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Ant_Hill.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Centipede.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CyborgMutt.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Deer.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Drone.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Enemy.h">
       <Filter>Header Files\GameObject\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Goat.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
+    <ClInclude Include="Source\Acrid_Plant.h">
+      <Filter>Header Files\GameObject\Enemy\Bosses</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Lizard.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
+    <ClInclude Include="Source\Centipede.h">
+      <Filter>Header Files\GameObject\Enemy\Bosses</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Molerat.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\PatrolBot.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\RogueMech.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
+    <ClInclude Include="Source\Ant_Hill.h">
+      <Filter>Header Files\GameObject\Enemy\Bosses</Filter>
     </ClInclude>
     <ClInclude Include="Source\Scarecrow_Mech.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
+      <Filter>Header Files\GameObject\Enemy\Bosses</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Acrid_Plant.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
+    <ClInclude Include="Source\RogueMech.h">
+      <Filter>Header Files\GameObject\Enemy\City</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CyborgMutt.h">
+      <Filter>Header Files\GameObject\Enemy\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Molerat.h">
+      <Filter>Header Files\GameObject\Enemy\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PatrolBot.h">
+      <Filter>Header Files\GameObject\Enemy\City</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Deer.h">
+      <Filter>Header Files\GameObject\Enemy\Forest</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Goat.h">
+      <Filter>Header Files\GameObject\Enemy\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Wildboar.h">
+      <Filter>Header Files\GameObject\Enemy\Forest</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lizard.h">
+      <Filter>Header Files\GameObject\Enemy\Forest</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Drone.h">
+      <Filter>Header Files\GameObject\Enemy\City</Filter>
     </ClInclude>
     <ClInclude Include="Source\Ability.h">
       <Filter>Header Files\GameObject\Ability</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ItemFactory.h">
-      <Filter>Header Files\Factory</Filter>
+    <ClInclude Include="AbilityDataBase.h">
+      <Filter>Header Files\GameObject\Ability</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Renderer.h">
-      <Filter>Header Files\Framework</Filter>
+    <ClInclude Include="Source\Burrowing.h">
+      <Filter>Header Files\GameObject\Ability</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Lighting.h">
-      <Filter>Header Files\Framework\Rendering and  Lighting</Filter>
+    <ClInclude Include="Source\Corrosive.h">
+      <Filter>Header Files\GameObject\Ability</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EnemyDataBase.h">
-      <Filter>Header Files\GameObject\Enemy</Filter>
+    <ClInclude Include="Source\Radioactive.h">
+      <Filter>Header Files\GameObject\Ability</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Teleporting.h">
+      <Filter>Header Files\GameObject\Ability</Filter>
     </ClInclude>
     <ClInclude Include="Source\Barn.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
@@ -651,13 +666,16 @@
     <ClInclude Include="Source\Building.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
     </ClInclude>
+    <ClInclude Include="BuildingDataBase.h">
+      <Filter>Header Files\GameObject\Buildings</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Crafting.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
     </ClInclude>
-    <ClInclude Include="Source\DefensiveWalls.h">
+    <ClInclude Include="Source\DefenceTower.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
     </ClInclude>
-    <ClInclude Include="Source\DefenceTower.h">
+    <ClInclude Include="Source\DefensiveWalls.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
     </ClInclude>
     <ClInclude Include="Source\FastTravelRoom.h">
@@ -684,34 +702,26 @@
     <ClInclude Include="Source\WaterWell.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="Source\SceneBase.h">
-      <Filter>Header Files\Scenes</Filter>
-=======
+    <ClInclude Include="Source\EnemyDataBase.h">
+      <Filter>Header Files\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingFactory.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
     <ClInclude Include="Source\EnemyFactory.h">
       <Filter>Header Files\Factory</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Burrowing.h">
-      <Filter>Header Files\GameObject\Ability\Abiltiy List</Filter>
+    <ClInclude Include="Source\ItemFactory.h">
+      <Filter>Header Files\Factory</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Corrosive.h">
-      <Filter>Header Files\GameObject\Ability\Abiltiy List</Filter>
+    <ClInclude Include="Source\Lighting.h">
+      <Filter>Header Files\Framework</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Radioactive.h">
-      <Filter>Header Files\GameObject\Ability\Abiltiy List</Filter>
+    <ClInclude Include="Source\Renderer.h">
+      <Filter>Header Files\Framework</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Teleporting.h">
-      <Filter>Header Files\GameObject\Ability\Abiltiy List</Filter>
-    </ClInclude>
-    <ClInclude Include="AbilityDataBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BuildingDataBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BuildingFactory.h">
-      <Filter>Header Files</Filter>
->>>>>>> 282a99a219e5725de8623fa711b68f7268a7ff3e
+    <ClInclude Include="Source\SceneBase.h">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

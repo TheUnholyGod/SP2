@@ -2,25 +2,25 @@
 #define _PLAYER_H
 
 #include "GameObject.h"
+#include "Renderer.h"
 #include <string>
-#include "Vector3.h"
 
 class Player : public GameObject
 {
 private:
-	Player(int);
+	Player();
 	static Player* player;
-	
+	Renderer* playerRender;
 
 public:
-	static Player* getplayer(int);
+	static Player* getplayer();
 	const int gethealth();
 	const int gethunger();
 	const int getattack();
-	//void setposition(const Vector3& pos);
-	//const Vector3 getposition();
+	Renderer getRenderer() { return *playerRender; }
 	void receivedamage();
 	bool isDead();
+	void Update(Vector3, Vector3, double);
 	~Player();
 
 protected:

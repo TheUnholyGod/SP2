@@ -1,16 +1,17 @@
 #include "Player.h"
+#include "Application.h"
 
 Player* Player::player;
 
-Player::Player(int no) : GameObject(no)
+Player::Player() : GameObject(0)
 {
 
 }
 
-Player* Player::getplayer(int no) 
+Player* Player::getplayer() 
 {
 	if (!player) {
-		player = new Player(no);
+		player = new Player;
 	}
 
 	return player;
@@ -46,3 +47,26 @@ Player::~Player()
 
 }
 
+void Player::Update(Vector3 camForward, Vector3 camRight, double dt)
+{
+	if (playerRender->getForward() != camForward)
+	{
+		playerRender->setForward(camForward);
+	}
+	if (Application::IsKeyPressed('A'))
+	{
+		playerRender->translate(-camRight, 25 * dt);
+	}
+	else if (Application::IsKeyPressed('D'))
+	{
+		playerRender->translate(camRight, 25 * dt);
+	}
+	else if (Application::IsKeyPressed('S'))
+	{
+		playerRender->translate(-camForward, 25 * dt);
+	}
+	else if (Application::IsKeyPressed('W'))
+	{
+		playerRender->translate(camForward, 25 * dt);
+	}
+}

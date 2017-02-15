@@ -6,6 +6,8 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
+#include "EnemyFactory.h"
+#include "Player.h"
 
 #include <sstream>
 
@@ -79,9 +81,8 @@ void SceneBase::Init()
 	forward.z = 1;
 	lighting.y = 1.f;
 	reset = false;
-	sunup = true;
 	//Initialize camera settings
-	camera.Init(-forward * 20, Vector3(0, 0, 0), Vector3(0, 1, 0));
+	fp_camera.Init(Vector3(20, 10, 0), Vector3(3, 10, 0), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -120,8 +121,11 @@ void SceneBase::Init()
 	meshList[GEO_QUAD]->textureID = LoadTGA("Image//ground.tga");
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
+	enemyMeshList[GEO_MOLERAT] = MeshBuilder::GenerateOBJ("molerat", "OBJ//MoleRat.obj");
+	enemyMeshList[GEO_LIZARD] = MeshBuilder::GenerateOBJ("lizard", "OBJ//Lizard.obj");
 	suntimer = 1;
 	LoadSkybox();
+	Player::getplayer();
 }
 
 void SceneBase::Update(double dt)
@@ -132,6 +136,9 @@ void SceneBase::Update(double dt)
 		SceneManager::currScene = 2;
 	}
 	LightUpdate(dt);
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	SpawnEnemy();
+	Player::getplayer()->Update(camForward, camRight, dt);
 }
 
 void SceneBase::Render()
@@ -174,6 +181,8 @@ void SceneBase::Render()
 	modelStack.Scale(1000, 1000, 1000);
 	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
+
+	RenderEnemy();
 }
 
 void SceneBase::Exit()
@@ -508,4 +517,23 @@ void SceneBase::LightUpdate(double dt)
 	}
 
 	std::cout << "Lighting Level: " << lighting.y << std::endl;
+}
+
+void SceneBase::SpawnEnemy()
+{
+	if (BaseEnemy.size() < 5)
+		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+}
+
+void SceneBase::RenderEnemy()
+{
+	int y = 0;
+	for (auto &i : BaseEnemy)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(0, y, 0);
+		RenderMesh(enemyMeshList[i->getID()], true);
+		modelStack.PopMatrix();
+		y++;
+	}
 }
