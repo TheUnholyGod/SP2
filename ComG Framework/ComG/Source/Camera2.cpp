@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "Mtx44.h"
 
+
 Camera2::Camera2()
 {
 }
@@ -13,6 +14,7 @@ Camera2::~Camera2()
 void Camera2::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	camVec = pos;
+
 	this->position = defaultPosition = pos;
 	this->target = defaultTarget = target;
 	Vector3 view = (target - position).Normalized();

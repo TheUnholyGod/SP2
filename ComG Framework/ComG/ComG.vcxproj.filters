@@ -431,6 +431,9 @@
     <ClCompile Include="Source\BuildingDataBase.cpp">
       <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
+    <ClCompile Include="Source\SceneTest.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -705,6 +708,9 @@
     </ClInclude>
     <ClInclude Include="Source\AbilityDataBase.h">
       <Filter>Header Files\GameObject\Ability</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scenetest.h">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
