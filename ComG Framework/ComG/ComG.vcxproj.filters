@@ -445,6 +445,7 @@
     <ClCompile Include="Source\BuildingFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Source\SceneCity.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
@@ -457,6 +458,11 @@
     <ClCompile Include="Source\SceneWildLife.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
+=======
+    <ClCompile Include="Source\SceneTest.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+>>>>>>> e96b92c3032a7e275c841640585fcee2205b81f2
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -732,6 +738,7 @@
     <ClInclude Include="Source\BuildingFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Source\SceneCity.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
@@ -743,6 +750,10 @@
     </ClInclude>
     <ClInclude Include="Source\SceneWildLife.h">
       <Filter>Header Files\Scenes</Filter>
+=======
+    <ClInclude Include="Source\Scenetest.h">
+      <Filter>Header Files</Filter>
+>>>>>>> e96b92c3032a7e275c841640585fcee2205b81f2
     </ClInclude>
   </ItemGroup>
 </Project>

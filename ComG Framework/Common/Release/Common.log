@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 15/2/2017 2:15:34 PM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>Lib:
@@ -7,3 +8,6 @@
 Build succeeded.
 
 Time Elapsed 00:00:00.05
+=======
+﻿
+>>>>>>> e96b92c3032a7e275c841640585fcee2205b81f2

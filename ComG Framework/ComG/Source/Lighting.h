@@ -36,14 +36,15 @@ public:
 	void LightRender(MS viewStack);
 	int Lightgetsunup();
 	float getsuntimer();
-	int sunup;
-	float suntimer;
-	Light light[1];
+
+	bool start;
+	int Day;
 
 private:
 	double lightrotate, sunrotate;
 	Mtx44 LightPos;
-
+	int sunup;
+	float suntimer;
 	Vector3 lighting;
 	
 	bool reset;
