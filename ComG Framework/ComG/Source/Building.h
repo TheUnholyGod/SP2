@@ -16,9 +16,10 @@ protected:
 	const std::string kName_;
 	int health_;
 	bool enter_;
+	std::string source_location_;
 public:
 	
-	Building(const std::string name, const int id, int health, BUILDINGFUNCTION, bool enter);
+	Building(const int id, const std::string name, std::string source_, int health, BUILDINGFUNCTION, bool enter);
 	virtual ~Building();
 
 	int get_Health();

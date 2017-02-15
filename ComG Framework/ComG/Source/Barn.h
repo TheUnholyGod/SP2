@@ -9,6 +9,7 @@ class Barn : public Building
 protected:
 	
 	const std::string kName_;
+	std::string source_location_;
 	int health_;
 	bool enter_;
 public:
