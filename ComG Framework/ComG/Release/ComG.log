@@ -1,1 +1,7 @@
-﻿
+﻿  SceneBase.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneBase.cpp(439): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Generating code
+  Finished generating code
+  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\ComG.exe

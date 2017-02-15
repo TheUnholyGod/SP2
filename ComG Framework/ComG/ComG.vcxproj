@@ -129,6 +129,7 @@
     <ClCompile Include="Source\Glock_17C.cpp" />
     <ClCompile Include="Source\Goat.cpp" />
     <ClCompile Include="Source\Gold.cpp" />
+    <ClCompile Include="Source\Inventory.cpp" />
     <ClCompile Include="Source\InventoryWarehouse.cpp" />
     <ClCompile Include="Source\Iron.cpp" />
     <ClCompile Include="Source\Item.cpp" />
@@ -222,6 +223,7 @@
     <ClInclude Include="Source\Glock_17C.h" />
     <ClInclude Include="Source\Goat.h" />
     <ClInclude Include="Source\Gold.h" />
+    <ClInclude Include="Source\Inventory.h" />
     <ClInclude Include="Source\InventoryWarehouse.h" />
     <ClInclude Include="Source\Iron.h" />
     <ClInclude Include="Source\Item.h" />

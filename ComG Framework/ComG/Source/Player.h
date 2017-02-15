@@ -3,6 +3,7 @@
 
 #include "GameObject.h"
 #include "Renderer.h"
+#include "Inventory.h"
 #include <string>
 
 class Player : public GameObject
