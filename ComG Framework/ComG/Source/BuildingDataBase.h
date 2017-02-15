@@ -2,7 +2,7 @@
 #define _BUILDINGDATABASE_H
 
 #include <map>
-#include "Source\Building.h"
+#include "Building.h"
 
 class BuildingDataBase
 {

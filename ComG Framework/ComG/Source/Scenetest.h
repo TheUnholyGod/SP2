@@ -1,5 +1,5 @@
-#ifndef SCENE_BASE_H
-#define SCENE_BASE_H
+#ifndef SCENE_TEST_H
+#define SCENE_TEST_H
 
 #include "Scene.h"
 #include "Camera.h"
@@ -9,16 +9,10 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "Utility.h"
-<<<<<<< HEAD
-#include <list>
-#include "Building.h"
-#include "Enemy.h"
-=======
 #include "Lighting.h"
 #include <vector>
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
 
-class SceneBase : public Scene
+class SceneTest : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
@@ -58,7 +52,6 @@ class SceneBase : public Scene
 		U_MATERIAL_SHININESS,
 		U_LIGHTENABLED,
 		//add these enum in UNIFORM_TYPE before U_TOTAL
-		//add these enum in UNIFORM_TYPE before U_TOTAL
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
 
@@ -67,16 +60,11 @@ class SceneBase : public Scene
 
 		U_TOTAL,
 	};
-	enum ENEMYMESHLIST
-	{
-		GEO_MOLERAT,
-		GEO_LIZARD,
-		NUM_ENEMYGEOMETRY,
-	};
+
 
 public:
-	SceneBase();
-	~SceneBase();
+	SceneTest();
+	~SceneTest();
 
 	virtual void Init();
 	virtual void Update(double dt);
@@ -85,15 +73,15 @@ public:
 private:
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
-	Mesh *enemyMeshList[NUM_ENEMYGEOMETRY];
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
+
 	MS modelStack, viewStack, projectionStack;
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
 	Camera3 fp_camera;
-	Lighting light[1];
+	
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	float LSPEED;
 	void LoadSkybox();
@@ -101,23 +89,18 @@ private:
 	void DebugMode(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-<<<<<<< HEAD
-	double lightrotate,sunrotate;
+	
+	Lighting Light[1];
+	bool fps;
+	/*double lightrotate, sunrotate;
 	Mtx44 LightPos;
-
+	Light light[1];
+	Vector3 lighting;
 	int sunup;
 	float suntimer;
-
-	void LightUpdate(double dt);
-	bool reset;
-=======
+	bool reset;*/
 };
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
 
-	std::list<Enemy*> BaseEnemy;
-	std::list<Building*> BaseBuildings;
-	void SpawnEnemy();
-	void RenderEnemy();
-};
+extern GLFWwindow* m_window;
 
 #endif

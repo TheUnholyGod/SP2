@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< HEAD
 Release|Win32|C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\|
+=======
+Release|Win32|C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\|
+>>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4

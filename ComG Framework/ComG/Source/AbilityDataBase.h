@@ -2,7 +2,7 @@
 #define _ABILITYDATABASE_H
 
 #include <map>
-#include "Source\Ability.h"
+#include "Ability.h"
 
 class AbilityDataBase
 {

@@ -1,4 +1,4 @@
-#include "SceneBase.h"
+#include "SceneTest.h"
 #include "GL\glew.h"
 #include "shader.hpp"
 #include "Mtx44.h"
@@ -6,22 +6,21 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
-#include "EnemyFactory.h"
-#include "Player.h"
 
 #include <sstream>
 
-SceneBase::SceneBase()
+SceneTest::SceneTest()
 {
 }
 
-SceneBase::~SceneBase()
+SceneTest::~SceneTest()
 {
 }
 
-void SceneBase::Init()
+void SceneTest::Init()
 {
 	LSPEED = 10.f;
+	fps = false;
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -59,17 +58,12 @@ void SceneBase::Init()
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
-	light[0].LightInit(m_programID);
+	Light[0].LightInit(m_programID);
 	//glUseProgram(m_programID);
 	forward.z = 1;
-<<<<<<< HEAD
-	lighting.y = 1.f;
-	reset = false;
-=======
 	// Make sure you pass uniform parameters after glUseProgram()
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
 	//Initialize camera settings
-	fp_camera.Init(Vector3(20, 10, 0), Vector3(3, 10, 0), Vector3(0, 1, 0));
+	camera.Init(-forward * 20, Vector3(0, 0, 0), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -77,8 +71,7 @@ void SceneBase::Init()
 	projection.SetToPerspective(45.f, 4.f / 3.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-	// Make sure you pass uniform parameters after glUseProgram()
-
+	Light[0].LightInit1(m_programID);
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
@@ -86,49 +79,42 @@ void SceneBase::Init()
 	meshList[GEO_QUAD]->textureID = LoadTGA("Image//ground.tga");
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
-<<<<<<< HEAD
-	enemyMeshList[GEO_MOLERAT] = MeshBuilder::GenerateOBJ("molerat", "OBJ//MoleRat.obj");
-	enemyMeshList[GEO_LIZARD] = MeshBuilder::GenerateOBJ("lizard", "OBJ//Lizard.obj");
-	suntimer = 1;
-=======
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
+	
 	LoadSkybox();
-	Player::getplayer();
 }
 
-void SceneBase::Update(double dt)
+void SceneTest::Update(double dt)
 {
 	DebugMode(dt);
 	if (Application::IsKeyPressed('E'))
 	{
 		SceneManager::currScene = 2;
 	}
-<<<<<<< HEAD
-	LightUpdate(dt);
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	SpawnEnemy();
-	Player::getplayer()->Update(camForward, camRight, dt);
-=======
-	light[0].LightUpdate(dt);
-
-	camera.Update(dt, Vector3(0, 0, 0));
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
+	Light[0].LightUpdate(dt);
 }
 
-void SceneBase::Render()
+void SceneTest::Render()
 {
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	viewStack.LoadIdentity();
-	
-	viewStack.LookAt(fp_camera.position.x, fp_camera.position.y,
-		fp_camera.position.z, fp_camera.target.x, fp_camera.target.y,
-		fp_camera.target.z, fp_camera.up.x, fp_camera.up.y, fp_camera.up.z);
 
+	if (fps == false)
+	{
+		viewStack.LookAt(camera.position.x, camera.position.y,
+			camera.position.z, camera.target.x, camera.target.y,
+			camera.target.z, camera.up.x, camera.up.y, camera.up.z);
+	}
+	else if (fps == true)
+	{
+		viewStack.LookAt(fp_camera.position.x, fp_camera.position.y,
+			fp_camera.position.z, fp_camera.target.x, fp_camera.target.y,
+			fp_camera.target.z, fp_camera.up.x, fp_camera.up.y, fp_camera.up.z);
+	}
 	modelStack.LoadIdentity();
 
-	light[0].LightRender(viewStack);
+	Light[0].LightRender(viewStack);
 
 	RenderMesh(meshList[GEO_AXES], false);
 
@@ -138,17 +124,15 @@ void SceneBase::Render()
 	modelStack.Scale(1000, 1000, 1000);
 	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
-
-	RenderEnemy();
 }
 
-void SceneBase::Exit()
+void SceneTest::Exit()
 {
 	glDeleteProgram(m_programID);
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 }
 
-void SceneBase::RenderMesh(Mesh *mesh, bool enableLight)
+void SceneTest::RenderMesh(Mesh *mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 
@@ -189,16 +173,15 @@ void SceneBase::RenderMesh(Mesh *mesh, bool enableLight)
 	{
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
-
 }
 
-void SceneBase::LoadSkybox()
+void SceneTest::LoadSkybox()
 {
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
 	meshList[GEO_FRONT]->textureID = LoadTGA("Image//Skybox-Day//left.tga");
 
 	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1.f);
-	meshList[GEO_LEFT]->textureID = LoadTGA("Image//Skybox-Day//back.tga"); 
+	meshList[GEO_LEFT]->textureID = LoadTGA("Image//Skybox-Day//back.tga");
 
 	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1.f);
 	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//Skybox-Day//front.tga");
@@ -253,7 +236,7 @@ void SceneBase::LoadSkybox()
 	meshList[GEO_TOP2]->textureID = LoadTGA("Image//Skybox-Transition//trantop.tga");
 }
 
-void SceneBase::RenderSkybox()
+void SceneTest::RenderSkybox()
 {
 	modelStack.PushMatrix();
 	modelStack.Translate(10, 0, 10);
@@ -264,13 +247,13 @@ void SceneBase::RenderSkybox()
 	modelStack.Rotate(270, 1, 0, 0);
 	modelStack.Translate(0, 0.5, 0);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (Light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_LEFT], false);
 
-	else if(light[0].Lightgetsunup() == 2)
+	else if (Light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_LEFT1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (Light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_LEFT2], false);
 
 	modelStack.PopMatrix();
@@ -279,13 +262,13 @@ void SceneBase::RenderSkybox()
 	modelStack.Translate(0, -0.5, 0);
 	modelStack.Scale(1, 1, -1);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (Light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_BOTTOM], false);
 
-	else if (light[0].Lightgetsunup() == 2)
+	else if (Light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_BOTTOM1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (Light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_BOTTOM2], false);
 
 	modelStack.PopMatrix();
@@ -294,13 +277,13 @@ void SceneBase::RenderSkybox()
 	modelStack.Rotate(90, 1, 0, 0);
 	modelStack.Translate(0, 0.5, 0);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (Light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_RIGHT], false);
 
-	else if (light[0].Lightgetsunup() == 2)
+	else if (Light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_RIGHT1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (Light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_RIGHT2], false);
 
 	modelStack.PopMatrix();
@@ -309,13 +292,13 @@ void SceneBase::RenderSkybox()
 	modelStack.Rotate(90, 0, 0, 1);
 	modelStack.Rotate(180, 1, 0, 0);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (Light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_BACK], false);
 
-	else if (light[0].Lightgetsunup() == 2)
+	else if (Light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_BACK1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (Light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_BACK2], false);
 
 	modelStack.PopMatrix();
@@ -323,33 +306,33 @@ void SceneBase::RenderSkybox()
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Translate(0, 0.5, 0);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (Light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_TOP], false);
 
-	else if (light[0].Lightgetsunup() == 2)
+	else if (Light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_TOP1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (Light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_TOP2], false);
 
 	modelStack.PopMatrix();
 	modelStack.Translate(-0.5, 0, 0);
 	modelStack.Rotate(90, 0, 0, 1);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (Light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_FRONT], false);
 
-	else if (light[0].Lightgetsunup() == 2)
+	else if (Light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_FRONT1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (Light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_FRONT2], false);
 
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
 
-void SceneBase::DebugMode(double dt)
+void SceneTest::DebugMode(double dt)
 {
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -361,7 +344,7 @@ void SceneBase::DebugMode(double dt)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 }
 
-void SceneBase::RenderText(Mesh* mesh, std::string text, Color color)
+void SceneTest::RenderText(Mesh* mesh, std::string text, Color color)
 {
 	if (!mesh || mesh->textureID <= 0) //Proper error check
 		return;
@@ -388,112 +371,44 @@ void SceneBase::RenderText(Mesh* mesh, std::string text, Color color)
 	glEnable(GL_DEPTH_TEST);
 }
 
-void SceneBase::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
+void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
 {
-		if (!mesh || mesh->textureID <= 0) //Proper error check
-			return;
+	if (!mesh || mesh->textureID <= 0) //Proper error check
+		return;
 
-		glDisable(GL_DEPTH_TEST);
-		Mtx44 ortho;
-		ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
-		projectionStack.PushMatrix();
-		projectionStack.LoadMatrix(ortho);
-		viewStack.PushMatrix();
-		viewStack.LoadIdentity(); //No need camera for ortho mode
-		modelStack.PushMatrix();
-		modelStack.LoadIdentity(); //Reset modelStack
-		modelStack.Scale(size, size, size);
-		modelStack.Translate(x, y, 0);
+	glDisable(GL_DEPTH_TEST);
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+	modelStack.Scale(size, size, size);
+	modelStack.Translate(x, y, 0);
 
-		glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
-		glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
-		glUniform1i(m_parameters[U_LIGHTENABLED], 0);
-		glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, mesh->textureID);
-		glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-		for (unsigned i = 0; i < text.length(); ++i)
-		{
-			Mtx44 characterSpacing;
-			characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
-			Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
-			glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
-
-			mesh->Render((unsigned)text[i] * 6, 6);
-		}
-		glBindTexture(GL_TEXTURE_2D, 0);
-		glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
-
-		projectionStack.PopMatrix();
-		viewStack.PopMatrix();
-		modelStack.PopMatrix();
-		glEnable(GL_DEPTH_TEST);
-<<<<<<< HEAD
-}
-
-void SceneBase::LightUpdate(double dt)
-{
-	if (!reset)
+	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
+	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
+	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
+	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
+	glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+	for (unsigned i = 0; i < text.length(); ++i)
 	{
-		suntimer = 1;
-	}
-	lightrotate = (dt * suntimer) * 10;
-	sunrotate += lightrotate;
-	LightPos.SetToRotation(lightrotate, 0, 0, 1);
-	lighting = LightPos * lighting;
+		Mtx44 characterSpacing;
+		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
+		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
+		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
 
-	if (lighting.y <= 0)
-	{
-		light[0].power = 0;
-		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-		if (lighting.y >= 0 && lighting.y <= 0.5)
-		{
-			sunup = 3;
-			reset = false;
-		}
-		else if (lighting.y <= -0.5)
-		{
-			sunup = 2;
-			reset = false;
-		}	
+		mesh->Render((unsigned)text[i] * 6, 6);
 	}
-	else
-	{
-		light[0].type = Light::LIGHT_DIRECTIONAL;
-		light[0].position.Set(lighting.x, lighting.y, lighting.z);
-		light[0].power = 1;
-		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-		
-		if (lighting.y >= 0 && lighting.y < 0.5)
-		{
-			sunup = 3;
-		}
-		else if (lighting.y > 0.5)
-		{
-			sunup = 1;
-		}
-	}
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
 
-	std::cout << "Lighting Level: " << lighting.y << std::endl;
-}
-
-void SceneBase::SpawnEnemy()
-{
-	if (BaseEnemy.size() < 5)
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
-}
-
-void SceneBase::RenderEnemy()
-{
-	int y = 0;
-	for (auto &i : BaseEnemy)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(0, y, 0);
-		RenderMesh(enemyMeshList[i->getID()], true);
-		modelStack.PopMatrix();
-		y++;
-	}
-=======
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
+	glEnable(GL_DEPTH_TEST);
 }

@@ -32,7 +32,8 @@ Mesh::~Mesh()
 	glDeleteBuffers(1, &vertexBuffer);
 	glDeleteBuffers(1, &indexBuffer);
 	if (textureID > 0)
-		glDeleteTextures(1, &textureID);
+		glDeleteTextures(1, &textureID);
+
 }
 
 /******************************************************************************/
@@ -60,7 +61,8 @@ void Mesh::Render()
 		glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE,
 			sizeof(Vertex), (void*)(sizeof(Position)+sizeof(Color)+
 			sizeof(Vector3)));
-	}
+	}
+
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
 	if (mode == DRAW_TRIANGLE_STRIP)
@@ -78,7 +80,8 @@ void Mesh::Render()
 	if (textureID > 0)
 	{
 		glDisableVertexAttribArray(3);
-	}
+	}
+
 }
 
 void Mesh::Render(unsigned offset, unsigned count)
@@ -100,7 +103,8 @@ void Mesh::Render(unsigned offset, unsigned count)
 		glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE,
 			sizeof(Vertex), (void*)(sizeof(Position)+sizeof(Color)+
 			sizeof(Vector3)));
-	}
+	}
+
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
 	if (mode == DRAW_LINES)
