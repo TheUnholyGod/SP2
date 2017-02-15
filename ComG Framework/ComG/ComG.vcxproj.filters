@@ -376,7 +376,6 @@
     <ClCompile Include="AbilityDataBase.cpp">
       <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Source\Burrowing.cpp">
       <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
     </ClCompile>
@@ -388,10 +387,6 @@
     </ClCompile>
     <ClCompile Include="Source\Radioactive.cpp">
       <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
-=======
-    <ClCompile Include="Source\EnemyDataBase.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
     </ClCompile>
     <ClCompile Include="Source\Barn.cpp">
       <Filter>Source Files\Factory\Buildings</Filter>
@@ -433,14 +428,7 @@
       <Filter>Source Files\Factory\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\WaterWell.cpp">
-<<<<<<< HEAD
       <Filter>Source Files\Factory\Buildings</Filter>
-=======
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Teleporting.cpp">
-      <Filter>Source Files\GameObject\Ability\Ability List</Filter>
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
     </ClCompile>
     <ClCompile Include="BuildingFactory.cpp">
       <Filter>Source Files\Factory</Filter>
@@ -448,7 +436,6 @@
     <ClCompile Include="Source\EnemyFactory.cpp">
       <Filter>Source Files\Factory</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Source\ItemFactory.cpp">
       <Filter>Source Files\Factory</Filter>
     </ClCompile>
@@ -456,24 +443,6 @@
       <Filter>Source Files\GameObject\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="Source\SceneBase.cpp">
-=======
-    <ClCompile Include="Source\SceneBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BuildingFactory.cpp">
-      <Filter>Source Files\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EnemyFactory.cpp">
-      <Filter>Source Files\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\AbilityDataBase.cpp">
-      <Filter>Source Files\GameObject\Ability</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BuildingDataBase.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\SceneTest.cpp">
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -733,16 +702,8 @@
     <ClInclude Include="Source\WaterWell.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="Source\EnemyDataBase.h">
       <Filter>Header Files\GameObject\Enemy</Filter>
-=======
-    <ClInclude Include="Source\EnemyFactory.h">
-      <Filter>Header Files\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Burrowing.h">
-      <Filter>Header Files\GameObject\Ability\Abiltiy List</Filter>
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
     </ClInclude>
     <ClInclude Include="BuildingFactory.h">
       <Filter>Header Files\Factory</Filter>
@@ -753,7 +714,6 @@
     <ClInclude Include="Source\ItemFactory.h">
       <Filter>Header Files\Factory</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="Source\Lighting.h">
       <Filter>Header Files\Framework</Filter>
     </ClInclude>
@@ -761,18 +721,6 @@
       <Filter>Header Files\Framework</Filter>
     </ClInclude>
     <ClInclude Include="Source\SceneBase.h">
-=======
-    <ClInclude Include="Source\SceneBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\BuildingFactory.h">
-      <Filter>Header Files\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\AbilityDataBase.h">
-      <Filter>Header Files\GameObject\Ability</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Scenetest.h">
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>

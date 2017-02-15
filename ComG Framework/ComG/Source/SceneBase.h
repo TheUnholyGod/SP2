@@ -9,14 +9,11 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "Utility.h"
-<<<<<<< HEAD
 #include <list>
 #include "Building.h"
 #include "Enemy.h"
-=======
 #include "Lighting.h"
 #include <vector>
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
 
 class SceneBase : public Scene
 {
@@ -101,18 +98,12 @@ private:
 	void DebugMode(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-<<<<<<< HEAD
 	double lightrotate,sunrotate;
 	Mtx44 LightPos;
 
 	int sunup;
 	float suntimer;
-
-	void LightUpdate(double dt);
 	bool reset;
-=======
-};
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
 
 	std::list<Enemy*> BaseEnemy;
 	std::list<Building*> BaseBuildings;

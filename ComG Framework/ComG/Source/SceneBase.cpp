@@ -62,12 +62,8 @@ void SceneBase::Init()
 	light[0].LightInit(m_programID);
 	//glUseProgram(m_programID);
 	forward.z = 1;
-<<<<<<< HEAD
-	lighting.y = 1.f;
 	reset = false;
-=======
 	// Make sure you pass uniform parameters after glUseProgram()
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
 	//Initialize camera settings
 	fp_camera.Init(Vector3(20, 10, 0), Vector3(3, 10, 0), Vector3(0, 1, 0));
 
@@ -86,12 +82,9 @@ void SceneBase::Init()
 	meshList[GEO_QUAD]->textureID = LoadTGA("Image//ground.tga");
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
-<<<<<<< HEAD
 	enemyMeshList[GEO_MOLERAT] = MeshBuilder::GenerateOBJ("molerat", "OBJ//MoleRat.obj");
 	enemyMeshList[GEO_LIZARD] = MeshBuilder::GenerateOBJ("lizard", "OBJ//Lizard.obj");
 	suntimer = 1;
-=======
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
 	LoadSkybox();
 	Player::getplayer();
 }
@@ -103,16 +96,12 @@ void SceneBase::Update(double dt)
 	{
 		SceneManager::currScene = 2;
 	}
-<<<<<<< HEAD
-	LightUpdate(dt);
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy();
 	Player::getplayer()->Update(camForward, camRight, dt);
-=======
 	light[0].LightUpdate(dt);
 
 	camera.Update(dt, Vector3(0, 0, 0));
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
 }
 
 void SceneBase::Render()
@@ -428,53 +417,6 @@ void SceneBase::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 		viewStack.PopMatrix();
 		modelStack.PopMatrix();
 		glEnable(GL_DEPTH_TEST);
-<<<<<<< HEAD
-}
-
-void SceneBase::LightUpdate(double dt)
-{
-	if (!reset)
-	{
-		suntimer = 1;
-	}
-	lightrotate = (dt * suntimer) * 10;
-	sunrotate += lightrotate;
-	LightPos.SetToRotation(lightrotate, 0, 0, 1);
-	lighting = LightPos * lighting;
-
-	if (lighting.y <= 0)
-	{
-		light[0].power = 0;
-		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-		if (lighting.y >= 0 && lighting.y <= 0.5)
-		{
-			sunup = 3;
-			reset = false;
-		}
-		else if (lighting.y <= -0.5)
-		{
-			sunup = 2;
-			reset = false;
-		}	
-	}
-	else
-	{
-		light[0].type = Light::LIGHT_DIRECTIONAL;
-		light[0].position.Set(lighting.x, lighting.y, lighting.z);
-		light[0].power = 1;
-		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
-		
-		if (lighting.y >= 0 && lighting.y < 0.5)
-		{
-			sunup = 3;
-		}
-		else if (lighting.y > 0.5)
-		{
-			sunup = 1;
-		}
-	}
-
-	std::cout << "Lighting Level: " << lighting.y << std::endl;
 }
 
 void SceneBase::SpawnEnemy()
@@ -494,6 +436,4 @@ void SceneBase::RenderEnemy()
 		modelStack.PopMatrix();
 		y++;
 	}
-=======
->>>>>>> 3771212ae60087526b8eb035ddf9d90ad26d59e4
 }

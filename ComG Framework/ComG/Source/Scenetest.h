@@ -92,13 +92,6 @@ private:
 	
 	Lighting Light[1];
 	bool fps;
-	/*double lightrotate, sunrotate;
-	Mtx44 LightPos;
-	Light light[1];
-	Vector3 lighting;
-	int sunup;
-	float suntimer;
-	bool reset;*/
 };
 
 extern GLFWwindow* m_window;
