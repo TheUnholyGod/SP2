@@ -109,6 +109,7 @@
     <ClCompile Include="Source\Centipede.cpp" />
     <ClCompile Include="Source\CircuitBoards.cpp" />
     <ClCompile Include="Source\Cloth.cpp" />
+    <ClCompile Include="Source\Collision.cpp" />
     <ClCompile Include="Source\Compound_Bow.cpp" />
     <ClCompile Include="Source\Copper.cpp" />
     <ClCompile Include="Source\Corrosive.cpp" />
@@ -206,6 +207,7 @@
     <ClInclude Include="Source\Centipede.h" />
     <ClInclude Include="Source\CircuitBoards.h" />
     <ClInclude Include="Source\Cloth.h" />
+    <ClInclude Include="Source\Collision.h" />
     <ClInclude Include="Source\Compound_Bow.h" />
     <ClInclude Include="Source\Copper.h" />
     <ClInclude Include="Source\Corrosive.h" />

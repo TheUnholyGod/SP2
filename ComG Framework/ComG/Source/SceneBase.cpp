@@ -95,7 +95,7 @@ void SceneBase::Init()
 
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
-		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(i + 1)->getName(), ItemDataBase::getItemDB()->getItem(i + 1)->getSourceLocation());
+		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
 	}
 	suntimer = 1;
 	LoadSkybox();

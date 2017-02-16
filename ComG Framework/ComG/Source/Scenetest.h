@@ -9,13 +9,18 @@
 #include "MatrixStack.h"
 #include "Light.h"
 #include "Utility.h"
+#include <list>
+#include "Building.h"
+#include "Enemy.h"
 #include "Lighting.h"
 #include <vector>
+#include <array>
 
 class SceneTest : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
+		GEO_PLAYER,
 		GEO_AXES,
 		GEO_TEXT,
 		GEO_QUAD,
@@ -52,6 +57,7 @@ class SceneTest : public Scene
 		U_MATERIAL_SHININESS,
 		U_LIGHTENABLED,
 		//add these enum in UNIFORM_TYPE before U_TOTAL
+		//add these enum in UNIFORM_TYPE before U_TOTAL
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
 
@@ -60,7 +66,18 @@ class SceneTest : public Scene
 
 		U_TOTAL,
 	};
+	enum ENEMYMESHLIST
+	{
+		GEO_MOLERAT,
+		GEO_LIZARD,
+		NUM_ENEMYGEOMETRY,
+	};
 
+	enum WEAPONMESHLIST
+	{
+		GEO_BOW,
+		NUM_WEAPONGEOMETERY,
+	};
 
 public:
 	SceneTest();
@@ -72,16 +89,17 @@ public:
 	virtual void Exit();
 private:
 	unsigned m_vertexArrayID;
-	Mesh *meshList[NUM_GEOMETRY];
+	std::array<Mesh*, NUM_GEOMETRY> meshList;
+	std::array<Mesh*, NUM_ENEMYGEOMETRY> enemyMeshList;
+	std::array<Mesh*, NUM_WEAPONGEOMETERY> weaponmesh;
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
-
 	MS modelStack, viewStack, projectionStack;
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
 	Camera3 fp_camera;
-	
+	Lighting light[1];
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	float LSPEED;
 	void LoadSkybox();
@@ -89,11 +107,17 @@ private:
 	void DebugMode(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
-	
-	Lighting Light[1];
-	bool fps;
-};
+	double lightrotate, sunrotate;
+	Mtx44 LightPos;
 
-extern GLFWwindow* m_window;
+	int sunup;
+	float suntimer;
+	bool reset;
+
+	std::list<Enemy*> BaseEnemy;
+	std::list<Building*> BaseBuildings;
+	void SpawnEnemy();
+	void RenderEnemy();
+};
 
 #endif
