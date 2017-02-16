@@ -9,6 +9,7 @@
 #include "EnemyFactory.h"
 #include "Player.h"
 #include "EnemyDataBase.h"
+#include "ItemDataBase.h"
 
 #include <sstream>
 
@@ -67,7 +68,7 @@ void SceneBase::Init()
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
 	Player::getplayer();
-	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() , Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(25,50,25) , Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -91,8 +92,14 @@ void SceneBase::Init()
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i+1)->getName(),EnemyDataBase::getEnemyDB()->getEnemy(i+1)->getSourceLocation());
 	}
+
+	for (int i = 0; i < weaponmesh.size(); i++)
+	{
+		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(i + 1)->getName(), ItemDataBase::getItemDB()->getItem(i + 1)->getSourceLocation());
+	}
 	suntimer = 1;
 	LoadSkybox();
+	Player::getplayer()->gethealth();
 }
 
 void SceneBase::Update(double dt)
@@ -102,7 +109,7 @@ void SceneBase::Update(double dt)
 	{
 		SceneManager::currScene = 2;
 	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(5,5,5), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy();
 	Player::getplayer()->Update(camForward, camRight, dt);
 	light[0].LightUpdate(dt);
@@ -129,12 +136,17 @@ void SceneBase::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
-	RenderMesh(meshList[GEO_QUAD], true);
+	RenderMesh(meshList[GEO_QUAD], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getRenderer().getMatrix());
-	//RenderMesh(meshList[0], true);
+	RenderMesh(meshList[0], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
+	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
 
 	RenderEnemy();

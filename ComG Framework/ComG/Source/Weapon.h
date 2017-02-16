@@ -18,7 +18,7 @@ protected:
 	float kdurability_;
 
 public:
-	Weapon(std::string, WEAPONTYPE, float atk, float dura_);
+	Weapon(int, std::string, std::string, WEAPONTYPE, float atk, float dura_);
 	~Weapon();
 };
 

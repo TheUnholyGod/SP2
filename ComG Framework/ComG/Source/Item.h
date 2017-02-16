@@ -9,7 +9,7 @@ class Item : public GameObject
 protected:
 	const std::string kname_;
 public:
-	Item(int,std::string);
+	Item(int,std::string,std::string);
 	virtual ~Item();
 	const std::string getName() { return kname_; }
 };

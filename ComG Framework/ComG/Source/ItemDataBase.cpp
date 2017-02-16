@@ -19,6 +19,7 @@
 #include "MetalScraps.h"
 #include "Cloth.h"
 #include "CircuitBoards.h"
+#include "Compound_Bow.h"
 
 ItemDataBase* ItemDataBase::itemdb_;
 
@@ -83,6 +84,9 @@ ItemDataBase::ItemDataBase()
 	delete temp;
 	temp = new CircuitBoards;
 	itemdatabase_[temp->getID()] = new CircuitBoards;
+	delete temp;
+	temp = new Compound_Bow;
+	itemdatabase_[temp->getID()] = new Compound_Bow;
 	delete temp;
 }
 

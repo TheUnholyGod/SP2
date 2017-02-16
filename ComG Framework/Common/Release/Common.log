@@ -1,11 +1,1 @@
-﻿  MatrixStack.cpp
-  Mtx44.cpp
-<<<<<<< HEAD
-  timer.cpp
-  Vector3.cpp
-  Common.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\Common.lib
-=======
-  Vector3.cpp
-  timer.cpp
-  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib
->>>>>>> 095e850f2a3c950be22bc25a8a7fd5144c6a8aff
+﻿  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib

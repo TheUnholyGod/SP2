@@ -4,6 +4,7 @@
 #include "GameObject.h"
 #include "Renderer.h"
 #include "Inventory.h"
+#include "Weapon.h"
 #include <string>
 
 class Player : public GameObject
@@ -12,6 +13,7 @@ private:
 	Player();
 	static Player* player;
 	Renderer* playerRender;
+	Weapon* playerweapon_;
 
 public:
 	static Player* getplayer();
@@ -22,6 +24,8 @@ public:
 	void receivedamage();
 	bool isDead();
 	void Update(Vector3, Vector3, double);
+	Weapon* getWeapon() { return playerweapon_; }
+	
 	~Player();
 
 protected:
