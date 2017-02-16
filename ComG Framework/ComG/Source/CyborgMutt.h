@@ -7,6 +7,7 @@ class CyborgMutt : public Enemy
 public:
 	CyborgMutt();
 	~CyborgMutt();
+	void Update(double dt) {}
 };
 
 #endif

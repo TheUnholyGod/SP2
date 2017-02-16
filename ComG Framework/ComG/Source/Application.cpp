@@ -102,6 +102,7 @@ void Application::Init()
 	SceneManager::getSceneManger()->init(DEFAULT);
 	ItemDataBase::getItemDB();
 	EnemyDataBase::getEnemyDB();
+	srand(time(NULL));
 }
 
 void Application::Run()

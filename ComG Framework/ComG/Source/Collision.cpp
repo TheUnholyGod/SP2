@@ -19,6 +19,7 @@ void AABB::setMinMax(Vector3 pos)
 		Vector3 diff = pos - defaultposition;
 		max += diff;
 		min += diff;
+		defaultposition = pos;
 	}
 }
 

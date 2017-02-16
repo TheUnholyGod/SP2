@@ -7,6 +7,7 @@ class Ant_Hill : public Enemy
 public:
 	Ant_Hill();
 	~Ant_Hill();
+	void Update(double dt) {}
 };
 
 #endif

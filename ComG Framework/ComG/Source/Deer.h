@@ -7,6 +7,7 @@ class Deer : public Enemy
 public:
 	Deer();
 	~Deer();
+	void Update(double dt) {}
 };
 
 #endif

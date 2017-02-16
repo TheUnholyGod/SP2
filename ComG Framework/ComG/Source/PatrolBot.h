@@ -7,6 +7,7 @@ class PatrolBot : public Enemy
 public:
 	PatrolBot();
 	~PatrolBot();
+	void Update(double dt) {}
 };
 
 #endif

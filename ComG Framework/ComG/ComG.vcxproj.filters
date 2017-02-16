@@ -434,9 +434,6 @@
     <ClCompile Include="Source\EnemyDataBase.cpp">
       <Filter>Source Files\GameObject\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Source\SceneBase.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="Source\AbilityDataBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -463,6 +460,9 @@
     </ClCompile>
     <ClCompile Include="Source\Collision.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneBase.cpp">
+      <Filter>Source Files\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -649,13 +649,7 @@
     <ClInclude Include="Source\Deer.h">
       <Filter>Header Files\GameObject\Enemy\Forest</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Goat.h">
-      <Filter>Header Files\GameObject\Enemy\Base</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Wildboar.h">
-      <Filter>Header Files\GameObject\Enemy\Forest</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Lizard.h">
       <Filter>Header Files\GameObject\Enemy\Forest</Filter>
     </ClInclude>
     <ClInclude Include="Source\Drone.h">
@@ -756,6 +750,12 @@
     </ClInclude>
     <ClInclude Include="Source\Collision.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Goat.h">
+      <Filter>Header Files\GameObject\Enemy\Forest</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lizard.h">
+      <Filter>Header Files\GameObject\Enemy\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

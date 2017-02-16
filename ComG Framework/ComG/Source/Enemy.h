@@ -23,7 +23,7 @@ protected:
 public:
 	Enemy(int, std::string, std::string, ENEMYTYPE, std::string, float, float, float);
 	virtual ~Enemy();
-
+	virtual void Update(double dt) {}
 	const std::string getName() { return kname_; }
 };
 

@@ -3,6 +3,7 @@
 
 #include "Enemy.h"
 #include <map>
+#include <vector>
 
 class EnemyDataBase
 {
@@ -12,11 +13,14 @@ private:
 	edb enemydatabase_;
 	EnemyDataBase();
 	static EnemyDataBase* enemydb_;
+	std::vector<int> IDlist;
 public:
 	~EnemyDataBase();
 	static EnemyDataBase* getEnemyDB();
 	Enemy* getEnemy(int key);
 	edb& getDataBase();
+	void init();
+	std::vector<int> getIDList() { return IDlist; }
 };
 
 #endif

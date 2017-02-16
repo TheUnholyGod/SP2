@@ -112,7 +112,7 @@ void SceneBase::Update(double dt)
 	}
 	Player::getplayer()->Update(camForward, camRight, dt);
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0,2,0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	SpawnEnemy();
+	SpawnEnemy(dt);
 	light[0].LightUpdate(dt);
 }
 
@@ -436,10 +436,15 @@ void SceneBase::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 		glEnable(GL_DEPTH_TEST);
 }
 
-void SceneBase::SpawnEnemy()
+void SceneBase::SpawnEnemy(double dt)
 {
 	if (BaseEnemy.size() < 5)
 		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+
+	for (auto &i : BaseEnemy)
+	{
+		i->Update(dt);
+	}
 }
 
 void SceneBase::RenderEnemy()
@@ -448,8 +453,8 @@ void SceneBase::RenderEnemy()
 	for (auto &i : BaseEnemy)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate(0, y, 0);
-		RenderMesh(enemyMeshList[i->getID()], true);
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(enemyMeshList[i->getID() - 1], true);
 		modelStack.PopMatrix();
 		y++;
 	}

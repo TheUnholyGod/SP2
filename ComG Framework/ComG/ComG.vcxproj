@@ -162,10 +162,10 @@
     <ClCompile Include="Source\Salad.cpp" />
     <ClCompile Include="Source\Scar-H.cpp" />
     <ClCompile Include="Source\Scarecrow_Mech.cpp" />
+    <ClCompile Include="Source\SceneBase.cpp" />
     <ClCompile Include="Source\SceneCity.cpp" />
     <ClCompile Include="Source\SceneMainMenu.cpp" />
     <ClCompile Include="Source\SceneManager.cpp" />
-    <ClCompile Include="Source\SceneBase.cpp" />
     <ClCompile Include="Source\SceneSplashScreen.cpp" />
     <ClCompile Include="Source\SceneTest.cpp" />
     <ClCompile Include="Source\SceneUI.cpp" />

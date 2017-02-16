@@ -5,6 +5,7 @@
 #include "Renderer.h"
 #include "Inventory.h"
 #include "Weapon.h"
+#include "Collision.h"
 #include <string>
 
 class Player : public GameObject
@@ -26,6 +27,7 @@ public:
 	void Update(Vector3, Vector3, double);
 	Weapon* getWeapon() { return playerweapon_; }
 	void setWeapon(int);
+	AABB* getAABB();
 	
 	~Player();
 

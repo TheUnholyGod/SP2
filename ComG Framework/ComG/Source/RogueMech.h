@@ -7,6 +7,7 @@ class RogueMech : public Enemy
 public:
 	RogueMech();
 	~RogueMech();
+	void Update(double dt) {}
 };
 
 #endif
