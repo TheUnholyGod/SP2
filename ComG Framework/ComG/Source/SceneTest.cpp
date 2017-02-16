@@ -6,6 +6,10 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
+#include "EnemyFactory.h"
+#include "Player.h"
+#include "EnemyDataBase.h"
+#include "ItemDataBase.h"
 
 #include <sstream>
 
@@ -20,7 +24,6 @@ SceneTest::~SceneTest()
 void SceneTest::Init()
 {
 	LSPEED = 10.f;
-	fps = false;
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -58,12 +61,14 @@ void SceneTest::Init()
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
-	Light[0].LightInit(m_programID);
+	light[0].LightInit(m_programID);
 	//glUseProgram(m_programID);
 	forward.z = 1;
+	reset = false;
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
-	camera.Init(-forward * 20, Vector3(0, 0, 0), Vector3(0, 1, 0));
+	Player::getplayer();
+	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(25, 50, 25), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -71,7 +76,10 @@ void SceneTest::Init()
 	projection.SetToPerspective(45.f, 4.f / 3.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-	Light[0].LightInit1(m_programID);
+	// Make sure you pass uniform parameters after glUseProgram()
+
+	meshList[Player::getplayer()->getID()] = MeshBuilder::GenerateOBJ("player", "OBJ//player.obj");
+
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
@@ -79,8 +87,19 @@ void SceneTest::Init()
 	meshList[GEO_QUAD]->textureID = LoadTGA("Image//ground.tga");
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
-	
+
+	for (int i = 0; i<enemyMeshList.size(); i++)
+	{
+		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
+	}
+
+	for (int i = 0; i < weaponmesh.size(); i++)
+	{
+		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
+	}
+	suntimer = 1;
 	LoadSkybox();
+	Player::getplayer()->gethealth();
 }
 
 void SceneTest::Update(double dt)
@@ -90,7 +109,10 @@ void SceneTest::Update(double dt)
 	{
 		SceneManager::currScene = 2;
 	}
-	Light[0].LightUpdate(dt);
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(5, 5, 5), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	SpawnEnemy();
+	Player::getplayer()->Update(camForward, camRight, dt);
+	light[0].LightUpdate(dt);
 }
 
 void SceneTest::Render()
@@ -100,21 +122,13 @@ void SceneTest::Render()
 
 	viewStack.LoadIdentity();
 
-	if (fps == false)
-	{
-		viewStack.LookAt(camera.position.x, camera.position.y,
-			camera.position.z, camera.target.x, camera.target.y,
-			camera.target.z, camera.up.x, camera.up.y, camera.up.z);
-	}
-	else if (fps == true)
-	{
-		viewStack.LookAt(fp_camera.position.x, fp_camera.position.y,
-			fp_camera.position.z, fp_camera.target.x, fp_camera.target.y,
-			fp_camera.target.z, fp_camera.up.x, fp_camera.up.y, fp_camera.up.z);
-	}
+	viewStack.LookAt(fp_camera.position.x, fp_camera.position.y,
+		fp_camera.position.z, fp_camera.target.x, fp_camera.target.y,
+		fp_camera.target.z, fp_camera.up.x, fp_camera.up.y, fp_camera.up.z);
+
 	modelStack.LoadIdentity();
 
-	Light[0].LightRender(viewStack);
+	light[0].LightRender(viewStack);
 
 	RenderMesh(meshList[GEO_AXES], false);
 
@@ -122,8 +136,20 @@ void SceneTest::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
-	RenderMesh(meshList[GEO_QUAD], true);
+	RenderMesh(meshList[GEO_QUAD], false);
 	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.LoadMatrix(Player::getplayer()->getRenderer().getMatrix());
+	RenderMesh(meshList[0], true);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
+	RenderMesh(weaponmesh[0], true);
+	modelStack.PopMatrix();
+
+	RenderEnemy();
 }
 
 void SceneTest::Exit()
@@ -173,6 +199,7 @@ void SceneTest::RenderMesh(Mesh *mesh, bool enableLight)
 	{
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
+
 }
 
 void SceneTest::LoadSkybox()
@@ -247,13 +274,13 @@ void SceneTest::RenderSkybox()
 	modelStack.Rotate(270, 1, 0, 0);
 	modelStack.Translate(0, 0.5, 0);
 
-	if (Light[0].Lightgetsunup() == 1)
+	if (light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_LEFT], false);
 
-	else if (Light[0].Lightgetsunup() == 2)
+	else if (light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_LEFT1], false);
 
-	else if (Light[0].Lightgetsunup() == 3)
+	else if (light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_LEFT2], false);
 
 	modelStack.PopMatrix();
@@ -262,13 +289,13 @@ void SceneTest::RenderSkybox()
 	modelStack.Translate(0, -0.5, 0);
 	modelStack.Scale(1, 1, -1);
 
-	if (Light[0].Lightgetsunup() == 1)
+	if (light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_BOTTOM], false);
 
-	else if (Light[0].Lightgetsunup() == 2)
+	else if (light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_BOTTOM1], false);
 
-	else if (Light[0].Lightgetsunup() == 3)
+	else if (light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_BOTTOM2], false);
 
 	modelStack.PopMatrix();
@@ -277,13 +304,13 @@ void SceneTest::RenderSkybox()
 	modelStack.Rotate(90, 1, 0, 0);
 	modelStack.Translate(0, 0.5, 0);
 
-	if (Light[0].Lightgetsunup() == 1)
+	if (light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_RIGHT], false);
 
-	else if (Light[0].Lightgetsunup() == 2)
+	else if (light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_RIGHT1], false);
 
-	else if (Light[0].Lightgetsunup() == 3)
+	else if (light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_RIGHT2], false);
 
 	modelStack.PopMatrix();
@@ -292,13 +319,13 @@ void SceneTest::RenderSkybox()
 	modelStack.Rotate(90, 0, 0, 1);
 	modelStack.Rotate(180, 1, 0, 0);
 
-	if (Light[0].Lightgetsunup() == 1)
+	if (light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_BACK], false);
 
-	else if (Light[0].Lightgetsunup() == 2)
+	else if (light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_BACK1], false);
 
-	else if (Light[0].Lightgetsunup() == 3)
+	else if (light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_BACK2], false);
 
 	modelStack.PopMatrix();
@@ -306,26 +333,26 @@ void SceneTest::RenderSkybox()
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Translate(0, 0.5, 0);
 
-	if (Light[0].Lightgetsunup() == 1)
+	if (light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_TOP], false);
 
-	else if (Light[0].Lightgetsunup() == 2)
+	else if (light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_TOP1], false);
 
-	else if (Light[0].Lightgetsunup() == 3)
+	else if (light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_TOP2], false);
 
 	modelStack.PopMatrix();
 	modelStack.Translate(-0.5, 0, 0);
 	modelStack.Rotate(90, 0, 0, 1);
 
-	if (Light[0].Lightgetsunup() == 1)
+	if (light[0].Lightgetsunup() == 1)
 		RenderMesh(meshList[GEO_FRONT], false);
 
-	else if (Light[0].Lightgetsunup() == 2)
+	else if (light[0].Lightgetsunup() == 2)
 		RenderMesh(meshList[GEO_FRONT1], false);
 
-	else if (Light[0].Lightgetsunup() == 3)
+	else if (light[0].Lightgetsunup() == 3)
 		RenderMesh(meshList[GEO_FRONT2], false);
 
 	modelStack.PopMatrix();
@@ -411,4 +438,23 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 	glEnable(GL_DEPTH_TEST);
+}
+
+void SceneTest::SpawnEnemy()
+{
+	if (BaseEnemy.size() < 5)
+		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+}
+
+void SceneTest::RenderEnemy()
+{
+	int y = 0;
+	for (auto &i : BaseEnemy)
+	{
+		modelStack.PushMatrix();
+		modelStack.Translate(0, y, 0);
+		RenderMesh(enemyMeshList[i->getID()], true);
+		modelStack.PopMatrix();
+		y++;
+	}
 }

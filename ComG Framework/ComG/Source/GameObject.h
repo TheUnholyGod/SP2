@@ -2,6 +2,9 @@
 #define _GAMEOBJECT_H
 
 #include <string>
+#include <vector>
+#include "Vector3.h"
+#include "Collision.h"
 #include "Renderer.h"
 
 class GameObject
@@ -10,6 +13,8 @@ protected:
 	const int kID_;
 	const std::string source_location_;
 	Renderer* gameobjrenderer_;
+	std::vector<Vector3> size;
+	std::vector<AABB*> allAABB;
 public:
 	GameObject(int, std::string);
 	~GameObject();

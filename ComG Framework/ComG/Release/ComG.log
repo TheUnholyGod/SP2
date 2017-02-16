@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Player.cpp
 Source\Player.cpp(24): warning C4244: 'return' : conversion from 'float' to 'const int', possible loss of data
 Source\Player.cpp(65): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
@@ -5,6 +6,23 @@ Source\Player.cpp(73): warning C4244: 'argument' : conversion from 'int' to 'flo
 Source\Player.cpp(79): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
 Source\Player.cpp(85): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
 Source\Player.cpp(91): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+=======
+﻿  Adhesives.cpp
+  Item.cpp
+Source\Item.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  ItemDataBase.cpp
+  SceneBase.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneBase.cpp(91): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneBase.cpp(96): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneBase.cpp(450): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  SceneSplashScreen.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneSplashScreen.cpp(439): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Weapon.cpp
+>>>>>>> 44e3d27346e0edcbcc6b81b3c851dc040547df60
   Generating code
   Finished generating code
-  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
+  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\ComG.exe

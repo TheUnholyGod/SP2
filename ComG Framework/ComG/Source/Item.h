@@ -11,6 +11,7 @@ protected:
 	std::string source_location_;
 public:
 	Item(int,std::string,std::string);
+
 	virtual ~Item();
 	const std::string getName() { return kname_; }
 };

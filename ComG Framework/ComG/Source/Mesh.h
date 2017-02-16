@@ -1,3 +1,4 @@
+
 #ifndef MESH_H
 #define MESH_H
 
@@ -32,7 +33,8 @@ public:
 	unsigned indexBuffer;
 	unsigned indexSize;
 	Material material;
-	unsigned textureID;
+	unsigned textureID;
+
 };
 
 #endif
