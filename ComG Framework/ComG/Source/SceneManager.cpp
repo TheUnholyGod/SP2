@@ -1,6 +1,7 @@
 #include "SceneManager.h"
 #include "SceneBase.h"
 #include "SceneUI.h"
+#include "SceneSplashScreen.h"
 #include "SceneTest.h"
 #include "Application.h"
 
@@ -11,8 +12,8 @@ int SceneManager::currScene = DEFAULT;
 SceneManager::SceneManager()
 {
 	prevScene = DEFAULT;
-	SceneDataBase[1] = new SceneBase();
-	SceneDataBase[2] = new SceneUI();
+	SceneDataBase[1] = new SceneSplashScreen();
+	SceneDataBase[2] = new SceneBase();
 	SceneDataBase[3] = new SceneTest();
 }
 

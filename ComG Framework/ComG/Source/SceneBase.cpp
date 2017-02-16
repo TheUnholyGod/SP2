@@ -134,8 +134,6 @@ void SceneBase::Render()
 
 	RenderSkybox();
 
-	RenderMeshOnScreen(meshList[GEO_QUAD], 10, 10, 10, 10);
-
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
 	RenderMesh(meshList[GEO_QUAD], false);
