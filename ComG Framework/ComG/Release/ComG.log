@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 2/17/2017 1:36:23 AM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -111,3 +112,16 @@
 Build succeeded.
 
 Time Elapsed 00:00:04.11
+=======
+﻿  SceneManager.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+  SceneSplashScreen.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneSplashScreen.cpp(261): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneSplashScreen.cpp(262): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Generating code
+  Finished generating code
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
+>>>>>>> b9c56cad77f5cb70fb92387d28a7533b8866e49b

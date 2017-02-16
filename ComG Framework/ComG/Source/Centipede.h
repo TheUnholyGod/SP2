@@ -7,6 +7,7 @@ class Centipede : public Enemy
 public:
 	Centipede();
 	~Centipede();
+	void Update(double dt) {}
 };
 
 #endif

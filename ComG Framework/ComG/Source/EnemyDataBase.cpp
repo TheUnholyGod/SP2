@@ -19,42 +19,55 @@ EnemyDataBase::EnemyDataBase()
 {
 	Enemy* temp = new Acrid_Plant;
 	enemydatabase_[temp->getID()] = new Acrid_Plant;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Ant_Hill;
 	enemydatabase_[temp->getID()] = new Ant_Hill;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Centipede;
 	enemydatabase_[temp->getID()] = new Centipede;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new CyborgMutt;
 	enemydatabase_[temp->getID()] = new CyborgMutt;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Deer;
 	enemydatabase_[temp->getID()] = new Deer;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Drone;
 	enemydatabase_[temp->getID()] = new Drone;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Goat;
 	enemydatabase_[temp->getID()] = new Goat;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Lizard;
 	enemydatabase_[temp->getID()] = new Lizard;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Molerat;
 	enemydatabase_[temp->getID()] = new Molerat;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new PatrolBot;
 	enemydatabase_[temp->getID()] = new PatrolBot;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new RogueMech;
 	enemydatabase_[temp->getID()] = new RogueMech;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Scarecrow_Mech;
 	enemydatabase_[temp->getID()] = new Scarecrow_Mech;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new WildBoar;
 	enemydatabase_[temp->getID()] = new WildBoar;
+	IDlist.push_back(temp->getID());
 	delete temp;
 }
 
@@ -81,4 +94,9 @@ Enemy* EnemyDataBase::getEnemy(int key)
 EnemyDataBase::edb& EnemyDataBase::getDataBase()
 {
 	return enemydatabase_;
+}
+
+void EnemyDataBase::init()
+{
+
 }

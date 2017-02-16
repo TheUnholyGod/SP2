@@ -7,6 +7,7 @@ class WildBoar : public Enemy
 public:
 	WildBoar();
 	~WildBoar();
+	void Update(double dt) {}
 };
 
 #endif

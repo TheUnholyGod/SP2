@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 2/17/2017 1:36:22 AM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>Lib:
@@ -7,3 +8,7 @@
 Build succeeded.
 
 Time Elapsed 00:00:00.05
+=======
+﻿  Mtx44.cpp
+  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib
+>>>>>>> b9c56cad77f5cb70fb92387d28a7533b8866e49b

@@ -7,6 +7,8 @@ class Acrid_Plant : public Enemy
 public:
 	Acrid_Plant();
 	~Acrid_Plant();
+
+	void Update(double dt) {}
 };
 
 #endif

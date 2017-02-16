@@ -7,6 +7,7 @@ class Drone : public Enemy
 public:
 	Drone();
 	~Drone();
+	void Update(double dt) {}
 };
 
 #endif

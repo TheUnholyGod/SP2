@@ -59,14 +59,7 @@ void SceneSplashScreen::Init()
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
 	light[0].LightInit(m_programID);
-	/*
-	forward.z = 1;
-	reset = false;
-	//glUseProgram(m_programID);
-	// Make sure you pass uniform parameters after glUseProgram()
-	//Initialize camera settings
-	Player::getplayer();
-	*/
+
 	fp_camera.Init(Vector3(10,10,10),Vector3(0,10,0), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
@@ -90,30 +83,11 @@ void SceneSplashScreen::Init()
 	start = std::clock();
 
 	change = false;
-/*
-	// Make sure you pass uniform parameters after glUseProgram()
-	meshList[Player::getplayer()->getID()] = MeshBuilder::GenerateOBJ("player", "OBJ//player.obj");
-	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
-	enemyMeshList[GEO_MOLERAT] = MeshBuilder::GenerateOBJ("molerat", "OBJ//MoleRat.obj");
-	enemyMeshList[GEO_LIZARD] = MeshBuilder::GenerateOBJ("lizard", "OBJ//Lizard.obj");
-	suntimer = 1;
-	LoadSkybox();
-*/
 }
 
 void SceneSplashScreen::Update(double dt)
 {
 	DebugMode(dt);
-	/*
-	if (Application::IsKeyPressed('E'))
-	{
-		SceneManager::currScene = 2;
-	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	SpawnEnemy();
-	Player::getplayer()->Update(camForward, camRight, dt);
-	light[0].LightUpdate(dt);
-	*/
 	elapsed = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	if (elapsed == 5)
 		change = true;
@@ -140,21 +114,6 @@ void SceneSplashScreen::Render()
 	else{
 		RenderMeshOnScreen(meshList[GEO_SPLASHSCREEN1], 40, 30, 60, 60);
 	}
-	/*
-	modelStack.PushMatrix();
-	modelStack.Scale(1000, 1000, 1000);
-	RenderMesh(meshList[GEO_QUAD], true);
-	modelStack.PopMatrix();
-
-	RenderMesh(meshList[GEO_AXES], false);
-	modelStack.PushMatrix();
-	modelStack.LoadMatrix(Player::getplayer()->getRenderer().getMatrix());
-	RenderMesh(meshList[0], true);
-	modelStack.PopMatrix();
-
-	light[0].LightRender(viewStack);
-	RenderSkybox();
-	RenderEnemy();*/
 }
 
 void SceneSplashScreen::Exit()
@@ -309,180 +268,3 @@ void SceneSplashScreen::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, 
 	projectionStack.PopMatrix();
 	glEnable(GL_DEPTH_TEST);
 }
-/*
-void SceneSplashScreen::LoadSkybox()
-{
-	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_FRONT]->textureID = LoadTGA("Image//Skybox-Day//left.tga");
-
-	meshList[GEO_LEFT] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1.f);
-	meshList[GEO_LEFT]->textureID = LoadTGA("Image//Skybox-Day//back.tga");
-
-	meshList[GEO_RIGHT] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1.f);
-	meshList[GEO_RIGHT]->textureID = LoadTGA("Image//Skybox-Day//front.tga");
-
-	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("back", Color(1, 1, 1), 1.f);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//Skybox-Day//right.tga");
-
-	meshList[GEO_BOTTOM] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 1.f);
-	meshList[GEO_BOTTOM]->textureID = LoadTGA("Image//Skybox-Day//bottom.tga");
-
-	meshList[GEO_TOP] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 1.f);
-	meshList[GEO_TOP]->textureID = LoadTGA("Image//Skybox-Day//top.tga");
-
-	/////////////////////////////////////////////////////////////////////////////////
-
-	meshList[GEO_FRONT1] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_FRONT1]->textureID = LoadTGA("Image//Skybox-Night//newleft.tga");
-
-	meshList[GEO_LEFT1] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1.f);
-	meshList[GEO_LEFT1]->textureID = LoadTGA("Image//Skybox-Night//newback.tga");
-
-	meshList[GEO_RIGHT1] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1.f);
-	meshList[GEO_RIGHT1]->textureID = LoadTGA("Image//Skybox-Night//newfront.tga");
-
-	meshList[GEO_BACK1] = MeshBuilder::GenerateQuad("back", Color(1, 1, 1), 1.f);
-	meshList[GEO_BACK1]->textureID = LoadTGA("Image//Skybox-Night//newright.tga");
-
-	meshList[GEO_BOTTOM1] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 1.f);
-	meshList[GEO_BOTTOM1]->textureID = LoadTGA("Image//Skybox-Night//newbottom.tga");
-
-	meshList[GEO_TOP1] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 1.f);
-	meshList[GEO_TOP1]->textureID = LoadTGA("Image//Skybox-Night//newtop.tga");
-
-	/////////////////////////////////////////////////////////////////////////////////
-
-	meshList[GEO_FRONT2] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
-	meshList[GEO_FRONT2]->textureID = LoadTGA("Image//Skybox-Transition//tranleft.tga");
-
-	meshList[GEO_LEFT2] = MeshBuilder::GenerateQuad("left", Color(1, 1, 1), 1.f);
-	meshList[GEO_LEFT2]->textureID = LoadTGA("Image//Skybox-Transition//tranback.tga");
-
-	meshList[GEO_RIGHT2] = MeshBuilder::GenerateQuad("right", Color(1, 1, 1), 1.f);
-	meshList[GEO_RIGHT2]->textureID = LoadTGA("Image//Skybox-Transition//tranfront.tga");
-
-	meshList[GEO_BACK2] = MeshBuilder::GenerateQuad("back", Color(1, 1, 1), 1.f);
-	meshList[GEO_BACK2]->textureID = LoadTGA("Image//Skybox-Transition//tranright.tga");
-
-	meshList[GEO_BOTTOM2] = MeshBuilder::GenerateQuad("bottom", Color(1, 1, 1), 1.f);
-	meshList[GEO_BOTTOM2]->textureID = LoadTGA("Image//Skybox-Transition//tranbottom.tga");
-
-	meshList[GEO_TOP2] = MeshBuilder::GenerateQuad("top", Color(1, 1, 1), 1.f);
-	meshList[GEO_TOP2]->textureID = LoadTGA("Image//Skybox-Transition//trantop.tga");
-}
-
-void SceneSplashScreen::RenderSkybox()
-{
-	modelStack.PushMatrix();
-	modelStack.Translate(10, 0, 10);
-	modelStack.PushMatrix();
-	modelStack.Scale(1000, 1000, 1000);
-	modelStack.PushMatrix();
-	modelStack.Rotate(90, 0, 0, 1);
-	modelStack.Rotate(270, 1, 0, 0);
-	modelStack.Translate(0, 0.5, 0);
-
-	if (light[0].Lightgetsunup() == 1)
-		RenderMesh(meshList[GEO_LEFT], false);
-
-	else if (light[0].Lightgetsunup() == 2)
-		RenderMesh(meshList[GEO_LEFT1], false);
-
-	else if (light[0].Lightgetsunup() == 3)
-		RenderMesh(meshList[GEO_LEFT2], false);
-
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Rotate(-90, 0, 1, 0);
-	modelStack.Translate(0, -0.5, 0);
-	modelStack.Scale(1, 1, -1);
-
-	if (light[0].Lightgetsunup() == 1)
-		RenderMesh(meshList[GEO_BOTTOM], false);
-
-	else if (light[0].Lightgetsunup() == 2)
-		RenderMesh(meshList[GEO_BOTTOM1], false);
-
-	else if (light[0].Lightgetsunup() == 3)
-		RenderMesh(meshList[GEO_BOTTOM2], false);
-
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Rotate(90, 0, 0, 1);
-	modelStack.Rotate(90, 1, 0, 0);
-	modelStack.Translate(0, 0.5, 0);
-
-	if (light[0].Lightgetsunup() == 1)
-		RenderMesh(meshList[GEO_RIGHT], false);
-
-	else if (light[0].Lightgetsunup() == 2)
-		RenderMesh(meshList[GEO_RIGHT1], false);
-
-	else if (light[0].Lightgetsunup() == 3)
-		RenderMesh(meshList[GEO_RIGHT2], false);
-
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Translate(0.5, 0, 0);
-	modelStack.Rotate(90, 0, 0, 1);
-	modelStack.Rotate(180, 1, 0, 0);
-
-	if (light[0].Lightgetsunup() == 1)
-		RenderMesh(meshList[GEO_BACK], false);
-
-	else if (light[0].Lightgetsunup() == 2)
-		RenderMesh(meshList[GEO_BACK1], false);
-
-	else if (light[0].Lightgetsunup() == 3)
-		RenderMesh(meshList[GEO_BACK2], false);
-
-	modelStack.PopMatrix();
-	modelStack.PushMatrix();
-	modelStack.Rotate(90, 0, 1, 0);
-	modelStack.Translate(0, 0.5, 0);
-
-	if (light[0].Lightgetsunup() == 1)
-		RenderMesh(meshList[GEO_TOP], false);
-
-	else if (light[0].Lightgetsunup() == 2)
-		RenderMesh(meshList[GEO_TOP1], false);
-
-	else if (light[0].Lightgetsunup() == 3)
-		RenderMesh(meshList[GEO_TOP2], false);
-
-	modelStack.PopMatrix();
-	modelStack.Translate(-0.5, 0, 0);
-	modelStack.Rotate(90, 0, 0, 1);
-
-	if (light[0].Lightgetsunup() == 1)
-		RenderMesh(meshList[GEO_FRONT], false);
-
-	else if (light[0].Lightgetsunup() == 2)
-		RenderMesh(meshList[GEO_FRONT1], false);
-
-	else if (light[0].Lightgetsunup() == 3)
-		RenderMesh(meshList[GEO_FRONT2], false);
-
-	modelStack.PopMatrix();
-	modelStack.PopMatrix();
-}
-
-void SceneSplashScreen::SpawnEnemy()
-{
-	if (BaseEnemy.size() < 5)
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
-}
-
-void SceneSplashScreen::RenderEnemy()
-{
-	int y = 0;
-	for (auto &i : BaseEnemy)
-	{
-		modelStack.PushMatrix();
-		modelStack.Translate(0, y, 0);
-		RenderMesh(enemyMeshList[i->getID()], true);
-		modelStack.PopMatrix();
-		y++;
-	}
-	}
-*/

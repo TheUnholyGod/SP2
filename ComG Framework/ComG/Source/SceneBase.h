@@ -117,7 +117,7 @@ private:
 
 	std::list<Enemy*> BaseEnemy;
 	std::list<Building*> BaseBuildings;
-	void SpawnEnemy();
+	void SpawnEnemy(double dt);
 	void RenderEnemy();
 };
 

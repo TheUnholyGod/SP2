@@ -25,28 +25,7 @@ class SceneSplashScreen : public Scene
 		GEO_TEXT,
 		GEO_QUAD,
 		GEO_SPLASHSCREEN1,
-		GEO_SPLASHSCREEN2,/*
-		//SkyBox
-		GEO_LEFT,
-		GEO_RIGHT,
-		GEO_TOP,
-		GEO_BOTTOM,
-		GEO_FRONT,
-		GEO_BACK,
-		GEO_SUN,
-		GEO_LEFT1,
-		GEO_RIGHT1,
-		GEO_TOP1,
-		GEO_BOTTOM1,
-		GEO_FRONT1,
-		GEO_BACK1,
-		GEO_LEFT2,
-		GEO_RIGHT2,
-		GEO_TOP2,
-		GEO_BOTTOM2,
-		GEO_FRONT2,
-		GEO_BACK2,
-		*/
+		GEO_SPLASHSCREEN2,
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -59,8 +38,6 @@ class SceneSplashScreen : public Scene
 		U_MATERIAL_SPECULAR,
 		U_MATERIAL_SHININESS,
 		U_LIGHTENABLED,
-		//add these enum in UNIFORM_TYPE before U_TOTAL
-		//add these enum in UNIFORM_TYPE before U_TOTAL
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
 
@@ -69,13 +46,7 @@ class SceneSplashScreen : public Scene
 
 		U_TOTAL,
 	};
-	/*enum ENEMYMESHLIST
-	{
-		GEO_MOLERAT,
-		GEO_LIZARD,
-		NUM_ENEMYGEOMETRY,
-	};
-*/
+
 public:
 	SceneSplashScreen();
 	~SceneSplashScreen();
@@ -101,24 +72,6 @@ private:
 	std::clock_t start;
 	int elapsed;
 	bool change;
-/*
-	Mesh *enemyMeshList[NUM_ENEMYGEOMETRY];
-	Vector3 forward, right, chardirection, camForward, camRight;
-	Camera2 camera;
-	float LSPEED;
-	void LoadSkybox();
-	void RenderSkybox();
-	double lightrotate, sunrotate;
-	Mtx44 LightPos;
-	int sunup;
-	float suntimer;
-	bool reset;
-
-	std::list<Enemy*> BaseEnemy;
-	std::list<Building*> BaseBuildings;
-	void SpawnEnemy();
-	void RenderEnemy();
-	*/
 };
 
 #endif

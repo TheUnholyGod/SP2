@@ -7,6 +7,7 @@ class Goat : public Enemy
 public:
 	Goat();
 	~Goat();
+	void Update(double dt) {}
 };
 
 #endif
