@@ -101,6 +101,7 @@ void SceneBase::Init()
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 }
 
 void SceneBase::Update(double dt)
@@ -110,9 +111,9 @@ void SceneBase::Update(double dt)
 	{
 		SceneManager::currScene = 2;
 	}
+	Player::getplayer()->Update(camForward, camRight, dt);
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0,2,0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy();
-	Player::getplayer()->Update(camForward, camRight, dt);
 	light[0].LightUpdate(dt);
 }
 
