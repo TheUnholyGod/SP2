@@ -2,6 +2,7 @@
 #include "SceneBase.h"
 #include "SceneUI.h"
 #include "SceneTest.h"
+#include "SceneMainMenu.h"
 #include "Application.h"
 
 SceneManager* SceneManager::scenemanager;
@@ -14,6 +15,7 @@ SceneManager::SceneManager()
 	SceneDataBase[1] = new SceneBase();
 	SceneDataBase[2] = new SceneUI();
 	SceneDataBase[3] = new SceneTest();
+	SceneDataBase[4] = new SceneMainMenu();
 }
 
 SceneManager::~SceneManager()
