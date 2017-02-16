@@ -106,10 +106,6 @@ void Lighting::LightUpdate(double dt)
 		sunrotate -= 390;
 		Day++;
 	}
-
-	//std::cout << "Lighting Level: " << lighting.y << std::endl;
-	std::cout << "sunrotate: " << sunrotate << std::endl;
-	std::cout << "Days: " << Day << std::endl;
 }
 
 void Lighting::LightRender(MS viewStack)

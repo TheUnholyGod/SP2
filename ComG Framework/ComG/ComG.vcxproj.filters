@@ -173,6 +173,7 @@
     <None Include="Shader\SimpleVertexShader.vertexshader">
       <Filter>Shader</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp">

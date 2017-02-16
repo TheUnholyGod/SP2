@@ -25,6 +25,7 @@ public:
 	bool isDead();
 	void Update(Vector3, Vector3, double);
 	Weapon* getWeapon() { return playerweapon_; }
+	void setWeapon(int);
 	
 	~Player();
 

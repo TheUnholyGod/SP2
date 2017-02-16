@@ -20,7 +20,7 @@ public:
 	~GameObject();
 	const int getID() { return kID_; }
 	std::string getSourceLocation()  { return source_location_; }
-	Renderer getRenderer() { return *gameobjrenderer_; }
+	Renderer& getRenderer() { return *gameobjrenderer_; }
 };
 
 #endif

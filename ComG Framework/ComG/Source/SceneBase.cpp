@@ -99,7 +99,7 @@ void SceneBase::Init()
 	}
 	suntimer = 1;
 	LoadSkybox();
-	Player::getplayer()->gethealth();
+	Player::getplayer()->setWeapon(307);
 }
 
 void SceneBase::Update(double dt)
@@ -109,7 +109,7 @@ void SceneBase::Update(double dt)
 	{
 		SceneManager::currScene = 2;
 	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(5,5,5), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0,2,0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy();
 	Player::getplayer()->Update(camForward, camRight, dt);
 	light[0].LightUpdate(dt);
@@ -137,11 +137,6 @@ void SceneBase::Render()
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
 	RenderMesh(meshList[GEO_QUAD], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.LoadMatrix(Player::getplayer()->getRenderer().getMatrix());
-	RenderMesh(meshList[0], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();

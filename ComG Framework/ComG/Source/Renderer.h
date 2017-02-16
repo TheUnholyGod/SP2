@@ -25,9 +25,11 @@ public:
 	Vector3 getForward() { return forward_; }
 	Vector3 getRight() { right_ = forward_.Cross(up_); return right_; }
 	Vector3 getPosition() { return position_; }
+	void setUp(Vector3 newUp) { up_ = newUp; }
 	void rotate(Vector3, double, float);
-	void setForward(Vector3 newforward) { this->forward_ = newforward; }
+	void setForward(Vector3 newforward) { this->forward_ = newforward; right_ = forward_.Cross(up_);}
 	Mtx44 getMatrix();
+	void setPosition(Vector3 newposition) { position_ = newposition; }
 };
 
 #endif

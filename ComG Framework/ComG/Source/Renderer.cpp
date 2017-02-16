@@ -36,7 +36,6 @@ void Renderer::rotate(Vector3 axisofrotate, double rotatespeed, float rotateangl
 
 Mtx44 Renderer::getMatrix()
 {
-	std::cout << up_.Length() << std::endl;
 	//right_.Normalize();
 	//forward_.Normalize();
 	//up_.Normalize();

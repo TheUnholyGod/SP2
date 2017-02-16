@@ -21,7 +21,6 @@ Player* Player::getplayer()
 
 const int Player::gethealth()
 {
-	playerweapon_ = new Compound_Bow;
 	return health_;
 }
 
@@ -50,28 +49,41 @@ Player::~Player()
 
 }
 
+void  Player::setWeapon(int key)
+{
+	playerweapon_ = (Weapon*)ItemFactory::getItemFactory()->generateItem(key);
+	playerweapon_->getRenderer().setForward(player->getRenderer().getForward());
+}
+
 void Player::Update(Vector3 camForward, Vector3 camRight, double dt)
 {
-	if (playerRender->getForward() != camForward)
+	Vector3 camForwardTemp = camForward;
+	camForwardTemp.y = 0;
+	if (playerRender->getForward() != camForwardTemp)
 	{
-		playerRender->setForward(camForward);
-		playerweapon_->getRenderer().setForward(playerRender->getForward());
+		playerRender->setForward(camForwardTemp);
+		playerweapon_->getRenderer().setPosition(playerRender->getPosition() + ((0,1,0) * 2) + (camForward * 5) + (camRight));
+		playerweapon_->getRenderer().setUp(camForward.Cross(camRight).Normalized());
+		playerweapon_->getRenderer().setForward(camForward);
 	}
 	if (Application::IsKeyPressed('A'))
 	{
 		playerRender->translate(-camRight, 25 * dt);
+		playerweapon_->getRenderer().translate(-camRight, 25 * dt);
 	}
 	else if (Application::IsKeyPressed('D'))
 	{
 		playerRender->translate(camRight, 25 * dt);
+		playerweapon_->getRenderer().translate(camRight, 25 * dt);
 	}
 	else if (Application::IsKeyPressed('S'))
 	{
-		playerRender->translate(-camForward, 25 * dt);
+		playerRender->translate(-camForwardTemp, 25 * dt);
+		playerweapon_->getRenderer().translate(-camForwardTemp, 25 * dt);
 	}
 	else if (Application::IsKeyPressed('W'))
 	{
-		playerRender->translate(camForward, 25 * dt);
+		playerRender->translate(camForwardTemp, 25 * dt);
+		playerweapon_->getRenderer().translate(camForwardTemp, 25 * dt);
 	}
-	playerweapon_->getRenderer().translate(playerRender->getForward(), 25*dt);
 }
