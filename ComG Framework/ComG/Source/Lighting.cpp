@@ -28,15 +28,15 @@ void Lighting::LightInit(unsigned int &m_pogramID)
 	reset = false;
 	start = true;
 	Day = 0;
+	sunrotate = 0;
 }
 
 void Lighting::LightInit1(unsigned int &m_pogramID)
 {
-
 	 type = Lighting::LIGHT_DIRECTIONAL;
 	 position.Set(0, 1, 0);
 	 color.Set(1, 1, 1);
-	 power = 0.f;
+	 power = 0.f; 
 	 kC = 100.f;
 	 kL = 0.01f;
 	 kQ = 0.001f;

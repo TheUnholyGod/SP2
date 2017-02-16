@@ -1,5 +1,5 @@
 #include "DefenceTower.h"
 
-DefenceTower::DefenceTower() : Building("DefenceTower", 202, 100, DEFENCE, false) {} // Change the ID
+DefenceTower::DefenceTower() : Building(202, "DefenceTower", "", 100, DEFENCE, false) {} // Change the ID
 DefenceTower::~DefenceTower(){}
 int DefenceTower::get_Health(){ return health_; }

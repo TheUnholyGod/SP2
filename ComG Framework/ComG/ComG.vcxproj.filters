@@ -156,14 +156,14 @@
     <Filter Include="Header Files\GameObject\Ability">
       <UniqueIdentifier>{2a0143e3-a78c-407b-89a5-33c35606ced9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Factory\Buildings">
-      <UniqueIdentifier>{5ccd9671-3add-4fe0-8cc7-6755b9aca1da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Factory\Buildings\Abilitiy">
-      <UniqueIdentifier>{731495e0-2844-4e88-a9bf-9f292e1b43ea}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Scenes">
       <UniqueIdentifier>{3afe42f8-1d14-4807-b7f6-e1af1b34a26d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Buildings">
+      <UniqueIdentifier>{5ccd9671-3add-4fe0-8cc7-6755b9aca1da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject\Abilitiy">
+      <UniqueIdentifier>{731495e0-2844-4e88-a9bf-9f292e1b43ea}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -371,58 +371,58 @@
       <Filter>Source Files\Framework</Filter>
     </ClCompile>
     <ClCompile Include="Source\Ability.cpp">
-      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+      <Filter>Source Files\GameObject\Abilitiy</Filter>
     </ClCompile>
     <ClCompile Include="Source\Burrowing.cpp">
-      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+      <Filter>Source Files\GameObject\Abilitiy</Filter>
     </ClCompile>
     <ClCompile Include="Source\Corrosive.cpp">
-      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+      <Filter>Source Files\GameObject\Abilitiy</Filter>
     </ClCompile>
     <ClCompile Include="Source\Teleporting.cpp">
-      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+      <Filter>Source Files\GameObject\Abilitiy</Filter>
     </ClCompile>
     <ClCompile Include="Source\Radioactive.cpp">
-      <Filter>Source Files\Factory\Buildings\Abilitiy</Filter>
+      <Filter>Source Files\GameObject\Abilitiy</Filter>
     </ClCompile>
     <ClCompile Include="Source\Barn.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\Building.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\Crafting.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\DefenceTower.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\DefensiveWalls.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\FastTravelRoom.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\InventoryWarehouse.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\NPCHouse.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\OreMines.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\PowerGenerator.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\TilledSoil.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\TrophyRoom.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\WaterWell.cpp">
-      <Filter>Source Files\Factory\Buildings</Filter>
+      <Filter>Source Files\GameObject\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\EnemyFactory.cpp">
       <Filter>Source Files\Factory</Filter>
@@ -449,6 +449,15 @@
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="Source\Inventory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneCity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneMainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SceneWildLife.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -730,6 +739,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Inventory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneCity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneMainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneWildLife.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

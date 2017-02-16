@@ -2,7 +2,7 @@
 
 
 
-MetalScraps::MetalScraps() :Resources(209,"MetalScraps", LOOT, 0)
+MetalScraps::MetalScraps() :Resources(209,"MetalScraps", "", LOOT, 0)
 {
 }
 

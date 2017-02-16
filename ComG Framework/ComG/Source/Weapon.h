@@ -16,6 +16,7 @@ protected:
 	const WEAPONTYPE kType_;
 	float kattack_;
 	float kdurability_;
+	std::string source_location_;
 
 public:
 	Weapon(int, std::string, std::string, WEAPONTYPE, float atk, float dura_);

@@ -15,9 +15,10 @@ protected:
 	};
 	const RESOURCETYPE kTYPE_;
 	const int krarity_;
+	std::string source_location_;
 	//float weight;(optional)
 public:
-	Resources(int,std::string, RESOURCETYPE, int);
+	Resources(int,std::string,std::string,RESOURCETYPE, int);
 	~Resources();
 };
 
