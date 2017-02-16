@@ -14,6 +14,7 @@
 #include "Enemy.h"
 #include "Lighting.h"
 #include <vector>
+#include <ctime>
 
 class SceneSplashScreen : public Scene
 {
@@ -23,6 +24,8 @@ class SceneSplashScreen : public Scene
 		GEO_AXES,
 		GEO_TEXT,
 		GEO_QUAD,
+		GEO_SPLASHSCREEN1,
+		GEO_SPLASHSCREEN2,/*
 		//SkyBox
 		GEO_LEFT,
 		GEO_RIGHT,
@@ -43,6 +46,7 @@ class SceneSplashScreen : public Scene
 		GEO_BOTTOM2,
 		GEO_FRONT2,
 		GEO_BACK2,
+		*/
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -65,13 +69,13 @@ class SceneSplashScreen : public Scene
 
 		U_TOTAL,
 	};
-	enum ENEMYMESHLIST
+	/*enum ENEMYMESHLIST
 	{
 		GEO_MOLERAT,
 		GEO_LIZARD,
 		NUM_ENEMYGEOMETRY,
 	};
-
+*/
 public:
 	SceneSplashScreen();
 	~SceneSplashScreen();
@@ -83,25 +87,29 @@ public:
 private:
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
-	Mesh *enemyMeshList[NUM_ENEMYGEOMETRY];
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
 	MS modelStack, viewStack, projectionStack;
-	Vector3 forward, right, chardirection, camForward, camRight;
-	Camera2 camera;
 	Camera3 fp_camera;
-	Lighting light[1];
 	void RenderMesh(Mesh *mesh, bool enableLight);
-	float LSPEED;
-	void LoadSkybox();
-	void RenderSkybox();
 	void DebugMode(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
+	void RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey);
+	Lighting light[1];
+	std::clock_t start;
+	int elapsed;
+	bool change;
+/*
+	Mesh *enemyMeshList[NUM_ENEMYGEOMETRY];
+	Vector3 forward, right, chardirection, camForward, camRight;
+	Camera2 camera;
+	float LSPEED;
+	void LoadSkybox();
+	void RenderSkybox();
 	double lightrotate, sunrotate;
 	Mtx44 LightPos;
-
 	int sunup;
 	float suntimer;
 	bool reset;
@@ -110,6 +118,7 @@ private:
 	std::list<Building*> BaseBuildings;
 	void SpawnEnemy();
 	void RenderEnemy();
+	*/
 };
 
 #endif

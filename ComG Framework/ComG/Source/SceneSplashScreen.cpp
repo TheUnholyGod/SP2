@@ -6,8 +6,8 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
-#include "EnemyFactory.h"
-#include "Player.h"
+//#include "EnemyFactory.h"
+//#include "Player.h"
 
 #include <sstream>
 
@@ -21,7 +21,6 @@ SceneSplashScreen::~SceneSplashScreen()
 
 void SceneSplashScreen::Init()
 {
-	LSPEED = 10.f;
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -60,13 +59,15 @@ void SceneSplashScreen::Init()
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
 	light[0].LightInit(m_programID);
-	//glUseProgram(m_programID);
+	/*
 	forward.z = 1;
 	reset = false;
+	//glUseProgram(m_programID);
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
 	Player::getplayer();
-	fp_camera.Init(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	*/
+	fp_camera.Init(Vector3(10,10,10),Vector3(0,10,0), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -74,26 +75,36 @@ void SceneSplashScreen::Init()
 	projection.SetToPerspective(45.f, 4.f / 3.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
-	// Make sure you pass uniform parameters after glUseProgram()
-
-	meshList[Player::getplayer()->getID()] = MeshBuilder::GenerateOBJ("player", "OBJ//player.obj");
-
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
 	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad1("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_QUAD]->textureID = LoadTGA("Image//ground.tga");
 
+	meshList[GEO_SPLASHSCREEN1] = MeshBuilder::GenerateQuad("SplashScreen1", Color(0, 1, 0), 1.f);
+	meshList[GEO_SPLASHSCREEN1]->textureID = LoadTGA("Image//Splash_Screen_2.tga");
+
+	meshList[GEO_SPLASHSCREEN2] = MeshBuilder::GenerateQuad("SplashScreen2", Color(0, 1, 0), 1.f);
+	meshList[GEO_SPLASHSCREEN2]->textureID = LoadTGA("Image//Splash_Screen.tga");
+
+	start = std::clock();
+
+	change = false;
+/*
+	// Make sure you pass uniform parameters after glUseProgram()
+	meshList[Player::getplayer()->getID()] = MeshBuilder::GenerateOBJ("player", "OBJ//player.obj");
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
 	enemyMeshList[GEO_MOLERAT] = MeshBuilder::GenerateOBJ("molerat", "OBJ//MoleRat.obj");
 	enemyMeshList[GEO_LIZARD] = MeshBuilder::GenerateOBJ("lizard", "OBJ//Lizard.obj");
 	suntimer = 1;
 	LoadSkybox();
+*/
 }
 
 void SceneSplashScreen::Update(double dt)
 {
 	DebugMode(dt);
+	/*
 	if (Application::IsKeyPressed('E'))
 	{
 		SceneManager::currScene = 2;
@@ -102,6 +113,12 @@ void SceneSplashScreen::Update(double dt)
 	SpawnEnemy();
 	Player::getplayer()->Update(camForward, camRight, dt);
 	light[0].LightUpdate(dt);
+	*/
+	elapsed = (std::clock() - start) / (int)CLOCKS_PER_SEC;
+	if (elapsed == 5)
+		change = true;
+	if (elapsed == 10)
+		SceneManager::currScene = 2;
 }
 
 void SceneSplashScreen::Render()
@@ -116,24 +133,28 @@ void SceneSplashScreen::Render()
 		fp_camera.target.z, fp_camera.up.x, fp_camera.up.y, fp_camera.up.z);
 
 	modelStack.LoadIdentity();
-
-	light[0].LightRender(viewStack);
-
-	RenderMesh(meshList[GEO_AXES], false);
-
-	RenderSkybox();
-
+	
+	if (change){
+		RenderMeshOnScreen(meshList[GEO_SPLASHSCREEN2], 40, 30, 60, 60);
+	}
+	else{
+		RenderMeshOnScreen(meshList[GEO_SPLASHSCREEN1], 40, 30, 60, 60);
+	}
+	/*
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
 	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
 
+	RenderMesh(meshList[GEO_AXES], false);
 	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getRenderer().getMatrix());
 	RenderMesh(meshList[0], true);
 	modelStack.PopMatrix();
 
-	RenderEnemy();
+	light[0].LightRender(viewStack);
+	RenderSkybox();
+	RenderEnemy();*/
 }
 
 void SceneSplashScreen::Exit()
@@ -186,6 +207,109 @@ void SceneSplashScreen::RenderMesh(Mesh *mesh, bool enableLight)
 
 }
 
+void SceneSplashScreen::DebugMode(double dt)
+{
+	if (Application::IsKeyPressed('1')) //enable back face culling
+		glEnable(GL_CULL_FACE);
+	if (Application::IsKeyPressed('2')) //disable back face culling
+		glDisable(GL_CULL_FACE);
+	if (Application::IsKeyPressed('3'))
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
+	if (Application::IsKeyPressed('4'))
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
+}
+
+void SceneSplashScreen::RenderText(Mesh* mesh, std::string text, Color color)
+{
+	if (!mesh || mesh->textureID <= 0) //Proper error check
+		return;
+
+	glDisable(GL_DEPTH_TEST);
+	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
+	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
+	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
+	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
+	glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+	for (unsigned i = 0; i < text.length(); ++i)
+	{
+		Mtx44 characterSpacing;
+		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
+		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
+		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
+
+		mesh->Render((unsigned)text[i] * 6, 6);
+	}
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
+	glEnable(GL_DEPTH_TEST);
+}
+
+void SceneSplashScreen::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
+{
+	if (!mesh || mesh->textureID <= 0) //Proper error check
+		return;
+
+	glDisable(GL_DEPTH_TEST);
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity(); //No need camera for ortho mode
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity(); //Reset modelStack
+	modelStack.Scale(size, size, size);
+	modelStack.Translate(x, y, 0);
+
+	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
+	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
+	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
+	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
+	glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
+	for (unsigned i = 0; i < text.length(); ++i)
+	{
+		Mtx44 characterSpacing;
+		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
+		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
+		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
+
+		mesh->Render((unsigned)text[i] * 6, 6);
+	}
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
+
+	projectionStack.PopMatrix();
+	viewStack.PopMatrix();
+	modelStack.PopMatrix();
+	glEnable(GL_DEPTH_TEST);
+}
+
+void SceneSplashScreen::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
+{
+	glDisable(GL_DEPTH_TEST);
+	Mtx44 ortho;
+	ortho.SetToOrtho(0, 80, 0, 60, -10, 10);
+	projectionStack.PushMatrix();
+	projectionStack.LoadMatrix(ortho);
+	viewStack.PushMatrix();
+	viewStack.LoadIdentity();
+	modelStack.PushMatrix();
+	modelStack.LoadIdentity();
+	modelStack.Translate(x, y, 0);
+	modelStack.Scale(sizex, sizey, 1);
+	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Rotate(90, 0, 1, 0);
+	RenderMesh(mesh, false);
+	modelStack.PopMatrix();
+	viewStack.PopMatrix();
+	projectionStack.PopMatrix();
+	glEnable(GL_DEPTH_TEST);
+}
+/*
 void SceneSplashScreen::LoadSkybox()
 {
 	meshList[GEO_FRONT] = MeshBuilder::GenerateQuad("front", Color(1, 1, 1), 1.f);
@@ -343,87 +467,6 @@ void SceneSplashScreen::RenderSkybox()
 	modelStack.PopMatrix();
 }
 
-void SceneSplashScreen::DebugMode(double dt)
-{
-	if (Application::IsKeyPressed('1')) //enable back face culling
-		glEnable(GL_CULL_FACE);
-	if (Application::IsKeyPressed('2')) //disable back face culling
-		glDisable(GL_CULL_FACE);
-	if (Application::IsKeyPressed('3'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //default fill mode
-	if (Application::IsKeyPressed('4'))
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-}
-
-void SceneSplashScreen::RenderText(Mesh* mesh, std::string text, Color color)
-{
-	if (!mesh || mesh->textureID <= 0) //Proper error check
-		return;
-
-	glDisable(GL_DEPTH_TEST);
-	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
-	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
-	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
-	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
-	glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-	for (unsigned i = 0; i < text.length(); ++i)
-	{
-		Mtx44 characterSpacing;
-		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
-		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
-		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
-
-		mesh->Render((unsigned)text[i] * 6, 6);
-	}
-	glBindTexture(GL_TEXTURE_2D, 0);
-	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
-	glEnable(GL_DEPTH_TEST);
-}
-
-void SceneSplashScreen::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)
-{
-	if (!mesh || mesh->textureID <= 0) //Proper error check
-		return;
-
-	glDisable(GL_DEPTH_TEST);
-	Mtx44 ortho;
-	ortho.SetToOrtho(0, 80, 0, 60, -10, 10); //size of screen UI
-	projectionStack.PushMatrix();
-	projectionStack.LoadMatrix(ortho);
-	viewStack.PushMatrix();
-	viewStack.LoadIdentity(); //No need camera for ortho mode
-	modelStack.PushMatrix();
-	modelStack.LoadIdentity(); //Reset modelStack
-	modelStack.Scale(size, size, size);
-	modelStack.Translate(x, y, 0);
-
-	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
-	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);
-	glUniform1i(m_parameters[U_LIGHTENABLED], 0);
-	glUniform1i(m_parameters[U_COLOR_TEXTURE_ENABLED], 1);
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, mesh->textureID);
-	glUniform1i(m_parameters[U_COLOR_TEXTURE], 0);
-	for (unsigned i = 0; i < text.length(); ++i)
-	{
-		Mtx44 characterSpacing;
-		characterSpacing.SetToTranslation(i * 1.0f, 0, 0); //1.0f is the spacing of each character, you may change this value
-		Mtx44 MVP = projectionStack.Top() * viewStack.Top() * modelStack.Top() * characterSpacing;
-		glUniformMatrix4fv(m_parameters[U_MVP], 1, GL_FALSE, &MVP.a[0]);
-
-		mesh->Render((unsigned)text[i] * 6, 6);
-	}
-	glBindTexture(GL_TEXTURE_2D, 0);
-	glUniform1i(m_parameters[U_TEXT_ENABLED], 0);
-
-	projectionStack.PopMatrix();
-	viewStack.PopMatrix();
-	modelStack.PopMatrix();
-	glEnable(GL_DEPTH_TEST);
-}
-
 void SceneSplashScreen::SpawnEnemy()
 {
 	if (BaseEnemy.size() < 5)
@@ -441,4 +484,5 @@ void SceneSplashScreen::RenderEnemy()
 		modelStack.PopMatrix();
 		y++;
 	}
-}
+	}
+*/

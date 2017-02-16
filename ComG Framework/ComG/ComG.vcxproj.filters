@@ -452,16 +452,17 @@
     <ClCompile Include="Source\SceneCity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\SceneMainMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\SceneWildLife.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Collision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Source\SceneBase.cpp">
+=======
+    <ClCompile Include="Source\SceneMainMenu.cpp">
+>>>>>>> 6429cba9a9e34b48c9616195944fd6b0a554400f
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -742,20 +743,22 @@
     <ClInclude Include="Source\SceneCity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\SceneMainMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\SceneWildLife.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Source\Goat.h">
       <Filter>Header Files\GameObject\Enemy\Forest</Filter>
     </ClInclude>
     <ClInclude Include="Source\Lizard.h">
       <Filter>Header Files\GameObject\Enemy\Base</Filter>
+=======
+    <ClInclude Include="Source\SceneMainMenu.h">
+      <Filter>Header Files\Scenes</Filter>
+>>>>>>> 6429cba9a9e34b48c9616195944fd6b0a554400f
     </ClInclude>
   </ItemGroup>
 </Project>

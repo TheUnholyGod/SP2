@@ -19,30 +19,9 @@ class SceneMainMenu : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
-		GEO_PLAYER,
-		GEO_AXES,
-		GEO_TEXT,
 		GEO_QUAD,
-		//SkyBox
-		GEO_LEFT,
-		GEO_RIGHT,
-		GEO_TOP,
-		GEO_BOTTOM,
-		GEO_FRONT,
-		GEO_BACK,
-		GEO_SUN,
-		GEO_LEFT1,
-		GEO_RIGHT1,
-		GEO_TOP1,
-		GEO_BOTTOM1,
-		GEO_FRONT1,
-		GEO_BACK1,
-		GEO_LEFT2,
-		GEO_RIGHT2,
-		GEO_TOP2,
-		GEO_BOTTOM2,
-		GEO_FRONT2,
-		GEO_BACK2,
+		GEO_BUTTON1,
+		GEO_BUTTON2,
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -65,12 +44,6 @@ class SceneMainMenu : public Scene
 
 		U_TOTAL,
 	};
-	enum ENEMYMESHLIST
-	{
-		GEO_MOLERAT,
-		GEO_LIZARD,
-		NUM_ENEMYGEOMETRY,
-	};
 
 public:
 	SceneMainMenu();
@@ -83,7 +56,6 @@ public:
 private:
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
-	Mesh *enemyMeshList[NUM_ENEMYGEOMETRY];
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
@@ -99,6 +71,7 @@ private:
 	void DebugMode(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
+	void RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey);
 	double lightrotate, sunrotate;
 	Mtx44 LightPos;
 
