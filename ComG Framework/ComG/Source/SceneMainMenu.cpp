@@ -19,7 +19,6 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::Init()
 {
-	LSPEED = 10.f;
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -57,10 +56,10 @@ void SceneMainMenu::Init()
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
-	light[0].LightInit(m_programID);
 	//glUseProgram(m_programID);
 	forward.z = 1;
-	reset = false;
+	play = true;
+	options = false;
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
 
@@ -76,18 +75,37 @@ void SceneMainMenu::Init()
 	meshList[GEO_BUTTON1] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_BUTTON1]->textureID = LoadTGA("Image//Main Menu Play.tga");
 
+	meshList[GEO_OUTLINE1] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_OUTLINE1]->textureID = LoadTGA("Image//Main Menu Play Outline.tga");
+
 	meshList[GEO_BUTTON2] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_BUTTON2]->textureID = LoadTGA("Image//Main Menu Options.tga");
+
+	meshList[GEO_OUTLINE2] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_OUTLINE2]->textureID = LoadTGA("Image//Main Menu Options Outline.tga");
 }
 
 void SceneMainMenu::Update(double dt)
 {
 	DebugMode(dt);
-	if (Application::IsKeyPressed('E'))
+	if (Application::IsKeyPressed(VK_DOWN) && play)
 	{
-		SceneManager::currScene = 2;
+		play = false;
 	}
-	light[0].LightUpdate(dt);
+	else if (Application::IsKeyPressed(VK_UP) && !play)
+	{
+		play = true;
+	}
+
+	if (Application::IsKeyPressed(VK_RETURN) && play)
+	{
+		options = false;
+		SceneManager::currScene = 3;
+	}
+	else if (Application::IsKeyPressed(VK_RETURN) && !play)
+	{
+		options = true;
+	}
 }
 
 void SceneMainMenu::Render()
@@ -106,6 +124,15 @@ void SceneMainMenu::Render()
 	RenderMeshOnScreen(meshList[GEO_QUAD], 40, 30, 16, 12);
 	RenderMeshOnScreen(meshList[GEO_BUTTON1], 40, 30, 16, 12);
 	RenderMeshOnScreen(meshList[GEO_BUTTON2], 40, 30, 16, 12);
+
+	if (play)
+	{
+		RenderMeshOnScreen(meshList[GEO_OUTLINE1], 40, 30, 16, 12);
+	}
+	else if (!play)
+	{
+		RenderMeshOnScreen(meshList[GEO_OUTLINE2], 40, 30, 16, 12);
+	}
 }
 
 void SceneMainMenu::Exit()

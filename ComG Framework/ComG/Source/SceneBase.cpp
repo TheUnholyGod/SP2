@@ -107,7 +107,7 @@ void SceneBase::Update(double dt)
 	DebugMode(dt);
 	if (Application::IsKeyPressed('E'))
 	{
-		SceneManager::currScene = 2;
+		SceneManager::currScene = 3;
 	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0,2,0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy();
