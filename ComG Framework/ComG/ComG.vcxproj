@@ -83,6 +83,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="Shader\SimpleFragmentShader.fragmentshader" />
     <None Include="Shader\SimpleVertexShader.vertexshader" />
   </ItemGroup>
