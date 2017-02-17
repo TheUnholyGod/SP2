@@ -13,7 +13,7 @@ Molerat::~Molerat()
 
 void Molerat::Update(double dt)
 {
-	if (!allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition()))
+	if (allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition()))
 	{
 		gameobjrenderer_->rotate((0, 1, 0), 20 * dt, -(Player::getplayer()->getRenderer().getPosition() - gameobjrenderer_->getPosition()));
 		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 20 * dt);
