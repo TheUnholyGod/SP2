@@ -145,7 +145,7 @@ void SceneBase::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Scale(2, 2, 2);
-	RenderMesh(buildingmesh[0], true);
+	RenderMesh(buildingmesh[0], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();

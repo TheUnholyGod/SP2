@@ -109,10 +109,10 @@ void SceneSplashScreen::Render()
 	modelStack.LoadIdentity();
 	
 	if (change){
-		RenderMeshOnScreen(meshList[GEO_SPLASHSCREEN2], 40, 30, 60, 60);
+		RenderMeshOnScreen(meshList[GEO_SPLASHSCREEN2], 40, 30, 80, 60);
 	}
 	else{
-		RenderMeshOnScreen(meshList[GEO_SPLASHSCREEN1], 40, 30, 60, 60);
+		RenderMeshOnScreen(meshList[GEO_SPLASHSCREEN1], 40, 30, 80, 60);
 	}
 }
 

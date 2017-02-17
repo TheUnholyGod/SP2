@@ -20,6 +20,7 @@ const unsigned char Application::FPS = 60; // FPS of this game
 const unsigned int Application::frameTime = 1000 / FPS; // time for each frame
 GLFWwindow* Application::m_window = NULL;
 StopWatch Application::m_timer;
+bool Application::IsExit;
 
 //Define an error callback
 static void error_callback(int error, const char* description)
@@ -110,7 +111,7 @@ void Application::Run()
 	//Main Loop
 
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
-	while (!glfwWindowShouldClose(Application::m_window) && !IsKeyPressed(VK_ESCAPE))
+	while (!glfwWindowShouldClose(Application::m_window) && !IsExit)
 	{
 		SceneManager::getSceneManger()->update();
 	} //Check if the ESC key had been pressed or if the window had been closed
