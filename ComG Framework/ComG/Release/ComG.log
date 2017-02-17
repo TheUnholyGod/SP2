@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 2/17/2017 12:47:39 PM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -112,3 +113,8 @@
 Build succeeded.
 
 Time Elapsed 00:00:12.87
+=======
+﻿  Generating code
+  Finished generating code
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
+>>>>>>> a06cb489d019475fef062a78647497be1cb3c749

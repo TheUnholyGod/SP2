@@ -30,6 +30,7 @@ public:
 	void setForward(Vector3 newforward) { this->forward_ = newforward; right_ = forward_.Cross(up_);}
 	Mtx44 getMatrix();
 	void setPosition(Vector3 newposition) { position_ = newposition; }
+	void rotate(Vector3 axisofrotate, double rotatespeed, Vector3 target);
 };
 
 #endif

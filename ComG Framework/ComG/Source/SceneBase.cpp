@@ -7,6 +7,7 @@
 #include "LoadTGA.h"
 #include "SceneManager.h"
 #include "EnemyFactory.h"
+#include "BuildingFactory.h"
 #include "Player.h"
 #include "EnemyDataBase.h"
 #include "ItemDataBase.h"
@@ -93,12 +94,14 @@ void SceneBase::Init()
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i+1)->getName(),EnemyDataBase::getEnemyDB()->getEnemy(i+1)->getSourceLocation());
 	}
-
+	for (int i = 0; i<buildingMeshList.size(); i++)
+	{
+		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getSourceLocation());
+	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
 	}
-	buildingmesh[0] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(202)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(202)->getSourceLocation());
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
@@ -112,9 +115,13 @@ void SceneBase::Update(double dt)
 	{
 		SceneManager::currScene = 3;
 	}
-	Player::getplayer()->Update(camForward, camRight, dt);
+	if (allbuildingcollision(Player::getplayer()))
+	{
+		Player::getplayer()->Update(camForward, camRight, dt);
+	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0,2,0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy(dt);
+	//SpawnBuilding(dt);
 	light[0].LightUpdate(dt);
 	
 }
@@ -144,16 +151,20 @@ void SceneBase::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
+<<<<<<< HEAD
 	modelStack.Scale(2, 2, 2);
 	RenderMesh(buildingmesh[0], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
+=======
+>>>>>>> a06cb489d019475fef062a78647497be1cb3c749
 	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
 	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
 
 	RenderEnemy();
+	RenderBuilding();
 }
 
 void SceneBase::Exit()
@@ -468,6 +479,30 @@ void SceneBase::RenderEnemy()
 	}
 }
 
+void SceneBase::SpawnBuilding(double dt)
+{
+	if (BaseBuildings.size() < 1)
+		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
+
+	for (auto &i : BaseBuildings)
+	{
+		i->update(dt);
+	}
+}
+
+void SceneBase::RenderBuilding()
+{
+	int y = 0;
+	for (auto &i : BaseBuildings)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(buildingMeshList[i->getID() - 101], true);
+		modelStack.PopMatrix();
+		y++;
+	}
+}
+
 void SceneBase::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
 {
 	glDisable(GL_DEPTH_TEST);
@@ -487,4 +522,17 @@ void SceneBase::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int size
 	viewStack.PopMatrix();
 	projectionStack.PopMatrix();
 	glEnable(GL_DEPTH_TEST);
+}
+
+bool SceneBase::allbuildingcollision(GameObject* test)
+{
+	if (!BaseBuildings.size())
+		return 1;
+	for (auto &i : BaseBuildings)
+	{
+		if (i->getAABB(0)->pointtoAABB(test->getRenderer().getPosition()))
+		{
+			return false;
+		}
+	}
 }
