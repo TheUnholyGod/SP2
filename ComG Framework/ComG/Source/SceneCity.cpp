@@ -98,6 +98,10 @@ void SceneCity::Update(double dt)
 	{
 		SceneManager::currScene = 2;
 	}
+	if (Application::IsKeyPressed(VK_ESCAPE))
+	{
+		Application::IsExit = true;
+	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy();
 	Player::getplayer()->Update(camForward, camRight, dt);
