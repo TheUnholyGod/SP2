@@ -1,34 +1,19 @@
-<<<<<<< HEAD
-﻿Build started 17/2/2017 11:36:23 AM.
-=======
-<<<<<<< HEAD
-﻿Build started 2/17/2017 10:58:00 AM.
-     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
-=======
-<<<<<<< HEAD
-﻿  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib
-=======
-<<<<<<< HEAD
-﻿  Common.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\Common.lib
-=======
-﻿Build started 17/2/2017 9:51:36 AM.
->>>>>>> b0a92740d7949a49f4d5fb0aa55b802059d05e08
+﻿Build started 17/2/2017 2:40:45 PM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
->>>>>>> a06cb489d019475fef062a78647497be1cb3c749
-     1>Lib:
-         Common.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Release\Common.lib
-     1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MatrixStack.cpp Source\Mtx44.cpp Source\timer.cpp Source\Vector3.cpp
+         MatrixStack.cpp
+         Mtx44.cpp
+         timer.cpp
+         Vector3.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\Common.lib" /NOLOGO /LTCG Release\MatrixStack.obj
+         Release\Mtx44.obj
+         Release\timer.obj
+         Release\Vector3.obj
+         Common.vcxproj -> C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\Common.lib
+     1>Done Building Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Common\Common.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-<<<<<<< HEAD
-Time Elapsed 00:00:00.06
-=======
-<<<<<<< HEAD
-Time Elapsed 00:00:00.23
-=======
-Time Elapsed 00:00:00.05
->>>>>>> 5140d951f3b07f7e1107b854588f737e2d9417c8
->>>>>>> 8594bd35ff65c51ff0dd715f278a47965fec9c2e
->>>>>>> a06cb489d019475fef062a78647497be1cb3c749
->>>>>>> b0a92740d7949a49f4d5fb0aa55b802059d05e08
+Time Elapsed 00:00:02.18

@@ -14,6 +14,8 @@
 #include "Enemy.h"
 #include "Lighting.h"
 #include <vector>
+#include "GLFW\glfw3.h"
+#include "GL\glew.h"
 
 class SceneMainMenu : public Scene
 {
@@ -62,6 +64,9 @@ public:
 	virtual void Render();
 	virtual void Exit();
 private:
+	int windowX;
+	int windowY;
+
 
 	bool options;
 

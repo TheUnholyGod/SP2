@@ -9,6 +9,8 @@
 
 #include <sstream>
 
+POINT cursorPoint;
+
 SceneMainMenu::SceneMainMenu()
 {
 }
@@ -19,6 +21,12 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::Init()
 {
+	windowX = windowY = 0;
+	cursorPoint.x = cursorPoint.y = 0;
+
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	SetCursorPos(windowX / 2, windowY / 2);
+	GetCursorPos(&cursorPoint);
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -97,70 +105,59 @@ void SceneMainMenu::Update(double dt)
 {
 	DebugMode(dt);
 
-	if (Application::IsKeyPressed(VK_RETURN) && play)
-	{
-<<<<<<< HEAD
-		options = false;
-		SceneManager::currScene = 4;
-	}
-	else if (Application::IsKeyPressed(VK_RETURN) && !play)
-	{
-		elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
+	std::cout << "Cursor X: " << cursorPoint.x << std::endl;
+	std::cout << "Cursor Y: " << cursorPoint.y << std::endl;
 
-		std::cout << "Elapsed Time: " << elapsedTime << std::endl;
+	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 
-		if (!options)
-=======
+	std::cout << "Elapsed Time: " << elapsedTime << std::endl;
+
+	if (!options)
+	{
 		if (elapsedTime > 0.05)
->>>>>>> 07781f471ec4be952f305a2f17e3e935425dc540
 		{
-			std::cout << play << std::endl;
-
-			if (elapsedTime > 0.1)
+			if (Application::IsKeyPressed(VK_RIGHT))
 			{
-				if (Application::IsKeyPressed(VK_RIGHT))
+				if (play < 3)
 				{
-					if (play < 3)
-					{
-						play++;
-					}
-					if (play > 2)
-					{
-						play = 0;
-					}
+					play++;
 				}
-				if (Application::IsKeyPressed(VK_LEFT))
+				if (play > 2)
 				{
-					if (play >= 0)
-					{
-						play--;
-					}
-					if (play < 0)
-					{
-						play = 2;
-					}
+					play = 0;
 				}
-
-				if (Application::IsKeyPressed(VK_RETURN))
-				{
-
-					if (play == 0)
-					{
-						Application::IsExit = true;
-
-					}
-					if (play == 1)
-					{
-						options = false;
-						SceneManager::currScene = 3;
-					}
-					if (play == 2)
-					{
-						options = true;
-					}
-				}
-				start = std::clock();
 			}
+			if (Application::IsKeyPressed(VK_LEFT))
+			{
+				if (play >= 0)
+				{
+					play--;
+				}
+				if (play < 0)
+				{
+					play = 2;
+				}
+			}
+
+			if (Application::IsKeyPressed(VK_RETURN))
+			{
+
+				if (play == 0)
+				{
+					Application::IsExit = true;
+
+				}
+				if (play == 1)
+				{
+					options = false;
+					SceneManager::currScene = 4;
+				}
+				if (play == 2)
+				{
+					options = true;
+				}
+			}
+			start = std::clock();
 		}
 	}
 	if (options)
@@ -195,16 +192,16 @@ void SceneMainMenu::Update(double dt)
 
 				if (optionHighlight == 0)
 				{
-					
+
 
 				}
 				if (optionHighlight == 1)
 				{
-					
+
 				}
 				if (optionHighlight == 2)
 				{
-					
+
 				}
 			}
 			start = std::clock();
@@ -238,7 +235,7 @@ void SceneMainMenu::Render()
 			RenderMeshOnScreen(meshList[GEO_PLAY], 40, 30, 16, 12);
 		}
 		if (play == 2)
-		{		
+		{
 			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
 		}
 	}
@@ -248,7 +245,7 @@ void SceneMainMenu::Render()
 
 		if (play == 0)
 		{
-			
+
 		}
 		if (play == 1)
 		{
