@@ -27,6 +27,7 @@ class SceneMainMenu : public Scene
 
 		//Options Menu
 		GEO_OPTIONSMENU,
+		GEO_VOLUME,
 		GEO_BACK,
 
 		NUM_GEOMETRY,
@@ -65,6 +66,7 @@ private:
 	bool options;
 
 	int play;
+	int optionHighlight;
 	bool back;
 
 	std::clock_t start;

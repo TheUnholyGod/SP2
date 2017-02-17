@@ -115,6 +115,15 @@ void SceneTest::Update(double dt)
 	{
 		SceneManager::currScene = 3;
 	}
+<<<<<<< HEAD
+=======
+	if (Application::IsKeyPressed(VK_ESCAPE))
+	{
+		Application::IsExit = true;
+	}
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(5, 5, 5), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	SpawnEnemy();
+>>>>>>> 07781f471ec4be952f305a2f17e3e935425dc540
 	Player::getplayer()->Update(camForward, camRight, dt);
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy(dt);

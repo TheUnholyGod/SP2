@@ -115,6 +115,10 @@ void SceneBase::Update(double dt)
 	{
 		SceneManager::currScene = 3;
 	}
+	if (Application::IsKeyPressed(VK_ESCAPE))
+	{
+		Application::IsExit = true;
+	}
 	if (allbuildingcollision(Player::getplayer()))
 	{
 		Player::getplayer()->Update(camForward, camRight, dt);
@@ -151,14 +155,6 @@ void SceneBase::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-<<<<<<< HEAD
-	modelStack.Scale(2, 2, 2);
-	RenderMesh(buildingmesh[0], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-=======
->>>>>>> a06cb489d019475fef062a78647497be1cb3c749
 	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
 	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
