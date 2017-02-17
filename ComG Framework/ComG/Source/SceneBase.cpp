@@ -115,6 +115,10 @@ void SceneBase::Update(double dt)
 	{
 		SceneManager::currScene = 3;
 	}
+	if (Application::IsKeyPressed(VK_ESCAPE))
+	{
+		Application::IsExit = true;
+	}
 	if (allbuildingcollision(Player::getplayer()))
 	{
 		Player::getplayer()->Update(camForward, camRight, dt);

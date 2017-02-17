@@ -105,7 +105,7 @@ void SceneMainMenu::Update(double dt)
 	{
 		std::cout << play << std::endl;
 
-		if (elapsedTime > 0.1)
+		if (elapsedTime > 0.05)
 		{
 			if (Application::IsKeyPressed(VK_RIGHT))
 			{
