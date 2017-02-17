@@ -2,7 +2,7 @@
 #include "Collision.h"
 
 Building::Building(int id, const std::string name, std::string source_, int health, BUILDINGFUNCTION function, bool enter) :
-								GameObject(id,""), kName_(name), health_(health), FUNCTION(function), enter_(enter)
+								GameObject(id,source_), kName_(name), health_(health), FUNCTION(function), enter_(enter)
 {
 	for (auto &i : size)
 	{

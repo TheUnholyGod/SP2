@@ -10,6 +10,7 @@
 #include "Player.h"
 #include "EnemyDataBase.h"
 #include "ItemDataBase.h"
+#include "BuildingDataBase.h"
 
 #include <sstream>
 
@@ -97,6 +98,7 @@ void SceneBase::Init()
 	{
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
 	}
+	buildingmesh[0] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(202)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(202)->getSourceLocation());
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
@@ -114,6 +116,7 @@ void SceneBase::Update(double dt)
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0,2,0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy(dt);
 	light[0].LightUpdate(dt);
+	
 }
 
 void SceneBase::Render()
@@ -138,6 +141,11 @@ void SceneBase::Render()
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
 	RenderMesh(meshList[GEO_QUAD], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	modelStack.Scale(2, 2, 2);
+	RenderMesh(buildingmesh[0], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();

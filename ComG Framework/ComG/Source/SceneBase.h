@@ -78,7 +78,11 @@ class SceneBase : public Scene
 		GEO_BOW,
 		NUM_WEAPONGEOMETERY,
 	};
-
+	enum BUILDINGMESHLIST
+	{
+		GEO_TURRET,
+		NUM_BUILDINGGEOMETERY,
+	};
 public:
 	SceneBase();
 	~SceneBase();
@@ -92,6 +96,7 @@ private:
 	std::array<Mesh*, NUM_GEOMETRY> meshList;
 	std::array<Mesh*, NUM_ENEMYGEOMETRY> enemyMeshList;
 	std::array<Mesh*, NUM_WEAPONGEOMETERY> weaponmesh;
+	std::array<Mesh*, NUM_BUILDINGGEOMETERY> buildingmesh;
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];

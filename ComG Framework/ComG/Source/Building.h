@@ -22,8 +22,9 @@ public:
 	Building(const int id, const std::string name, std::string source_, int health, BUILDINGFUNCTION, bool enter);
 	virtual ~Building();
 
+	virtual void update(double dt){}
 	int get_Health();
-
+	std::string getName(){ return kName_; }
 };
 
 #endif
