@@ -11,29 +11,29 @@ Molerat::~Molerat()
 
 void Molerat::Update(double dt)
 {
-	if (allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition()))
+	if (!allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition()))
 	{
-		gameobjrenderer_->rotate((0, 1, 0), 20 * dt, Player::getplayer()->getRenderer().getPosition().Dot(-gameobjrenderer_->getPosition()));
-		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 5 * dt);
+		gameobjrenderer_->rotate((0, 1, 0), 20 * dt, -(Player::getplayer()->getRenderer().getPosition() - gameobjrenderer_->getPosition()));
+		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 20 * dt);
 		goalreached = true;
 	}
 	else
 	{
 		if (goalreached)
 			pathfinding();
-		if (gameobjrenderer_->getPosition() != goal)
-			gameobjrenderer_->translate(gameobjrenderer_->getForward(), 25 * dt);
-		else
+		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
+		if(gameobjrenderer_->getPosition() == goal )
 			goalreached = true;
 	}
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-	std::cout << gameobjrenderer_->getPosition() << std::endl;
+	std::cout << gameobjrenderer_->getForward() << std::endl;
 }
 
 void Molerat::pathfinding()
 {
-	newDIr = ((float)(rand() % 100) / 100.f, (float)(rand() % 100) / 100.f, (float)(rand() % 100) / 100.f);
-	goal = newDIr * 25;
+	newDIr = (((float)(rand() % 100)), 0, 0);
+	newDIr.z = ((float)(rand() % 100));
+	goal = newDIr;
 	goalreached = false;
 	gameobjrenderer_->setForward(newDIr);
 }

@@ -21,6 +21,7 @@ public:
 	const int getID() { return kID_; }
 	std::string getSourceLocation()  { return source_location_; }
 	Renderer& getRenderer() { return *gameobjrenderer_; }
+	AABB* getAABB(int no) { return allAABB[no]; }
 };
 
 #endif

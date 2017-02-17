@@ -58,8 +58,14 @@ void SceneMainMenu::Init()
 
 	//glUseProgram(m_programID);
 	forward.z = 1;
-	play = true;
+
 	options = false;
+
+	play = 1;
+	back = false;
+
+	start = std::clock();
+
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
 
@@ -69,42 +75,90 @@ void SceneMainMenu::Init()
 
 	// Make sure you pass uniform parameters after glUseProgram()
 
-	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_QUAD]->textureID = LoadTGA("Image//Main Menu.tga");
+	//Main Menu
+	meshList[GEO_MAINMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_MAINMENU]->textureID = LoadTGA("Image//Main Menu.tga");
 
-	meshList[GEO_BUTTON1] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_BUTTON1]->textureID = LoadTGA("Image//Main Menu Play.tga");
+	meshList[GEO_PLAY] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_PLAY]->textureID = LoadTGA("Image//Main Menu Play.tga");
 
-	meshList[GEO_OUTLINE1] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_OUTLINE1]->textureID = LoadTGA("Image//Main Menu Play Outline.tga");
+	meshList[GEO_OPTIONS] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_OPTIONS]->textureID = LoadTGA("Image//Main Menu Options.tga");
 
-	meshList[GEO_BUTTON2] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_BUTTON2]->textureID = LoadTGA("Image//Main Menu Options.tga");
+	meshList[GEO_EXIT] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_EXIT]->textureID = LoadTGA("Image//Main Menu Exit.tga");
 
-	meshList[GEO_OUTLINE2] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_OUTLINE2]->textureID = LoadTGA("Image//Main Menu Options Outline.tga");
+	//Options Menu
+	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//Options Menu.tga");
 }
 
 void SceneMainMenu::Update(double dt)
 {
 	DebugMode(dt);
-	if (Application::IsKeyPressed(VK_DOWN) && play)
-	{
-		play = false;
-	}
-	else if (Application::IsKeyPressed(VK_UP) && !play)
-	{
-		play = true;
-	}
 
+<<<<<<< HEAD
 	if (Application::IsKeyPressed(VK_RETURN) && play)
 	{
 		options = false;
 		SceneManager::currScene = 4;
 	}
 	else if (Application::IsKeyPressed(VK_RETURN) && !play)
+=======
+	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
+	
+	std::cout << "Elapsed Time: " << elapsedTime << std::endl;
+
+	if (!options)
+>>>>>>> b0a92740d7949a49f4d5fb0aa55b802059d05e08
 	{
-		options = true;
+		std::cout << play << std::endl;
+
+		if (elapsedTime > 0.1)
+		{
+			if (Application::IsKeyPressed(VK_RIGHT))
+			{
+				if (play < 3)
+				{
+					play++;
+				}
+				if (play > 2)
+				{
+					play = 0;
+				}
+			}
+			if (Application::IsKeyPressed(VK_LEFT))
+			{
+				if (play >= 0)
+				{
+					play--;
+				}
+				if (play < 0)
+				{
+					play = 2;
+				}
+			}
+
+			if (Application::IsKeyPressed(VK_RETURN))
+			{
+
+				if (play == 0)
+				{
+					Application::IsExit = true;
+
+				}
+				if (play == 1)
+				{
+					options = false;
+					SceneManager::currScene = 3;
+				}
+				if (play == 2)
+				{
+					options = true;
+				}
+			}
+			start = std::clock();
+		}	
 	}
 }
 
@@ -121,17 +175,26 @@ void SceneMainMenu::Render()
 
 	modelStack.LoadIdentity();
 
-	RenderMeshOnScreen(meshList[GEO_QUAD], 40, 30, 16, 12);
-	RenderMeshOnScreen(meshList[GEO_BUTTON1], 40, 30, 16, 12);
-	RenderMeshOnScreen(meshList[GEO_BUTTON2], 40, 30, 16, 12);
+	if (!options)
+	{
+		RenderMeshOnScreen(meshList[GEO_MAINMENU], 40, 30, 16, 12);
 
-	if (play)
-	{
-		RenderMeshOnScreen(meshList[GEO_OUTLINE1], 40, 30, 16, 12);
+		if (play == 0)
+		{
+			RenderMeshOnScreen(meshList[GEO_EXIT], 40, 30, 16, 12);
+		}
+		if (play == 1)
+		{
+			RenderMeshOnScreen(meshList[GEO_PLAY], 40, 30, 16, 12);
+		}
+		if (play == 2)
+		{		
+			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
+		}
 	}
-	else if (!play)
+	else if (options)
 	{
-		RenderMeshOnScreen(meshList[GEO_OUTLINE2], 40, 30, 16, 12);
+
 	}
 }
 

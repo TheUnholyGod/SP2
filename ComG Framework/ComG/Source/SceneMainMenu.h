@@ -19,11 +19,16 @@ class SceneMainMenu : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
-		GEO_QUAD,
-		GEO_BUTTON1,
-		GEO_OUTLINE1,
-		GEO_BUTTON2,
-		GEO_OUTLINE2,
+		//Main Menu
+		GEO_MAINMENU,
+		GEO_PLAY,
+		GEO_OPTIONS,
+		GEO_EXIT,
+
+		//Options Menu
+		GEO_OPTIONSMENU,
+		GEO_BACK,
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -57,8 +62,13 @@ public:
 	virtual void Exit();
 private:
 
-	bool play;
 	bool options;
+
+	int play;
+	bool back;
+
+	std::clock_t start;
+	float elapsedTime;
 
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
