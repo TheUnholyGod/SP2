@@ -22,11 +22,9 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::Init()
 {
-	apoint.x = apoint.y = 0;
+	cursorX = 0;
+	cursorY = 0;
 
-	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
-	SetCursorPos(windowX / 2, windowY / 2);
-	GetCursorPos(&apoint);
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -107,13 +105,12 @@ void SceneMainMenu::Init()
 
 void SceneMainMenu::Update(double dt)
 {
+	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	DebugMode(dt);
 
-	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
-	GetCursorPos(&apoint);
+	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
+	cursorY = -cursorY + 600;
 
-	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
-	
 	if (!options)
 	{
 		if (elapsedTime > 0.05)
@@ -259,10 +256,8 @@ void SceneMainMenu::Render()
 		}
 	}
 
-	RenderMeshOnScreen(meshList[GEO_CURSOR], apoint.x, apoint.y, 5, 5);
-
-	std::cout << "MouseX: " << apoint.x << std::endl;
-	std::cout << "MouseY: " << apoint.y << std::endl;
+	RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 10, 10);
+	//RenderMeshOnScreen(meshList[GEO_CURSOR], 40, 30, 10, 10);
 }
 
 void SceneMainMenu::Exit()

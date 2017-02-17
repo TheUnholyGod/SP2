@@ -65,8 +65,11 @@ public:
 	virtual void Render();
 	virtual void Exit();
 private:
-	int windowX; 
-	int windowY;
+	double cursorX; 
+	double cursorY;
+
+	int windowXpos;
+	int windowYpos;
 
 	bool options;
 
