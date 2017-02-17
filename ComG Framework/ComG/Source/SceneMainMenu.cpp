@@ -6,8 +6,11 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
+#include "Camera3.h"
 
 #include <sstream>
+
+POINT apoint;
 
 SceneMainMenu::SceneMainMenu()
 {
@@ -19,6 +22,11 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::Init()
 {
+	apoint.x = apoint.y = 0;
+
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	SetCursorPos(windowX / 2, windowY / 2);
+	GetCursorPos(&apoint);
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -75,6 +83,10 @@ void SceneMainMenu::Init()
 
 	// Make sure you pass uniform parameters after glUseProgram()
 
+	//Cursor
+	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR]->textureID = LoadTGA("Image//cursorPointer.tga");
+
 	//Main Menu
 	meshList[GEO_MAINMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_MAINMENU]->textureID = LoadTGA("Image//Main Menu.tga");
@@ -97,10 +109,11 @@ void SceneMainMenu::Update(double dt)
 {
 	DebugMode(dt);
 
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	GetCursorPos(&apoint);
+
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	
-	std::cout << "Elapsed Time: " << elapsedTime << std::endl;
-
 	if (!options)
 	{
 		if (elapsedTime > 0.05)
@@ -245,6 +258,11 @@ void SceneMainMenu::Render()
 			RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
 		}
 	}
+
+	RenderMeshOnScreen(meshList[GEO_CURSOR], apoint.x, apoint.y, 5, 5);
+
+	std::cout << "MouseX: " << apoint.x << std::endl;
+	std::cout << "MouseY: " << apoint.y << std::endl;
 }
 
 void SceneMainMenu::Exit()
