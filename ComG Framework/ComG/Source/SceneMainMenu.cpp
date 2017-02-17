@@ -11,7 +11,6 @@
 #include <sstream>
 
 POINT cursorPoint;
-POINT apoint;
 
 SceneMainMenu::SceneMainMenu()
 {
@@ -30,13 +29,8 @@ void SceneMainMenu::Init()
 	cursorPoint.x = cursorPoint.y = 0;
 
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
-	SetCursorPos(windowX / 2, windowY / 2);
-	GetCursorPos(&cursorPoint);
-	apoint.x = apoint.y = 0;
+	glfwSetCursorPos(Application::m_window,windowX / 2, windowY / 2);
 
-	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
-	SetCursorPos(windowX / 2, windowY / 2);
-	GetCursorPos(&apoint);
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -117,27 +111,15 @@ void SceneMainMenu::Init()
 
 void SceneMainMenu::Update(double dt)
 {
-	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
-	DebugMode(dt);
-
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + 600;
 
-	std::cout << "Cursor X: " << cursorPoint.x << std::endl;
-	std::cout << "Cursor Y: " << cursorPoint.y << std::endl;
-
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
+	DebugMode(dt);
 
-	std::cout << "Elapsed Time: " << elapsedTime << std::endl;
-
-	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
-	GetCursorPos(&apoint);
-
-	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
-	
 	if (!options)
 	{
-		if (elapsedTime > 0.05)
+		if (elapsedTime > 0.01)
 		{
 			if (Application::IsKeyPressed(VK_RIGHT))
 			{
@@ -149,6 +131,7 @@ void SceneMainMenu::Update(double dt)
 				{
 					play = 0;
 				}
+				start = std::clock();
 			}
 			if (Application::IsKeyPressed(VK_LEFT))
 			{
@@ -160,6 +143,7 @@ void SceneMainMenu::Update(double dt)
 				{
 					play = 2;
 				}
+				start = std::clock();
 			}
 
 			if (Application::IsKeyPressed(VK_RETURN))
@@ -179,13 +163,13 @@ void SceneMainMenu::Update(double dt)
 				{
 					options = true;
 				}
+				start = std::clock();
 			}
-			start = std::clock();
 		}
 	}
 	if (options)
 	{
-		if (elapsedTime > 0.05)
+		if (elapsedTime > 0.01)
 		{
 			if (Application::IsKeyPressed(VK_UP))
 			{
@@ -197,6 +181,7 @@ void SceneMainMenu::Update(double dt)
 				{
 					optionHighlight = 0;
 				}
+				start = std::clock();
 			}
 			if (Application::IsKeyPressed(VK_DOWN))
 			{
@@ -208,6 +193,7 @@ void SceneMainMenu::Update(double dt)
 				{
 					optionHighlight = 2;
 				}
+				start = std::clock();
 			}
 
 			if (Application::IsKeyPressed(VK_RETURN))
@@ -226,8 +212,8 @@ void SceneMainMenu::Update(double dt)
 				{
 
 				}
+				start = std::clock();
 			}
-			start = std::clock();
 		}
 	}
 }
@@ -272,16 +258,15 @@ void SceneMainMenu::Render()
 		}
 		if (play == 1)
 		{
-			RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
+			//RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
 		}
 		if (play == 2)
 		{
-			RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
+			//RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
 		}
 	}
 
 	RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 10, 10);
-	//RenderMeshOnScreen(meshList[GEO_CURSOR], 40, 30, 10, 10);
 }
 
 void SceneMainMenu::Exit()
