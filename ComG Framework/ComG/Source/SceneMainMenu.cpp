@@ -100,7 +100,7 @@ void SceneMainMenu::Update(double dt)
 	if (Application::IsKeyPressed(VK_RETURN) && play)
 	{
 		options = false;
-		SceneManager::currScene = 3;
+		SceneManager::currScene = 4;
 	}
 	else if (Application::IsKeyPressed(VK_RETURN) && !play)
 	{

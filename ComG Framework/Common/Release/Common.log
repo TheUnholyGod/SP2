@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-﻿  Common.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\Common.lib
-=======
-﻿Build started 17/2/2017 9:51:36 AM.
+﻿Build started 17/2/2017 11:36:23 AM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>Lib:
          Common.vcxproj -> C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\Common.lib
@@ -9,5 +6,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.05
->>>>>>> 5140d951f3b07f7e1107b854588f737e2d9417c8
+Time Elapsed 00:00:00.06

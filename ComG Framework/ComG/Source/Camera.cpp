@@ -11,6 +11,8 @@ Camera::~Camera()
 {
 }
 
+Vector3 Camera::position;
+
 void Camera::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	this->position = pos;
