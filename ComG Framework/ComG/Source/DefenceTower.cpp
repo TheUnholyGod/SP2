@@ -1,7 +1,7 @@
 #include "DefenceTower.h"
 #include "Camera3.h"
 
-DefenceTower::DefenceTower() : Building(107, "Turret", "OBJ//Turret.obj", 100, DEFENCE, false) {}
+DefenceTower::DefenceTower() : Building(107, "Turret", "OBJ//Turret.obj", "", 100, DEFENCE, false) {}
 DefenceTower::~DefenceTower(){}
 int DefenceTower::get_Health(){ return health_; }
 void DefenceTower::update(double dt)

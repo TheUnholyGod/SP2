@@ -101,6 +101,10 @@ void SceneTest::Init()
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
+		/*std::string sourceLoc = ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation();
+		std::string textureLoc = ItemDataBase::getItemDB()->getItem(300 + i + 7)->getTextureLocation();*/
+		const char* texture = (ItemDataBase::getItemDB()->getItem(100 + i + 1)->getTextureLocation()).c_str();
+		weaponmesh[i]->textureID = LoadTGA(texture);
 	}
 	suntimer = 1;
 	LoadSkybox();

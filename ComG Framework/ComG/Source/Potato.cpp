@@ -2,7 +2,7 @@
 
 
 
-Potato::Potato() :Food(101,"Potato", "", FARMABLE, 15, 5)
+Potato::Potato() :Food(101,"Potato", FARMABLE, 15, 5)
 {
 }
 
