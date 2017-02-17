@@ -7,9 +7,11 @@
 #include "LoadTGA.h"
 #include "SceneManager.h"
 #include "EnemyFactory.h"
+#include "BuildingFactory.h"
 #include "Player.h"
 #include "EnemyDataBase.h"
 #include "ItemDataBase.h"
+#include "BuildingDataBase.h"
 
 #include <sstream>
 
@@ -92,7 +94,10 @@ void SceneBase::Init()
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i+1)->getName(),EnemyDataBase::getEnemyDB()->getEnemy(i+1)->getSourceLocation());
 	}
-
+	for (int i = 0; i<buildingMeshList.size(); i++)
+	{
+		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getSourceLocation());
+	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
@@ -113,6 +118,7 @@ void SceneBase::Update(double dt)
 	Player::getplayer()->Update(camForward, camRight, dt);
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0,2,0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy(dt);
+	SpawnBuilding(dt);
 	light[0].LightUpdate(dt);
 }
 
@@ -146,6 +152,7 @@ void SceneBase::Render()
 	modelStack.PopMatrix();
 
 	RenderEnemy();
+	RenderBuilding();
 }
 
 void SceneBase::Exit()
@@ -455,6 +462,30 @@ void SceneBase::RenderEnemy()
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
 		RenderMesh(enemyMeshList[i->getID() - 1], true);
+		modelStack.PopMatrix();
+		y++;
+	}
+}
+
+void SceneBase::SpawnBuilding(double dt)
+{
+	if (BaseBuildings.size() < 1)
+		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
+
+	for (auto &i : BaseBuildings)
+	{
+		i->update(dt);
+	}
+}
+
+void SceneBase::RenderBuilding()
+{
+	int y = 0;
+	for (auto &i : BaseBuildings)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(buildingMeshList[i->getID() - 101], true);
 		modelStack.PopMatrix();
 		y++;
 	}

@@ -2,6 +2,7 @@
 #define BARN_H
 
 #include "Building.h"
+#include "Player.h"
 #include <string>
 
 class Barn : public Building
@@ -15,7 +16,7 @@ protected:
 public:
 	Barn(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
 	virtual ~Barn();
-
+	void update(double dt);
 	int get_Health();
 
 };
