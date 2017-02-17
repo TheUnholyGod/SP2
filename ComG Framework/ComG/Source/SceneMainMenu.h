@@ -21,7 +21,9 @@ class SceneMainMenu : public Scene
 	{
 		GEO_QUAD,
 		GEO_BUTTON1,
+		GEO_OUTLINE1,
 		GEO_BUTTON2,
+		GEO_OUTLINE2,
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -54,35 +56,23 @@ public:
 	virtual void Render();
 	virtual void Exit();
 private:
+
+	bool play;
+	bool options;
+
 	unsigned m_vertexArrayID;
 	Mesh *meshList[NUM_GEOMETRY];
-
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
 	MS modelStack, viewStack, projectionStack;
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
 	Camera3 fp_camera;
-	Lighting light[1];
 	void RenderMesh(Mesh *mesh, bool enableLight);
-	float LSPEED;
-	void LoadSkybox();
-	void RenderSkybox();
 	void DebugMode(double dt);
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey);
-	double lightrotate, sunrotate;
-	Mtx44 LightPos;
-
-	int sunup;
-	float suntimer;
-	bool reset;
-
-	std::list<Enemy*> BaseEnemy;
-	std::list<Building*> BaseBuildings;
-	void SpawnEnemy();
-	void RenderEnemy();
 };
 
 #endif

@@ -14,9 +14,9 @@ SceneManager::SceneManager()
 {
 	prevScene = DEFAULT;
 	SceneDataBase[1] = new SceneSplashScreen();
-	SceneDataBase[2] = new SceneBase();
-	SceneDataBase[3] = new SceneTest();
-	SceneDataBase[4] = new SceneMainMenu();
+	SceneDataBase[2] = new SceneMainMenu();
+	SceneDataBase[3] = new SceneBase();
+	SceneDataBase[4] = new SceneTest();
 }
 
 SceneManager::~SceneManager()
