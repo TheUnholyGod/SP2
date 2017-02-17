@@ -32,6 +32,9 @@ class SceneMainMenu : public Scene
 		GEO_VOLUME,
 		GEO_BACK,
 
+		//Cursor
+		GEO_CURSOR,
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -64,9 +67,14 @@ public:
 	virtual void Render();
 	virtual void Exit();
 private:
+<<<<<<< HEAD
 	int windowX;
 	int windowY;
 
+=======
+	int windowX; 
+	int windowY;
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
 
 	bool options;
 

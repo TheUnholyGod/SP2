@@ -6,10 +6,15 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
+#include "Camera3.h"
 
 #include <sstream>
 
+<<<<<<< HEAD
 POINT cursorPoint;
+=======
+POINT apoint;
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
 
 SceneMainMenu::SceneMainMenu()
 {
@@ -21,12 +26,20 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::Init()
 {
+<<<<<<< HEAD
 	windowX = windowY = 0;
 	cursorPoint.x = cursorPoint.y = 0;
 
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	SetCursorPos(windowX / 2, windowY / 2);
 	GetCursorPos(&cursorPoint);
+=======
+	apoint.x = apoint.y = 0;
+
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	SetCursorPos(windowX / 2, windowY / 2);
+	GetCursorPos(&apoint);
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -83,6 +96,10 @@ void SceneMainMenu::Init()
 
 	// Make sure you pass uniform parameters after glUseProgram()
 
+	//Cursor
+	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR]->textureID = LoadTGA("Image//cursorPointer.tga");
+
 	//Main Menu
 	meshList[GEO_MAINMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_MAINMENU]->textureID = LoadTGA("Image//Main Menu.tga");
@@ -105,6 +122,7 @@ void SceneMainMenu::Update(double dt)
 {
 	DebugMode(dt);
 
+<<<<<<< HEAD
 	std::cout << "Cursor X: " << cursorPoint.x << std::endl;
 	std::cout << "Cursor Y: " << cursorPoint.y << std::endl;
 
@@ -112,6 +130,13 @@ void SceneMainMenu::Update(double dt)
 
 	std::cout << "Elapsed Time: " << elapsedTime << std::endl;
 
+=======
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	GetCursorPos(&apoint);
+
+	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
+	
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
 	if (!options)
 	{
 		if (elapsedTime > 0.05)
@@ -256,6 +281,11 @@ void SceneMainMenu::Render()
 			RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
 		}
 	}
+
+	RenderMeshOnScreen(meshList[GEO_CURSOR], apoint.x, apoint.y, 5, 5);
+
+	std::cout << "MouseX: " << apoint.x << std::endl;
+	std::cout << "MouseY: " << apoint.y << std::endl;
 }
 
 void SceneMainMenu::Exit()

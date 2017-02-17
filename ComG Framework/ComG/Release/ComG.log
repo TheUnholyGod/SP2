@@ -1,8 +1,33 @@
+<<<<<<< HEAD
 ﻿Build started 17/2/2017 3:10:51 PM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\\glew\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\\glfw\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\DefenceTower.cpp
          DefenceTower.cpp
+=======
+<<<<<<< HEAD
+﻿Build started 2/17/2017 3:04:57 PM.
+=======
+<<<<<<< HEAD
+﻿  Molerat.cpp
+Source\Molerat.cpp(18): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Generating code
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(534): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
+  Finished generating code
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
+=======
+﻿Build started 2/17/2017 2:05:20 PM.
+>>>>>>> 8f718e2a4cab59ea531aab55b1b263b5b1c2ce5d
+     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneMainMenu.cpp
+         SceneMainMenu.cpp
+     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>Source\SceneMainMenu.cpp(115): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>Source\SceneMainMenu.cpp(410): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneMainMenu.cpp(411): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\\glew\lib" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Ability.obj
          Release\AbilityDataBase.obj
@@ -107,4 +132,13 @@
 
 Build succeeded.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:04.82
+=======
+<<<<<<< HEAD
+Time Elapsed 00:00:12.45
+=======
+Time Elapsed 00:00:13.88
+>>>>>>> 07781f471ec4be952f305a2f17e3e935425dc540
+>>>>>>> 8f718e2a4cab59ea531aab55b1b263b5b1c2ce5d
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194

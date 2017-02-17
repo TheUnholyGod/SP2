@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 17/2/2017 2:40:45 PM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -17,3 +18,6 @@
 Build succeeded.
 
 Time Elapsed 00:00:02.18
+=======
+﻿  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
