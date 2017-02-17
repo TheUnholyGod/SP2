@@ -18,6 +18,7 @@ public:
 
 	int get_Health();
 
+	virtual void update(double dt);
 };
 
 #endif

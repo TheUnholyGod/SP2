@@ -72,13 +72,18 @@ class SceneBase : public Scene
 		GEO_LIZARD,
 		NUM_ENEMYGEOMETRY,
 	};
+	enum BUILDINGMESHLIST
+	{
+		GEO_BARN,
+		GEO_TURRET,
+		NUM_BUILDINGGEOMETRY,
+	};
 
 	enum WEAPONMESHLIST
 	{
 		GEO_BOW,
 		NUM_WEAPONGEOMETERY,
 	};
-
 public:
 	SceneBase();
 	~SceneBase();
@@ -92,6 +97,7 @@ private:
 	std::array<Mesh*, NUM_GEOMETRY> meshList;
 	std::array<Mesh*, NUM_ENEMYGEOMETRY> enemyMeshList;
 	std::array<Mesh*, NUM_WEAPONGEOMETERY> weaponmesh;
+	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
@@ -115,10 +121,16 @@ private:
 	float suntimer;
 	bool reset;
 
+	bool allbuildingcollision( GameObject* );
+
 	std::list<Enemy*> BaseEnemy;
 	std::list<Building*> BaseBuildings;
+
 	void SpawnEnemy(double dt);
 	void RenderEnemy();
+
+	void SpawnBuilding(double dt);
+	void RenderBuilding();
 };
 
 #endif

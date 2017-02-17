@@ -89,9 +89,9 @@ void SceneSplashScreen::Update(double dt)
 {
 	DebugMode(dt);
 	elapsed = (std::clock() - start) / (int)CLOCKS_PER_SEC;
-	if (elapsed == 5)
+	if (elapsed == 2)
 		change = true;
-	if (elapsed == 10)
+	if (elapsed == 5)
 		SceneManager::currScene = 2;
 }
 

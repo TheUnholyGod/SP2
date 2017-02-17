@@ -1,5 +1,21 @@
+<<<<<<< HEAD
 ﻿  Molerat.cpp
 Source\Molerat.cpp(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+=======
+﻿  SceneBase.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneBase.cpp(93): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneBase.cpp(97): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneBase.cpp(101): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneBase.cpp(509): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneBase.cpp(510): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+>>>>>>> 8594bd35ff65c51ff0dd715f278a47965fec9c2e
   Generating code
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(530): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
   Finished generating code
+<<<<<<< HEAD
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
+=======
+  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\ComG.exe
+>>>>>>> 8594bd35ff65c51ff0dd715f278a47965fec9c2e
