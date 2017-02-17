@@ -97,68 +97,67 @@ void SceneMainMenu::Update(double dt)
 {
 	DebugMode(dt);
 
-<<<<<<< HEAD
 	if (Application::IsKeyPressed(VK_RETURN) && play)
 	{
 		options = false;
 		SceneManager::currScene = 4;
 	}
 	else if (Application::IsKeyPressed(VK_RETURN) && !play)
-=======
-	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
-	
-	std::cout << "Elapsed Time: " << elapsedTime << std::endl;
-
-	if (!options)
->>>>>>> b0a92740d7949a49f4d5fb0aa55b802059d05e08
 	{
-		std::cout << play << std::endl;
+		elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 
-		if (elapsedTime > 0.1)
+		std::cout << "Elapsed Time: " << elapsedTime << std::endl;
+
+		if (!options)
 		{
-			if (Application::IsKeyPressed(VK_RIGHT))
-			{
-				if (play < 3)
-				{
-					play++;
-				}
-				if (play > 2)
-				{
-					play = 0;
-				}
-			}
-			if (Application::IsKeyPressed(VK_LEFT))
-			{
-				if (play >= 0)
-				{
-					play--;
-				}
-				if (play < 0)
-				{
-					play = 2;
-				}
-			}
+			std::cout << play << std::endl;
 
-			if (Application::IsKeyPressed(VK_RETURN))
+			if (elapsedTime > 0.1)
 			{
+				if (Application::IsKeyPressed(VK_RIGHT))
+				{
+					if (play < 3)
+					{
+						play++;
+					}
+					if (play > 2)
+					{
+						play = 0;
+					}
+				}
+				if (Application::IsKeyPressed(VK_LEFT))
+				{
+					if (play >= 0)
+					{
+						play--;
+					}
+					if (play < 0)
+					{
+						play = 2;
+					}
+				}
 
-				if (play == 0)
+				if (Application::IsKeyPressed(VK_RETURN))
 				{
-					Application::IsExit = true;
 
+					if (play == 0)
+					{
+						Application::IsExit = true;
+
+					}
+					if (play == 1)
+					{
+						options = false;
+						SceneManager::currScene = 3;
+					}
+					if (play == 2)
+					{
+						options = true;
+					}
 				}
-				if (play == 1)
-				{
-					options = false;
-					SceneManager::currScene = 3;
-				}
-				if (play == 2)
-				{
-					options = true;
-				}
+				start = std::clock();
 			}
-			start = std::clock();
-		}	
+		}
 	}
 }
 
