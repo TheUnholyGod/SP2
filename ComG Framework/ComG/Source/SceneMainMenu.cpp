@@ -103,8 +103,6 @@ void SceneMainMenu::Update(double dt)
 
 	if (!options)
 	{
-		std::cout << play << std::endl;
-
 		if (elapsedTime > 0.05)
 		{
 			if (Application::IsKeyPressed(VK_RIGHT))
@@ -151,6 +149,53 @@ void SceneMainMenu::Update(double dt)
 			start = std::clock();
 		}	
 	}
+	if (options)
+	{
+		if (elapsedTime > 0.05)
+		{
+			if (Application::IsKeyPressed(VK_UP))
+			{
+				if (optionHighlight < 3)
+				{
+					optionHighlight++;
+				}
+				if (optionHighlight > 2)
+				{
+					optionHighlight = 0;
+				}
+			}
+			if (Application::IsKeyPressed(VK_DOWN))
+			{
+				if (optionHighlight >= 0)
+				{
+					optionHighlight--;
+				}
+				if (optionHighlight < 0)
+				{
+					optionHighlight = 2;
+				}
+			}
+
+			if (Application::IsKeyPressed(VK_RETURN))
+			{
+
+				if (optionHighlight == 0)
+				{
+					
+
+				}
+				if (optionHighlight == 1)
+				{
+					
+				}
+				if (optionHighlight == 2)
+				{
+					
+				}
+			}
+			start = std::clock();
+		}
+	}
 }
 
 void SceneMainMenu::Render()
@@ -185,7 +230,20 @@ void SceneMainMenu::Render()
 	}
 	else if (options)
 	{
+		RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], 40, 30, 16, 12);
 
+		if (play == 0)
+		{
+			
+		}
+		if (play == 1)
+		{
+			RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
+		}
+		if (play == 2)
+		{
+			RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
+		}
 	}
 }
 
