@@ -102,7 +102,6 @@ void SceneBase::Init()
 	{
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
 	}
-	buildingmesh[0] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(202)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(202)->getSourceLocation());
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
@@ -146,11 +145,6 @@ void SceneBase::Render()
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
 	RenderMesh(meshList[GEO_QUAD], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	modelStack.Scale(2, 2, 2);
-	RenderMesh(buildingmesh[0], true);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();

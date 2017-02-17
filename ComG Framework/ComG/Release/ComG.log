@@ -1,3 +1,60 @@
-﻿  Generating code
+﻿  Barn.cpp
+  Building.cpp
+  BuildingDataBase.cpp
+  BuildingFactory.cpp
+  Crafting.cpp
+  DefenceTower.cpp
+  DefensiveWalls.cpp
+  FastTravelRoom.cpp
+  InventoryWarehouse.cpp
+  NPCHouse.cpp
+  OreMines.cpp
+  PowerGenerator.cpp
+  SceneBase.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneBase.cpp(93): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneBase.cpp(97): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneBase.cpp(101): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneBase.cpp(506): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneBase.cpp(507): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  SceneCity.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneCity.cpp(439): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(457): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(458): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  SceneMainMenu.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneMainMenu.cpp(280): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneMainMenu.cpp(281): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  SceneManager.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+  SceneSplashScreen.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneSplashScreen.cpp(261): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneSplashScreen.cpp(262): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  SceneTest.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneTest.cpp(91): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneTest.cpp(96): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneTest.cpp(455): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneTest.cpp(473): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneTest.cpp(474): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  SceneWildLife.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+Source\SceneWildLife.cpp(439): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneWildLife.cpp(457): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneWildLife.cpp(458): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  TilledSoil.cpp
+  Compiling...
+  TrophyRoom.cpp
+  WaterWell.cpp
+  Generating code
   Finished generating code
   ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Release\ComG.exe
