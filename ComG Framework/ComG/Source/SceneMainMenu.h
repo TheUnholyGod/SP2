@@ -14,6 +14,8 @@
 #include "Enemy.h"
 #include "Lighting.h"
 #include <vector>
+#include "GLFW\glfw3.h"
+#include "GL\glew.h"
 
 class SceneMainMenu : public Scene
 {
@@ -65,11 +67,22 @@ public:
 	virtual void Render();
 	virtual void Exit();
 private:
+<<<<<<< HEAD
 	double cursorX; 
 	double cursorY;
 
 	int windowXpos;
 	int windowYpos;
+=======
+<<<<<<< HEAD
+	int windowX;
+	int windowY;
+
+=======
+	int windowX; 
+	int windowY;
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
+>>>>>>> 77bad397532de5879b74ee4aafd5daecd8881810
 
 	bool options;
 

@@ -7,9 +7,11 @@
 #include "LoadTGA.h"
 #include "SceneManager.h"
 #include "EnemyFactory.h"
+#include "BuildingFactory.h"
 #include "Player.h"
 #include "EnemyDataBase.h"
 #include "ItemDataBase.h"
+#include "BuildingDataBase.h"
 
 #include <sstream>
 
@@ -92,14 +94,18 @@ void SceneTest::Init()
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
 	}
-
+	for (int i = 0; i<buildingMeshList.size(); i++)
+	{
+		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getSourceLocation());
+	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
 	}
 	suntimer = 1;
 	LoadSkybox();
-	Player::getplayer()->gethealth();
+	Player::getplayer()->setWeapon(307);
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 }
 
 void SceneTest::Update(double dt)
@@ -114,9 +120,12 @@ void SceneTest::Update(double dt)
 		Application::IsExit = true;
 	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(5, 5, 5), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	SpawnEnemy();
 	Player::getplayer()->Update(camForward, camRight, dt);
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	SpawnEnemy(dt);
+	SpawnBuilding(dt);
 	light[0].LightUpdate(dt);
+
 }
 
 void SceneTest::Render()
@@ -144,16 +153,12 @@ void SceneTest::Render()
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
-	modelStack.LoadMatrix(Player::getplayer()->getRenderer().getMatrix());
-	RenderMesh(meshList[0], true);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
 	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
 
 	RenderEnemy();
+	RenderBuilding();
 }
 
 void SceneTest::Exit()
@@ -444,10 +449,15 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 	glEnable(GL_DEPTH_TEST);
 }
 
-void SceneTest::SpawnEnemy()
+void SceneTest::SpawnEnemy(double dt)
 {
 	if (BaseEnemy.size() < 5)
 		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+
+	for (auto &i : BaseEnemy)
+	{
+		i->Update(dt);
+	}
 }
 
 void SceneTest::RenderEnemy()
@@ -456,8 +466,32 @@ void SceneTest::RenderEnemy()
 	for (auto &i : BaseEnemy)
 	{
 		modelStack.PushMatrix();
-		modelStack.Translate(0, y, 0);
-		RenderMesh(enemyMeshList[i->getID()], true);
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(enemyMeshList[i->getID() - 1], true);
+		modelStack.PopMatrix();
+		y++;
+	}
+}
+
+void SceneTest::SpawnBuilding(double dt)
+{
+	if (BaseBuildings.size() < 1)
+		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(107));
+
+	for (auto &i : BaseBuildings)
+	{
+		i->update(dt);
+	}
+}
+
+void SceneTest::RenderBuilding()
+{
+	int y = 0;
+	for (auto &i : BaseBuildings)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(buildingMeshList[i->getID() - 101], true);
 		modelStack.PopMatrix();
 		y++;
 	}
@@ -476,6 +510,7 @@ void SceneTest::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int size
 	modelStack.LoadIdentity();
 	modelStack.Translate(x, y, 0);
 	modelStack.Scale(sizex, sizey, 1);
+	modelStack.Rotate(90, 1, 0, 0);
 	RenderMesh(mesh, false);
 	modelStack.PopMatrix();
 	viewStack.PopMatrix();

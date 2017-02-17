@@ -103,3 +103,8 @@ void Camera3::Reset()
 	target = defaultTarget;
 	up = defaultUp;
 }
+
+Vector3 Camera3::getPosition()
+{
+	return position;
+}

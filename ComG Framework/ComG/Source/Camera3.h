@@ -20,6 +20,7 @@ public:
 	int anchorX, anchorY;
 	float pitch, yaw;
 	float pitchLimit;
+	static Vector3 getPosition();
 
 	Camera3();
 	~Camera3();

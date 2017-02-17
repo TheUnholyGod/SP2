@@ -72,13 +72,28 @@ class SceneTest : public Scene
 		GEO_LIZARD,
 		NUM_ENEMYGEOMETRY,
 	};
+	enum BUILDINGMESHLIST
+	{
+		GEO_BARN,
+		GEO_TROPHYROOM,
+		GEO_INVENTORYWAREHOUSE,
+		GEO_NPCHOUSE,
+		GEO_FASTTRAVELPORTAL,
+		GEO_POWERGENERATOR,
+		GEO_TURRET,
+		GEO_DEFENSIVEWALLS,
+		GEO_TILLEDSOIL,
+		GEO_OREMINES,
+		GEO_CRAFTING,
+		GEO_WATERWELL,
+		NUM_BUILDINGGEOMETRY,
+	};
 
 	enum WEAPONMESHLIST
 	{
 		GEO_BOW,
 		NUM_WEAPONGEOMETERY,
 	};
-
 public:
 	SceneTest();
 	~SceneTest();
@@ -92,6 +107,7 @@ private:
 	std::array<Mesh*, NUM_GEOMETRY> meshList;
 	std::array<Mesh*, NUM_ENEMYGEOMETRY> enemyMeshList;
 	std::array<Mesh*, NUM_WEAPONGEOMETERY> weaponmesh;
+	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
@@ -117,8 +133,12 @@ private:
 
 	std::list<Enemy*> BaseEnemy;
 	std::list<Building*> BaseBuildings;
-	void SpawnEnemy();
+
+	void SpawnEnemy(double dt);
 	void RenderEnemy();
+
+	void SpawnBuilding(double dt);
+	void RenderBuilding();
 };
 
 #endif

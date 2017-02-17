@@ -10,7 +10,11 @@
 
 #include <sstream>
 
+<<<<<<< HEAD
+POINT cursorPoint;
+=======
 POINT apoint;
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
 
 SceneMainMenu::SceneMainMenu()
 {
@@ -22,9 +26,26 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::Init()
 {
+<<<<<<< HEAD
 	cursorX = 0;
 	cursorY = 0;
 
+=======
+<<<<<<< HEAD
+	windowX = windowY = 0;
+	cursorPoint.x = cursorPoint.y = 0;
+
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	SetCursorPos(windowX / 2, windowY / 2);
+	GetCursorPos(&cursorPoint);
+=======
+	apoint.x = apoint.y = 0;
+
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	SetCursorPos(windowX / 2, windowY / 2);
+	GetCursorPos(&apoint);
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
+>>>>>>> 77bad397532de5879b74ee4aafd5daecd8881810
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -108,9 +129,27 @@ void SceneMainMenu::Update(double dt)
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	DebugMode(dt);
 
+<<<<<<< HEAD
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + 600;
 
+=======
+<<<<<<< HEAD
+	std::cout << "Cursor X: " << cursorPoint.x << std::endl;
+	std::cout << "Cursor Y: " << cursorPoint.y << std::endl;
+
+	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
+
+	std::cout << "Elapsed Time: " << elapsedTime << std::endl;
+
+=======
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	GetCursorPos(&apoint);
+
+	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
+	
+>>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
+>>>>>>> 77bad397532de5879b74ee4aafd5daecd8881810
 	if (!options)
 	{
 		if (elapsedTime > 0.05)
@@ -149,7 +188,7 @@ void SceneMainMenu::Update(double dt)
 				if (play == 1)
 				{
 					options = false;
-					SceneManager::currScene = 3;
+					SceneManager::currScene = 4;
 				}
 				if (play == 2)
 				{
@@ -157,7 +196,7 @@ void SceneMainMenu::Update(double dt)
 				}
 			}
 			start = std::clock();
-		}	
+		}
 	}
 	if (options)
 	{
@@ -191,16 +230,16 @@ void SceneMainMenu::Update(double dt)
 
 				if (optionHighlight == 0)
 				{
-					
+
 
 				}
 				if (optionHighlight == 1)
 				{
-					
+
 				}
 				if (optionHighlight == 2)
 				{
-					
+
 				}
 			}
 			start = std::clock();
@@ -234,7 +273,7 @@ void SceneMainMenu::Render()
 			RenderMeshOnScreen(meshList[GEO_PLAY], 40, 30, 16, 12);
 		}
 		if (play == 2)
-		{		
+		{
 			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
 		}
 	}
@@ -244,7 +283,7 @@ void SceneMainMenu::Render()
 
 		if (play == 0)
 		{
-			
+
 		}
 		if (play == 1)
 		{

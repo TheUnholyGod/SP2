@@ -33,6 +33,8 @@ void Molerat::Update(double dt)
 
 void Molerat::pathfinding()
 {
+	newDIr = (((float)(rand() % 100)), 0, 0);
+	newDIr.z = ((float)(rand() % 100));
 	Math::InitRNG();
 	float temp = Math::RandFloatMinMax(1, 360);
 	Mtx44 rotation;
