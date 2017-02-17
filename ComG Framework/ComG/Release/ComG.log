@@ -1,12 +1,6 @@
-﻿  SceneBase.cpp
-C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-Source\SceneBase.cpp(93): warning C4018: '<' : signed/unsigned mismatch
-Source\SceneBase.cpp(97): warning C4018: '<' : signed/unsigned mismatch
-Source\SceneBase.cpp(101): warning C4018: '<' : signed/unsigned mismatch
-Source\SceneBase.cpp(509): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-Source\SceneBase.cpp(510): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+﻿  Molerat.cpp
+Source\Molerat.cpp(18): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
   Generating code
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(530): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(534): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
   Finished generating code
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
