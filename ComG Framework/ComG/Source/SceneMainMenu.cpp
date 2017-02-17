@@ -23,15 +23,9 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::Init()
 {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 	cursorX = 0;
 	cursorY = 0;
 
-=======
-<<<<<<< HEAD
->>>>>>> c1d20e19e515a9b3f2efcd70a60349c6da2f0e7c
 	windowX = windowY = 0;
 	cursorPoint.x = cursorPoint.y = 0;
 
@@ -43,11 +37,6 @@ void SceneMainMenu::Init()
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	SetCursorPos(windowX / 2, windowY / 2);
 	GetCursorPos(&apoint);
-<<<<<<< HEAD
-=======
->>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
->>>>>>> 77bad397532de5879b74ee4aafd5daecd8881810
->>>>>>> c1d20e19e515a9b3f2efcd70a60349c6da2f0e7c
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -131,15 +120,9 @@ void SceneMainMenu::Update(double dt)
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	DebugMode(dt);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + 600;
 
-=======
-<<<<<<< HEAD
->>>>>>> c1d20e19e515a9b3f2efcd70a60349c6da2f0e7c
 	std::cout << "Cursor X: " << cursorPoint.x << std::endl;
 	std::cout << "Cursor Y: " << cursorPoint.y << std::endl;
 
@@ -152,11 +135,6 @@ void SceneMainMenu::Update(double dt)
 
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	
-<<<<<<< HEAD
-=======
->>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
->>>>>>> 77bad397532de5879b74ee4aafd5daecd8881810
->>>>>>> c1d20e19e515a9b3f2efcd70a60349c6da2f0e7c
 	if (!options)
 	{
 		if (elapsedTime > 0.05)

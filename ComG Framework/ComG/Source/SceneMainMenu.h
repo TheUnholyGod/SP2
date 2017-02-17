@@ -67,29 +67,15 @@ public:
 	virtual void Render();
 	virtual void Exit();
 private:
-<<<<<<< HEAD
 	int windowX;
 	int windowY;
 
-=======
-<<<<<<< HEAD
 	double cursorX; 
 	double cursorY;
 
 	int windowXpos;
 	int windowYpos;
-=======
-<<<<<<< HEAD
-	int windowX;
-	int windowY;
 
-=======
-	int windowX; 
-	int windowY;
->>>>>>> 3f299e67d480f3cd5ed7b9aa38053ed825073194
->>>>>>> 77bad397532de5879b74ee4aafd5daecd8881810
-
->>>>>>> c1d20e19e515a9b3f2efcd70a60349c6da2f0e7c
 	bool options;
 
 	int play;
