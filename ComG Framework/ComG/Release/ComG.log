@@ -1,58 +1,6 @@
-﻿  Application.cpp
-Source\Application.cpp(106): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-  SceneBase.cpp
-C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-Source\SceneBase.cpp(93): warning C4018: '<' : signed/unsigned mismatch
-Source\SceneBase.cpp(97): warning C4018: '<' : signed/unsigned mismatch
-Source\SceneBase.cpp(101): warning C4018: '<' : signed/unsigned mismatch
-Source\SceneBase.cpp(513): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-Source\SceneBase.cpp(514): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  SceneCity.cpp
-C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-Source\SceneCity.cpp(443): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-Source\SceneCity.cpp(461): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-Source\SceneCity.cpp(462): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  SceneMainMenu.cpp
-C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-Source\SceneMainMenu.cpp(117): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-Source\SceneMainMenu.cpp(269): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-Source\SceneMainMenu.cpp(414): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-Source\SceneMainMenu.cpp(415): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  SceneManager.cpp
-C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-  SceneSplashScreen.cpp
-C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-Source\SceneSplashScreen.cpp(261): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-Source\SceneSplashScreen.cpp(262): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  SceneTest.cpp
-C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-Source\SceneTest.cpp(93): warning C4018: '<' : signed/unsigned mismatch
-Source\SceneTest.cpp(97): warning C4018: '<' : signed/unsigned mismatch
-Source\SceneTest.cpp(101): warning C4018: '<' : signed/unsigned mismatch
-Source\SceneTest.cpp(515): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-Source\SceneTest.cpp(516): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  SceneWildLife.cpp
-C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-Source\SceneWildLife.cpp(444): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-Source\SceneWildLife.cpp(462): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-Source\SceneWildLife.cpp(463): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+﻿  Molerat.cpp
+Source\Molerat.cpp(18): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
   Generating code
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(534): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
   Finished generating code
-Collision.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Collision.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-Lighting.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Lighting.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-LoadOBJ.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'LoadOBJ.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-LoadTGA.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'LoadTGA.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-main.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'main.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-Mesh.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Mesh.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-MeshBuilder.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'MeshBuilder.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-shader.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'shader.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-Utility.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Utility.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
