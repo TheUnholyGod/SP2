@@ -105,6 +105,7 @@
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera2.cpp" />
     <ClCompile Include="Source\Camera3.cpp" />
+    <ClCompile Include="Source\Camera4.cpp" />
     <ClCompile Include="Source\Carrot.cpp" />
     <ClCompile Include="Source\CarrotJuice.cpp" />
     <ClCompile Include="Source\Centipede.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera2.h" />
     <ClInclude Include="Source\Camera3.h" />
+    <ClInclude Include="Source\Camera4.h" />
     <ClInclude Include="Source\Carrot.h" />
     <ClInclude Include="Source\CarrotJuice.h" />
     <ClInclude Include="Source\Centipede.h" />

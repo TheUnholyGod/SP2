@@ -157,7 +157,7 @@ void SceneMainMenu::Update(double dt)
 				if (play == 1)
 				{
 					options = false;
-					SceneManager::currScene = 4;
+					SceneManager::currScene = 3;
 				}
 				if (play == 2)
 				{
@@ -216,6 +216,9 @@ void SceneMainMenu::Update(double dt)
 			}
 		}
 	}
+
+	std::cout << "Cursor X: " << cursorX << std::endl;
+	std::cout << "Cursor Y: " << cursorY << std::endl;
 }
 
 void SceneMainMenu::Render()
