@@ -14,6 +14,8 @@
 #include "Enemy.h"
 #include "Lighting.h"
 #include <vector>
+#include "GLFW\glfw3.h"
+#include "GL\glew.h"
 
 class SceneMainMenu : public Scene
 {
@@ -29,6 +31,9 @@ class SceneMainMenu : public Scene
 		GEO_OPTIONSMENU,
 		GEO_VOLUME,
 		GEO_BACK,
+
+		//Cursor
+		GEO_CURSOR,
 
 		NUM_GEOMETRY,
 	};
@@ -62,6 +67,14 @@ public:
 	virtual void Render();
 	virtual void Exit();
 private:
+	int windowX;
+	int windowY;
+
+	double cursorX; 
+	double cursorY;
+
+	int windowXpos;
+	int windowYpos;
 
 	bool options;
 

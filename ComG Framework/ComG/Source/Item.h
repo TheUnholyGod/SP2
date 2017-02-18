@@ -9,8 +9,9 @@ class Item : public GameObject
 protected:
 	const std::string kname_;
 	std::string source_location_;
+	std::string texture_location_;
 public:
-	Item(int,std::string,std::string);
+	Item(int, std::string, std::string, std::string);
 
 	virtual ~Item();
 	const std::string getName() { return kname_; }

@@ -19,7 +19,7 @@ protected:
 	std::string source_location_;
 public:
 	
-	Building(const int id, const std::string name, std::string source_, int health, BUILDINGFUNCTION, bool enter);
+	Building(const int id, const std::string name, std::string source_, std::string texture_, int health, BUILDINGFUNCTION, bool enter);
 	virtual ~Building();
 	virtual void update(double dt) {}
 	int get_Health();

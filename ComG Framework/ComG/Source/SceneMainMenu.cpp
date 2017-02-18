@@ -6,8 +6,11 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
+#include "Camera3.h"
 
 #include <sstream>
+
+POINT cursorPoint;
 
 SceneMainMenu::SceneMainMenu()
 {
@@ -19,6 +22,15 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::Init()
 {
+	cursorX = 0;
+	cursorY = 0;
+
+	windowX = windowY = 0;
+	cursorPoint.x = cursorPoint.y = 0;
+
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	glfwSetCursorPos(Application::m_window,windowX / 2, windowY / 2);
+
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -75,6 +87,10 @@ void SceneMainMenu::Init()
 
 	// Make sure you pass uniform parameters after glUseProgram()
 
+	//Cursor
+	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR]->textureID = LoadTGA("Image//cursorPointer.tga");
+
 	//Main Menu
 	meshList[GEO_MAINMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_MAINMENU]->textureID = LoadTGA("Image//Main Menu.tga");
@@ -95,15 +111,15 @@ void SceneMainMenu::Init()
 
 void SceneMainMenu::Update(double dt)
 {
-	DebugMode(dt);
+	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
+	cursorY = -cursorY + 600;
 
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
-	
-	std::cout << "Elapsed Time: " << elapsedTime << std::endl;
+	DebugMode(dt);
 
 	if (!options)
 	{
-		if (elapsedTime > 0.05)
+		if (elapsedTime > 0.01)
 		{
 			if (Application::IsKeyPressed(VK_RIGHT))
 			{
@@ -115,6 +131,7 @@ void SceneMainMenu::Update(double dt)
 				{
 					play = 0;
 				}
+				start = std::clock();
 			}
 			if (Application::IsKeyPressed(VK_LEFT))
 			{
@@ -126,6 +143,7 @@ void SceneMainMenu::Update(double dt)
 				{
 					play = 2;
 				}
+				start = std::clock();
 			}
 
 			if (Application::IsKeyPressed(VK_RETURN))
@@ -139,19 +157,19 @@ void SceneMainMenu::Update(double dt)
 				if (play == 1)
 				{
 					options = false;
-					SceneManager::currScene = 3;
+					SceneManager::currScene = 4;
 				}
 				if (play == 2)
 				{
 					options = true;
 				}
+				start = std::clock();
 			}
-			start = std::clock();
-		}	
+		}
 	}
 	if (options)
 	{
-		if (elapsedTime > 0.05)
+		if (elapsedTime > 0.01)
 		{
 			if (Application::IsKeyPressed(VK_UP))
 			{
@@ -163,6 +181,7 @@ void SceneMainMenu::Update(double dt)
 				{
 					optionHighlight = 0;
 				}
+				start = std::clock();
 			}
 			if (Application::IsKeyPressed(VK_DOWN))
 			{
@@ -174,6 +193,7 @@ void SceneMainMenu::Update(double dt)
 				{
 					optionHighlight = 2;
 				}
+				start = std::clock();
 			}
 
 			if (Application::IsKeyPressed(VK_RETURN))
@@ -181,19 +201,19 @@ void SceneMainMenu::Update(double dt)
 
 				if (optionHighlight == 0)
 				{
-					
+
 
 				}
 				if (optionHighlight == 1)
 				{
-					
+
 				}
 				if (optionHighlight == 2)
 				{
-					
+
 				}
+				start = std::clock();
 			}
-			start = std::clock();
 		}
 	}
 }
@@ -224,7 +244,7 @@ void SceneMainMenu::Render()
 			RenderMeshOnScreen(meshList[GEO_PLAY], 40, 30, 16, 12);
 		}
 		if (play == 2)
-		{		
+		{
 			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
 		}
 	}
@@ -234,17 +254,19 @@ void SceneMainMenu::Render()
 
 		if (play == 0)
 		{
-			
+
 		}
 		if (play == 1)
 		{
-			RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
+			//RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
 		}
 		if (play == 2)
 		{
-			RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
+			//RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
 		}
 	}
+
+	RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 10, 10);
 }
 
 void SceneMainMenu::Exit()

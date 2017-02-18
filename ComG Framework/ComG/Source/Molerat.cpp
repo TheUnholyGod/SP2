@@ -1,7 +1,7 @@
 #include "Molerat.h"
 #include "MyMath.h"
 
-Molerat::Molerat() : Enemy(1,"OBJ//MoleRat.obj" ,"Molerat", NORMAL, "Base", 100, 10, 4)
+Molerat::Molerat() : Enemy(1, "OBJ//MoleRat.obj", "", "Molerat", NORMAL, "Base", 100, 10, 4)
 {
 	goalreached = true;
 	newDIr = Vector3(1, 0, 0);
@@ -33,6 +33,8 @@ void Molerat::Update(double dt)
 
 void Molerat::pathfinding()
 {
+	newDIr = (((float)(rand() % 100)), 0, 0);
+	newDIr.z = ((float)(rand() % 100));
 	Math::InitRNG();
 	float temp = Math::RandFloatMinMax(1, 360);
 	Mtx44 rotation;
