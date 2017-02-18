@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 2/18/2017 12:35:30 AM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -115,3 +116,11 @@
 Build succeeded.
 
 Time Elapsed 00:00:04.05
+=======
+﻿  Molerat.cpp
+Source\Molerat.cpp(18): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Generating code
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(534): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
+  Finished generating code
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
+>>>>>>> 8476dc94d1b59ba8730df15205ae3f5ce15c3e09

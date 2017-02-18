@@ -464,8 +464,13 @@
     <ClCompile Include="Source\SceneWildLife.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Source\Camera4.cpp">
       <Filter>Source Files\Camera</Filter>
+=======
+    <ClCompile Include="SaveLoad.cpp">
+      <Filter>Source Files</Filter>
+>>>>>>> 8476dc94d1b59ba8730df15205ae3f5ce15c3e09
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -760,8 +765,13 @@
     <ClInclude Include="Source\SceneWildLife.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Source\Camera4.h">
       <Filter>Header Files\Camera</Filter>
+=======
+    <ClInclude Include="SaveLoad.h">
+      <Filter>Header Files</Filter>
+>>>>>>> 8476dc94d1b59ba8730df15205ae3f5ce15c3e09
     </ClInclude>
   </ItemGroup>
 </Project>

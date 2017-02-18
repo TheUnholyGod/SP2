@@ -88,6 +88,7 @@
     <None Include="Shader\SimpleVertexShader.vertexshader" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SaveLoad.cpp" />
     <ClCompile Include="Source\Ability.cpp" />
     <ClCompile Include="Source\AbilityDataBase.cpp" />
     <ClCompile Include="Source\Acrid_Plant.cpp" />
@@ -186,6 +187,7 @@
     <ClCompile Include="Source\Wood.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SaveLoad.h" />
     <ClInclude Include="Source\Ability.h" />
     <ClInclude Include="Source\AbilityDataBase.h" />
     <ClInclude Include="Source\Acrid_Plant.h" />
