@@ -11,12 +11,6 @@ private:
 	Vector3 forward_, position_, up_, right_;
 	Mtx44 matrix_;
 	float rotatemax;
-	//pls export tis
-	struct AABB
-	{
-		Vector3 Max, Min;
-	};
-	std::list<AABB> allAABB_;
 public:
 	Renderer();
 	Renderer(Vector3, Vector3);
