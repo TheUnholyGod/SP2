@@ -17,6 +17,7 @@ SceneManager::SceneManager()
 	SceneDataBase[2] = new SceneMainMenu();
 	SceneDataBase[3] = new SceneBase();
 	SceneDataBase[4] = new SceneTest();
+	SceneDataBase[5] = new SceneUI();
 }
 
 SceneManager::~SceneManager()
@@ -60,6 +61,10 @@ void SceneManager::update()
 	scenemanager->SceneDataBase[currScene]->Update(Application::m_timer.getElapsedTime());
 	if (prevScene != currScene)
 	{
+		scenemanager->changeScene(5);
+		scenemanager->SceneDataBase[5]->Render();
+		//Swap buffers
+		glfwSwapBuffers(Application::m_window);
 		scenemanager->changeScene(currScene);
 	}
 	scenemanager->SceneDataBase[currScene]->Render();

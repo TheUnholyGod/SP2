@@ -21,7 +21,9 @@ public:
 	~GameObject();
 	const int getID() { return kID_; }
 	std::string getSourceLocation()  { return source_location_; }
-	std::string getTextureLocation()  { return texture_location_; }
+	const char* getTextureLocation()  {
+		return texture_location_.c_str(); 
+	}
 	Renderer& getRenderer() { return *gameobjrenderer_; }
 	AABB* getAABB(int no) { return allAABB[no]; }
 };

@@ -12,7 +12,7 @@
 #include "EnemyDataBase.h"
 #include "ItemDataBase.h"
 #include "BuildingDataBase.h"
-
+#include "SaveLoad.h"
 #include <sstream>
 
 SceneBase::SceneBase()
@@ -80,7 +80,7 @@ void SceneBase::Init()
 
 	// Make sure you pass uniform parameters after glUseProgram()
 
-	meshList[Player::getplayer()->getID()] = MeshBuilder::GenerateOBJ("player", "OBJ//player.obj");
+	//meshList[Player::getplayer()->getID()] = MeshBuilder::GenerateOBJ("player", "OBJ//player.obj");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
@@ -106,6 +106,7 @@ void SceneBase::Init()
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
 	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 }
 
 void SceneBase::Update(double dt)
@@ -119,11 +120,11 @@ void SceneBase::Update(double dt)
 	{
 		Application::IsExit = true;
 	}
-	if (allbuildingcollision(Player::getplayer()))
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+//	if (allbuildingcollision(Player::getplayer()))
 	{
 		Player::getplayer()->Update(camForward, camRight, dt);
 	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0,2,0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy(dt);
 	//SpawnBuilding(dt);
 	light[0].LightUpdate(dt);
@@ -167,6 +168,7 @@ void SceneBase::Exit()
 {
 	glDeleteProgram(m_programID);
 	glDeleteVertexArrays(1, &m_vertexArrayID);
+	SaveLoad::Save(1, "Base", BaseBuildings, BaseEnemy);
 }
 
 void SceneBase::RenderMesh(Mesh *mesh, bool enableLight)
@@ -477,8 +479,8 @@ void SceneBase::RenderEnemy()
 
 void SceneBase::SpawnBuilding(double dt)
 {
-	if (BaseBuildings.size() < 1)
-		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
+	//if (BaseBuildings.size() < 1)
+	//	BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
 
 	for (auto &i : BaseBuildings)
 	{
@@ -530,5 +532,6 @@ bool SceneBase::allbuildingcollision(GameObject* test)
 		{
 			return false;
 		}
+
 	}
 }

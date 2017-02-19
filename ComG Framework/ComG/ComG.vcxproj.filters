@@ -431,6 +431,9 @@
     <ClCompile Include="Source\ItemFactory.cpp">
       <Filter>Source Files\Factory</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EnemyDataBase.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
     <ClCompile Include="Source\AbilityDataBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -461,14 +464,8 @@
     <ClCompile Include="Source\SceneWildLife.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EnemyDataBase.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="SaveLoad.cpp">
+    <ClCompile Include="Source\SaveLoad.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Camera4.cpp">
-      <Filter>Source Files\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -763,11 +760,8 @@
     <ClInclude Include="Source\SceneWildLife.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="SaveLoad.h">
+    <ClInclude Include="Source\SaveLoad.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Camera4.h">
-      <Filter>Header Files\Camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

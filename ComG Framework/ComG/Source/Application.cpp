@@ -115,7 +115,7 @@ void Application::Run()
 	{
 		SceneManager::getSceneManger()->update();
 	} //Check if the ESC key had been pressed or if the window had been closed
-	
+	SceneManager::getSceneManger()->exit(SceneManager::currScene);
 	delete SceneManager::getSceneManger();
 
 }
