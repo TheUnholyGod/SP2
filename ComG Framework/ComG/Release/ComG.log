@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿Build started 2/19/2017 11:45:18 PM.
+﻿Build started 2/20/2017 1:11:09 AM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          E:\Programs - Work\Visual Studios 2013\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Player.cpp
@@ -10,83 +9,8 @@
      1>Source\Player.cpp(82): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>Source\Player.cpp(88): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>Source\Player.cpp(94): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-=======
-<<<<<<< HEAD
-﻿  SaveLoad.cpp
-Source\SaveLoad.cpp(73): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-Source\SaveLoad.cpp(80): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Generating code
-  Finished generating code
-  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
-=======
-<<<<<<< HEAD
-﻿Build started 19/2/2017 8:04:28 PM.
-     1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\\glew\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\\glfw\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneTest.cpp
-         SceneTest.cpp
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-=======
-﻿Build started 2/18/2017 9:14:17 PM.
-     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         E:\Programs - Work\Visual Studios 2013\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Application.cpp Source\SceneBase.cpp Source\SceneCity.cpp Source\SceneMainMenu.cpp Source\SceneManager.cpp Source\SceneSplashScreen.cpp Source\SceneTest.cpp Source\SceneWildLife.cpp
-         Application.cpp
-     1>Source\Application.cpp(106): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-         SceneBase.cpp
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>Source\SceneBase.cpp(93): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneBase.cpp(97): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneBase.cpp(101): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneBase.cpp(513): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneBase.cpp(514): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         SceneCity.cpp
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>Source\SceneCity.cpp(443): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneCity.cpp(461): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneCity.cpp(462): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         SceneMainMenu.cpp
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>Source\SceneMainMenu.cpp(117): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-     1>Source\SceneMainMenu.cpp(272): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>Source\SceneMainMenu.cpp(417): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneMainMenu.cpp(418): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         SceneManager.cpp
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-         SceneSplashScreen.cpp
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>Source\SceneSplashScreen.cpp(261): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneSplashScreen.cpp(262): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         SceneTest.cpp
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
->>>>>>> f34848774ff925dbcbaa3b72037895fdadcbf5d3
-     1>Source\SceneTest.cpp(93): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneTest.cpp(97): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneTest.cpp(101): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneTest.cpp(515): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(516): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-<<<<<<< HEAD
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\\glew\lib" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Ability.obj
-=======
-         SceneWildLife.cpp
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>Source\SceneWildLife.cpp(444): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneWildLife.cpp(462): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneWildLife.cpp(463): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
->>>>>>> 402ac7a17ffd906441346c179773d6151d8a4041
-       Link:
-         E:\Programs - Work\Visual Studios 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\lib" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\SaveLoad.obj
-         Release\Ability.obj
->>>>>>> f34848774ff925dbcbaa3b72037895fdadcbf5d3
+         E:\Programs - Work\Visual Studios 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\lib" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Ability.obj
          Release\AbilityDataBase.obj
          Release\Acrid_Plant.obj
          Release\Adhesives.obj
@@ -103,10 +27,7 @@ Source\SaveLoad.cpp(80): warning C4244: 'argument' : conversion from 'int' to 'f
          Release\Camera.obj
          Release\Camera2.obj
          Release\Camera3.obj
-<<<<<<< HEAD
-=======
          Release\Camera4.obj
->>>>>>> f34848774ff925dbcbaa3b72037895fdadcbf5d3
          Release\Carrot.obj
          Release\CarrotJuice.obj
          Release\Centipede.obj
@@ -162,6 +83,7 @@ Source\SaveLoad.cpp(80): warning C4244: 'argument' : conversion from 'int' to 'f
          Release\Resources.obj
          Release\RogueMech.obj
          Release\Salad.obj
+         Release\SaveLoad.obj
          "Release\Scar-H.obj"
          Release\Scarecrow_Mech.obj
          Release\SceneBase.obj
@@ -186,37 +108,10 @@ Source\SaveLoad.cpp(80): warning C4244: 'argument' : conversion from 'int' to 'f
          Release\Wildboar.obj
          Release\Wood.obj
          Generating code
-<<<<<<< HEAD
-     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2.2\comg framework\comg\source\scenebase.cpp(534): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
-         Finished generating code
-     1>Collision.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Collision.obj' or at 'C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-     1>Lighting.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Lighting.obj' or at 'C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-     1>LoadOBJ.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'LoadOBJ.obj' or at 'C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-     1>LoadTGA.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'LoadTGA.obj' or at 'C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-     1>main.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'main.obj' or at 'C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-     1>Mesh.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Mesh.obj' or at 'C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-     1>MeshBuilder.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'MeshBuilder.obj' or at 'C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-     1>Renderer.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Renderer.obj' or at 'C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-     1>shader.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'shader.obj' or at 'C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-     1>Utility.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Utility.obj' or at 'C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\vc120.pdb'; linking object as if no debug info
-         ComG.vcxproj -> C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\Release\ComG.exe
-     1>Done Building Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2.2\ComG Framework\ComG\ComG.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:10.78
-=======
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenebase.cpp(534): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
          Finished generating code
          ComG.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe
      1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-<<<<<<< HEAD
-Time Elapsed 00:00:03.63
-=======
-Time Elapsed 00:00:07.90
->>>>>>> f34848774ff925dbcbaa3b72037895fdadcbf5d3
->>>>>>> bfc2f1e096f215d7798e2fac17168156df477eeb
->>>>>>> 402ac7a17ffd906441346c179773d6151d8a4041
+Time Elapsed 00:00:04.59

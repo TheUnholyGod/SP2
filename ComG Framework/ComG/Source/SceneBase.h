@@ -116,8 +116,8 @@ private:
 	MS modelStack, viewStack, projectionStack;
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
-	Camera3 fp_camera;
-
+	
+	Camera4 fp_camera;
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	float LSPEED;
 	void LoadSkybox();

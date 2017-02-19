@@ -165,6 +165,51 @@ void SceneMainMenu::Update(double dt)
 				}
 				start = std::clock();
 			}
+			if (Application::IsKeyPressed(VK_LBUTTON))
+			{
+				if ((cursorX >= 150 && cursorX <= 240) && (cursorY >= 260 && cursorY <= 300)) //Click on Left Arrows '<<'
+				{
+					if (play >= 0)
+					{
+						play--;
+					}
+					if (play < 0)
+					{
+						play = 2;
+					}
+					start = std::clock();
+				}
+				else if ((cursorX >= 560 && cursorX <= 650) && (cursorY >= 260 && cursorY <= 300)) //Click on Right Arrows '>>'
+				{
+					if (play < 3)
+					{
+						play++;
+					}
+					if (play > 2)
+					{
+						play = 0;
+					}
+					start = std::clock();
+				}
+				else if ((cursorX >= 240 && cursorX <= 560) && (cursorY >= 260 && cursorY <= 300)) //Click on Word 'Play' 'Options' 'Exit'
+				{
+					if (play == 0)
+					{
+						Application::IsExit = true;
+
+					}
+					if (play == 1)
+					{
+						options = false;
+						SceneManager::currScene = 3;
+					}
+					if (play == 2)
+					{
+						options = true;
+					}
+					start = std::clock();
+				}
+			}
 		}
 	}
 	if (options)
