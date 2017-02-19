@@ -29,6 +29,7 @@ class SceneMainMenu : public Scene
 
 		//Options Menu
 		GEO_OPTIONSMENU,
+		GEO_MOUSE,
 		GEO_VOLUME,
 		GEO_BACK,
 
