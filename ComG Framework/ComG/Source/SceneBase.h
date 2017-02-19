@@ -5,6 +5,7 @@
 #include "Camera.h"
 #include "Camera2.h"
 #include "Camera3.h"
+#include "Camera4.h"
 #include "Mesh.h"
 #include "MatrixStack.h"
 #include "Light.h"

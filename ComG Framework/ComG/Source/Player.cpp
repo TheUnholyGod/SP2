@@ -28,12 +28,12 @@ const int Player::gethealth()
 
 const int Player::gethunger()
 {
-
+	return 0;
 }
 
 const int Player::getattack()
 {
-	
+	return 0;
 }
 
 void Player::receivedamage()
@@ -43,7 +43,7 @@ void Player::receivedamage()
 
 bool Player::isDead()
 {
-
+	return 0;
 }
 
 Player::~Player()

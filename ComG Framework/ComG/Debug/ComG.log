@@ -1,37 +1,16 @@
-﻿  Application.cpp
+﻿  SceneBase.cpp
+c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(93): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(97): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(101): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(515): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(516): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
   Generating Code...
-  Skipping... (no relevant changes detected)
-  Wood.cpp
-  Wheat.cpp
-  Weapon.cpp
-  Water.cpp
-  VegetableStew.cpp
-  Stone.cpp
-  Scar-H.cpp
-  Salad.cpp
-  Resources.cpp
-  Potato.cpp
-  MetalScraps.cpp
-  M200_CheyTac_Intervention.cpp
-  Kitchen_Knife.cpp
-  Katana_Sword.cpp
-  ItemDataBase.cpp
-  Item.cpp
-  Iron.cpp
-  Gold.cpp
-  Glock_17C.cpp
-  Food.cpp
-  Farming_Hoe.cpp
-  DrinkingWater.cpp
-  Copper.cpp
-  Compound_Bow.cpp
-  Cloth.cpp
-  CircuitBoards.cpp
-  CarrotJuice.cpp
-  Carrot.cpp
-  Cabbage.cpp
-  Bread.cpp
-  Biomass.cpp
-  Adhesives.cpp
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(537): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
+  Compiling...
+  SceneManager.cpp
+c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+  Generating Code...
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
