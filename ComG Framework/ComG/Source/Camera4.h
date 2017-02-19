@@ -15,13 +15,24 @@ public:
 	Vector3 defaultTarget;
 	Vector3 defaultUp;
 	Vector3 camVec;
-	Vector3 temp;
-	int windowX, windowY;
-	double cursorX, cursorY;
-	int anchorX, anchorY;
-	float pitch, yaw;
-	float pitchLimit;
+	Vector3 view;
+	Vector3 right;
 	static Vector3 getPosition();
+
+	float yaw;
+	float pitch;
+
+	int windowX;
+	int windowY;
+
+	int anchorX;
+	int anchorY;
+
+	double cursorX;
+	double cursorY;
+
+	int cursorXDiff;
+	int cursorYDiff;
 
 	Camera4();
 	~Camera4();
