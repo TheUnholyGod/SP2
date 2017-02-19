@@ -2,6 +2,7 @@
 #define _SCENEMANAGER_H
 #define DEFAULT 1
 
+
 #include <map>
 #include "Scene.h"
 

@@ -1,16 +1,12 @@
-﻿  SceneBase.cpp
+﻿  SceneSplashScreen.cpp
 c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(93): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(97): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(101): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(515): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(516): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenesplashscreen.cpp(261): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenesplashscreen.cpp(262): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
   Generating Code...
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(537): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
   Compiling...
   SceneManager.cpp
 c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
   Generating Code...
-  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
+  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
