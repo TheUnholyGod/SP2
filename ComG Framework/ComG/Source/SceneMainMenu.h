@@ -12,7 +12,6 @@
 #include <list>
 #include "Building.h"
 #include "Enemy.h"
-#include "Lighting.h"
 #include <vector>
 #include "GLFW\glfw3.h"
 #include "GL\glew.h"
