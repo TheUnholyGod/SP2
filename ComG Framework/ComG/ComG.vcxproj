@@ -88,7 +88,6 @@
     <None Include="Shader\SimpleVertexShader.vertexshader" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SaveLoad.cpp" />
     <ClCompile Include="Source\Ability.cpp" />
     <ClCompile Include="Source\AbilityDataBase.cpp" />
     <ClCompile Include="Source\Acrid_Plant.cpp" />
@@ -161,6 +160,7 @@
     <ClCompile Include="Source\Resources.cpp" />
     <ClCompile Include="Source\RogueMech.cpp" />
     <ClCompile Include="Source\Salad.cpp" />
+    <ClCompile Include="Source\SaveLoad.cpp" />
     <ClCompile Include="Source\Scar-H.cpp" />
     <ClCompile Include="Source\Scarecrow_Mech.cpp" />
     <ClCompile Include="Source\SceneBase.cpp" />
@@ -186,7 +186,6 @@
     <ClCompile Include="Source\Wood.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SaveLoad.h" />
     <ClInclude Include="Source\Ability.h" />
     <ClInclude Include="Source\AbilityDataBase.h" />
     <ClInclude Include="Source\Acrid_Plant.h" />
@@ -261,6 +260,7 @@
     <ClInclude Include="Source\Resources.h" />
     <ClInclude Include="Source\RogueMech.h" />
     <ClInclude Include="Source\Salad.h" />
+    <ClInclude Include="Source\SaveLoad.h" />
     <ClInclude Include="Source\Scar-H.h" />
     <ClInclude Include="Source\Scarecrow_Mech.h" />
     <ClInclude Include="Source\Scene.h" />

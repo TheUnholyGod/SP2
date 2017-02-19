@@ -12,8 +12,8 @@ Building::Building(int id, const std::string name, std::string source_, std::str
 		AABB* temp = new AABB(i, gameobjrenderer_->getPosition());
 		allAABB.push_back(temp);
 	}*/
-		AABB* temp = new AABB(Vector3(Player::getplayer()->getRenderer().getPosition()), gameobjrenderer_->getPosition());
-		allAABB.push_back(temp);
+	/*	AABB* temp = new AABB(Vector3(Player::getplayer()->getRenderer().getPosition()), gameobjrenderer_->getPosition());
+		allAABB.push_back(temp);*/
 }
 Building::~Building(){}
 int Building::get_Health(){ return health_; }

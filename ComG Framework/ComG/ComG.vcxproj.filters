@@ -464,7 +464,7 @@
     <ClCompile Include="Source\SceneWildLife.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="SaveLoad.cpp">
+    <ClCompile Include="Source\SaveLoad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -760,7 +760,7 @@
     <ClInclude Include="Source\SceneWildLife.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="SaveLoad.h">
+    <ClInclude Include="Source\SaveLoad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

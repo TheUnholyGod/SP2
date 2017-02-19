@@ -1,6 +1,6 @@
-﻿  Molerat.cpp
-Source\Molerat.cpp(18): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+﻿  SaveLoad.cpp
+Source\SaveLoad.cpp(73): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SaveLoad.cpp(80): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
   Generating code
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(534): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
   Finished generating code
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
