@@ -75,19 +75,19 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt)
 		playerweapon_->getRenderer().translate(-camRight, 25 * dt);
 		playerweapon_->getRenderer().setPosition(playerRender->getPosition() + ((0, 1, 0) * 2) + (camForward * 5) + (camRight));
 	}
-	else if (Application::IsKeyPressed('D'))
+	if (Application::IsKeyPressed('D'))
 	{
 		playerRender->translate(camRight, 25 * dt);
 		playerweapon_->getRenderer().translate(camRight, 25 * dt);
 		playerweapon_->getRenderer().setPosition(playerRender->getPosition() + ((0, 1, 0) * 2) + (camForward * 5) + (camRight));
 	}
-	else if (Application::IsKeyPressed('S'))
+	if (Application::IsKeyPressed('S'))
 	{
 		playerRender->translate(-camForwardTemp, 25 * dt);
 		playerweapon_->getRenderer().translate(-camForwardTemp, 25 * dt);
 		playerweapon_->getRenderer().setPosition(playerRender->getPosition() + ((0, 1, 0) * 2) + (camForward * 5) + (camRight));
 	}
-	else if (Application::IsKeyPressed('W'))
+	if (Application::IsKeyPressed('W'))
 	{
 		playerRender->translate(camForwardTemp, 25 * dt);
 		playerweapon_->getRenderer().translate(camForwardTemp, 25 * dt);
