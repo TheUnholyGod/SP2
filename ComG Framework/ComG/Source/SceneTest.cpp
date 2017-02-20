@@ -537,7 +537,10 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
+<<<<<<< HEAD
              
+=======
+>>>>>>> 89a8bf244346b365ae82fae716e4369d6c23bdb4
 	for (int u = 0; u < NUM_GEOMETRY; u++){
 		if (BaseBuildings.size() < NUM_BUILDINGGEOMETRY)
 		{
