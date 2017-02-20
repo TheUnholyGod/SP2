@@ -81,7 +81,7 @@ void SceneBase::Init()
 	lighting.y = 1.f;
 	reset = false;
 	sunup = true;
-	sunrotate = 0;
+	sunrotate = 100;
 	Day = 0;
 
 	// Make sure you pass uniform parameters after glUseProgram()
@@ -158,11 +158,11 @@ void SceneBase::Update(double dt)
 	{
 		Application::IsExit = true;
 	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 //	if (allbuildingcollision(Player::getplayer()))
 	{
 		Player::getplayer()->Update(camForward, camRight, dt);
 	}
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 
 	SpawnEnemy(dt);
 	LightUpdate(dt);
@@ -604,7 +604,7 @@ void SceneBase::LightUpdate(double dt)
 
 	if (lighting.y <= 0)
 	{
-		light[0].power = 0;
+		light[0].power = 0.25;
 		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 		if (lighting.y >= 0 && lighting.y <= 0.5)
 		{
@@ -634,9 +634,9 @@ void SceneBase::LightUpdate(double dt)
 		}
 	}
 
-	if (sunrotate >= 390)
+	if (sunrotate >= 360)
 	{
-		sunrotate -= 390;
+		sunrotate -= 360;
 		Day++;
 	}
 

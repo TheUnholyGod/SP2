@@ -87,6 +87,7 @@ class SceneBase : public Scene
 	enum BUILDINGMESHLIST
 	{
 		GEO_BARN,
+		GEO_THORPHYROOM,
 		GEO_TURRET,
 		NUM_BUILDINGGEOMETRY,
 	};
