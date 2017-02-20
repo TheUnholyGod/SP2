@@ -22,15 +22,17 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 	filename << "Saves//" << saveno << "//" << area << ".txt";
 	std::string address;
 	filename >> address;
-	std::ofstream saver(address, std::ofstream::out | std::ios::app | std::ofstream::trunc);
+	std::ofstream saver(address, std::ofstream::out);
+	//saver.clear(saver.good());
 	for (auto &i : buildingslist)
 	{
 		std::string temp;
 		std::stringstream saveline;
 		saveline << "B" << i->getID() << blanker << i->getRenderer().getPosition().x << blanker << i->getRenderer().getPosition().y << blanker << i->getRenderer().getPosition().z;
 		saveline >> temp;
-		saver.write(temp.c_str(), sizeof(temp));
+		//saver.write(temp.c_str(), sizeof(temp));
 		//saver.write("\n",2);
+		saver << temp << std::endl;
 	}
 	for (auto &i : enemyslist)
 	{
@@ -38,7 +40,8 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 		std::stringstream saveline;
 		saveline << "E" << i->getID() << blanker << (int)i->getRenderer().getPosition().x << blanker << (int)i->getRenderer().getPosition().y << blanker << (int)i->getRenderer().getPosition().z;
 		saveline >> temp;
-		saver.write(temp.c_str(), sizeof(temp));
+		saver << temp << std::endl;
+		//saver.write(temp.c_str(), sizeof(temp));
 		//saver.write("\n",2);
 	}
 	saver.close();
@@ -75,7 +78,7 @@ void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 			temp->getRenderer().setPosition(position);
 			buildingslist.push_back(temp);
 		}
-		else if (entitytype == 'C')
+		else if (entitytype == 'E')
 		{
 			Vector3 position = Vector3(tempstorage[1], tempstorage[2], tempstorage[3]);
 			Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(tempstorage[0]);

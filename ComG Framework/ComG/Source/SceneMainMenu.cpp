@@ -210,7 +210,7 @@ void SceneMainMenu::Update(double dt)
 					if (play == 1)
 					{
 						options = false;
-						SceneManager::currScene = 3;
+						SceneManager::currScene = 4;
 					}
 					if (play == 2)
 					{

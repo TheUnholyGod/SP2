@@ -15,7 +15,7 @@
 #include "SaveLoad.h"
 #include <sstream>
 
-SceneTest::SceneTest()
+SceneTest::SceneTest() : buildingID(101)
 {
 }
 
@@ -81,7 +81,7 @@ void SceneTest::Init()
 	lighting.y = 1.f;
 	reset = false;
 	sunup = true;
-	sunrotate = 0;
+	sunrotate = 100;
 	Day = 0;
 
 	// Make sure you pass uniform parameters after glUseProgram()
@@ -136,10 +136,12 @@ void SceneTest::Init()
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
 		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getSourceLocation());
+		buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getTextureLocation());
 	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
+		weaponmesh[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getTextureLocation());
 	}
 	suntimer = 1;
 	LoadSkybox();
@@ -167,7 +169,7 @@ void SceneTest::Update(double dt)
 
 	SpawnEnemy(dt);
 	LightUpdate(dt);
-	//SpawnBuilding(dt);
+	SpawnBuilding(dt);
 }
 
 void SceneTest::Render()
@@ -535,6 +537,21 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	for (int u = 0; u < NUM_GEOMETRY; u++){
+		if (BaseBuildings.size() < NUM_BUILDINGGEOMETRY)
+		{
+			BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(u + buildingID));
+		}
+	}
+=======
+	//if (BaseBuildings.size() < 1)
+	//	BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
+>>>>>>> 4f14404e2f548e04f4ff57f0c1f56cb0c3306daf
+
+>>>>>>> b8ee3286e9ac6afa5e46d2d3037c5eba2d872c2e
 	for (auto &i : BaseBuildings)
 	{
 		i->update(dt);
@@ -548,7 +565,7 @@ void SceneTest::RenderBuilding()
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(buildingMeshList[i->getID() - 101], true);
+		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
 		modelStack.PopMatrix();
 		y++;
 	}
@@ -602,7 +619,7 @@ void SceneTest::LightUpdate(double dt)
 
 	if (lighting.y <= 0)
 	{
-		light[0].power = 0;
+		light[0].power = 0.25;
 		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 		if (lighting.y >= 0 && lighting.y <= 0.5)
 		{
@@ -632,14 +649,15 @@ void SceneTest::LightUpdate(double dt)
 		}
 	}
 
-	if (sunrotate >= 390)
+	if (sunrotate >= 360)
 	{
-		sunrotate -= 390;
+		sunrotate -= 360;
 		Day++;
 	}
 
 	//std::cout << "Lighting Level: " << lighting.y << std::endl;
 	std::cout << "Day: " << Day << std::endl;
+	std::cout << "sunrotate: " << sunrotate << std::endl;
 }
 
 void SceneTest::LightReset(double dt)
