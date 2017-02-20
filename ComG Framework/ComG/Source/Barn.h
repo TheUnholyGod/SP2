@@ -8,7 +8,6 @@
 class Barn : public Building
 {
 protected:
-	
 	const std::string kName_;
 	std::string source_location_;
 	int health_;
@@ -16,7 +15,7 @@ protected:
 public:
 	Barn(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
 	virtual ~Barn();
-	void update(double dt);
+	void update(double dt) override;
 	int get_Health();
 
 };

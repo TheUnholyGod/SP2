@@ -45,7 +45,21 @@ class SceneTest : public Scene
 		GEO_FRONT2,
 		GEO_BACK2,
 
+<<<<<<< HEAD
 		//Building buildings UI
+=======
+		GEO_CURSOR,
+
+		GEO_PAUSEMENU,
+		GEO_OPTIONSMENU,
+
+		GEO_OPTIONS,
+		GEO_BACKTOGAME,
+		GEO_BACKTOMAIN,
+
+		GEO_MOUSE,
+		GEO_VOLUME,
+>>>>>>> b42063f63de1ec69a2c48c99a6ebcf09ee027b3e
 
 		NUM_GEOMETRY,
 	};
@@ -140,7 +154,7 @@ private:
 	MS modelStack, viewStack, projectionStack;
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
-	Camera3 fp_camera;
+	Camera4 fp_camera;
 
 	const int buildingID;
 	void RenderMesh(Mesh *mesh, bool enableLight);
@@ -167,8 +181,6 @@ private:
 	void LightReset(double dt);
 	int Day;
 
-	bool allbuildingcollision(GameObject*);
-
 	std::list<Enemy*> BaseEnemy;
 	std::list<Building*> BaseBuildings;
 
@@ -177,6 +189,23 @@ private:
 
 	void SpawnBuilding(double dt);
 	void RenderBuilding();
+
+	int windowX;
+	int windowY;
+
+	double cursorX;
+	double cursorY;
+
+	int windowXpos;
+	int windowYpos;
+
+	bool pause;
+	bool options;
+	int pauseHighlight;
+	int optionHighlight;
+
+	std::clock_t start;
+	float elapsedTime;
 };
 
 #endif

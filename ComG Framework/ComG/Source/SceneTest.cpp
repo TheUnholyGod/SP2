@@ -1,3 +1,4 @@
+
 #include "SceneTest.h"
 #include "GL\glew.h"
 #include "shader.hpp"
@@ -15,8 +16,18 @@
 #include "SaveLoad.h"
 #include <sstream>
 
+POINT cursorPoint;
+
 SceneTest::SceneTest() : buildingID(101)
 {
+	cursorX = 0;
+	cursorY = 0;
+
+	windowX = windowY = 0;
+	cursorPoint.x = cursorPoint.y = 0;
+
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
 }
 
 SceneTest::~SceneTest()
@@ -84,6 +95,13 @@ void SceneTest::Init()
 	sunrotate = 100;
 	Day = 0;
 
+	pause = false;
+	options = false;
+	pauseHighlight = 0;
+	optionHighlight = 0;
+
+	start = std::clock();
+
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
 	Player::getplayer();
@@ -147,6 +165,33 @@ void SceneTest::Init()
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
 
+	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR]->textureID = LoadTGA("Image//cursorPointer.tga");
+
+	meshList[GEO_PAUSEMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_PAUSEMENU]->textureID = LoadTGA("Image//Pause Menu.tga");
+
+	meshList[GEO_OPTIONS] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_OPTIONS]->textureID = LoadTGA("Image//pauseMenu - Options.tga");
+
+	meshList[GEO_BACKTOGAME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BACKTOGAME]->textureID = LoadTGA("Image//pauseMenu - BackToGame.tga");
+
+	meshList[GEO_BACKTOMAIN] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BACKTOMAIN]->textureID = LoadTGA("Image//pauseMenu - BackToMainMenu.tga");
+
+	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//Options Menu.tga");
+
+	meshList[GEO_MOUSE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_MOUSE]->textureID = LoadTGA("Image//Options Menu Mouse.tga");
+
+	meshList[GEO_VOLUME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_VOLUME]->textureID = LoadTGA("Image//Options Menu Volume.tga");
+
+	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//Options Menu Back.tga");
+
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
@@ -166,30 +211,130 @@ void SceneTest::Init()
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
-	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 10, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 }
 
 void SceneTest::Update(double dt)
 {
 	DebugMode(dt);
+
+	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
+	cursorY = -cursorY + 600;
+
+	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
+
 	if (Application::IsKeyPressed('E'))
 	{
 		SceneManager::currScene = 3;
 	}
-	if (Application::IsKeyPressed(VK_ESCAPE))
+	
+	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
-		Application::IsExit = true;
+		if (!pause)
+		{
+			fp_camera.is_menu = true;
+			pause = true;
+		}
+		else if (pause)
+		{
+			pauseHighlight = 0;
+			optionHighlight = 0;
+
+			glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
+			fp_camera.is_menu = false;
+			pause = false;
+		}
+		start = std::clock();
 	}
+
+	if (pause)
+	{
+		if (elapsedTime > 0.01)
+		{
+			if (Application::IsKeyPressed(VK_UP))
+			{
+				if (pauseHighlight >= 0)
+				{
+					pauseHighlight--;
+				}
+				if (pauseHighlight < 0)
+				{
+					pauseHighlight = 2;
+				}
+				start = std::clock();
+			}
+			if (Application::IsKeyPressed(VK_DOWN))
+			{
+				if (pauseHighlight < 3)
+				{
+					pauseHighlight++;
+				}
+				if (pauseHighlight > 2)
+				{
+					pauseHighlight = 0;
+				}
+				start = std::clock();
+			}
+			if (cursorY >= 285 && cursorY <= 325)
+			{
+				pauseHighlight = 0;
+			}
+			if (cursorY >= 180 && cursorY <= 225)
+			{
+				pauseHighlight = 1;
+			}
+			if (cursorY >= 75 && cursorY <= 120)
+			{
+				pauseHighlight = 2;
+			}
+			if (Application::IsKeyPressed(VK_RETURN) || Application::IsKeyPressed(VK_LBUTTON))
+			{
+				if (pauseHighlight == 0)
+				{
+
+				}
+				if (pauseHighlight == 1)
+				{
+					pauseHighlight = 0;
+					optionHighlight = 0;
+
+					glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
+					fp_camera.is_menu = false;
+					pause = false;
+				}
+				if (pauseHighlight == 2)
+				{
+					pauseHighlight = 0;
+					optionHighlight = 0;
+
+					glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
+					fp_camera.is_menu = false;
+					pause = false;
+
+					SceneManager::currScene = 2;
+				}
+			}
+		}
+	}
+<<<<<<< HEAD
 	if (Application::IsKeyPressed('B'))
 	{
 		buildBuilding = true;
 	}
+=======
+<<<<<<< HEAD
+
+>>>>>>> b42063f63de1ec69a2c48c99a6ebcf09ee027b3e
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	//	if (allbuildingcollision(Player::getplayer()))
 	{
 		Player::getplayer()->Update(camForward, camRight, dt);
 	}
+=======
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 10, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings);
+>>>>>>> 417dd7ff5af22c189b87e8b7babd3acf9cc11f37
 
 	SpawnEnemy(dt);
 	LightUpdate(dt);
@@ -248,6 +393,7 @@ void SceneTest::Render()
 	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
 
+<<<<<<< HEAD
 	if (buildBuilding){
 		RenderMeshOnScreen(spritesList[GEO_BUILDUI], 40, 30, 80, 60);
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press 'K' to exit building", Color(0, 0, 1), 3.f, .5f, 19.f);
@@ -262,6 +408,29 @@ void SceneTest::Render()
 			displacement += 15;
 		}
 
+=======
+	RenderEnemy();
+	RenderBuilding();
+
+	if (pause)
+	{
+		RenderMeshOnScreen(meshList[GEO_PAUSEMENU], 40, 30, 16, 12);
+
+		if (pauseHighlight == 0)
+		{
+			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
+		}
+		if (pauseHighlight == 1)
+		{
+			RenderMeshOnScreen(meshList[GEO_BACKTOGAME], 40, 30, 16, 12);
+		}
+		if (pauseHighlight == 2)
+		{
+			RenderMeshOnScreen(meshList[GEO_BACKTOMAIN], 40, 30, 16, 12);
+		}
+
+		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
+>>>>>>> b42063f63de1ec69a2c48c99a6ebcf09ee027b3e
 	}
 }
 
@@ -580,12 +749,21 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
+<<<<<<< HEAD
 	for (int u = 0; u < NUM_GEOMETRY; u++){
 		if (BaseBuildings.size() < NUM_BUILDINGGEOMETRY)
 		{
 			BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(u + buildingID));
 		}
 	}
+=======
+	//for (int u = 0; u < NUM_GEOMETRY; u++){
+	//	if (BaseBuildings.size() < NUM_BUILDINGGEOMETRY)
+	//	{
+	//		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(u + buildingID));
+	//	}
+	//}
+>>>>>>> 417dd7ff5af22c189b87e8b7babd3acf9cc11f37
 
 	for (auto &i : BaseBuildings)
 	{
@@ -620,25 +798,12 @@ void SceneTest::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int size
 	modelStack.Translate(x, y, 0);
 	modelStack.Scale(sizex, sizey, 1);
 	modelStack.Rotate(90, 1, 0, 0);
+	modelStack.Rotate(90, 0, 1, 0);
 	RenderMesh(mesh, false);
 	modelStack.PopMatrix();
 	viewStack.PopMatrix();
 	projectionStack.PopMatrix();
 	glEnable(GL_DEPTH_TEST);
-}
-
-bool SceneTest::allbuildingcollision(GameObject* test)
-{
-	if (!BaseBuildings.size())
-		return 1;
-	for (auto &i : BaseBuildings)
-	{
-		if (i->getAABB(0)->pointtoAABB(test->getRenderer().getPosition()))
-		{
-			return false;
-		}
-
-	}
 }
 
 void SceneTest::LightUpdate(double dt)
@@ -691,8 +856,8 @@ void SceneTest::LightUpdate(double dt)
 	}
 
 	//std::cout << "Lighting Level: " << lighting.y << std::endl;
-	std::cout << "Day: " << Day << std::endl;
-	std::cout << "sunrotate: " << sunrotate << std::endl;
+	//std::cout << "Day: " << Day << std::endl;
+	//std::cout << "sunrotate: " << sunrotate << std::endl;
 }
 
 void SceneTest::LightReset(double dt)

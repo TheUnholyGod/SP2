@@ -13,6 +13,7 @@ Camera3::Camera3()
 	pitch = 0;
 	yaw = 0;
 	pitchLimit = 0;
+	is_menu = false;
 }
 
 Camera3::~Camera3()
@@ -40,63 +41,67 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 {
 	static const float CAMERA_SPEED = 10.f;
 	static const float CAMERA_SPEED_2 = 125.f;
-	position = charpos;
-	target = position + temp;
-
-	Vector3 view = (target - position).Normalized();
-	Vector3 right = view.Cross(up);
-
-	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
-	GetCursorPos(&point);
 	
-	if (anchorX > point.x)
+	if (!is_menu)
 	{
-		this->yaw = (float)(CAMERA_SPEED_2 * dt);
-		Mtx44 rotation;
-		rotation.SetToRotation(yaw, 0, 1, 0);
-		temp = rotation * temp;
-		up = rotation * up;
-	}
-
-	if (anchorX < point.x)
-	{
-		this->yaw = (float)(-CAMERA_SPEED_2 * dt);
-		Mtx44 rotation;
-		rotation.SetToRotation(yaw, 0, 1, 0);
-		temp = rotation * temp;
-		up = rotation * up;
-	}
-
-	if (pitchLimit < 160 && point.y < anchorY)
-	{
-		this->pitch = (float)(CAMERA_SPEED * (anchorY - point.y)) * dt;
-		Mtx44 rotation;
-		rotation.SetToRotation(pitch, right.x, right.y, right.z);
-		temp = rotation * temp;
+		position = charpos;
 		target = position + temp;
-		pitchLimit += (anchorY - point.y);
-	}
-	else if (pitchLimit > -200 && point.y > anchorY)
-	{
-		this->pitch = (float)(-CAMERA_SPEED * (point.y - anchorY)) * dt;
-		Mtx44 rotation;
-		rotation.SetToRotation(pitch, right.x, right.y, right.z);
-		temp = rotation * temp;
-		target = position + temp;
-		pitchLimit -= (point.y - anchorY);
-	}
 
-	if (Application::IsKeyPressed('X'))
-	{
-		Reset();
+		Vector3 view = (target - position).Normalized();
+		Vector3 right = view.Cross(up);
+
+		glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+		GetCursorPos(&point);
+
+		if (anchorX > point.x)
+		{
+			this->yaw = (float)(CAMERA_SPEED_2 * dt);
+			Mtx44 rotation;
+			rotation.SetToRotation(yaw, 0, 1, 0);
+			temp = rotation * temp;
+			up = rotation * up;
+		}
+
+		if (anchorX < point.x)
+		{
+			this->yaw = (float)(-CAMERA_SPEED_2 * dt);
+			Mtx44 rotation;
+			rotation.SetToRotation(yaw, 0, 1, 0);
+			temp = rotation * temp;
+			up = rotation * up;
+		}
+
+		if (pitchLimit < 160 && point.y < anchorY)
+		{
+			this->pitch = (float)(CAMERA_SPEED * (anchorY - point.y)) * dt;
+			Mtx44 rotation;
+			rotation.SetToRotation(pitch, right.x, right.y, right.z);
+			temp = rotation * temp;
+			target = position + temp;
+			pitchLimit += (anchorY - point.y);
+		}
+		else if (pitchLimit > -200 && point.y > anchorY)
+		{
+			this->pitch = (float)(-CAMERA_SPEED * (point.y - anchorY)) * dt;
+			Mtx44 rotation;
+			rotation.SetToRotation(pitch, right.x, right.y, right.z);
+			temp = rotation * temp;
+			target = position + temp;
+			pitchLimit -= (point.y - anchorY);
+		}
+
+		if (Application::IsKeyPressed('X'))
+		{
+			Reset();
+		}
+		SetCursorPos(windowX / 2, windowY / 2);
+		anchorX = windowX / 2;
+		anchorY = windowY / 2;
+		*camForward = view;
+		*camRight = right;
+
+
 	}
-	SetCursorPos(windowX / 2, windowY / 2);
-	anchorX = windowX / 2;
-	anchorY = windowY / 2;
-	*camForward = view;
-	*camRight = right;
-
-
 }
 
 void Camera3::Reset()
