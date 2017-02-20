@@ -87,7 +87,17 @@ class SceneTest : public Scene
 	enum BUILDINGMESHLIST
 	{
 		GEO_BARN,
-		GEO_TURRET,
+		GEO_TROPHYROOM,
+		GEO_INVENTORYWAREHOUSE,
+		GEO_NPCHOUSE,
+		GEO_FASTTRAVELPORTAL,
+		GEO_POWERGENERATOR,
+		GEO_DEFENCETOWER,
+		GEO_DEFENCEWALLS,
+		GEO_TILLEDSOIL,
+		GEO_OREMINES,
+		GEO_CRAFTING,
+		GEO_WATERWELL,
 		NUM_BUILDINGGEOMETRY,
 	};
 
@@ -118,6 +128,7 @@ private:
 	Camera2 camera;
 	Camera4 fp_camera;
 
+	const int buildingID;
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	float LSPEED;
 	void LoadSkybox();

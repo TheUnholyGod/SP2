@@ -15,7 +15,7 @@
 #include "SaveLoad.h"
 #include <sstream>
 
-SceneTest::SceneTest()
+SceneTest::SceneTest() : buildingID(101)
 {
 }
 
@@ -136,10 +136,12 @@ void SceneTest::Init()
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
 		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getSourceLocation());
+		buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getTextureLocation());
 	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
+		weaponmesh[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getTextureLocation());
 	}
 	suntimer = 1;
 	LoadSkybox();
@@ -535,8 +537,12 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
-	if (BaseBuildings.size() < 5)
-		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
+	//for (int u = 0; u < NUM_GEOMETRY; u++){
+	//	if (BaseBuildings.size() < NUM_BUILDINGGEOMETRY)
+	//	{
+	//		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(u + buildingID));
+	//	}
+	//}
 
 	for (auto &i : BaseBuildings)
 	{
@@ -551,7 +557,7 @@ void SceneTest::RenderBuilding()
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(buildingMeshList[i->getID() - 101], true);
+		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
 		modelStack.PopMatrix();
 		y++;
 	}

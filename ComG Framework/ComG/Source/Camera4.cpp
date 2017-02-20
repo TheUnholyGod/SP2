@@ -28,11 +28,9 @@ void Camera4::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	this->position = defaultPosition = pos;
 	this->target = defaultTarget = target;
-	Vector3 view = (target - position).Normalized();
-	Vector3 right = view.Cross(up);
-	right.y = 0;
-	right.Normalize();
-	this->up = defaultUp = right.Cross(view).Normalized();
+	this->view = (target - position).Normalized();
+	this->right = Vector3(1, 0, 0);
+	this->up = Vector3(0, 1, 0);
 
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
@@ -40,17 +38,14 @@ void Camera4::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 	anchorX = windowX / 2;
 	anchorY = windowY / 2;
 
-	glfwSetInputMode(Application::m_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	//glfwSetInputMode(Application::m_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 }
 
 void Camera4::Update(double dt, Vector3 charpos, Vector3 righto, Vector3 for_what, Vector3*camForward, Vector3*camRight)
 {
 	static const float CAMERA_SPEED = 2.f;
 
-	view = (target - position).Normalized();
 	right = view.Cross(up);
-	up = right.Cross(view).Normalized();
-
 	position = charpos;
 	target = position + view;
 
