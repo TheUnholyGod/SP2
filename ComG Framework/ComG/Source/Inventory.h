@@ -15,9 +15,17 @@ public:
 	static Inventory *getinventory();
 	void Additem(int key);
 	void Removeitem(Item* item);
+	void Update();
+	void Render();
 	~Inventory();
 protected:
 	std::string itemname_;
 };
 
 #endif
+
+/*TO Do:
+-pick up(additem())
+-move in inventory(Update())
+-render(render())
+*/

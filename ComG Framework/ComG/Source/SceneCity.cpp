@@ -81,7 +81,7 @@ void SceneCity::Init()
 	lighting.y = 1.f;
 	reset = false;
 	sunup = true;
-	sunrotate = 0;
+	sunrotate = 100;
 	Day = 0;
 
 	// Make sure you pass uniform parameters after glUseProgram()
@@ -604,7 +604,7 @@ void SceneCity::LightUpdate(double dt)
 
 	if (lighting.y <= 0)
 	{
-		light[0].power = 0;
+		light[0].power = 0.25;
 		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 		if (lighting.y >= 0 && lighting.y <= 0.5)
 		{
@@ -634,14 +634,15 @@ void SceneCity::LightUpdate(double dt)
 		}
 	}
 
-	if (sunrotate >= 390)
+	if (sunrotate >= 360)
 	{
-		sunrotate -= 390;
+		sunrotate -= 360;
 		Day++;
 	}
 
 	//std::cout << "Lighting Level: " << lighting.y << std::endl;
 	std::cout << "Day: " << Day << std::endl;
+	std::cout << "sunrotate: " << sunrotate << std::endl;
 }
 
 void SceneCity::LightReset(double dt)

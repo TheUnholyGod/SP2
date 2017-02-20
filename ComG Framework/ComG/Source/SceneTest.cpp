@@ -81,7 +81,7 @@ void SceneTest::Init()
 	lighting.y = 1.f;
 	reset = false;
 	sunup = true;
-	sunrotate = 0;
+	sunrotate = 100;
 	Day = 0;
 
 	// Make sure you pass uniform parameters after glUseProgram()
@@ -535,6 +535,9 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
+	//if (BaseBuildings.size() < 1)
+	//	BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
+
 	for (auto &i : BaseBuildings)
 	{
 		i->update(dt);
@@ -602,7 +605,7 @@ void SceneTest::LightUpdate(double dt)
 
 	if (lighting.y <= 0)
 	{
-		light[0].power = 0;
+		light[0].power = 0.25;
 		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
 		if (lighting.y >= 0 && lighting.y <= 0.5)
 		{
@@ -632,14 +635,15 @@ void SceneTest::LightUpdate(double dt)
 		}
 	}
 
-	if (sunrotate >= 390)
+	if (sunrotate >= 360)
 	{
-		sunrotate -= 390;
+		sunrotate -= 360;
 		Day++;
 	}
 
 	//std::cout << "Lighting Level: " << lighting.y << std::endl;
 	std::cout << "Day: " << Day << std::endl;
+	std::cout << "sunrotate: " << sunrotate << std::endl;
 }
 
 void SceneTest::LightReset(double dt)
