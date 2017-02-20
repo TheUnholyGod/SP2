@@ -28,7 +28,7 @@ void Molerat::Update(double dt)
 			goalreached = true;
 	}
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-	//std::cout << gameobjrenderer_->getForward() << std::endl;
+	std::cout << gameobjrenderer_->getForward() << std::endl;
 }
 
 void Molerat::pathfinding()
