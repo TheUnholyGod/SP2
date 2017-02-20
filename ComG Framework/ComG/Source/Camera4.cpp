@@ -40,7 +40,7 @@ void Camera4::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 	anchorX = windowX / 2;
 	anchorY = windowY / 2;
 
-	glfwSetInputMode(Application::m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+	glfwSetInputMode(Application::m_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 }
 
 void Camera4::Update(double dt, Vector3 charpos, Vector3 righto, Vector3 for_what, Vector3*camForward, Vector3*camRight)
