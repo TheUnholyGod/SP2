@@ -45,7 +45,29 @@ class SceneTest : public Scene
 		GEO_BOTTOM2,
 		GEO_FRONT2,
 		GEO_BACK2,
+
+		GEO_CURSOR,
+
+		GEO_PAUSEMENU,
+		GEO_OPTIONSMENU,
+
+		GEO_OPTIONS,
+		GEO_BACKTOGAME,
+		GEO_BACKTOMAIN,
+
+		GEO_MOUSE,
+		GEO_VOLUME,
 		NUM_GEOMETRY,
+	};
+	enum SPRITES
+	{
+		GEO_BUILDUI,
+		GEO_BARNSPRITE,
+		GEO_TROPHYROOMSPRITE,
+		GEO_INVENTORYROOMSPRITE,
+		GEO_NPCHOUSESPRITE,
+		GEO_FASTTRAVELPORTALSPRITE,
+		NUM_SPRITES,
 	};
 	enum UNIFORM_TYPE
 	{
@@ -129,6 +151,7 @@ private:
 	std::array<Mesh*, NUM_WEAPONGEOMETERY> weaponmesh;
 	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
 	std::array<Mesh*, NUM_PROJECTILEGEOMETERY> projectileMeshList;
+	std::array<Mesh*, NUM_SPRITES> spritesList;
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
@@ -147,6 +170,9 @@ private:
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey);
 
+	bool buildBuilding;
+	void buildBuildingUpdate(double dt);
+
 	//Light
 	Light light[1];
 	double lightrotate, sunrotate;
@@ -158,8 +184,6 @@ private:
 	void LightUpdate(double dt);
 	void LightReset(double dt);
 	int Day;
-
-	bool allbuildingcollision(GameObject*);
 
 	std::list<Enemy*> BaseEnemy;
 	std::list<Building*> BaseBuildings;
@@ -175,6 +199,22 @@ private:
 	void RenderProjectile();
 
 	bool ProjectileCollision();
+	int windowX;
+	int windowY;
+
+	double cursorX;
+	double cursorY;
+
+	int windowXpos;
+	int windowYpos;
+
+	bool pause;
+	bool options;
+	int pauseHighlight;
+	int optionHighlight;
+
+	std::clock_t start;
+	float elapsedTime;
 };
 
 #endif

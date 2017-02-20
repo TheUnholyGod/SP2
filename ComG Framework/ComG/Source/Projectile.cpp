@@ -18,10 +18,11 @@ void Projectile::FireProjectile(Vector3 forward, double dt)
 bool Projectile::hit()
 {
 	//AABB
-	if (allAABB[0]->pointtoAABB(getRenderer().getPosition()))
-		return true;
-	else
-		return false;
+//	if (allAABB[0]->pointtoAABB(getRenderer().getPosition()))
+//		return true;
+//	else
+//		return false;
+	return true;
 }
 
 void Projectile::update(Vector3 pos, Vector3 forward, double dt) 

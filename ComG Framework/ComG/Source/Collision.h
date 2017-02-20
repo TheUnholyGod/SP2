@@ -18,8 +18,10 @@ public:
 	~AABB();
 	void setMinMax(Vector3);
 	void reset();
-	bool pointtoAABB(Vector3 pos);
+	bool pointtoAABB(Vector3 pos, Vector3 forward);
 	bool AABBtoAABB(AABB box);
+	Vector3 getAABBmax() { return max; }
+	Vector3 getAABBmin() { return min; }
 };
 
 #endif
