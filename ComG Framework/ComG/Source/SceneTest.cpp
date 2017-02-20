@@ -161,15 +161,19 @@ void SceneTest::Update(double dt)
 	{
 		Application::IsExit = true;
 	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	//	if (allbuildingcollision(Player::getplayer()))
 	{
 		Player::getplayer()->Update(camForward, camRight, dt);
 	}
-
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy(dt);
 	LightUpdate(dt);
 	SpawnBuilding(dt);
+
+	if (Application::IsKeyPressed(VK_LBUTTON))
+	{
+		SpawnProjectile(dt);
+	}
 }
 
 void SceneTest::Render()
@@ -220,6 +224,7 @@ void SceneTest::Render()
 
 	RenderEnemy();
 	RenderBuilding();
+	RenderProjectile();
 }
 
 void SceneTest::Exit()
@@ -537,6 +542,12 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
+	for (int u = 0; u < NUM_GEOMETRY; u++){
+		if (BaseBuildings.size() < NUM_BUILDINGGEOMETRY)
+		{
+			BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(u + buildingID));
+		}
+	}
 	for (auto &i : BaseBuildings)
 	{
 		i->update(dt);
@@ -554,6 +565,17 @@ void SceneTest::RenderBuilding()
 		modelStack.PopMatrix();
 		y++;
 	}
+}
+
+void SceneTest::SpawnProjectile(double dt)
+{
+	Projectile arrow;
+	arrow.update(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward(), dt);
+}
+
+void SceneTest::RenderProjectile()
+{
+	
 }
 
 void SceneTest::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)

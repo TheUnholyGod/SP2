@@ -13,6 +13,7 @@
 #include <list>
 #include "Building.h"
 #include "Enemy.h"
+#include "Projectile.h" 
 #include <vector>
 #include <array>
 
@@ -106,6 +107,13 @@ class SceneTest : public Scene
 		GEO_BOW,
 		NUM_WEAPONGEOMETERY,
 	};
+
+	enum PROJECTILEMESHLIST
+	{
+		GEO_ARROW,
+		NUM_PROJECTILEGEOMETERY,
+	};
+
 public:
 	SceneTest();
 	~SceneTest();
@@ -120,6 +128,7 @@ private:
 	std::array<Mesh*, NUM_ENEMYGEOMETRY> enemyMeshList;
 	std::array<Mesh*, NUM_WEAPONGEOMETERY> weaponmesh;
 	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
+	std::array<Mesh*, NUM_PROJECTILEGEOMETERY> projectileMeshList;
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
@@ -154,12 +163,18 @@ private:
 
 	std::list<Enemy*> BaseEnemy;
 	std::list<Building*> BaseBuildings;
+	std::list<Projectile*>BaseProjectile;
 
 	void SpawnEnemy(double dt);
 	void RenderEnemy();
 
 	void SpawnBuilding(double dt);
 	void RenderBuilding();
+
+	void SpawnProjectile(double dt);
+	void RenderProjectile();
+
+	bool ProjectileCollision();
 };
 
 #endif
