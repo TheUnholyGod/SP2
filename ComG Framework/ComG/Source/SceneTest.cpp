@@ -131,6 +131,7 @@ void SceneTest::Init()
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
+		enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
@@ -534,8 +535,13 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
+<<<<<<< HEAD
+	if (BaseBuildings.size() < 1)
+		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
+=======
 	//if (BaseBuildings.size() < 1)
 	//	BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
+>>>>>>> 5f45cbc44beca71e8b62eba0d9c7a1b9ab1674eb
 
 	for (auto &i : BaseBuildings)
 	{
