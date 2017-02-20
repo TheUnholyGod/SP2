@@ -163,7 +163,7 @@ void SceneBase::Update(double dt)
 	}
 //	if (allbuildingcollision(Player::getplayer()))
 	{
-		Player::getplayer()->Update(camForward, camRight, dt);
+		Player::getplayer()->Update(camForward, camRight, dt,BaseBuildings);
 	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 
@@ -578,20 +578,6 @@ void SceneBase::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int size
 	viewStack.PopMatrix();
 	projectionStack.PopMatrix();
 	glEnable(GL_DEPTH_TEST);
-}
-
-bool SceneBase::allbuildingcollision(GameObject* test)
-{
-	if (!BaseBuildings.size())
-		return 1;
-	for (auto &i : BaseBuildings)
-	{
-		if (i->getAABB(0)->pointtoAABB(test->getRenderer().getPosition()))
-		{
-			return false;
-		}
-
-	}
 }
 
 void SceneBase::LightUpdate(double dt)

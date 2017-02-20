@@ -30,9 +30,10 @@ void AABB::reset()
 	min = defaultmin;
 }
 
-bool AABB::pointtoAABB(Vector3 pos)
+bool AABB::pointtoAABB(Vector3 pos,Vector3 forward)
 {
-	return (pos.x <= max.x && pos.x >= min.x) && (pos.y <= max.y && pos.y >= min.y) && (pos.z <= max.z && pos.z >= min.z);
+	//returna true when in bounds
+	return (pos.x + forward.x < max.x && pos.x + forward.x > min.x) && (pos.y + forward.y < max.y && pos.y + forward.y > min.y) && (pos.z + forward.z < max.z && pos.z + forward.z > min.z);
 }
 
 bool AABB::AABBtoAABB(AABB box)

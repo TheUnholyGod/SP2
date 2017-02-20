@@ -1,11 +1,10 @@
-﻿  SceneTest.cpp
+﻿  SceneWildLife.cpp
 c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
           c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(131): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(136): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(141): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(577): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(578): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(609): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(599): warning C4715: 'SceneTest::allbuildingcollision' : not all control paths return a value
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(131): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(135): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(139): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(570): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(588): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
   ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe

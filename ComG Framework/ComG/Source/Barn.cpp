@@ -16,15 +16,7 @@ Barn::~Barn(){}
 
 void Barn::update(double dt)
 {
-	if (allAABB[0]->pointtoAABB(Player::getplayer()->getRenderer().getPosition()))
-	{
-		std::cout << "Collision detected" << std::endl;
-	}
-	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
-	std::cout << "Building Position: " << this->gameobjrenderer_->getPosition() << std::endl;
-	std::cout << "Max AABB: " << this->allAABB[0]->getAABBmax() << std::endl;
-	std::cout << "Min AABB: " << this->allAABB[0]->getAABBmin() << std::endl;
-	std::cout << "PLayer Position: " << Player::getplayer()->getRenderer().getPosition() << std::endl;
+
 }
 
 int Barn::get_Health(){ return health_; }

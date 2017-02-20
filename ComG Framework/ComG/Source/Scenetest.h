@@ -150,8 +150,6 @@ private:
 	void LightReset(double dt);
 	int Day;
 
-	bool allbuildingcollision(GameObject*);
-
 	std::list<Enemy*> BaseEnemy;
 	std::list<Building*> BaseBuildings;
 

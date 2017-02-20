@@ -23,15 +23,12 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 	std::string address;
 	filename >> address;
 	std::ofstream saver(address, std::ofstream::out);
-	//saver.clear(saver.good());
 	for (auto &i : buildingslist)
 	{
 		std::string temp;
 		std::stringstream saveline;
 		saveline << "B" << i->getID() << blanker << i->getRenderer().getPosition().x << blanker << i->getRenderer().getPosition().y << blanker << i->getRenderer().getPosition().z;
 		saveline >> temp;
-		//saver.write(temp.c_str(), sizeof(temp));
-		//saver.write("\n",2);
 		saver << temp << std::endl;
 	}
 	for (auto &i : enemyslist)
@@ -41,8 +38,6 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 		saveline << "E" << i->getID() << blanker << (int)i->getRenderer().getPosition().x << blanker << (int)i->getRenderer().getPosition().y << blanker << (int)i->getRenderer().getPosition().z;
 		saveline >> temp;
 		saver << temp << std::endl;
-		//saver.write(temp.c_str(), sizeof(temp));
-		//saver.write("\n",2);
 	}
 	saver.close();
 }

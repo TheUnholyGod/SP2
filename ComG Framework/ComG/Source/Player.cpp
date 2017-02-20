@@ -6,9 +6,9 @@ Player* Player::player;
 
 Player::Player() : GameObject(0,"", "")
 {
-	playerRender = new Renderer(Vector3(0,0,0),Vector3(1,0,0));
+	gameobjrenderer_ = new Renderer(Vector3(0,0,0),Vector3(1,0,0));
 	Inventory::getinventory();
-	AABB* temp = new AABB(Vector3(5, 5, 5), playerRender->getPosition());
+	AABB* temp = new AABB(Vector3(5, 5, 5), gameobjrenderer_->getPosition());
 	allAABB.push_back(temp);
 }
 
@@ -57,41 +57,69 @@ void  Player::setWeapon(int key)
 	playerweapon_->getRenderer().setForward(player->getRenderer().getForward());
 }
 
-void Player::Update(Vector3 camForward, Vector3 camRight, double dt)
+void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings)
 {
+	bool move = false;
 	Vector3 camForwardTemp = camForward;
 	camForwardTemp.y = 0;
-	if (playerRender->getForward() != camForwardTemp)
+	if (gameobjrenderer_->getForward() != camForwardTemp)
 	{
-		playerRender->setForward(camForwardTemp);
-		playerweapon_->getRenderer().setPosition(playerRender->getPosition() + ((0,1,0) * 12) + (camForward * 5) + (camRight));
+		gameobjrenderer_->setForward(camForwardTemp);
+		playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0,1,0) * 12) + (camForward * 5) + (camRight));
 		playerweapon_->getRenderer().setUp((camForward.Cross(camRight)).Normalized());
 		playerweapon_->getRenderer().setForward(camForward);
 	}
 	if (Application::IsKeyPressed('A'))
 	{
-
-		playerRender->translate(-camRight, 25 * dt);
-		playerweapon_->getRenderer().translate(-camRight, 25 * dt);
-		playerweapon_->getRenderer().setPosition(playerRender->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
+		for (auto &i : buildings)
+		{
+			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camRight);
+		}
+		if (!move)
+		{
+			gameobjrenderer_->translate(-camRight, 25 * dt);
+			playerweapon_->getRenderer().translate(-camRight, 25 * dt);
+			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
+		}
 	}
 	if (Application::IsKeyPressed('D'))
 	{
-		playerRender->translate(camRight, 25 * dt);
-		playerweapon_->getRenderer().translate(camRight, 25 * dt);
-		playerweapon_->getRenderer().setPosition(playerRender->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
+		for (auto &i : buildings)
+		{
+			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camRight);
+		}
+		if (!move)
+		{
+			gameobjrenderer_->translate(camRight, 25 * dt);
+			playerweapon_->getRenderer().translate(camRight, 25 * dt);
+			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
+		}
 	}
 	if (Application::IsKeyPressed('S'))
 	{
-		playerRender->translate(-camForwardTemp, 25 * dt);
-		playerweapon_->getRenderer().translate(-camForwardTemp, 25 * dt);
-		playerweapon_->getRenderer().setPosition(playerRender->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
+		for (auto &i : buildings)
+		{
+			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camForwardTemp);
+		}
+		if (!move)
+		{
+			gameobjrenderer_->translate(-camForwardTemp, 25 * dt);
+			playerweapon_->getRenderer().translate(-camForwardTemp, 25 * dt);
+			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
+		}
 	}
 	if (Application::IsKeyPressed('W'))
 	{
-		playerRender->translate(camForwardTemp, 25 * dt);
-		playerweapon_->getRenderer().translate(camForwardTemp, 25 * dt);
-		playerweapon_->getRenderer().setPosition(playerRender->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
+		for (auto &i : buildings)
+		{
+			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+		}
+		if (!move)
+		{
+			gameobjrenderer_->translate(camForwardTemp, 25 * dt);
+			playerweapon_->getRenderer().translate(camForwardTemp, 25 * dt);
+			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
+		}
 	}
 }
 
