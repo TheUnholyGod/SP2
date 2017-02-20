@@ -1,32 +1,11 @@
-﻿  SceneWildLife.cpp
+﻿  SceneTest.cpp
 c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
           c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(131): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(135): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(139): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(570): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(602): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  SceneCity.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenecity.cpp(131): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenecity.cpp(135): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenecity.cpp(139): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenecity.cpp(570): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenecity.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenecity.cpp(602): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  SceneBase.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(131): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(135): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(139): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(570): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(602): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(592): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenecity.cpp(592): warning C4715: 'SceneCity::allbuildingcollision' : not all control paths return a value
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(592): warning C4715: 'SceneWildLife::allbuildingcollision' : not all control paths return a value
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(131): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(136): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(140): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(572): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(603): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(593): warning C4715: 'SceneTest::allbuildingcollision' : not all control paths return a value
   ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
