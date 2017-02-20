@@ -139,7 +139,7 @@ private:
 	MS modelStack, viewStack, projectionStack;
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
-	Camera3 fp_camera;
+	Camera4 fp_camera;
 
 	const int buildingID;
 	void RenderMesh(Mesh *mesh, bool enableLight);
@@ -162,8 +162,6 @@ private:
 	void LightUpdate(double dt);
 	void LightReset(double dt);
 	int Day;
-
-	bool allbuildingcollision(GameObject*);
 
 	std::list<Enemy*> BaseEnemy;
 	std::list<Building*> BaseBuildings;

@@ -6,6 +6,7 @@
 #include "Inventory.h"
 #include "Weapon.h"
 #include "Collision.h"
+#include "Building.h"
 #include <string>
 
 class Player : public GameObject
@@ -13,7 +14,6 @@ class Player : public GameObject
 private:
 	Player();
 	static Player* player;
-	Renderer* playerRender;
 	Weapon* playerweapon_;
 
 public:
@@ -21,10 +21,9 @@ public:
 	const int gethealth();
 	const int gethunger();
 	const int getattack();
-	Renderer getRenderer() { return *playerRender; }
 	void receivedamage();
 	bool isDead();
-	void Update(Vector3, Vector3, double);
+	void Update(Vector3, Vector3, double,std::list<Building*>);
 	Weapon* getWeapon() { return playerweapon_; }
 	void setWeapon(int);
 	AABB* getAABB();

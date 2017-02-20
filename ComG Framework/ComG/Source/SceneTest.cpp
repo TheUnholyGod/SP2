@@ -191,7 +191,7 @@ void SceneTest::Init()
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
-	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 10, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 }
 
@@ -297,12 +297,17 @@ void SceneTest::Update(double dt)
 			}
 		}
 	}
+<<<<<<< HEAD
 
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	//	if (allbuildingcollision(Player::getplayer()))
 	{
 		Player::getplayer()->Update(camForward, camRight, dt);
 	}
+=======
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 10, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings);
+>>>>>>> 417dd7ff5af22c189b87e8b7babd3acf9cc11f37
 
 	SpawnEnemy(dt);
 	LightUpdate(dt);
@@ -694,12 +699,21 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
+<<<<<<< HEAD
 	for (int u = 0; u < NUM_GEOMETRY; u++){
 		if (BaseBuildings.size() < NUM_BUILDINGGEOMETRY)
 		{
 			BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(u + buildingID));
 		}
 	}
+=======
+	//for (int u = 0; u < NUM_GEOMETRY; u++){
+	//	if (BaseBuildings.size() < NUM_BUILDINGGEOMETRY)
+	//	{
+	//		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(u + buildingID));
+	//	}
+	//}
+>>>>>>> 417dd7ff5af22c189b87e8b7babd3acf9cc11f37
 
 	for (auto &i : BaseBuildings)
 	{
@@ -740,20 +754,6 @@ void SceneTest::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int size
 	viewStack.PopMatrix();
 	projectionStack.PopMatrix();
 	glEnable(GL_DEPTH_TEST);
-}
-
-bool SceneTest::allbuildingcollision(GameObject* test)
-{
-	if (!BaseBuildings.size())
-		return 1;
-	for (auto &i : BaseBuildings)
-	{
-		if (i->getAABB(0)->pointtoAABB(test->getRenderer().getPosition()))
-		{
-			return false;
-		}
-
-	}
 }
 
 void SceneTest::LightUpdate(double dt)
@@ -806,8 +806,8 @@ void SceneTest::LightUpdate(double dt)
 	}
 
 	//std::cout << "Lighting Level: " << lighting.y << std::endl;
-	std::cout << "Day: " << Day << std::endl;
-	std::cout << "sunrotate: " << sunrotate << std::endl;
+	//std::cout << "Day: " << Day << std::endl;
+	//std::cout << "sunrotate: " << sunrotate << std::endl;
 }
 
 void SceneTest::LightReset(double dt)
