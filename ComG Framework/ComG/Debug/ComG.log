@@ -1,14 +1,25 @@
-﻿  SceneTest.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(194): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(199): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(204): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(224): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(402): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(407): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(437): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(800): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(801): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(819): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+﻿  WaterWell.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\waterwell.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  TrophyRoom.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\trophyroom.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  TilledSoil.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\tilledsoil.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  PowerGenerator.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\powergenerator.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  OreMines.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\oremines.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  NPCHouse.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\npchouse.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  InventoryWarehouse.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\inventorywarehouse.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  FastTravelRoom.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  DefensiveWalls.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defensivewalls.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  DefenceTower.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defencetower.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Crafting.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\crafting.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Building.cpp
+  Generating Code...
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe

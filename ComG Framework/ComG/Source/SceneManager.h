@@ -1,7 +1,6 @@
 #ifndef _SCENEMANAGER_H
 #define _SCENEMANAGER_H
-#define DEFAULT 4
-
+#define DEFAULT 3
 
 #include <map>
 #include "Scene.h"

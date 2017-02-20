@@ -27,6 +27,7 @@ public:
 	void setPosition(Vector3 newposition) { position_ = newposition; }
 	void rotate(Vector3 axisofrotate, double rotatespeed, Vector3 target);
 	void setScaling(int scale) { scaling = scale; }
+	int getScaling() { return scaling; }
 };
 
 #endif
