@@ -158,11 +158,11 @@ void SceneBase::Update(double dt)
 	{
 		Application::IsExit = true;
 	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 //	if (allbuildingcollision(Player::getplayer()))
 	{
 		Player::getplayer()->Update(camForward, camRight, dt);
 	}
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 
 	SpawnEnemy(dt);
 	LightUpdate(dt);
