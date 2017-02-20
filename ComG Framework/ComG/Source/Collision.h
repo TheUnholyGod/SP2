@@ -20,6 +20,8 @@ public:
 	void reset();
 	bool pointtoAABB(Vector3 pos);
 	bool AABBtoAABB(AABB box);
+	Vector3 getAABBmax() { return max; }
+	Vector3 getAABBmin() { return min; }
 };
 
 #endif

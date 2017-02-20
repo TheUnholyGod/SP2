@@ -510,7 +510,7 @@ void SceneBase::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneBase::SpawnEnemy(double dt)
 {
-	if (BaseEnemy.size() < 5)
+	if (BaseEnemy.size() < 10)
 		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
 
 	for (auto &i : BaseEnemy)

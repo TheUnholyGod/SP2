@@ -769,5 +769,8 @@
     <ClInclude Include="Source\Camera4.h">
       <Filter>Header Files\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="Source\BuildingDataBase.h">
+      <Filter>Header Files\GameObject\Buildings</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

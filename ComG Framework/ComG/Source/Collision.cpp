@@ -1,4 +1,5 @@
 #include "Collision.h"
+#include "Utility.h"
 
 AABB::AABB(Vector3 size, Vector3 pos)
 {

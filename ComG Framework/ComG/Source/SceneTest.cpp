@@ -144,7 +144,7 @@ void SceneTest::Init()
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
-	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 10, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 }
 
@@ -159,7 +159,7 @@ void SceneTest::Update(double dt)
 	{
 		Application::IsExit = true;
 	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 10, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	//	if (allbuildingcollision(Player::getplayer()))
 	{
 		Player::getplayer()->Update(camForward, camRight, dt);
@@ -167,7 +167,7 @@ void SceneTest::Update(double dt)
 
 	SpawnEnemy(dt);
 	LightUpdate(dt);
-	//SpawnBuilding(dt);
+	SpawnBuilding(dt);
 }
 
 void SceneTest::Render()
@@ -535,8 +535,8 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
-	//if (BaseBuildings.size() < 1)
-	//	BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
+	if (BaseBuildings.size() < 5)
+		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
 
 	for (auto &i : BaseBuildings)
 	{
@@ -642,8 +642,8 @@ void SceneTest::LightUpdate(double dt)
 	}
 
 	//std::cout << "Lighting Level: " << lighting.y << std::endl;
-	std::cout << "Day: " << Day << std::endl;
-	std::cout << "sunrotate: " << sunrotate << std::endl;
+	//std::cout << "Day: " << Day << std::endl;
+	//std::cout << "sunrotate: " << sunrotate << std::endl;
 }
 
 void SceneTest::LightReset(double dt)
