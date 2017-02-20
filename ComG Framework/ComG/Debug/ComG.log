@@ -1,15 +1,12 @@
-﻿  SceneManager.cpp
+﻿  SceneTest.cpp
 c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-  SceneBase.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(131): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(135): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(139): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(570): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(602): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenebase.cpp(592): warning C4715: 'SceneBase::allbuildingcollision' : not all control paths return a value
-  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
+          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(131): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(136): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(140): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(568): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(569): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(600): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(590): warning C4715: 'SceneTest::allbuildingcollision' : not all control paths return a value
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe

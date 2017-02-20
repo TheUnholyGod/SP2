@@ -87,6 +87,7 @@ class SceneBase : public Scene
 	enum BUILDINGMESHLIST
 	{
 		GEO_BARN,
+		GEO_THORPHYROOM,
 		GEO_TURRET,
 		NUM_BUILDINGGEOMETRY,
 	};
@@ -117,7 +118,7 @@ private:
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
 	
-	Camera4 fp_camera;
+	Camera3 fp_camera;
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	float LSPEED;
 	void LoadSkybox();
