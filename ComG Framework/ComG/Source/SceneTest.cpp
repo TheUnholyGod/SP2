@@ -535,13 +535,10 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
-<<<<<<< HEAD
-	if (BaseBuildings.size() < 1)
-		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
-=======
+	/*if (BaseBuildings.size() < 1)
+		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));*/
 	//if (BaseBuildings.size() < 1)
 	//	BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
->>>>>>> 5f45cbc44beca71e8b62eba0d9c7a1b9ab1674eb
 
 	for (auto &i : BaseBuildings)
 	{
