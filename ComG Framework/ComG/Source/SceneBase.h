@@ -13,7 +13,6 @@
 #include <list>
 #include "Building.h"
 #include "Enemy.h"
-#include "Lighting.h"
 #include <vector>
 #include <array>
 
@@ -57,6 +56,18 @@ class SceneBase : public Scene
 		U_MATERIAL_SPECULAR,
 		U_MATERIAL_SHININESS,
 		U_LIGHTENABLED,
+		U_LIGHT0_POSITION,
+		U_LIGHT0_COLOR,
+		U_LIGHT0_POWER,
+		U_LIGHT0_KC,
+		U_LIGHT0_KL,
+		U_LIGHT0_KQ,
+		U_LIGHT0_TYPE,
+		U_LIGHT0_SPOTDIRECTION,
+		U_LIGHT0_COSCUTOFF,
+		U_LIGHT0_COSINNER,
+		U_LIGHT0_EXPONENT,
+		U_NUMLIGHTS,
 		//add these enum in UNIFORM_TYPE before U_TOTAL
 		//add these enum in UNIFORM_TYPE before U_TOTAL
 		U_COLOR_TEXTURE_ENABLED,
@@ -105,8 +116,8 @@ private:
 	MS modelStack, viewStack, projectionStack;
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
-	Camera3 fp_camera;
-	Lighting light[1];
+	
+	Camera4 fp_camera;
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	float LSPEED;
 	void LoadSkybox();
@@ -115,12 +126,18 @@ private:
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 	void RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey);
+	
+	//Light
+	Light light[1];
 	double lightrotate,sunrotate;
 	Mtx44 LightPos;
-
 	int sunup;
 	float suntimer;
 	bool reset;
+	Vector3 lighting;
+	void LightUpdate(double dt);
+	void LightReset(double dt);
+	int Day;
 
 	bool allbuildingcollision( GameObject* );
 

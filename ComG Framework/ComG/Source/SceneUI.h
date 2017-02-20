@@ -12,7 +12,6 @@
 #include <list>
 #include "Building.h"
 #include "Enemy.h"
-#include "Lighting.h"
 #include <vector>
 #include <ctime>
 
@@ -36,6 +35,18 @@ class SceneUI : public Scene
 		U_MATERIAL_SPECULAR,
 		U_MATERIAL_SHININESS,
 		U_LIGHTENABLED,
+		U_LIGHT0_POSITION,
+		U_LIGHT0_COLOR,
+		U_LIGHT0_POWER,
+		U_LIGHT0_KC,
+		U_LIGHT0_KL,
+		U_LIGHT0_KQ,
+		U_LIGHT0_TYPE,
+		U_LIGHT0_SPOTDIRECTION,
+		U_LIGHT0_COSCUTOFF,
+		U_LIGHT0_COSINNER,
+		U_LIGHT0_EXPONENT,
+		U_NUMLIGHTS,
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
 
@@ -63,7 +74,7 @@ private:
 	Camera3 fp_camera;
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey);
-	Lighting light[1];
+	Light light[1];
 };
 
 #endif

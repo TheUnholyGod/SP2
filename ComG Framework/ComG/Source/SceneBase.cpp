@@ -25,6 +25,7 @@ SceneBase::~SceneBase()
 
 void SceneBase::Init()
 {
+	//sunup = 1;
 	LSPEED = 10.f;
 	// Init VBO here
 
@@ -58,15 +59,31 @@ void SceneBase::Init()
 	m_parameters[U_MATERIAL_SPECULAR] = glGetUniformLocation(m_programID, "material.kSpecular");
 	m_parameters[U_MATERIAL_SHININESS] = glGetUniformLocation(m_programID, "material.kShininess");
 	m_parameters[U_LIGHTENABLED] = glGetUniformLocation(m_programID, "lightEnabled");
+	m_parameters[U_LIGHT0_POSITION] = glGetUniformLocation(m_programID, "lights[0].position_cameraspace");
+	m_parameters[U_LIGHT0_COLOR] = glGetUniformLocation(m_programID, "lights[0].color");
+	m_parameters[U_LIGHT0_POWER] = glGetUniformLocation(m_programID, "lights[0].power");
+	m_parameters[U_LIGHT0_KC] = glGetUniformLocation(m_programID, "lights[0].kC");
+	m_parameters[U_LIGHT0_KL] = glGetUniformLocation(m_programID, "lights[0].kL");
+	m_parameters[U_LIGHT0_KQ] = glGetUniformLocation(m_programID, "lights[0].kQ");
+	m_parameters[U_NUMLIGHTS] = glGetUniformLocation(m_programID, "numLights");
+	m_parameters[U_LIGHT0_TYPE] = glGetUniformLocation(m_programID, "lights[0].type");
+	m_parameters[U_LIGHT0_SPOTDIRECTION] = glGetUniformLocation(m_programID, "lights[0].spotDirection");
+	m_parameters[U_LIGHT0_COSCUTOFF] = glGetUniformLocation(m_programID, "lights[0].cosCutoff");
+	m_parameters[U_LIGHT0_COSINNER] = glGetUniformLocation(m_programID, "lights[0].cosInner");
+	m_parameters[U_LIGHT0_EXPONENT] = glGetUniformLocation(m_programID, "lights[0].exponent");
 	m_parameters[U_COLOR_TEXTURE_ENABLED] = glGetUniformLocation(m_programID, "colorTextureEnabled");
 	m_parameters[U_COLOR_TEXTURE] = glGetUniformLocation(m_programID, "colorTexture");
 	m_parameters[U_TEXT_ENABLED] = glGetUniformLocation(m_programID, "textEnabled");
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
-	light[0].LightInit(m_programID);
-	//glUseProgram(m_programID);
+	glUseProgram(m_programID);
 	forward.z = 1;
+	lighting.y = 1.f;
 	reset = false;
+	sunup = true;
+	sunrotate = 0;
+	Day = 0;
+
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
 	Player::getplayer();
@@ -79,7 +96,28 @@ void SceneBase::Init()
 	projectionStack.LoadMatrix(projection);
 
 	// Make sure you pass uniform parameters after glUseProgram()
+	light[0].type = Light::LIGHT_DIRECTIONAL;
+	light[0].position.Set(0, 100, 0);
+	light[0].color.Set(1, 1, 1);
+	light[0].power = 1.f;
+	light[0].kC = 100.f;
+	light[0].kL = 0.01f;
+	light[0].kQ = 0.001f;
+	light[0].cosCutoff = cos(Math::DegreeToRadian(45));
+	light[0].cosInner = cos(Math::DegreeToRadian(30));
+	light[0].exponent = 3.f;
+	light[0].spotDirection.Set(0.f, 1.f, 0.f);
 
+	glUniform1i(m_parameters[U_LIGHT0_TYPE], light[0].type);
+	glUniform3fv(m_parameters[U_LIGHT0_COLOR], 1, &light[0].color.r);
+	glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+	glUniform1f(m_parameters[U_LIGHT0_KC], light[0].kC);
+	glUniform1f(m_parameters[U_LIGHT0_KL], light[0].kL);
+	glUniform1f(m_parameters[U_LIGHT0_KQ], light[0].kQ);
+	glUniform1f(m_parameters[U_LIGHT0_COSCUTOFF], light[0].cosCutoff);
+	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
+	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
+	glUniform1i(m_parameters[U_NUMLIGHTS], 1);
 	//meshList[Player::getplayer()->getID()] = MeshBuilder::GenerateOBJ("player", "OBJ//player.obj");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
@@ -120,15 +158,15 @@ void SceneBase::Update(double dt)
 	{
 		Application::IsExit = true;
 	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 //	if (allbuildingcollision(Player::getplayer()))
 	{
 		Player::getplayer()->Update(camForward, camRight, dt);
 	}
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+
 	SpawnEnemy(dt);
+	LightUpdate(dt);
 	//SpawnBuilding(dt);
-	light[0].LightUpdate(dt);
-	
 }
 
 void SceneBase::Render()
@@ -144,7 +182,24 @@ void SceneBase::Render()
 
 	modelStack.LoadIdentity();
 
-	light[0].LightRender(viewStack);
+	if (light[0].type == Light::LIGHT_DIRECTIONAL)
+	{
+		Vector3 lightDir(light[0].position.x, light[0].position.y, light[0].position.z);
+		Vector3 lightDirection_cameraspace = viewStack.Top() * lightDir;
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightDirection_cameraspace.x);
+	}
+	else if (light[0].type == Light::LIGHT_SPOT)
+	{
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
+		Vector3 spotDirection_cameraspace = viewStack.Top() * light[0].spotDirection;
+		glUniform3fv(m_parameters[U_LIGHT0_SPOTDIRECTION], 1, &spotDirection_cameraspace.x);
+	}
+	else
+	{
+		Position lightPosition_cameraspace = viewStack.Top() * light[0].position;
+		glUniform3fv(m_parameters[U_LIGHT0_POSITION], 1, &lightPosition_cameraspace.x);
+	}
 
 	RenderMesh(meshList[GEO_AXES], false);
 
@@ -287,13 +342,13 @@ void SceneBase::RenderSkybox()
 	modelStack.Rotate(270, 1, 0, 0);
 	modelStack.Translate(0, 0.5, 0);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (sunup == 1)
 		RenderMesh(meshList[GEO_LEFT], false);
 
-	else if(light[0].Lightgetsunup() == 2)
+	else if(sunup == 2)
 		RenderMesh(meshList[GEO_LEFT1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (sunup == 3)
 		RenderMesh(meshList[GEO_LEFT2], false);
 
 	modelStack.PopMatrix();
@@ -302,13 +357,13 @@ void SceneBase::RenderSkybox()
 	modelStack.Translate(0, -0.5, 0);
 	modelStack.Scale(1, 1, -1);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (sunup == 1)
 		RenderMesh(meshList[GEO_BOTTOM], false);
 
-	else if (light[0].Lightgetsunup() == 2)
+	else if (sunup == 2)
 		RenderMesh(meshList[GEO_BOTTOM1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (sunup == 3)
 		RenderMesh(meshList[GEO_BOTTOM2], false);
 
 	modelStack.PopMatrix();
@@ -317,13 +372,13 @@ void SceneBase::RenderSkybox()
 	modelStack.Rotate(90, 1, 0, 0);
 	modelStack.Translate(0, 0.5, 0);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (sunup == 1)
 		RenderMesh(meshList[GEO_RIGHT], false);
 
-	else if (light[0].Lightgetsunup() == 2)
+	else if (sunup == 2)
 		RenderMesh(meshList[GEO_RIGHT1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (sunup == 3)
 		RenderMesh(meshList[GEO_RIGHT2], false);
 
 	modelStack.PopMatrix();
@@ -332,13 +387,13 @@ void SceneBase::RenderSkybox()
 	modelStack.Rotate(90, 0, 0, 1);
 	modelStack.Rotate(180, 1, 0, 0);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (sunup == 1)
 		RenderMesh(meshList[GEO_BACK], false);
 
-	else if (light[0].Lightgetsunup() == 2)
+	else if (sunup == 2)
 		RenderMesh(meshList[GEO_BACK1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (sunup == 3)
 		RenderMesh(meshList[GEO_BACK2], false);
 
 	modelStack.PopMatrix();
@@ -346,26 +401,26 @@ void SceneBase::RenderSkybox()
 	modelStack.Rotate(90, 0, 1, 0);
 	modelStack.Translate(0, 0.5, 0);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (sunup == 1)
 		RenderMesh(meshList[GEO_TOP], false);
 
-	else if (light[0].Lightgetsunup() == 2)
+	else if (sunup == 2)
 		RenderMesh(meshList[GEO_TOP1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (sunup == 3)
 		RenderMesh(meshList[GEO_TOP2], false);
 
 	modelStack.PopMatrix();
 	modelStack.Translate(-0.5, 0, 0);
 	modelStack.Rotate(90, 0, 0, 1);
 
-	if (light[0].Lightgetsunup() == 1)
+	if (sunup == 1)
 		RenderMesh(meshList[GEO_FRONT], false);
 
-	else if (light[0].Lightgetsunup() == 2)
+	else if (sunup == 2)
 		RenderMesh(meshList[GEO_FRONT1], false);
 
-	else if (light[0].Lightgetsunup() == 3)
+	else if (sunup == 3)
 		RenderMesh(meshList[GEO_FRONT2], false);
 
 	modelStack.PopMatrix();
@@ -534,4 +589,63 @@ bool SceneBase::allbuildingcollision(GameObject* test)
 		}
 
 	}
+}
+
+void SceneBase::LightUpdate(double dt)
+{
+	if (!reset)
+	{
+		suntimer = 1;
+	}
+	lightrotate = (dt * suntimer) * 10;
+	sunrotate += lightrotate;
+	LightPos.SetToRotation(lightrotate, 0, 0, 1);
+	lighting = LightPos * lighting;
+
+	if (lighting.y <= 0)
+	{
+		light[0].power = 0;
+		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+		if (lighting.y >= 0 && lighting.y <= 0.5)
+		{
+			sunup = 3;
+			reset = false;
+		}
+		else if (lighting.y <= -0.5)
+		{
+			sunup = 2;
+			reset = false;
+		}
+	}
+	else
+	{
+		light[0].type = Light::LIGHT_DIRECTIONAL;
+		light[0].position.Set(lighting.x, lighting.y, lighting.z);
+		light[0].power = 1;
+		glUniform1f(m_parameters[U_LIGHT0_POWER], light[0].power);
+
+		if (lighting.y >= 0 && lighting.y < 0.5)
+		{
+			sunup = 3;
+		}
+		else if (lighting.y > 0.5)
+		{
+			sunup = 1;
+		}
+	}
+
+	if (sunrotate >= 390)
+	{
+		sunrotate -= 390;
+		Day++;
+	}
+
+	//std::cout << "Lighting Level: " << lighting.y << std::endl;
+	std::cout << "Day: " << Day << std::endl;
+}
+
+void SceneBase::LightReset(double dt)
+{
+	suntimer = 20;
+	reset = true;
 }

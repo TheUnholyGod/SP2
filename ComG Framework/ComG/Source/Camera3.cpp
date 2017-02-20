@@ -95,6 +95,8 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 	anchorY = windowY / 2;
 	*camForward = view;
 	*camRight = right;
+
+
 }
 
 void Camera3::Reset()

@@ -72,6 +72,7 @@ void SceneMainMenu::Init()
 	forward.z = 1;
 
 	options = false;
+	optionHighlight = 0;
 
 	play = 1;
 	back = false;
@@ -107,6 +108,15 @@ void SceneMainMenu::Init()
 	//Options Menu
 	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//Options Menu.tga");
+
+	meshList[GEO_MOUSE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_MOUSE]->textureID = LoadTGA("Image//Options Menu Mouse.tga");
+
+	meshList[GEO_VOLUME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_VOLUME]->textureID = LoadTGA("Image//Options Menu Volume.tga");
+
+	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//Options Menu Back.tga");
 }
 
 void SceneMainMenu::Update(double dt)
@@ -145,7 +155,6 @@ void SceneMainMenu::Update(double dt)
 				}
 				start = std::clock();
 			}
-
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
 
@@ -165,6 +174,51 @@ void SceneMainMenu::Update(double dt)
 				}
 				start = std::clock();
 			}
+			if (Application::IsKeyPressed(VK_LBUTTON))
+			{
+				if ((cursorX >= 150 && cursorX <= 240) && (cursorY >= 260 && cursorY <= 300)) //Click on Left Arrows '<<'
+				{
+					if (play >= 0)
+					{
+						play--;
+					}
+					if (play < 0)
+					{
+						play = 2;
+					}
+					start = std::clock();
+				}
+				else if ((cursorX >= 560 && cursorX <= 650) && (cursorY >= 260 && cursorY <= 300)) //Click on Right Arrows '>>'
+				{
+					if (play < 3)
+					{
+						play++;
+					}
+					if (play > 2)
+					{
+						play = 0;
+					}
+					start = std::clock();
+				}
+				else if ((cursorX >= 240 && cursorX <= 560) && (cursorY >= 260 && cursorY <= 300)) //Click on Word 'Play' 'Options' 'Exit'
+				{
+					if (play == 0)
+					{
+						Application::IsExit = true;
+
+					}
+					if (play == 1)
+					{
+						options = false;
+						SceneManager::currScene = 3;
+					}
+					if (play == 2)
+					{
+						options = true;
+					}
+					start = std::clock();
+				}
+			}
 		}
 	}
 	if (options)
@@ -172,18 +226,6 @@ void SceneMainMenu::Update(double dt)
 		if (elapsedTime > 0.01)
 		{
 			if (Application::IsKeyPressed(VK_UP))
-			{
-				if (optionHighlight < 3)
-				{
-					optionHighlight++;
-				}
-				if (optionHighlight > 2)
-				{
-					optionHighlight = 0;
-				}
-				start = std::clock();
-			}
-			if (Application::IsKeyPressed(VK_DOWN))
 			{
 				if (optionHighlight >= 0)
 				{
@@ -195,13 +237,34 @@ void SceneMainMenu::Update(double dt)
 				}
 				start = std::clock();
 			}
-
-			if (Application::IsKeyPressed(VK_RETURN))
+			if (Application::IsKeyPressed(VK_DOWN))
 			{
-
+				if (optionHighlight < 3)
+				{
+					optionHighlight++;
+				}
+				if (optionHighlight > 2)
+				{
+					optionHighlight = 0;
+				}
+				start = std::clock();
+			}
+			if (cursorY >= 340 && cursorY <= 390)
+			{
+				optionHighlight = 0;
+			}
+			if (cursorY >= 190 && cursorY <= 230)
+			{
+				optionHighlight = 1;
+			}
+			if (cursorY >= 40 && cursorY <= 80)
+			{
+				optionHighlight = 2;
+			}
+			if (Application::IsKeyPressed(VK_RETURN) || Application::IsKeyPressed(VK_LBUTTON))
+			{
 				if (optionHighlight == 0)
 				{
-
 
 				}
 				if (optionHighlight == 1)
@@ -210,15 +273,14 @@ void SceneMainMenu::Update(double dt)
 				}
 				if (optionHighlight == 2)
 				{
-
+					play = 1;
+					optionHighlight = 0;
+					options = false;
 				}
 				start = std::clock();
 			}
 		}
 	}
-
-	std::cout << "Cursor X: " << cursorX << std::endl;
-	std::cout << "Cursor Y: " << cursorY << std::endl;
 }
 
 void SceneMainMenu::Render()
@@ -255,17 +317,17 @@ void SceneMainMenu::Render()
 	{
 		RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], 40, 30, 16, 12);
 
-		if (play == 0)
+		if (optionHighlight == 0)
 		{
-
+			RenderMeshOnScreen(meshList[GEO_MOUSE], 40, 30, 16, 12);
 		}
-		if (play == 1)
+		if (optionHighlight == 1)
 		{
-			//RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
 		}
-		if (play == 2)
+		if (optionHighlight == 2)
 		{
-			//RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
 		}
 	}
 
