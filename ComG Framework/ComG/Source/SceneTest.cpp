@@ -537,17 +537,12 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
-<<<<<<< HEAD
 	for (int u = 0; u < NUM_GEOMETRY; u++){
 		if (BaseBuildings.size() < NUM_BUILDINGGEOMETRY)
 		{
 			BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(u + buildingID));
 		}
 	}
-=======
-	//if (BaseBuildings.size() < 1)
-	//	BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
->>>>>>> 4f14404e2f548e04f4ff57f0c1f56cb0c3306daf
 
 	for (auto &i : BaseBuildings)
 	{
