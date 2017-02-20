@@ -1,6 +1,6 @@
 #include "Barn.h"
 
-Barn::Barn() : Building(101, "Barn", "OBJ//Barn.obj", "Image//BarnInteriorUV.tga", 100, NORMAL, true)
+Barn::Barn() : Building(101, "Barn", "OBJ//Barn.obj", "Image//BarnInteriorUV(1).tga", 100, NORMAL, true)
 {
 	//size.push_back(Vector3(1, 1, 1));;
 	for (auto &i : size)

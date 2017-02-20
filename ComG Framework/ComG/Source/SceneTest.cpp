@@ -126,6 +126,25 @@ void SceneTest::Init()
 	meshList[GEO_QUAD] = MeshBuilder::GenerateQuad1("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_QUAD]->textureID = LoadTGA("Image//ground.tga");
 
+	//Building Buildings UI
+	spritesList[GEO_BUILDUI] = MeshBuilder::GenerateQuad("buidUI", Color(0, 1, 0), 1.f);
+	spritesList[GEO_BUILDUI]->textureID = LoadTGA("Image//ground.tga");
+
+	spritesList[GEO_BARNSPRITE] = MeshBuilder::GenerateQuad("BarnSprite", Color(0, 1, 0), 1.f);
+	spritesList[GEO_BARNSPRITE]->textureID = LoadTGA("Image//BarnSprite.tga");
+
+	spritesList[GEO_TROPHYROOMSPRITE] = MeshBuilder::GenerateQuad("TrophyRoomSprite", Color(0, 1, 0), 1.f);
+	spritesList[GEO_TROPHYROOMSPRITE]->textureID = LoadTGA("Image//TrophyRoomSprite.tga");
+
+	spritesList[GEO_INVENTORYROOMSPRITE] = MeshBuilder::GenerateQuad("InventoryRoomSprite", Color(0, 1, 0), 1.f);
+	spritesList[GEO_INVENTORYROOMSPRITE]->textureID = LoadTGA("Image//InventoryRoomSprite.tga");
+
+	spritesList[GEO_NPCHOUSESPRITE] = MeshBuilder::GenerateQuad("NPCHouseSprite", Color(0, 1, 0), 1.f);
+	spritesList[GEO_NPCHOUSESPRITE]->textureID = LoadTGA("Image//NPCHouseSprite.tga");
+
+	spritesList[GEO_FASTTRAVELPORTALSPRITE] = MeshBuilder::GenerateQuad("FastTravelRoomSprite", Color(0, 1, 0), 1.f);
+	spritesList[GEO_FASTTRAVELPORTALSPRITE]->textureID = LoadTGA("Image//FastTravelRoomSprite.tga");
+
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
 
 	for (int i = 0; i<enemyMeshList.size(); i++)
@@ -143,6 +162,7 @@ void SceneTest::Init()
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
 		weaponmesh[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getTextureLocation());
 	}
+	buildBuilding = false;
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
@@ -161,6 +181,10 @@ void SceneTest::Update(double dt)
 	{
 		Application::IsExit = true;
 	}
+	if (Application::IsKeyPressed('B'))
+	{
+		buildBuilding = true;
+	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	//	if (allbuildingcollision(Player::getplayer()))
 	{
@@ -170,6 +194,9 @@ void SceneTest::Update(double dt)
 	SpawnEnemy(dt);
 	LightUpdate(dt);
 	SpawnBuilding(dt);
+	if (buildBuilding){
+		buildBuildingUpdate(dt);
+	}
 }
 
 void SceneTest::Render()
@@ -213,13 +240,29 @@ void SceneTest::Render()
 	RenderMesh(meshList[GEO_QUAD], false);
 	modelStack.PopMatrix();
 
+	RenderEnemy();
+	RenderBuilding();
+
 	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
 	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
 
-	RenderEnemy();
-	RenderBuilding();
+	if (buildBuilding){
+		RenderMeshOnScreen(spritesList[GEO_BUILDUI], 40, 30, 80, 60);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press 'K' to exit building", Color(0, 0, 1), 3.f, .5f, 19.f);
+		RenderTextOnScreen(meshList[GEO_TEXT], "vvvvvvv Builderable vvvvvvv", Color(.8, 0, .8), 3.f, .5f, 16.f);
+		for (int i = 1, x=10, displacement =0; i < NUM_SPRITES; i++){
+			RenderMeshOnScreen(spritesList[i], x+displacement, 40, 12, 12);
+			displacement += 15;
+		}
+		RenderTextOnScreen(meshList[GEO_TEXT], "vvvvv Non-Builderable vvvvv", Color(.8, 0, .8), 3.f, .5f, 10.f);
+		for (int i = 1, x = 10, displacement = 0; i < NUM_SPRITES; i++){
+			RenderMeshOnScreen(spritesList[i], x + displacement, 20, 12, 12);
+			displacement += 15;
+		}
+
+	}
 }
 
 void SceneTest::Exit()
@@ -656,4 +699,12 @@ void SceneTest::LightReset(double dt)
 {
 	suntimer = 20;
 	reset = true;
+}
+
+void SceneTest::buildBuildingUpdate(double dt)
+{
+	if (Application::IsKeyPressed('K')){
+		buildBuilding = false;
+	}
+
 }
