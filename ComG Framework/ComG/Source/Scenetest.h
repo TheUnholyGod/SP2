@@ -44,6 +44,19 @@ class SceneTest : public Scene
 		GEO_BOTTOM2,
 		GEO_FRONT2,
 		GEO_BACK2,
+
+		GEO_CURSOR,
+
+		GEO_PAUSEMENU,
+		GEO_OPTIONSMENU,
+
+		GEO_OPTIONS,
+		GEO_BACKTOGAME,
+		GEO_BACKTOMAIN,
+
+		GEO_MOUSE,
+		GEO_VOLUME,
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -160,6 +173,23 @@ private:
 
 	void SpawnBuilding(double dt);
 	void RenderBuilding();
+
+	int windowX;
+	int windowY;
+
+	double cursorX;
+	double cursorY;
+
+	int windowXpos;
+	int windowYpos;
+
+	bool pause;
+	bool options;
+	int pauseHighlight;
+	int optionHighlight;
+
+	std::clock_t start;
+	float elapsedTime;
 };
 
 #endif
