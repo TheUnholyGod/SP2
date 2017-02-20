@@ -173,7 +173,6 @@
     <None Include="Shader\SimpleVertexShader.vertexshader">
       <Filter>Shader</Filter>
     </None>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp">
@@ -202,9 +201,6 @@
     </ClCompile>
     <ClCompile Include="Source\Utility.cpp">
       <Filter>Source Files\Framework\Rendering and  Lighting</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Camera.cpp">
-      <Filter>Source Files\Camera</Filter>
     </ClCompile>
     <ClCompile Include="Source\Camera2.cpp">
       <Filter>Source Files\Camera</Filter>
@@ -431,26 +427,8 @@
     <ClCompile Include="Source\ItemFactory.cpp">
       <Filter>Source Files\Factory</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EnemyDataBase.cpp">
-      <Filter>Source Files\GameObject\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\AbilityDataBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BuildingDataBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BuildingFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\SceneTest.cpp">
       <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Inventory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Collision.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\SceneBase.cpp">
       <Filter>Source Files\Scenes</Filter>
@@ -464,11 +442,35 @@
     <ClCompile Include="Source\SceneWildLife.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EnemyDataBase.cpp">
+      <Filter>Source Files\GameObject\Enemy</Filter>
+    </ClCompile>
     <ClCompile Include="Source\SaveLoad.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collision.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BuildingDataBase.cpp">
+      <Filter>Source Files\GameObject\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AbilityDataBase.cpp">
+      <Filter>Source Files\GameObject\Abilitiy</Filter>
     </ClCompile>
     <ClCompile Include="Source\Camera4.cpp">
       <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BuildingFactory.cpp">
+      <Filter>Source Files\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Projectile.cpp">
+      <Filter>Source Files\GameObject\Items\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Inventory.cpp">
+      <Filter>Source Files\GameObject\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -733,18 +735,6 @@
     <ClInclude Include="Source\SceneBase.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="Source\AbilityDataBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\BuildingFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Inventory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Collision.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Goat.h">
       <Filter>Header Files\GameObject\Enemy\Forest</Filter>
     </ClInclude>
@@ -763,14 +753,29 @@
     <ClInclude Include="Source\SceneWildLife.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="Source\BuildingFactory.h">
+      <Filter>Header Files\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Inventory.h">
+      <Filter>Header Files\GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Collision.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
     <ClInclude Include="Source\SaveLoad.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Framework</Filter>
     </ClInclude>
     <ClInclude Include="Source\Camera4.h">
       <Filter>Header Files\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="Source\AbilityDataBase.h">
+      <Filter>Header Files\GameObject\Ability</Filter>
+    </ClInclude>
     <ClInclude Include="Source\BuildingDataBase.h">
       <Filter>Header Files\GameObject\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Projectile.h">
+      <Filter>Header Files\GameObject\Items\Weapons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -21,6 +21,7 @@ public:
 	float pitch, yaw;
 	float pitchLimit;
 	static Vector3 getPosition();
+	bool is_menu;
 
 	Camera3();
 	~Camera3();

@@ -10,17 +10,9 @@
 
 #include <sstream>
 
-POINT cursorPoint;
+extern POINT cursorPoint;
 
 SceneMainMenu::SceneMainMenu()
-{
-}
-
-SceneMainMenu::~SceneMainMenu()
-{
-}
-
-void SceneMainMenu::Init()
 {
 	cursorX = 0;
 	cursorY = 0;
@@ -29,8 +21,23 @@ void SceneMainMenu::Init()
 	cursorPoint.x = cursorPoint.y = 0;
 
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
-	glfwSetCursorPos(Application::m_window,windowX / 2, windowY / 2);
+	glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
 
+	options = false;
+	optionHighlight = 0;
+
+	play = 1;
+	back = false;
+
+	start = std::clock();
+}
+
+SceneMainMenu::~SceneMainMenu()
+{
+}
+
+void SceneMainMenu::Init()
+{
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -70,14 +77,6 @@ void SceneMainMenu::Init()
 
 	//glUseProgram(m_programID);
 	forward.z = 1;
-
-	options = false;
-	optionHighlight = 0;
-
-	play = 1;
-	back = false;
-
-	start = std::clock();
 
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
@@ -165,6 +164,7 @@ void SceneMainMenu::Update(double dt)
 				}
 				if (play == 1)
 				{
+					play = 1;
 					options = false;
 					SceneManager::currScene = 4;
 				}
@@ -331,7 +331,7 @@ void SceneMainMenu::Render()
 		}
 	}
 
-	RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 10, 10);
+	RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
 }
 
 void SceneMainMenu::Exit()

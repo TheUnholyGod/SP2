@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Application.h"
 #include "Compound_Bow.h"
+#include "Collision.h"
 
 Player* Player::player;
 

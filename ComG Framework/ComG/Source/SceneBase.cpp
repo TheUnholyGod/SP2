@@ -537,9 +537,6 @@ void SceneBase::RenderEnemy()
 
 void SceneBase::SpawnBuilding(double dt)
 {
-	//if (BaseBuildings.size() < 1)
-	//	BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
-
 	for (auto &i : BaseBuildings)
 	{
 		i->update(dt);

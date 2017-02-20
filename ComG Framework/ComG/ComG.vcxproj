@@ -42,9 +42,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -83,7 +85,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
     <None Include="Shader\SimpleFragmentShader.fragmentshader" />
     <None Include="Shader\SimpleVertexShader.vertexshader" />
   </ItemGroup>
@@ -156,6 +157,7 @@
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Potato.cpp" />
     <ClCompile Include="Source\PowerGenerator.cpp" />
+    <ClCompile Include="Source\Projectile.cpp" />
     <ClCompile Include="Source\Radioactive.cpp" />
     <ClCompile Include="Source\Renderer.cpp" />
     <ClCompile Include="Source\Resources.cpp" />
@@ -258,6 +260,7 @@
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Potato.h" />
     <ClInclude Include="Source\PowerGenerator.h" />
+    <ClInclude Include="Source\Projectile.h" />
     <ClInclude Include="Source\Radioactive.h" />
     <ClInclude Include="Source\Renderer.h" />
     <ClInclude Include="Source\Resources.h" />

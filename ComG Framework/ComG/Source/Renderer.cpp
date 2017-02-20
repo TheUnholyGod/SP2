@@ -52,5 +52,5 @@ Mtx44 Renderer::getMatrix()
 	right_.Normalize();
 	forward_.Normalize();
 	up_.Normalize();
-	return matrix_ = Mtx44(right_.x, right_.y, right_.z, 0, up_.x, up_.y, up_.z, 0, forward_.x, forward_.y, forward_.z, 0, position_.x, position_.y, position_.z, 1);
+	return matrix_ = Mtx44(right_.x*scaling, right_.y*scaling, right_.z*scaling, 0, up_.x*scaling, up_.y*scaling, up_.z*scaling, 0, forward_.x*scaling, forward_.y*scaling, forward_.z*scaling, 0, position_.x, position_.y, position_.z, 1);
 }
