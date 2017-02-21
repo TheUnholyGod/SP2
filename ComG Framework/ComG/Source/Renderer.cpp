@@ -19,6 +19,10 @@ Renderer::~Renderer()
 void Renderer::translate(Vector3 direction, double speed)
 {
 	this->position_ += direction * speed;
+	if (this->position_.y < 0)
+	{
+		this->position_.y = 0;
+	}
 }
 
 void Renderer::rotate(Vector3 axisofrotate, double rotatespeed, float rotateangle)

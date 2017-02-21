@@ -18,7 +18,6 @@ void Projectile::FireProjectile()
 	defaultpos = gameobjrenderer_->getPosition();
 	gameobjrenderer_->setPosition(Player::getplayer()->getWeapon()->getRenderer().getPosition());
 	gameobjrenderer_->setForward(Player::getplayer()->getWeapon()->getRenderer().getForward());
-	std::cout << "Forward: " << gameobjrenderer_->getForward() << std::endl;
 }
 
 bool Projectile::hit()

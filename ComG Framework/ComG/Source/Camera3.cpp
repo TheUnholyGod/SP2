@@ -78,6 +78,8 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 			rotation.SetToRotation(pitch, right.x, right.y, right.z);
 			temp = rotation * temp;
 			target = position + temp;
+			up = right.Cross(view);
+			up.Normalize();
 			pitchLimit += (anchorY - point.y);
 		}
 		else if (pitchLimit > -200 && point.y > anchorY)
@@ -87,6 +89,8 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 			rotation.SetToRotation(pitch, right.x, right.y, right.z);
 			temp = rotation * temp;
 			target = position + temp;
+			up = right.Cross(view);
+			up.Normalize();
 			pitchLimit -= (point.y - anchorY);
 		}
 
@@ -99,7 +103,7 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 		anchorY = windowY / 2;
 		*camForward = view;
 		*camRight = right;
-
+		std::cout << "Up: " << up << std::endl;
 
 	}
 }

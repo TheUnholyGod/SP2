@@ -906,7 +906,6 @@ void SceneTest::UpdateProjectiles(double dt)
 		for (auto &i : BaseProjectile)
 		{
 			i->update(dt);
-			std::cout<<"Position: " << i->getRenderer().getPosition() << std::endl;
 			if (i->toDelete())
 			{
 				pos.push_back(counter);
