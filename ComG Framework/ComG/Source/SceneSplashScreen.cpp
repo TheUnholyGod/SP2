@@ -6,6 +6,7 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
+#include "Menu.h"
 
 #include <sstream>
 
@@ -58,7 +59,7 @@ void SceneSplashScreen::Init()
 
 	light[0].LightInit(m_programID);
 
-	fp_camera.Init(Vector3(10,10,10),Vector3(0,10,0), Vector3(0, 1, 0));
+	fp_camera.Init(Vector3(10,10,10),Vector3(1,0,0), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 

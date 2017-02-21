@@ -3,7 +3,6 @@
 #include "SceneUI.h"
 #include "SceneSplashScreen.h"
 #include "SceneTest.h"
-#include "ScenePlay.h"
 #include "SceneMainMenu.h"
 #include "Application.h"
 
@@ -19,7 +18,6 @@ SceneManager::SceneManager()
 	SceneDataBase[3] = new SceneBase();
 	SceneDataBase[4] = new SceneTest();
 	SceneDataBase[5] = new SceneUI();
-	SceneDataBase[6] = new ScenePlay();
 }
 
 SceneManager::~SceneManager()

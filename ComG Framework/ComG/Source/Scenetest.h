@@ -14,6 +14,7 @@
 #include "Building.h"
 #include "Enemy.h"
 #include "Projectile.h" 
+#include "Menu.h"
 #include <vector>
 #include <array>
 
@@ -198,6 +199,9 @@ private:
 	void UpdateProjectiles(double dt);
 	void RenderProjectile();
 
+	std::vector<Item*> BaseItems;
+
+	Menu pauseMenu;
 	int windowX;
 	int windowY;
 

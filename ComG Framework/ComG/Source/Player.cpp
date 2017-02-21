@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "Compound_Bow.h"
 #include "Collision.h"
+#include "Item.h"
 
 Player* Player::player;
 
@@ -58,9 +59,11 @@ void  Player::setWeapon(int key)
 	playerweapon_->getRenderer().setForward(player->getRenderer().getForward());
 }
 
-void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings,std::list<Enemy*> enemies)
+void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings,std::list<Enemy*> enemies, std::vector<Item*> items)
 {
 	bool move = false;
+	bool pickup = false;
+
 	Vector3 camForwardTemp = camForward;
 	camForwardTemp.y = 0;
 	if (gameobjrenderer_->getForward() != camForwardTemp)
@@ -153,6 +156,30 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 			playerweapon_->getRenderer().translate(camForwardTemp, movement_speed_ * dt);
 			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
 		}
+	}
+	if (Application::IsKeyPressed('E'))
+	{
+		std::vector<int> pos;
+		int counter = 0;
+		int eraser = 0;
+		for (auto &i : items)
+		{
+			pickup = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+			if (pickup)
+			{
+				std::cout << "picked up" << std::endl;
+				Item* temp = i;
+				Inventory::getinventory()->Additem(temp->getID());
+				pos.push_back(counter);
+			}
+			counter++;
+		}
+		for (auto &i : pos)
+		{
+			items.erase(items.begin() + i - eraser);
+			eraser++;
+		}
+		
 	}
 }
 

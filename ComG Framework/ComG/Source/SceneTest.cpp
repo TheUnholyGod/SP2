@@ -15,18 +15,8 @@
 #include "SaveLoad.h"
 #include <sstream>
 
-POINT cursorPoint;
-
 SceneTest::SceneTest() : buildingID(101)
 {
-	cursorX = 0;
-	cursorY = 0;
-
-	windowX = windowY = 0;
-	cursorPoint.x = cursorPoint.y = 0;
-
-	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
-	glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
 }
 
 SceneTest::~SceneTest()
@@ -35,6 +25,9 @@ SceneTest::~SceneTest()
 
 void SceneTest::Init()
 {
+	//init UI
+	pauseMenu.init();
+
 	//sunup = 1;
 	LSPEED = 10.f;
 	// Init VBO here
@@ -101,12 +94,8 @@ void SceneTest::Init()
 
 	start = std::clock();
 	Istart = std::clock();
-
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
-	Player::getplayer();
-	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(25, 50, 25), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
-	Inventory::getinventory();
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -166,32 +155,6 @@ void SceneTest::Init()
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
 
-	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_CURSOR]->textureID = LoadTGA("Image//cursorPointer.tga");
-
-	meshList[GEO_PAUSEMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_PAUSEMENU]->textureID = LoadTGA("Image//Pause Menu.tga");
-
-	meshList[GEO_OPTIONS] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_OPTIONS]->textureID = LoadTGA("Image//pauseMenu - Options.tga");
-
-	meshList[GEO_BACKTOGAME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_BACKTOGAME]->textureID = LoadTGA("Image//pauseMenu - BackToGame.tga");
-
-	meshList[GEO_BACKTOMAIN] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_BACKTOMAIN]->textureID = LoadTGA("Image//pauseMenu - BackToMainMenu.tga");
-
-	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//Options Menu.tga");
-
-	meshList[GEO_MOUSE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_MOUSE]->textureID = LoadTGA("Image//Options Menu Mouse.tga");
-
-	meshList[GEO_VOLUME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_VOLUME]->textureID = LoadTGA("Image//Options Menu Volume.tga");
-
-	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//Options Menu Back.tga");
 
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
@@ -200,8 +163,8 @@ void SceneTest::Init()
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
-		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getSourceLocation());
-		buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getTextureLocation());
+		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getSourceLocation());
+		buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getTextureLocation());
 	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
@@ -211,8 +174,10 @@ void SceneTest::Init()
 	buildBuilding = false;
 	suntimer = 1;
 	LoadSkybox();
+	Player::getplayer();
+	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
-	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 }
 
@@ -220,141 +185,54 @@ void SceneTest::Update(double dt)
 {
 	DebugMode(dt);
 
-	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
-	cursorY = -cursorY + 600;
-
-	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
-
 	if (Application::IsKeyPressed('E'))
 	{
 		SceneManager::currScene = 3;
-	}
-
-	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
-	{
-		if (!pause)
-		{
-			fp_camera.is_menu = true;
-			pause = true;
-		}
-		else if (pause)
-		{
-			pauseHighlight = 0;
-			optionHighlight = 0;
-
-			glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
-			fp_camera.is_menu = false;
-			pause = false;
-		}
-		start = std::clock();
-	}
-
-	if (pause)
-	{
-		if (elapsedTime > 0.01)
-		{
-			if (Application::IsKeyPressed(VK_UP))
-			{
-				if (pauseHighlight >= 0)
-				{
-					pauseHighlight--;
-				}
-				if (pauseHighlight < 0)
-				{
-					pauseHighlight = 2;
-				}
-				start = std::clock();
-			}
-			if (Application::IsKeyPressed(VK_DOWN))
-			{
-				if (pauseHighlight < 3)
-				{
-					pauseHighlight++;
-				}
-				if (pauseHighlight > 2)
-				{
-					pauseHighlight = 0;
-				}
-				start = std::clock();
-			}
-			if (cursorY >= 285 && cursorY <= 325)
-			{
-				pauseHighlight = 0;
-			}
-			if (cursorY >= 180 && cursorY <= 225)
-			{
-				pauseHighlight = 1;
-			}
-			if (cursorY >= 75 && cursorY <= 120)
-			{
-				pauseHighlight = 2;
-			}
-			if (Application::IsKeyPressed(VK_RETURN) || Application::IsKeyPressed(VK_LBUTTON))
-			{
-				if (pauseHighlight == 0)
-				{
-
-				}
-				if (pauseHighlight == 1)
-				{
-					pauseHighlight = 0;
-					optionHighlight = 0;
-
-					glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
-					fp_camera.is_menu = false;
-					pause = false;
-				}
-				if (pauseHighlight == 2)
-				{
-					pauseHighlight = 0;
-					optionHighlight = 0;
-
-					glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
-					fp_camera.is_menu = false;
-					pause = false;
-
-					SceneManager::currScene = 2;
-				}
-			}
-		}
 	}
 	if (Application::IsKeyPressed('B'))
 	{
 		buildBuilding = true;
 	}
-	Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy);
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 
-	ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
+	pauseMenu.update();
 
-	if (Application::IsKeyPressed('I'))
+	if (!pauseMenu.pause)
 	{
-		if (ITime > 0.005)
+		ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
+
+		if (Application::IsKeyPressed('I'))
 		{
-			Istart = std::clock();
-			Inventory::getinventory()->setupdate();
+			if (ITime > 0.005)
+			{
+				Istart = std::clock();
+				Inventory::getinventory()->setupdate();
+			}
 		}
-	}
+		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy, BaseItems);
+		if (Application::IsKeyPressed(VK_LBUTTON))
+		{
+			SpawnProjectile();
+		}
 
-	if (Application::IsKeyPressed(VK_LBUTTON))
-	{
-		SpawnProjectile();
-	}
-	SpawnEnemy(dt);
-	LightUpdate(dt);
-	SpawnBuilding();
-	UpdateProjectiles(dt);
-	if (buildBuilding)
-	{
+		SpawnEnemy(dt);
+		LightUpdate(dt);
 		SpawnBuilding();
-
-		if (buildBuilding) {
-			buildBuildingUpdate(dt);
-		}
-
-		if (Inventory::getinventory()->getopeninventory() == true)
+		UpdateProjectiles(dt);
+		UpdateEnemy(dt);
+		if (buildBuilding)
 		{
-			Inventory::getinventory()->Update(dt);
+			SpawnBuilding();
+
+			if (buildBuilding)
+			{
+				buildBuildingUpdate(dt);
+			}
+
+			if (Inventory::getinventory()->getopeninventory())
+			{
+				Inventory::getinventory()->Update(dt);
+			}
 		}
 	}
 }
@@ -409,21 +287,22 @@ void SceneTest::Render()
 	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
 
-	if (buildBuilding) {
+	if (buildBuilding) 
+	{
 		RenderMeshOnScreen(spritesList[GEO_BUILDUI], 40, 30, 80, 60);
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press 'K' to exit building", Color(0, 0, 1), 3.f, .5f, 19.f);
 		RenderTextOnScreen(meshList[GEO_TEXT], "vvvvvvv Builderable vvvvvvv", Color(.8, 0, .8), 3.f, .5f, 16.f);
-		for (int i = 1, x = 10, displacement = 0; i < NUM_SPRITES; i++) {
+		for (int i = 1, x = 10, displacement = 0; i < NUM_SPRITES; i++)
+		{
 			RenderMeshOnScreen(spritesList[i], x + displacement, 40, 12, 12);
 			displacement += 15;
 		}
 		RenderTextOnScreen(meshList[GEO_TEXT], "vvvvv Non-Builderable vvvvv", Color(.8, 0, .8), 3.f, .5f, 10.f);
-		for (int i = 1, x = 10, displacement = 0; i < NUM_SPRITES; i++) {
+		for (int i = 1, x = 10, displacement = 0; i < NUM_SPRITES; i++) 
+		{
 			RenderMeshOnScreen(spritesList[i], x + displacement, 20, 12, 12);
 			displacement += 15;
 		}
-
-
 	}
 	if (pause)
 	{
@@ -451,6 +330,9 @@ void SceneTest::Render()
 		RenderMeshOnScreen(spritesList[GEO_BUILDUI], 40, 30, 80, 60);
 		RenderTextOnScreen(meshList[GEO_TEXT], "Press 'I' to exit Inventory", Color(0, 0, 1), 3.f, .5f, 19.f);
 	}
+	
+	//Render UI
+	pauseMenu.Render();
 }
 
 void SceneTest::Exit()
@@ -744,9 +626,10 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-	for (auto &i : BaseEnemy)
+	if (BaseEnemy.size() < 20)
 	{
-		i->Update(dt);
+		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
+		BaseEnemy.push_back(temp);
 	}
 }
 

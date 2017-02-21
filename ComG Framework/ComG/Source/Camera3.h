@@ -15,13 +15,14 @@ public:
 	Vector3 defaultTarget;
 	Vector3 defaultUp;
 	Vector3 camVec;
-	Vector3 temp;
+	Vector3 right;
+	Vector3 forward;
+	bool is_menu;
 	int windowX, windowY;
 	int anchorX, anchorY;
 	float pitch, yaw;
 	float pitchLimit;
 	static Vector3 getPosition();
-	bool is_menu;
 
 	Camera3();
 	~Camera3();

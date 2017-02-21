@@ -143,6 +143,7 @@
     <ClCompile Include="Source\Kitchen_Knife.cpp" />
     <ClCompile Include="Source\Lighting.cpp" />
     <ClCompile Include="Source\Lizard.cpp" />
+    <ClCompile Include="Source\LoadATOM.cpp" />
     <ClCompile Include="Source\LoadOBJ.cpp" />
     <ClCompile Include="Source\LoadTGA.cpp" />
     <ClCompile Include="Source\M200_CheyTac_Intervention.cpp" />
@@ -154,6 +155,7 @@
     <ClCompile Include="Source\NPCHouse.cpp" />
     <ClCompile Include="Source\OreMines.cpp" />
     <ClCompile Include="Source\PatrolBot.cpp" />
+    <ClCompile Include="Source\Menu.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Potato.cpp" />
     <ClCompile Include="Source\PowerGenerator.cpp" />
@@ -170,7 +172,6 @@
     <ClCompile Include="Source\SceneCity.cpp" />
     <ClCompile Include="Source\SceneMainMenu.cpp" />
     <ClCompile Include="Source\SceneManager.cpp" />
-    <ClCompile Include="Source\ScenePlay.cpp" />
     <ClCompile Include="Source\SceneSplashScreen.cpp" />
     <ClCompile Include="Source\SceneTest.cpp" />
     <ClCompile Include="Source\SceneUI.cpp" />
@@ -247,6 +248,7 @@
     <ClInclude Include="Source\Light.h" />
     <ClInclude Include="Source\Lighting.h" />
     <ClInclude Include="Source\Lizard.h" />
+    <ClInclude Include="Source\LoadATOM.h" />
     <ClInclude Include="Source\LoadOBJ.h" />
     <ClInclude Include="Source\LoadTGA.h" />
     <ClInclude Include="Source\M200_CheyTac_Intervention.h" />
@@ -258,6 +260,7 @@
     <ClInclude Include="Source\NPCHouse.h" />
     <ClInclude Include="Source\OreMines.h" />
     <ClInclude Include="Source\PatrolBot.h" />
+    <ClInclude Include="Source\Menu.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Potato.h" />
     <ClInclude Include="Source\PowerGenerator.h" />
@@ -275,7 +278,6 @@
     <ClInclude Include="Source\SceneMainMenu.h" />
     <ClInclude Include="Source\SceneManager.h" />
     <ClInclude Include="Source\SceneBase.h" />
-    <ClInclude Include="Source\ScenePlay.h" />
     <ClInclude Include="Source\SceneSplashScreen.h" />
     <ClInclude Include="Source\Scenetest.h" />
     <ClInclude Include="Source\SceneUI.h" />

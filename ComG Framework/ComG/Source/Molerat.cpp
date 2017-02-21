@@ -1,8 +1,14 @@
 #include "Molerat.h"
 #include "MyMath.h"
+#include "Player.h"
 
 Molerat::Molerat() : Enemy(1, "OBJ//MoleRat.obj","Image//MoleratUV.tga" ,"Molerat", NORMAL, "Base", 100, 10, 4)
 {
+	Math::InitRNG();
+	float temp1 = Math::RandFloatMinMax(1, 50) - Player::getplayer()->getRenderer().getPosition().x;
+	float temp2 = 0;
+	float temp3 = Math::RandFloatMinMax(1, 50) - Player::getplayer()->getRenderer().getPosition().z;
+	gameobjrenderer_->setPosition(Vector3(temp1, temp2, temp3));
 	goalreached = true;
 	newDIr = Vector3(1, 0, 0);
 }
@@ -28,7 +34,7 @@ void Molerat::Update(double dt)
 			goalreached = true;
 	}
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-	std::cout << gameobjrenderer_->getForward() << std::endl;
+	//std::cout << gameobjrenderer_->getForward() << std::endl;
 }
 
 void Molerat::pathfinding()

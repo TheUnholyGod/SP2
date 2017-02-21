@@ -6,14 +6,7 @@ POINT point;
 
 Camera3::Camera3()
 {
-	windowX = 0;
-	windowY = 0;
-	//anchor_.x = anchor_.y = 0;
-	point.x = point.y = 0;
-	pitch = 0;
-	yaw = 0;
-	pitchLimit = 0;
-	is_menu = false;
+
 }
 
 Camera3::~Camera3()
@@ -23,18 +16,24 @@ Camera3::~Camera3()
 void Camera3::Init(const Vector3& pos, const Vector3& target, const Vector3& up)
 {
 	this->position = defaultPosition = pos;
-	this->target = defaultTarget = target;
-	Vector3 view = (target - position).Normalized();
-	Vector3 right = view.Cross(up);
-	right.Normalize();
+	this->target = defaultTarget = forward = target;
 	this->up = defaultUp = up;
-	temp = target;
+	this->right = forward.Cross(up);
+	right.Normalize();
+	forward = target;
+	windowX = 0;
+	windowY = 0;
+	point.x = point.y = 0;
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	SetCursorPos(windowX / 2, windowY / 2);
 	GetCursorPos(&point);
 	ShowCursor(false);
 	anchorX = point.x;
 	anchorY = point.y;
+	pitch = 0;
+	yaw = 0;
+	pitchLimit = 0.f;
+	is_menu = false;
 }
 
 void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,Vector3*camForward,Vector3*camRight)
@@ -45,68 +44,62 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 	if (!is_menu)
 	{
 		position = charpos;
-		target = position + temp;
-
-		Vector3 view = (target - position).Normalized();
-		Vector3 right = view.Cross(up);
+		target = position + forward;
+		right = forward.Cross(up);
 
 		glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 		GetCursorPos(&point);
-
 		if (anchorX > point.x)
 		{
 			this->yaw = (float)(CAMERA_SPEED_2 * dt);
 			Mtx44 rotation;
 			rotation.SetToRotation(yaw, 0, 1, 0);
-			temp = rotation * temp;
+			forward = rotation * forward;
 			up = rotation * up;
-			up.Normalize();
+			right = forward.Cross(up).Normalize();
 		}
 
-		if (anchorX < point.x)
+		else if (anchorX < point.x)
 		{
 			this->yaw = (float)(-CAMERA_SPEED_2 * dt);
 			Mtx44 rotation;
 			rotation.SetToRotation(yaw, 0, 1, 0);
-			temp = rotation * temp;
+			forward = rotation * forward;
 			up = rotation * up;
-			up.Normalize();
+			right = forward.Cross(up).Normalize();
 		}
 
-		if (pitchLimit < 160 && point.y < anchorY)
+		if (pitchLimit < 80 && point.y < anchorY)
 		{
-			this->pitch = (float)(CAMERA_SPEED * (anchorY - point.y)) * dt;
+			this->pitch = (float)(CAMERA_SPEED * (anchorY - point.y) * dt);
 			Mtx44 rotation;
 			rotation.SetToRotation(pitch, right.x, right.y, right.z);
-			temp = rotation * temp;
-			target = position + temp;
-			up = right.Cross(view);
+			forward = rotation * forward;
+			up = right.Cross(forward);
 			up.Normalize();
-			pitchLimit += (anchorY - point.y);
+			pitchLimit += pitch;
 		}
-		else if (pitchLimit > -200 && point.y > anchorY)
+		else if (pitchLimit > -80 && point.y > anchorY)
 		{
-			this->pitch = (float)(-CAMERA_SPEED * (point.y - anchorY)) * dt;
+			this->pitch = (float)(-CAMERA_SPEED * (point.y - anchorY) * dt);
 			Mtx44 rotation;
 			rotation.SetToRotation(pitch, right.x, right.y, right.z);
-			temp = rotation * temp;
-			target = position + temp;
-			up = right.Cross(view);
+			forward = rotation * forward;
+			up = right.Cross(forward);
 			up.Normalize();
-			pitchLimit -= (point.y - anchorY);
+			pitchLimit += pitch;
 		}
-
 		if (Application::IsKeyPressed('X'))
 		{
 			Reset();
 		}
 		SetCursorPos(windowX / 2, windowY / 2);
+		point.x = windowX / 2;
+		point.y = windowY / 2;
 		anchorX = windowX / 2;
 		anchorY = windowY / 2;
-		*camForward = view;
+		*camForward = forward;
 		*camRight = right;
-		std::cout << "Up: " << up << std::endl;
-
 	}
 }
 
