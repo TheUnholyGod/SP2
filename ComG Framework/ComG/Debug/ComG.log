@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Player.cpp
 c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player.cpp(28): warning C4244: 'return' : conversion from 'float' to 'const int', possible loss of data
 c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player.cpp(72): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
@@ -7,3 +8,7 @@ c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player
 c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player.cpp(125): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
+=======
+﻿  Projectile.cpp
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
+>>>>>>> 5f6cb77a594889dde0f6e7b845a621cdb74db793

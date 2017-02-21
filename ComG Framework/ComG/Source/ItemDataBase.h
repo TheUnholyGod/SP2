@@ -12,11 +12,13 @@ private:
 	idb itemdatabase_;
 	ItemDataBase();
 	static ItemDataBase* itemdb_;
+	std::vector<int> IDlist;
 public:
 	~ItemDataBase();
 	static ItemDataBase* getItemDB();
 	Item* getItem(int key);
-	idb& getDataBase();
+	idb& getDataBase();	
+	std::vector<int> getIDList() { return IDlist; }
 };
 
 #endif

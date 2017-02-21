@@ -344,7 +344,11 @@ void ScenePlay::Update(double dt)
 
 	//	if (allbuildingcollision(Player::getplayer()))
 	{
+<<<<<<< HEAD
 		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseItems);
+=======
+		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings,BaseEnemy);
+>>>>>>> 5f6cb77a594889dde0f6e7b845a621cdb74db793
 	}
 
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
@@ -357,7 +361,11 @@ void ScenePlay::Update(double dt)
 	{
 		//SpawnProjectile(dt);
 		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+<<<<<<< HEAD
 		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseItems);
+=======
+		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings,BaseEnemy);
+>>>>>>> 5f6cb77a594889dde0f6e7b845a621cdb74db793
 	}
 
 	if (buildBuilding) {
@@ -833,8 +841,7 @@ void ScenePlay::RenderItems()
 
 void ScenePlay::SpawnProjectile(double dt)
 {
-	Projectile arrow;
-	arrow.update(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward(), dt);
+
 }
 
 void ScenePlay::RenderProjectile()

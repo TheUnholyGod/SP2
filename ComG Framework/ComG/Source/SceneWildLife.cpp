@@ -13,6 +13,7 @@
 #include "ItemDataBase.h"
 #include "BuildingDataBase.h"
 #include "SaveLoad.h"
+#include "Menu.h"
 #include <sstream>
 
 SceneWildLife::SceneWildLife()

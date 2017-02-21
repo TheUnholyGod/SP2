@@ -15,7 +15,7 @@
 #include "SaveLoad.h"
 #include <sstream>
 
-SceneBase::SceneBase()
+SceneBase::SceneBase() : buildingID(101)
 {
 }
 
@@ -161,15 +161,17 @@ void SceneBase::Update(double dt)
 	{
 		Application::IsExit = true;
 	}
+<<<<<<< HEAD
 //	if (allbuildingcollision(Player::getplayer()))
 	{
 		//Player::getplayer()->Update(camForward, camRight, dt,BaseBuildings);
 	}
+=======
+	Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy);
+>>>>>>> 5f6cb77a594889dde0f6e7b845a621cdb74db793
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 15, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-
 	SpawnEnemy(dt);
 	LightUpdate(dt);
-	//SpawnBuilding(dt);
 }
 
 void SceneBase::Render()
@@ -550,7 +552,7 @@ void SceneBase::RenderBuilding()
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(buildingMeshList[i->getID() - 101], true);
+		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
 		modelStack.PopMatrix();
 		y++;
 	}

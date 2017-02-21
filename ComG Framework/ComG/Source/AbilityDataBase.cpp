@@ -10,15 +10,19 @@ AbilityDataBase::AbilityDataBase()
 {
 	Ability* temp = new Corrosive();
 	Abilitydatabase_[temp->getID()] = new Corrosive;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Burrow();
 	Abilitydatabase_[temp->getID()] = new Burrow;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Teleporting();
 	Abilitydatabase_[temp->getID()] = new Teleporting;
+	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Radioactive();
 	Abilitydatabase_[temp->getID()] = new Radioactive;
+	IDlist.push_back(temp->getID());
 	delete temp;
 }
 

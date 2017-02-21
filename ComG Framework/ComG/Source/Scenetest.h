@@ -14,6 +14,7 @@
 #include "Building.h"
 #include "Enemy.h"
 #include "Projectile.h" 
+#include "Menu.h"
 #include <vector>
 #include <array>
 
@@ -91,8 +92,6 @@ class SceneTest : public Scene
 		U_LIGHT0_COSINNER,
 		U_LIGHT0_EXPONENT,
 		U_NUMLIGHTS,
-		//add these enum in UNIFORM_TYPE before U_TOTAL
-		//add these enum in UNIFORM_TYPE before U_TOTAL
 		U_COLOR_TEXTURE_ENABLED,
 		U_COLOR_TEXTURE,
 
@@ -186,19 +185,25 @@ private:
 	int Day;
 
 	std::list<Enemy*> BaseEnemy;
-	std::list<Building*> BaseBuildings;
-	std::list<Projectile*>BaseProjectile;
-
 	void SpawnEnemy(double dt);
+	void UpdateEnemy(double dt);
 	void RenderEnemy();
 
-	void SpawnBuilding(double dt);
+	std::list<Building*> BaseBuildings;
+	void SpawnBuilding();
+	void UpdateBuilding(double dt);
 	void RenderBuilding();
 
-	void SpawnProjectile(double dt);
+	std::vector<Projectile*>BaseProjectile;
+	void SpawnProjectile();
+	void UpdateProjectiles(double dt);
 	void RenderProjectile();
 
+<<<<<<< HEAD
 	bool ProjectileCollision();
+
+	Menu pauseMenu;
+=======
 	int windowX;
 	int windowY;
 
@@ -218,6 +223,7 @@ private:
 
 	std::clock_t Istart;
 	float ITime;
+>>>>>>> cc72d4c37c46ed0d056b38ca64ae0f2e2afa0486
 };
 
 #endif

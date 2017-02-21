@@ -6,6 +6,7 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
+#include "Menu.h"
 //#include "EnemyFactory.h"
 //#include "Player.h"
 
