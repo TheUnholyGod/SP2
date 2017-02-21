@@ -1,6 +1,7 @@
 #ifndef _INVENTORY_H
 #define _INVENTORY_H
 
+#include "Application.h"
 #include "ItemFactory.h"
 #include <string>
 #include <list>
@@ -11,12 +12,14 @@ private:
 	Inventory();
 	static Inventory *inventory;
 	std::list<Item*> List;
+	bool openinventory;
 public:
 	static Inventory *getinventory();
 	void Additem(int key);
 	void Removeitem(Item* item);
-	void Update();
-	void Render();
+	void setupdate();
+	void Update(double dt);
+	bool getopeninventory();
 	~Inventory();
 protected:
 	std::string itemname_;

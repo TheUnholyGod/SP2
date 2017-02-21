@@ -1,4 +1,4 @@
-#include "Scenetest.h"
+#include "SceneTest.h"
 #include "GL\glew.h"
 #include "shader.hpp"
 #include "Mtx44.h"
@@ -100,11 +100,13 @@ void SceneTest::Init()
 	optionHighlight = 0;
 
 	start = std::clock();
+	Istart = std::clock();
 
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
 	Player::getplayer();
 	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(25, 50, 25), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	Inventory::getinventory();
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -320,8 +322,20 @@ void SceneTest::Update(double dt)
 	{
 		buildBuilding = true;
 	}
-	Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings,BaseEnemy);
+	Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy);
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+
+	ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
+
+	if (Application::IsKeyPressed('I'))
+	{
+		if (ITime > 0.005)
+		{
+			Istart = std::clock();
+			Inventory::getinventory()->setupdate();
+		}
+	}
+
 	if (Application::IsKeyPressed(VK_LBUTTON))
 	{
 		SpawnProjectile();
@@ -332,7 +346,16 @@ void SceneTest::Update(double dt)
 	UpdateProjectiles(dt);
 	if (buildBuilding)
 	{
-		buildBuildingUpdate(dt);
+		SpawnBuilding();
+
+		if (buildBuilding) {
+			buildBuildingUpdate(dt);
+		}
+
+		if (Inventory::getinventory()->getopeninventory() == true)
+		{
+			Inventory::getinventory()->Update(dt);
+		}
 	}
 }
 
@@ -421,6 +444,12 @@ void SceneTest::Render()
 
 		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
 
+	}
+
+	if (Inventory::getinventory()->getopeninventory() == true)
+	{
+		RenderMeshOnScreen(spritesList[GEO_BUILDUI], 40, 30, 80, 60);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press 'I' to exit Inventory", Color(0, 0, 1), 3.f, .5f, 19.f);
 	}
 }
 
@@ -846,7 +875,7 @@ void SceneTest::LightReset(double dt)
 
 void SceneTest::buildBuildingUpdate(double dt)
 {
-	if (Application::IsKeyPressed('K')){
+	if (Application::IsKeyPressed('K')) {
 		buildBuilding = false;
 	}
 
@@ -877,7 +906,7 @@ void SceneTest::UpdateProjectiles(double dt)
 		for (auto &i : BaseProjectile)
 		{
 			i->update(dt);
-			std::cout << i->getRenderer().getPosition() << std::endl;
+			std::cout<<"Position: " << i->getRenderer().getPosition() << std::endl;
 			if (i->toDelete())
 			{
 				pos.push_back(counter);
