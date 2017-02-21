@@ -1,25 +1,2 @@
-﻿  WaterWell.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\waterwell.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  TrophyRoom.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\trophyroom.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  TilledSoil.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\tilledsoil.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  PowerGenerator.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\powergenerator.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  OreMines.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\oremines.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  NPCHouse.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\npchouse.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  InventoryWarehouse.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\inventorywarehouse.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  FastTravelRoom.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  DefensiveWalls.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defensivewalls.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  DefenceTower.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defencetower.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Crafting.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\crafting.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Building.cpp
-  Generating Code...
+﻿  Projectile.cpp
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe

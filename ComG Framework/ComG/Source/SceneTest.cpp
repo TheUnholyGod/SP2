@@ -210,7 +210,7 @@ void SceneTest::Init()
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
-	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 10, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 }
 
@@ -320,29 +320,18 @@ void SceneTest::Update(double dt)
 	{
 		buildBuilding = true;
 	}
-
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-
-	//	if (allbuildingcollision(Player::getplayer()))
-	{
-		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings);
-	}
-
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	SpawnEnemy(dt);
-	LightUpdate(dt);
-	SpawnBuilding(dt);
-
+	Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings,BaseEnemy);
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	if (Application::IsKeyPressed(VK_LBUTTON))
 	{
-		SpawnProjectile(dt);
-		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings);
+		SpawnProjectile();
 	}
 	SpawnEnemy(dt);
 	LightUpdate(dt);
-	SpawnBuilding(dt);
-	if (buildBuilding) {
+	SpawnBuilding();
+	UpdateProjectiles(dt);
+	if (buildBuilding)
+	{
 		buildBuildingUpdate(dt);
 	}
 }
@@ -390,6 +379,7 @@ void SceneTest::Render()
 
 	RenderEnemy();
 	RenderBuilding();
+	RenderProjectile();
 
 	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
@@ -411,32 +401,25 @@ void SceneTest::Render()
 		}
 
 
-		RenderEnemy();
-		RenderBuilding();
+	}
+	if (pause)
+	{
+		RenderMeshOnScreen(meshList[GEO_PAUSEMENU], 40, 30, 16, 12);
 
-		RenderProjectile();
-
-
-		if (pause)
+		if (pauseHighlight == 0)
 		{
-			RenderMeshOnScreen(meshList[GEO_PAUSEMENU], 40, 30, 16, 12);
-
-			if (pauseHighlight == 0)
-			{
-				RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
-			}
-			if (pauseHighlight == 1)
-			{
-				RenderMeshOnScreen(meshList[GEO_BACKTOGAME], 40, 30, 16, 12);
-			}
-			if (pauseHighlight == 2)
-			{
-				RenderMeshOnScreen(meshList[GEO_BACKTOMAIN], 40, 30, 16, 12);
-			}
-
-			RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
-
+			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
 		}
+		if (pauseHighlight == 1)
+		{
+			RenderMeshOnScreen(meshList[GEO_BACKTOGAME], 40, 30, 16, 12);
+		}
+		if (pauseHighlight == 2)
+		{
+			RenderMeshOnScreen(meshList[GEO_BACKTOMAIN], 40, 30, 16, 12);
+		}
+
+		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
 
 	}
 }
@@ -732,9 +715,6 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-	if (BaseEnemy.size() < 5)
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
-
 	for (auto &i : BaseEnemy)
 	{
 		i->Update(dt);
@@ -743,47 +723,47 @@ void SceneTest::SpawnEnemy(double dt)
 
 void SceneTest::RenderEnemy()
 {
-	int y = 0;
 	for (auto &i : BaseEnemy)
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
 		RenderMesh(enemyMeshList[i->getID() - 1], true);
 		modelStack.PopMatrix();
-		y++;
 	}
 }
 
-void SceneTest::SpawnBuilding(double dt)
+void SceneTest::SpawnBuilding()
 {
-	for (auto &i : BaseBuildings)
-	{
-		i->update(dt);
-	}
+
 }
 
 void SceneTest::RenderBuilding()
 {
-	int y = 0;
 	for (auto &i : BaseBuildings)
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
 		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
 		modelStack.PopMatrix();
-		y++;
 	}
 }
 
-void SceneTest::SpawnProjectile(double dt)
+void SceneTest::SpawnProjectile()
 {
-	Projectile arrow;
-	arrow.update(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward(), dt);
+	Projectile* temp = dynamic_cast<Projectile*>(ItemFactory::getItemFactory()->generateItem(999));
+	temp->FireProjectile();
+	BaseProjectile.push_back(temp);
 }
 
 void SceneTest::RenderProjectile()
 {
-	
+	for (auto &i : BaseProjectile)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(enemyMeshList[0], true);
+		modelStack.PopMatrix();
+	}
 }
 
 void SceneTest::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
@@ -870,4 +850,51 @@ void SceneTest::buildBuildingUpdate(double dt)
 		buildBuilding = false;
 	}
 
+}
+
+void SceneTest::UpdateEnemy(double dt)
+{
+	for (auto &i : BaseEnemy)
+	{
+		i->Update(dt);
+	}
+}
+
+void SceneTest::UpdateBuilding(double dt)
+{
+	for (auto &i : BaseBuildings)
+	{
+		i->update(dt);
+	}
+}
+
+void SceneTest::UpdateProjectiles(double dt)
+{
+	if (BaseProjectile.size())
+	{
+		std::vector<int> pos;
+		int counter = 0;
+		for (auto &i : BaseProjectile)
+		{
+			i->update(dt);
+			std::cout << i->getRenderer().getPosition() << std::endl;
+			if (i->toDelete())
+			{
+				pos.push_back(counter);
+			}
+			counter++;
+		}
+		if (pos.size())
+		{
+			int deleted = 0;
+			for (auto i : pos)
+			{
+				Projectile* temp = *(BaseProjectile.begin() + i - deleted);
+				BaseProjectile.erase(BaseProjectile.begin() + i - deleted);
+				deleted++;
+				delete temp;
+				temp = nullptr;
+			}
+		}
+	}
 }
