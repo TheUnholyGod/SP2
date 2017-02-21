@@ -138,6 +138,20 @@ class ScenePlay : public Scene
 		NUM_PROJECTILEGEOMETERY,
 	};
 
+	enum FOODMESHLIST
+	{
+		GEO_POTATO,
+		GEO_CABBAGE,
+		GEO_CARROT,
+		GEO_WHEAT,
+		GEO_BREAD,
+		GEO_VEGETABLESTEW,
+		GEO_PURIFIEDWATER,
+		GEO_CARROTJUICE,
+		GEO_SALAD,
+		NUM_FOODGEOMETERY,
+	};
+
 public:
 	ScenePlay();
 	~ScenePlay();
@@ -153,6 +167,7 @@ private:
 	std::array<Mesh*, NUM_WEAPONGEOMETERY> weaponmesh;
 	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
 	std::array<Mesh*, NUM_PROJECTILEGEOMETERY> projectileMeshList;
+	std::array<Mesh*, NUM_FOODGEOMETERY> foodMeshList;
 	std::array<Mesh*, NUM_SPRITES> spritesList;
 
 	unsigned m_programID;
@@ -163,6 +178,7 @@ private:
 	Camera3 fp_camera;
 
 	const int buildingID;
+	const int ItemID;
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	float LSPEED;
 	void LoadSkybox();
@@ -190,12 +206,16 @@ private:
 	std::list<Enemy*> BaseEnemy;
 	std::list<Building*> BaseBuildings;
 	std::list<Projectile*>BaseProjectile;
+	std::vector<Item*> BaseItems;
 
 	void SpawnEnemy(double dt);
 	void RenderEnemy();
 
 	void SpawnBuilding(double dt);
 	void RenderBuilding();
+
+	void SpawnItems(double dt);
+	void RenderItems();
 
 	void SpawnProjectile(double dt);
 	void RenderProjectile();

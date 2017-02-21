@@ -14,6 +14,7 @@
 #include "Building.h"
 #include "Enemy.h"
 #include "Projectile.h" 
+#include "Menu.h"
 #include <vector>
 #include <array>
 
@@ -198,6 +199,11 @@ private:
 	void UpdateProjectiles(double dt);
 	void RenderProjectile();
 
+<<<<<<< HEAD
+	bool ProjectileCollision();
+
+	Menu pauseMenu;
+=======
 	int windowX;
 	int windowY;
 
@@ -217,6 +223,7 @@ private:
 
 	std::clock_t Istart;
 	float ITime;
+>>>>>>> cc72d4c37c46ed0d056b38ca64ae0f2e2afa0486
 };
 
 #endif

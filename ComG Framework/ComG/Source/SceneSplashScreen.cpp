@@ -6,6 +6,12 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
+<<<<<<< HEAD
+#include "Menu.h"
+//#include "EnemyFactory.h"
+//#include "Player.h"
+=======
+>>>>>>> cc72d4c37c46ed0d056b38ca64ae0f2e2afa0486
 
 #include <sstream>
 

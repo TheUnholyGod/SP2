@@ -472,8 +472,16 @@
     <ClCompile Include="Source\Inventory.cpp">
       <Filter>Source Files\GameObject\Player</Filter>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="Source\Menu.cpp">
+      <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LoadATOM.cpp">
+      <Filter>Source Files\Framework</Filter>
+=======
     <ClCompile Include="Source\ScenePlay.cpp">
       <Filter>Source Files\Scenes</Filter>
+>>>>>>> cc72d4c37c46ed0d056b38ca64ae0f2e2afa0486
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -780,8 +788,16 @@
     <ClInclude Include="Source\Projectile.h">
       <Filter>Header Files\GameObject\Items\Weapons</Filter>
     </ClInclude>
+<<<<<<< HEAD
+    <ClInclude Include="Source\Menu.h">
+      <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LoadATOM.h">
+      <Filter>Header Files\Framework</Filter>
+=======
     <ClInclude Include="Source\ScenePlay.h">
       <Filter>Header Files\Scenes</Filter>
+>>>>>>> cc72d4c37c46ed0d056b38ca64ae0f2e2afa0486
     </ClInclude>
   </ItemGroup>
 </Project>
