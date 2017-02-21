@@ -1,6 +1,6 @@
 #include "WaterWell.h"
 
-WaterWell::WaterWell() : Building(112, "WaterWell", "OBJ//Barn.obj", "", 100, RESOURCE, false) 
+WaterWell::WaterWell() : Building(112, "WaterWell", "OBJ//WaterWell.obj", "Image//WaterWell_Texture.tga", 100, RESOURCE, false)
 {
 	gameobjrenderer_ = new Renderer(Vector3(0, 0, 5), Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(5);

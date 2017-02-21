@@ -198,8 +198,8 @@ void SceneTest::Init()
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
-		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getSourceLocation());
-		buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getTextureLocation());
+		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getSourceLocation());
+		buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getTextureLocation());
 	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{

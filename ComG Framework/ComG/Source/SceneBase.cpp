@@ -15,7 +15,7 @@
 #include "SaveLoad.h"
 #include <sstream>
 
-SceneBase::SceneBase()
+SceneBase::SceneBase() : buildingID(101)
 {
 }
 
@@ -550,7 +550,7 @@ void SceneBase::RenderBuilding()
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(buildingMeshList[i->getID() - 101], true);
+		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
 		modelStack.PopMatrix();
 		y++;
 	}

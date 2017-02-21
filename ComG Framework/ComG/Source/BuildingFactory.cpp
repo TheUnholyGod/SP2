@@ -40,25 +40,25 @@ Building* BuildingFactory::generateBuilding(int key)
 	if (key == tempID[0])
 		temp = new Barn;
 	if (key == tempID[1])
-		temp = new TrophyRoom;
+		temp = new DefenceTower;
 	if (key == tempID[2])
-		temp = new InventoryWarehouse;
+		temp = new Crafting;
 	if (key == tempID[3])
-		temp = new NPCHouse;
+		temp = new DefensiveWalls;
 	if (key == tempID[4])
 		temp = new FastTravelRoom;
 	if (key == tempID[5])
-		temp = new PowerGenerator;
+		temp = new InventoryWarehouse;
 	if (key == tempID[6])
-		temp = new DefenceTower;
+		temp = new NPCHouse;
 	if (key == tempID[7])
-		temp = new DefensiveWalls;
-	if (key == tempID[8])
-		temp = new TilledSoil;
-	if (key == tempID[9])
 		temp = new OreMines;
+	if (key == tempID[8])
+		temp = new PowerGenerator;
+	if (key == tempID[9])
+		temp = new TilledSoil;
 	if (key == tempID[10])
-		temp = new Crafting;
+		temp = new TrophyRoom;
 	if (key == tempID[11])
 		temp = new WaterWell;
 	return temp;
