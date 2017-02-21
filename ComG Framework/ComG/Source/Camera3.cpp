@@ -60,6 +60,7 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 			rotation.SetToRotation(yaw, 0, 1, 0);
 			temp = rotation * temp;
 			up = rotation * up;
+			up.Normalize();
 		}
 
 		if (anchorX < point.x)
@@ -69,6 +70,7 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 			rotation.SetToRotation(yaw, 0, 1, 0);
 			temp = rotation * temp;
 			up = rotation * up;
+			up.Normalize();
 		}
 
 		if (pitchLimit < 160 && point.y < anchorY)
