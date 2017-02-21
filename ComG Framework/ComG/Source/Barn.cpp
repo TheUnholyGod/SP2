@@ -1,11 +1,7 @@
 #include "Barn.h"
 #include "MyMath.h"
 
-<<<<<<< HEAD
 Barn::Barn() : Building(101, "Barn", "OBJ//Barn(working).obj", "Image//barnInteriorUV.tga", 100, NORMAL, true)
-=======
-Barn::Barn() : Building(101, "Barn", "OBJ//Barn.obj", "Image//barnInteriorUV.tga", 100, NORMAL, true)
->>>>>>> e463784e665d33d905bb6fe301a67a66d37a2a8a
 {
 	gameobjrenderer_ = new Renderer(Vector3(0 ,0, 5), Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(5);
