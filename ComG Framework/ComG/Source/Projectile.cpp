@@ -1,8 +1,10 @@
 #include "Projectile.h"
+#include "Player.h"
 
-Projectile::Projectile():Item(999,"","OBJ//Carrot.obj","Projectile"), proj_speed_(100), attack_dmg_(100), range_(100)
+Projectile::Projectile():Item(999,"","OBJ//Carrot.obj","Projectile"), proj_speed_(500), attack_dmg_(100), range_(1000)
 {
-	fired = false;
+	fired_ = false;
+	deletepls_ = false;
 }
 
 Projectile::~Projectile()
@@ -10,49 +12,37 @@ Projectile::~Projectile()
 
 }
 
-void Projectile::FireProjectile(Vector3 forward, double dt)
+void Projectile::FireProjectile()
 {
-	gameobjrenderer_->setForward(forward);
+	fired_ = true;
+	defaultpos = gameobjrenderer_->getPosition();
+	gameobjrenderer_->setPosition(Player::getplayer()->getWeapon()->getRenderer().getPosition());
+	gameobjrenderer_->setForward(Player::getplayer()->getWeapon()->getRenderer().getForward());
+	std::cout << "Forward: " << gameobjrenderer_->getForward() << std::endl;
 }
 
 bool Projectile::hit()
 {
-	//AABB
-//	if (allAABB[0]->pointtoAABB(getRenderer().getPosition()))
-//		return true;
-//	else
-//		return false;
+
 	return true;
 }
 
-void Projectile::update(Vector3 pos, Vector3 forward, double dt) 
-{
-	fired = true;
-	
-	if(!fired)
-	defaultposition_ = pos;
-	
-	else //(fired)
+void Projectile::update(double dt) 
+{	
+	if (!fired_)
 	{
-		FireProjectile(forward, dt);
-		gameobjrenderer_->translate(gameobjrenderer_->getForward(), proj_speed_);
+		gameobjrenderer_->setPosition(Player::getplayer()->getWeapon()->getRenderer().getPosition());
+		gameobjrenderer_->setUp(Player::getplayer()->getWeapon()->getRenderer().getForward().Cross(Player::getplayer()->getWeapon()->getRenderer().getRight()).Normalized());
+		gameobjrenderer_->setForward(Player::getplayer()->getWeapon()->getRenderer().getForward());
+	}
 
-		/*if (hit() == true)
+	else
+	{
+		gameobjrenderer_->translate(gameobjrenderer_->getForward(), proj_speed_*dt);
+		if ((gameobjrenderer_->getPosition() - defaultpos).Length() > range_)
 		{
-
-		}*/
-
-		if (position_.x > range_ || position_.y > range_ || position_.z > range_)
-		{
-			position_ = defaultposition_;
-			fired = false;
+			deletepls_ = true;
 		}
 	}
-	std::cout << "position_: " << position_ << std::endl;
+	
 }
-
-/*get player pos(weapon)
-defaultpos in weapon pos
-translate projectile
-hit(AABB check)
-delete projectile*/

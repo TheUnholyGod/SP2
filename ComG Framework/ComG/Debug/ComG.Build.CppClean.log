@@ -20,7 +20,6 @@ c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\co
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\wheat.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\wildboar.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\wood.obj
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\main.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\mesh.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\meshbuilder.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\metalscraps.obj
@@ -31,6 +30,7 @@ c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\co
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\player.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\potato.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\powergenerator.obj
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\projectile.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\radioactive.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\renderer.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\resources.obj
@@ -40,7 +40,6 @@ c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\co
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\scar-h.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\scarecrow_mech.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\scenebase.obj
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\farming_hoe.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\fasttravelroom.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\food.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\gameobject.obj
@@ -60,7 +59,7 @@ c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\co
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\loadobj.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\loadtga.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\m200_cheytac_intervention.obj
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\camera4.obj
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\main.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\carrot.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\carrotjuice.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\centipede.obj
@@ -80,6 +79,7 @@ c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\co
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\enemy.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\enemydatabase.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\enemyfactory.obj
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\farming_hoe.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\ability.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\abilitydatabase.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\acrid_plant.obj
@@ -97,21 +97,14 @@ c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\co
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\camera.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\camera2.obj
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\camera3.obj
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\projectile.obj
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\camera4.obj
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\sceneplay.obj
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\debug\comg.ilk
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\debug\comg.exe
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\debug\comg.pdb
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\cl.command.1.tlog
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\cl.read.1.tlog
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\cl.write.1.tlog
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link-cvtres.read.1.tlog
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link-cvtres.write.1.tlog
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link-rc.read.1.tlog
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link-rc.write.1.tlog
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link.12244-cvtres.read.1.tlog
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link.12244-cvtres.write.1.tlog
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link.12244-rc.read.1.tlog
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link.12244-rc.write.1.tlog
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link.12244.read.1.tlog
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link.12244.write.1.tlog
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link.command.1.tlog
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link.read.1.tlog
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\comg.tlog\link.write.1.tlog

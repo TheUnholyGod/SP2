@@ -9,18 +9,19 @@
 class Projectile :public Item
 {
 private:
-	bool fired;
-	Vector3 position_;//traack movement
-	Vector3 defaultposition_;//pos before fire
+	bool fired_;
+	bool deletepls_;
 	double proj_speed_;
 	float attack_dmg_;
 	float range_;
+	Vector3 defaultpos;
 public:
 	Projectile();
 	~Projectile();
-	void FireProjectile(Vector3 forward, double dt);
+	void FireProjectile();
 	bool hit();
-	void update(Vector3 pos, Vector3 forward, double dt);
+	void update(double dt);
+	bool toDelete() { return deletepls_; }
 };
 
 #endif
