@@ -34,6 +34,8 @@ public:
 	int cursorXDiff;
 	int cursorYDiff;
 
+	bool is_menu;
+
 	Camera4();
 	~Camera4();
 	virtual void Init(const Vector3& pos, const Vector3& target, const Vector3& up);

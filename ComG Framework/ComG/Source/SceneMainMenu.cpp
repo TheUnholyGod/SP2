@@ -6,6 +6,7 @@
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
 #include "SceneManager.h"
+#include "Menu.h"
 #include "Camera3.h"
 
 #include <sstream>
@@ -13,6 +14,14 @@
 extern POINT cursorPoint;
 
 SceneMainMenu::SceneMainMenu()
+{
+}
+
+SceneMainMenu::~SceneMainMenu()
+{
+}
+
+void SceneMainMenu::Init()
 {
 	cursorX = 0;
 	cursorY = 0;
@@ -30,14 +39,7 @@ SceneMainMenu::SceneMainMenu()
 	back = false;
 
 	start = std::clock();
-}
 
-SceneMainMenu::~SceneMainMenu()
-{
-}
-
-void SceneMainMenu::Init()
-{
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -156,7 +158,7 @@ void SceneMainMenu::Update(double dt)
 			}
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
-
+				start = std::clock();
 				if (play == 0)
 				{
 					Application::IsExit = true;
@@ -172,7 +174,6 @@ void SceneMainMenu::Update(double dt)
 				{
 					options = true;
 				}
-				start = std::clock();
 			}
 			if (Application::IsKeyPressed(VK_LBUTTON))
 			{
