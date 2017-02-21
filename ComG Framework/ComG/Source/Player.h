@@ -7,7 +7,9 @@
 #include "Weapon.h"
 #include "Collision.h"
 #include "Building.h"
+#include "Item.h"
 #include <string>
+#include <vector>
 
 class Player : public GameObject
 {
@@ -23,7 +25,7 @@ public:
 	const int getattack();
 	void receivedamage();
 	bool isDead();
-	void Update(Vector3, Vector3, double,std::list<Building*>);
+	void Update(Vector3, Vector3, double,std::list<Building*>, std::vector<Item*>);
 	Weapon* getWeapon() { return playerweapon_; }
 	void setWeapon(int);
 	AABB* getAABB();

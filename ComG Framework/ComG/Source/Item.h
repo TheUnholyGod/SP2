@@ -10,9 +10,10 @@ protected:
 	const std::string kname_;
 	std::string source_location_;
 	std::string texture_location_;
+	bool pickedup;
 public:
 	Item(int, std::string, std::string, std::string);
-
+	void update();
 	virtual ~Item();
 	const std::string getName() { return kname_; }
 };

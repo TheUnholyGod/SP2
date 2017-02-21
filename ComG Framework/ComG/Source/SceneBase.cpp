@@ -163,7 +163,7 @@ void SceneBase::Update(double dt)
 	}
 //	if (allbuildingcollision(Player::getplayer()))
 	{
-		Player::getplayer()->Update(camForward, camRight, dt,BaseBuildings);
+		//Player::getplayer()->Update(camForward, camRight, dt,BaseBuildings);
 	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 15, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 

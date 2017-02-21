@@ -17,7 +17,7 @@
 
 POINT cursorPoint1;
 
-ScenePlay::ScenePlay() : buildingID(101)
+ScenePlay::ScenePlay() : buildingID(101), ItemID(101)
 {
 	cursorX = 0;
 	cursorY = 0;
@@ -208,6 +208,12 @@ void ScenePlay::Init()
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
 		weaponmesh[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getTextureLocation());
 	}
+	for (int i = 0; i < foodMeshList.size(); i++)
+	{
+		foodMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
+		//foodMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
+	}
+
 	buildBuilding = false;
 	suntimer = 1;
 	LoadSkybox();
@@ -225,11 +231,11 @@ void ScenePlay::Update(double dt)
 
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 
-	if (Application::IsKeyPressed('E'))
+	/*if (Application::IsKeyPressed('E'))
 	{
 		SceneManager::currScene = 3;
-	}
-
+	}*/
+	
 	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
 		if (!pause)
@@ -323,7 +329,7 @@ void ScenePlay::Update(double dt)
 		buildBuilding = true;
 	}
 
-ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
+	ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
 
 	if (Application::IsKeyPressed('I'))
 	{	
@@ -338,23 +344,21 @@ ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
 
 	//	if (allbuildingcollision(Player::getplayer()))
 	{
-		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings);
+		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseItems);
 	}
 
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SpawnEnemy(dt);
 	LightUpdate(dt);
 	SpawnBuilding(dt);
+	SpawnItems(dt);
 
-	if (Application::IsKeyPressed(VK_LBUTTON))
+	if (Application::IsKeyPressed(VK_SHIFT))
 	{
-		SpawnProjectile(dt);
+		//SpawnProjectile(dt);
 		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings);
+		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseItems);
 	}
-	SpawnEnemy(dt);
-	LightUpdate(dt);
-	SpawnBuilding(dt);
 
 	if (buildBuilding) {
 		buildBuildingUpdate(dt);
@@ -409,6 +413,7 @@ void ScenePlay::Render()
 
 	RenderEnemy();
 	RenderBuilding();
+	RenderItems();
 
 	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
@@ -429,12 +434,7 @@ void ScenePlay::Render()
 			displacement += 15;
 		}
 
-
-		RenderEnemy();
-		RenderBuilding();
-
 		RenderProjectile();
-
 
 		if (pause)
 		{
@@ -797,11 +797,37 @@ void ScenePlay::RenderBuilding()
 	int y = 0;
 	for (auto &i : BaseBuildings)
 	{
-		modelStack.PushMatrix();
-		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
-		modelStack.PopMatrix();
-		y++;
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(buildingMeshList[i->getID() - buildingID], true);
+			modelStack.PopMatrix();
+			y++;
+	}
+}
+
+void ScenePlay::SpawnItems(double dt)
+{
+	if (BaseItems.size() < 1)
+	{
+		BaseItems.push_back(ItemFactory::getItemFactory()->generateItem(101));
+	}
+
+	for (auto &i : BaseItems)
+	{
+		i->update();
+	}
+}
+
+void ScenePlay::RenderItems()
+{
+	int y = 0;
+	for (auto &i : BaseItems)
+	{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(foodMeshList[i->getID() - ItemID], true);
+			modelStack.PopMatrix();
+			y++;
 	}
 }
 
@@ -899,5 +925,4 @@ void ScenePlay::buildBuildingUpdate(double dt)
 	if (Application::IsKeyPressed('K')) {
 		buildBuilding = false;
 	}
-
 }

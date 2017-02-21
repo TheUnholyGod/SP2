@@ -14,9 +14,10 @@ protected:
 	float nutrition_;//Hunger Replenishment
 	float shelf_life_;//Storage Time
 	std::string source_location_;
+	std::string texture_location_;
 
 public:
-	Food(int, std::string, FOODTYPE, float, float);
+	Food(int, std::string, std::string, std::string, FOODTYPE, float, float);
 	~Food();
 
 	virtual void Eat()=0;

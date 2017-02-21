@@ -338,7 +338,7 @@ void SceneTest::Update(double dt)
 
 	//	if (allbuildingcollision(Player::getplayer()))
 	{
-		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings);
+		//Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings);
 	}
 
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
@@ -350,7 +350,7 @@ void SceneTest::Update(double dt)
 	{
 		SpawnProjectile(dt);
 		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings);
+		//Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings);
 	}
 	SpawnEnemy(dt);
 	LightUpdate(dt);
