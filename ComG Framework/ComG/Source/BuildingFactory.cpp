@@ -39,27 +39,51 @@ Building* BuildingFactory::generateBuilding(int key)
 	std::vector<int> tempID(BuildingDataBase::getBuildingDB()->getIDList());
 	if (key == tempID[0])
 		temp = new Barn;
+<<<<<<< HEAD
 	if (key == tempID[1])
-		temp = new TrophyRoom;
+		temp = new DefenceTower;
 	if (key == tempID[2])
-		temp = new InventoryWarehouse;
+		temp = new Crafting;
 	if (key == tempID[3])
-		temp = new NPCHouse;
+		temp = new DefensiveWalls;
 	if (key == tempID[4])
 		temp = new FastTravelRoom;
 	if (key == tempID[5])
-		temp = new PowerGenerator;
+		temp = new InventoryWarehouse;
 	if (key == tempID[6])
-		temp = new DefenceTower;
+		temp = new NPCHouse;
 	if (key == tempID[7])
-		temp = new DefensiveWalls;
-	if (key == tempID[8])
-		temp = new TilledSoil;
-	if (key == tempID[9])
 		temp = new OreMines;
+	if (key == tempID[8])
+		temp = new PowerGenerator;
+	if (key == tempID[9])
+		temp = new TilledSoil;
 	if (key == tempID[10])
-		temp = new Crafting;
+		temp = new TrophyRoom;
 	if (key == tempID[11])
+=======
+	else if (key == tempID[1])
+		temp = new TrophyRoom;
+	else if (key == tempID[2])
+		temp = new InventoryWarehouse;
+	else if (key == tempID[3])
+		temp = new NPCHouse;
+	else if (key == tempID[4])
+		temp = new FastTravelRoom;
+	else if (key == tempID[5])
+		temp = new PowerGenerator;
+	else if (key == tempID[6])
+		temp = new DefenceTower;
+	else if (key == tempID[7])
+		temp = new DefensiveWalls;
+	else if (key == tempID[8])
+		temp = new TilledSoil;
+	else if (key == tempID[9])
+		temp = new OreMines;
+	else if (key == tempID[10])
+		temp = new Crafting;
+	else if (key == tempID[11])
+>>>>>>> e463784e665d33d905bb6fe301a67a66d37a2a8a
 		temp = new WaterWell;
 	return temp;
 }

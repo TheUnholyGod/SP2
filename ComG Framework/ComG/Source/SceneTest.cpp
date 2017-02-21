@@ -1,4 +1,4 @@
-#include "Scenetest.h"
+#include "SceneTest.h"
 #include "GL\glew.h"
 #include "shader.hpp"
 #include "Mtx44.h"
@@ -87,10 +87,22 @@ void SceneTest::Init()
 	sunrotate = 100;
 	Day = 0;
 
+<<<<<<< HEAD
+=======
+	pause = false;
+	options = false;
+	pauseHighlight = 0;
+	optionHighlight = 0;
+
+	start = std::clock();
+	Istart = std::clock();
+
+>>>>>>> cc72d4c37c46ed0d056b38ca64ae0f2e2afa0486
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
 	Player::getplayer();
 	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(25, 50, 25), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	Inventory::getinventory();
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -158,8 +170,8 @@ void SceneTest::Init()
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
-		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getSourceLocation());
-		buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getTextureLocation());
+		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getSourceLocation());
+		buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getTextureLocation());
 	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
@@ -170,7 +182,7 @@ void SceneTest::Init()
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
-	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 10, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 }
 
@@ -186,7 +198,10 @@ void SceneTest::Update(double dt)
 	{
 		buildBuilding = true;
 	}
+	Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy);
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 
+<<<<<<< HEAD
 	pauseMenu.update();
 
 	if (!pauseMenu.pause)
@@ -206,6 +221,38 @@ void SceneTest::Update(double dt)
 		if (buildBuilding)
 		{
 			buildBuildingUpdate(dt);
+=======
+	ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
+
+	if (Application::IsKeyPressed('I'))
+	{
+		if (ITime > 0.005)
+		{
+			Istart = std::clock();
+			Inventory::getinventory()->setupdate();
+		}
+	}
+
+	if (Application::IsKeyPressed(VK_LBUTTON))
+	{
+		SpawnProjectile();
+	}
+	SpawnEnemy(dt);
+	LightUpdate(dt);
+	SpawnBuilding();
+	UpdateProjectiles(dt);
+	if (buildBuilding)
+	{
+		SpawnBuilding();
+
+		if (buildBuilding) {
+			buildBuildingUpdate(dt);
+		}
+
+		if (Inventory::getinventory()->getopeninventory() == true)
+		{
+			Inventory::getinventory()->Update(dt);
+>>>>>>> cc72d4c37c46ed0d056b38ca64ae0f2e2afa0486
 		}
 	}
 }
@@ -276,6 +323,37 @@ void SceneTest::Render()
 			RenderMeshOnScreen(spritesList[i], x + displacement, 20, 12, 12);
 			displacement += 15;
 		}
+<<<<<<< HEAD
+=======
+
+
+	}
+	if (pause)
+	{
+		RenderMeshOnScreen(meshList[GEO_PAUSEMENU], 40, 30, 16, 12);
+
+		if (pauseHighlight == 0)
+		{
+			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
+		}
+		if (pauseHighlight == 1)
+		{
+			RenderMeshOnScreen(meshList[GEO_BACKTOGAME], 40, 30, 16, 12);
+		}
+		if (pauseHighlight == 2)
+		{
+			RenderMeshOnScreen(meshList[GEO_BACKTOMAIN], 40, 30, 16, 12);
+		}
+
+		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
+
+	}
+
+	if (Inventory::getinventory()->getopeninventory() == true)
+	{
+		RenderMeshOnScreen(spritesList[GEO_BUILDUI], 40, 30, 80, 60);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press 'I' to exit Inventory", Color(0, 0, 1), 3.f, .5f, 19.f);
+>>>>>>> cc72d4c37c46ed0d056b38ca64ae0f2e2afa0486
 	}
 	
 	//Render UI
@@ -573,9 +651,6 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-	if (BaseEnemy.size() < 5)
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
-
 	for (auto &i : BaseEnemy)
 	{
 		i->Update(dt);
@@ -584,47 +659,47 @@ void SceneTest::SpawnEnemy(double dt)
 
 void SceneTest::RenderEnemy()
 {
-	int y = 0;
 	for (auto &i : BaseEnemy)
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
 		RenderMesh(enemyMeshList[i->getID() - 1], true);
 		modelStack.PopMatrix();
-		y++;
 	}
 }
 
-void SceneTest::SpawnBuilding(double dt)
+void SceneTest::SpawnBuilding()
 {
-	for (auto &i : BaseBuildings)
-	{
-		i->update(dt);
-	}
+
 }
 
 void SceneTest::RenderBuilding()
 {
-	int y = 0;
 	for (auto &i : BaseBuildings)
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
 		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
 		modelStack.PopMatrix();
-		y++;
 	}
 }
 
-void SceneTest::SpawnProjectile(double dt)
+void SceneTest::SpawnProjectile()
 {
-	Projectile arrow;
-	arrow.update(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward(), dt);
+	Projectile* temp = dynamic_cast<Projectile*>(ItemFactory::getItemFactory()->generateItem(999));
+	temp->FireProjectile();
+	BaseProjectile.push_back(temp);
 }
 
 void SceneTest::RenderProjectile()
 {
-	
+	for (auto &i : BaseProjectile)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(enemyMeshList[0], true);
+		modelStack.PopMatrix();
+	}
 }
 
 void SceneTest::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
@@ -707,8 +782,55 @@ void SceneTest::LightReset(double dt)
 
 void SceneTest::buildBuildingUpdate(double dt)
 {
-	if (Application::IsKeyPressed('K')){
+	if (Application::IsKeyPressed('K')) {
 		buildBuilding = false;
 	}
 
+}
+
+void SceneTest::UpdateEnemy(double dt)
+{
+	for (auto &i : BaseEnemy)
+	{
+		i->Update(dt);
+	}
+}
+
+void SceneTest::UpdateBuilding(double dt)
+{
+	for (auto &i : BaseBuildings)
+	{
+		i->update(dt);
+	}
+}
+
+void SceneTest::UpdateProjectiles(double dt)
+{
+	if (BaseProjectile.size())
+	{
+		std::vector<int> pos;
+		int counter = 0;
+		for (auto &i : BaseProjectile)
+		{
+			i->update(dt);
+			std::cout<<"Position: " << i->getRenderer().getPosition() << std::endl;
+			if (i->toDelete())
+			{
+				pos.push_back(counter);
+			}
+			counter++;
+		}
+		if (pos.size())
+		{
+			int deleted = 0;
+			for (auto i : pos)
+			{
+				Projectile* temp = *(BaseProjectile.begin() + i - deleted);
+				BaseProjectile.erase(BaseProjectile.begin() + i - deleted);
+				deleted++;
+				delete temp;
+				temp = nullptr;
+			}
+		}
+	}
 }

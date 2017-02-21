@@ -1,6 +1,6 @@
 #include "DefensiveWalls.h"
 
-DefensiveWalls::DefensiveWalls() : Building(108, "DefensiveWalls", "OBJ//Barn.obj", "", 100, DEFENCE, false) 
+DefensiveWalls::DefensiveWalls() : Building(108, "DefensiveWalls", "OBJ//DefensiveWall.obj", "Image//DefensiveWall_Texture.tga", 100, DEFENCE, false) 
 {
 	gameobjrenderer_ = new Renderer(Vector3(0, 0, 5), Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(5);

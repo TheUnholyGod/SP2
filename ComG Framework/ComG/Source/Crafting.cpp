@@ -1,6 +1,6 @@
 #include "Crafting.h"
 
-Crafting::Crafting() : Building(111, "Crafting", "OBJ//Barn.obj", "", 100, RESOURCE, false) 
+Crafting::Crafting() : Building(111, "Crafting", "OBJ//Shed.obj", "Image//ShedUV.tga", 100, RESOURCE, false) 
 {
 	gameobjrenderer_ = new Renderer(Vector3(0, 0, 5), Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(5);

@@ -4,7 +4,7 @@ Inventory* Inventory::inventory;
 
 Inventory::Inventory()
 {
-
+	openinventory = false;
 }
 
 Inventory* Inventory::getinventory()
@@ -32,4 +32,21 @@ void Inventory::Removeitem(Item* item)
 	Item* Remove = item;
 	List.remove(Remove);
 	delete Remove;
+}
+
+void Inventory::setupdate()
+{
+	openinventory = !openinventory;
+}
+
+void Inventory::Update(double dt)
+{
+	
+}
+
+bool Inventory::getopeninventory()
+{
+	bool open;
+	open = openinventory;
+	return open;
 }

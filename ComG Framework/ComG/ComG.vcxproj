@@ -172,6 +172,7 @@
     <ClCompile Include="Source\SceneCity.cpp" />
     <ClCompile Include="Source\SceneMainMenu.cpp" />
     <ClCompile Include="Source\SceneManager.cpp" />
+    <ClCompile Include="Source\ScenePlay.cpp" />
     <ClCompile Include="Source\SceneSplashScreen.cpp" />
     <ClCompile Include="Source\SceneTest.cpp" />
     <ClCompile Include="Source\SceneUI.cpp" />
@@ -278,6 +279,7 @@
     <ClInclude Include="Source\SceneMainMenu.h" />
     <ClInclude Include="Source\SceneManager.h" />
     <ClInclude Include="Source\SceneBase.h" />
+    <ClInclude Include="Source\ScenePlay.h" />
     <ClInclude Include="Source\SceneSplashScreen.h" />
     <ClInclude Include="Source\Scenetest.h" />
     <ClInclude Include="Source\SceneUI.h" />

@@ -5,9 +5,9 @@
 
 Player* Player::player;
 
-Player::Player() : GameObject(0,"", "")
+Player::Player() : GameObject(0, "", "") , movement_speed_(50)
 {
-	gameobjrenderer_ = new Renderer(Vector3(0,0,0),Vector3(1,0,0));
+	gameobjrenderer_ = new Renderer(Vector3(0, 0, 0), Vector3(1, 0, 0));
 	Inventory::getinventory();
 	AABB* temp = new AABB(Vector3(5, 5, 5), gameobjrenderer_->getPosition());
 	allAABB.push_back(temp);
@@ -58,7 +58,7 @@ void  Player::setWeapon(int key)
 	playerweapon_->getRenderer().setForward(player->getRenderer().getForward());
 }
 
-void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings)
+void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings,std::list<Enemy*> enemies)
 {
 	bool move = false;
 	Vector3 camForwardTemp = camForward;
@@ -75,11 +75,19 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		for (auto &i : buildings)
 		{
 			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camRight);
+			if (move)
+				break;
+		}
+		for (auto &i : enemies)
+		{
+			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camRight);
+			if (move)
+				break;
 		}
 		if (!move)
 		{
-			gameobjrenderer_->translate(-camRight, 25 * dt);
-			playerweapon_->getRenderer().translate(-camRight, 25 * dt);
+			gameobjrenderer_->translate(-camRight, movement_speed_ * dt);
+			playerweapon_->getRenderer().translate(-camRight, movement_speed_ * dt);
 			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
 		}
 	}
@@ -88,11 +96,19 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		for (auto &i : buildings)
 		{
 			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camRight);
+			if (move)
+				break;
+		}
+		for (auto &i : enemies)
+		{
+			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camRight);
+			if (move)
+				break;
 		}
 		if (!move)
 		{
-			gameobjrenderer_->translate(camRight, 25 * dt);
-			playerweapon_->getRenderer().translate(camRight, 25 * dt);
+			gameobjrenderer_->translate(camRight, movement_speed_ * dt);
+			playerweapon_->getRenderer().translate(camRight, movement_speed_ * dt);
 			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
 		}
 	}
@@ -101,11 +117,19 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		for (auto &i : buildings)
 		{
 			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camForwardTemp);
+			if (move)
+				break;
+		}
+		for (auto &i : enemies)
+		{
+			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camForwardTemp);
+			if (move)
+				break;
 		}
 		if (!move)
 		{
-			gameobjrenderer_->translate(-camForwardTemp, 25 * dt);
-			playerweapon_->getRenderer().translate(-camForwardTemp, 25 * dt);
+			gameobjrenderer_->translate(-camForwardTemp, movement_speed_ * dt);
+			playerweapon_->getRenderer().translate(-camForwardTemp, movement_speed_ * dt);
 			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
 		}
 	}
@@ -114,11 +138,19 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		for (auto &i : buildings)
 		{
 			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+			if (move)
+				break;
+		}
+		for (auto &i : enemies)
+		{
+			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+			if (move)
+				break;
 		}
 		if (!move)
 		{
-			gameobjrenderer_->translate(camForwardTemp, 25 * dt);
-			playerweapon_->getRenderer().translate(camForwardTemp, 25 * dt);
+			gameobjrenderer_->translate(camForwardTemp, movement_speed_ * dt);
+			playerweapon_->getRenderer().translate(camForwardTemp, movement_speed_ * dt);
 			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
 		}
 	}

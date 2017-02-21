@@ -5,7 +5,7 @@ Renderer::Renderer()
 
 }
 
-Renderer::Renderer(Vector3 position, Vector3 forward) : position_(position),forward_(forward)
+Renderer::Renderer(Vector3 position, Vector3 forward) : position_(position),forward_(forward),scaling(1)
 {
 	up_ = Vector3(0, 1, 0);
 	right_ = forward_.Cross(up_).Normalized();
