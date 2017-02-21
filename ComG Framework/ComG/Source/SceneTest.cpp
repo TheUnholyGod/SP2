@@ -1,4 +1,4 @@
-#include "Scenetest.h"
+#include "SceneTest.h"
 #include "GL\glew.h"
 #include "shader.hpp"
 #include "Mtx44.h"
@@ -100,11 +100,13 @@ void SceneTest::Init()
 	optionHighlight = 0;
 
 	start = std::clock();
+	Istart = std::clock();
 
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
 	Player::getplayer();
 	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(25, 50, 25), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	Inventory::getinventory();
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -321,6 +323,17 @@ void SceneTest::Update(double dt)
 		buildBuilding = true;
 	}
 
+	ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
+
+	if (Application::IsKeyPressed('I'))
+	{
+		if (ITime > 0.005)
+		{
+			Istart = std::clock();
+			Inventory::getinventory()->setupdate();
+		}
+	}
+
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 
 	//	if (allbuildingcollision(Player::getplayer()))
@@ -342,8 +355,14 @@ void SceneTest::Update(double dt)
 	SpawnEnemy(dt);
 	LightUpdate(dt);
 	SpawnBuilding(dt);
+
 	if (buildBuilding) {
 		buildBuildingUpdate(dt);
+	}
+
+	if (Inventory::getinventory()->getopeninventory() == true)
+	{
+		Inventory::getinventory()->Update(dt);
 	}
 }
 
@@ -438,6 +457,12 @@ void SceneTest::Render()
 
 		}
 
+	}
+
+	if (Inventory::getinventory()->getopeninventory() == true)
+	{
+		RenderMeshOnScreen(spritesList[GEO_BUILDUI], 40, 30, 80, 60);
+		RenderTextOnScreen(meshList[GEO_TEXT], "Press 'I' to exit Inventory", Color(0, 0, 1), 3.f, .5f, 19.f);
 	}
 }
 
@@ -756,6 +781,11 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding(double dt)
 {
+	if (BaseBuildings.size() < 1)
+	{
+		BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
+	}
+
 	for (auto &i : BaseBuildings)
 	{
 		i->update(dt);
@@ -783,7 +813,7 @@ void SceneTest::SpawnProjectile(double dt)
 
 void SceneTest::RenderProjectile()
 {
-	
+
 }
 
 void SceneTest::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
@@ -866,7 +896,7 @@ void SceneTest::LightReset(double dt)
 
 void SceneTest::buildBuildingUpdate(double dt)
 {
-	if (Application::IsKeyPressed('K')){
+	if (Application::IsKeyPressed('K')) {
 		buildBuilding = false;
 	}
 

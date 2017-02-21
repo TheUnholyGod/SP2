@@ -215,6 +215,9 @@ private:
 
 	std::clock_t start;
 	float elapsedTime;
+
+	std::clock_t Istart;
+	float ITime;
 };
 
 #endif

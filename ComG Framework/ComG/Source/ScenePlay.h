@@ -14,6 +14,8 @@
 #include "Building.h"
 #include "Enemy.h"
 #include "Projectile.h" 
+#include "Player.h"
+#include "Inventory.h"
 #include <vector>
 #include <array>
 
@@ -215,6 +217,9 @@ private:
 
 	std::clock_t start;
 	float elapsedTime;
+
+	std::clock_t Istart;
+	float ITime;
 };
 
 #endif

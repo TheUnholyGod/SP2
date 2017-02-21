@@ -146,7 +146,7 @@ void SceneBase::Init()
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
-	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 15, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 }
 
@@ -165,7 +165,7 @@ void SceneBase::Update(double dt)
 	{
 		Player::getplayer()->Update(camForward, camRight, dt,BaseBuildings);
 	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 15, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 
 	SpawnEnemy(dt);
 	LightUpdate(dt);
