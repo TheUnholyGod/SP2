@@ -4,8 +4,8 @@
 DefenceTower::DefenceTower(Vector3 position) : Building(107, "Turret", "OBJ//Turret.obj", "Image//Turret_Texture.tga", 100, DEFENCE, false) 
 {
 	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0));
-	gameobjrenderer_->setScaling(5);
-	size.push_back(Vector3(20, 10, 11) * gameobjrenderer_->getScaling());
+	gameobjrenderer_->setScaling(1);
+	size.push_back(Vector3(10, 10, 10) * gameobjrenderer_->getScaling());
 	for (auto &i : size)
 	{
 		AABB* temp = new AABB(i, gameobjrenderer_->getPosition());
@@ -30,6 +30,6 @@ void DefenceTower::update(double dt)
 	Vector3 turretForward = GameObject::gameobjrenderer_->getForward();
 	if (turretForward != ())
 		*/
-	Vector3 newForward = playerPosition - turretPosition;
+	Vector3 newForward = turretPosition - playerPosition;
 	GameObject::gameobjrenderer_->setForward(Vector3(newForward.Normalize().x, 0, newForward.Normalize().z) );
 }

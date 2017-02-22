@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	FastTravelRoom(/*const int id, const std::string name, std::string source, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	FastTravelRoom(Vector3 = (0, 0, 5));
 	virtual ~FastTravelRoom();
 
 	int get_Health();

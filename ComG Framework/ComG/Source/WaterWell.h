@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	WaterWell(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	WaterWell(Vector3=(0, 0, 5));
 	virtual ~WaterWell();
 
 	int get_Health();

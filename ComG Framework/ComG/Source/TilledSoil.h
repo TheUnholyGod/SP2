@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	TilledSoil(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	TilledSoil(Vector3 = (0, 0, 5));
 	virtual ~TilledSoil();
 
 	int get_Health();
