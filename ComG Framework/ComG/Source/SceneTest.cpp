@@ -5,6 +5,8 @@
 #include "Application.h"
 #include "MeshBuilder.h"
 #include "LoadTGA.h"
+#include "LoadOBJ.h"
+#include "LoadATOM.h"
 #include "SceneManager.h"
 #include "EnemyFactory.h"
 #include "BuildingFactory.h"
@@ -156,6 +158,18 @@ void SceneTest::Init()
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
 
 
+	meshList[GEO_SCAR_BODY] = MeshBuilder::GenerateOBJ("Scar_Body", "OBJ//Scar_Body.obj");
+	meshList[GEO_SCAR_BODY]->textureID = LoadTGA("Image//ScarUV.tga");
+
+	meshList[GEO_SCAR_BOLT] = MeshBuilder::GenerateOBJ("Scar_Bolt", "OBJ//Scar_Bolt.obj");
+	meshList[GEO_SCAR_BOLT]->textureID = LoadTGA("Image//ScarUV.tga");
+
+	meshList[GEO_SCAR_CHARGING] = MeshBuilder::GenerateOBJ("Scar_Charging", "OBJ//Scar_Charging.obj");
+	meshList[GEO_SCAR_CHARGING]->textureID = LoadTGA("Image//ScarUV.tga");
+
+	meshList[GEO_SCAR_CASING] = MeshBuilder::GenerateOBJ("Scar_Casing", "OBJ//Scar_Casing.obj");
+	meshList[GEO_SCAR_CASING]->textureID = LoadTGA("Image//ScarUV.tga");
+	
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
@@ -286,11 +300,32 @@ void SceneTest::Render()
 	RenderProjectile();
 	RenderItems();
 
+	static double timee = 0.0;
+	modelStack.PushMatrix();
+	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Body");
+	RenderMesh(meshList[GEO_SCAR_BODY], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Bolt");
+	RenderMesh(meshList[GEO_SCAR_BOLT], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Charging");
+	RenderMesh(meshList[GEO_SCAR_CHARGING], false);
+	modelStack.PopMatrix();
+
+	modelStack.PushMatrix();
+	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Casing");
+	RenderMesh(meshList[GEO_SCAR_CASING], false);
+	modelStack.PopMatrix();
+
 	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
 	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
-
+	timee += 1.0 / 60.0;
 	if (buildBuilding) 
 	{
 		RenderMeshOnScreen(spritesList[GEO_BUILDUI], 40, 30, 80, 60);
