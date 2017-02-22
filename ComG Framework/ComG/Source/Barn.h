@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	Barn(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	Barn(Vector3=(0,0,5));
 	virtual ~Barn();
 	void update(double dt) override;
 	int get_Health();

@@ -33,14 +33,14 @@ BuildingFactory* BuildingFactory::getBuildingFactory()
 	return BuildingF_;
 }
 
-Building* BuildingFactory::generateBuilding(int key)
+Building* BuildingFactory::generateBuilding(int key, Vector3 position)
 {
 	Building* temp = nullptr;
 	std::vector<int> tempID(BuildingDataBase::getBuildingDB()->getIDList());
 	if (key == tempID[0])
-		temp = new Barn;
+		temp = new Barn(position);
 	if (key == tempID[1])
-		temp = new DefenceTower;
+		temp = new DefenceTower(position);
 	if (key == tempID[2])
 		temp = new Crafting;
 	if (key == tempID[3])

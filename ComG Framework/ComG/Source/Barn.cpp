@@ -1,9 +1,9 @@
 #include "Barn.h"
 #include "MyMath.h"
 
-Barn::Barn() : Building(101, "Barn", "OBJ//Barn(working).obj", "Image//barnInteriorUV.tga", 100, NORMAL, true)
+Barn::Barn(Vector3 position) : Building(101, "Barn", "OBJ//Barn(working).obj", "Image//barnInteriorUV.tga", 100, NORMAL, true)
 {
-	gameobjrenderer_ = new Renderer(Vector3(0 ,0, 5), Vector3(1, 0, 0));
+	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(2);
 	size.push_back(Vector3(55, 50, 85));
 

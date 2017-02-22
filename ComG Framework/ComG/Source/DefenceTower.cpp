@@ -1,9 +1,9 @@
 #include "DefenceTower.h"
 #include "Camera3.h"
 
-DefenceTower::DefenceTower() : Building(107, "Turret", "OBJ//Turret.obj", "Image//Turret_Texture.tga", 100, DEFENCE, false) 
+DefenceTower::DefenceTower(Vector3 position) : Building(107, "Turret", "OBJ//Turret.obj", "Image//Turret_Texture.tga", 100, DEFENCE, false) 
 {
-	gameobjrenderer_ = new Renderer(Vector3(0, 0, 5), Vector3(1, 0, 0));
+	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(5);
 	size.push_back(Vector3(20, 10, 11) * gameobjrenderer_->getScaling());
 	for (auto &i : size)

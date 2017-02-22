@@ -23,6 +23,7 @@ public:
 	float pitch, yaw;
 	float pitchLimit;
 	static Vector3 getPosition();
+	static Vector3 getForward();
 
 	Camera3();
 	~Camera3();
