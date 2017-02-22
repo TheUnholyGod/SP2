@@ -41,7 +41,7 @@ void Inventory::setupdate()
 
 void Inventory::Update(double dt)
 {
-	
+	std::cout << "List: " << List.size() << std::endl;
 }
 
 bool Inventory::getopeninventory()

@@ -169,9 +169,12 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 			if (pickup)
 			{
 				std::cout << "picked up" << std::endl;
+				i->update();
 				Item* temp = i;
 				Inventory::getinventory()->Additem(temp->getID());
 				pos.push_back(counter);
+				Inventory::getinventory()->Update(dt);
+				delete i->getAABB(0);
 			}
 			counter++;
 		}
