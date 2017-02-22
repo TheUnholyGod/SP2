@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 22/2/2017 5:12:52 PM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -25,6 +26,35 @@
      1>Source\SceneTest.cpp(728): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>Source\SceneTest.cpp(729): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>Source\SceneTest.cpp(747): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+=======
+<<<<<<< HEAD
+﻿Build started 2/22/2017 4:18:51 PM.
+     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneTest.cpp
+         SceneTest.cpp
+     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>Source\SceneTest.cpp(173): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SceneTest.cpp(178): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SceneTest.cpp(183): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SceneTest.cpp(188): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SceneTest.cpp(223): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>Source\SceneTest.cpp(333): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneTest.cpp(339): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>Source\SceneTest.cpp(363): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>Source\SceneTest.cpp(755): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneTest.cpp(756): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneTest.cpp(774): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+=======
+﻿Build started 22/2/2017 3:16:18 PM.
+     1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glew\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glfw\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\PowerGenerator.cpp
+         PowerGenerator.cpp
+     1>Source\PowerGenerator.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+>>>>>>> d238c9570ae6836caceff57bef34d53fd94e26ac
+>>>>>>> 9923dfe9f55e5cece66f50fadea4fe99619fb664
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glew\lib" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Ability.obj
          Release\AbilityDataBase.obj
@@ -133,4 +163,12 @@
 
 Build succeeded.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:09.78
+=======
+<<<<<<< HEAD
+Time Elapsed 00:00:25.40
+=======
+Time Elapsed 00:00:20.59
+>>>>>>> d238c9570ae6836caceff57bef34d53fd94e26ac
+>>>>>>> 9923dfe9f55e5cece66f50fadea4fe99619fb664
