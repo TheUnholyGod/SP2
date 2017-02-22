@@ -35,6 +35,9 @@ class Menu
 		//Building Menu
 		GEO_BUILDMENU,
 
+		//Inventory Menu
+		GEO_INVENTORYMENU,
+
 		//Cursor
 		GEO_CURSOR,
 		NUM_GEOMETRY,

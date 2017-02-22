@@ -25,8 +25,7 @@ bool Projectile::hit(std::list<Building*>buildings, std::list<Enemy*>enemies)
 	bool hit = false;
 	for (auto &i : enemies)
 	{
-		std::cout << "Check Collision!!" << std::endl;
-		hit = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
+		hit = i->getAABB(1)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
 		if (hit)
 			std::cout << "HIT MOFO!!" << std::endl;
 			i->takeDamage(attack_dmg_);
@@ -36,7 +35,6 @@ bool Projectile::hit(std::list<Building*>buildings, std::list<Enemy*>enemies)
 	{
 		for (auto &i : buildings)
 		{
-			std::cout << "Check Collision!!" << std::endl;
 			hit = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
 			if (hit)
 				std::cout << "HIT NOT MOFO!!" << std::endl;
