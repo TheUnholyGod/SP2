@@ -1,6 +1,6 @@
 #include "PowerGenerator.h"
 
-PowerGenerator::PowerGenerator() : Building(106, "PowerGenerator", "OBJ//Barn.obj", "", 100, DEFENCE, false)
+PowerGenerator::PowerGenerator() : Building(106, "PowerGenerator", "OBJ//PowerGenerator.obj", "Image//PowerGenerator_Texture.tga", 100, DEFENCE, false)
 {
 	gameobjrenderer_ = new Renderer(Vector3(0, 0, 5), Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(5);
