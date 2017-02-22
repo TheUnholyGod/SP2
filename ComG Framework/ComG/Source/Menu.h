@@ -29,6 +29,12 @@ class Menu
 		GEO_VOLUME,
 		GEO_BACK,
 
+		//Crafting Menu
+		GEO_CRAFTMENU,
+		
+		//Building Menu
+		GEO_BUILDMENU,
+
 		//Cursor
 		GEO_CURSOR,
 		NUM_GEOMETRY,
@@ -65,6 +71,8 @@ public:
 	int menuType;
 	int pauseSelection;
 	int optionSelection;
+	int buildSelection;
+	int craftSelection;
 	int windowX;
 	int windowY;
 

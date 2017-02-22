@@ -696,11 +696,6 @@ void SceneTest::SpawnItems(double dt)
 	{
 		BaseItems.push_back(ItemFactory::getItemFactory()->generateItem(101));
 	}
-
-	for (auto &i : BaseItems)
-	{
-		i->update();
-	}
 }
 
 void SceneTest::RenderItems()
@@ -708,11 +703,14 @@ void SceneTest::RenderItems()
 	int y = 0;
 	for (auto &i : BaseItems)
 	{
-		modelStack.PushMatrix();
-		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(foodMeshList[i->getID() - ItemID], true);
-		modelStack.PopMatrix();
-		y++;
+		if (i->getpickedup() == false)
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(foodMeshList[i->getID() - ItemID], true);
+			modelStack.PopMatrix();
+			y++;
+		}
 	}
 }
 
