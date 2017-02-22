@@ -69,7 +69,7 @@ void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 		if (entitytype == 'B')
 		{
 			Vector3 position = Vector3(tempstorage[1], tempstorage[2], tempstorage[3]);
-			Building* temp = BuildingFactory::getBuildingFactory()->generateBuilding(tempstorage[0]);
+			Building* temp = BuildingFactory::getBuildingFactory()->generateBuilding(tempstorage[0], Vector3(0,0,5));
 			temp->getRenderer().setPosition(position);
 			temp->getAABB(0)->setMinMax(position);
 			buildingslist.push_back(temp);

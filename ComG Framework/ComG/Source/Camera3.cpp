@@ -114,3 +114,8 @@ Vector3 Camera3::getPosition()
 {
 	return position;
 }
+
+Vector3 Camera3::getForward()
+{
+	return target;
+}

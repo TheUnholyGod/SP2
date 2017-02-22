@@ -7,7 +7,7 @@ class Camera
 {
 public:
 	static Vector3 position;
-	Vector3 target;
+	static Vector3 target;
 	Vector3 up;
 
 	Camera();
