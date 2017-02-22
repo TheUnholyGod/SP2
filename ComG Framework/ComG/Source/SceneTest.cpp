@@ -703,7 +703,7 @@ void SceneTest::RenderItems()
 	int y = 0;
 	for (auto &i : BaseItems)
 	{
-		if (i->getpickedup() == false)
+		if (!i->getpickedup())
 		{
 			modelStack.PushMatrix();
 			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
