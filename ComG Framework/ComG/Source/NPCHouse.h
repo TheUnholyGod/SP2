@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	NPCHouse(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	NPCHouse(Vector3 = (0, 0, 5));
 	virtual ~NPCHouse();
 
 	int get_Health();

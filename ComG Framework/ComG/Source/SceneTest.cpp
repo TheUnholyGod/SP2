@@ -200,13 +200,13 @@ void SceneTest::Init()
 	Player::getplayer()->setWeapon(307);
 	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-
+	PTime = 0;
+	Pstart = 0;
 }
 
 void SceneTest::Update(double dt)
 {
 	DebugMode(dt);
-
 	/*if (Application::IsKeyPressed('E'))
 	{
 		SceneManager::currScene = 3;
@@ -224,15 +224,19 @@ void SceneTest::Update(double dt)
 
 		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy, BaseItems);
 		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-		if (Application::IsKeyPressed(VK_LBUTTON))
+		PTime = std::clock();
+		if (Application::IsKeyPressed(VK_LBUTTON) && (PTime - Pstart > 180))
 		{
+			Pstart = std::clock();
 			SpawnProjectile();
 		}
 
 		SpawnEnemy(dt);
 		LightUpdate(dt);
-		if (Application::IsKeyPressed('M'))
+		BTime = std::clock();
+		if (Application::IsKeyPressed('M') && (BTime - Bstart > 500 ))
 		{
+			Bstart = std::clock();
 			SpawnBuilding();
 		}
 
@@ -692,7 +696,7 @@ void SceneTest::SpawnBuilding()
 	Vector3 spawnPoint = Player::getplayer()->getRenderer().getPosition() + (Player::getplayer()->getRenderer().getForward() * 70);
 	spawnPoint.y = 0.1f;
 	
-	Building* temp = BuildingFactory::generateBuilding(107, spawnPoint);
+	Building* temp = BuildingFactory::generateBuilding(108, spawnPoint);
 	BaseBuildings.push_back(temp);
 }
 

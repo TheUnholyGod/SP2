@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	OreMines(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	OreMines(Vector3 = (0, 0, 5));
 	virtual ~OreMines();
 
 	int get_Health();
