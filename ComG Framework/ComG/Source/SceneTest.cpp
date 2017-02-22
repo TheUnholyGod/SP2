@@ -685,7 +685,7 @@ void SceneTest::RenderProjectile()
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(enemyMeshList[0], true);
+		RenderMesh(enemyMeshList[1], true);
 		modelStack.PopMatrix();
 	}
 }
