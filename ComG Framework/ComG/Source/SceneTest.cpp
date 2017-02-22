@@ -89,11 +89,6 @@ void SceneTest::Init()
 	sunrotate = 100;
 	Day = 0;
 
-	pause = false;
-	options = false;
-	pauseHighlight = 0;
-	optionHighlight = 0;
-
 	start = std::clock();
 	Istart = std::clock();
 	// Make sure you pass uniform parameters after glUseProgram()
@@ -346,26 +341,6 @@ void SceneTest::Render()
 			RenderMeshOnScreen(spritesList[i], x + displacement, 20, 12, 12);
 			displacement += 15;
 		}
-	}
-	if (pause)
-	{
-		RenderMeshOnScreen(meshList[GEO_PAUSEMENU], 40, 30, 16, 12);
-
-		if (pauseHighlight == 0)
-		{
-			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
-		}
-		if (pauseHighlight == 1)
-		{
-			RenderMeshOnScreen(meshList[GEO_BACKTOGAME], 40, 30, 16, 12);
-		}
-		if (pauseHighlight == 2)
-		{
-			RenderMeshOnScreen(meshList[GEO_BACKTOMAIN], 40, 30, 16, 12);
-		}
-
-		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
-
 	}
 
 	if (Inventory::getinventory()->getopeninventory() == true)

@@ -1,6 +1,6 @@
 #include "InventoryWarehouse.h"
 
-InventoryWarehouse::InventoryWarehouse() : Building(103, "InventoryWarehouse", "OBJ//InventoryWarehouse.obj", "Image//InventoryWarehouse_Texture.tga", 100, NORMAL, true) 
+InventoryWarehouse::InventoryWarehouse() : Building(103, "InventoryRoom", "OBJ//InventoryWarehouse.obj", "Image//InventoryWarehouse_Texture.tga", 100, NORMAL, true) 
 {
 	gameobjrenderer_ = new Renderer(Vector3(0, 0, 5), Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(5);
