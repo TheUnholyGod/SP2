@@ -14,6 +14,7 @@ protected:
 public:
 	Item(int, std::string, std::string, std::string);
 	void update();
+	bool getpickedup();
 	virtual ~Item();
 	const std::string getName() { return kname_; }
 };
