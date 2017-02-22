@@ -62,6 +62,7 @@ void  Player::setWeapon(int key)
 void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings,std::list<Enemy*> enemies, std::vector<Item*> items)
 {
 	bool move = false;
+	bool move2 = false;
 	bool pickup = false;
 
 	Vector3 camForwardTemp = camForward;
@@ -83,11 +84,11 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		}
 		for (auto &i : enemies)
 		{
-			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camRight);
-			if (move)
+			move2 = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camRight);
+			if (move2)
 				break;
 		}
-		if (!move)
+		if (!move && !move2)
 		{
 			gameobjrenderer_->translate(-camRight, movement_speed_ * dt);
 			playerweapon_->getRenderer().translate(-camRight, movement_speed_ * dt);
@@ -104,11 +105,11 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		}
 		for (auto &i : enemies)
 		{
-			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camRight);
-			if (move)
+			move2 = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camRight);
+			if (move2)
 				break;
 		}
-		if (!move)
+		if (!move && !move2)
 		{
 			gameobjrenderer_->translate(camRight, movement_speed_ * dt);
 			playerweapon_->getRenderer().translate(camRight, movement_speed_ * dt);
@@ -125,11 +126,11 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		}
 		for (auto &i : enemies)
 		{
-			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camForwardTemp);
-			if (move)
+			move2 = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camForwardTemp);
+			if (move2)
 				break;
 		}
-		if (!move)
+		if (!move && !move2)
 		{
 			gameobjrenderer_->translate(-camForwardTemp, movement_speed_ * dt);
 			playerweapon_->getRenderer().translate(-camForwardTemp, movement_speed_ * dt);
@@ -146,11 +147,11 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		}
 		for (auto &i : enemies)
 		{
-			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
-			if (move)
+			move2 = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+			if (move2)
 				break;
 		}
-		if (!move)
+		if (!move && !move2)
 		{
 			gameobjrenderer_->translate(camForwardTemp, movement_speed_ * dt);
 			playerweapon_->getRenderer().translate(camForwardTemp, movement_speed_ * dt);
