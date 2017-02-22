@@ -185,6 +185,8 @@ void SceneTest::Init()
 	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
 	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+
 }
 
 void SceneTest::Update(double dt)
@@ -214,8 +216,8 @@ void SceneTest::Update(double dt)
 				Inventory::getinventory()->setupdate();
 			}
 		}
-		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy, BaseItems);
+		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 		if (Application::IsKeyPressed(VK_LBUTTON))
 		{
 			SpawnProjectile();
