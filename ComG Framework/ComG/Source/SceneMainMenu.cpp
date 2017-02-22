@@ -108,16 +108,16 @@ void SceneMainMenu::Init()
 
 	//Options Menu
 	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//Options Menu.tga");
+	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//optionsMenu.tga");
 
 	meshList[GEO_MOUSE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_MOUSE]->textureID = LoadTGA("Image//Options Menu Mouse.tga");
+	meshList[GEO_MOUSE]->textureID = LoadTGA("Image//optionsMenu - Mouse.tga");
 
 	meshList[GEO_VOLUME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_VOLUME]->textureID = LoadTGA("Image//Options Menu Volume.tga");
+	meshList[GEO_VOLUME]->textureID = LoadTGA("Image//optionsMenu - Volume.tga");
 
 	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//Options Menu Back.tga");
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//optionsMenu - Back.tga");
 }
 
 void SceneMainMenu::Update(double dt)
