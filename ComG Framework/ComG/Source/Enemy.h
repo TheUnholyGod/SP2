@@ -25,7 +25,7 @@ public:
 	virtual ~Enemy();
 	virtual void Update(double dt) {}
 	const std::string getName() { return kname_; }
-	void takeDamage(int dmg) { health_ -= (dmg  * (defence_ / 100)); if (health_ < 0) { health_ = 0; } }
+	void takeDamage(int dmg) { health_ -= (int)(dmg); if (health_ < 0) { health_ = 0; } std::cout << health_ << std::endl; }
 	bool isDead() { if (!health_) return true; else return false; }
 };
 

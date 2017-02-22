@@ -21,8 +21,8 @@ public:
 		}
 		return sl_instance;
 	}
-	static void Save(int, std::string, std::list<Building*>&, std::list<Enemy*>&);
-	static void Load(int, std::string, std::list<Building*>&, std::list<Enemy*>&);
+	static void Save(int, std::string, std::list<Building*>&, std::vector<Enemy*>&);
+	static void Load(int, std::string, std::list<Building*>&, std::vector<Enemy*>&);
 	char* getBlank() { return &blank; }
 	~SaveLoad();
 };

@@ -199,7 +199,7 @@ private:
 	void LightReset(double dt);
 	int Day;
 
-	std::list<Enemy*> BaseEnemy;
+	std::vector<Enemy*> BaseEnemy;
 	void SpawnEnemy(double dt);
 	void UpdateEnemy(double dt);
 	void RenderEnemy();

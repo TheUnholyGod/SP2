@@ -59,7 +59,7 @@ void  Player::setWeapon(int key)
 	playerweapon_->getRenderer().setForward(player->getRenderer().getForward());
 }
 
-void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings,std::list<Enemy*> enemies, std::vector<Item*> items)
+void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings,std::vector<Enemy*> enemies, std::vector<Item*> items)
 {
 	bool move = false;
 	bool move2 = false;

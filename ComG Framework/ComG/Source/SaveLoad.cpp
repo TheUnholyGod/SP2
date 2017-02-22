@@ -15,7 +15,7 @@ SaveLoad::~SaveLoad()
 {
 }
 
-void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& buildingslist, std::list<Enemy*>& enemyslist)
+void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& buildingslist, std::vector<Enemy*>& enemyslist)
 {
 	char blanker = *(SaveLoad::getInstance()->getBlank());
 	std::stringstream filename;
@@ -42,7 +42,7 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 	saver.close();
 }
 
-void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& buildingslist, std::list<Enemy*>& enemyslist)
+void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& buildingslist, std::vector<Enemy*>& enemyslist)
 {
 	const char* blanker = SaveLoad::getInstance()->getBlank();
 	std::stringstream filename;

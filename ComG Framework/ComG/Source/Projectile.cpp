@@ -20,16 +20,18 @@ void Projectile::FireProjectile()
 	gameobjrenderer_->setForward(Player::getplayer()->getWeapon()->getRenderer().getForward());
 }
 
-bool Projectile::hit(std::list<Building*>buildings, std::list<Enemy*>enemies)
+bool Projectile::hit(std::list<Building*>buildings, std::vector<Enemy*>enemies)
 {
 	bool hit = false;
 	for (auto &i : enemies)
 	{
-		hit = i->getAABB(1)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
+		hit = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
 		if (hit)
+		{
 			std::cout << "HIT MOFO!!" << std::endl;
 			i->takeDamage(attack_dmg_);
 			break;
+		}
 	}
 	if (!hit)
 	{
@@ -44,13 +46,17 @@ bool Projectile::hit(std::list<Building*>buildings, std::list<Enemy*>enemies)
 	return hit;
 }
 
-void Projectile::update(double dt, std::list<Building*>buildings, std::list<Enemy*>enemies)
+void Projectile::update(double dt, std::list<Building*>buildings, std::vector<Enemy*>enemies)
 {
 	if (!fired_)
 	{
 		gameobjrenderer_->setPosition(Player::getplayer()->getWeapon()->getRenderer().getPosition());
 		gameobjrenderer_->setUp(Player::getplayer()->getWeapon()->getRenderer().getForward().Cross(Player::getplayer()->getWeapon()->getRenderer().getRight()).Normalized());
 		gameobjrenderer_->setForward(Player::getplayer()->getWeapon()->getRenderer().getForward());
+		if (gameobjrenderer_->getForward().y < 0)
+		{
+			gameobjrenderer_->translate((0, 1, 0), gameobjrenderer_->getForward().y);
+		}
 	}
 
 	else

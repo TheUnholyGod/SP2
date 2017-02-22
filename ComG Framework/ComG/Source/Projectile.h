@@ -21,8 +21,8 @@ public:
 	Projectile();
 	~Projectile();
 	void FireProjectile();
-	bool hit(std::list<Building*>buildings, std::list<Enemy*>enemies);
-	void update(double dt, std::list<Building*>buildings, std::list<Enemy*>enemies);
+	bool hit(std::list<Building*>buildings, std::vector<Enemy*>enemies);
+	void update(double dt, std::list<Building*>buildings, std::vector<Enemy*>enemies);
 	bool toDelete() { return deletepls_; }
 };
 

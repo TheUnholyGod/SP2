@@ -145,7 +145,7 @@ void SceneCity::Init()
 	LoadSkybox();
 	Player::getplayer()->setWeapon(307);
 	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
+//	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 }
 
 void SceneCity::Update(double dt)
@@ -224,7 +224,7 @@ void SceneCity::Exit()
 {
 	glDeleteProgram(m_programID);
 	glDeleteVertexArrays(1, &m_vertexArrayID);
-	SaveLoad::Save(1, "Base", BaseBuildings, BaseEnemy);
+	//SaveLoad::Save(1, "Base", BaseBuildings, BaseEnemy);
 }
 
 void SceneCity::RenderMesh(Mesh *mesh, bool enableLight)

@@ -794,9 +794,28 @@ void SceneTest::buildBuildingUpdate(double dt)
 
 void SceneTest::UpdateEnemy(double dt)
 {
+	std::vector<int> pos;
+	int counter = 0;
 	for (auto &i : BaseEnemy)
 	{
 		i->Update(dt);
+		if (i->isDead())
+		{
+			pos.push_back(counter);
+		}
+		counter++;
+	}
+	if (pos.size())
+	{
+		int deleted = 0;
+		for (auto i : pos)
+		{
+			Enemy* temp = *(BaseEnemy.begin() + (i - deleted));
+			BaseEnemy.erase(BaseEnemy.begin() + (i - deleted));
+			deleted++;
+			delete temp;
+			temp = nullptr;
+		}
 	}
 }
 
