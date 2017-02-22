@@ -58,6 +58,12 @@ class SceneTest : public Scene
 
 		GEO_MOUSE,
 		GEO_VOLUME,
+
+		GEO_SCAR_BODY,
+		GEO_SCAR_BOLT,
+		GEO_SCAR_CHARGING,
+		GEO_SCAR_CASING,
+
 		NUM_GEOMETRY,
 	};
 	enum SPRITES
