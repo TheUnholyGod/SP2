@@ -231,6 +231,29 @@ void Menu::update()
 					optionSelection = 2;
 				}
 			}
+
+			if (optionSelection == 0) //Mouse
+			{
+				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 340 && cursorY <= 390)) || (Application::IsKeyPressed(VK_RETURN)))
+				{
+
+				}
+			}
+			if (optionSelection == 1) //Volume
+			{
+				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 190 && cursorY <= 230)) || (Application::IsKeyPressed(VK_RETURN)))
+				{
+
+				}
+			}
+			if (optionSelection == 2) //Back
+			{
+				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 40 && cursorY <= 80)) || (Application::IsKeyPressed(VK_RETURN)))
+				{
+					optionSelection = 0;
+					menuType = 1;
+				}
+			}
 		}
 	}
 	if (menuType == 1) //Pause Menu
@@ -276,6 +299,33 @@ void Menu::update()
 			{
 				pauseSelection = 2;
 			}
+
+			if (pauseSelection == 0) //Back to Options Screen
+			{
+				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 285 && cursorY <= 325)) || (Application::IsKeyPressed(VK_RETURN)))
+				{
+					menuType = 0;
+				}
+			}
+			if (pauseSelection == 1) //Back to Game
+			{
+				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 180 && cursorY <= 225)) || (Application::IsKeyPressed(VK_RETURN)))
+				{
+					SetCursorPos(windowX / 2, windowY / 2);
+					menuType = 1;
+					pauseSelection = 0;
+					optionSelection = 0;
+					pause = false;
+				}
+			}
+			if (pauseSelection == 2) //Back to Main Menu
+			{
+				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 75 && cursorY <= 120)) || (Application::IsKeyPressed(VK_RETURN)))
+				{
+					SceneManager::currScene = 2;
+					pause = false;
+				}
+			}
 		}
 	}
 	if (menuType == 2) //Build Menu
@@ -309,54 +359,8 @@ void Menu::update()
 		}
 	}
 
-	if (pauseSelection == 0) //Back to Options Screen
-	{	
-		if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 285 && cursorY <= 325)) || (Application::IsKeyPressed(VK_RETURN)))
-		{
-			menuType = 0;
-		}
-	}
-	if (pauseSelection == 1) //Back to Game
-	{
-		if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 180 && cursorY <= 225)) || (Application::IsKeyPressed(VK_RETURN)))
-		{
-			SetCursorPos(windowX / 2, windowY / 2);
-			menuType = 1;
-			pauseSelection = 0;
-			optionSelection = 0;
-			pause = false;
-		}		
-	}
-	if (pauseSelection == 2) //Back to Main Menu
-	{
-		if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 75 && cursorY <= 120)) || (Application::IsKeyPressed(VK_RETURN)))
-		{
-			SceneManager::currScene = 2;
-			pause = false;
-		}	
-	}
-	if (optionSelection == 0) //Mouse
-	{
-		if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 340 && cursorY <= 390)) || (Application::IsKeyPressed(VK_RETURN)))
-		{
-
-		}
-	}
-	if (optionSelection == 1) //Volume
-	{
-		if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 190 && cursorY <= 230)) || (Application::IsKeyPressed(VK_RETURN)))
-		{
-
-		}
-	}
-	if (optionSelection == 2) //Back
-	{
-		if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 40 && cursorY <= 80)) || (Application::IsKeyPressed(VK_RETURN)))
-		{
-			optionSelection = 0;
-			menuType = 1;
-		}		
-	}
+	
+	
 }
 
 void Menu::Render()

@@ -677,7 +677,7 @@ void SceneTest::RenderProjectile()
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(enemyMeshList[0], true);
+		RenderMesh(enemyMeshList[1], true);
 		modelStack.PopMatrix();
 	}
 }
@@ -828,8 +828,8 @@ void SceneTest::UpdateProjectiles(double dt)
 			int deleted = 0;
 			for (auto i : pos)
 			{
-				Projectile* temp = *(BaseProjectile.begin() + i - deleted);
-				BaseProjectile.erase(BaseProjectile.begin() + i - deleted);
+				Projectile* temp = *(BaseProjectile.begin() + (i - deleted));
+				BaseProjectile.erase(BaseProjectile.begin() + (i - deleted));
 				deleted++;
 				delete temp;
 				temp = nullptr;

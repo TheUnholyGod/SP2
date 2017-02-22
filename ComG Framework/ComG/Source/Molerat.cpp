@@ -33,6 +33,7 @@ void Molerat::Update(double dt)
 		if (gameobjrenderer_->getPosition() == goal)
 			goalreached = true;
 	}
+	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 	//std::cout << gameobjrenderer_->getForward() << std::endl;
 }
