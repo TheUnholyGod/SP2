@@ -5,6 +5,8 @@
 #include "Collision.h"
 #include "Vector3.h"
 #include "Application.h"
+#include "Building.h"
+#include "Enemy.h"
 
 class Projectile :public Item
 {
@@ -19,8 +21,8 @@ public:
 	Projectile();
 	~Projectile();
 	void FireProjectile();
-	bool hit();
-	void update(double dt);
+	bool hit(std::list<Building*>buildings, std::list<Enemy*>enemies);
+	void update(double dt, std::list<Building*>buildings, std::list<Enemy*>enemies);
 	bool toDelete() { return deletepls_; }
 };
 

@@ -20,14 +20,34 @@ void Projectile::FireProjectile()
 	gameobjrenderer_->setForward(Player::getplayer()->getWeapon()->getRenderer().getForward());
 }
 
-bool Projectile::hit()
+bool Projectile::hit(std::list<Building*>buildings, std::list<Enemy*>enemies)
 {
-
-	return true;
+	bool hit = false;
+	for (auto &i : enemies)
+	{
+		std::cout << "Check Collision!!" << std::endl;
+		hit = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
+		if (hit)
+			std::cout << "HIT MOFO!!" << std::endl;
+			i->takeDamage(attack_dmg_);
+			break;
+	}
+	if (!hit)
+	{
+		for (auto &i : buildings)
+		{
+			std::cout << "Check Collision!!" << std::endl;
+			hit = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
+			if (hit)
+				std::cout << "HIT NOT MOFO!!" << std::endl;
+				break;
+		}
+	}
+	return hit;
 }
 
-void Projectile::update(double dt) 
-{	
+void Projectile::update(double dt, std::list<Building*>buildings, std::list<Enemy*>enemies)
+{
 	if (!fired_)
 	{
 		gameobjrenderer_->setPosition(Player::getplayer()->getWeapon()->getRenderer().getPosition());
@@ -38,10 +58,10 @@ void Projectile::update(double dt)
 	else
 	{
 		gameobjrenderer_->translate(gameobjrenderer_->getForward(), proj_speed_*dt);
-		if ((gameobjrenderer_->getPosition() - defaultpos).Length() > range_)
+		if ((gameobjrenderer_->getPosition() - defaultpos).Length() > range_ || hit(buildings,enemies))
 		{
 			deletepls_ = true;
 		}
 	}
-	
+
 }

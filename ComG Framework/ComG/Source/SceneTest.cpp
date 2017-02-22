@@ -695,7 +695,7 @@ void SceneTest::RenderItems()
 	int y = 0;
 	for (auto &i : BaseItems)
 	{
-		if (i->getpickedup() == false)
+		if (!i->getpickedup())
 		{
 			modelStack.PushMatrix();
 			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
@@ -816,7 +816,7 @@ void SceneTest::UpdateProjectiles(double dt)
 		int counter = 0;
 		for (auto &i : BaseProjectile)
 		{
-			i->update(dt);
+			i->update(dt,BaseBuildings,BaseEnemy);
 			if (i->toDelete())
 			{
 				pos.push_back(counter);
