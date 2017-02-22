@@ -826,7 +826,7 @@ void SceneTest::UpdateProjectiles(double dt)
 		int counter = 0;
 		for (auto &i : BaseProjectile)
 		{
-			i->update(dt);
+			i->update(dt,BaseBuildings,BaseEnemy);
 			if (i->toDelete())
 			{
 				pos.push_back(counter);
