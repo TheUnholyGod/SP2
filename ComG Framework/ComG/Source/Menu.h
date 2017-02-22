@@ -12,6 +12,8 @@
 #include "Camera3.h"
 #include "GLFW\glfw3.h"
 #include "GL\glew.h"
+#include "Inventory.h"
+#include <list>
 
 class Menu
 {
@@ -37,6 +39,7 @@ class Menu
 
 		//Inventory Menu
 		GEO_INVENTORYMENU,
+		GEO_ITEMS,
 
 		//Cursor
 		GEO_CURSOR,
@@ -68,6 +71,7 @@ public:
 	void Render();
 	void RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey);
 	void RenderMesh(Mesh *mesh, bool enableLight);
+	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 
 	bool pause;
 
@@ -85,6 +89,11 @@ public:
 
 	std::clock_t start;
 	float elapsedTime;
+
+	//Items
+	std::string Itemname;
+	int ItemNo;
+	int count;
 
 	unsigned m_vertexArrayID;
 	unsigned m_programID;

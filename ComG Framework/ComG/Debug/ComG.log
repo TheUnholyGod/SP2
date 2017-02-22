@@ -1,1 +1,28 @@
-﻿  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
+﻿  Menu.cpp
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(112): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(424): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(441): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(442): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  SceneWildLife.cpp
+  SceneUI.cpp
+  SceneTest.cpp
+  SceneSplashScreen.cpp
+  SceneManager.cpp
+  SceneMainMenu.cpp
+  SceneCity.cpp
+  SceneBase.cpp
+  Projectile.cpp
+  Player.cpp
+  Molerat.cpp
+  Lizard.cpp
+  Item.cpp
+  Inventory.cpp
+  GameObject.cpp
+  EnemyFactory.cpp
+  EnemyDataBase.cpp
+  BuildingFactory.cpp
+  BuildingDataBase.cpp
+  Barn.cpp
+  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe

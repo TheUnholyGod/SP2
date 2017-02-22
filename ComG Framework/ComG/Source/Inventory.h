@@ -5,6 +5,8 @@
 #include "ItemFactory.h"
 #include <string>
 #include <list>
+#include <sstream>
+#include <map>
 
 class Inventory
 {
@@ -14,15 +16,21 @@ private:
 	std::list<Item*> List;
 	bool openinventory;
 public:
+	typedef std::map<Item*, int> inv;
 	static Inventory *getinventory();
 	void Additem(int key);
 	void Removeitem(Item* item);
+
 	void setupdate();
 	void Update(double dt);
 	bool getopeninventory();
+	std::string getitemname();
+	int getsize();
 	~Inventory();
+	std::list<std::string> name;
 protected:
 	std::string itemname_;
+	
 };
 
 #endif

@@ -3,6 +3,7 @@
 
 #include "Ability.h"
 #include "GameObject.h"
+#include "Building.h"
 #include <string>
 #include <list>
 
@@ -23,10 +24,11 @@ protected:
 public:
 	Enemy(int, std::string, std::string, std::string, ENEMYTYPE, std::string, float, float, float);
 	virtual ~Enemy();
-	virtual void Update(double dt) {}
+	virtual void Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy) {}
 	const std::string getName() { return kname_; }
-	void takeDamage(int dmg) { health_ -= (int)(dmg); if (health_ < 0) { health_ = 0; } std::cout << health_ << std::endl; }
+	void takeDamage(int dmg) { health_ -= (int)(dmg); if (health_ < 0) { health_ = 0; }  }
 	bool isDead() { if (!health_) return true; else return false; }
+	bool checkCollision(std::list<Building*>,std::vector<Enemy*>);
 };
 
 #endif

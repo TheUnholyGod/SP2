@@ -516,7 +516,7 @@ void SceneCity::SpawnEnemy(double dt)
 
 	for (auto &i : BaseEnemy)
 	{
-		i->Update(dt);
+//		i->Update(dt);
 	}
 }
 

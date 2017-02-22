@@ -25,6 +25,10 @@ void Inventory::Additem(int key)
 {
 	Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
 	List.push_back(temp);
+	std::stringstream ss;
+	ss << temp->getName();
+	itemname_ = ss.str();
+	name.push_back(itemname_);
 }
 
 void Inventory::Removeitem(Item* item)
@@ -42,6 +46,11 @@ void Inventory::setupdate()
 void Inventory::Update(double dt)
 {
 	std::cout << "List: " << List.size() << std::endl;
+	std::cout << itemname_ << " added" << std::endl;
+	for (std::list<std::string>::iterator i = name.begin(); i != name.end(); i++)
+	{
+		std::cout << *i << std::endl;
+	}
 }
 
 bool Inventory::getopeninventory()
@@ -49,4 +58,18 @@ bool Inventory::getopeninventory()
 	bool open;
 	open = openinventory;
 	return open;
+}
+
+std::string Inventory::getitemname()
+{
+	std::string name;
+	name = itemname_;
+	return name;
+}
+
+int Inventory::getsize()
+{
+	int size;
+	size = List.size();
+	return size;
 }
