@@ -1,42 +1,14 @@
-﻿  Acrid_Plant.cpp
+﻿  SceneMainMenu.cpp
+c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenemainmenu.cpp(129): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenemainmenu.cpp(336): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenemainmenu.cpp(481): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenemainmenu.cpp(482): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Menu.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(108): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(417): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(432): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(433): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
   Generating Code...
-  Compiling...
-  Projectile.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\projectile.cpp(32): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\projectile.cpp(58): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Wildboar.cpp
-  SceneWildLife.cpp
-  SceneUI.cpp
-  SceneTest.cpp
-  SceneSplashScreen.cpp
-  SceneManager.cpp
-  SceneMainMenu.cpp
-  SceneCity.cpp
-  SceneBase.cpp
-  Scarecrow_Mech.cpp
-  SaveLoad.cpp
-  RogueMech.cpp
-  Player.cpp
-  PatrolBot.cpp
-  Molerat.cpp
-  Lizard.cpp
-  ItemFactory.cpp
-  ItemDataBase.cpp
-  Item.cpp
-  Goat.cpp
-  GameObject.cpp
-  EnemyFactory.cpp
-  EnemyDataBase.cpp
-  Enemy.cpp
-  Drone.cpp
-  Deer.cpp
-  CybordMutt.cpp
-  Centipede.cpp
-  BuildingFactory.cpp
-  BuildingDataBase.cpp
-  Barn.cpp
-  Application.cpp
-  Ant_Hill.cpp
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
