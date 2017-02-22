@@ -9,6 +9,8 @@ Menu::Menu()
 	menuType = 1;
 	pauseSelection = 0;
 	optionSelection = 0;
+	buildSelection = 0;
+	craftSelection = 0;
 	
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
@@ -76,16 +78,24 @@ void Menu::init()
 
 	//Options Menu
 	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//Options Menu 2.tga");
+	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//optionsMenu 2.tga");
 
 	meshList[GEO_MOUSE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_MOUSE]->textureID = LoadTGA("Image//Options Menu Mouse.tga");
+	meshList[GEO_MOUSE]->textureID = LoadTGA("Image//optionsMenu - Mouse.tga");
 
 	meshList[GEO_VOLUME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_VOLUME]->textureID = LoadTGA("Image//Options Menu Volume.tga");
+	meshList[GEO_VOLUME]->textureID = LoadTGA("Image//optionsMenu - Volume.tga");
 
 	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_BACK]->textureID = LoadTGA("Image//Options Menu Back.tga");
+	meshList[GEO_BACK]->textureID = LoadTGA("Image//optionsMenu - Back.tga");
+
+	//Crafting Menu
+	meshList[GEO_CRAFTMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CRAFTMENU]->textureID = LoadTGA("Image//craftMenu.tga");
+
+	//Building Menu
+	meshList[GEO_CRAFTMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CRAFTMENU]->textureID = LoadTGA("Image//buildMenu.tga");
 }
 
 void Menu::update()
@@ -108,6 +118,8 @@ void Menu::update()
 			menuType = 1;
 			pauseSelection = 0;
 			optionSelection = 0;
+			buildSelection = 0;
+			craftSelection = 0;
 			pause = false;
 		}
 		start = std::clock();
@@ -197,6 +209,72 @@ void Menu::update()
 			if (cursorY >= 75 && cursorY <= 120)
 			{
 				pauseSelection = 2;
+			}
+		}
+	}
+	if (menuType == 2) //Build Menu
+	{
+		if (pause)
+		{
+			if (elapsedTime > 0.01)
+			{
+				if (Application::IsKeyPressed(VK_UP))
+				{
+					if (buildSelection >= 0)
+					{
+						buildSelection--;
+					}
+					if (buildSelection < 0)
+					{
+						buildSelection = 14;
+					}
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_DOWN))
+				{
+					if (buildSelection < 15)
+					{
+						buildSelection++;
+					}
+					if (buildSelection > 14)
+					{
+						buildSelection = 0;
+					}
+					start = std::clock();
+				}
+			}
+		}
+	}
+	if (menuType == 3) //Craft Menu
+	{
+		if (pause)
+		{
+			if (elapsedTime > 0.01)
+			{
+				if (Application::IsKeyPressed(VK_LEFT))
+				{
+					if (craftSelection >= 0)
+					{
+						craftSelection--;
+					}
+					if (craftSelection < 0)
+					{
+						craftSelection = 2;
+					}
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_RIGHT))
+				{
+					if (craftSelection < 3)
+					{
+						craftSelection++;
+					}
+					if (craftSelection > 2)
+					{
+						craftSelection = 0;
+					}
+					start = std::clock();
+				}
 			}
 		}
 	}
