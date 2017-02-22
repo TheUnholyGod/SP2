@@ -73,6 +73,7 @@ public:
 	int optionSelection;
 	int buildSelection;
 	int craftSelection;
+	int inventorySelection;
 	int windowX;
 	int windowY;
 

@@ -6,11 +6,12 @@ Menu::Menu()
 {
 	pause = false;
 
-	menuType = 1;
+	menuType = 0;
 	pauseSelection = 0;
 	optionSelection = 0;
 	buildSelection = 0;
 	craftSelection = 0;
+	inventorySelection = 0;
 	
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
@@ -108,14 +109,72 @@ void Menu::update()
 
 	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
-		if (!pause)
+		if (!pause)//Go to Pause menu
 		{
+			menuType = 1;
 			pause = true;
 		}
-		else if (pause)
+		else if (pause && menuType == 1)//Reset all variables and exit Pause menu
 		{
 			SetCursorPos(windowX / 2, windowY / 2);
-			menuType = 1;
+			menuType = 0;
+			pauseSelection = 0;
+			optionSelection = 0;
+			buildSelection = 0;
+			craftSelection = 0;
+			pause = false;
+		}
+		start = std::clock();
+	}
+	if (Application::IsKeyPressed('B') && elapsedTime > 0.01)
+	{
+		if (!pause)//Go to Build menu
+		{
+			menuType = 2;
+			pause = true;
+		}
+		else if (pause && menuType == 2)//Reset all variables and exit Build menu
+		{
+			SetCursorPos(windowX / 2, windowY / 2);
+			menuType = 0;
+			pauseSelection = 0;
+			optionSelection = 0;
+			buildSelection = 0;
+			craftSelection = 0;
+			pause = false;
+		}
+		start = std::clock();
+	}
+	if (Application::IsKeyPressed('C') && elapsedTime > 0.01)
+	{
+		if (!pause)//Go to Craft menu
+		{
+			menuType = 3;
+			pause = true;
+		}
+		else if (pause && menuType == 3)//Reset all variables and exit Craft menu
+		{
+			SetCursorPos(windowX / 2, windowY / 2);
+			menuType = 0;
+			pauseSelection = 0;
+			optionSelection = 0;
+			buildSelection = 0;
+			craftSelection = 0;
+			pause = false;
+		}
+		start = std::clock();
+	}
+	if (Application::IsKeyPressed('I') && elapsedTime > 0.01)
+	{
+		if (!pause)//Go to Inventory menu
+		{
+			menuType = 4;
+			pause = true;
+		}
+		else if (pause && menuType == 4)//Reset all variables and exit Inventory menu
+		{
+			SetCursorPos(windowX / 2, windowY / 2);
+			menuType = 0;
 			pauseSelection = 0;
 			optionSelection = 0;
 			buildSelection = 0;
@@ -127,43 +186,46 @@ void Menu::update()
 
 	if (menuType == 0) //Options Menu
 	{
-		if (elapsedTime > 0.01)
+		if (pause)
 		{
-			if (Application::IsKeyPressed(VK_UP))
+			if (elapsedTime > 0.01)
 			{
-				if (optionSelection >= 0)
+				if (Application::IsKeyPressed(VK_UP))
 				{
-					optionSelection--;
+					if (optionSelection >= 0)
+					{
+						optionSelection--;
+					}
+					if (optionSelection < 0)
+					{
+						optionSelection = 2;
+					}
+					start = std::clock();
 				}
-				if (optionSelection < 0)
+				if (Application::IsKeyPressed(VK_DOWN))
 				{
-					optionSelection = 2;
+					if (optionSelection < 3)
+					{
+						optionSelection++;
+					}
+					if (optionSelection > 2)
+					{
+						optionSelection = 0;
+					}
+					start = std::clock();
 				}
-				start = std::clock();
-			}
-			if (Application::IsKeyPressed(VK_DOWN))
-			{
-				if (optionSelection < 3)
-				{
-					optionSelection++;
-				}
-				if (optionSelection > 2)
+				if (cursorY >= 340 && cursorY <= 390)
 				{
 					optionSelection = 0;
 				}
-				start = std::clock();
-			}
-			if (cursorY >= 340 && cursorY <= 390)
-			{
-				optionSelection = 0;
-			}
-			if (cursorY >= 190 && cursorY <= 230)
-			{
-				optionSelection = 1;
-			}
-			if (cursorY >= 40 && cursorY <= 80)
-			{
-				optionSelection = 2;
+				if (cursorY >= 190 && cursorY <= 230)
+				{
+					optionSelection = 1;
+				}
+				if (cursorY >= 40 && cursorY <= 80)
+				{
+					optionSelection = 2;
+				}
 			}
 		}
 	}
@@ -246,6 +308,39 @@ void Menu::update()
 		}
 	}
 	if (menuType == 3) //Craft Menu
+	{
+		if (pause)
+		{
+			if (elapsedTime > 0.01)
+			{
+				if (Application::IsKeyPressed(VK_LEFT))
+				{
+					if (craftSelection >= 0)
+					{
+						craftSelection--;
+					}
+					if (craftSelection < 0)
+					{
+						craftSelection = 2;
+					}
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_RIGHT))
+				{
+					if (craftSelection < 3)
+					{
+						craftSelection++;
+					}
+					if (craftSelection > 2)
+					{
+						craftSelection = 0;
+					}
+					start = std::clock();
+				}
+			}
+		}
+	}
+	if (menuType == 4) //Inventory Menu
 	{
 		if (pause)
 		{
