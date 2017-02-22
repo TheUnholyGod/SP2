@@ -208,14 +208,6 @@ void SceneTest::Update(double dt)
 	{
 		ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
 
-		if (Application::IsKeyPressed('I'))
-		{
-			if (ITime > 0.005)
-			{
-				Istart = std::clock();
-				Inventory::getinventory()->setupdate();
-			}
-		}
 		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy, BaseItems);
 		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 		if (Application::IsKeyPressed(VK_LBUTTON))

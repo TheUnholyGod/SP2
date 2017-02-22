@@ -95,8 +95,12 @@ void Menu::init()
 	meshList[GEO_CRAFTMENU]->textureID = LoadTGA("Image//craftMenu.tga");
 
 	//Building Menu
-	meshList[GEO_CRAFTMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_CRAFTMENU]->textureID = LoadTGA("Image//buildMenu.tga");
+	meshList[GEO_BUILDMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BUILDMENU]->textureID = LoadTGA("Image//buildMenu.tga");
+
+	//Inventory Menu
+	meshList[GEO_INVENTORYMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_INVENTORYMENU]->textureID = LoadTGA("Image//inventoryMenu.tga");
 }
 
 void Menu::update()
@@ -126,7 +130,7 @@ void Menu::update()
 		}
 		start = std::clock();
 	}
-	if (Application::IsKeyPressed('B') && elapsedTime > 0.01)
+	if (Application::IsKeyPressed('V') && elapsedTime > 0.01)
 	{
 		if (!pause)//Go to Build menu
 		{
@@ -280,30 +284,7 @@ void Menu::update()
 		{
 			if (elapsedTime > 0.01)
 			{
-				if (Application::IsKeyPressed(VK_UP))
-				{
-					if (buildSelection >= 0)
-					{
-						buildSelection--;
-					}
-					if (buildSelection < 0)
-					{
-						buildSelection = 14;
-					}
-					start = std::clock();
-				}
-				if (Application::IsKeyPressed(VK_DOWN))
-				{
-					if (buildSelection < 15)
-					{
-						buildSelection++;
-					}
-					if (buildSelection > 14)
-					{
-						buildSelection = 0;
-					}
-					start = std::clock();
-				}
+
 			}
 		}
 	}
@@ -313,30 +294,7 @@ void Menu::update()
 		{
 			if (elapsedTime > 0.01)
 			{
-				if (Application::IsKeyPressed(VK_LEFT))
-				{
-					if (craftSelection >= 0)
-					{
-						craftSelection--;
-					}
-					if (craftSelection < 0)
-					{
-						craftSelection = 2;
-					}
-					start = std::clock();
-				}
-				if (Application::IsKeyPressed(VK_RIGHT))
-				{
-					if (craftSelection < 3)
-					{
-						craftSelection++;
-					}
-					if (craftSelection > 2)
-					{
-						craftSelection = 0;
-					}
-					start = std::clock();
-				}
+
 			}
 		}
 	}
@@ -346,30 +304,7 @@ void Menu::update()
 		{
 			if (elapsedTime > 0.01)
 			{
-				if (Application::IsKeyPressed(VK_LEFT))
-				{
-					if (craftSelection >= 0)
-					{
-						craftSelection--;
-					}
-					if (craftSelection < 0)
-					{
-						craftSelection = 2;
-					}
-					start = std::clock();
-				}
-				if (Application::IsKeyPressed(VK_RIGHT))
-				{
-					if (craftSelection < 3)
-					{
-						craftSelection++;
-					}
-					if (craftSelection > 2)
-					{
-						craftSelection = 0;
-					}
-					start = std::clock();
-				}
+
 			}
 		}
 	}
@@ -448,6 +383,18 @@ void Menu::Render()
 			{
 				RenderMeshOnScreen(meshList[GEO_BACKTOMAIN], 40, 30, 16, 12);
 			}
+		}
+		if (menuType == 2)
+		{
+			RenderMeshOnScreen(meshList[GEO_BUILDMENU], 40, 30, 16, 12);
+		}
+		if (menuType == 3)
+		{
+			RenderMeshOnScreen(meshList[GEO_CRAFTMENU], 40, 30, 16, 12);
+		}
+		if (menuType == 4)
+		{
+			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
 		}
 
 		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
