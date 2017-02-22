@@ -1,133 +1,126 @@
-﻿  WaterWell.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\waterwell.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\waterwell.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  TrophyRoom.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\trophyroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\trophyroom.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  TilledSoil.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\tilledsoil.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\tilledsoil.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  SceneTest.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(173): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(178): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(183): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(188): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(223): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(227): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(236): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(341): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(347): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(371): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(767): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(768): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(786): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  PowerGenerator.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\powergenerator.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\powergenerator.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  OreMines.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\oremines.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\oremines.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  NPCHouse.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\npchouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\npchouse.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  InventoryWarehouse.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\inventorywarehouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\inventorywarehouse.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  FastTravelRoom.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  DefensiveWalls.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defensivewalls.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defensivewalls.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  DefenceTower.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defencetower.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defencetower.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Crafting.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\crafting.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\crafting.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  BuildingFactory.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\barn.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defencetower.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defensivewalls.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\inventorywarehouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\npchouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\oremines.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\crafting.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\powergenerator.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\tilledsoil.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\trophyroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\waterwell.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-  Compiling...
-  SceneWildLife.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(132): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(136): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(140): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(572): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(589): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  SceneUI.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\sceneui.cpp(169): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\sceneui.cpp(170): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  SceneSplashScreen.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenesplashscreen.cpp(260): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenesplashscreen.cpp(261): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  SceneManager.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-  SceneMainMenu.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenemainmenu.cpp(129): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenemainmenu.cpp(336): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenemainmenu.cpp(481): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenemainmenu.cpp(482): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  SceneCity.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(132): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(136): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(140): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(572): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(589): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  SceneBase.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(131): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(136): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(141): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(566): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(567): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(584): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  Menu.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(108): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(417): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(432): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(433): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  BuildingDataBase.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\barn.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defencetower.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\crafting.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defensivewalls.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\inventorywarehouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\npchouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\oremines.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\powergenerator.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\tilledsoil.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\trophyroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\waterwell.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Application.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\application.cpp(106): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
-  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
+﻿Build started 2/23/2017 3:16:22 AM.
+     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Programs - Work\Visual Studios 2013\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneTest.cpp
+         SceneTest.cpp
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(168): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(173): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(178): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(183): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(218): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(222): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(231): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(336): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(342): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(742): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(743): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(761): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+       Link:
+         E:\Programs - Work\Visual Studios 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\lib" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.lib" /MACHINE:X86 Debug\Ability.obj
+         Debug\AbilityDataBase.obj
+         Debug\Acrid_Plant.obj
+         Debug\Adhesives.obj
+         Debug\Ant_Hill.obj
+         Debug\Application.obj
+         Debug\Barn.obj
+         Debug\Biomass.obj
+         Debug\Bread.obj
+         Debug\Building.obj
+         Debug\BuildingDataBase.obj
+         Debug\BuildingFactory.obj
+         Debug\Burrowing.obj
+         Debug\Cabbage.obj
+         Debug\Camera.obj
+         Debug\Camera2.obj
+         Debug\Camera3.obj
+         Debug\Camera4.obj
+         Debug\Carrot.obj
+         Debug\CarrotJuice.obj
+         Debug\Centipede.obj
+         Debug\CircuitBoards.obj
+         Debug\Cloth.obj
+         Debug\Collision.obj
+         Debug\Compound_Bow.obj
+         Debug\Copper.obj
+         Debug\Corrosive.obj
+         Debug\Crafting.obj
+         Debug\CybordMutt.obj
+         Debug\Deer.obj
+         Debug\DefenceTower.obj
+         Debug\DefensiveWalls.obj
+         Debug\DrinkingWater.obj
+         Debug\Drone.obj
+         Debug\Enemy.obj
+         Debug\EnemyDataBase.obj
+         Debug\EnemyFactory.obj
+         Debug\Farming_Hoe.obj
+         Debug\FastTravelRoom.obj
+         Debug\Food.obj
+         Debug\GameObject.obj
+         Debug\Glock_17C.obj
+         Debug\Goat.obj
+         Debug\Gold.obj
+         Debug\Inventory.obj
+         Debug\InventoryWarehouse.obj
+         Debug\Iron.obj
+         Debug\Item.obj
+         Debug\ItemDataBase.obj
+         Debug\ItemFactory.obj
+         Debug\Katana_Sword.obj
+         Debug\Kitchen_Knife.obj
+         Debug\Lighting.obj
+         Debug\Lizard.obj
+         Debug\LoadATOM.obj
+         Debug\LoadOBJ.obj
+         Debug\LoadTGA.obj
+         Debug\M200_CheyTac_Intervention.obj
+         Debug\main.obj
+         Debug\Mesh.obj
+         Debug\MeshBuilder.obj
+         Debug\MetalScraps.obj
+         Debug\Molerat.obj
+         Debug\NPCHouse.obj
+         Debug\OreMines.obj
+         Debug\PatrolBot.obj
+         Debug\Menu.obj
+         Debug\Player.obj
+         Debug\Potato.obj
+         Debug\PowerGenerator.obj
+         Debug\Projectile.obj
+         Debug\Radioactive.obj
+         Debug\Renderer.obj
+         Debug\Resources.obj
+         Debug\RogueMech.obj
+         Debug\Salad.obj
+         Debug\SaveLoad.obj
+         "Debug\Scar-H.obj"
+         Debug\Scarecrow_Mech.obj
+         Debug\SceneBase.obj
+         Debug\SceneCity.obj
+         Debug\SceneMainMenu.obj
+         Debug\SceneManager.obj
+         Debug\SceneSplashScreen.obj
+         Debug\SceneTest.obj
+         Debug\SceneUI.obj
+         Debug\SceneWildLife.obj
+         Debug\shader.obj
+         Debug\Stone.obj
+         Debug\Teleporting.obj
+         Debug\TilledSoil.obj
+         Debug\TrophyRoom.obj
+         Debug\Utility.obj
+         Debug\VegetableStew.obj
+         Debug\Water.obj
+         Debug\WaterWell.obj
+         Debug\Weapon.obj
+         Debug\Wheat.obj
+         Debug\Wildboar.obj
+         Debug\Wood.obj
+         ComG.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.exe
+     1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.60
