@@ -109,7 +109,7 @@ void Menu::update()
 
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
-	cursorY = -cursorY + 600;
+	cursorY = -cursorY + windowY;
 
 	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
