@@ -12,7 +12,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	DefenceTower();
+	DefenceTower(Vector3=(0,0,5));
 	virtual ~DefenceTower();
 
 	int get_Health();

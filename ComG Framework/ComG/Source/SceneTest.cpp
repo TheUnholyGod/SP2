@@ -217,7 +217,11 @@ void SceneTest::Update(double dt)
 
 		SpawnEnemy(dt);
 		LightUpdate(dt);
-		SpawnBuilding();
+		if (Application::IsKeyPressed('M'))
+		{
+			SpawnBuilding();
+		}
+
 		UpdateProjectiles(dt);
 		UpdateEnemy(dt);
 		SpawnItems(dt);
@@ -650,7 +654,11 @@ void SceneTest::RenderEnemy()
 
 void SceneTest::SpawnBuilding()
 {
-
+	Vector3 spawnPoint = Player::getplayer()->getRenderer().getPosition() + (Player::getplayer()->getRenderer().getForward() * 70);
+	spawnPoint.y = 0.1f;
+	
+	Building* temp = BuildingFactory::generateBuilding(107, spawnPoint);
+	BaseBuildings.push_back(temp);
 }
 
 void SceneTest::RenderBuilding()

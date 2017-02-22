@@ -20,7 +20,7 @@ BuildingDataBase::BuildingDataBase()
 	Buildingdatabase_[temp->getID()] = new Barn;
 	IDlist.push_back(temp->getID());
 	delete temp;
-	temp = new DefenceTower;
+	temp = new DefenceTower();
 	Buildingdatabase_[temp->getID()] = new DefenceTower;
 	IDlist.push_back(temp->getID());
 	delete temp;
