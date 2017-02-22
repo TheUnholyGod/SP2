@@ -135,6 +135,20 @@ class SceneTest : public Scene
 		NUM_PROJECTILEGEOMETERY,
 	};
 
+	enum FOODMESHLIST
+	{
+		GEO_POTATO,
+		GEO_CABBAGE,
+		GEO_CARROT,
+		GEO_WHEAT,
+		GEO_BREAD,
+		GEO_VEGETABLESTEW,
+		GEO_PURIFIEDWATER,
+		GEO_CARROTJUICE,
+		GEO_SALAD,
+		NUM_FOODGEOMETERY,
+	};
+
 public:
 	SceneTest();
 	~SceneTest();
@@ -150,6 +164,7 @@ private:
 	std::array<Mesh*, NUM_WEAPONGEOMETERY> weaponmesh;
 	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
 	std::array<Mesh*, NUM_PROJECTILEGEOMETERY> projectileMeshList;
+	std::array<Mesh*, NUM_FOODGEOMETERY> foodMeshList;
 	std::array<Mesh*, NUM_SPRITES> spritesList;
 
 	unsigned m_programID;
@@ -200,6 +215,9 @@ private:
 	void RenderProjectile();
 
 	std::vector<Item*> BaseItems;
+	const int ItemID;
+	void SpawnItems(double dt);
+	void RenderItems();
 
 	Menu pauseMenu;
 	int windowX;
