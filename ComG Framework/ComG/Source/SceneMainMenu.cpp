@@ -122,8 +122,9 @@ void SceneMainMenu::Init()
 
 void SceneMainMenu::Update(double dt)
 {
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
-	cursorY = -cursorY + 600;
+	cursorY = -cursorY + windowY;
 
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	DebugMode(dt);
