@@ -841,7 +841,7 @@ void SceneTest::UpdateEnemy(double dt)
 	int counter = 0;
 	for (auto &i : BaseEnemy)
 	{
-		i->Update(dt);
+		i->Update(dt, BaseBuildings, BaseEnemy);
 		if (i->isDead())
 		{
 			pos.push_back(counter);

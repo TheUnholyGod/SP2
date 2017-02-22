@@ -12,6 +12,7 @@ private:
 	Vector3 defaultmin;
 	Vector3 position;
 	Vector3 defaultposition;
+	Vector3 size;
 
 public:
 	AABB(Vector3, Vector3);

@@ -28,7 +28,6 @@ bool Projectile::hit(std::list<Building*>buildings, std::vector<Enemy*>enemies)
 		hit = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
 		if (hit)
 		{
-			std::cout << "HIT MOFO!!" << std::endl;
 			i->takeDamage(attack_dmg_);
 			break;
 		}
@@ -39,7 +38,6 @@ bool Projectile::hit(std::list<Building*>buildings, std::vector<Enemy*>enemies)
 		{
 			hit = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
 			if (hit)
-				std::cout << "HIT NOT MOFO!!" << std::endl;
 				break;
 		}
 	}
