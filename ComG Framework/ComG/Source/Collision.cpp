@@ -1,7 +1,8 @@
 #include "Collision.h"
 #include "Utility.h"
+#include <math.h>
 
-AABB::AABB(Vector3 size, Vector3 pos)
+AABB::AABB(Vector3 size, Vector3 pos) :size(size)
 {
 	defaultposition = pos;
 	max = defaultmax = size * (0.5, 0.5, 0.5) + pos;
@@ -38,5 +39,8 @@ bool AABB::pointtoAABB(Vector3 pos,Vector3 forward)
 
 bool AABB::AABBtoAABB(AABB box)
 {
-	return (box.min.x <= max.x && box.max.x >= min.x) && (box.min.y <= max.y && box.max.y >= min.y) && (box.min.z <= max.z && box.max.z >= min.z);
+	bool x = (std::fabs(this->position.x - box.position.x) <= (this->size.x + box.size.x));
+	bool y = (std::fabs(this->position.y - box.position.y) <= (this->size.y + box.size.y));
+	bool z = (std::fabs(this->position.z - box.position.z) <= (this->size.z + box.size.z));
+	return x && y && z;
 }

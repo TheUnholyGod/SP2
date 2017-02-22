@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	Crafting(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	Crafting(Vector3 = (0, 0, 5));
 	virtual ~Crafting();
 
 	int get_Health();

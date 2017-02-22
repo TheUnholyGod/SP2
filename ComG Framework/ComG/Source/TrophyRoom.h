@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	TrophyRoom(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	TrophyRoom(Vector3=(0, 0, 5));
 	virtual ~TrophyRoom();
 
 	int get_Health();

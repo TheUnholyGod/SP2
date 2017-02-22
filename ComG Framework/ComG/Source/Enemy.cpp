@@ -12,3 +12,41 @@ Enemy::Enemy(int no, std::string source_location, std::string texture_location, 
 Enemy::~Enemy()
 {
 }
+
+bool Enemy::checkCollision(std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
+{
+	bool move = false;
+	bool move1 = false;
+	bool move2 = false;
+	for (auto &i : Buildings)
+	{
+		move1 = i->getAABB(0)->pointtoAABB(this->getRenderer().getPosition(), this->getRenderer().getForward());
+		if (move1)
+		{
+			break;
+		}
+	}
+
+	for (auto &i : Enemy)
+	{
+		if (i == this)
+		{
+			continue;
+		}
+		else
+		{
+			move2 = i->getAABB(0)->pointtoAABB(this->getRenderer().getPosition(),this->getRenderer().getForward());
+			if (move2)
+			{
+				break;
+			}
+		}
+	}
+
+	if (move1 || move2)
+		move = true;
+	else
+		move = false;
+
+	return move;
+}

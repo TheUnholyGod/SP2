@@ -2,6 +2,7 @@
 #define _MOLERAT_H
 
 #include "Enemy.h"
+#include "Building.h"
 #include "Player.h"
 
 class Molerat : public Enemy
@@ -12,7 +13,7 @@ private:
 public:
 	Molerat();
 	~Molerat();
-	void Update(double dt) override;
+	void Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy) override;
 	void pathfinding();
 };
 

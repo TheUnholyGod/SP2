@@ -245,6 +245,12 @@ private:
 
 	std::clock_t Istart;
 	float ITime;
+
+	std::clock_t Pstart;
+	float PTime;
+
+	std::clock_t Bstart;
+	float BTime;
 };
 
 #endif

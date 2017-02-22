@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	PowerGenerator(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	PowerGenerator(Vector3 = (0, 0, 5));
 	virtual ~PowerGenerator();
 
 	int get_Health();

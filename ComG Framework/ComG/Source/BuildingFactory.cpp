@@ -42,24 +42,24 @@ Building* BuildingFactory::generateBuilding(int key, Vector3 position)
 	if (key == tempID[1])
 		temp = new DefenceTower(position);
 	if (key == tempID[2])
-		temp = new Crafting;
+		temp = new Crafting(position);
 	if (key == tempID[3])
-		temp = new DefensiveWalls;
+		temp = new DefensiveWalls(position);
 	if (key == tempID[4])
-		temp = new FastTravelRoom;
+		temp = new FastTravelRoom(position);
 	if (key == tempID[5])
-		temp = new InventoryWarehouse;
+		temp = new InventoryWarehouse(position);
 	if (key == tempID[6])
-		temp = new NPCHouse;
+		temp = new NPCHouse(position);
 	if (key == tempID[7])
-		temp = new OreMines;
+		temp = new OreMines(position);
 	if (key == tempID[8])
-		temp = new PowerGenerator;
+		temp = new PowerGenerator(position);
 	if (key == tempID[9])
-		temp = new TilledSoil;
+		temp = new TilledSoil(position);
 	if (key == tempID[10])
-		temp = new TrophyRoom;
+		temp = new TrophyRoom(position);
 	if (key == tempID[11])
-		temp = new WaterWell;
+		temp = new WaterWell(position);
 	return temp;
 }

@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	DefensiveWalls(/*const std::string name, const int id, int health, BUILDINGTYPE, BUILDINGFUNCTION, bool enter*/);
+	DefensiveWalls(Vector3 = (0, 0, 5));
 	virtual ~DefensiveWalls();
 
 	int get_Health();
