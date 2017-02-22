@@ -15,7 +15,7 @@
 #include "SaveLoad.h"
 #include <sstream>
 
-SceneTest::SceneTest() : buildingID(101)
+SceneTest::SceneTest() : buildingID(101), ItemID(101)
 {
 }
 
@@ -171,6 +171,12 @@ void SceneTest::Init()
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
 		weaponmesh[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getTextureLocation());
 	}
+	for (int i = 0; i < foodMeshList.size(); i++)
+	{
+		foodMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
+		//foodMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
+	}
+
 	buildBuilding = false;
 	suntimer = 1;
 	LoadSkybox();
@@ -185,10 +191,10 @@ void SceneTest::Update(double dt)
 {
 	DebugMode(dt);
 
-	if (Application::IsKeyPressed('E'))
+	/*if (Application::IsKeyPressed('E'))
 	{
 		SceneManager::currScene = 3;
-	}
+	}*/
 	if (Application::IsKeyPressed('B'))
 	{
 		buildBuilding = true;
@@ -220,6 +226,9 @@ void SceneTest::Update(double dt)
 		SpawnBuilding();
 		UpdateProjectiles(dt);
 		UpdateEnemy(dt);
+		SpawnItems(dt);
+
+
 		if (buildBuilding)
 		{
 			SpawnBuilding();
@@ -281,6 +290,7 @@ void SceneTest::Render()
 	RenderEnemy();
 	RenderBuilding();
 	RenderProjectile();
+	RenderItems();
 
 	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
@@ -675,6 +685,32 @@ void SceneTest::RenderProjectile()
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
 		RenderMesh(enemyMeshList[0], true);
 		modelStack.PopMatrix();
+	}
+}
+
+void SceneTest::SpawnItems(double dt)
+{
+	if (BaseItems.size() < 1)
+	{
+		BaseItems.push_back(ItemFactory::getItemFactory()->generateItem(101));
+	}
+
+	for (auto &i : BaseItems)
+	{
+		i->update();
+	}
+}
+
+void SceneTest::RenderItems()
+{
+	int y = 0;
+	for (auto &i : BaseItems)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(foodMeshList[i->getID() - ItemID], true);
+		modelStack.PopMatrix();
+		y++;
 	}
 }
 

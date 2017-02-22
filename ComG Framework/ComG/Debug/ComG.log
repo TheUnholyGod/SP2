@@ -1,14 +1,15 @@
 ﻿  SceneTest.cpp
 c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(159): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(164): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(169): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(201): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(294): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(300): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(324): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(692): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(693): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(711): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
+          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(159): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(164): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(169): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(174): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(207): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(304): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(310): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(334): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(728): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(729): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(747): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
