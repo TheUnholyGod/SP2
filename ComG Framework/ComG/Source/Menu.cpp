@@ -426,9 +426,6 @@ void Menu::update()
 			}
 		}
 	}
-
-	std::cout << cursorX << " : " << cursorY << std::endl;
-	std::cout << buildSelection << std::endl;
 }
 
 void Menu::Render()
