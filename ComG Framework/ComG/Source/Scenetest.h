@@ -235,11 +235,6 @@ private:
 	int windowXpos;
 	int windowYpos;
 
-	bool pause;
-	bool options;
-	int pauseHighlight;
-	int optionHighlight;
-
 	std::clock_t start;
 	float elapsedTime;
 
