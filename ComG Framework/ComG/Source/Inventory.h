@@ -23,7 +23,7 @@ public:
 	std::list<std::string> name;
 	static Inventory *getinventory();
 	void Additem(int key);
-	void Removeitem(Item* item);
+	void Removeitem(Item* item, int key);
 
 	void setupdate();
 	void Update(double dt);
@@ -37,9 +37,3 @@ protected:
 };
 
 #endif
-
-/*TO Do:
--pick up(additem())
--move in inventory(Update())
--render(render())
-*/
