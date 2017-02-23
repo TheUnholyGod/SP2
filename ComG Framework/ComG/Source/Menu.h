@@ -18,6 +18,8 @@
 #include "BuildingFactory.h"
 #include "GLFW\glfw3.h"
 #include "GL\glew.h"
+#include "Inventory.h"
+#include <list>
 
 #include <sstream>
 #include <string>
@@ -50,6 +52,8 @@ class Menu
 
 		//Inventory Menu
 		GEO_INVENTORYMENU,
+		GEO_ITEMS,
+		GEO_QUANTITY,
 
 		//Cursor
 		GEO_CURSOR,
@@ -137,7 +141,14 @@ public:
 	std::clock_t start;
 	float elapsedTime;
 
+	//Items
+	std::string Itemname;
+	int ItemNo;
+	int count;
+
+
 	const int buildingID;
+
 	unsigned m_vertexArrayID;
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];

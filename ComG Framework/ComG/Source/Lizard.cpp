@@ -14,6 +14,5 @@ void Lizard::Update(double dt)
 	{
 		gameobjrenderer_->rotate((0, 1, 0), 20 * dt, Player::getplayer()->getRenderer().getPosition().Dot(gameobjrenderer_->getForward()));
 		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 25 * dt);
-		std::cout << gameobjrenderer_->getPosition() << std::endl;
 	}
 }

@@ -15,6 +15,7 @@
 #include "ItemDataBase.h"
 #include "BuildingDataBase.h"
 #include "SaveLoad.h"
+#include "DefenceTower.h"
 #include <sstream>
 
 SceneTest::SceneTest() : buildingID(101), ItemID(101)
@@ -225,6 +226,7 @@ void SceneTest::Update(double dt)
 			Pstart = std::clock();
 			SpawnProjectile();
 		}
+	
 
 		SpawnEnemy(dt);
 		LightUpdate(dt);
@@ -234,7 +236,13 @@ void SceneTest::Update(double dt)
 		UpdateEnemy(dt);
 		SpawnItems(dt);
 
-		if (pauseMenu.craft)
+		DefenceTower::turretTargetUpdate(BaseEnemy);
+		for (auto i : BaseBuildings)
+		{
+			i->update(dt);
+		}
+
+		if (buildBuilding)
 		{
 			SpawnBuilding(pauseMenu.craftingSelection);
 		}
@@ -619,6 +627,7 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
+
 	if (BaseEnemy.size() < 20)
 	{
 		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
@@ -640,7 +649,10 @@ void SceneTest::RenderEnemy()
 void SceneTest::SpawnBuilding(int bID)
 {
 	Vector3 spawnPoint = Player::getplayer()->getRenderer().getPosition() + (Player::getplayer()->getRenderer().getForward() * 70);
-	spawnPoint.y = 0.1f;
+	Vector3 v_temp = spawnPoint;
+	spawnPoint.x = (int)(v_temp.x);
+	spawnPoint.y = 0;
+	spawnPoint.z = (int)(v_temp.z);
 	
 	Building* temp = BuildingFactory::generateBuilding(bID, spawnPoint);
 	BaseBuildings.push_back(temp);
@@ -679,13 +691,23 @@ void SceneTest::SpawnItems(double dt)
 {
 	if (BaseItems.size() < 1)
 	{
-		BaseItems.push_back(ItemFactory::getItemFactory()->generateItem(101));
+		int x = 0;
+		int y = 0;
+		int z = 0;
+		Vector3 spawn(0, 0, 5);
+
+		BaseItems.push_back(ItemFactory::getItemFactory()->SpawnItem(101, spawn));
+		spawn.x += 5;
+		spawn.z += 2;
+		BaseItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
+		spawn.x += 2;
+		spawn.z += 2;
+		BaseItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
 	}
 }
 
 void SceneTest::RenderItems()
 {
-	int y = 0;
 	for (auto &i : BaseItems)
 	{
 		if (!i->getpickedup())
@@ -694,7 +716,6 @@ void SceneTest::RenderItems()
 			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
 			RenderMesh(foodMeshList[i->getID() - ItemID], true);
 			modelStack.PopMatrix();
-			y++;
 		}
 	}
 }

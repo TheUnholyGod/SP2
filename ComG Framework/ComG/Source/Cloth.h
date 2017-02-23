@@ -6,7 +6,7 @@ class Cloth :
 	public Resources
 {
 public:
-	Cloth();
+	Cloth(Vector3 = (0, 0, 0));
 	~Cloth();
 };
 

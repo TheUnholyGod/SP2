@@ -266,6 +266,7 @@
     <ClInclude Include="Source\PowerGenerator.h" />
     <ClInclude Include="Source\Projectile.h" />
     <ClInclude Include="Source\Radioactive.h" />
+    <ClInclude Include="Source\Randomizer.h" />
     <ClInclude Include="Source\Renderer.h" />
     <ClInclude Include="Source\Resources.h" />
     <ClInclude Include="Source\RogueMech.h" />

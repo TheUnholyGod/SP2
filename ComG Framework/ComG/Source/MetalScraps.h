@@ -6,7 +6,7 @@ class MetalScraps :
 	public Resources
 {
 public:
-	MetalScraps();
+	MetalScraps(Vector3 = (0, 0, 0));
 	~MetalScraps();
 };
 

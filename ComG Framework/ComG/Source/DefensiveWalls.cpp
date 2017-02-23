@@ -5,7 +5,7 @@ DefensiveWalls::DefensiveWalls(Vector3 position) : Building(108, "Walls", "OBJ//
 {
 	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(5);
-	size.push_back(Vector3(20, 10, 2) * gameobjrenderer_->getScaling());
+	size.push_back(Vector3(16, 7.8, 2) * gameobjrenderer_->getScaling());
 	for (auto &i : size)
 	{
 		AABB* temp = new AABB(i, gameobjrenderer_->getPosition());

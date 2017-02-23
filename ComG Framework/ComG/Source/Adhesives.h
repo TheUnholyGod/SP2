@@ -6,7 +6,7 @@ class Adhesives :
 	public Resources
 {
 public:
-	Adhesives();
+	Adhesives(Vector3 = (0, 0, 0));
 	~Adhesives();
 };
 

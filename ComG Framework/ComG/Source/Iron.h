@@ -6,7 +6,7 @@ class Iron :
 	public Resources
 {
 public:
-	Iron();
+	Iron(Vector3 = (0, 0, 0));
 	~Iron();
 };
 

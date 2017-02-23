@@ -6,7 +6,7 @@ class Copper :
 	public Resources
 {
 public:
-	Copper();
+	Copper(Vector3 = (0, 0, 0));
 	~Copper();
 };
 
