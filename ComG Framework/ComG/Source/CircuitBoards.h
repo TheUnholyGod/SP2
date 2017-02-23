@@ -6,7 +6,7 @@ class CircuitBoards :
 	public Resources
 {
 public:
-	CircuitBoards();
+	CircuitBoards(Vector3 = (0, 0, 0));
 	~CircuitBoards();
 };
 

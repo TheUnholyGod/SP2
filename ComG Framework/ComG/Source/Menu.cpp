@@ -105,6 +105,10 @@ void Menu::init()
 	meshList[GEO_INVENTORYMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_INVENTORYMENU]->textureID = LoadTGA("Image//inventoryMenu.tga");
 
+	meshList[GEO_ITEMS] = MeshBuilder::GenerateText("ItemNames", 16, 16);
+	meshList[GEO_ITEMS]->textureID = LoadTGA("Image//calibri.tga");
+	count = 0;
+
 	//Text
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
@@ -422,13 +426,13 @@ void Menu::update()
 		{
 			if (elapsedTime > 0.01)
 			{
-
+				count = Inventory::getinventory()->getsize();
 			}
 		}
 	}
 
-	std::cout << cursorX << " : " << cursorY << std::endl;
-	std::cout << buildSelection << std::endl;
+	//std::cout << cursorX << " : " << cursorY << std::endl;
+	//std::cout << buildSelection << std::endl;
 }
 
 void Menu::Render()
@@ -500,10 +504,23 @@ void Menu::Render()
 		}
 		if (menuType == 4) //Inventory
 		{
-			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], windowX / 20, windowY / 20, 16, 12);
-		}
 
-		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
+			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], windowX / 20, windowY / 20, 16, 12);
+			float y = 45.f;
+			float y1 = 45.f;
+			for (std::list<std::string>::iterator i = Inventory::getinventory()->List.begin(); i != Inventory::getinventory()->List.end(); i++)
+			{
+				RenderTextOnScreen(meshList[GEO_ITEMS], *i, Color(0, 0, 1), 3.f, 6.f, y);
+				y-=5;
+			}
+			for (std::map<int, int>::iterator i = Inventory::getinventory()->inv.begin(); i != Inventory::getinventory()->inv.end(); i++)
+			{
+				std::string quantity = std::to_string(i->second);
+				RenderTextOnScreen(meshList[GEO_ITEMS], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
+				y1 -= 5;
+			}
+		}
+		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);		
 	}
 }
 
@@ -570,7 +587,6 @@ void Menu::RenderMesh(Mesh *mesh, bool enableLight)
 	{
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
-
 }
 
 void Menu::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y)

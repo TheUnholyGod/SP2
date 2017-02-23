@@ -93,3 +93,50 @@ Item* ItemFactory::generateItem(int key)
 		temp = new Projectile;
 	return temp;
 }
+
+Item* ItemFactory::SpawnItem(int key, Vector3 position)
+{
+	Item* temp = nullptr;
+	std::vector<int> tempID(ItemDataBase::getItemDB()->getIDList());
+	if (key == tempID[0])
+		temp = new Potato(position);
+	else if (key == tempID[1])
+		temp = new Carrot(position);
+	else if (key == tempID[2])
+		temp = new Cabbage(position);
+	else if (key == tempID[3])
+		temp = new Wheat(position);
+	else if (key == tempID[4])
+		temp = new Bread(position);
+	else if (key == tempID[5])
+		temp = new VegetableStew(position);
+	else if (key == tempID[6])
+		temp = new DrinkingWater(position);
+	else if (key == tempID[7])
+		temp = new CarrotJuice(position);
+	else if (key == tempID[8])
+		temp = new Salad(position);
+	else if (key == tempID[9])
+		temp = new Stone(position);
+	else if (key == tempID[10])
+		temp = new Iron(position);
+	else if (key == tempID[11])
+		temp = new Copper(position);
+	else if (key == tempID[12])
+		temp = new Gold(position);
+	else if (key == tempID[13])
+		temp = new Water(position);
+	else if (key == tempID[14])
+		temp = new Wood(position);
+	else if (key == tempID[15])
+		temp = new Biomass(position);
+	else if (key == tempID[16])
+		temp = new Adhesives(position);
+	else if (key == tempID[17])
+		temp = new MetalScraps(position);
+	else if (key == tempID[18])
+		temp = new Cloth(position);
+	else if (key == tempID[19])
+		temp = new CircuitBoards(position);
+	return temp;
+}

@@ -12,6 +12,7 @@ public:
 	~ItemFactory();
 	static ItemFactory* getItemFactory();
 	static Item* generateItem(int key);
+	static Item* SpawnItem(int key, Vector3 position);
 };
 
 #endif

@@ -1,9 +1,1 @@
-﻿Build started 2/23/2017 3:06:17 AM.
-     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
-         Common.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\Common.lib
-     1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.05
+﻿  Common.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\Common.lib

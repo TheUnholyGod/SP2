@@ -621,10 +621,6 @@ void SceneBase::LightUpdate(double dt)
 		sunrotate -= 360;
 		Day++;
 	}
-
-	//std::cout << "Lighting Level: " << lighting.y << std::endl;
-	std::cout << "Day: " << Day << std::endl;
-	std::cout << "sunrotate: " << sunrotate << std::endl;
 }
 
 void SceneBase::LightReset(double dt)

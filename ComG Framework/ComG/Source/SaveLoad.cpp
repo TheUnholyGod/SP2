@@ -64,7 +64,6 @@ void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 			tempstorage.push_back(temp);
 			std::string sizestring = std::to_string(temp);
 			i += sizestring.size() + 1;
-			std::cout << temp << std::endl;
 		}
 		if (entitytype == 'B')
 		{
