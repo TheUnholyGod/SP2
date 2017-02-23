@@ -36,7 +36,7 @@ void DefenceTower::update(double dt)
 }
 int ahhhhhh = 0;
 void DefenceTower::turretTargetUpdate(std::vector<Enemy*> enemies)
-{
+{/*
 
 	for (auto i : enemies)
 	{
@@ -67,5 +67,5 @@ void DefenceTower::turretTargetUpdate(std::vector<Enemy*> enemies)
 	if (enemiesInRange.size() > 0)
 		s_forward = (Vector3((s_position - enemiesInRange.front()->getRenderer().getPosition()).Normalize().x, 0, (s_position - enemiesInRange.front()->getRenderer().getPosition()).Normalize().z));
 	else
-		s_forward = (1, 0, 0);
+		s_forward = (1, 0, 0);*/
 }
