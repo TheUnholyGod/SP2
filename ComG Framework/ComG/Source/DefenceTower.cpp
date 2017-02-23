@@ -3,7 +3,7 @@
 #include "Camera3.h"
 
 AABB* DefenceTower::aoe;
-std::list<Vector3> DefenceTower::enemiesInRange;
+std::list<Enemy*> DefenceTower::enemiesInRange;
 Vector3 DefenceTower::s_forward;
 Vector3 DefenceTower::s_position;
 
@@ -34,26 +34,38 @@ void DefenceTower::update(double dt)
 {
 	GameObject::gameobjrenderer_->setForward(s_forward);
 }
-
+int ahhhhhh = 0;
 void DefenceTower::turretTargetUpdate(std::vector<Enemy*> enemies)
 {/*
+
 	for (auto i : enemies)
 	{
-		if (aoe->AABBtoAABB(i->getAABB))
+		if (aoe->pointtoAABB(i->getRenderer().getPosition(), i->getRenderer().getForward()))
 		{
-			enemiesInRange.push_back(i->getRenderer().getPosition());
+			std::cout << "ENEMIMES SPOOTTTED!!!!!!!"<< ++ahhhhhh << std::endl;
+			enemiesInRange.push_back(i);
 		}
-		for (auto u : enemiesInRange)
-		{
-			if (u == i->getRenderer().getPosition())
+		if (enemiesInRange.size() > 0){
+			for (auto &u : enemiesInRange)
 			{
-				if (!(aoe->AABBtoAABB(i->getAABB)))
+				if (u == i)
 				{
-					enemiesInRange.pop_front();
+					if (!(aoe->pointtoAABB(i->getRenderer().getPosition(), i->getRenderer().getForward())))
+					{
+						enemiesInRange.pop_front();
+					}
+					else{
+						break;
+					}
+				}
+				else{
+					break;
 				}
 			}
 		}
-		std::cout << "enemies[i]: " << i->getRenderer().getPosition() << std::endl;
 	}
-	s_forward = (Vector3((s_position - enemiesInRange.front()).Normalize().x, 0, (s_position - enemiesInRange.front()).Normalize().z));*/
+	if (enemiesInRange.size() > 0)
+		s_forward = (Vector3((s_position - enemiesInRange.front()->getRenderer().getPosition()).Normalize().x, 0, (s_position - enemiesInRange.front()->getRenderer().getPosition()).Normalize().z));
+	else
+		s_forward = (1, 0, 0);*/
 }

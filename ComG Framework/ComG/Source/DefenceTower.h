@@ -16,7 +16,7 @@ protected:
 	static Vector3 s_position;
 	static Vector3 s_forward;
 	static AABB* aoe;
-	static std::list<Vector3> enemiesInRange;
+	static std::list<Enemy*> enemiesInRange;
 public:
 	DefenceTower(Vector3=(0,0,5));
 	virtual ~DefenceTower();
