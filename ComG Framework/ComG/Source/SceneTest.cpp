@@ -225,6 +225,7 @@ void SceneTest::Update(double dt)
 			Pstart = std::clock();
 			SpawnProjectile();
 		}
+	
 
 		SpawnEnemy(dt);
 		LightUpdate(dt);
@@ -648,6 +649,7 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
+
 	if (BaseEnemy.size() < 20)
 	{
 		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);

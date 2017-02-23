@@ -1,1 +1,6 @@
-﻿  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
+﻿  Molerat.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\randomizer.h(12): warning C4018: '>' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\randomizer.h(16): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\molerat.cpp(28): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\molerat.cpp(52): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
