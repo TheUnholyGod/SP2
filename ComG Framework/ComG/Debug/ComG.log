@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 23/2/2017 10:15:27 PM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>Link:
@@ -7,3 +8,10 @@
 Build succeeded.
 
 Time Elapsed 00:00:00.19
+=======
+﻿  SaveLoad.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\saveload.cpp(64): warning C4244: 'argument' : conversion from 'int' to 'const float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\saveload.cpp(72): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\saveload.cpp(82): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
+>>>>>>> 468d9b78c3b243dfff03100bebe99ea0a2176bce

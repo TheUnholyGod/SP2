@@ -27,7 +27,7 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 	{
 		std::string temp;
 		std::stringstream saveline;
-		saveline << "B" << i->getID() << blanker << (int)i->getRenderer().getForward().x << blanker << (int)i->getRenderer().getForward().y << blanker << (int)i->getRenderer().getForward().z << blanker << i->getRenderer().getPosition().x << blanker << i->getRenderer().getPosition().y << blanker << i->getRenderer().getPosition().z;
+		saveline << "B" << i->getID() << blanker << (int)(i->getRenderer().getForward().x *10) << blanker << (int)(i->getRenderer().getForward().y * 10) << blanker << (int)(i->getRenderer().getForward().z * 10) << blanker << i->getRenderer().getPosition().x << blanker << i->getRenderer().getPosition().y << blanker << i->getRenderer().getPosition().z;
 		saveline >> temp;
 		saver << temp << std::endl;
 	}
@@ -35,7 +35,7 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 	{
 		std::string temp;
 		std::stringstream saveline;
-		saveline << "E" << i->getID() << blanker << (int)i->getRenderer().getForward().x << blanker << (int)i->getRenderer().getForward().y << blanker << (int)i->getRenderer().getForward().z << blanker << (int)i->getRenderer().getPosition().x << blanker << (int)i->getRenderer().getPosition().y << blanker << (int)i->getRenderer().getPosition().z;
+		saveline << "E" << i->getID() << blanker << (int)(i->getRenderer().getForward().x * 10) << blanker << (int)(i->getRenderer().getForward().y * 10) << blanker << (int)(i->getRenderer().getForward().z * 10) << blanker << (int)i->getRenderer().getPosition().x << blanker << (int)i->getRenderer().getPosition().y << blanker << (int)i->getRenderer().getPosition().z;
 		saveline >> temp;
 		saver << temp << std::endl;
 	}
@@ -54,9 +54,9 @@ void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 	{
 		char temparray[256];
 		char entitytype;
-		std::vector<int> tempstorage;
+		std::vector<float> tempstorage;
 		loader.getline(temparray, 256);
-		sscanf_s(temparray, "%c", &entitytype);
+		sscanf_s(temparray, "%d", &entitytype);
 		for (int i = 1; temparray[i];)
 		{
 			int temp;
@@ -68,7 +68,7 @@ void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 		if (entitytype == 'B')
 		{
 			Vector3 forward = Vector3(tempstorage[1], tempstorage[2], tempstorage[3]);
-			Vector3 position = Vector3(tempstorage[4], tempstorage[5], tempstorage[6]);
+			Vector3 position = Vector3(tempstorage[4]/10.f, tempstorage[5]/10.f, tempstorage[6]/10.f);
 			Building* temp = BuildingFactory::getBuildingFactory()->generateBuilding(tempstorage[0], Vector3(0,0,5));
 			temp->getRenderer().setPosition(position);
 			temp->getRenderer().setForward(forward);
