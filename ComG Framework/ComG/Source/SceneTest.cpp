@@ -228,7 +228,7 @@ void SceneTest::Update(double dt)
 		}
 	
 
-		//SpawnEnemy(dt);
+		SpawnEnemy(dt);
 		LightUpdate(dt);
 		BTime = std::clock();
 		if (Application::IsKeyPressed('M') && (BTime - Bstart > 500 ))
@@ -238,7 +238,7 @@ void SceneTest::Update(double dt)
 		}
 
 		UpdateProjectiles(dt);
-		//UpdateEnemy(dt);
+		UpdateEnemy(dt);
 		SpawnItems(dt);
 
 		DefenceTower::turretTargetUpdate(BaseEnemy);
