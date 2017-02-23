@@ -1,15 +1,4 @@
-<<<<<<< HEAD
-﻿Build started 2/22/2017 8:27:47 PM.
-     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
-         Common.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Release\Common.lib
-     1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.06
-=======
-﻿Build started 22/2/2017 8:17:51 PM.
+﻿Build started 23/2/2017 9:17:07 AM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>Lib:
          Common.vcxproj -> C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release\Common.lib
@@ -17,5 +6,4 @@ Time Elapsed 00:00:00.06
 
 Build succeeded.
 
-Time Elapsed 00:00:00.09
->>>>>>> f8055a930c079c2d9b415cabe98dc97aeb384e4f
+Time Elapsed 00:00:00.07

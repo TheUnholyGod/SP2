@@ -60,7 +60,6 @@ void Inventory::Update(double dt)
 
 bool Inventory::getopeninventory()
 {
-
 	bool open;
 	open = openinventory;
 	return open;
