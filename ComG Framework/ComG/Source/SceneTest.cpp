@@ -15,6 +15,7 @@
 #include "ItemDataBase.h"
 #include "BuildingDataBase.h"
 #include "SaveLoad.h"
+#include "DefenceTower.h"
 #include <sstream>
 
 SceneTest::SceneTest() : buildingID(101), ItemID(101)
@@ -240,6 +241,11 @@ void SceneTest::Update(double dt)
 		UpdateEnemy(dt);
 		SpawnItems(dt);
 
+		DefenceTower::turretTargetUpdate(BaseEnemy);
+		for (auto i : BaseBuildings)
+		{
+			i->update(dt);
+		}
 
 		if (buildBuilding)
 		{
@@ -676,7 +682,7 @@ void SceneTest::SpawnBuilding()
 	spawnPoint.y = 0;
 	spawnPoint.z = (int)(v_temp.z);
 	
-	Building* temp = BuildingFactory::generateBuilding(108, spawnPoint);
+	Building* temp = BuildingFactory::generateBuilding(107, spawnPoint);
 	BaseBuildings.push_back(temp);
 }
 
