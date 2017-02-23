@@ -6,7 +6,7 @@ class Water :
 	public Resources
 {
 public:
-	Water();
+	Water(Vector3 = (0, 0, 0));
 	~Water();
 };
 

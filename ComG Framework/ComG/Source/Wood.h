@@ -6,7 +6,7 @@ class Wood :
 	public Resources
 {
 public:
-	Wood();
+	Wood(Vector3 = (0, 0, 0));
 	~Wood();
 };
 

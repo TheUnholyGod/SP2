@@ -6,7 +6,7 @@ class Gold :
 	public Resources
 {
 public:
-	Gold();
+	Gold(Vector3 = (0, 0, 0));
 	~Gold();
 };
 

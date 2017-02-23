@@ -17,6 +17,8 @@ public:
 	bool getpickedup();
 	virtual ~Item();
 	const std::string getName() { return kname_; }
+	const std::string getName() const { return kname_; }
+
 };
 
 #endif
