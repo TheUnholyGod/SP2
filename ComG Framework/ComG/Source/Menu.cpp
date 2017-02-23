@@ -2,7 +2,7 @@
 
 POINT cursorPoint;
 
-Menu::Menu()
+Menu::Menu() : buildingID(101)
 {
 	pause = false;
 
@@ -98,13 +98,31 @@ void Menu::init()
 	meshList[GEO_BUILDMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_BUILDMENU]->textureID = LoadTGA("Image//buildMenu.tga");
 
+	meshList[GEO_CRAFTBUTTON] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CRAFTBUTTON]->textureID = LoadTGA("Image//buildMenu - Craft.tga");
+
 	//Inventory Menu
 	meshList[GEO_INVENTORYMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_INVENTORYMENU]->textureID = LoadTGA("Image//inventoryMenu.tga");
-	
+
 	meshList[GEO_ITEMS] = MeshBuilder::GenerateText("ItemNames", 16, 16);
 	meshList[GEO_ITEMS]->textureID = LoadTGA("Image//calibri.tga");
 	count = 0;
+
+	//Text
+	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
+	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
+
+	meshList[GEO_ARROW_L] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_ARROW_L]->textureID = LoadTGA("Image//buildMenu - Arrows - L.tga");
+
+	meshList[GEO_ARROW_R] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_ARROW_R]->textureID = LoadTGA("Image//buildMenu - Arrows - R.tga");
+
+	for (int i = 0; i<buildingMeshList.size(); i++)
+	{
+		buildingName.push_back(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName());
+	}
 }
 
 void Menu::update()
@@ -338,7 +356,57 @@ void Menu::update()
 		{
 			if (elapsedTime > 0.01)
 			{
-
+				if (Application::IsKeyPressed(VK_LEFT))
+				{
+					if (buildSelection >= 0)
+					{
+						buildSelection--;
+					}
+					if (buildSelection < 0)
+					{
+						buildSelection = 11;
+					}
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_RIGHT))
+				{
+					if (buildSelection < 12)
+					{
+						buildSelection++;
+					}
+					if (buildSelection > 11)
+					{
+						buildSelection = 0;
+					}
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_LBUTTON))
+				{
+					if ((cursorX >= 110 && cursorX <= 150) && (cursorY >= 400 && cursorY <= 450))
+					{
+						if (buildSelection >= 0)
+						{
+							buildSelection--;
+						}
+						if (buildSelection < 0)
+						{
+							buildSelection = 11;
+						}
+						start = std::clock();
+					}
+					if ((cursorX >= 650 && cursorX <= 690) && (cursorY >= 400 && cursorY <= 450))
+					{
+						if (buildSelection < 12)
+						{
+							buildSelection++;
+						}
+						if (buildSelection > 11)
+						{
+							buildSelection = 0;
+						}
+						start = std::clock();
+					}
+				}
 			}
 		}
 	}
@@ -362,69 +430,98 @@ void Menu::update()
 			}
 		}
 	}
+
+	//std::cout << cursorX << " : " << cursorY << std::endl;
+	//std::cout << buildSelection << std::endl;
 }
 
 void Menu::Render()
 {
 	if (pause)
 	{
-		if (menuType == 0)
+		if (menuType == 0) //Options
 		{
-			RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], windowX / 20, windowY / 20, 16, 12);
 
 			if (optionSelection == 0)
 			{
-				RenderMeshOnScreen(meshList[GEO_MOUSE], 40, 30, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_MOUSE], windowX / 20, windowY / 20, 16, 12);
 			}
 			if (optionSelection == 1)
 			{
-				RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_VOLUME], windowX / 20, windowY / 20, 16, 12);
 			}
 			if (optionSelection == 2)
 			{
-				RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_BACK], windowX / 20, windowY / 20, 16, 12);
 			}
 		}
-		if (menuType == 1)
+		if (menuType == 1) //Pause
 		{
-			RenderMeshOnScreen(meshList[GEO_PAUSEMENU], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_PAUSEMENU], windowX / 20, windowY / 20, 16, 12);
 
 			if (pauseSelection == 0)
 			{
-				RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_OPTIONS], windowX / 20, windowY / 20, 16, 12);
 			}
 			if (pauseSelection == 1)
 			{
-				RenderMeshOnScreen(meshList[GEO_BACKTOGAME], 40, 30, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_BACKTOGAME], windowX / 20, windowY / 20, 16, 12);
 			}
 			if (pauseSelection == 2)
 			{
-				RenderMeshOnScreen(meshList[GEO_BACKTOMAIN], 40, 30, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_BACKTOMAIN], windowX / 20, windowY / 20, 16, 12);
 			}
 		}
-		if (menuType == 2)
+		if (menuType == 2) //Building
 		{
-			RenderMeshOnScreen(meshList[GEO_BUILDMENU], 40, 30, 16, 12);
-		}
-		if (menuType == 3)
-		{
-			RenderMeshOnScreen(meshList[GEO_CRAFTMENU], 40, 30, 16, 12);
-		}
-		if (menuType == 4)
-		{
-			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_BUILDMENU], windowX / 20, windowY / 20, 16, 12);
 
-			float y = 15.f;
-			for (std::list<std::string>::iterator i = Inventory::getinventory()->name.begin(); i != Inventory::getinventory()->name.end(); i++)
+			for (int i = 0; i < buildingName.size(); i++)
 			{
-				RenderTextOnScreen(meshList[GEO_ITEMS], *i, Color(0, 0, 1), 3.f, 5.f, y);
-				y-=2;
+				if (i == buildSelection)
+				{
+					RenderTextOnScreen(meshList[GEO_TEXT], buildingName[i], Color(1, 0, 0), 3.0f, 0.5 * (windowX / 20) , 2.25 * (windowY / 30));
+				}
+			}
+
+			if ((cursorX >= 110 && cursorX <= 150) && (cursorY >= 400 && cursorY <= 450))
+			{
+				RenderMeshOnScreen(meshList[GEO_ARROW_L], windowX / 20, windowY / 20, 16, 12);
+			}
+			if ((cursorX >= 650 && cursorX <= 690) && (cursorY >= 400 && cursorY <= 450))
+			{
+				RenderMeshOnScreen(meshList[GEO_ARROW_R], windowX / 20, windowY / 20, 16, 12);
+			}
+			if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
+			{
+				RenderMeshOnScreen(meshList[GEO_CRAFTBUTTON], windowX / 20, windowY / 20, 16, 12);
+			}
+		}
+		if (menuType == 3) //Crafting
+		{
+			RenderMeshOnScreen(meshList[GEO_CRAFTMENU], windowX / 20, windowY / 20, 16, 12);
+		}
+		if (menuType == 4) //Inventory
+		{
+
+			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], windowX / 20, windowY / 20, 16, 12);
+			float y = 45.f;
+			float y1 = 45.f;
+			for (std::list<std::string>::iterator i = Inventory::getinventory()->List.begin(); i != Inventory::getinventory()->List.end(); i++)
+			{
+				RenderTextOnScreen(meshList[GEO_ITEMS], *i, Color(0, 0, 1), 3.f, 6.f, y);
+				y-=5;
+			}
+			for (std::map<int, int>::iterator i = Inventory::getinventory()->inv.begin(); i != Inventory::getinventory()->inv.end(); i++)
+			{
+				std::string quantity = std::to_string(i->second);
+				RenderTextOnScreen(meshList[GEO_ITEMS], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
+				y1 -= 5;
 			}
 		}
 		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);		
 	}
-
-		
 }
 
 void Menu::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
@@ -506,8 +603,8 @@ void Menu::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float s
 	viewStack.LoadIdentity(); //No need camera for ortho mode
 	modelStack.PushMatrix();
 	modelStack.LoadIdentity(); //Reset modelStack
-	modelStack.Scale(size, size, size);
 	modelStack.Translate(x, y, 0);
+	modelStack.Scale(size, size, size);
 
 	glUniform1i(m_parameters[U_TEXT_ENABLED], 1);
 	glUniform3fv(m_parameters[U_TEXT_COLOR], 1, &color.r);

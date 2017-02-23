@@ -10,10 +10,18 @@
 #include "LoadTGA.h"
 #include "SceneManager.h"
 #include "Camera3.h"
+
+#include "BuildingDataBase.h"
+
 #include "GLFW\glfw3.h"
 #include "GL\glew.h"
 #include "Inventory.h"
 #include <list>
+
+#include <sstream>
+#include <vector>
+#include <array>
+#include <string>
 
 class Menu
 {
@@ -33,16 +41,24 @@ class Menu
 
 		//Crafting Menu
 		GEO_CRAFTMENU,
-		
+
 		//Building Menu
 		GEO_BUILDMENU,
+		GEO_CRAFTBUTTON,
 
 		//Inventory Menu
 		GEO_INVENTORYMENU,
 		GEO_ITEMS,
+		GEO_QUANTITY,
 
 		//Cursor
 		GEO_CURSOR,
+
+		//Misc
+		GEO_TEXT,
+		GEO_ARROW_L,
+		GEO_ARROW_R,
+
 		NUM_GEOMETRY,
 	};
 	enum UNIFORM_TYPE
@@ -60,6 +76,22 @@ class Menu
 		U_TEXT_ENABLED,
 		U_TEXT_COLOR,
 		U_TOTAL,
+	};
+	enum BUILDINGMESHLIST
+	{
+		GEO_BARN,
+		GEO_TROPHYROOM,
+		GEO_INVENTORYROOM,
+		GEO_NPCHOUSE,
+		GEO_FASTTRAVELPORTAL,
+		GEO_POWERGENERATOR,
+		GEO_DEFENCETOWER,
+		GEO_DEFENCEWALLS,
+		GEO_TILLEDSOIL,
+		GEO_OREMINES,
+		GEO_CRAFTING,
+		GEO_WATERWELL,
+		NUM_BUILDINGGEOMETRY,
 	};
 
 public:
@@ -87,6 +119,10 @@ public:
 	double cursorX;
 	double cursorY;
 
+	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
+	std::ostringstream oss;
+	std::vector<std::string> buildingName;
+
 	std::clock_t start;
 	float elapsedTime;
 
@@ -94,6 +130,9 @@ public:
 	std::string Itemname;
 	int ItemNo;
 	int count;
+
+
+	const int buildingID;
 
 	unsigned m_vertexArrayID;
 	unsigned m_programID;

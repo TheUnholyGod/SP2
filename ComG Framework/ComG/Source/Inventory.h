@@ -7,16 +7,20 @@
 #include <list>
 #include <sstream>
 #include <map>
+#include <utility>
 
 class Inventory
 {
 private:
 	Inventory();
 	static Inventory *inventory;
-	std::list<Item*> List;
+	
 	bool openinventory;
 public:
-	typedef std::map<Item*, int> inv;
+	std::map<int, int> inv;
+	std::list<std::string> List;
+	int quantity;
+	std::list<std::string> name;
 	static Inventory *getinventory();
 	void Additem(int key);
 	void Removeitem(Item* item);
@@ -27,10 +31,9 @@ public:
 	std::string getitemname();
 	int getsize();
 	~Inventory();
-	std::list<std::string> name;
+	
 protected:
 	std::string itemname_;
-	
 };
 
 #endif

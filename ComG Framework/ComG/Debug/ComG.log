@@ -1,28 +1,9 @@
 ﻿  Menu.cpp
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(112): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(424): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(441): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(442): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  SceneWildLife.cpp
-  SceneUI.cpp
-  SceneTest.cpp
-  SceneSplashScreen.cpp
-  SceneManager.cpp
-  SceneMainMenu.cpp
-  SceneCity.cpp
-  SceneBase.cpp
-  Projectile.cpp
-  Player.cpp
-  Molerat.cpp
-  Lizard.cpp
-  Item.cpp
-  Inventory.cpp
-  GameObject.cpp
-  EnemyFactory.cpp
-  EnemyDataBase.cpp
-  BuildingFactory.cpp
-  BuildingDataBase.cpp
-  Barn.cpp
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(122): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(130): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(480): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(484): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(523): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(538): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\menu.cpp(539): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
   ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
