@@ -1,94 +1,129 @@
-﻿  LINK : C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe not found or not built by the last incremental link; performing full link
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-WaterWell.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Water.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-VegetableStew.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Utility.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-TrophyRoom.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-TilledSoil.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Teleporting.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Stone.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-shader.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-SceneWildLife.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-SceneUI.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-SceneSplashScreen.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-SceneManager.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-SceneMainMenu.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-SceneCity.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-SceneBase.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Scarecrow_Mech.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Scar-H.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Salad.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-RogueMech.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Resources.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Renderer.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Radioactive.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Projectile.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-PowerGenerator.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Potato.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Player.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Menu.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-PatrolBot.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-OreMines.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-NPCHouse.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Molerat.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-MetalScraps.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-MeshBuilder.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Mesh.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-main.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-M200_CheyTac_Intervention.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-LoadTGA.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-LoadOBJ.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-LoadATOM.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Lizard.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Lighting.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Kitchen_Knife.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Katana_Sword.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-ItemFactory.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-ItemDataBase.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Item.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Iron.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-InventoryWarehouse.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Inventory.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Gold.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Goat.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Glock_17C.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-GameObject.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Food.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-FastTravelRoom.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Farming_Hoe.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-EnemyFactory.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-EnemyDataBase.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Enemy.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Drone.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-DrinkingWater.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-DefensiveWalls.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Deer.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-CybordMutt.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Crafting.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Corrosive.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Copper.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Compound_Bow.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Collision.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Cloth.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-CircuitBoards.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Centipede.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-CarrotJuice.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Carrot.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Camera4.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Camera3.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Camera2.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Camera.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Cabbage.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Burrowing.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Building.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Bread.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Biomass.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Barn.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Application.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Ant_Hill.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Adhesives.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Acrid_Plant.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-AbilityDataBase.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Ability.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
+﻿Build started 23/2/2017 11:55:09 PM.
+     1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glew\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glfw\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\Common\Source" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneTest.cpp
+         SceneTest.cpp
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\defencetower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(169): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(174): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(179): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(184): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(219): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(223): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(233): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(343): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(349): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(681): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(683): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(762): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(763): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\scenetest.cpp(781): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Debug\ComG.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glew\lib" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Debug" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Debug\ComG.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Debug\ComG.lib" /MACHINE:X86 Debug\Ability.obj
+         Debug\AbilityDataBase.obj
+         Debug\Acrid_Plant.obj
+         Debug\Adhesives.obj
+         Debug\Ant_Hill.obj
+         Debug\Application.obj
+         Debug\Barn.obj
+         Debug\Biomass.obj
+         Debug\Bread.obj
+         Debug\Building.obj
+         Debug\BuildingDataBase.obj
+         Debug\BuildingFactory.obj
+         Debug\Burrowing.obj
+         Debug\Cabbage.obj
+         Debug\Camera.obj
+         Debug\Camera2.obj
+         Debug\Camera3.obj
+         Debug\Camera4.obj
+         Debug\Carrot.obj
+         Debug\CarrotJuice.obj
+         Debug\Centipede.obj
+         Debug\CircuitBoards.obj
+         Debug\Cloth.obj
+         Debug\Collision.obj
+         Debug\Compound_Bow.obj
+         Debug\Copper.obj
+         Debug\Corrosive.obj
+         Debug\Crafting.obj
+         Debug\CybordMutt.obj
+         Debug\Deer.obj
+         Debug\DefenceTower.obj
+         Debug\DefensiveWalls.obj
+         Debug\DrinkingWater.obj
+         Debug\Drone.obj
+         Debug\Enemy.obj
+         Debug\EnemyDataBase.obj
+         Debug\EnemyFactory.obj
+         Debug\Farming_Hoe.obj
+         Debug\FastTravelRoom.obj
+         Debug\Food.obj
+         Debug\GameObject.obj
+         Debug\Glock_17C.obj
+         Debug\Goat.obj
+         Debug\Gold.obj
+         Debug\Inventory.obj
+         Debug\InventoryWarehouse.obj
+         Debug\Iron.obj
+         Debug\Item.obj
+         Debug\ItemDataBase.obj
+         Debug\ItemFactory.obj
+         Debug\Katana_Sword.obj
+         Debug\Kitchen_Knife.obj
+         Debug\Lighting.obj
+         Debug\Lizard.obj
+         Debug\LoadATOM.obj
+         Debug\LoadOBJ.obj
+         Debug\LoadTGA.obj
+         Debug\M200_CheyTac_Intervention.obj
+         Debug\main.obj
+         Debug\Mesh.obj
+         Debug\MeshBuilder.obj
+         Debug\MetalScraps.obj
+         Debug\Molerat.obj
+         Debug\NPCHouse.obj
+         Debug\OreMines.obj
+         Debug\PatrolBot.obj
+         Debug\Menu.obj
+         Debug\Player.obj
+         Debug\Potato.obj
+         Debug\PowerGenerator.obj
+         Debug\Projectile.obj
+         Debug\Radioactive.obj
+         Debug\Renderer.obj
+         Debug\Resources.obj
+         Debug\RogueMech.obj
+         Debug\Salad.obj
+         Debug\SaveLoad.obj
+         "Debug\Scar-H.obj"
+         Debug\Scarecrow_Mech.obj
+         Debug\SceneBase.obj
+         Debug\SceneCity.obj
+         Debug\SceneMainMenu.obj
+         Debug\SceneManager.obj
+         Debug\SceneSplashScreen.obj
+         Debug\SceneTest.obj
+         Debug\SceneUI.obj
+         Debug\SceneWildLife.obj
+         Debug\shader.obj
+         Debug\Stone.obj
+         Debug\Teleporting.obj
+         Debug\TilledSoil.obj
+         Debug\TrophyRoom.obj
+         Debug\Utility.obj
+         Debug\VegetableStew.obj
+         Debug\Water.obj
+         Debug\WaterWell.obj
+         Debug\Weapon.obj
+         Debug\Wheat.obj
+         Debug\Wildboar.obj
+         Debug\Wood.obj
+         ComG.vcxproj -> C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Debug\ComG.exe
+     1>Done Building Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\ComG\ComG.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.39
