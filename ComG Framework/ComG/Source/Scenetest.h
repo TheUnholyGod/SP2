@@ -211,7 +211,7 @@ private:
 	void RenderEnemy();
 
 	std::list<Building*> BaseBuildings;
-	void SpawnBuilding();
+	void SpawnBuilding(int bID);
 	void UpdateBuilding(double dt);
 	void RenderBuilding();
 

@@ -17,7 +17,6 @@ public:
 	virtual ~OreMines();
 
 	int get_Health();
-
 };
 
 #endif

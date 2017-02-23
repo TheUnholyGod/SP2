@@ -17,7 +17,6 @@ public:
 	virtual ~TrophyRoom();
 
 	int get_Health();
-
 };
 
 #endif

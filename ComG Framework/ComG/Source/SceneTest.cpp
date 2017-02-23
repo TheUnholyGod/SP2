@@ -229,30 +229,14 @@ void SceneTest::Update(double dt)
 		SpawnEnemy(dt);
 		LightUpdate(dt);
 		BTime = std::clock();
-		if (Application::IsKeyPressed('M') && (BTime - Bstart > 500 ))
-		{
-			Bstart = std::clock();
-			SpawnBuilding();
-		}
 
 		UpdateProjectiles(dt);
 		UpdateEnemy(dt);
 		SpawnItems(dt);
 
-
-		if (buildBuilding)
+		if (pauseMenu.craft)
 		{
-			SpawnBuilding();
-
-			if (buildBuilding)
-			{
-				buildBuildingUpdate(dt);
-			}
-
-			if (Inventory::getinventory()->getopeninventory())
-			{
-				Inventory::getinventory()->Update(dt);
-			}
+			SpawnBuilding(pauseMenu.craftingSelection);
 		}
 	}
 }
@@ -306,21 +290,25 @@ void SceneTest::Render()
 	static double timee = 0.0;
 	modelStack.PushMatrix();
 	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Body");
+	modelStack.Translate(0, 5, 0);
 	RenderMesh(meshList[GEO_SCAR_BODY], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Bolt");
+	modelStack.Translate(0, 5, 0);
 	RenderMesh(meshList[GEO_SCAR_BOLT], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Charging");
+	modelStack.Translate(0, 5, 0);
 	RenderMesh(meshList[GEO_SCAR_CHARGING], false);
 	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Casing");
+	modelStack.Translate(0, 5, 0);
 	RenderMesh(meshList[GEO_SCAR_CASING], false);
 	modelStack.PopMatrix();
 
@@ -329,23 +317,6 @@ void SceneTest::Render()
 	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
 	timee += 1.0 / 60.0;
-	if (buildBuilding) 
-	{
-		RenderMeshOnScreen(spritesList[GEO_BUILDUI], 40, 30, 80, 60);
-		RenderTextOnScreen(meshList[GEO_TEXT], "Press 'K' to exit building", Color(0, 0, 1), 3.f, .5f, 19.f);
-		RenderTextOnScreen(meshList[GEO_TEXT], "vvvvvvv Builderable vvvvvvv", Color(.8, 0, .8), 3.f, .5f, 16.f);
-		for (int i = 1, x = 10, displacement = 0; i < NUM_SPRITES; i++)
-		{
-			RenderMeshOnScreen(spritesList[i], x + displacement, 40, 12, 12);
-			displacement += 15;
-		}
-		RenderTextOnScreen(meshList[GEO_TEXT], "vvvvv Non-Builderable vvvvv", Color(.8, 0, .8), 3.f, .5f, 10.f);
-		for (int i = 1, x = 10, displacement = 0; i < NUM_SPRITES; i++) 
-		{
-			RenderMeshOnScreen(spritesList[i], x + displacement, 20, 12, 12);
-			displacement += 15;
-		}
-	}
 
 	if (Inventory::getinventory()->getopeninventory() == true)
 	{
@@ -666,12 +637,12 @@ void SceneTest::RenderEnemy()
 	}
 }
 
-void SceneTest::SpawnBuilding()
+void SceneTest::SpawnBuilding(int bID)
 {
 	Vector3 spawnPoint = Player::getplayer()->getRenderer().getPosition() + (Player::getplayer()->getRenderer().getForward() * 70);
 	spawnPoint.y = 0.1f;
 	
-	Building* temp = BuildingFactory::generateBuilding(108, spawnPoint);
+	Building* temp = BuildingFactory::generateBuilding(bID, spawnPoint);
 	BaseBuildings.push_back(temp);
 }
 

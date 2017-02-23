@@ -17,7 +17,6 @@ public:
 	virtual ~NPCHouse();
 
 	int get_Health();
-
 };
 
 #endif

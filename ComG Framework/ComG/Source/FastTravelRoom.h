@@ -17,7 +17,6 @@ public:
 	virtual ~FastTravelRoom();
 
 	int get_Health();
-
 };
 
 #endif

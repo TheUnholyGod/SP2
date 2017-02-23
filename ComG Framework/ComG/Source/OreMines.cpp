@@ -1,6 +1,7 @@
 #include "OreMines.h"
+#include "ItemFactory.h"
 
-OreMines::OreMines(Vector3 position) : Building(110, "OreMines", "OBJ//Barn.obj", "", 100, RESOURCE, false)
+OreMines::OreMines(Vector3 position) : Building(110, "Ore Mines", "OBJ//Barn.obj", "", 100, RESOURCE, false)
 {
 	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(5);
@@ -11,6 +12,9 @@ OreMines::OreMines(Vector3 position) : Building(110, "OreMines", "OBJ//Barn.obj"
 		allAABB.push_back(temp);
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+
+	defaultrecipe[ItemFactory::getItemFactory()->generateItem(201)] = 20; //Stone
+	defaultrecipe[ItemFactory::getItemFactory()->generateItem(206)] = 5; //Wood
 } 
 
 OreMines::~OreMines(){}

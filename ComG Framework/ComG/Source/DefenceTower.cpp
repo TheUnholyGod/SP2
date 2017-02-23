@@ -1,5 +1,6 @@
 #include "DefenceTower.h"
 #include "Camera3.h"
+#include "ItemFactory.h"
 
 DefenceTower::DefenceTower(Vector3 position) : Building(107, "Turret", "OBJ//Turret.obj", "Image//Turret_Texture.tga", 100, DEFENCE, false) 
 {
@@ -12,6 +13,11 @@ DefenceTower::DefenceTower(Vector3 position) : Building(107, "Turret", "OBJ//Tur
 		allAABB.push_back(temp);
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+
+	defaultrecipe[ItemFactory::getItemFactory()->generateItem(202)] = 15; //Iron
+	defaultrecipe[ItemFactory::getItemFactory()->generateItem(203)] = 10; //Copper
+	defaultrecipe[ItemFactory::getItemFactory()->generateItem(204)] = 1; //Gold
+	defaultrecipe[ItemFactory::getItemFactory()->generateItem(211)] = 1; //Circuit Board
 }
 
 DefenceTower::~DefenceTower()

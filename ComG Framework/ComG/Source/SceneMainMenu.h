@@ -32,6 +32,14 @@ class SceneMainMenu : public Scene
 		GEO_VOLUME,
 		GEO_BACK,
 
+		//SaveLoadGame Menu
+		GEO_SAVEMENU,
+		GEO_1SAVE,
+		GEO_2SAVE,
+		GEO_3SAVE,
+		GEO_4SAVE,
+		GEO_5SAVE,
+
 		//Cursor
 		GEO_CURSOR,
 
@@ -81,6 +89,7 @@ private:
 	int play;
 	int optionHighlight;
 	bool back;
+	int isExit;
 
 	std::clock_t start;
 	float elapsedTime;
