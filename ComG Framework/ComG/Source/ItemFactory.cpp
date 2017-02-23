@@ -20,6 +20,12 @@
 #include "MetalScraps.h"
 #include "Cloth.h"
 #include "CircuitBoards.h"
+#include "Kitchen_Knife.h"
+#include "Katana_Sword.h"
+#include "Farming_Hoe.h"
+#include "Glock_17C.h"
+#include "Scar-H.h"
+#include "M200_CheyTac_Intervention.h"
 #include "Compound_Bow.h"
 #include "Projectile.h"
 
@@ -88,8 +94,20 @@ Item* ItemFactory::generateItem(int key)
 	else if (key == tempID[19])
 		temp = new CircuitBoards;
 	else if (key == tempID[20])
-		temp = new Compound_Bow;
+		temp = new Kitchen_Knife;
 	else if (key == tempID[21])
+		temp = new Katana_Sword;
+	else if (key == tempID[22])
+		temp = new Farming_Hoe;
+	else if (key == tempID[23])
+		temp = new Glock_17C;
+	else if (key == tempID[24])
+		temp = new Scar_H;
+	else if (key == tempID[25])
+		temp = new M200_CheyTac_Intervention;
+	else if (key == tempID[26])
+		temp = new Compound_Bow;
+	else if (key == tempID[27])
 		temp = new Projectile;
 	return temp;
 }

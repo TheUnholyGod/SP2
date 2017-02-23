@@ -524,9 +524,9 @@ void Menu::Render()
 			for (std::map<int, int>::iterator i = Inventory::getinventory()->inv.begin(); i != Inventory::getinventory()->inv.end(); i++)
 			{
 				std::string quantity = std::to_string(i->second);
-				int key = i->first;
-				checkItem(key);
-				RenderMeshOnScreen(meshList[GEO_IMAGE], 8.f, y1, 3.f, 3.f);
+				//int key = i->first;
+				//checkItem(key);
+				//RenderMeshOnScreen(meshList[GEO_IMAGE], 8.f, y1, 3.f, 3.f);
 				RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
 				y1 -= 5;
 			}
@@ -686,4 +686,6 @@ void Menu::checkItem(int key)
 		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_CircuitBoards.tga");
 	else if (key == tempID[19])
 		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Adhesive.tga");
+
+	tempID.erase(tempID.begin(), tempID.end());
 }

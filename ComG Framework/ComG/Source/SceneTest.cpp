@@ -15,6 +15,7 @@
 #include "ItemDataBase.h"
 #include "BuildingDataBase.h"
 #include "SaveLoad.h"
+#include "DefenceTower.h"
 #include <sstream>
 
 SceneTest::SceneTest() : buildingID(101), ItemID(101)
@@ -193,7 +194,7 @@ void SceneTest::Init()
 	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
-	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
+	//SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
 	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	PTime = 0;
 	Pstart = 0;
@@ -225,8 +226,9 @@ void SceneTest::Update(double dt)
 			Pstart = std::clock();
 			SpawnProjectile();
 		}
+	
 
-		SpawnEnemy(dt);
+		//SpawnEnemy(dt);
 		LightUpdate(dt);
 		BTime = std::clock();
 		if (Application::IsKeyPressed('M') && (BTime - Bstart > 500 ))
@@ -236,9 +238,14 @@ void SceneTest::Update(double dt)
 		}
 
 		UpdateProjectiles(dt);
-		UpdateEnemy(dt);
+		//UpdateEnemy(dt);
 		SpawnItems(dt);
 
+		DefenceTower::turretTargetUpdate(BaseEnemy);
+		for (auto i : BaseBuildings)
+		{
+			i->update(dt);
+		}
 
 		if (buildBuilding)
 		{
@@ -648,6 +655,7 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
+
 	if (BaseEnemy.size() < 20)
 	{
 		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
@@ -674,7 +682,7 @@ void SceneTest::SpawnBuilding()
 	spawnPoint.y = 0;
 	spawnPoint.z = (int)(v_temp.z);
 	
-	Building* temp = BuildingFactory::generateBuilding(108, spawnPoint);
+	Building* temp = BuildingFactory::generateBuilding(107, spawnPoint);
 	BaseBuildings.push_back(temp);
 }
 

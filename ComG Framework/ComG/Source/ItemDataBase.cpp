@@ -20,6 +20,12 @@
 #include "Cloth.h"
 #include "CircuitBoards.h"
 #include "Compound_Bow.h"
+#include "Glock_17C.h"
+#include "M200_CheyTac_Intervention.h"
+#include "Scar-H.h"
+#include "Farming_Hoe.h"
+#include "Katana_Sword.h"
+#include "Kitchen_Knife.h"
 #include "Projectile.h"
 
 ItemDataBase* ItemDataBase::itemdb_;
@@ -104,6 +110,30 @@ ItemDataBase::ItemDataBase()
 	delete temp;
 	temp = new CircuitBoards;
 	itemdatabase_[temp->getID()] = new CircuitBoards;
+	IDlist.push_back(temp->getID());
+	delete temp;
+	temp = new Kitchen_Knife;
+	itemdatabase_[temp->getID()] = new Kitchen_Knife;
+	IDlist.push_back(temp->getID());
+	delete temp;
+	temp = new Katana_Sword;
+	itemdatabase_[temp->getID()] = new Katana_Sword;
+	IDlist.push_back(temp->getID());
+	delete temp;
+	temp = new Farming_Hoe;
+	itemdatabase_[temp->getID()] = new Farming_Hoe;
+	IDlist.push_back(temp->getID());
+	delete temp;
+	temp = new Glock_17C;
+	itemdatabase_[temp->getID()] = new Glock_17C;
+	IDlist.push_back(temp->getID());
+	delete temp;
+	temp = new Scar_H;
+	itemdatabase_[temp->getID()] = new Scar_H;
+	IDlist.push_back(temp->getID());
+	delete temp;
+	temp = new M200_CheyTac_Intervention;
+	itemdatabase_[temp->getID()] = new M200_CheyTac_Intervention;
 	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Compound_Bow;

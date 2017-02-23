@@ -789,5 +789,8 @@
     <ClInclude Include="Source\SaveLoad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Randomizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

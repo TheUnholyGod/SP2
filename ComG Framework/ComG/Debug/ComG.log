@@ -1,24 +1,45 @@
-﻿  Inventory.cpp
+﻿  ItemFactory.cpp
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\potato.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\carrot.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\cabbage.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\wheat.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\bread.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\carrotjuice.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\drinkingwater.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\salad.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\vegetablestew.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\stone.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\iron.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\copper.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\gold.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\water.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\wood.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\biomass.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\adhesives.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\metalscraps.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\cloth.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\circuitboards.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  ItemDataBase.cpp
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\potato.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\carrot.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\cabbage.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\wheat.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\bread.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\carrotjuice.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\drinkingwater.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\salad.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\vegetablestew.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\stone.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\iron.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\copper.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\gold.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\water.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\wood.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\biomass.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\adhesives.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\metalscraps.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\cloth.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\circuitboards.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
   Generating Code...
-  Skipping... (no relevant changes detected)
-  SceneWildLife.cpp
-  SceneUI.cpp
-  SceneTest.cpp
-  SceneSplashScreen.cpp
-  SceneManager.cpp
-  SceneMainMenu.cpp
-  SceneCity.cpp
-  SceneBase.cpp
-  Projectile.cpp
-  Player.cpp
-  Molerat.cpp
-  Menu.cpp
-  Lizard.cpp
-  Item.cpp
-  GameObject.cpp
-  EnemyFactory.cpp
-  EnemyDataBase.cpp
-  BuildingFactory.cpp
-  BuildingDataBase.cpp
-  Barn.cpp
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
