@@ -669,7 +669,10 @@ void SceneTest::RenderEnemy()
 void SceneTest::SpawnBuilding()
 {
 	Vector3 spawnPoint = Player::getplayer()->getRenderer().getPosition() + (Player::getplayer()->getRenderer().getForward() * 70);
-	spawnPoint.y = 0.1f;
+	Vector3 v_temp = spawnPoint;
+	spawnPoint.x = (int)(v_temp.x);
+	spawnPoint.y = 0;
+	spawnPoint.z = (int)(v_temp.z);
 	
 	Building* temp = BuildingFactory::generateBuilding(108, spawnPoint);
 	BaseBuildings.push_back(temp);
