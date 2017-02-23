@@ -42,7 +42,7 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 	saver.close();
 }
 
-void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& buildingslist, std::vector<Enemy*>& enemyslist)
+bool SaveLoad::Load(int saveno, std::string area, std::list<Building*>& buildingslist, std::vector<Enemy*>& enemyslist)
 {
 	const char* blanker = SaveLoad::getInstance()->getBlank();
 	std::stringstream filename;
@@ -50,6 +50,10 @@ void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 	std::string address;
 	filename >> address;
 	std::ifstream loader(address, std::ofstream::in);
+	if (loader.fail() || loader.peek() == std::ifstream::traits_type::eof())
+	{
+		return false;
+	}
 	while (!loader.eof())
 	{
 		char temparray[256];
@@ -87,4 +91,32 @@ void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 		}
 	}
 	loader.close();
+	return true;
+}
+
+void SaveLoad::NewGame(int no)
+{
+	//Opening the default file
+	std::stringstream filename;
+	filename << "Saves//" << '0' << "//Barn.txt";
+	std::string newfile;
+	filename >> newfile;
+	std::vector<std::string>copier;
+	std::fstream newing(newfile, std::ios::in);
+	while (!newing.eof())
+	{
+		char temp[256];
+		newing.getline(temp, 256);
+		std::string tempstr(temp);
+		copier.push_back(tempstr);
+	}
+	newing.close();
+	filename << "Saves//" << no << "//Barn.txt";
+	filename >> newfile;
+	std::fstream newer(newfile, std::ios::out);
+	for (auto &i:copier)
+	{
+		newer << i << std::endl;
+	}
+	newer.close();
 }

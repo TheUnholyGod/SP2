@@ -17,7 +17,6 @@ public:
 	virtual ~DefensiveWalls();
 
 	int get_Health();
-
 };
 
 #endif

@@ -5,6 +5,8 @@ POINT cursorPoint;
 Menu::Menu() : buildingID(101)
 {
 	pause = false;
+	craft = false;
+	rendered = false;
 
 	menuType = 0;
 	pauseSelection = 0;
@@ -12,6 +14,7 @@ Menu::Menu() : buildingID(101)
 	buildSelection = 0;
 	craftSelection = 0;
 	inventorySelection = 0;
+	craftingSelection = 0;
 	
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
@@ -129,6 +132,9 @@ void Menu::init()
 	{
 		buildingName.push_back(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName());
 	}
+
+	width = (windowX / 50);
+	height = (windowY / 18.5);
 }
 
 void Menu::update()
@@ -138,6 +144,8 @@ void Menu::update()
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + windowY;
+
+	craft = false;
 
 	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
@@ -372,6 +380,8 @@ void Menu::update()
 					{
 						buildSelection = 11;
 					}
+					resourceName.clear();
+					resourceQuantity.clear();
 					start = std::clock();
 				}
 				if (Application::IsKeyPressed(VK_RIGHT))
@@ -384,6 +394,8 @@ void Menu::update()
 					{
 						buildSelection = 0;
 					}
+					resourceName.clear();
+					resourceQuantity.clear();
 					start = std::clock();
 				}
 				if (Application::IsKeyPressed(VK_LBUTTON))
@@ -412,6 +424,16 @@ void Menu::update()
 						}
 						start = std::clock();
 					}
+					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
+					{
+						craft = true;
+						craftingSelection = buildingID + buildSelection;
+						SetCursorPos(windowX / 2, windowY / 2);
+						pause = false;
+					}
+
+					resourceName.clear();
+					resourceQuantity.clear();
 				}
 			}
 		}
@@ -436,9 +458,6 @@ void Menu::update()
 			}
 		}
 	}
-
-	//std::cout << cursorX << " : " << cursorY << std::endl;
-	//std::cout << buildSelection << std::endl;
 }
 
 void Menu::Render()
@@ -488,7 +507,35 @@ void Menu::Render()
 				if (i == buildSelection)
 				{
 					RenderTextOnScreen(meshList[GEO_TEXT], buildingName[i], Color(1, 0, 0), 3.0f, 0.5 * (windowX / 20) , 2.25 * (windowY / 30));
+
+					test = BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getRecipe();
+					width = (windowX / 50);
+					height = (windowY / 18.5);
+
+					for (it = test.begin(); it != test.end(); it++)
+					{
+						resourceName.push_back(it->first->getName());
+						resourceQuantity.push_back(it->second);
+					}	
+					for (int i = 0; i <= resourceName.size(); i++)
+					{
+						std::ostringstream oss;
+						oss << resourceQuantity[i];
+
+						if (i != resourceName.size())
+						{
+							RenderTextOnScreen(meshList[GEO_TEXT], resourceName[i], Color(1, 0, 0), 2.5f, width / 2, height);
+							RenderTextOnScreen(meshList[GEO_TEXT], oss.str(), Color(0, 1, 0), 2.5f, width * 2.5, height);
+
+							height -= 4;
+						}
+
+						oss.str("");
+					}
 				}
+
+				resourceName.clear();
+				resourceQuantity.clear();
 			}
 
 			if ((cursorX >= 110 && cursorX <= 150) && (cursorY >= 400 && cursorY <= 450))

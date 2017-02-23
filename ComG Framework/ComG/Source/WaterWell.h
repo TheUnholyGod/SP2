@@ -17,7 +17,6 @@ public:
 	virtual ~WaterWell();
 
 	int get_Health();
-
 };
 
 #endif
