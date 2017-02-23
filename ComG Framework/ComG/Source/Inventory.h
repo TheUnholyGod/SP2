@@ -34,6 +34,7 @@ public:
 	
 protected:
 	std::string itemname_;
+	const std::string getName() { return itemname_; }
 };
 
 #endif

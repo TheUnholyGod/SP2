@@ -1,5 +1,6 @@
 #include "Barn.h"
 #include "MyMath.h"
+#include "ItemFactory.h"
 
 Barn::Barn(Vector3 position) : Building(101, "Barn", "OBJ//Barn(working).obj", "Image//barnInteriorUV.tga", 100, NORMAL, true)
 {
@@ -13,6 +14,9 @@ Barn::Barn(Vector3 position) : Building(101, "Barn", "OBJ//Barn(working).obj", "
 		allAABB.push_back(temp);
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+
+	defaultrecipe[ItemFactory::getItemFactory()->generateItem(202)] = 2; //Iron
+	defaultrecipe[ItemFactory::getItemFactory()->generateItem(206)] = 20; //Wood
 }
 Barn::~Barn(){}
 

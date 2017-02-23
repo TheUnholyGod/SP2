@@ -12,12 +12,15 @@ protected:
 	std::string source_location_;
 	int health_;
 	bool enter_;
+	static recipe Barnrecipe;
 public:
 	Barn(Vector3=(0,0,5));
 	virtual ~Barn();
 	void update(double dt) override;
 	int get_Health();
+	std::string get_Resources();
 
+	static recipe getRecipe() { return Barnrecipe; }
 };
 
 #endif

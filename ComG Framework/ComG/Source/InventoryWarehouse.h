@@ -17,7 +17,6 @@ public:
 	virtual ~InventoryWarehouse();
 
 	int get_Health();
-
 };
 
 #endif

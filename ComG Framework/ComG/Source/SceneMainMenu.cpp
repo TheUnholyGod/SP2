@@ -37,6 +37,7 @@ void SceneMainMenu::Init()
 
 	play = 1;
 	back = false;
+	isExit = 0;
 
 	start = std::clock();
 
@@ -118,6 +119,25 @@ void SceneMainMenu::Init()
 
 	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_BACK]->textureID = LoadTGA("Image//optionsMenu - Back.tga");
+
+	//SaveGame Menu
+	meshList[GEO_SAVEMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_SAVEMENU]->textureID = LoadTGA("Image//SaveGame.tga");
+
+	meshList[GEO_1SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_1SAVE]->textureID = LoadTGA("Image//SaveGame - 1Saved.tga");
+
+	meshList[GEO_2SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_2SAVE]->textureID = LoadTGA("Image//SaveGame - 2Saved.tga");
+
+	meshList[GEO_3SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_3SAVE]->textureID = LoadTGA("Image//SaveGame - 3Saved.tga");
+
+	meshList[GEO_4SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_4SAVE]->textureID = LoadTGA("Image//SaveGame - 4Saved.tga");
+
+	meshList[GEO_5SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_5SAVE]->textureID = LoadTGA("Image//SaveGame - 5Saved.tga");
 }
 
 void SceneMainMenu::Update(double dt)
@@ -162,12 +182,10 @@ void SceneMainMenu::Update(double dt)
 				start = std::clock();
 				if (play == 0)
 				{
-					Application::IsExit = true;
-
+					isExit = 2;
 				}
 				if (play == 1)
 				{
-					play = 1;
 					options = false;
 					SceneManager::currScene = 4;
 				}
@@ -206,8 +224,7 @@ void SceneMainMenu::Update(double dt)
 				{
 					if (play == 0)
 					{
-						Application::IsExit = true;
-
+						isExit = 2;
 					}
 					if (play == 1)
 					{
@@ -283,6 +300,7 @@ void SceneMainMenu::Update(double dt)
 			}
 		}
 	}
+
 }
 
 void SceneMainMenu::Render()
@@ -300,36 +318,69 @@ void SceneMainMenu::Render()
 
 	if (!options)
 	{
-		RenderMeshOnScreen(meshList[GEO_MAINMENU], 40, 30, 16, 12);
+		RenderMeshOnScreen(meshList[GEO_MAINMENU], windowX / 20, windowY / 20, 16, 12);
 
 		if (play == 0)
 		{
-			RenderMeshOnScreen(meshList[GEO_EXIT], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_EXIT], windowX / 20, windowY / 20, 16, 12);
 		}
 		if (play == 1)
 		{
-			RenderMeshOnScreen(meshList[GEO_PLAY], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_PLAY], windowX / 20, windowY / 20, 16, 12);
 		}
 		if (play == 2)
 		{
-			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_OPTIONS], windowX / 20, windowY / 20, 16, 12);
 		}
 	}
 	else if (options)
 	{
-		RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], 40, 30, 16, 12);
+		RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], windowX / 20, windowY / 20, 16, 12);
 
 		if (optionHighlight == 0)
 		{
-			RenderMeshOnScreen(meshList[GEO_MOUSE], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_MOUSE], windowX / 20, windowY / 20, 16, 12);
 		}
 		if (optionHighlight == 1)
 		{
-			RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_VOLUME], windowX / 20, windowY / 20, 16, 12);
 		}
 		if (optionHighlight == 2)
 		{
-			RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_BACK], windowX / 20, windowY / 20, 16, 12);
+		}
+	}
+	if (isExit != 0)
+	{
+		RenderMeshOnScreen(meshList[GEO_SAVEMENU], windowX / 20, windowY / 20, 16, 12);
+
+		if (isExit == 1) //Joining the Game
+		{
+			//Dont render the GEO_xSave for save slots which have saved games
+
+			RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 16, 12);
+
+			RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 16, 12);
+
+			RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 16, 12);
+
+			RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 16, 12);
+
+			RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 16, 12);
+		}
+		if (isExit == 2) //Leaving the Game
+		{
+			//Render only for those slots which have saved games
+
+			RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 16, 12);
+
+			RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 16, 12);
+
+			RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 16, 12);
+
+			RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 16, 12);
+
+			RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 16, 12);
 		}
 	}
 

@@ -12,16 +12,20 @@
 #include "Camera3.h"
 
 #include "BuildingDataBase.h"
+#include "ItemDataBase.h"
 
+#include "Building.h"
+#include "BuildingFactory.h"
 #include "GLFW\glfw3.h"
 #include "GL\glew.h"
 #include "Inventory.h"
 #include <list>
 
 #include <sstream>
+#include <string>
 #include <vector>
 #include <array>
-#include <string>
+#include <map>
 
 class Menu
 {
@@ -106,6 +110,8 @@ public:
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 
 	bool pause;
+	bool craft;	
+	bool rendered;
 
 	int menuType;
 	int pauseSelection;
@@ -113,15 +119,24 @@ public:
 	int buildSelection;
 	int craftSelection;
 	int inventorySelection;
+	int craftingSelection;
 	int windowX;
 	int windowY;
+	int width;
+	int height;
 
 	double cursorX;
 	double cursorY;
 
+	typedef std::map<Item*, int> recipe;
+	recipe::iterator it;
+
+	recipe test;
+
 	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
-	std::ostringstream oss;
 	std::vector<std::string> buildingName;
+	std::vector<std::string> resourceName;
+	std::vector<int> resourceQuantity;
 
 	std::clock_t start;
 	float elapsedTime;

@@ -17,7 +17,6 @@ public:
 	virtual ~Crafting();
 
 	int get_Health();
-
 };
 
 #endif

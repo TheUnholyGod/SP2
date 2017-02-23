@@ -17,7 +17,6 @@ public:
 	virtual ~PowerGenerator();
 
 	int get_Health();
-
 };
 
 #endif
