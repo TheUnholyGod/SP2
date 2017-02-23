@@ -21,6 +21,7 @@ public:
 	static const unsigned char Application::FPS; // FPS of this game
 	static const unsigned int Application::frameTime; // time for each frame
 	static StopWatch m_timer;
+	static int saveno;
 };
 
 #endif

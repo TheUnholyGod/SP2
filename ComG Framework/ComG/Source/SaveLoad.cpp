@@ -27,7 +27,7 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 	{
 		std::string temp;
 		std::stringstream saveline;
-		saveline << "B" << i->getID() << blanker << i->getRenderer().getPosition().x << blanker << i->getRenderer().getPosition().y << blanker << i->getRenderer().getPosition().z;
+		saveline << "B" << i->getID() << blanker << (int)i->getRenderer().getForward().x << blanker << (int)i->getRenderer().getForward().y << blanker << (int)i->getRenderer().getForward().z << blanker << i->getRenderer().getPosition().x << blanker << i->getRenderer().getPosition().y << blanker << i->getRenderer().getPosition().z;
 		saveline >> temp;
 		saver << temp << std::endl;
 	}
@@ -35,7 +35,7 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 	{
 		std::string temp;
 		std::stringstream saveline;
-		saveline << "E" << i->getID() << blanker << (int)i->getRenderer().getPosition().x << blanker << (int)i->getRenderer().getPosition().y << blanker << (int)i->getRenderer().getPosition().z;
+		saveline << "E" << i->getID() << blanker << (int)i->getRenderer().getForward().x << blanker << (int)i->getRenderer().getForward().y << blanker << (int)i->getRenderer().getForward().z << blanker << (int)i->getRenderer().getPosition().x << blanker << (int)i->getRenderer().getPosition().y << blanker << (int)i->getRenderer().getPosition().z;
 		saveline >> temp;
 		saver << temp << std::endl;
 	}
@@ -67,17 +67,21 @@ void SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 		}
 		if (entitytype == 'B')
 		{
-			Vector3 position = Vector3(tempstorage[1], tempstorage[2], tempstorage[3]);
+			Vector3 forward = Vector3(tempstorage[1], tempstorage[2], tempstorage[3]);
+			Vector3 position = Vector3(tempstorage[4], tempstorage[5], tempstorage[6]);
 			Building* temp = BuildingFactory::getBuildingFactory()->generateBuilding(tempstorage[0], Vector3(0,0,5));
 			temp->getRenderer().setPosition(position);
+			temp->getRenderer().setForward(forward);
 			temp->getAABB(0)->setMinMax(position);
 			buildingslist.push_back(temp);
 		}
 		else if (entitytype == 'E')
 		{
-			Vector3 position = Vector3(tempstorage[1], tempstorage[2], tempstorage[3]);
+			Vector3 forward = Vector3(tempstorage[1], tempstorage[2], tempstorage[3]);
+			Vector3 position = Vector3(tempstorage[4], tempstorage[5], tempstorage[6]);
 			Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(tempstorage[0]);
 			temp->getRenderer().setPosition(position);
+			temp->getRenderer().setForward(forward);
 			enemyslist.push_back(temp);
 		}
 	}

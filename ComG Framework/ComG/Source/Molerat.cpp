@@ -1,20 +1,18 @@
 #include "Molerat.h"
-#include "MyMath.h"
 #include "Player.h"
+#include "Randomizer.h"
 
 Molerat::Molerat() : Enemy(1, "OBJ//MoleRat.obj","Image//MoleratUV.tga" ,"Molerat", NORMAL, "Base", 100, 10, 4)
 {
-	Math::InitRNG();
-	float temp1 = Math::RandIntMinMax(1, 50) - Player::getplayer()->getRenderer().getPosition().x;
+	float temp1 = 250 - Randomizer::generate_range(1,500) + Player::getplayer()->getRenderer().getPosition().x;
 	float temp2 = 0;
-	Math::InitRNG();
-	float temp3 = Math::RandIntMinMax(1, 50) - Player::getplayer()->getRenderer().getPosition().z;
-	Math::InitRNG();
+	float temp3 = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().z;
 	gameobjrenderer_->setPosition(Vector3(temp1, temp2, temp3));
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 	goalreached = true;
 	newDIr = Vector3(1, 0, 0);
+	std::cout << this->gameobjrenderer_->getPosition() << std::endl;
 }
 
 Molerat::~Molerat()
@@ -44,15 +42,14 @@ void Molerat::Update(double dt,std::list<Building*> Buildings, std::vector<Enemy
 	}
 	else if (this->checkCollision(Buildings, Enemy))
 	{
-		gameobjrenderer_->setForward(-gameobjrenderer_->getForward());
+		gameobjrenderer_->setForward(-gameobjrenderer_->getRight());
 		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
 	}
 }
 
 void Molerat::pathfinding()
 {
-	Math::InitRNG();
-	float temp = Math::RandFloatMinMax(1, 360);
+	float temp = Randomizer::generate_range(1, 360);
 	Mtx44 rotation;
 	rotation.SetToRotation(temp, 0, 1, 0);
 	newDIr = rotation * newDIr;
