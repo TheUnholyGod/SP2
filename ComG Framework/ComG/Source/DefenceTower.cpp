@@ -23,13 +23,6 @@ int DefenceTower::get_Health(){ return health_; }
 
 void DefenceTower::update(double dt)
 {
-	GameObject::gameobjrenderer_->setPosition(Vector3(10,0,0));
-	Vector3 turretPosition = GameObject::gameobjrenderer_->getPosition();
-	Vector3 playerPosition = Camera3::getPosition();
-	/*
-	Vector3 turretForward = GameObject::gameobjrenderer_->getForward();
-	if (turretForward != ())
-		*/
-	Vector3 newForward = turretPosition - playerPosition;
-	GameObject::gameobjrenderer_->setForward(Vector3(newForward.Normalize().x, 0, newForward.Normalize().z) );
+	GameObject::gameobjrenderer_->setForward(Vector3((GameObject::gameobjrenderer_->getPosition() - Camera3::getPosition()).Normalize().x, 0, (GameObject::gameobjrenderer_->getPosition() - Camera3::getPosition()).Normalize().z));
+
 }
