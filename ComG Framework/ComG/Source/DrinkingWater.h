@@ -6,7 +6,7 @@ class DrinkingWater :
 	public Food
 {
 public:
-	DrinkingWater();
+	DrinkingWater(Vector3 = (0, 0, 0));
 	~DrinkingWater();
 
 	virtual void Eat();

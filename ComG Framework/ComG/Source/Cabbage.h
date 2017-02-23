@@ -6,7 +6,7 @@ class Cabbage :
 	public Food
 {
 public:
-	Cabbage();
+	Cabbage(Vector3 = (0, 0, 0));
 	~Cabbage();
 
 	virtual void Eat();

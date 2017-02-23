@@ -711,9 +711,18 @@ void SceneTest::SpawnItems(double dt)
 {
 	if (BaseItems.size() < 1)
 	{
-		BaseItems.push_back(ItemFactory::getItemFactory()->generateItem(101));
-		BaseItems.push_back(ItemFactory::getItemFactory()->generateItem(103));
-		BaseItems.push_back(ItemFactory::getItemFactory()->generateItem(103));
+		int x = 0;
+		int y = 0;
+		int z = 0;
+		Vector3 spawn(0, 0, 5);
+
+		BaseItems.push_back(ItemFactory::getItemFactory()->SpawnItem(101, spawn));
+		spawn.x += 5;
+		spawn.z += 2;
+		BaseItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
+		spawn.x += 2;
+		spawn.z += 2;
+		BaseItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
 	}
 }
 

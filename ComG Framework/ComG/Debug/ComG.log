@@ -1,18 +1,2 @@
-﻿  SceneTest.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(168): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(173): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(178): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(183): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(218): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(222): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(231): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(336): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(342): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(673): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(675): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(745): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(746): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(764): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+﻿LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe

@@ -6,7 +6,7 @@ class Biomass :
 	public Resources
 {
 public:
-	Biomass();
+	Biomass(Vector3 = (0, 0, 0));
 	~Biomass();
 };
 

@@ -1,8 +1,8 @@
 #include "Carrot.h"
 
-Carrot::Carrot():Food(103,"Carrot", "OBJ\\Carrot.obj", "", FARMABLE, 10, 5)
+Carrot::Carrot(Vector3 position):Food(103,"Carrot", "OBJ\\Carrot.obj", "", FARMABLE, 10, 5)
 {
-	gameobjrenderer_ = new Renderer(Vector3(2, 0, 15), Vector3(1, 0, 0));
+	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(2);
 	size.push_back(Vector3(5, 5, 5));
 

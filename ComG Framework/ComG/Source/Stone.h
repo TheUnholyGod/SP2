@@ -6,7 +6,7 @@ class Stone :
 	public Resources
 {
 public:
-	Stone();
+	Stone(Vector3 = (0, 0, 0));
 	~Stone();
 };
 

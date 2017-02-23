@@ -6,7 +6,7 @@ class Wheat :
 	public Food
 {
 public:
-	Wheat();
+	Wheat(Vector3 = (0, 0, 0));
 	~Wheat();
 
 	virtual void Eat();
