@@ -1,46 +1,76 @@
-﻿  SceneWildLife.cpp
+﻿  main.cpp
+  Projectile.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\projectile.cpp(31): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+  Player.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\player.cpp(28): warning C4244: 'return' : conversion from 'float' to 'const int', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\player.cpp(73): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\player.cpp(95): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\player.cpp(116): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\player.cpp(137): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\player.cpp(158): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  ItemFactory.cpp
+  ItemDataBase.cpp
+  Item.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\item.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Inventory.cpp
+  GameObject.cpp
+  EnemyFactory.cpp
+  EnemyDataBase.cpp
+  Camera4.cpp
 c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
           c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(132): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(136): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(140): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(572): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenewildlife.cpp(589): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  SceneCity.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\camera4.cpp(57): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\camera4.cpp(58): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\camera4.cpp(65): warning C4305: '=' : truncation from 'double' to 'float'
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\camera4.cpp(69): warning C4305: '=' : truncation from 'double' to 'float'
+  Camera3.cpp
 c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
           c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(132): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(136): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(140): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(572): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenecity.cpp(589): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  SceneBase.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(131): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(136): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(141): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(566): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(567): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenebase.cpp(584): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  SaveLoad.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\saveload.cpp(70): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\saveload.cpp(78): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Molerat.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\molerat.cpp(30): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Menu.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(118): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(126): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(473): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(477): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(503): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(518): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\menu.cpp(519): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Lizard.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\lizard.cpp(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Camera2.cpp
+  Camera.cpp
+  BuildingFactory.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\barn.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defencetower.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defensivewalls.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\inventorywarehouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\npchouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\oremines.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\crafting.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\powergenerator.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\tilledsoil.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\trophyroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\waterwell.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  BuildingDataBase.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\barn.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defencetower.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\crafting.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defensivewalls.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\inventorywarehouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\npchouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\oremines.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\powergenerator.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\tilledsoil.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\trophyroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\waterwell.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Barn.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\barn.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Application.cpp
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\application.cpp(107): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
+  Skipping... (no relevant changes detected)
+  SceneWildLife.cpp
+  SceneUI.cpp
+  SceneTest.cpp
+  SceneSplashScreen.cpp
+  SceneManager.cpp
+  SceneMainMenu.cpp
+  SceneCity.cpp
+  SceneBase.cpp
+  Molerat.cpp
+  Menu.cpp
+  Lizard.cpp
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
 Wood.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Wildboar.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
@@ -62,17 +92,14 @@ RogueMech.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documen
 Resources.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Renderer.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Radioactive.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Projectile.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 PowerGenerator.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Potato.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Player.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 PatrolBot.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 OreMines.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 NPCHouse.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 MetalScraps.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 MeshBuilder.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Mesh.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-main.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 M200_CheyTac_Intervention.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 LoadTGA.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 LoadOBJ.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
@@ -80,50 +107,35 @@ LoadATOM.obj : warning LNK4020: a type record in 'c:\users\theunholygod\document
 Lighting.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Kitchen_Knife.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Katana_Sword.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-ItemFactory.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-ItemDataBase.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Item.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Iron.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 InventoryWarehouse.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Inventory.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Gold.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Goat.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Glock_17C.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-GameObject.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-Food.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Food.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-FastTravelRoom.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'FastTravelRoom.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Farming_Hoe.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Farming_Hoe.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-EnemyFactory.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'EnemyFactory.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-EnemyDataBase.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'EnemyDataBase.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Enemy.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Enemy.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Drone.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Drone.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-DrinkingWater.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'DrinkingWater.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-DefenceTower.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'DefenceTower.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Deer.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Deer.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-CybordMutt.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'CybordMutt.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Crafting.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Crafting.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Corrosive.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Corrosive.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Copper.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Copper.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Compound_Bow.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Compound_Bow.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Collision.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Collision.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Cloth.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Cloth.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-CircuitBoards.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'CircuitBoards.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Centipede.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Centipede.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
+Food.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+FastTravelRoom.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Farming_Hoe.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Enemy.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Drone.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+DrinkingWater.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+DefenceTower.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Deer.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+CybordMutt.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Crafting.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Corrosive.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Copper.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Compound_Bow.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Collision.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Cloth.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+CircuitBoards.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Centipede.obj : warning LNK4020: a type record in 'c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 CarrotJuice.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'CarrotJuice.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
 Carrot.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Carrot.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Camera4.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Camera4.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Camera3.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Camera3.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Camera2.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Camera2.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Camera.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Camera.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
 Cabbage.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Cabbage.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
 Burrowing.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Burrowing.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-BuildingFactory.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'BuildingFactory.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-BuildingDataBase.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'BuildingDataBase.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
 Building.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Building.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
 Bread.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Bread.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
 Biomass.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Biomass.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Barn.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Barn.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
-Application.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Application.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
 Ant_Hill.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Ant_Hill.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
 Adhesives.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Adhesives.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
 Acrid_Plant.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Acrid_Plant.obj' or at 'C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\vc120.pdb'; linking object as if no debug info
