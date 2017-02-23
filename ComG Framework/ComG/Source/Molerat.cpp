@@ -43,9 +43,10 @@ void Molerat::Update(double dt,std::list<Building*> Buildings, std::vector<Enemy
 		allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 		allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 	}
-	else
+	else if (this->checkCollision(Buildings, Enemy))
 	{
-		;
+		gameobjrenderer_->setForward(-gameobjrenderer_->getForward());
+		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
 	}
 }
 
