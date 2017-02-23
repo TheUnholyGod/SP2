@@ -1,6 +1,9 @@
-﻿  Vector3.cpp
-  timer.cpp
-  Mtx44.cpp
-  MatrixStack.cpp
-  Generating Code...
-  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\Common.lib
+﻿Build started 23/2/2017 10:15:27 PM.
+     1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         Common.vcxproj -> C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Debug\Common.lib
+     1>Done Building Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Common\Common.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.10
