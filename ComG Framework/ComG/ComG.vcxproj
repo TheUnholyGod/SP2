@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="Shader\SimpleFragmentShader.fragmentshader" />
     <None Include="Shader\SimpleVertexShader.vertexshader" />
   </ItemGroup>
@@ -180,6 +181,7 @@
     <ClCompile Include="Source\Stone.cpp" />
     <ClCompile Include="Source\Teleporting.cpp" />
     <ClCompile Include="Source\TilledSoil.cpp" />
+    <ClCompile Include="Source\Tree.cpp" />
     <ClCompile Include="Source\TrophyRoom.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
     <ClCompile Include="Source\VegetableStew.cpp" />
@@ -287,6 +289,7 @@
     <ClInclude Include="Source\Stone.h" />
     <ClInclude Include="Source\Teleporting.h" />
     <ClInclude Include="Source\TilledSoil.h" />
+    <ClInclude Include="Source\Tree.h" />
     <ClInclude Include="Source\TrophyRoom.h" />
     <ClInclude Include="Source\Utility.h" />
     <ClInclude Include="Source\VegetableStew.h" />

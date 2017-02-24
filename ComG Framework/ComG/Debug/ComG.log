@@ -1,0 +1,17 @@
+﻿  SceneTest.cpp
+c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defencetower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(169): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(174): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(179): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(184): warning C4018: '<' : signed/unsigned mismatch
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(216): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(220): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(230): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(650): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(652): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(731): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(732): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(750): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
