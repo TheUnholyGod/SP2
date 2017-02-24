@@ -203,10 +203,7 @@ void SceneTest::Init()
 void SceneTest::Update(double dt)
 {
 	DebugMode(dt);
-	/*if (Application::IsKeyPressed('E'))
-	{
-		SceneManager::currScene = 3;
-	}*/
+
 	if (Application::IsKeyPressed('B'))
 	{
 		buildBuilding = true;
@@ -242,7 +239,7 @@ void SceneTest::Update(double dt)
 			i->update(dt);
 		}
 
-		if (buildBuilding)
+		if (pauseMenu.craft)
 		{
 			SpawnBuilding(pauseMenu.craftingSelection);
 		}

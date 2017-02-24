@@ -374,8 +374,6 @@ void Menu::update()
 					{
 						buildSelection = 11;
 					}
-					resourceName.clear();
-					resourceQuantity.clear();
 					start = std::clock();
 				}
 				if (Application::IsKeyPressed(VK_RIGHT))
@@ -388,8 +386,6 @@ void Menu::update()
 					{
 						buildSelection = 0;
 					}
-					resourceName.clear();
-					resourceQuantity.clear();
 					start = std::clock();
 				}
 				if (Application::IsKeyPressed(VK_LBUTTON))
@@ -425,9 +421,6 @@ void Menu::update()
 						SetCursorPos(windowX / 2, windowY / 2);
 						pause = false;
 					}
-
-					resourceName.clear();
-					resourceQuantity.clear();
 				}
 			}
 		}
@@ -514,10 +507,10 @@ void Menu::Render()
 					for (int i = 0; i <= resourceName.size(); i++)
 					{
 						std::ostringstream oss;
-						oss << resourceQuantity[i];
 
 						if (i != resourceName.size())
 						{
+							oss << resourceQuantity[i];
 							RenderTextOnScreen(meshList[GEO_TEXT], resourceName[i], Color(1, 0, 0), 2.5f, width / 2, height);
 							RenderTextOnScreen(meshList[GEO_TEXT], oss.str(), Color(0, 1, 0), 2.5f, width * 2.5, height);
 
