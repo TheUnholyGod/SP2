@@ -194,7 +194,7 @@ void SceneTest::Init()
 	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
-	//SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
+	SaveLoad::Load(Application::saveno, "Base", BaseBuildings, BaseEnemy);
 	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	PTime = 0;
 	Pstart = 0;
@@ -239,9 +239,13 @@ void SceneTest::Update(double dt)
 			i->update(dt);
 		}
 
-		if (pauseMenu.craft)
+		if (pauseMenu.craft == 1)//Craft building selected
 		{
-			SpawnBuilding(pauseMenu.craftingSelection);
+			SpawnBuilding(pauseMenu.craftSelection);
+		}
+		if (pauseMenu.craft == 2)//Craft item selected
+		{
+			
 		}
 	}
 }
@@ -448,6 +452,9 @@ void SceneTest::LoadSkybox()
 void SceneTest::RenderSkybox()
 {
 	modelStack.PushMatrix();
+	modelStack.Translate(fp_camera.getPosition().x, fp_camera.getPosition().y, fp_camera.getPosition().z);
+
+	modelStack.PushMatrix();
 	modelStack.Translate(10, 0, 10);
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
@@ -538,6 +545,8 @@ void SceneTest::RenderSkybox()
 		RenderMesh(meshList[GEO_FRONT2], false);
 
 	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
 	modelStack.PopMatrix();
 }
 

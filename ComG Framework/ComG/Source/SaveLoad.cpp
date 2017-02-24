@@ -98,7 +98,7 @@ void SaveLoad::NewGame(int no)
 {
 	//Opening the default file
 	std::stringstream filename;
-	filename << "Saves//" << '0' << "//Barn.txt";
+	filename << "Saves//" << '0' << "//Base.txt";
 	std::string newfile;
 	filename >> newfile;
 	std::vector<std::string>copier;
@@ -111,7 +111,7 @@ void SaveLoad::NewGame(int no)
 		copier.push_back(tempstr);
 	}
 	newing.close();
-	filename << "Saves//" << no << "//Barn.txt";
+	filename << "Saves//" << no << "//Base.txt";
 	filename >> newfile;
 	std::fstream newer(newfile, std::ios::out);
 	for (auto &i:copier)

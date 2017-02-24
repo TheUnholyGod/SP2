@@ -23,6 +23,7 @@ public:
 	}
 	static void Save(int, std::string, std::list<Building*>&, std::vector<Enemy*>&);
 	static bool Load(int, std::string, std::list<Building*>&, std::vector<Enemy*>&);
+	static bool is_empty(std::ifstream& pFile) { return pFile.peek() == std::ifstream::traits_type::eof(); }
 	static void NewGame(int);
 	char* getBlank() { return &blank; }
 	~SaveLoad();
