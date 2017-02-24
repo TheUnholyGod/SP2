@@ -16,6 +16,7 @@
 #include "BuildingDataBase.h"
 #include "SaveLoad.h"
 #include "DefenceTower.h"
+#include "FastTravelRoom.h"
 #include <sstream>
 
 SceneTest::SceneTest() : buildingID(101), ItemID(101)
@@ -243,6 +244,7 @@ void SceneTest::Update(double dt)
 		{
 			SpawnBuilding(pauseMenu.craftingSelection);
 		}
+
 	}
 }
 
