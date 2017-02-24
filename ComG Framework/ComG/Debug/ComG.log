@@ -1,27 +1,5 @@
-﻿  SceneTest.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\defencetower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(170): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(175): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(180): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(185): warning C4018: '<' : signed/unsigned mismatch
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(217): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(221): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(231): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(652): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(654): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(733): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(734): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\scenetest.cpp(752): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  FastTravelRoom.cpp
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.cpp(11): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\fasttravelroom.cpp(12): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  BuildingFactory.cpp
-  BuildingDataBase.cpp
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
+﻿Build started 2/24/2017 5:06:26 PM.
+
+Build succeeded.
+
+Time Elapsed 00:00:00.07
