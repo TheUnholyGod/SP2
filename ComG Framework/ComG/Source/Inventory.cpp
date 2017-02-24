@@ -32,6 +32,14 @@ void Inventory::Additem(int key)
 		List.push_back(temp->getName());
 		inv[key] = 1;
 	}
+	/*Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
+	std::string name = temp->getName();
+	if (inv1[name])
+		inv1[name]++;
+	else
+	{
+		inv1[name] = 1;
+	}*/
 }
 
 void Inventory::Removeitem(Item* item, int key)
@@ -62,13 +70,17 @@ void Inventory::setupdate()
 
 void Inventory::Update(double dt)
 {
-	std::cout << "List: " << List.size() << std::endl;
-	std::cout << "Map: " << inv.size() << std::endl;
+	//std::cout << "List: " << List.size() << std::endl;
+	std::cout << "Map: " << inv1.size() << std::endl;
 	std::cout << itemname_ << " added" << std::endl;
 	for (std::map<int, int>::iterator i = inv.begin(); i != inv.end(); i++)
 	{
 		std::cout << i->first << "=> " << i->second << std::endl;
 	}
+	/*for (std::map<std::string, int>::iterator i = inv1.begin(); i != inv1.end(); i++)
+	{
+		std::cout << i->first << "=> " << i->second << std::endl;
+	}*/
 }
 
 bool Inventory::getopeninventory()
