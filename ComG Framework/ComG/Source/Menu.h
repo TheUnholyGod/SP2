@@ -55,6 +55,27 @@ class Menu
 		GEO_ITEMS,
 		GEO_QUANTITY,
 		GEO_IMAGE,
+		GEO_POTATO,
+		GEO_CARROT,
+		GEO_CABBAGE,
+		GEO_WHEAT,
+		GEO_BREAD,
+		GEO_VEGETABLESTEW,
+		GEO_DRINKINGWATER,
+		GEO_CARROTJUICE,
+		GEO_SALAD,
+		GEO_STONE,
+		GEO_IRON,
+		GEO_COPPER,
+		GEO_GOLD,
+		GEO_WATER,
+		GEO_WOOD,
+		GEO_BIOMASS,
+		GEO_ADHESIVES,
+		GEO_METALSCRAPS,
+		GEO_CLOTH,
+		GEO_CIRCUITBOARDS,
+
 
 		//Cursor
 		GEO_CURSOR,
@@ -146,6 +167,7 @@ public:
 	std::string Itemname;
 	int count;
 	void checkItem(int key);
+	float y1;
 
 	const int buildingID;
 
