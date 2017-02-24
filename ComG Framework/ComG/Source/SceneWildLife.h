@@ -150,6 +150,8 @@ private:
 	void RenderBuilding();
 
 	std::vector<Item*> ForestItems;
+
+	void newForest();
 };
 
 #endif

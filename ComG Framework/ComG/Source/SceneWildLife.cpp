@@ -14,6 +14,7 @@
 #include "BuildingDataBase.h"
 #include "SaveLoad.h"
 #include "Menu.h"
+#include "Randomizer.h"
 #include <sstream>
 
 SceneWildLife::SceneWildLife():buildingID(201)
@@ -133,7 +134,7 @@ void SceneWildLife::Init()
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
-		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getSourceLocation());
+		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getSourceLocation());
 	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
@@ -147,7 +148,7 @@ void SceneWildLife::Init()
 	Player::getplayer()->setWeapon(307);
 	if (!SaveLoad::Load(Application::saveno, "Wildlife", ForestBuildings, ForestEnemy))
 	{
-
+		newForest();
 	}
 	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 }
@@ -555,7 +556,7 @@ void SceneWildLife::RenderBuilding()
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(buildingMeshList[i->getID() - 101], true);
+		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
 		modelStack.PopMatrix();
 		y++;
 	}
@@ -636,4 +637,17 @@ void SceneWildLife::LightReset(double dt)
 {
 	suntimer = 20;
 	reset = true;
+}
+
+void SceneWildLife::newForest()
+{
+	int size = Randomizer::generate_range(100, 300);
+	for (int i = 0; i < size; i++)
+	{
+		int x = 2500 - Randomizer::generate_range(1, 5000);
+		int z = 2500 - Randomizer::generate_range(1, 5000);
+		Building* temp = (BuildingFactory::getBuildingFactory()->generateBuilding(201, Vector3(x, 0, z)));
+		ForestBuildings.push_back(temp);
+		std::cout << temp->getRenderer().getPosition() << std::endl;
+	}
 }
