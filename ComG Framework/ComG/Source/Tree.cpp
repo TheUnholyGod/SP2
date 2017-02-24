@@ -3,7 +3,21 @@
 #include "Randomizer.h"
 #include "Player.h"
 
-Tree::Tree(Vector3 position):Building(201,"Tree","OBJ//Tree.obj","Image//Tree.tga",10,NORMAL,false)
+Tree::Tree():Building(201, "Tree", "OBJ//Tree01.obj", "Image//Tree.tga", 10, NORMAL, false)
+{
+	gameobjrenderer_ = new Renderer((0,0,0), Vector3(1, 0, 0));
+	size.push_back(Vector3(1, 1, 1));
+	size.push_back(Vector3(5, 5, 5));
+	for (auto &i : size)
+	{
+		AABB* temp = new AABB(gameobjrenderer_->getPosition(), i);
+		allAABB.push_back(temp);
+	}
+	gameobjrenderer_->setScaling(10);
+	defaultrecipe[ItemFactory::getItemFactory()->generateItem(206)] = Randomizer::generate_range(1, 20); //Wood
+}
+
+Tree::Tree(Vector3 position):Building(201,"Tree","OBJ//Tree01.obj","Image//Tree.tga",10,NORMAL,false)
 {
 	gameobjrenderer_ = new Renderer(position,Vector3(1,0,0));
 	size.push_back(Vector3(1, 1, 1));
@@ -11,7 +25,10 @@ Tree::Tree(Vector3 position):Building(201,"Tree","OBJ//Tree.obj","Image//Tree.tg
 	for (auto &i : size)
 	{
 		AABB* temp = new AABB(gameobjrenderer_->getPosition(), i);
+		allAABB.push_back(temp);
 	}
+	gameobjrenderer_->setScaling(10);
+
 	defaultrecipe[ItemFactory::getItemFactory()->generateItem(206)] = Randomizer::generate_range(1, 20); //Wood
 }
 

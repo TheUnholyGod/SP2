@@ -12,7 +12,6 @@ Molerat::Molerat() : Enemy(1, "OBJ//MoleRat.obj","Image//MoleratUV.tga" ,"Molera
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 	goalreached = true;
 	newDIr = Vector3(1, 0, 0);
-	std::cout << this->gameobjrenderer_->getPosition() << std::endl;
 }
 
 Molerat::~Molerat()
