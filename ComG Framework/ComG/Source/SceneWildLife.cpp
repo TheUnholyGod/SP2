@@ -145,7 +145,10 @@ void SceneWildLife::Init()
 	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
-	SaveLoad::Load(Application::saveno, "Wildlife", ForestBuildings, ForestEnemy);
+	if (!SaveLoad::Load(Application::saveno, "Wildlife", ForestBuildings, ForestEnemy))
+	{
+
+	}
 	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 }
 
