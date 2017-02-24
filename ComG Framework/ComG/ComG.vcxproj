@@ -251,6 +251,7 @@
     <ClInclude Include="Source\LoadATOM.h" />
     <ClInclude Include="Source\LoadOBJ.h" />
     <ClInclude Include="Source\LoadTGA.h" />
+    <ClInclude Include="Source\LootSystem.h" />
     <ClInclude Include="Source\M200_CheyTac_Intervention.h" />
     <ClInclude Include="Source\Material.h" />
     <ClInclude Include="Source\Mesh.h" />
