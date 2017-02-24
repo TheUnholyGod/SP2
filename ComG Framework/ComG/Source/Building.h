@@ -18,6 +18,7 @@ protected:
 	const std::string kName_;
 	int health_;
 	bool enter_;
+	bool deletethis_;
 	std::string source_location_;
 	recipe defaultrecipe;
 public:

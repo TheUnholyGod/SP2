@@ -195,7 +195,7 @@ void SceneTest::Init()
 	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
-	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
+	SaveLoad::Load(Application::saveno, "Base", BaseBuildings, BaseEnemy);
 	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	PTime = 0;
 	Pstart = 0;
@@ -339,7 +339,7 @@ void SceneTest::Exit()
 {
 	glDeleteProgram(m_programID);
 	glDeleteVertexArrays(1, &m_vertexArrayID);
-	SaveLoad::Save(1, "Base", BaseBuildings, BaseEnemy);
+	SaveLoad::Save(Application::saveno, "Base", BaseBuildings, BaseEnemy);
 }
 
 void SceneTest::RenderMesh(Mesh *mesh, bool enableLight)

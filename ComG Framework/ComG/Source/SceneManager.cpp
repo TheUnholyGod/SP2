@@ -5,6 +5,8 @@
 #include "SceneTest.h"
 #include "SceneMainMenu.h"
 #include "Application.h"
+#include "SceneWildLife.h"
+#include "SceneCity.h"
 
 SceneManager* SceneManager::scenemanager;
 int SceneManager::prevScene = DEFAULT;
@@ -18,6 +20,7 @@ SceneManager::SceneManager()
 	SceneDataBase[3] = new SceneBase();
 	SceneDataBase[4] = new SceneTest();
 	SceneDataBase[5] = new SceneUI();
+	SceneDataBase[6] = new SceneWildLife();
 }
 
 SceneManager::~SceneManager()

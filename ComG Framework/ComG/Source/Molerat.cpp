@@ -49,7 +49,7 @@ void Molerat::Update(double dt,std::list<Building*> Buildings, std::vector<Enemy
 
 void Molerat::pathfinding()
 {
-	float temp = Randomizer::generate_range(1, 360);
+	float temp = (float)Randomizer::generate_range(1, 360);
 	Mtx44 rotation;
 	rotation.SetToRotation(temp, 0, 1, 0);
 	newDIr = rotation * newDIr;

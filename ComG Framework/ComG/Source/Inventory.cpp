@@ -29,7 +29,7 @@ void Inventory::Additem(int key)
 	else
 	{
 		Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
-		List.push_back(temp->getName());
+		itemname_ = temp->getName();
 		inv[key] = 1;
 	}
 }
@@ -44,8 +44,6 @@ void Inventory::Removeitem(Item* item, int key)
 		else
 		{
 			Item* Remove = item;
-			List.remove(item->getName());
-
 			delete Remove;
 		}
 	}
@@ -62,7 +60,6 @@ void Inventory::setupdate()
 
 void Inventory::Update(double dt)
 {
-	std::cout << "List: " << List.size() << std::endl;
 	std::cout << "Map: " << inv.size() << std::endl;
 	std::cout << itemname_ << " added" << std::endl;
 	for (std::map<int, int>::iterator i = inv.begin(); i != inv.end(); i++)
