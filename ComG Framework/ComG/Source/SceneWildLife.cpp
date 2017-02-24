@@ -14,9 +14,10 @@
 #include "BuildingDataBase.h"
 #include "SaveLoad.h"
 #include "Menu.h"
+#include "Randomizer.h"
 #include <sstream>
 
-SceneWildLife::SceneWildLife()
+SceneWildLife::SceneWildLife():buildingID(201)
 {
 }
 
@@ -87,8 +88,6 @@ void SceneWildLife::Init()
 
 	// Make sure you pass uniform parameters after glUseProgram()
 	//Initialize camera settings
-	Player::getplayer();
-	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(25, 50, 25), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
@@ -135,7 +134,7 @@ void SceneWildLife::Init()
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
-		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(100 + i + 1)->getSourceLocation());
+		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getSourceLocation());
 	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
@@ -143,9 +142,15 @@ void SceneWildLife::Init()
 	}
 	suntimer = 1;
 	LoadSkybox();
+	Player::getplayer();
+	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
-	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-//	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
+	if (!SaveLoad::Load(Application::saveno, "Wildlife", ForestBuildings, ForestEnemy))
+	{
+		newForest();
+	}
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 }
 
 void SceneWildLife::Update(double dt)
@@ -159,15 +164,10 @@ void SceneWildLife::Update(double dt)
 	{
 		Application::IsExit = true;
 	}
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	//	if (allbuildingcollision(Player::getplayer()))
-	{
-		//Player::getplayer()->Update(camForward, camRight, dt);
-	}
-
+	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+	Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems);
 	SpawnEnemy(dt);
 	LightUpdate(dt);
-	//SpawnBuilding(dt);
 }
 
 void SceneWildLife::Render()
@@ -224,7 +224,7 @@ void SceneWildLife::Exit()
 {
 	glDeleteProgram(m_programID);
 	glDeleteVertexArrays(1, &m_vertexArrayID);
-//	SaveLoad::Save(1, "Base", BaseBuildings, BaseEnemy);
+	SaveLoad::Save(Application::saveno, "Wildlife", ForestBuildings, ForestEnemy);
 }
 
 void SceneWildLife::RenderMesh(Mesh *mesh, bool enableLight)
@@ -511,19 +511,22 @@ void SceneWildLife::RenderTextOnScreen(Mesh* mesh, std::string text, Color color
 
 void SceneWildLife::SpawnEnemy(double dt)
 {
-	if (BaseEnemy.size() < 5)
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+	if (ForestEnemy.size() < 5)
+		ForestEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+}
 
-	for (auto &i : BaseEnemy)
+void SceneWildLife::UpdateEnemy(double dt)
+{
+	for (auto &i : ForestEnemy)
 	{
-//		i->Update(dt);
+		i->Update(dt, ForestBuildings, ForestEnemy);
 	}
 }
 
 void SceneWildLife::RenderEnemy()
 {
 	int y = 0;
-	for (auto &i : BaseEnemy)
+	for (auto &i : ForestEnemy)
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
@@ -533,12 +536,14 @@ void SceneWildLife::RenderEnemy()
 	}
 }
 
-void SceneWildLife::SpawnBuilding(double dt)
+void SceneWildLife::SpawnBuilding()
 {
-	//if (BaseBuildings.size() < 1)
-	//	BaseBuildings.push_back(BuildingFactory::getBuildingFactory()->generateBuilding(101));
 
-	for (auto &i : BaseBuildings)
+}
+
+void SceneWildLife::UpdateBuilding(double dt)
+{
+	for (auto &i : ForestBuildings)
 	{
 		i->update(dt);
 	}
@@ -547,11 +552,11 @@ void SceneWildLife::SpawnBuilding(double dt)
 void SceneWildLife::RenderBuilding()
 {
 	int y = 0;
-	for (auto &i : BaseBuildings)
+	for (auto &i : ForestBuildings)
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(buildingMeshList[i->getID() - 101], true);
+		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
 		modelStack.PopMatrix();
 		y++;
 	}
@@ -632,4 +637,17 @@ void SceneWildLife::LightReset(double dt)
 {
 	suntimer = 20;
 	reset = true;
+}
+
+void SceneWildLife::newForest()
+{
+	int size = Randomizer::generate_range(100, 300);
+	for (int i = 0; i < size; i++)
+	{
+		int x = 2500 - Randomizer::generate_range(1, 5000);
+		int z = 2500 - Randomizer::generate_range(1, 5000);
+		Building* temp = (BuildingFactory::getBuildingFactory()->generateBuilding(201, Vector3(x, 0, z)));
+		ForestBuildings.push_back(temp);
+		std::cout << temp->getRenderer().getPosition() << std::endl;
+	}
 }

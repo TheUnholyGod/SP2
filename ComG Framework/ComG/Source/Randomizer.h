@@ -6,16 +6,16 @@
 
 namespace Randomizer
 {
-	int generate_range(unsigned from, unsigned to)
+	static int generate_range(unsigned from, unsigned to)
 	{
 		int returnno = (rand() % (to - from)) + from;
-		if (returnno > to)
+		if (returnno > (int)to)
 		{
-			returnno = to;
+			returnno = (int)to;
 		}
-		else if (returnno < from)
+		else if (returnno < (int)from)
 		{
-			returnno = from;
+			returnno = (int)from;
 		}
 		return returnno;
 	}

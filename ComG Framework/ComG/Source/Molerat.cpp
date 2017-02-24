@@ -12,7 +12,6 @@ Molerat::Molerat() : Enemy(1, "OBJ//MoleRat.obj","Image//MoleratUV.tga" ,"Molera
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 	goalreached = true;
 	newDIr = Vector3(1, 0, 0);
-	std::cout << this->gameobjrenderer_->getPosition() << std::endl;
 }
 
 Molerat::~Molerat()
@@ -49,7 +48,7 @@ void Molerat::Update(double dt,std::list<Building*> Buildings, std::vector<Enemy
 
 void Molerat::pathfinding()
 {
-	float temp = Randomizer::generate_range(1, 360);
+	float temp = (float)Randomizer::generate_range(1, 360);
 	Mtx44 rotation;
 	rotation.SetToRotation(temp, 0, 1, 0);
 	newDIr = rotation * newDIr;

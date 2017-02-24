@@ -1,11 +1,15 @@
 #include "FastTravelRoom.h"
+#include "Player.h"
 #include "ItemFactory.h"
+
+AABB* FastTravelRoom::fastTravelling;
 
 FastTravelRoom::FastTravelRoom(Vector3 position) : Building(105, "Garage", "OBJ//Garage.obj", "Image//garage_Texture.tga", 100, NORMAL, true)
 {
 	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0));
 	gameobjrenderer_->setScaling(7);
-	size.push_back(Vector3(20, 10, 11) * gameobjrenderer_->getScaling());
+	size.push_back(Vector3(19, 10, 9) * gameobjrenderer_->getScaling());
+	fastTravelling = new AABB(Vector3(18, 18, 7) * gameobjrenderer_->getScaling(), (gameobjrenderer_->getPosition() + Vector3(0, 0, 50)));
 	for (auto &i : size)
 	{
 		AABB* temp = new AABB(i, gameobjrenderer_->getPosition());
@@ -20,3 +24,11 @@ FastTravelRoom::FastTravelRoom(Vector3 position) : Building(105, "Garage", "OBJ/
 FastTravelRoom::~FastTravelRoom(){}
 
 int FastTravelRoom::get_Health(){ return health_; }
+
+void FastTravelRoom::update(double dt)
+{
+	if (fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), GameObject::getRenderer().getForward()))
+	{
+		
+	}
+}

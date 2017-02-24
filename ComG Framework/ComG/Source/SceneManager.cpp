@@ -1,10 +1,12 @@
 #include "SceneManager.h"
 #include "SceneBase.h"
-#include "SceneUI.h"
+#include "SceneLoading.h"
 #include "SceneSplashScreen.h"
 #include "SceneTest.h"
 #include "SceneMainMenu.h"
 #include "Application.h"
+#include "SceneWildLife.h"
+#include "SceneCity.h"
 
 SceneManager* SceneManager::scenemanager;
 int SceneManager::prevScene = DEFAULT;
@@ -15,9 +17,10 @@ SceneManager::SceneManager()
 	prevScene = DEFAULT;
 	SceneDataBase[1] = new SceneSplashScreen();
 	SceneDataBase[2] = new SceneMainMenu();
-	SceneDataBase[3] = new SceneBase();
+	SceneDataBase[3] = new SceneLoading();
 	SceneDataBase[4] = new SceneTest();
-	SceneDataBase[5] = new SceneUI();
+	SceneDataBase[5] = new SceneBase();
+	SceneDataBase[6] = new SceneWildLife();
 }
 
 SceneManager::~SceneManager()
@@ -61,8 +64,8 @@ void SceneManager::update()
 	scenemanager->SceneDataBase[currScene]->Update(Application::m_timer.getElapsedTime());
 	if (prevScene != currScene)
 	{
-		scenemanager->changeScene(5);
-		scenemanager->SceneDataBase[5]->Render();
+		scenemanager->changeScene(3);
+		scenemanager->SceneDataBase[3]->Render();
 		//Swap buffers
 		glfwSwapBuffers(Application::m_window);
 		scenemanager->changeScene(currScene);

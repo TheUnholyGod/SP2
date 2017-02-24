@@ -16,6 +16,7 @@
 #include "BuildingDataBase.h"
 #include "SaveLoad.h"
 #include "DefenceTower.h"
+#include "FastTravelRoom.h"
 #include <sstream>
 
 SceneTest::SceneTest() : buildingID(101), ItemID(101)
@@ -247,6 +248,7 @@ void SceneTest::Update(double dt)
 		{
 			
 		}
+
 	}
 }
 
@@ -341,7 +343,7 @@ void SceneTest::Exit()
 {
 	glDeleteProgram(m_programID);
 	glDeleteVertexArrays(1, &m_vertexArrayID);
-	SaveLoad::Save(1, "Base", BaseBuildings, BaseEnemy);
+	SaveLoad::Save(Application::saveno, "Base", BaseBuildings, BaseEnemy);
 }
 
 void SceneTest::RenderMesh(Mesh *mesh, bool enableLight)
