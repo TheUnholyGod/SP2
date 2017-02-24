@@ -212,9 +212,6 @@
     <ClCompile Include="Source\Camera3.cpp">
       <Filter>Source Files\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Source\SceneUI.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="Source\SceneSplashScreen.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
@@ -482,6 +479,9 @@
     <ClCompile Include="Source\Tree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\SceneLoading.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -528,9 +528,6 @@
     </ClInclude>
     <ClInclude Include="Source\Camera2.h">
       <Filter>Header Files\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\SceneUI.h">
-      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="Source\SceneSplashScreen.h">
       <Filter>Header Files\Scenes</Filter>
@@ -798,6 +795,9 @@
     </ClInclude>
     <ClInclude Include="Source\Tree.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneLoading.h">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

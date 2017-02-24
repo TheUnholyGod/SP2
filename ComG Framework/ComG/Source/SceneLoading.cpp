@@ -1,4 +1,4 @@
-#include "SceneUI.h"
+#include "SceneLoading.h"
 #include "GL\glew.h"
 #include "shader.hpp"
 #include "Mtx44.h"
@@ -12,15 +12,15 @@
 
 #include <sstream>
 
-SceneUI::SceneUI()
+SceneLoading::SceneLoading()
 {
 }
 
-SceneUI::~SceneUI()
+SceneLoading::~SceneLoading()
 {
 }
 
-void SceneUI::Init()
+void SceneLoading::Init()
 {
 	// Init VBO here
 
@@ -72,7 +72,7 @@ void SceneUI::Init()
 
 }
 
-void SceneUI::Update(double dt)
+void SceneLoading::Update(double dt)
 {
 	if (Application::IsKeyPressed('1')) //enable back face culling
 		glEnable(GL_CULL_FACE);
@@ -88,7 +88,7 @@ void SceneUI::Update(double dt)
 		SceneManager::currScene = 4;*/
 }
 
-void SceneUI::Render()
+void SceneLoading::Render()
 {
 	// Render VBO here
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -105,13 +105,13 @@ void SceneUI::Render()
 	
 }
 
-void SceneUI::Exit()
+void SceneLoading::Exit()
 {
 	glDeleteProgram(m_programID);
 	glDeleteVertexArrays(1, &m_vertexArrayID);
 }
 
-void SceneUI::RenderMesh(Mesh *mesh, bool enableLight)
+void SceneLoading::RenderMesh(Mesh *mesh, bool enableLight)
 {
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 
@@ -155,7 +155,7 @@ void SceneUI::RenderMesh(Mesh *mesh, bool enableLight)
 
 }
 
-void SceneUI::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
+void SceneLoading::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
 {
 	glDisable(GL_DEPTH_TEST);
 	Mtx44 ortho;

@@ -21,6 +21,9 @@
 #include "Inventory.h"
 #include <list>
 
+#include "FastTravelRoom.h"
+#include "Player.h"
+
 #include <sstream>
 #include <string>
 #include <vector>
@@ -170,6 +173,9 @@ public:
 	float y1;
 
 	const int buildingID;
+
+	int travelTo;
+	bool tpZone;
 
 	unsigned m_vertexArrayID;
 	unsigned m_programID;

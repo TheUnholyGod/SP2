@@ -157,6 +157,7 @@ void Menu::init()
 	meshList[GEO_CIRCUITBOARDS]->textureID = LoadTGA("Image//Resource_CircuitBoards.tga");
 	y1 = 45.f;
 	count = 0;
+	travelTo = SceneManager::currScene;
 
 	//Text
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
@@ -262,6 +263,27 @@ void Menu::update()
 			pause = false;
 		}
 		start = std::clock();
+	}
+	if (FastTravelRoom::fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
+	{
+		if (!pause)
+		{
+			menuType = 5;
+			tpZone = true;
+		}
+	}
+	else if (!(FastTravelRoom::fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward())))
+	{
+		if (tpZone)
+		{
+			SetCursorPos(windowX / 2, windowY / 2);
+			menuType = 0;
+			pauseSelection = 0;
+			optionSelection = 0;
+			buildSelection = 0;
+			craftSelection = 0;
+			tpZone = false;
+		}
 	}
 
 	if (menuType == 0) //Options Menu
@@ -491,6 +513,41 @@ void Menu::update()
 			}
 		}
 	}
+	if (menuType == 5)
+	{
+		if (elapsedTime > 0.01)
+		{
+			if (Application::IsKeyPressed(VK_RIGHT))
+			{
+				if (travelTo < 6)
+				{
+					travelTo += 1;
+				}
+				else
+				{
+					travelTo = 4;
+				}
+				start = std::clock();
+			}
+			else if (Application::IsKeyPressed(VK_LEFT))
+			{
+				if (travelTo > 4)
+				{
+					travelTo -= 1;
+				}
+				else
+				{
+					travelTo = 6;
+				}
+				start = std::clock();
+			}
+			if (Application::IsKeyPressed(VK_RETURN))
+			{
+				SceneManager::currScene = travelTo;
+			}
+		}
+
+	}
 }
 
 void Menu::Render()
@@ -614,6 +671,10 @@ void Menu::Render()
 			}
 		}
 		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);		
+	}
+	if (tpZone)
+	{
+
 	}
 }
 

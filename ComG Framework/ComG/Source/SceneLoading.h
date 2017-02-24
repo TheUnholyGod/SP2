@@ -1,5 +1,5 @@
-#ifndef SCENE_UI_H
-#define SCENE_UI_H
+#ifndef SCENE_LOADING_H
+#define SCENE_LOADING_H
 
 #include "Scene.h"
 #include "Camera.h"
@@ -15,7 +15,7 @@
 #include <vector>
 #include <ctime>
 
-class SceneUI : public Scene
+class SceneLoading : public Scene
 {
 	enum GEOMETRY_TYPE
 	{
@@ -57,8 +57,8 @@ class SceneUI : public Scene
 	};
 
 public:
-	SceneUI();
-	~SceneUI();
+	SceneLoading();
+	~SceneLoading();
 
 	virtual void Init();
 	virtual void Update(double dt);
