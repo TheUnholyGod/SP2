@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 ﻿  Application.cpp
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\application.cpp(107): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe
+=======
+﻿Build started 24/2/2017 5:31:36 PM.
+
+Build succeeded.
+
+Time Elapsed 00:00:00.78
+>>>>>>> 81e52bd515f4e7598b8b30ca291ea51830c28ec0
