@@ -134,10 +134,10 @@ public:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 
-	bool pause;
-	bool craft;	
+	bool pause;	
 	bool rendered;
 
+	int craft;
 	int menuType;
 	int pauseSelection;
 	int optionSelection;

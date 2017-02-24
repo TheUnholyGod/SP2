@@ -5,9 +5,9 @@ POINT cursorPoint;
 Menu::Menu() : buildingID(101)
 {
 	pause = false;
-	craft = false;
 	rendered = false;
 
+	craft = 0;
 	menuType = 0;
 	pauseSelection = 0;
 	optionSelection = 0;
@@ -186,7 +186,7 @@ void Menu::update()
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + windowY;
 
-	craft = false;
+	craft = 0;
 
 	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
@@ -484,8 +484,8 @@ void Menu::update()
 					}
 					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
 					{
-						craft = true;
-						craftingSelection = buildingID + buildSelection;
+						craft = 1;
+						craftSelection = buildingID + buildSelection;
 						SetCursorPos(windowX / 2, windowY / 2);
 						pause = false;
 					}
@@ -499,7 +499,64 @@ void Menu::update()
 		{
 			if (elapsedTime > 0.01)
 			{
-
+				if (Application::IsKeyPressed(VK_LEFT))
+				{
+					if (craftingSelection >= 0)
+					{
+						craftingSelection--;
+					}
+					if (craftingSelection < 0)
+					{
+						craftingSelection = 11;
+					}
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_RIGHT))
+				{
+					if (craftingSelection < 12)
+					{
+						craftingSelection++;
+					}
+					if (craftingSelection > 11)
+					{
+						craftingSelection = 0;
+					}
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_LBUTTON))
+				{
+					if ((cursorX >= 110 && cursorX <= 150) && (cursorY >= 400 && cursorY <= 450))
+					{
+						if (craftingSelection >= 0)
+						{
+							craftingSelection--;
+						}
+						if (craftingSelection < 0)
+						{
+							craftingSelection = 11;
+						}
+						start = std::clock();
+					}
+					if ((cursorX >= 650 && cursorX <= 690) && (cursorY >= 400 && cursorY <= 450))
+					{
+						if (craftingSelection < 12)
+						{
+							craftingSelection++;
+						}
+						if (craftingSelection > 11)
+						{
+							craftingSelection = 0;
+						}
+						start = std::clock();
+					}
+					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
+					{
+						craft = 2;
+						//craftSelection = buildingID + buildSelection;
+						SetCursorPos(windowX / 2, windowY / 2);
+						pause = false;
+					}
+				}
 			}
 		}
 	}
@@ -646,6 +703,19 @@ void Menu::Render()
 		if (menuType == 3) //Crafting
 		{
 			RenderMeshOnScreen(meshList[GEO_CRAFTMENU], windowX / 20, windowY / 20, 16, 12);
+
+			if ((cursorX >= 110 && cursorX <= 150) && (cursorY >= 400 && cursorY <= 450))
+			{
+				RenderMeshOnScreen(meshList[GEO_ARROW_L], windowX / 20, windowY / 20, 16, 12);
+			}
+			if ((cursorX >= 650 && cursorX <= 690) && (cursorY >= 400 && cursorY <= 450))
+			{
+				RenderMeshOnScreen(meshList[GEO_ARROW_R], windowX / 20, windowY / 20, 16, 12);
+			}
+			if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
+			{
+				RenderMeshOnScreen(meshList[GEO_CRAFTBUTTON], windowX / 20, windowY / 20, 16, 12);
+			}
 		}
 		if (menuType == 4) //Inventory
 		{

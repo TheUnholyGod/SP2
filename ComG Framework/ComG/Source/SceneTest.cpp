@@ -240,9 +240,13 @@ void SceneTest::Update(double dt)
 			i->update(dt);
 		}
 
-		if (pauseMenu.craft)
+		if (pauseMenu.craft == 1)//Craft building selected
 		{
-			SpawnBuilding(pauseMenu.craftingSelection);
+			SpawnBuilding(pauseMenu.craftSelection);
+		}
+		if (pauseMenu.craft == 2)//Craft item selected
+		{
+			
 		}
 
 	}
@@ -450,6 +454,9 @@ void SceneTest::LoadSkybox()
 void SceneTest::RenderSkybox()
 {
 	modelStack.PushMatrix();
+	modelStack.Translate(fp_camera.getPosition().x, fp_camera.getPosition().y, fp_camera.getPosition().z);
+
+	modelStack.PushMatrix();
 	modelStack.Translate(10, 0, 10);
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
@@ -540,6 +547,8 @@ void SceneTest::RenderSkybox()
 		RenderMesh(meshList[GEO_FRONT2], false);
 
 	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
 	modelStack.PopMatrix();
 }
 
