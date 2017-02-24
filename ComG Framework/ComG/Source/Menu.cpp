@@ -596,29 +596,22 @@ void Menu::Render()
 			y1 = 45.f;
 			float y2 = 45.f;
 
-			for (std::list<std::string>::iterator i = Inventory::getinventory()->List.begin(); i != Inventory::getinventory()->List.end(); i++)
+			/*for (std::list<std::string>::iterator i = Inventory::getinventory()->List.begin(); i != Inventory::getinventory()->List.end(); i++)
 			{
 				RenderTextOnScreen(meshList[GEO_ITEMS], *i, Color(0, 0, 1), 3.f, 15.f, y);
 				y -= 5;
-			}
+			}*/
 			for (std::map<int, int>::iterator i = Inventory::getinventory()->inv.begin(); i != Inventory::getinventory()->inv.end(); i++)
 			{
 				std::string quantity = std::to_string(i->second);
 				int key = i->first;
 				checkItem(key);
+				Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
+				std::string name = temp->getName();
+				RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y1);
 				RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
 				y1 -= 5.f;
 			}
-			/*for (std::map<std::string, int>::iterator i = Inventory::getinventory()->inv1.begin(); i != Inventory::getinventory()->inv1.end(); i++)
-			{
-				std::string name = i->first;
-				std::string quantity = std::to_string(i->second);
-				
-				RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y);
-				y -= 5;
-				RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
-				y1 -= 5;
-			}*/
 		}
 		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);		
 	}

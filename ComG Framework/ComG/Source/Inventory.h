@@ -18,7 +18,6 @@ private:
 	bool openinventory;
 public:
 	std::map<int, int> inv;
-	std::map<std::string, int> inv1;
 	std::list<std::string> List;
 	int quantity;
 	std::list<std::string> name;
