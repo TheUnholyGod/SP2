@@ -178,12 +178,6 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 			}
 			counter++;
 		}
-		/*for (auto &i : pos)
-		{
-			items.erase(items.begin() + i - eraser);
-			eraser++;
-		}*/
-		
 	}
 }
 

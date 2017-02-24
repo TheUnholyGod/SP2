@@ -110,6 +110,12 @@ void Menu::init()
 
 	meshList[GEO_ITEMS] = MeshBuilder::GenerateText("ItemNames", 16, 16);
 	meshList[GEO_ITEMS]->textureID = LoadTGA("Image//calibri.tga");
+	
+	meshList[GEO_QUANTITY] = MeshBuilder::GenerateText("Quantity", 16, 16);
+	meshList[GEO_QUANTITY]->textureID = LoadTGA("Image//calibri.tga");
+	
+	meshList[GEO_IMAGE] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Adhesive.tga");
 	count = 0;
 
 	//Text
@@ -548,15 +554,20 @@ void Menu::Render()
 			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], windowX / 20, windowY / 20, 16, 12);
 			float y = 45.f;
 			float y1 = 45.f;
+			float y2 = 45.f;
+
 			for (std::list<std::string>::iterator i = Inventory::getinventory()->List.begin(); i != Inventory::getinventory()->List.end(); i++)
 			{
-				RenderTextOnScreen(meshList[GEO_ITEMS], *i, Color(0, 0, 1), 3.f, 6.f, y);
-				y-=5;
+				RenderTextOnScreen(meshList[GEO_ITEMS], *i, Color(0, 0, 1), 3.f, 15.f, y);
+				y -= 5;
 			}
 			for (std::map<int, int>::iterator i = Inventory::getinventory()->inv.begin(); i != Inventory::getinventory()->inv.end(); i++)
 			{
 				std::string quantity = std::to_string(i->second);
-				RenderTextOnScreen(meshList[GEO_ITEMS], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
+				/*int key = i->first;
+				checkItem(key);
+				RenderMeshOnScreen(meshList[GEO_IMAGE], 8.f, y1, 3.f, 3.f);*/
+				RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
 				y1 -= 5;
 			}
 		}
@@ -669,4 +680,52 @@ void Menu::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float s
 	viewStack.PopMatrix();
 	modelStack.PopMatrix();
 	glEnable(GL_DEPTH_TEST);
+}
+
+void Menu::checkItem(int key)
+{
+	std::vector<int> tempID(ItemDataBase::getItemDB()->getIDList());
+
+	if (key == tempID[0])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Food_Potato.tga");
+	else if (key == tempID[1])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Food_Carrot.tga");
+	else if (key == tempID[2])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Food_Cabbage.tga");
+	else if (key == tempID[3])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Food_Wheat.tga");
+	else if (key == tempID[4])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Food_VegetableStew.tga");
+	else if (key == tempID[5])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Food_PurifiedWater.tga");
+	else if (key == tempID[6])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Food_CarrotJuice.tga");
+	else if (key == tempID[7])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Food_Salad.tga");
+	else if (key == tempID[8])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Stone.tga");
+	else if (key == tempID[9])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Iron.tga");
+	else if (key == tempID[10])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Copper.tga");
+	else if (key == tempID[11])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Gold.tga");
+	else if (key == tempID[12])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Water.tga");
+	else if (key == tempID[13])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Wood.tga");
+	else if (key == tempID[14])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Biomass.tga");
+	else if (key == tempID[15])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Adhesive.tga");
+	else if (key == tempID[16])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_MetalScrap.tga");
+	else if (key == tempID[17])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Cloth.tga");
+	else if (key == tempID[18])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_CircuitBoards.tga");
+	else if (key == tempID[19])
+		meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Adhesive.tga");
+
+	tempID.erase(tempID.begin(), tempID.end());
 }

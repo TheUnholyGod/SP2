@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 2/24/2017 9:18:10 AM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -18,3 +19,22 @@
 Build succeeded.
 
 Time Elapsed 00:00:07.70
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+﻿  Common.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\Common.lib
+=======
+﻿Build started 23/2/2017 11:06:13 PM.
+     1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         Common.vcxproj -> C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Debug\Common.lib
+     1>Done Building Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Common\Common.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.07
+>>>>>>> 6421aa366c2fcf5527d426a396a4b6dd2f726a35
+=======
+﻿  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\Common.lib
+>>>>>>> 44f64d845caba2c306b2cdd848690c79f2926aaa
+>>>>>>> 2941e71863b85d34557eb5a1b7c030441bf3c539

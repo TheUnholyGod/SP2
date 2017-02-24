@@ -54,6 +54,7 @@ class Menu
 		GEO_INVENTORYMENU,
 		GEO_ITEMS,
 		GEO_QUANTITY,
+		GEO_IMAGE,
 
 		//Cursor
 		GEO_CURSOR,
@@ -143,9 +144,8 @@ public:
 
 	//Items
 	std::string Itemname;
-	int ItemNo;
 	int count;
-
+	void checkItem(int key);
 
 	const int buildingID;
 

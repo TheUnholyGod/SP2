@@ -34,12 +34,25 @@ void Inventory::Additem(int key)
 	}
 }
 
-void Inventory::Removeitem(Item* item)
+void Inventory::Removeitem(Item* item, int key)
 {
-	Item* Remove = item;
-	//List.remove(Remove);
-	//inv.erase(Remove);
-	delete Remove;
+	if (inv[key])
+	{
+		if(inv[key]>1)
+		inv[key]--;
+		
+		else
+		{
+			Item* Remove = item;
+			List.remove(item->getName());
+
+			delete Remove;
+		}
+	}
+	else
+	{
+		std::cout << "No such item in inventory" << std::endl;
+	}
 }
 
 void Inventory::setupdate()
@@ -78,3 +91,4 @@ int Inventory::getsize()
 	size = List.size();
 	return size;
 }
+
