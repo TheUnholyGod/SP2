@@ -545,7 +545,9 @@ void Menu::update()
 			{
 				SceneManager::currScene = travelTo;
 			}
+		
 		}
+		std::cout <<"Travel to: " << travelTo << std::endl;
 
 	}
 }
