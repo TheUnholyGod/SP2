@@ -18,6 +18,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <array>
 
 class SceneMainMenu : public Scene
 {
@@ -90,6 +91,7 @@ private:
 	bool options;
 	bool back;
 	bool isPlay;
+	bool loadEmpty[5];
 
 	int play;
 	int optionHighlight;
