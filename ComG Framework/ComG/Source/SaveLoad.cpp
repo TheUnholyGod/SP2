@@ -94,6 +94,17 @@ bool SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 	return true;
 }
 
+bool SaveLoad::is_empty(int saveno)
+{
+	std::stringstream filename;
+	filename << "Saves//" << saveno << "//Base.txt";
+	std::string address;
+	filename >> address;
+	std::ifstream loader(address, std::ofstream::in);
+
+	return loader.peek() == std::ifstream::traits_type::eof();
+}
+
 void SaveLoad::NewGame(int no)
 {
 	//Opening the default file

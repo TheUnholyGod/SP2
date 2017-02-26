@@ -39,6 +39,8 @@ void SceneMainMenu::Init()
 	isPlay = 0;
 	load = 0; 
 
+	loadEmpty[5] = { false };
+
 	start = std::clock();
 
 	// Init VBO here
@@ -306,29 +308,42 @@ void SceneMainMenu::Update(double dt)
 		}
 	}
 
-	/*if (isPlay)
+	if (isPlay)
 	{
-		if ((cursorY >= 310 && cursorY <= 360) && (cursorX >= 410 && cursorX <= 480))
+		for (int i = 0; i < 5; i++)
 		{
-			load = 1;
+			loadEmpty[i] = SaveLoad::is_empty(i + 1);
 		}
-		if ((cursorY >= 250 && cursorY <= 290) && (cursorX >= 410 && cursorX <= 480))
+
+		if (Application::IsKeyPressed(VK_LBUTTON))
 		{
-			load = 2;
+			if (((cursorY >= 310 && cursorY <= 360) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[0]) //Save 1
+			{
+				Application::saveno = 1;
+				SceneManager::currScene = 4;
+			}
+			if (((cursorY >= 250 && cursorY <= 290) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[1]) //Save 2
+			{
+				Application::saveno = 2;
+				SceneManager::currScene = 4;
+			}
+			if (((cursorY >= 180 && cursorY <= 220) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[2]) //Save 3
+			{
+				Application::saveno = 3;
+				SceneManager::currScene = 4;
+			}
+			if (((cursorY >= 110 && cursorY <= 150) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[3]) //Save 4
+			{
+				Application::saveno = 4;
+				SceneManager::currScene = 4;
+			}
+			if (((cursorY >= 50 && cursorY <= 90) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[4]) //Save 5
+			{
+				Application::saveno = 5;
+				SceneManager::currScene = 4;
+			}
 		}
-		if ((cursorY >= 180 && cursorY <= 220) && (cursorX >= 410 && cursorX <= 480))
-		{
-			load = 3;
-		}
-		if ((cursorY >= 110 && cursorY <= 150) && (cursorX >= 410 && cursorX <= 480))
-		{
-			load = 4;
-		}
-		if ((cursorY >= 50 && cursorY <= 90) && (cursorX >= 410 && cursorX <= 480))
-		{
-			load = 5;
-		}
-	}*/
+	}
 }
 
 void SceneMainMenu::Render()
@@ -381,7 +396,26 @@ void SceneMainMenu::Render()
 	
 	if (isPlay)
 	{
-		
+		if (!loadEmpty[0])
+		{
+			RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 8, 10);
+		}
+		if (!loadEmpty[1])
+		{
+			RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 8, 10);
+		}
+		if (!loadEmpty[2])
+		{
+			RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 8, 10);
+		}
+		if (!loadEmpty[3])
+		{
+			RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 8, 10);
+		}
+		if (!loadEmpty[4])
+		{
+			RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 8, 10);
+		}
 	}
 
 	RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);

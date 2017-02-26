@@ -80,8 +80,9 @@ class SceneWildLife : public Scene
 	};
 	enum ENEMYMESHLIST
 	{
-		GEO_MOLERAT,
-		GEO_LIZARD,
+		GEO_DEER,
+		GEO_GOAT,
+		GEO_BOAR,
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
