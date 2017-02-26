@@ -17,11 +17,12 @@ protected:
 	static Vector3 s_forward;
 	static AABB* aoe;
 public:
-	DefenceTower(Vector3=(0,0,5));
+	DefenceTower(Vector3 = (0, 0, 5), Vector3 = (1, 0, 0));
 	virtual ~DefenceTower();
 
 	int get_Health();
 
+	static bool active;
 	virtual void update(double dt);
 	static void turretTargetUpdate(std::vector<Enemy*> enemies);
 };

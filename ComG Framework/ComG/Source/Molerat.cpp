@@ -12,6 +12,7 @@ Molerat::Molerat() : Enemy(1, "OBJ//MoleRat.obj","Image//MoleratUV.tga" ,"Molera
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 	goalreached = true;
 	newDIr = Vector3(1, 0, 0);
+	MoleratBev = BEHAVIOUR_IDLE;
 }
 
 Molerat::~Molerat()
@@ -20,29 +21,19 @@ Molerat::~Molerat()
 
 void Molerat::Update(double dt,std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
 {
-	if (!this->checkCollision(Buildings, Enemy))
+	switch (MoleratBev)
 	{
-		if (!allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), 0))
-		{
-			gameobjrenderer_->rotate((0, 1, 0), 20 * dt, -(Player::getplayer()->getRenderer().getPosition() - gameobjrenderer_->getPosition()));
-			gameobjrenderer_->translate(gameobjrenderer_->getForward(), 20 * dt);
-			goalreached = true;
-		}
-		else
-		{
-			if (goalreached)
-				pathfinding();
-			gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
-			if (gameobjrenderer_->getPosition() == goal)
-				goalreached = true;
-		}
-		allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
-		allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-	}
-	else if (this->checkCollision(Buildings, Enemy))
-	{
-		gameobjrenderer_->setForward(-gameobjrenderer_->getRight());
-		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
+	case BEHAVIOUR_IDLE:
+		Move(dt, Buildings, Enemy);
+		break;
+	case BEHAVIOUR_PLAYER:
+		PlayerInRange(dt, Buildings, Enemy);
+		break;
+	case BEHAVIOUR_ATTACK:
+		Attack(dt, Buildings, Enemy);
+		break;
+	default:
+		break;
 	}
 }
 
@@ -55,4 +46,66 @@ void Molerat::pathfinding()
 	goal = newDIr;
 	goalreached = false;
 	gameobjrenderer_->setForward(newDIr);
+}
+
+void Molerat::Attack(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
+{
+	std::list<Building*> temp;
+	if (!this->checkCollision(temp, Enemy))
+	{
+
+	}
+	else if (this->checkCollision(temp, Enemy))
+	{
+		MoleratBev = BEHAVIOUR_IDLE;
+	}
+}
+
+void Molerat::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
+{
+	if (!this->checkCollision(Buildings, Enemy))
+	{
+		gameobjrenderer_->rotate((0, 1, 0), 20 * dt, -(Player::getplayer()->getRenderer().getPosition() - gameobjrenderer_->getPosition()));
+		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 20 * dt);
+		goalreached = true;
+	}
+	else if (this->checkCollision(Buildings, Enemy))
+	{
+		gameobjrenderer_->setForward(-gameobjrenderer_->getRight());
+		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
+	}
+	else if (this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
+	{
+		MoleratBev = BEHAVIOUR_PLAYER;
+	}
+	for (auto &i : Buildings)
+	{
+		if (this->allAABB[1]->AABBtoAABB(*i->getAABB(0)))
+		{
+			MoleratBev = BEHAVIOUR_ATTACK;
+		}
+	}
+}
+
+void Molerat::PlayerInRange(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
+{
+	if (!this->checkCollision(Buildings, Enemy))
+	{
+		if (goalreached)
+			pathfinding();
+		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
+		if (gameobjrenderer_->getPosition() == goal)
+			goalreached = true;
+		allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+		allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
+	}
+	else if (this->checkCollision(Buildings, Enemy))
+	{
+		gameobjrenderer_->setForward(-gameobjrenderer_->getRight());
+		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
+	}
+	else if (!this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
+	{
+		MoleratBev = BEHAVIOUR_IDLE;
+	}
 }

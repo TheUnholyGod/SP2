@@ -12,12 +12,12 @@ Projectile::~Projectile()
 
 }
 
-void Projectile::FireProjectile()
+void Projectile::FireProjectile(Vector3 pos, Vector3 forward)
 {
 	fired_ = true;
 	defaultpos = gameobjrenderer_->getPosition();
-	gameobjrenderer_->setPosition(Player::getplayer()->getWeapon()->getRenderer().getPosition());
-	gameobjrenderer_->setForward(Player::getplayer()->getRenderer().getForward());
+	gameobjrenderer_->setPosition(pos);
+	gameobjrenderer_->setForward(forward);
 }
 
 bool Projectile::hit(std::list<Building*>buildings, std::vector<Enemy*>enemies)
