@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	TilledSoil(Vector3 = (0, 0, 5));
+	TilledSoil(Vector3 = (0, 0, 5), Vector3 = (1, 0, 0));
 	virtual ~TilledSoil();
 
 	int get_Health();

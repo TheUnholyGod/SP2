@@ -1,18 +1,10 @@
-﻿  SceneTest.cpp
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\defencetower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(171): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(176): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(181): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(186): warning C4018: '<' : signed/unsigned mismatch
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(218): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(222): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(232): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(663): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(665): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(763): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(764): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(782): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+﻿  Player.cpp
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player.cpp(28): warning C4244: 'return' : conversion from 'float' to 'const int', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player.cpp(72): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player.cpp(97): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player.cpp(121): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player.cpp(145): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player.cpp(169): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
   ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe

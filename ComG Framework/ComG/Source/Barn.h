@@ -14,7 +14,7 @@ protected:
 	bool enter_;
 	static recipe Barnrecipe;
 public:
-	Barn(Vector3=(0,0,5));
+	Barn(Vector3 pos = (0, 0, 6), Vector3 forward = (10, 0, 0));
 	virtual ~Barn();
 	void update(double dt) override;
 	int get_Health();

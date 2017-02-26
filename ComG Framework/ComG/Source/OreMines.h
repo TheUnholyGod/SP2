@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	OreMines(Vector3 = (0, 0, 5));
+	OreMines(Vector3 = (0, 0, 5), Vector3 = (1, 0, 0));
 	virtual ~OreMines();
 
 	int get_Health();

@@ -1,11 +1,11 @@
 #include "TrophyRoom.h"
 #include "ItemFactory.h"
 
-TrophyRoom::TrophyRoom(Vector3 position) : Building(102, "Trophy Room", "OBJ//TrophyRoom.obj", "Image//TrophyRoom_Texture.tga", 100, NORMAL, true)
+TrophyRoom::TrophyRoom(Vector3 position, Vector3 forward) : Building(102, "Trophy Room", "OBJ//TrophyRoom.obj", "Image//TrophyRoom_Texture.tga", 100, NORMAL, true)
 {
-	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0));
+	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0)/*, forward*/);
 	gameobjrenderer_->setScaling(5);
-	size.push_back(Vector3(20, 10, 11) * gameobjrenderer_->getScaling());
+	size.push_back(Vector3(19, 10, 25) * gameobjrenderer_->getScaling());
 	for (auto &i : size)
 	{
 		AABB* temp = new AABB(i, gameobjrenderer_->getPosition());

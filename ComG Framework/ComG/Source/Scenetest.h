@@ -155,6 +155,20 @@ class SceneTest : public Scene
 		NUM_FOODGEOMETERY,
 	};
 
+	enum LOOTMESHLIST
+	{
+		GEO_LPOTATO,
+		GEO_LCABBAGE,
+		GEO_LCARROT,
+		GEO_LWHEAT,
+		GEO_LBREAD,
+		GEO_LVEGETABLESTEW,
+		GEO_LPURIFIEDWATER,
+		GEO_LCARROTJUICE,
+		GEO_LSALAD,
+		NUM_LOOTGEOMETERY,
+	};
+
 public:
 	SceneTest();
 	~SceneTest();
@@ -171,6 +185,7 @@ private:
 	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
 	std::array<Mesh*, NUM_PROJECTILEGEOMETERY> projectileMeshList;
 	std::array<Mesh*, NUM_FOODGEOMETERY> foodMeshList;
+	std::array<Mesh*, NUM_LOOTGEOMETERY> lootMeshList;
 	std::array<Mesh*, NUM_SPRITES> spritesList;
 
 	unsigned m_programID;
@@ -216,7 +231,7 @@ private:
 	void RenderBuilding();
 
 	std::vector<Projectile*>BaseProjectile;
-	void SpawnProjectile();
+	void SpawnProjectile(Vector3 position, Vector3 forward);
 	void UpdateProjectiles(double dt);
 	void RenderProjectile();
 

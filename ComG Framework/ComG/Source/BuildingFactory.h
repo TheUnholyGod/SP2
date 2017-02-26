@@ -11,7 +11,7 @@ private:
 public:
 	~BuildingFactory();
 	static BuildingFactory* getBuildingFactory();
-	static Building* generateBuilding(int key, Vector3);
+	static Building* generateBuilding(int key, Vector3 position, Vector3 forward);
 };
 
 #endif

@@ -1,9 +1,9 @@
 #include "DefensiveWalls.h"
 #include "ItemFactory.h"
 
-DefensiveWalls::DefensiveWalls(Vector3 position) : Building(108, "Walls", "OBJ//DefensiveWall.obj", "Image//DefensiveWall_Texture.tga", 100, DEFENCE, false)
+DefensiveWalls::DefensiveWalls(Vector3 position, Vector3 forward) : Building(108, "Walls", "OBJ//DefensiveWall.obj", "Image//DefensiveWall_Texture.tga", 100, DEFENCE, false)
 {
-	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0));
+	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0)/*, forward*/);
 	gameobjrenderer_->setScaling(5);
 	size.push_back(Vector3(16, 7.8, 2) * gameobjrenderer_->getScaling());
 	for (auto &i : size)

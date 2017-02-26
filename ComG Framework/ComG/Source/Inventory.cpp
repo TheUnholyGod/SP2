@@ -60,8 +60,7 @@ void Inventory::setupdate()
 
 void Inventory::Update(double dt)
 {
-	std::cout << "Map: " << inv.size() << std::endl;
-	std::cout << itemname_ << " added" << std::endl;
+	std::cout << "Type: " << inv.size() << std::endl;
 	for (std::map<int, int>::iterator i = inv.begin(); i != inv.end(); i++)
 	{
 		std::cout << i->first << "=> " << i->second << std::endl;

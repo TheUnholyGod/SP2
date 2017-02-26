@@ -165,7 +165,7 @@ void SceneWildLife::Update(double dt)
 		Application::IsExit = true;
 	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems);
+	//Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems);
 	SpawnEnemy(dt);
 	LightUpdate(dt);
 }
@@ -644,7 +644,7 @@ void SceneWildLife::newForest()
 	{
 		int x = 2500 - Randomizer::generate_range(1, 5000);
 		int z = 2500 - Randomizer::generate_range(1, 5000);
-		Building* temp = (BuildingFactory::getBuildingFactory()->generateBuilding(201, Vector3(x, 0, z)));
+		Building* temp = (BuildingFactory::getBuildingFactory()->generateBuilding(201, Vector3(x, 0, z), Vector3(1,0,0)));
 		ForestBuildings.push_back(temp);
 		std::cout << temp->getRenderer().getPosition() << std::endl;
 	}

@@ -80,11 +80,13 @@ void Molerat::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*
 	}
 	for (auto &i : Buildings)
 	{
-		if (this->allAABB[1]->AABBtoAABB(*i->getAABB(0)))
+		if (!this->allAABB[1]->AABBtoAABB(*i->getAABB(0)))
 		{
 			MoleratBev = BEHAVIOUR_ATTACK;
 		}
 	}
+	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 }
 
 void Molerat::PlayerInRange(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
@@ -96,8 +98,7 @@ void Molerat::PlayerInRange(double dt, std::list<Building*> Buildings, std::vect
 		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
 		if (gameobjrenderer_->getPosition() == goal)
 			goalreached = true;
-		allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
-		allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
+
 	}
 	else if (this->checkCollision(Buildings, Enemy))
 	{
@@ -108,4 +109,6 @@ void Molerat::PlayerInRange(double dt, std::list<Building*> Buildings, std::vect
 	{
 		MoleratBev = BEHAVIOUR_IDLE;
 	}
+	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 }

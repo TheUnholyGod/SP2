@@ -188,6 +188,11 @@ void SceneTest::Init()
 		foodMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
 		//foodMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
 	}
+	for (int i = 0; i < lootMeshList.size(); i++)
+	{
+		lootMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
+		//lootMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
+	}
 
 	buildBuilding = false;
 	suntimer = 1;
@@ -217,13 +222,13 @@ void SceneTest::Update(double dt)
 	{
 		ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
 
-		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy, BaseItems);
+		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy, BaseItems, BaseLoots);
 		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 		PTime = std::clock();
 		if (Application::IsKeyPressed(VK_LBUTTON) && (PTime - Pstart > 180))
 		{
 			Pstart = std::clock();
-			SpawnProjectile();
+			SpawnProjectile(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward());
 		}
 	
 
@@ -235,11 +240,8 @@ void SceneTest::Update(double dt)
 		UpdateEnemy(dt);
 		SpawnItems(dt);
 
-		DefenceTower::turretTargetUpdate(BaseEnemy);
-		for (auto i : BaseBuildings)
-		{
-			i->update(dt);
-		}
+		//DefenceTower::turretTargetUpdate(BaseEnemy);
+		UpdateBuilding(dt);
 
 		if (pauseMenu.craft == 1)//Craft building selected
 		{
@@ -298,7 +300,7 @@ void SceneTest::Render()
 	RenderBuilding();
 	RenderProjectile();
 	RenderItems();
-	//RenderLoot();
+	RenderLoot();
 
 	static double timee = 0.0;
 	modelStack.PushMatrix();
@@ -664,7 +666,7 @@ void SceneTest::SpawnBuilding(int bID)
 	spawnPoint.y = 0;
 	spawnPoint.z = (int)(v_temp.z);
 	
-	Building* temp = BuildingFactory::generateBuilding(bID, spawnPoint);
+	Building* temp = BuildingFactory::generateBuilding(bID, spawnPoint, (spawnPoint - Player::getplayer()->getRenderer().getForward()).Normalize());
 	BaseBuildings.push_back(temp);
 }
 
@@ -679,10 +681,10 @@ void SceneTest::RenderBuilding()
 	}
 }
 
-void SceneTest::SpawnProjectile()
+void SceneTest::SpawnProjectile(Vector3 position, Vector3 forward)
 {
 	Projectile* temp = dynamic_cast<Projectile*>(ItemFactory::getItemFactory()->generateItem(999));
-	temp->FireProjectile();
+	temp->FireProjectile(position, forward);
 	BaseProjectile.push_back(temp);
 }
 
@@ -732,7 +734,7 @@ void SceneTest::RenderItems()
 
 void SceneTest::SpawnLoot(int key)
 {
-	BaseItems.push_back(ItemFactory::getItemFactory()->SpawnItem(key, Lootpos));
+	BaseLoots.push_back(ItemFactory::getItemFactory()->SpawnItem(key, Lootpos));
 }
 
 void SceneTest::RenderLoot()
@@ -743,7 +745,7 @@ void SceneTest::RenderLoot()
 		{
 			modelStack.PushMatrix();
 			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-			RenderMesh(foodMeshList[i->getID() - LootID], true);
+			RenderMesh(lootMeshList[i->getID() - ItemID], true);
 			modelStack.PopMatrix();
 		}
 	}
