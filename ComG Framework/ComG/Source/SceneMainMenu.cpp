@@ -95,6 +95,8 @@ void SceneMainMenu::Init()
 	//Cursor
 	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_CURSOR]->textureID = LoadTGA("Image//cursorPointer.tga");
+	meshList[GEO_CURSORPOS] = MeshBuilder::GenerateText("text", 16, 16);
+	meshList[GEO_CURSORPOS]->textureID = LoadTGA("Image//calibri.tga");
 
 	//Main Menu
 	meshList[GEO_MAINMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
@@ -123,23 +125,29 @@ void SceneMainMenu::Init()
 	meshList[GEO_BACK]->textureID = LoadTGA("Image//optionsMenu - Back.tga");
 
 	//SaveGame Menu
-	meshList[GEO_SAVEMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_SAVEMENU]->textureID = LoadTGA("Image//SaveGame.tga");
+	meshList[GEO_SAVELOADMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_SAVELOADMENU]->textureID = LoadTGA("Image//SaveGame - Main.tga");
+
+	meshList[GEO_LOAD] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_LOAD]->textureID = LoadTGA("Image//SaveGame - Load Game.tga");
+
+	meshList[GEO_SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_SAVE]->textureID = LoadTGA("Image//SaveGame - New Game.tga");
 
 	meshList[GEO_1SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_1SAVE]->textureID = LoadTGA("Image//SaveGame - 1Saved.tga");
+	meshList[GEO_1SAVE]->textureID = LoadTGA("Image//SaveGame - Load Game - 1.tga");
 
 	meshList[GEO_2SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_2SAVE]->textureID = LoadTGA("Image//SaveGame - 2Saved.tga");
+	meshList[GEO_2SAVE]->textureID = LoadTGA("Image//SaveGame - Load Game - 2.tga");
 
 	meshList[GEO_3SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_3SAVE]->textureID = LoadTGA("Image//SaveGame - 3Saved.tga");
+	meshList[GEO_3SAVE]->textureID = LoadTGA("Image//SaveGame - Load Game - 3.tga");
 
 	meshList[GEO_4SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_4SAVE]->textureID = LoadTGA("Image//SaveGame - 4Saved.tga");
+	meshList[GEO_4SAVE]->textureID = LoadTGA("Image//SaveGame - Load Game - 4.tga");
 
 	meshList[GEO_5SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_5SAVE]->textureID = LoadTGA("Image//SaveGame - 5Saved.tga");
+	meshList[GEO_5SAVE]->textureID = LoadTGA("Image//SaveGame - Load Game - 5.tga");
 }
 
 void SceneMainMenu::Update(double dt)
@@ -150,9 +158,6 @@ void SceneMainMenu::Update(double dt)
 
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	DebugMode(dt);
-
-	std::cout << "PLAY: " << play << std::endl;
-	std::cout << "ISPLAY: " << isPlay << std::endl;
 
 	if (!options)
 	{
@@ -193,7 +198,6 @@ void SceneMainMenu::Update(double dt)
 				{
 					options = false;
 					isPlay = true;
-					//SceneManager::currScene = 4;
 				}
 				if (play == 2)
 				{
@@ -236,7 +240,6 @@ void SceneMainMenu::Update(double dt)
 					{
 						options = false;
 						isPlay = true;
-						//SceneManager::currScene = 4;
 					}
 					if (play == 2)
 					{
@@ -317,30 +320,72 @@ void SceneMainMenu::Update(double dt)
 
 		if (Application::IsKeyPressed(VK_LBUTTON))
 		{
-			if (((cursorY >= 310 && cursorY <= 360) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[0]) //Save 1
+			if (load == 0) //Continue / New Game menu
 			{
-				Application::saveno = 1;
-				SceneManager::currScene = 4;
+				if ((cursorY >= 330 && cursorY <= 390) && (cursorX >= 170 && cursorX <= 640))
+				{
+					load = 2;
+				}
+				if ((cursorY >= 180 && cursorY <= 240) && (cursorX >= 160 && cursorX <= 650))
+				{
+					load = 1;
+				}
 			}
-			if (((cursorY >= 250 && cursorY <= 290) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[1]) //Save 2
+			else if (load == 1) //Load Game menu
 			{
-				Application::saveno = 2;
-				SceneManager::currScene = 4;
+				if (((cursorY >= 370 && cursorY <= 425) && (cursorX >= 600 && cursorX <= 670)) && !loadEmpty[0]) //Save 1
+				{
+					Application::saveno = 1;
+					SceneManager::currScene = 4;
+				}
+				if (((cursorY >= 290 && cursorY <= 350) && (cursorX >= 600 && cursorX <= 670)) && !loadEmpty[1]) //Save 2
+				{
+					Application::saveno = 2;
+					SceneManager::currScene = 4;
+				}
+				if (((cursorY >= 210 && cursorY <= 260) && (cursorX >= 600 && cursorX <= 670)) && !loadEmpty[2]) //Save 3
+				{
+					Application::saveno = 3;
+					SceneManager::currScene = 4;
+				}
+				if (((cursorY >= 130 && cursorY <= 190) && (cursorX >= 600 && cursorX <= 670)) && !loadEmpty[3]) //Save 4
+				{
+					Application::saveno = 4;
+					SceneManager::currScene = 4;
+				}
+				if (((cursorY >= 40 && cursorY <= 100) && (cursorX >= 600 && cursorX <= 670)) && !loadEmpty[4]) //Save 5
+				{
+					Application::saveno = 5;
+					SceneManager::currScene = 4;
+				}
 			}
-			if (((cursorY >= 180 && cursorY <= 220) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[2]) //Save 3
+			else if(load == 2) //New Game menu
 			{
-				Application::saveno = 3;
-				SceneManager::currScene = 4;
-			}
-			if (((cursorY >= 110 && cursorY <= 150) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[3]) //Save 4
-			{
-				Application::saveno = 4;
-				SceneManager::currScene = 4;
-			}
-			if (((cursorY >= 50 && cursorY <= 90) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[4]) //Save 5
-			{
-				Application::saveno = 5;
-				SceneManager::currScene = 4;
+				if (((cursorY >= 370 && cursorY <= 425) && (cursorX >= 600 && cursorX <= 670)) && loadEmpty[0]) //Save 1
+				{
+					SaveLoad::NewGame(1);
+					SceneManager::currScene = 4;
+				}
+				if (((cursorY >= 290 && cursorY <= 350) && (cursorX >= 600 && cursorX <= 670)) && loadEmpty[1]) //Save 2
+				{
+					SaveLoad::NewGame(2);
+					SceneManager::currScene = 4;
+				}
+				if (((cursorY >= 210 && cursorY <= 260) && (cursorX >= 600 && cursorX <= 670)) && loadEmpty[2]) //Save 3
+				{
+					SaveLoad::NewGame(3);
+					SceneManager::currScene = 4;
+				}
+				if (((cursorY >= 130 && cursorY <= 190) && (cursorX >= 600 && cursorX <= 670)) && loadEmpty[3]) //Save 4
+				{
+					SaveLoad::NewGame(4);
+					SceneManager::currScene = 4;
+				}
+				if (((cursorY >= 40 && cursorY <= 100) && (cursorX >= 600 && cursorX <= 670)) && loadEmpty[4]) //Save 5
+				{
+					SaveLoad::NewGame(5);
+					SceneManager::currScene = 4;
+				}
 			}
 		}
 	}
@@ -396,28 +441,116 @@ void SceneMainMenu::Render()
 	
 	if (isPlay)
 	{
-		if (!loadEmpty[0])
+		if (load == 0)
 		{
-			RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 8, 10);
+			RenderMeshOnScreen(meshList[GEO_SAVELOADMENU], windowX / 20, windowY / 20, 16, 12);
 		}
-		if (!loadEmpty[1])
+		else if (load == 1)
 		{
-			RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 8, 10);
+			RenderMeshOnScreen(meshList[GEO_LOAD], windowX / 20, windowY / 20, 16, 12);
+
+			if (!loadEmpty[0])
+			{
+				RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 16, 12);
+
+				if ((cursorY >= 310 && cursorY <= 360) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 1
+				{
+
+				}
+			}
+			if (!loadEmpty[1])
+			{
+				RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 16, 12);
+
+				if ((cursorY >= 250 && cursorY <= 290) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 2
+				{
+
+				}
+			}
+			if (!loadEmpty[2])
+			{
+				RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 16, 12);
+
+				if ((cursorY >= 180 && cursorY <= 220) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 3
+				{
+
+				}
+			}
+			if (!loadEmpty[3])
+			{
+				RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 16, 12);
+
+				if ((cursorY >= 110 && cursorY <= 150) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 4
+				{
+
+				}
+			}
+			if (!loadEmpty[4])
+			{
+				RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 16, 12);
+
+				if ((cursorY >= 50 && cursorY <= 90) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 5
+				{
+
+				}
+			}
 		}
-		if (!loadEmpty[2])
+		else if (load == 2)
 		{
-			RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 8, 10);
-		}
-		if (!loadEmpty[3])
-		{
-			RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 8, 10);
-		}
-		if (!loadEmpty[4])
-		{
-			RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 8, 10);
+			RenderMeshOnScreen(meshList[GEO_SAVE], windowX / 20, windowY / 20, 16, 12);
+
+			if (loadEmpty[0])
+			{
+				RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 16, 12);
+
+				if ((cursorY >= 310 && cursorY <= 360) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 1
+				{
+
+				}
+			}
+			if (loadEmpty[1])
+			{
+				RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 16, 12);
+
+				if ((cursorY >= 250 && cursorY <= 290) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 2
+				{
+
+				}
+			}
+			if (loadEmpty[2])
+			{
+				RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 16, 12);
+
+				if ((cursorY >= 180 && cursorY <= 220) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 3
+				{
+
+				}
+			}
+			if (loadEmpty[3])
+			{
+				RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 16, 12);
+
+				if ((cursorY >= 110 && cursorY <= 150) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 4
+				{
+
+				}
+			}
+			if (loadEmpty[4])
+			{
+				RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 16, 12);
+
+				if ((cursorY >= 50 && cursorY <= 90) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 5
+				{
+
+				}
+			}
 		}
 	}
 
+	std::ostringstream oss;
+	oss << cursorX << " : " << cursorY;
+
+	RenderTextOnScreen(meshList[GEO_CURSORPOS], oss.str(), Color(0, 1, 0), 2, windowX / 50, windowY / 50);
 	RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
 }
 
