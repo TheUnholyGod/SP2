@@ -122,8 +122,10 @@ void SaveLoad::NewGame(int no)
 		copier.push_back(tempstr);
 	}
 	newing.close();
-	filename << "Saves//" << no << "//Base.txt";
-	filename >> newfile;
+	std::stringstream filename2;
+	filename2 << "Saves//" << no << "//Base.txt";
+	newfile.erase();
+	filename2 >> newfile;
 	std::fstream newer(newfile, std::ios::out);
 	for (auto &i:copier)
 	{

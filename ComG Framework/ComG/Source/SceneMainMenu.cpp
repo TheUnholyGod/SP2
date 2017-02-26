@@ -363,27 +363,32 @@ void SceneMainMenu::Update(double dt)
 			{
 				if (((cursorY >= 370 && cursorY <= 425) && (cursorX >= 600 && cursorX <= 670)) && loadEmpty[0]) //Save 1
 				{
-					SaveLoad::NewGame(1);
+					Application::saveno = 1;
+					SaveLoad::NewGame(Application::saveno);
 					SceneManager::currScene = 4;
 				}
 				if (((cursorY >= 290 && cursorY <= 350) && (cursorX >= 600 && cursorX <= 670)) && loadEmpty[1]) //Save 2
 				{
-					SaveLoad::NewGame(2);
+					Application::saveno = 2;
+					SaveLoad::NewGame(Application::saveno);
 					SceneManager::currScene = 4;
 				}
 				if (((cursorY >= 210 && cursorY <= 260) && (cursorX >= 600 && cursorX <= 670)) && loadEmpty[2]) //Save 3
 				{
-					SaveLoad::NewGame(3);
+					Application::saveno = 3;
+					SaveLoad::NewGame(Application::saveno);
 					SceneManager::currScene = 4;
 				}
 				if (((cursorY >= 130 && cursorY <= 190) && (cursorX >= 600 && cursorX <= 670)) && loadEmpty[3]) //Save 4
 				{
-					SaveLoad::NewGame(4);
+					Application::saveno = 4;
+					SaveLoad::NewGame(Application::saveno);
 					SceneManager::currScene = 4;
 				}
 				if (((cursorY >= 40 && cursorY <= 100) && (cursorX >= 600 && cursorX <= 670)) && loadEmpty[4]) //Save 5
 				{
-					SaveLoad::NewGame(5);
+					Application::saveno = 5;
+					SaveLoad::NewGame(Application::saveno);
 					SceneManager::currScene = 4;
 				}
 			}
