@@ -14,7 +14,7 @@ private:
 	int scaling;
 public:
 	Renderer();
-	Renderer(Vector3, Vector3);
+	Renderer(Vector3 = (0,0,5), Vector3 = (1,0,0));
 	~Renderer();
 	void translate(Vector3, double);
 	Vector3 getForward() { return forward_; }

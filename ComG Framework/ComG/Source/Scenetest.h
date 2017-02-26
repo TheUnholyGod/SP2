@@ -216,7 +216,7 @@ private:
 	void RenderBuilding();
 
 	std::vector<Projectile*>BaseProjectile;
-	void SpawnProjectile();
+	void SpawnProjectile(Vector3 position, Vector3 forward);
 	void UpdateProjectiles(double dt);
 	void RenderProjectile();
 

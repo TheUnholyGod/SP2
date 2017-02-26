@@ -37,7 +37,9 @@ class SceneMainMenu : public Scene
 		GEO_BACK,
 
 		//SaveLoadGame Menu
-		GEO_SAVEMENU,
+		GEO_SAVELOADMENU,
+		GEO_SAVE,
+		GEO_LOAD,
 		GEO_1SAVE,
 		GEO_2SAVE,
 		GEO_3SAVE,
@@ -46,6 +48,7 @@ class SceneMainMenu : public Scene
 
 		//Cursor
 		GEO_CURSOR,
+		GEO_CURSORPOS,
 
 		NUM_GEOMETRY,
 	};

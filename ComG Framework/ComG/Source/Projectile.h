@@ -20,7 +20,7 @@ private:
 public:
 	Projectile();
 	~Projectile();
-	void FireProjectile();
+	void FireProjectile(Vector3 pos, Vector3 forward);
 	bool hit(std::list<Building*>buildings, std::vector<Enemy*>enemies);
 	void update(double dt, std::list<Building*>buildings, std::vector<Enemy*>enemies);
 	bool toDelete() { return deletepls_; }

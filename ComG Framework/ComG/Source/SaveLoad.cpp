@@ -74,7 +74,7 @@ bool SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 		{
 			Vector3 forward = Vector3(tempstorage[1] / 10.f, tempstorage[2] / 10.f, tempstorage[3] / 10.f);
 			Vector3 position = Vector3(tempstorage[4], tempstorage[5], tempstorage[6]);
-			Building* temp = BuildingFactory::getBuildingFactory()->generateBuilding(tempstorage[0], position);
+			Building* temp = BuildingFactory::getBuildingFactory()->generateBuilding(tempstorage[0], position, forward);
 			temp->getRenderer().setPosition(position);
 			temp->getRenderer().setForward(forward);
 			temp->getAABB(0)->setMinMax(position);
@@ -122,8 +122,10 @@ void SaveLoad::NewGame(int no)
 		copier.push_back(tempstr);
 	}
 	newing.close();
-	filename << "Saves//" << no << "//Base.txt";
-	filename >> newfile;
+	std::stringstream filename2;
+	filename2 << "Saves//" << no << "//Base.txt";
+	newfile.erase();
+	filename2 >> newfile;
 	std::fstream newer(newfile, std::ios::out);
 	for (auto &i:copier)
 	{
