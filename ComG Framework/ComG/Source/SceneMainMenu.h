@@ -15,6 +15,10 @@
 #include <vector>
 #include "GLFW\glfw3.h"
 #include "GL\glew.h"
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <array>
 
 class SceneMainMenu : public Scene
 {
@@ -85,11 +89,13 @@ private:
 	int windowYpos;
 
 	bool options;
+	bool back;
+	bool isPlay;
+	bool loadEmpty[5];
 
 	int play;
 	int optionHighlight;
-	bool back;
-	int isExit;
+	int load;
 
 	std::clock_t start;
 	float elapsedTime;

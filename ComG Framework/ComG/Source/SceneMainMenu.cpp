@@ -8,8 +8,7 @@
 #include "SceneManager.h"
 #include "Menu.h"
 #include "Camera3.h"
-
-#include <sstream>
+#include "SaveLoad.h"
 
 extern POINT cursorPoint;
 
@@ -37,7 +36,10 @@ void SceneMainMenu::Init()
 
 	play = 1;
 	back = false;
-	isExit = 0;
+	isPlay = 0;
+	load = 0; 
+
+	loadEmpty[5] = { false };
 
 	start = std::clock();
 
@@ -149,6 +151,9 @@ void SceneMainMenu::Update(double dt)
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	DebugMode(dt);
 
+	std::cout << "PLAY: " << play << std::endl;
+	std::cout << "ISPLAY: " << isPlay << std::endl;
+
 	if (!options)
 	{
 		if (elapsedTime > 0.01)
@@ -182,12 +187,13 @@ void SceneMainMenu::Update(double dt)
 				start = std::clock();
 				if (play == 0)
 				{
-					isExit = 2;
+					Application::IsExit = true;
 				}
 				if (play == 1)
 				{
 					options = false;
-					SceneManager::currScene = 4;
+					isPlay = true;
+					//SceneManager::currScene = 4;
 				}
 				if (play == 2)
 				{
@@ -224,12 +230,13 @@ void SceneMainMenu::Update(double dt)
 				{
 					if (play == 0)
 					{
-						isExit = 2;
+						Application::IsExit = true;
 					}
 					if (play == 1)
 					{
 						options = false;
-						SceneManager::currScene = 4;
+						isPlay = true;
+						//SceneManager::currScene = 4;
 					}
 					if (play == 2)
 					{
@@ -301,6 +308,42 @@ void SceneMainMenu::Update(double dt)
 		}
 	}
 
+	if (isPlay)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			loadEmpty[i] = SaveLoad::is_empty(i + 1);
+		}
+
+		if (Application::IsKeyPressed(VK_LBUTTON))
+		{
+			if (((cursorY >= 310 && cursorY <= 360) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[0]) //Save 1
+			{
+				Application::saveno = 1;
+				SceneManager::currScene = 4;
+			}
+			if (((cursorY >= 250 && cursorY <= 290) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[1]) //Save 2
+			{
+				Application::saveno = 2;
+				SceneManager::currScene = 4;
+			}
+			if (((cursorY >= 180 && cursorY <= 220) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[2]) //Save 3
+			{
+				Application::saveno = 3;
+				SceneManager::currScene = 4;
+			}
+			if (((cursorY >= 110 && cursorY <= 150) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[3]) //Save 4
+			{
+				Application::saveno = 4;
+				SceneManager::currScene = 4;
+			}
+			if (((cursorY >= 50 && cursorY <= 90) && (cursorX >= 410 && cursorX <= 480)) && !loadEmpty[4]) //Save 5
+			{
+				Application::saveno = 5;
+				SceneManager::currScene = 4;
+			}
+		}
+	}
 }
 
 void SceneMainMenu::Render()
@@ -350,37 +393,28 @@ void SceneMainMenu::Render()
 			RenderMeshOnScreen(meshList[GEO_BACK], windowX / 20, windowY / 20, 16, 12);
 		}
 	}
-	if (isExit != 0)
+	
+	if (isPlay)
 	{
-		RenderMeshOnScreen(meshList[GEO_SAVEMENU], windowX / 20, windowY / 20, 16, 12);
-
-		if (isExit == 1) //Joining the Game
+		if (!loadEmpty[0])
 		{
-			//Dont render the GEO_xSave for save slots which have saved games
-
-			RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 16, 12);
-
-			RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 16, 12);
-
-			RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 16, 12);
-
-			RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 16, 12);
-
-			RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 8, 10);
 		}
-		if (isExit == 2) //Leaving the Game
+		if (!loadEmpty[1])
 		{
-			//Render only for those slots which have saved games
-
-			RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 16, 12);
-
-			RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 16, 12);
-
-			RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 16, 12);
-
-			RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 16, 12);
-
-			RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 8, 10);
+		}
+		if (!loadEmpty[2])
+		{
+			RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 8, 10);
+		}
+		if (!loadEmpty[3])
+		{
+			RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 8, 10);
+		}
+		if (!loadEmpty[4])
+		{
+			RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 8, 10);
 		}
 	}
 

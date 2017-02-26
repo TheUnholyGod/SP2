@@ -4,5 +4,11 @@
 #include "ItemDataBase.h"
 #include "Randomizer.h"
 
+int GenerateLoot()
+{
+	int key = Randomizer::generate_range(101, 104);
+	std::cout << key << std::endl;
+	return key;
+}
 
 #endif // !LOOTSYSTEM_H

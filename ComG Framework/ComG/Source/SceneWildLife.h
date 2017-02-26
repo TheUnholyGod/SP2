@@ -80,14 +80,14 @@ class SceneWildLife : public Scene
 	};
 	enum ENEMYMESHLIST
 	{
-		GEO_MOLERAT,
-		GEO_LIZARD,
+		GEO_DEER,
+		GEO_GOAT,
+		GEO_BOAR,
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
 	{
-		GEO_BARN,
-		GEO_TURRET,
+		GEO_TREE,
 		NUM_BUILDINGGEOMETRY,
 	};
 
@@ -138,17 +138,21 @@ private:
 	void LightUpdate(double dt);
 	void LightReset(double dt);
 	int Day;
+	const int buildingID;
 
-	bool allbuildingcollision(GameObject*);
-
-	std::list<Enemy*> BaseEnemy;
-	std::list<Building*> BaseBuildings;
-
+	std::vector<Enemy*> ForestEnemy;
 	void SpawnEnemy(double dt);
+	void UpdateEnemy(double dt);
 	void RenderEnemy();
 
-	void SpawnBuilding(double dt);
+	std::list<Building*> ForestBuildings;
+	void SpawnBuilding();
+	void UpdateBuilding(double dt);
 	void RenderBuilding();
+
+	std::vector<Item*> ForestItems;
+
+	void newForest();
 };
 
 #endif

@@ -16,6 +16,8 @@
 #include "BuildingDataBase.h"
 #include "SaveLoad.h"
 #include "DefenceTower.h"
+#include "FastTravelRoom.h"
+#include "LootSystem.h"
 #include <sstream>
 
 SceneTest::SceneTest() : buildingID(101), ItemID(101)
@@ -194,7 +196,7 @@ void SceneTest::Init()
 	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
-	SaveLoad::Load(1, "Base", BaseBuildings, BaseEnemy);
+	SaveLoad::Load(Application::saveno, "Base", BaseBuildings, BaseEnemy);
 	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	PTime = 0;
 	Pstart = 0;
@@ -239,10 +241,15 @@ void SceneTest::Update(double dt)
 			i->update(dt);
 		}
 
-		if (pauseMenu.craft)
+		if (pauseMenu.craft == 1)//Craft building selected
 		{
-			SpawnBuilding(pauseMenu.craftingSelection);
+			SpawnBuilding(pauseMenu.craftSelection);
 		}
+		if (pauseMenu.craft == 2)//Craft item selected
+		{
+			
+		}
+
 	}
 }
 
@@ -291,6 +298,7 @@ void SceneTest::Render()
 	RenderBuilding();
 	RenderProjectile();
 	RenderItems();
+	//RenderLoot();
 
 	static double timee = 0.0;
 	modelStack.PushMatrix();
@@ -337,7 +345,7 @@ void SceneTest::Exit()
 {
 	glDeleteProgram(m_programID);
 	glDeleteVertexArrays(1, &m_vertexArrayID);
-	SaveLoad::Save(1, "Base", BaseBuildings, BaseEnemy);
+	SaveLoad::Save(Application::saveno, "Base", BaseBuildings, BaseEnemy);
 }
 
 void SceneTest::RenderMesh(Mesh *mesh, bool enableLight)
@@ -448,6 +456,9 @@ void SceneTest::LoadSkybox()
 void SceneTest::RenderSkybox()
 {
 	modelStack.PushMatrix();
+	modelStack.Translate(fp_camera.getPosition().x, fp_camera.getPosition().y, fp_camera.getPosition().z);
+
+	modelStack.PushMatrix();
 	modelStack.Translate(10, 0, 10);
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
@@ -538,6 +549,8 @@ void SceneTest::RenderSkybox()
 		RenderMesh(meshList[GEO_FRONT2], false);
 
 	modelStack.PopMatrix();
+	modelStack.PopMatrix();
+
 	modelStack.PopMatrix();
 }
 
@@ -717,6 +730,25 @@ void SceneTest::RenderItems()
 	}
 }
 
+void SceneTest::SpawnLoot(int key)
+{
+	BaseItems.push_back(ItemFactory::getItemFactory()->SpawnItem(key, Lootpos));
+}
+
+void SceneTest::RenderLoot()
+{
+	for (auto &i : BaseLoots)
+	{
+		if (!i->getpickedup())
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(foodMeshList[i->getID() - LootID], true);
+			modelStack.PopMatrix();
+		}
+	}
+}
+
 void SceneTest::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
 {
 	glDisable(GL_DEPTH_TEST);
@@ -812,6 +844,9 @@ void SceneTest::UpdateEnemy(double dt)
 		i->Update(dt, BaseBuildings, BaseEnemy);
 		if (i->isDead())
 		{
+			LootID = GenerateLoot();
+			Lootpos = i->getRenderer().getPosition();
+			SpawnLoot(LootID);
 			pos.push_back(counter);
 		}
 		counter++;

@@ -5,9 +5,9 @@ POINT cursorPoint;
 Menu::Menu() : buildingID(101)
 {
 	pause = false;
-	craft = false;
 	rendered = false;
 
+	craft = 0;
 	menuType = 0;
 	pauseSelection = 0;
 	optionSelection = 0;
@@ -157,6 +157,7 @@ void Menu::init()
 	meshList[GEO_CIRCUITBOARDS]->textureID = LoadTGA("Image//Resource_CircuitBoards.tga");
 	y1 = 45.f;
 	count = 0;
+	travelTo = SceneManager::currScene;
 
 	//Text
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
@@ -185,7 +186,7 @@ void Menu::update()
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + windowY;
 
-	craft = false;
+	craft = 0;
 
 	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
@@ -262,6 +263,27 @@ void Menu::update()
 			pause = false;
 		}
 		start = std::clock();
+	}
+	if (FastTravelRoom::fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
+	{
+		if (!pause)
+		{
+			menuType = 5;
+			tpZone = true;
+		}
+	}
+	else if (!(FastTravelRoom::fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward())))
+	{
+		if (tpZone)
+		{
+			SetCursorPos(windowX / 2, windowY / 2);
+			menuType = 0;
+			pauseSelection = 0;
+			optionSelection = 0;
+			buildSelection = 0;
+			craftSelection = 0;
+			tpZone = false;
+		}
 	}
 
 	if (menuType == 0) //Options Menu
@@ -462,8 +484,8 @@ void Menu::update()
 					}
 					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
 					{
-						craft = true;
-						craftingSelection = buildingID + buildSelection;
+						craft = 1;
+						craftSelection = buildingID + buildSelection;
 						SetCursorPos(windowX / 2, windowY / 2);
 						pause = false;
 					}
@@ -477,7 +499,64 @@ void Menu::update()
 		{
 			if (elapsedTime > 0.01)
 			{
-
+				if (Application::IsKeyPressed(VK_LEFT))
+				{
+					if (craftingSelection >= 0)
+					{
+						craftingSelection--;
+					}
+					if (craftingSelection < 0)
+					{
+						craftingSelection = 11;
+					}
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_RIGHT))
+				{
+					if (craftingSelection < 12)
+					{
+						craftingSelection++;
+					}
+					if (craftingSelection > 11)
+					{
+						craftingSelection = 0;
+					}
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_LBUTTON))
+				{
+					if ((cursorX >= 110 && cursorX <= 150) && (cursorY >= 400 && cursorY <= 450))
+					{
+						if (craftingSelection >= 0)
+						{
+							craftingSelection--;
+						}
+						if (craftingSelection < 0)
+						{
+							craftingSelection = 11;
+						}
+						start = std::clock();
+					}
+					if ((cursorX >= 650 && cursorX <= 690) && (cursorY >= 400 && cursorY <= 450))
+					{
+						if (craftingSelection < 12)
+						{
+							craftingSelection++;
+						}
+						if (craftingSelection > 11)
+						{
+							craftingSelection = 0;
+						}
+						start = std::clock();
+					}
+					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
+					{
+						craft = 2;
+						//craftSelection = buildingID + buildSelection;
+						SetCursorPos(windowX / 2, windowY / 2);
+						pause = false;
+					}
+				}
 			}
 		}
 	}
@@ -490,6 +569,43 @@ void Menu::update()
 				count = Inventory::getinventory()->getsize();
 			}
 		}
+	}
+	if (menuType == 5)
+	{
+		if (elapsedTime > 0.01)
+		{
+			if (Application::IsKeyPressed(VK_RIGHT))
+			{
+				if (travelTo < 6)
+				{
+					travelTo += 1;
+				}
+				else
+				{
+					travelTo = 4;
+				}
+				start = std::clock();
+			}
+			else if (Application::IsKeyPressed(VK_LEFT))
+			{
+				if (travelTo > 4)
+				{
+					travelTo -= 1;
+				}
+				else
+				{
+					travelTo = 6;
+				}
+				start = std::clock();
+			}
+			if (Application::IsKeyPressed(VK_RETURN))
+			{
+				SceneManager::currScene = travelTo;
+			}
+		
+		}
+		//std::cout <<"Travel to: " << travelTo << std::endl;
+
 	}
 }
 
@@ -587,6 +703,19 @@ void Menu::Render()
 		if (menuType == 3) //Crafting
 		{
 			RenderMeshOnScreen(meshList[GEO_CRAFTMENU], windowX / 20, windowY / 20, 16, 12);
+
+			if ((cursorX >= 110 && cursorX <= 150) && (cursorY >= 400 && cursorY <= 450))
+			{
+				RenderMeshOnScreen(meshList[GEO_ARROW_L], windowX / 20, windowY / 20, 16, 12);
+			}
+			if ((cursorX >= 650 && cursorX <= 690) && (cursorY >= 400 && cursorY <= 450))
+			{
+				RenderMeshOnScreen(meshList[GEO_ARROW_R], windowX / 20, windowY / 20, 16, 12);
+			}
+			if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
+			{
+				RenderMeshOnScreen(meshList[GEO_CRAFTBUTTON], windowX / 20, windowY / 20, 16, 12);
+			}
 		}
 		if (menuType == 4) //Inventory
 		{
@@ -614,6 +743,10 @@ void Menu::Render()
 			}
 		}
 		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);		
+	}
+	if (tpZone)
+	{
+
 	}
 }
 

@@ -80,7 +80,10 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		{
 			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camRight);
 			if (move)
+			{
+				std::cout << "Collision" << std::endl;
 				break;
+			}
 		}
 		for (auto &i : enemies)
 		{
@@ -101,7 +104,10 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		{
 			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camRight);
 			if (move)
+			{
+				std::cout << "Collision" << std::endl;
 				break;
+			}
 		}
 		for (auto &i : enemies)
 		{
@@ -122,7 +128,10 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		{
 			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), -camForwardTemp);
 			if (move)
+			{
+				std::cout << "Collision" << std::endl;
 				break;
+			}
 		}
 		for (auto &i : enemies)
 		{
@@ -143,7 +152,10 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		{
 			move = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
 			if (move)
+			{
+				std::cout << "Collision" << std::endl;
 				break;
+			}
 		}
 		for (auto &i : enemies)
 		{

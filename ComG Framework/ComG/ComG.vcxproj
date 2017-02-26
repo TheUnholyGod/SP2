@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="Shader\SimpleFragmentShader.fragmentshader" />
     <None Include="Shader\SimpleVertexShader.vertexshader" />
   </ItemGroup>
@@ -174,12 +175,13 @@
     <ClCompile Include="Source\SceneManager.cpp" />
     <ClCompile Include="Source\SceneSplashScreen.cpp" />
     <ClCompile Include="Source\SceneTest.cpp" />
-    <ClCompile Include="Source\SceneUI.cpp" />
+    <ClCompile Include="Source\SceneLoading.cpp" />
     <ClCompile Include="Source\SceneWildLife.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Stone.cpp" />
     <ClCompile Include="Source\Teleporting.cpp" />
     <ClCompile Include="Source\TilledSoil.cpp" />
+    <ClCompile Include="Source\Tree.cpp" />
     <ClCompile Include="Source\TrophyRoom.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
     <ClCompile Include="Source\VegetableStew.cpp" />
@@ -282,12 +284,13 @@
     <ClInclude Include="Source\SceneBase.h" />
     <ClInclude Include="Source\SceneSplashScreen.h" />
     <ClInclude Include="Source\Scenetest.h" />
-    <ClInclude Include="Source\SceneUI.h" />
+    <ClInclude Include="Source\SceneLoading.h" />
     <ClInclude Include="Source\SceneWildLife.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\Stone.h" />
     <ClInclude Include="Source\Teleporting.h" />
     <ClInclude Include="Source\TilledSoil.h" />
+    <ClInclude Include="Source\Tree.h" />
     <ClInclude Include="Source\TrophyRoom.h" />
     <ClInclude Include="Source\Utility.h" />
     <ClInclude Include="Source\VegetableStew.h" />

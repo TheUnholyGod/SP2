@@ -21,6 +21,9 @@
 #include "Inventory.h"
 #include <list>
 
+#include "FastTravelRoom.h"
+#include "Player.h"
+
 #include <sstream>
 #include <string>
 #include <vector>
@@ -131,10 +134,10 @@ public:
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float size, float x, float y);
 
-	bool pause;
-	bool craft;	
+	bool pause;	
 	bool rendered;
 
+	int craft;
 	int menuType;
 	int pauseSelection;
 	int optionSelection;
@@ -170,6 +173,9 @@ public:
 	float y1;
 
 	const int buildingID;
+
+	int travelTo;
+	bool tpZone;
 
 	unsigned m_vertexArrayID;
 	unsigned m_programID;

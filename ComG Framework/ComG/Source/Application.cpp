@@ -21,7 +21,7 @@ const unsigned int Application::frameTime = 1000 / FPS; // time for each frame
 GLFWwindow* Application::m_window = NULL;
 StopWatch Application::m_timer;
 bool Application::IsExit;
-int Application::saveno = 0;
+int Application::saveno = 1;
 
 //Define an error callback
 static void error_callback(int error, const char* description)

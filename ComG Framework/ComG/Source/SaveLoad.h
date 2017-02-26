@@ -1,6 +1,9 @@
 #ifndef _SAVELOAD_H
 #define _SAVELOAD_H
 
+#include <array>
+#include <fstream>
+#include <sstream>
 #include <list>
 #include <string>
 #include "Building.h"
@@ -23,6 +26,7 @@ public:
 	}
 	static void Save(int, std::string, std::list<Building*>&, std::vector<Enemy*>&);
 	static bool Load(int, std::string, std::list<Building*>&, std::vector<Enemy*>&);
+	static bool is_empty(int);
 	static void NewGame(int);
 	char* getBlank() { return &blank; }
 	~SaveLoad();

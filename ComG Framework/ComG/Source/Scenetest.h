@@ -225,6 +225,12 @@ private:
 	void SpawnItems(double dt);
 	void RenderItems();
 
+	std::vector<Item*> BaseLoots;
+	int LootID;
+	Vector3 Lootpos;
+	void SpawnLoot(int key);
+	void RenderLoot();
+
 	Menu pauseMenu;
 	int windowX;
 	int windowY;
