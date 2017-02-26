@@ -222,7 +222,7 @@ void SceneTest::Update(double dt)
 		if (Application::IsKeyPressed(VK_LBUTTON) && (PTime - Pstart > 180))
 		{
 			Pstart = std::clock();
-			SpawnProjectile();
+			SpawnProjectile(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward());
 		}
 	
 
@@ -234,11 +234,8 @@ void SceneTest::Update(double dt)
 		UpdateEnemy(dt);
 		SpawnItems(dt);
 
-		DefenceTower::turretTargetUpdate(BaseEnemy);
-		for (auto i : BaseBuildings)
-		{
-			i->update(dt);
-		}
+		//DefenceTower::turretTargetUpdate(BaseEnemy);
+		UpdateBuilding(dt);
 
 		if (pauseMenu.craft == 1)//Craft building selected
 		{
@@ -662,7 +659,7 @@ void SceneTest::SpawnBuilding(int bID)
 	spawnPoint.y = 0;
 	spawnPoint.z = (int)(v_temp.z);
 	
-	Building* temp = BuildingFactory::generateBuilding(bID, spawnPoint);
+	Building* temp = BuildingFactory::generateBuilding(bID, spawnPoint, (spawnPoint - Player::getplayer()->getRenderer().getForward()).Normalize());
 	BaseBuildings.push_back(temp);
 }
 
@@ -677,10 +674,10 @@ void SceneTest::RenderBuilding()
 	}
 }
 
-void SceneTest::SpawnProjectile()
+void SceneTest::SpawnProjectile(Vector3 position, Vector3 forward)
 {
 	Projectile* temp = dynamic_cast<Projectile*>(ItemFactory::getItemFactory()->generateItem(999));
-	temp->FireProjectile();
+	temp->FireProjectile(position, forward);
 	BaseProjectile.push_back(temp);
 }
 

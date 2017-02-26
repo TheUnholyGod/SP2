@@ -1,9 +1,9 @@
 #include "OreMines.h"
 #include "ItemFactory.h"
 
-OreMines::OreMines(Vector3 position) : Building(110, "Ore Mines", "OBJ//Barn.obj", "", 100, RESOURCE, false)
+OreMines::OreMines(Vector3 position, Vector3 forward) : Building(110, "Ore Mines", "OBJ//Barn.obj", "", 100, RESOURCE, false)
 {
-	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0));
+	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0)/*, forward*/);
 	gameobjrenderer_->setScaling(5);
 	size.push_back(Vector3(20, 10, 11) * gameobjrenderer_->getScaling());
 	for (auto &i : size)

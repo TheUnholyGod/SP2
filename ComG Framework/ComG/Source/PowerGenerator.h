@@ -13,7 +13,7 @@ protected:
 	int health_;
 	bool enter_;
 public:
-	PowerGenerator(Vector3 = (0, 0, 5));
+	PowerGenerator(Vector3 = (0, 0, 5), Vector3 = (1, 0, 0));
 	virtual ~PowerGenerator();
 
 	int get_Health();
