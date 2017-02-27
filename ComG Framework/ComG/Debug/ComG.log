@@ -1,0 +1,681 @@
+﻿Build started 2/28/2017 1:35:56 AM.
+     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Programs - Work\Visual Studios 2013\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Ability.cpp Source\AbilityDataBase.cpp Source\Acrid_Plant.cpp Source\Adhesives.cpp Source\Ant_Hill.cpp Source\Application.cpp Source\Barn.cpp Source\Biomass.cpp Source\Bread.cpp Source\Building.cpp Source\BuildingDataBase.cpp Source\BuildingFactory.cpp Source\Burrowing.cpp Source\Cabbage.cpp Source\Camera.cpp Source\Camera2.cpp Source\Camera3.cpp Source\Camera4.cpp Source\Carrot.cpp Source\CarrotJuice.cpp Source\Centipede.cpp Source\CircuitBoards.cpp Source\Cloth.cpp Source\Collision.cpp Source\Compound_Bow.cpp Source\Copper.cpp Source\Corrosive.cpp Source\Crafting.cpp Source\CybordMutt.cpp Source\Deer.cpp Source\DefenceTower.cpp Source\DefensiveWalls.cpp Source\DrinkingWater.cpp Source\Drone.cpp Source\Enemy.cpp Source\EnemyDataBase.cpp Source\EnemyFactory.cpp Source\Farming_Hoe.cpp Source\FastTravelRoom.cpp Source\Food.cpp Source\GameObject.cpp Source\Glock_17C.cpp Source\Goat.cpp Source\Gold.cpp Source\Inventory.cpp Source\InventoryWarehouse.cpp Source\Iron.cpp Source\Item.cpp Source\ItemDataBase.cpp Source\ItemFactory.cpp Source\Katana_Sword.cpp Source\Kitchen_Knife.cpp Source\Lighting.cpp Source\Lizard.cpp Source\LoadATOM.cpp Source\LoadOBJ.cpp Source\LoadTGA.cpp Source\M200_CheyTac_Intervention.cpp Source\main.cpp Source\Mesh.cpp Source\MeshBuilder.cpp Source\MetalScraps.cpp Source\Molerat.cpp Source\NPCHouse.cpp Source\OreMines.cpp Source\PatrolBot.cpp Source\Menu.cpp Source\Player.cpp Source\Potato.cpp Source\PowerGenerator.cpp Source\Projectile.cpp Source\Radioactive.cpp Source\Renderer.cpp Source\Resources.cpp Source\RogueMech.cpp Source\Salad.cpp Source\SaveLoad.cpp "Source\Scar-H.cpp" Source\Scarecrow_Mech.cpp Source\SceneBase.cpp Source\SceneCity.cpp Source\SceneMainMenu.cpp Source\SceneManager.cpp Source\SceneSplashScreen.cpp Source\SceneTest.cpp Source\SceneLoading.cpp Source\SceneWildLife.cpp Source\shader.cpp Source\Stone.cpp Source\Teleporting.cpp Source\TilledSoil.cpp Source\Tree.cpp Source\TrophyRoom.cpp Source\Utility.cpp Source\VegetableStew.cpp Source\Water.cpp Source\WaterWell.cpp Source\Weapon.cpp Source\Wheat.cpp Source\Wildboar.cpp Source\Wood.cpp
+         Wood.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\wood.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Wildboar.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Wheat.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\wheat.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Weapon.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         WaterWell.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\waterwell.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\waterwell.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Water.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\water.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         VegetableStew.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\vegetablestew.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Utility.cpp
+         TrophyRoom.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\trophyroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\trophyroom.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Tree.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\tree.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         TilledSoil.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\tilledsoil.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\tilledsoil.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Teleporting.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Stone.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\stone.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         shader.cpp
+         SceneWildLife.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenewildlife.cpp(131): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenewildlife.cpp(135): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenewildlife.cpp(139): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenewildlife.cpp(574): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenewildlife.cpp(575): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenewildlife.cpp(592): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenewildlife.cpp(647): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         SceneLoading.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\sceneloading.cpp(169): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\sceneloading.cpp(170): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         SceneTest.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defencetower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(171): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(176): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(181): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(186): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(191): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(223): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(227): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(237): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(665): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(667): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(765): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(766): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(784): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         SceneSplashScreen.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenesplashscreen.cpp(260): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenesplashscreen.cpp(261): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         SceneManager.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         SceneMainMenu.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenemainmenu.cpp(169): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenemainmenu.cpp(569): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenemainmenu.cpp(717): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenemainmenu.cpp(718): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+         Compiling...
+         SceneCity.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenecity.cpp(132): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenecity.cpp(136): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenecity.cpp(140): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenecity.cpp(571): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenecity.cpp(572): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenecity.cpp(589): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         SceneBase.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenebase.cpp(131): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenebase.cpp(136): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenebase.cpp(141): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenebase.cpp(566): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenebase.cpp(567): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenebase.cpp(584): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         Scarecrow_Mech.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Scar-H.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         SaveLoad.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\saveload.cpp(69): warning C4244: 'argument' : conversion from 'int' to 'const float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\saveload.cpp(77): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\saveload.cpp(87): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+         Salad.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\salad.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         RogueMech.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Resources.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Renderer.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.cpp(21): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.cpp(31): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.cpp(36): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.cpp(44): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.cpp(49): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+         Radioactive.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Projectile.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\projectile.cpp(31): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+         PowerGenerator.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\powergenerator.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\powergenerator.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Potato.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\potato.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Player.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\player.cpp(28): warning C4244: 'return' : conversion from 'float' to 'const int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\player.cpp(72): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\player.cpp(97): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\player.cpp(121): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\player.cpp(145): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\player.cpp(169): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Menu.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(190): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(194): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(206): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(221): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(226): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(711): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(718): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(718): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(727): warning C4018: '<=' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(734): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(735): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(735): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(737): warning C4244: '-=' : conversion from 'double' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(769): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(776): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(776): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(786): warning C4018: '<=' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(793): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(794): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(794): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(796): warning C4244: '-=' : conversion from 'double' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(811): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(818): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(818): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(828): warning C4018: '<=' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(835): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(836): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(836): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(838): warning C4244: '-=' : conversion from 'double' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(882): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(901): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(902): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1002): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1004): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1006): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1008): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1010): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1012): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1014): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1016): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1018): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1020): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1022): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1024): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1026): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1028): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1030): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1032): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1034): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1036): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\menu.cpp(1038): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+         PatrolBot.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         OreMines.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\oremines.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\oremines.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         NPCHouse.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\npchouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\npchouse.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Molerat.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\molerat.cpp(58): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\molerat.cpp(82): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         MetalScraps.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\metalscraps.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+         Compiling...
+         MeshBuilder.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(190): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(192): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(201): warning C4018: '<=' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(226): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(227): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(234): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(251): warning C4018: '<=' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(276): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(279): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(292): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(317): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(318): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(322): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(325): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(342): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(349): warning C4018: '<=' : signed/unsigned mismatch
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(496): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(497): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(498): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(499): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\meshbuilder.cpp(597): warning C4244: 'argument' : conversion from 'float' to 'unsigned int', possible loss of data
+         Mesh.cpp
+         main.cpp
+         M200_CheyTac_Intervention.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         LoadTGA.cpp
+         LoadOBJ.cpp
+         LoadATOM.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\loadatom.cpp(222): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 e:\programs - work\visual studios 2013\vc\include\string.h(195) : see declaration of 'strncpy'
+         Lizard.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\lizard.cpp(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Lighting.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\lighting.cpp(71): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         Kitchen_Knife.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Katana_Sword.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         ItemFactory.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\potato.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\carrot.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\cabbage.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\wheat.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\bread.h(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\carrotjuice.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\drinkingwater.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\salad.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\vegetablestew.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\stone.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\iron.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\copper.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\gold.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\water.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\wood.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\biomass.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\adhesives.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\metalscraps.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\cloth.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\circuitboards.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         ItemDataBase.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\potato.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\carrot.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\cabbage.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\wheat.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\bread.h(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\carrotjuice.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\drinkingwater.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\salad.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\vegetablestew.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\stone.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\iron.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\copper.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\gold.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\water.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\wood.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\biomass.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\adhesives.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\metalscraps.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\cloth.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\circuitboards.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Item.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\item.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Iron.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\iron.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         InventoryWarehouse.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\inventorywarehouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\inventorywarehouse.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Inventory.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Gold.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\gold.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Goat.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Glock_17C.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+         Compiling...
+         GameObject.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Food.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         FastTravelRoom.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.cpp(11): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.cpp(12): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Farming_Hoe.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         EnemyFactory.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         EnemyDataBase.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Enemy.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Drone.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         DrinkingWater.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\drinkingwater.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         DefensiveWalls.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defensivewalls.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defensivewalls.cpp(8): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defensivewalls.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         DefenceTower.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defencetower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defencetower.cpp(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defencetower.cpp(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Deer.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         CybordMutt.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Crafting.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\crafting.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\crafting.cpp(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Corrosive.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Copper.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\copper.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Compound_Bow.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Collision.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\collision.cpp(8): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\collision.cpp(9): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         Cloth.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\cloth.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         CircuitBoards.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\circuitboards.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+         Compiling...
+         Centipede.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         CarrotJuice.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\carrotjuice.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Carrot.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\carrot.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Camera4.cpp
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\camera4.cpp(57): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\camera4.cpp(58): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\camera4.cpp(65): warning C4305: '=' : truncation from 'double' to 'float'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\camera4.cpp(69): warning C4305: '=' : truncation from 'double' to 'float'
+         Camera3.cpp
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+         Camera2.cpp
+         Camera.cpp
+         Cabbage.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\cabbage.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Burrowing.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         BuildingFactory.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\barn.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defencetower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defensivewalls.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\inventorywarehouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\npchouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\oremines.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\crafting.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\powergenerator.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\tilledsoil.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\trophyroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\waterwell.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         BuildingDataBase.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\barn.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defencetower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\crafting.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\defensivewalls.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\inventorywarehouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\npchouse.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\oremines.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\powergenerator.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\tilledsoil.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\trophyroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\waterwell.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Building.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Bread.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\bread.h(8): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Biomass.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\biomass.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Barn.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\barn.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Application.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\application.cpp(108): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+         Ant_Hill.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Adhesives.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\adhesives.h(9): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Acrid_Plant.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         AbilityDataBase.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+         Compiling...
+         Ability.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+       Link:
+         E:\Programs - Work\Visual Studios 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\lib" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.lib" /MACHINE:X86 Debug\Ability.obj
+         Debug\AbilityDataBase.obj
+         Debug\Acrid_Plant.obj
+         Debug\Adhesives.obj
+         Debug\Ant_Hill.obj
+         Debug\Application.obj
+         Debug\Barn.obj
+         Debug\Biomass.obj
+         Debug\Bread.obj
+         Debug\Building.obj
+         Debug\BuildingDataBase.obj
+         Debug\BuildingFactory.obj
+         Debug\Burrowing.obj
+         Debug\Cabbage.obj
+         Debug\Camera.obj
+         Debug\Camera2.obj
+         Debug\Camera3.obj
+         Debug\Camera4.obj
+         Debug\Carrot.obj
+         Debug\CarrotJuice.obj
+         Debug\Centipede.obj
+         Debug\CircuitBoards.obj
+         Debug\Cloth.obj
+         Debug\Collision.obj
+         Debug\Compound_Bow.obj
+         Debug\Copper.obj
+         Debug\Corrosive.obj
+         Debug\Crafting.obj
+         Debug\CybordMutt.obj
+         Debug\Deer.obj
+         Debug\DefenceTower.obj
+         Debug\DefensiveWalls.obj
+         Debug\DrinkingWater.obj
+         Debug\Drone.obj
+         Debug\Enemy.obj
+         Debug\EnemyDataBase.obj
+         Debug\EnemyFactory.obj
+         Debug\Farming_Hoe.obj
+         Debug\FastTravelRoom.obj
+         Debug\Food.obj
+         Debug\GameObject.obj
+         Debug\Glock_17C.obj
+         Debug\Goat.obj
+         Debug\Gold.obj
+         Debug\Inventory.obj
+         Debug\InventoryWarehouse.obj
+         Debug\Iron.obj
+         Debug\Item.obj
+         Debug\ItemDataBase.obj
+         Debug\ItemFactory.obj
+         Debug\Katana_Sword.obj
+         Debug\Kitchen_Knife.obj
+         Debug\Lighting.obj
+         Debug\Lizard.obj
+         Debug\LoadATOM.obj
+         Debug\LoadOBJ.obj
+         Debug\LoadTGA.obj
+         Debug\M200_CheyTac_Intervention.obj
+         Debug\main.obj
+         Debug\Mesh.obj
+         Debug\MeshBuilder.obj
+         Debug\MetalScraps.obj
+         Debug\Molerat.obj
+         Debug\NPCHouse.obj
+         Debug\OreMines.obj
+         Debug\PatrolBot.obj
+         Debug\Menu.obj
+         Debug\Player.obj
+         Debug\Potato.obj
+         Debug\PowerGenerator.obj
+         Debug\Projectile.obj
+         Debug\Radioactive.obj
+         Debug\Renderer.obj
+         Debug\Resources.obj
+         Debug\RogueMech.obj
+         Debug\Salad.obj
+         Debug\SaveLoad.obj
+         "Debug\Scar-H.obj"
+         Debug\Scarecrow_Mech.obj
+         Debug\SceneBase.obj
+         Debug\SceneCity.obj
+         Debug\SceneMainMenu.obj
+         Debug\SceneManager.obj
+         Debug\SceneSplashScreen.obj
+         Debug\SceneTest.obj
+         Debug\SceneLoading.obj
+         Debug\SceneWildLife.obj
+         Debug\shader.obj
+         Debug\Stone.obj
+         Debug\Teleporting.obj
+         Debug\TilledSoil.obj
+         Debug\Tree.obj
+         Debug\TrophyRoom.obj
+         Debug\Utility.obj
+         Debug\VegetableStew.obj
+         Debug\Water.obj
+         Debug\WaterWell.obj
+         Debug\Weapon.obj
+         Debug\Wheat.obj
+         Debug\Wildboar.obj
+         Debug\Wood.obj
+         LINK : F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.exe not found or not built by the last incremental link; performing full link
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         ComG.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.exe
+     1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:43.58
