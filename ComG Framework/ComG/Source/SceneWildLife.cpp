@@ -165,7 +165,7 @@ void SceneWildLife::Update(double dt)
 		Application::IsExit = true;
 	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems);
+	//Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems);
 	SpawnEnemy(dt);
 	LightUpdate(dt);
 }

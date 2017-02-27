@@ -59,11 +59,10 @@ void  Player::setWeapon(int key)
 	playerweapon_->getRenderer().setForward(player->getRenderer().getForward());
 }
 
-void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings,std::vector<Enemy*> enemies, std::vector<Item*> items)
+void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings,std::vector<Enemy*> enemies, std::vector<Item*> items, std::vector<Item*> Loots)
 {
 	bool move = false;
 	bool move2 = false;
-	bool pickup = false;
 
 	Vector3 camForwardTemp = camForward;
 	camForwardTemp.y = 0;
@@ -170,6 +169,18 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
 		}
 	}
+	/*std::cout << "Drops: " << std::endl;
+	for (auto &i : Loots)
+	{
+		std::cout <<  i->getID() << std::endl;
+	}*/
+	if (Application::IsKeyPressed('Q'))
+	{
+		for (auto &i : Loots)
+		{
+			std::cout << i->getID() << std::endl;
+		}
+	}
 	if (Application::IsKeyPressed('E'))
 	{
 		std::vector<int> pos;
@@ -177,6 +188,7 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		int eraser = 0;
 		for (auto &i : items)
 		{
+			bool pickup = false;
 			pickup = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
 			if (pickup)
 			{
@@ -184,11 +196,27 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 				i->update();
 				Item* temp = i;
 				Inventory::getinventory()->Additem(temp->getID());
-				pos.push_back(counter);
+				//pos.push_back(counter);
 				Inventory::getinventory()->Update(dt);
 				delete i->getAABB(0);
 			}
-			counter++;
+			//counter++;
+		}
+		for (auto &i : Loots)
+		{
+			bool pickup1 = false;
+			pickup1 = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+			if (pickup1)
+			{
+				std::cout << i->getID() <<"picked up" << std::endl;
+				i->update();
+				//Item* temp = i;
+				Inventory::getinventory()->Additem(i->getID());
+				//pos.push_back(counter);
+				Inventory::getinventory()->Update(dt);
+				delete i->getAABB(0);
+			}
+			//counter++;
 		}
 	}
 }

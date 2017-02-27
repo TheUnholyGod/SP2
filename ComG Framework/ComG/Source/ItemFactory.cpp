@@ -56,9 +56,9 @@ Item* ItemFactory::generateItem(int key)
 	if (key == tempID[0])
 		temp = new Potato;
 	else if (key == tempID[1])
-		temp = new Carrot;
-	else if (key == tempID[2])
 		temp = new Cabbage;
+	else if (key == tempID[2])
+		temp = new Carrot;
 	else if (key == tempID[3])
 		temp = new Wheat;
 	else if (key == tempID[4])
@@ -119,9 +119,9 @@ Item* ItemFactory::SpawnItem(int key, Vector3 position)
 	if (key == tempID[0])
 		temp = new Potato(position);
 	else if (key == tempID[1])
-		temp = new Carrot(position);
-	else if (key == tempID[2])
 		temp = new Cabbage(position);
+	else if (key == tempID[2])
+		temp = new Carrot(position);
 	else if (key == tempID[3])
 		temp = new Wheat(position);
 	else if (key == tempID[4])

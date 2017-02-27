@@ -36,12 +36,12 @@ ItemDataBase::ItemDataBase()
 	itemdatabase_[temp->getID()] = new Potato;
 	IDlist.push_back(temp->getID());
 	delete temp;
-	temp = new Carrot;
-	itemdatabase_[temp->getID()] = new Carrot;
-	IDlist.push_back(temp->getID());
-	delete temp;
 	temp = new Cabbage;
 	itemdatabase_[temp->getID()] = new Cabbage;
+	IDlist.push_back(temp->getID());
+	delete temp;
+	temp = new Carrot;
+	itemdatabase_[temp->getID()] = new Carrot;
 	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Wheat;
