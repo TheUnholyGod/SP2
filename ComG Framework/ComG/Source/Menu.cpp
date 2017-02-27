@@ -188,6 +188,20 @@ void Menu::update()
 
 	craft = 0;
 
+	if (menuType)
+	{
+		if (cursorX > 800)
+		{
+			cursorX = 800;
+			glfwSetCursorPos(Application::m_window, cursorX, -cursorY + windowY);
+		}
+		if (cursorY > 600)
+		{
+			cursorY = 600;
+			glfwSetCursorPos(Application::m_window, cursorX, -cursorY + windowY);
+		}
+	}
+
 	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
 		if (!pause)//Go to Pause menu
@@ -615,51 +629,51 @@ void Menu::Render()
 	{
 		if (menuType == 0) //Options
 		{
-			RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], 40, 30, 16, 12);
 
 			if (optionSelection == 0)
 			{
-				RenderMeshOnScreen(meshList[GEO_MOUSE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_MOUSE], 40, 30, 16, 12);
 			}
 			if (optionSelection == 1)
 			{
-				RenderMeshOnScreen(meshList[GEO_VOLUME], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
 			}
 			if (optionSelection == 2)
 			{
-				RenderMeshOnScreen(meshList[GEO_BACK], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
 			}
 		}
 		if (menuType == 1) //Pause
 		{
-			RenderMeshOnScreen(meshList[GEO_PAUSEMENU], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_PAUSEMENU], 40, 30, 16, 12);
 
 			if (pauseSelection == 0)
 			{
-				RenderMeshOnScreen(meshList[GEO_OPTIONS], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
 			}
 			if (pauseSelection == 1)
 			{
-				RenderMeshOnScreen(meshList[GEO_BACKTOGAME], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_BACKTOGAME], 40, 30, 16, 12);
 			}
 			if (pauseSelection == 2)
 			{
-				RenderMeshOnScreen(meshList[GEO_BACKTOMAIN], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_BACKTOMAIN], 40, 30, 16, 12);
 			}
 		}
 		if (menuType == 2) //Building
 		{
-			RenderMeshOnScreen(meshList[GEO_BUILDMENU], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_BUILDMENU], 40, 30, 16, 12);
 
 			for (int i = 0; i < buildingName.size(); i++)
 			{
 				if (i == buildSelection)
 				{
-					RenderTextOnScreen(meshList[GEO_TEXT], buildingName[i], Color(1, 0, 0), 3.0f, 0.5 * (windowX / 20) , 2.25 * (windowY / 30));
+					RenderTextOnScreen(meshList[GEO_TEXT], buildingName[i], Color(1, 0, 0), 3.0f, width / 2, 2.25 * height);
 
 					test = BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getRecipe();
-					width = (windowX / 50);
-					height = (windowY / 18.5);
+					width = 16;
+					height = 32;
 
 					for (it = test.begin(); it != test.end(); it++)
 					{
@@ -689,47 +703,42 @@ void Menu::Render()
 
 			if ((cursorX >= 110 && cursorX <= 150) && (cursorY >= 400 && cursorY <= 450))
 			{
-				RenderMeshOnScreen(meshList[GEO_ARROW_L], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_ARROW_L], 40, 30, 16, 12);
 			}
 			if ((cursorX >= 650 && cursorX <= 690) && (cursorY >= 400 && cursorY <= 450))
 			{
-				RenderMeshOnScreen(meshList[GEO_ARROW_R], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_ARROW_R], 40, 30, 16, 12);
 			}
 			if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
 			{
-				RenderMeshOnScreen(meshList[GEO_CRAFTBUTTON], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_CRAFTBUTTON], 40, 30, 16, 12);
 			}
 		}
 		if (menuType == 3) //Crafting
 		{
-			RenderMeshOnScreen(meshList[GEO_CRAFTMENU], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_CRAFTMENU], 40, 30, 16, 12);
 
 			if ((cursorX >= 110 && cursorX <= 150) && (cursorY >= 400 && cursorY <= 450))
 			{
-				RenderMeshOnScreen(meshList[GEO_ARROW_L], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_ARROW_L], 40, 30, 16, 12);
 			}
 			if ((cursorX >= 650 && cursorX <= 690) && (cursorY >= 400 && cursorY <= 450))
 			{
-				RenderMeshOnScreen(meshList[GEO_ARROW_R], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_ARROW_R], 40, 30, 16, 12);
 			}
 			if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
 			{
-				RenderMeshOnScreen(meshList[GEO_CRAFTBUTTON], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_CRAFTBUTTON], 40, 30, 16, 12);
 			}
 		}
 		if (menuType == 4) //Inventory
 		{
 
-			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
 			float y = 45.f;
 			y1 = 45.f;
 			float y2 = 45.f;
 
-			/*for (std::list<std::string>::iterator i = Inventory::getinventory()->List.begin(); i != Inventory::getinventory()->List.end(); i++)
-			{
-				RenderTextOnScreen(meshList[GEO_ITEMS], *i, Color(0, 0, 1), 3.f, 15.f, y);
-				y -= 5;
-			}*/
 			for (std::map<int, int>::iterator i = Inventory::getinventory()->inv.begin(); i != Inventory::getinventory()->inv.end(); i++)
 			{
 				std::string quantity = std::to_string(i->second);

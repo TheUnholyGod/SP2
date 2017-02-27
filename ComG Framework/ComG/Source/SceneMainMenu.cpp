@@ -66,7 +66,7 @@ void SceneMainMenu::Init()
 	//Initialize camera settings
 
 	Mtx44 projection;
-	projection.SetToPerspective(45.f, 4.f / 3.f, 0.1f, 10000.f);
+	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
 	// Make sure you pass uniform parameters after glUseProgram()
@@ -78,7 +78,7 @@ void SceneMainMenu::Init()
 	meshList[GEO_CURSORPOS]->textureID = LoadTGA("Image//calibri.tga");
 
 	//Main Menu
-	meshList[GEO_MAINMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_MAINMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 1.f);
 	meshList[GEO_MAINMENU]->textureID = LoadTGA("Image//Main Menu.tga");
 
 	meshList[GEO_PLAY] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
@@ -134,7 +134,7 @@ void SceneMainMenu::Init()
 	windowX = windowY = 0;
 	cursorPoint.x = cursorPoint.y = 0;
 
-	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	//glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
 
 	options = false;
@@ -153,6 +153,18 @@ void SceneMainMenu::Update(double dt)
 	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + windowY;
+
+	if (cursorX > 800)
+	{
+		cursorX = 800;
+		glfwSetCursorPos(Application::m_window, cursorX, -cursorY + windowY);
+	}
+	if (cursorY > 600)
+	{
+		cursorY = 600;
+		glfwSetCursorPos(Application::m_window, cursorX, -cursorY + windowY);
+	}
+
 
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	DebugMode(dt);
@@ -409,36 +421,37 @@ void SceneMainMenu::Render()
 
 	if (!options)
 	{
-		RenderMeshOnScreen(meshList[GEO_MAINMENU], windowX / 20, windowY / 20, 16, 12);
+		//RenderMeshOnScreen(meshList[GEO_MAINMENU], windowX / 20, windowY / 20, 16, 12);
+		RenderMeshOnScreen(meshList[GEO_MAINMENU], 40, 30, 80, 60);
 
 		if (play == 0)
 		{
-			RenderMeshOnScreen(meshList[GEO_EXIT], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_EXIT], 40, 30, 16, 12);
 		}
 		if (play == 1)
 		{
-			RenderMeshOnScreen(meshList[GEO_PLAY], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_PLAY], 40, 30, 16, 12);
 		}
 		if (play == 2)
 		{
-			RenderMeshOnScreen(meshList[GEO_OPTIONS], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
 		}
 	}
 	else if (options)
 	{
-		RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], windowX / 20, windowY / 20, 16, 12);
+		RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], 40, 30, 16, 12);
 
 		if (optionHighlight == 0)
 		{
-			RenderMeshOnScreen(meshList[GEO_MOUSE], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_MOUSE], 40, 30, 16, 12);
 		}
 		if (optionHighlight == 1)
 		{
-			RenderMeshOnScreen(meshList[GEO_VOLUME], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
 		}
 		if (optionHighlight == 2)
 		{
-			RenderMeshOnScreen(meshList[GEO_BACK], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
 		}
 	}
 	
@@ -446,15 +459,15 @@ void SceneMainMenu::Render()
 	{
 		if (load == 0)
 		{
-			RenderMeshOnScreen(meshList[GEO_SAVELOADMENU], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_SAVELOADMENU], 40, 30, 16, 12);
 		}
 		else if (load == 1)
 		{
-			RenderMeshOnScreen(meshList[GEO_LOAD], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_LOAD], 40, 30, 16, 12);
 
 			if (!loadEmpty[0])
 			{
-				RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_1SAVE], 40, 30, 16, 12);
 
 				if ((cursorY >= 310 && cursorY <= 360) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 1
 				{
@@ -463,7 +476,7 @@ void SceneMainMenu::Render()
 			}
 			if (!loadEmpty[1])
 			{
-				RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_2SAVE], 40, 30, 16, 12);
 
 				if ((cursorY >= 250 && cursorY <= 290) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 2
 				{
@@ -472,7 +485,7 @@ void SceneMainMenu::Render()
 			}
 			if (!loadEmpty[2])
 			{
-				RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_3SAVE], 40, 30, 16, 12);
 
 				if ((cursorY >= 180 && cursorY <= 220) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 3
 				{
@@ -481,7 +494,7 @@ void SceneMainMenu::Render()
 			}
 			if (!loadEmpty[3])
 			{
-				RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_4SAVE], 40, 30, 16, 12);
 
 				if ((cursorY >= 110 && cursorY <= 150) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 4
 				{
@@ -490,7 +503,7 @@ void SceneMainMenu::Render()
 			}
 			if (!loadEmpty[4])
 			{
-				RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_5SAVE], 40, 30, 16, 12);
 
 				if ((cursorY >= 50 && cursorY <= 90) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 5
 				{
@@ -500,11 +513,11 @@ void SceneMainMenu::Render()
 		}
 		else if (load == 2)
 		{
-			RenderMeshOnScreen(meshList[GEO_SAVE], windowX / 20, windowY / 20, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_SAVE], 40, 30, 16, 12);
 
 			if (loadEmpty[0])
 			{
-				RenderMeshOnScreen(meshList[GEO_1SAVE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_1SAVE], 40, 30, 16, 12);
 
 				if ((cursorY >= 310 && cursorY <= 360) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 1
 				{
@@ -513,7 +526,7 @@ void SceneMainMenu::Render()
 			}
 			if (loadEmpty[1])
 			{
-				RenderMeshOnScreen(meshList[GEO_2SAVE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_2SAVE], 40, 30, 16, 12);
 
 				if ((cursorY >= 250 && cursorY <= 290) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 2
 				{
@@ -522,7 +535,7 @@ void SceneMainMenu::Render()
 			}
 			if (loadEmpty[2])
 			{
-				RenderMeshOnScreen(meshList[GEO_3SAVE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_3SAVE], 40, 30, 16, 12);
 
 				if ((cursorY >= 180 && cursorY <= 220) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 3
 				{
@@ -531,7 +544,7 @@ void SceneMainMenu::Render()
 			}
 			if (loadEmpty[3])
 			{
-				RenderMeshOnScreen(meshList[GEO_4SAVE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_4SAVE], 40, 30, 16, 12);
 
 				if ((cursorY >= 110 && cursorY <= 150) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 4
 				{
@@ -540,7 +553,7 @@ void SceneMainMenu::Render()
 			}
 			if (loadEmpty[4])
 			{
-				RenderMeshOnScreen(meshList[GEO_5SAVE], windowX / 20, windowY / 20, 16, 12);
+				RenderMeshOnScreen(meshList[GEO_5SAVE], 40, 30, 16, 12);
 
 				if ((cursorY >= 50 && cursorY <= 90) && (cursorX >= 410 && cursorX <= 480)) //Mouse Over Save 5
 				{
@@ -553,13 +566,10 @@ void SceneMainMenu::Render()
 	std::ostringstream oss;
 	oss << cursorX << " : " << cursorY;
 
-	RenderTextOnScreen(meshList[GEO_CURSORPOS], oss.str(), Color(0, 1, 0), 2, windowX / 50, windowY / 50);
 	RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
+	RenderTextOnScreen(meshList[GEO_CURSORPOS], oss.str(), 2, 2, 8, 10);
 
 	oss.str("");
-	oss << play;
-
-	RenderTextOnScreen(meshList[GEO_CURSORPOS], oss.str(), Color(0, 1, 0), 2, windowX / 50, (windowY / 50) - 5);
 }
 
 void SceneMainMenu::Exit()

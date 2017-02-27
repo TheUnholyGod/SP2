@@ -30,6 +30,7 @@ public:
 	int get_Health();
 	const std::string getName() { return kName_; }
 	virtual recipe getRecipe() { return defaultrecipe; }
+	void takeDamage(int dmg) { health_ -= dmg; }
 };
 
 #endif

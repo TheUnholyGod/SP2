@@ -100,7 +100,7 @@ void SceneTest::Init()
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
 	Mtx44 projection;
-	projection.SetToPerspective(45.f, 4.f / 3.f, 0.1f, 10000.f);
+	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
 	// Make sure you pass uniform parameters after glUseProgram()
@@ -177,7 +177,7 @@ void SceneTest::Init()
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
-		enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
+		//enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
@@ -646,11 +646,16 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-
 	if (BaseEnemy.size() < 20)
 	{
-		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
-		BaseEnemy.push_back(temp);
+		/*Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
+		BaseEnemy.push_back(temp);*/
+
+		if (BaseEnemy.size() < 1)
+		{
+			Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(8);
+			BaseEnemy.push_back(temp);
+		}
 	}
 }
 
@@ -766,7 +771,6 @@ void SceneTest::RenderHealth()
 		//std::cout << hp << std::endl;
 		RenderMeshOnScreen(playerMeshList[GEO_HEALTHBAR], 7, 56, 10, 6);
 		RenderTextOnScreen(playerMeshList[GEO_HEALTH], std::to_string(hp), Color(0, 0, 1), 4.f, 1.f, 14.f);
-		
 	}
 }
 

@@ -18,6 +18,7 @@ Barn::Barn(Vector3 position, Vector3 forward) : Building(101, "Barn", "OBJ//Barn
 	defaultrecipe[ItemFactory::getItemFactory()->generateItem(202)] = 2; //Iron
 	defaultrecipe[ItemFactory::getItemFactory()->generateItem(206)] = 20; //Wood
 }
+
 Barn::~Barn(){}
 
 void Barn::update(double dt)

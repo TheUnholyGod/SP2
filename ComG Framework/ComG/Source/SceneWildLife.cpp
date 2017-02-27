@@ -92,7 +92,7 @@ void SceneWildLife::Init()
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
 	Mtx44 projection;
-	projection.SetToPerspective(45.f, 4.f / 3.f, 0.1f, 10000.f);
+	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
 	// Make sure you pass uniform parameters after glUseProgram()
@@ -165,7 +165,7 @@ void SceneWildLife::Update(double dt)
 		Application::IsExit = true;
 	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	//Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems);
+	Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems, ForestLoot);
 	SpawnEnemy(dt);
 	LightUpdate(dt);
 }
@@ -639,7 +639,7 @@ void SceneWildLife::LightReset(double dt)
 
 void SceneWildLife::newForest()
 {
-	int size = Randomizer::generate_range(100, 300);
+	int size = Randomizer::generate_range(50, 200);
 	for (int i = 0; i < size; i++)
 	{
 		int x = 2500 - Randomizer::generate_range(1, 5000);
