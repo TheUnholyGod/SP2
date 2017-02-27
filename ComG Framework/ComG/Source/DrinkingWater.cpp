@@ -14,6 +14,9 @@ DrinkingWater::DrinkingWater(Vector3 position) :Food(107,"Drinking Water", "", "
 		allAABB.push_back(temp);
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+
+	defRecipe[205] = 2; //Water
+	defRecipe[210] = 1;//Cloth
 }
 
 
