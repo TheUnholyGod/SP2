@@ -1,6 +1,14 @@
+<<<<<<< HEAD
+﻿Build started 27/2/2017 4:20:53 PM.
+
+Build succeeded.
+
+Time Elapsed 00:00:00.01
+=======
 ﻿  Vector3.cpp
   timer.cpp
   Mtx44.cpp
   MatrixStack.cpp
   Generating Code...
   Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\Common.lib
+>>>>>>> bf2d4010c269d2c3e9d8058c003bebc6caf8fde4
