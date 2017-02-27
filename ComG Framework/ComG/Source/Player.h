@@ -25,7 +25,7 @@ public:
 	const int getattack();
 	void receivedamage();
 	bool isDead();
-	void Update(Vector3, Vector3, double, std::list<Building*>, std::vector<Enemy*> enemies, std::vector<Item*>);
+	void Update(Vector3, Vector3, double, std::list<Building*>, std::vector<Enemy*> enemies, std::vector<Item*> Items, std::vector<Item*> Loots);
 	Weapon* getWeapon() { return playerweapon_; }
 	void setWeapon(int);
 	AABB* getAABB();

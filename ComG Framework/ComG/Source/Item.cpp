@@ -12,14 +12,11 @@ Item::Item(int no, std::string name, std::string source_location, std::string te
 void Item::update()
 {
 	pickedup = true;
-	
 }
 
 bool Item::getpickedup()
 {
-	bool pick;
-	pick = pickedup;
-	return pick;
+	return pickedup;
 }
 
 Item::~Item() {}

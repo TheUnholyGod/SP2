@@ -615,7 +615,7 @@ void Menu::update()
 			}
 		
 		}
-		std::cout <<"Travel to: " << travelTo << std::endl;
+		//std::cout <<"Travel to: " << travelTo << std::endl;
 
 	}
 }
@@ -870,9 +870,9 @@ void Menu::checkItem(int key)
 	if (key == tempID[0])
 		RenderMeshOnScreen(meshList[GEO_POTATO], 8.f, y1, 3.f, 3.f);
 	else if (key == tempID[1])
-		RenderMeshOnScreen(meshList[GEO_CARROT], 8.f, y1, 3.f, 3.f);
-	else if (key == tempID[2])
 		RenderMeshOnScreen(meshList[GEO_CABBAGE], 8.f, y1, 3.f, 3.f);
+	else if (key == tempID[2])
+		RenderMeshOnScreen(meshList[GEO_CARROT], 8.f, y1, 3.f, 3.f);
 	else if (key == tempID[3])
 		RenderMeshOnScreen(meshList[GEO_WHEAT], 8.f, y1, 3.f, 3.f);
 	else if (key == tempID[4])
