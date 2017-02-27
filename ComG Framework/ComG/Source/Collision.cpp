@@ -39,8 +39,5 @@ bool AABB::pointtoAABB(Vector3 pos,Vector3 forward)
 
 bool AABB::AABBtoAABB(AABB box)
 {
-	bool x = (std::fabs(this->position.x - box.position.x) <= (this->size.x + box.size.x));
-	bool y = (std::fabs(this->position.y - box.position.y) <= (this->size.y + box.size.y));
-	bool z = (std::fabs(this->position.z - box.position.z) <= (this->size.z + box.size.z));
-	return x && y && z;
+	return ((this->min.x <= box.max.x && this->max.x >= box.min.x) && (this->min.y <= box.max.y && this->max.y >= box.min.y) && (this->min.z <= box.max.z && this->max.z >= box.min.z));
 }

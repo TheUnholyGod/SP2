@@ -53,7 +53,21 @@ void Molerat::Attack(double dt, std::list<Building*> Buildings, std::vector<Enem
 	std::list<Building*> temp;
 	if (!this->checkCollision(temp, Enemy))
 	{
-
+		if (targeted->getAABB(0)->AABBtoAABB(*this->getAABB(0)))
+		{
+			targeted->takeDamage(attack_);
+			allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+			allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
+			std::cout << "I ATTACKED" << std::endl;
+		}
+		else
+		{
+			gameobjrenderer_->setForward((this->gameobjrenderer_->getPosition() - targeted->getRenderer().getPosition()).Normalized());
+			gameobjrenderer_->translate(gameobjrenderer_->getForward(), 50 * dt);
+			allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+			allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
+			std::cout << "I AM ATTACKING" << std::endl;
+		}
 	}
 	else if (this->checkCollision(temp, Enemy))
 	{
@@ -66,7 +80,7 @@ void Molerat::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*
 	if (!this->checkCollision(Buildings, Enemy))
 	{
 		gameobjrenderer_->rotate((0, 1, 0), 20 * dt, -(Player::getplayer()->getRenderer().getPosition() - gameobjrenderer_->getPosition()));
-		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 20 * dt);
+		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
 		goalreached = true;
 	}
 	else if (this->checkCollision(Buildings, Enemy))
@@ -80,8 +94,10 @@ void Molerat::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*
 	}
 	for (auto &i : Buildings)
 	{
-		if (!this->allAABB[1]->AABBtoAABB(*i->getAABB(0)))
+		if (this->allAABB[1]->AABBtoAABB(*i->getAABB(0)))
 		{
+			std::cout << i->getName() << std::endl;
+			targeted = i;
 			MoleratBev = BEHAVIOUR_ATTACK;
 		}
 	}
