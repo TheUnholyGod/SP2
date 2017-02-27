@@ -69,9 +69,9 @@ void Molerat::Attack(double dt, std::list<Building*> Buildings, std::vector<Enem
 			std::cout << "I AM ATTACKING" << std::endl;
 		}
 	}
-	else if (this->checkCollision(temp, Enemy))
+	else if (this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
 	{
-		MoleratBev = BEHAVIOUR_IDLE;
+		MoleratBev = BEHAVIOUR_PLAYER;
 	}
 }
 
@@ -94,11 +94,12 @@ void Molerat::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*
 	}
 	for (auto &i : Buildings)
 	{
-		if (this->allAABB[1]->AABBtoAABB(*i->getAABB(0)))
+		if (this->allAABB[0]->AABBtoAABB(*i->getAABB(0)))
 		{
 			std::cout << i->getName() << std::endl;
 			targeted = i;
 			MoleratBev = BEHAVIOUR_ATTACK;
+			break;
 		}
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());

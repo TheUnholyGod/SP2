@@ -639,7 +639,7 @@ void SceneWildLife::LightReset(double dt)
 
 void SceneWildLife::newForest()
 {
-	int size = Randomizer::generate_range(100, 300);
+	int size = Randomizer::generate_range(50, 200);
 	for (int i = 0; i < size; i++)
 	{
 		int x = 2500 - Randomizer::generate_range(1, 5000);
