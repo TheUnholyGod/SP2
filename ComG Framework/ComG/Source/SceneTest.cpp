@@ -17,6 +17,7 @@
 #include "SaveLoad.h"
 #include "DefenceTower.h"
 #include "FastTravelRoom.h"
+#include "LootSystem.h"
 #include <sstream>
 
 SceneTest::SceneTest() : buildingID(101), ItemID(101)
@@ -99,7 +100,7 @@ void SceneTest::Init()
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
 	Mtx44 projection;
-	projection.SetToPerspective(45.f, 4.f / 3.f, 0.1f, 10000.f);
+	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
 	// Make sure you pass uniform parameters after glUseProgram()
@@ -187,6 +188,11 @@ void SceneTest::Init()
 		foodMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
 		//foodMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
 	}
+	for (int i = 0; i < lootMeshList.size(); i++)
+	{
+		lootMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
+		//lootMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
+	}
 
 	buildBuilding = false;
 	suntimer = 1;
@@ -216,7 +222,7 @@ void SceneTest::Update(double dt)
 	{
 		ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
 
-		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy, BaseItems);
+		Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy, BaseItems, BaseLoots);
 		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 		PTime = std::clock();
 		if (Application::IsKeyPressed(VK_LBUTTON) && (PTime - Pstart > 180))
@@ -294,6 +300,7 @@ void SceneTest::Render()
 	RenderBuilding();
 	RenderProjectile();
 	RenderItems();
+	RenderLoot();
 
 	static double timee = 0.0;
 	modelStack.PushMatrix();
@@ -725,6 +732,25 @@ void SceneTest::RenderItems()
 	}
 }
 
+void SceneTest::SpawnLoot(int key)
+{
+	BaseLoots.push_back(ItemFactory::getItemFactory()->SpawnItem(key, Lootpos));
+}
+
+void SceneTest::RenderLoot()
+{
+	for (auto &i : BaseLoots)
+	{
+		if (!i->getpickedup())
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(lootMeshList[i->getID() - ItemID], true);
+			modelStack.PopMatrix();
+		}
+	}
+}
+
 void SceneTest::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
 {
 	glDisable(GL_DEPTH_TEST);
@@ -820,6 +846,9 @@ void SceneTest::UpdateEnemy(double dt)
 		i->Update(dt, BaseBuildings, BaseEnemy);
 		if (i->isDead())
 		{
+			LootID = GenerateLoot();
+			Lootpos = i->getRenderer().getPosition();
+			SpawnLoot(LootID);
 			pos.push_back(counter);
 		}
 		counter++;

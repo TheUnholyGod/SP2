@@ -17,6 +17,7 @@ private:
 		BEHAVIOUR_ATTACK,
 	};
 	BEHAVIOUR MoleratBev;
+	Building* targeted;
 public:
 	Molerat();
 	~Molerat();
