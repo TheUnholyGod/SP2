@@ -100,7 +100,7 @@ void SceneTest::Init()
 	meshList[GEO_AXES] = MeshBuilder::GenerateAxes("reference", 1000, 1000, 1000);
 
 	Mtx44 projection;
-	projection.SetToPerspective(120.f, 4.f / 3.f, 0.1f, 10000.f);
+	projection.SetToPerspective(45.f, 16.f / 9.f, 0.1f, 10000.f);
 	projectionStack.LoadMatrix(projection);
 
 	// Make sure you pass uniform parameters after glUseProgram()

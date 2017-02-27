@@ -186,18 +186,21 @@ void Menu::update()
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + windowY;
 
-	if (cursorX > 800)
-	{
-		cursorX = 800;
-		glfwSetCursorPos(Application::m_window, cursorX, -cursorY + windowY);
-	}
-	if (cursorY > 600)
-	{
-		cursorY = 600;
-		glfwSetCursorPos(Application::m_window, cursorX, -cursorY + windowY);
-	}
-
 	craft = 0;
+
+	if (menuType)
+	{
+		if (cursorX > 800)
+		{
+			cursorX = 800;
+			glfwSetCursorPos(Application::m_window, cursorX, -cursorY + windowY);
+		}
+		if (cursorY > 600)
+		{
+			cursorY = 600;
+			glfwSetCursorPos(Application::m_window, cursorX, -cursorY + windowY);
+		}
+	}
 
 	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
