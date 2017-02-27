@@ -69,22 +69,16 @@ void Inventory::Update(double dt)
 
 bool Inventory::getopeninventory()
 {
-	bool open;
-	open = openinventory;
-	return open;
+	return openinventory;
 }
 
 std::string Inventory::getitemname()
 {
-	std::string name;
-	name = itemname_;
-	return name;
+	return itemname_;
 }
 
 int Inventory::getsize()
 {
-	int size;
-	size = List.size();
-	return size;
+	return List.size();
 }
 

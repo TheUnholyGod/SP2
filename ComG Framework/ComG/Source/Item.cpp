@@ -16,9 +16,7 @@ void Item::update()
 
 bool Item::getpickedup()
 {
-	bool pick;
-	pick = pickedup;
-	return pick;
+	return pickedup;
 }
 
 Item::~Item() {}

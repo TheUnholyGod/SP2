@@ -174,6 +174,13 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 	{
 		std::cout <<  i->getID() << std::endl;
 	}*/
+	if (Application::IsKeyPressed('Q'))
+	{
+		for (auto &i : Loots)
+		{
+			std::cout << i->getID() << std::endl;
+		}
+	}
 	if (Application::IsKeyPressed('E'))
 	{
 		std::vector<int> pos;
@@ -189,27 +196,27 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 				i->update();
 				Item* temp = i;
 				Inventory::getinventory()->Additem(temp->getID());
-				pos.push_back(counter);
+				//pos.push_back(counter);
 				Inventory::getinventory()->Update(dt);
 				delete i->getAABB(0);
 			}
-			counter++;
+			//counter++;
 		}
 		for (auto &i : Loots)
 		{
-			bool pickup = false;
-			pickup = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
-			if (pickup)
+			bool pickup1 = false;
+			pickup1 = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+			if (pickup1)
 			{
 				std::cout << i->getID() <<"picked up" << std::endl;
 				i->update();
 				//Item* temp = i;
 				Inventory::getinventory()->Additem(i->getID());
-				pos.push_back(counter);
+				//pos.push_back(counter);
 				Inventory::getinventory()->Update(dt);
 				delete i->getAABB(0);
 			}
-			counter++;
+			//counter++;
 		}
 	}
 }
