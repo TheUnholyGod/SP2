@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 2/27/2017 9:48:07 PM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -18,3 +19,19 @@
 Build succeeded.
 
 Time Elapsed 00:00:06.16
+=======
+<<<<<<< HEAD
+﻿Build started 27/2/2017 4:20:53 PM.
+
+Build succeeded.
+
+Time Elapsed 00:00:00.01
+=======
+﻿  Vector3.cpp
+  timer.cpp
+  Mtx44.cpp
+  MatrixStack.cpp
+  Generating Code...
+  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\Common.lib
+>>>>>>> bf2d4010c269d2c3e9d8058c003bebc6caf8fde4
+>>>>>>> ccf80c50d26637c6a0a5debc8420c4ab00192b56
