@@ -22,27 +22,6 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::Init()
 {
-	cursorX = 0;
-	cursorY = 0;
-
-	windowX = windowY = 0;
-	cursorPoint.x = cursorPoint.y = 0;
-
-	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
-	glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
-
-	options = false;
-	optionHighlight = 0;
-
-	play = 1;
-	back = false;
-	isPlay = 0;
-	load = 0; 
-
-	loadEmpty[5] = { false };
-
-	start = std::clock();
-
 	// Init VBO here
 
 	// Set background color to dark blue
@@ -148,6 +127,25 @@ void SceneMainMenu::Init()
 
 	meshList[GEO_5SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_5SAVE]->textureID = LoadTGA("Image//SaveGame - Load Game - 5.tga");
+
+	cursorX = 0;
+	cursorY = 0;
+
+	windowX = windowY = 0;
+	cursorPoint.x = cursorPoint.y = 0;
+
+	glfwGetWindowSize(Application::m_window, &windowX, &windowY);
+	glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
+
+	options = false;
+	optionHighlight = 0;
+
+	loadEmpty[5] = { false };
+
+	play = 1;
+	back = false;
+	isPlay = 0;
+	load = 0;
 }
 
 void SceneMainMenu::Update(double dt)
@@ -557,6 +555,11 @@ void SceneMainMenu::Render()
 
 	RenderTextOnScreen(meshList[GEO_CURSORPOS], oss.str(), Color(0, 1, 0), 2, windowX / 50, windowY / 50);
 	RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
+
+	oss.str("");
+	oss << play;
+
+	RenderTextOnScreen(meshList[GEO_CURSORPOS], oss.str(), Color(0, 1, 0), 2, windowX / 50, (windowY / 50) - 5);
 }
 
 void SceneMainMenu::Exit()
