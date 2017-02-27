@@ -642,7 +642,7 @@ void SceneTest::SpawnEnemy(double dt)
 
 	if (BaseEnemy.size() < 20)
 	{
-		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
+		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(2);
 		BaseEnemy.push_back(temp);
 	}
 }

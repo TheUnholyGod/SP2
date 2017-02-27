@@ -6,10 +6,22 @@
 
 class Lizard : public Enemy
 {
+private:
+	enum BEHAVIOUR
+	{
+		BEHAVIOUR_IDLE,
+		BEHAVIOUR_ATTACK,
+		BEHAVIOUR_RETREAT,
+	};
+	BEHAVIOUR LizardBev;
 public:
 	Lizard();
 	~Lizard();
-	void Update(double dt);
+	void Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy) override;
+	void pathfinding();
+	void Attack(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy);
+	void Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy);
+	void Retreat(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy);
 };
 
 #endif

@@ -35,6 +35,8 @@ void Molerat::Update(double dt,std::list<Building*> Buildings, std::vector<Enemy
 	default:
 		break;
 	}
+	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 }
 
 void Molerat::pathfinding()
@@ -56,17 +58,11 @@ void Molerat::Attack(double dt, std::list<Building*> Buildings, std::vector<Enem
 		if (targeted->getAABB(0)->AABBtoAABB(*this->getAABB(0)))
 		{
 			targeted->takeDamage(attack_);
-			allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
-			allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-			std::cout << "I ATTACKED" << std::endl;
 		}
 		else
 		{
 			gameobjrenderer_->setForward((this->gameobjrenderer_->getPosition() - targeted->getRenderer().getPosition()).Normalized());
 			gameobjrenderer_->translate(gameobjrenderer_->getForward(), 50 * dt);
-			allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
-			allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-			std::cout << "I AM ATTACKING" << std::endl;
 		}
 	}
 	else if (this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
@@ -96,14 +92,11 @@ void Molerat::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*
 	{
 		if (this->allAABB[0]->AABBtoAABB(*i->getAABB(0)))
 		{
-			std::cout << i->getName() << std::endl;
 			targeted = i;
 			MoleratBev = BEHAVIOUR_ATTACK;
 			break;
 		}
 	}
-	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
-	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 }
 
 void Molerat::PlayerInRange(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
@@ -126,6 +119,4 @@ void Molerat::PlayerInRange(double dt, std::list<Building*> Buildings, std::vect
 	{
 		MoleratBev = BEHAVIOUR_IDLE;
 	}
-	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
-	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 }

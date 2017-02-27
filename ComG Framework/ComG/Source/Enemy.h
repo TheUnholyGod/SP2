@@ -17,6 +17,7 @@ protected:
 	}TYPE;
 	std::string location_;	//Location of Enemy
 	float health_;			//Enemy HP
+	float max_health_;			//Enemy HP
 	float defence_;			//Enemy Armour
 	float attack_;			//Enemy Damage
 	const std::list<Ability*> Abilities;
