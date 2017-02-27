@@ -18,6 +18,9 @@ private:
 	static Player* player;
 	Weapon* playerweapon_;
 
+	std::clock_t Pstart;
+	float PTime;
+
 public:
 	static Player* getplayer();
 	const int gethealth();

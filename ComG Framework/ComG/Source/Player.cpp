@@ -6,12 +6,15 @@
 
 Player* Player::player;
 
-Player::Player() : GameObject(0, "", "") , movement_speed_(50)
+Player::Player() : GameObject(0, "", "") , movement_speed_(50) , health_(100)
 {
 	gameobjrenderer_ = new Renderer(Vector3(0, 0, 0), Vector3(1, 0, 0));
 	Inventory::getinventory();
 	AABB* temp = new AABB(Vector3(5, 5, 5), gameobjrenderer_->getPosition());
 	allAABB.push_back(temp);
+
+	PTime = 0;
+	Pstart = 0;
 }
 
 Player* Player::getplayer() 
@@ -45,7 +48,10 @@ void Player::receivedamage()
 
 bool Player::isDead()
 {
-	return 0;
+	if (health_ == 0)
+		return true;
+	else
+		return false;
 }
 
 Player::~Player()
@@ -63,6 +69,7 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 {
 	bool move = false;
 	bool move2 = false;
+	PTime = std::clock();
 
 	Vector3 camForwardTemp = camForward;
 	camForwardTemp.y = 0;
@@ -181,8 +188,9 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 			std::cout << i->getID() << std::endl;
 		}
 	}
-	if (Application::IsKeyPressed('E'))
+	if (Application::IsKeyPressed('E') && (PTime - Pstart > 180))
 	{
+		Pstart = std::clock();
 		std::vector<int> pos;
 		int counter = 0;
 		int eraser = 0;

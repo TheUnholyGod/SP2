@@ -169,6 +169,13 @@ class SceneTest : public Scene
 		NUM_LOOTGEOMETERY,
 	};
 
+	enum PLAYER
+	{
+		GEO_HEALTHBAR,
+		GEO_HEALTH,
+		NUM_PLAYERGEOMETRY,
+	};
+
 public:
 	SceneTest();
 	~SceneTest();
@@ -186,6 +193,7 @@ private:
 	std::array<Mesh*, NUM_PROJECTILEGEOMETERY> projectileMeshList;
 	std::array<Mesh*, NUM_FOODGEOMETERY> foodMeshList;
 	std::array<Mesh*, NUM_LOOTGEOMETERY> lootMeshList;
+	std::array<Mesh*, NUM_PLAYERGEOMETRY> playerMeshList;
 	std::array<Mesh*, NUM_SPRITES> spritesList;
 
 	unsigned m_programID;
@@ -246,6 +254,8 @@ private:
 	Vector3 Lootpos;
 	void SpawnLoot(int key);
 	void RenderLoot();
+
+	void RenderHealth();
 
 	Menu pauseMenu;
 	int windowX;

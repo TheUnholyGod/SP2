@@ -167,6 +167,12 @@ void SceneTest::Init()
 
 	meshList[GEO_SCAR_CASING] = MeshBuilder::GenerateOBJ("Scar_Casing", "OBJ//Scar_Casing.obj");
 	meshList[GEO_SCAR_CASING]->textureID = LoadTGA("Image//ScarUV.tga");
+
+	playerMeshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Health", Color(0, 1, 0), 1.f);
+	//playerMeshList[GEO_HEALTH]->textureID = LoadTGA("Image//inventoryMenu.tga");
+
+	playerMeshList[GEO_HEALTH] = MeshBuilder::GenerateText("HP", 16, 16);
+	playerMeshList[GEO_HEALTH]->textureID = LoadTGA("Image//calibri.tga");
 	
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
@@ -301,6 +307,7 @@ void SceneTest::Render()
 	RenderProjectile();
 	RenderItems();
 	RenderLoot();
+	RenderHealth();
 
 	static double timee = 0.0;
 	modelStack.PushMatrix();
@@ -751,6 +758,18 @@ void SceneTest::RenderLoot()
 	}
 }
 
+void SceneTest::RenderHealth()
+{
+	int hp = Player::getplayer()->gethealth();
+	if (hp > 0)
+	{
+		//std::cout << hp << std::endl;
+		RenderMeshOnScreen(playerMeshList[GEO_HEALTHBAR], 7, 56, 10, 6);
+		RenderTextOnScreen(playerMeshList[GEO_HEALTH], std::to_string(hp), Color(0, 0, 1), 4.f, 1.f, 14.f);
+		
+	}
+}
+
 void SceneTest::RenderMeshOnScreen(Mesh* mesh, int x, int y, int sizex, int sizey)
 {
 	glDisable(GL_DEPTH_TEST);
@@ -846,9 +865,8 @@ void SceneTest::UpdateEnemy(double dt)
 		i->Update(dt, BaseBuildings, BaseEnemy);
 		if (i->isDead())
 		{
-			LootID = GenerateLoot();
 			Lootpos = i->getRenderer().getPosition();
-			SpawnLoot(LootID);
+			SpawnLoot(GenerateLoot());
 			pos.push_back(counter);
 		}
 		counter++;
