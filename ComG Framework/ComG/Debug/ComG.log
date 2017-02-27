@@ -1,15 +1,9 @@
-﻿  SceneMainMenu.cpp
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenemainmenu.cpp(157): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenemainmenu.cpp(556): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenemainmenu.cpp(557): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenemainmenu.cpp(562): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenemainmenu.cpp(707): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenemainmenu.cpp(708): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  LINK : C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe not found or not built by the last incremental link; performing full link
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
+﻿Build started 2/27/2017 1:51:50 PM.
+     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         ComG.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.exe
+     1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.61
