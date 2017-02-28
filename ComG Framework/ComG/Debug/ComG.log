@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 2/28/2017 10:11:16 AM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -130,3 +131,11 @@
 Build succeeded.
 
 Time Elapsed 00:00:08.83
+=======
+﻿  Ant_Hill.cpp
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
+>>>>>>> e00f12e9a494cc7ba84848e94e65774b63d590aa

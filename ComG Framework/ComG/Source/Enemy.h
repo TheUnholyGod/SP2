@@ -17,6 +17,7 @@ protected:
 	}TYPE;
 	std::string location_;	//Location of Enemy
 	float health_;			//Enemy HP
+	float max_health_;			//Enemy HP
 	float defence_;			//Enemy Armour
 	float attack_;			//Enemy Damage
 	const std::list<Ability*> Abilities;
@@ -26,8 +27,8 @@ public:
 	virtual ~Enemy();
 	virtual void Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy) {}
 	const std::string getName() { return kname_; }
-	void takeDamage(int dmg) { health_ -= (int)(dmg); if (health_ < 0) { health_ = 0; }  }
-	bool isDead() { if (!health_) return true; else return false; }
+	void takeDamage(int dmg) { health_ -= (int)(dmg); if (health_ < 1) { health_ = 0; }  }
+	bool isDead() { if (health_ < 1.f) return true; else return false; }
 	bool checkCollision(std::list<Building*>,std::vector<Enemy*>);
 };
 

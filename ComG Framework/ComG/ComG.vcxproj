@@ -94,6 +94,7 @@
     <ClCompile Include="Source\AbilityDataBase.cpp" />
     <ClCompile Include="Source\Acrid_Plant.cpp" />
     <ClCompile Include="Source\Adhesives.cpp" />
+    <ClCompile Include="Source\Ant.cpp" />
     <ClCompile Include="Source\Ant_Hill.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Barn.cpp" />
@@ -199,6 +200,7 @@
     <ClInclude Include="Source\Adhesives.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Ant.h" />
     <ClInclude Include="Source\Ant_Hill.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Barn.h" />

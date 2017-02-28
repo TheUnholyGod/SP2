@@ -167,11 +167,23 @@ void SceneTest::Init()
 
 	meshList[GEO_SCAR_CASING] = MeshBuilder::GenerateOBJ("Scar_Casing", "OBJ//Scar_Casing.obj");
 	meshList[GEO_SCAR_CASING]->textureID = LoadTGA("Image//ScarUV.tga");
+
+	playerMeshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Health", Color(0, 1, 0), 1.f);
+	//playerMeshList[GEO_HEALTHBAR]->textureID = LoadTGA("Image//inventoryMenu.tga");
+
+	playerMeshList[GEO_HEALTH] = MeshBuilder::GenerateText("HP", 16, 16);
+	playerMeshList[GEO_HEALTH]->textureID = LoadTGA("Image//calibri.tga");
 	
+	playerMeshList[GEO_INTERACT] = MeshBuilder::GenerateText("Interact", 16, 16);
+	playerMeshList[GEO_INTERACT]->textureID = LoadTGA("Image//calibri.tga");
+
+	playerMeshList[GEO_INTERACT_IMG] = MeshBuilder::GenerateQuad("InteractImage", Color(0, 0, 0), 1.f);
+	//playerMeshList[GEO_INTERACT_IMG]->textureID = LoadTGA("Image//inventoryMenu.tga");
+
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
-		enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
+		//enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
@@ -293,7 +305,7 @@ void SceneTest::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
-	RenderMesh(meshList[GEO_QUAD], false);
+	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
 
 	RenderEnemy();
@@ -301,6 +313,8 @@ void SceneTest::Render()
 	RenderProjectile();
 	RenderItems();
 	RenderLoot();
+	RenderHealth();
+	RenderInteract();
 
 	static double timee = 0.0;
 
@@ -616,10 +630,15 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-
+		if (BaseEnemy.size() < 20)
+		{
+			//BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+			if(BaseEnemy.size() < 3)
+			BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(8));
+		}
 	if (BaseEnemy.size() < 20)
 	{
-		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
+		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(2);
 		BaseEnemy.push_back(temp);
 	}
 }
@@ -668,6 +687,13 @@ void SceneTest::SpawnProjectile(Vector3 position, Vector3 forward)
 void SceneTest::RenderProjectile()
 {
 	for (auto &i : BaseProjectile)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(enemyMeshList[1], true);
+		modelStack.PopMatrix();
+	}
+	for (auto &i : Acrid_Plant::acidProjectile)
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
@@ -725,6 +751,26 @@ void SceneTest::RenderLoot()
 			RenderMesh(lootMeshList[i->getID() - ItemID], true);
 			modelStack.PopMatrix();
 		}
+	}
+}
+
+void SceneTest::RenderHealth()
+{
+	int hp = Player::getplayer()->gethealth();
+	if (hp > 0)
+	{
+		//std::cout << hp << std::endl;
+		RenderMeshOnScreen(playerMeshList[GEO_HEALTHBAR], 7, 56, 10, 6);
+		RenderTextOnScreen(playerMeshList[GEO_HEALTH], std::to_string(hp), Color(0, 0, 1), 4.f, 1.f, 14.f);
+	}
+}
+
+void SceneTest::RenderInteract()
+{
+	if (Player::getplayer()->getInteract())
+	{
+		RenderMeshOnScreen(playerMeshList[GEO_INTERACT_IMG], 39, 8, 42, 4);
+		RenderTextOnScreen(playerMeshList[GEO_INTERACT], "Press 'E' to Interact", Color(0, 0, 1), 2.f, 10.f, 4.f);
 	}
 }
 
@@ -823,9 +869,8 @@ void SceneTest::UpdateEnemy(double dt)
 		i->Update(dt, BaseBuildings, BaseEnemy);
 		if (i->isDead())
 		{
-			LootID = GenerateLoot();
 			Lootpos = i->getRenderer().getPosition();
-			SpawnLoot(LootID);
+			SpawnLoot(GenerateLoot());
 			pos.push_back(counter);
 		}
 		counter++;

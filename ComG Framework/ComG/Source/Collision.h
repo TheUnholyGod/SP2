@@ -18,6 +18,7 @@ public:
 	AABB(Vector3, Vector3);
 	~AABB();
 	void setMinMax(Vector3);
+	void resizeAABB(Vector3);
 	void reset();
 	bool pointtoAABB(Vector3 pos, Vector3 forward);
 	bool AABBtoAABB(AABB box);

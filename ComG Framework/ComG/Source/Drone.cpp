@@ -1,7 +1,11 @@
 #include "Drone.h"
 #include "Player.h"
 
+<<<<<<< HEAD
 Drone::Drone() : Enemy(3, "OBJ//Drone01.obj", "Image//Drone01UV.tga", "Drone", NORMAL, "City", 100, 5, 4)
+=======
+Drone::Drone() : Enemy(4, "OBJ//MoleRat.obj", "Image//MoleratUV.tga", "Drone", NORMAL, "City", 100, 5, 4)
+>>>>>>> e00f12e9a494cc7ba84848e94e65774b63d590aa
 {
 	float temp1 = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().x;
 	float temp2 = 4;
