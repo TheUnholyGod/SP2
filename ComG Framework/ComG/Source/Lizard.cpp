@@ -90,6 +90,8 @@ void Lizard::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*>
 		scalar = 1;
 	}
 	gameobjrenderer_->setScaling(scalar);
+	allAABB[0]->resizeAABB(size[0] * scalar);
+	allAABB[1]->resizeAABB(size[1] * scalar);
 	if (this->allAABB[1]->AABBtoAABB(*Player::getplayer()->getAABB(0)))
 	{
 		isAttaacked = false;

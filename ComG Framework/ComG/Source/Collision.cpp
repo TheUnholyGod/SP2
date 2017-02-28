@@ -25,6 +25,12 @@ void AABB::setMinMax(Vector3 pos)
 	}
 }
 
+void AABB::resizeAABB(Vector3 size)
+{
+	max = defaultmax = size * (0.5, 0.5, 0.5) + defaultposition;
+	min = defaultmin = defaultposition - size * (0.5, 0.5, 0.5);
+}
+
 void AABB::reset()
 {
 	max = defaultmax;
