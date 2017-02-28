@@ -183,7 +183,7 @@ void SceneTest::Init()
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
-		//enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
+		enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
@@ -653,12 +653,13 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-		if (BaseEnemy.size() < 20)
-		{
-			//BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
-			if(BaseEnemy.size() < 3)
-			BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(8));
-		}
+	if (BaseEnemy.size() < 5)
+		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(8));
+	if (BaseEnemy.size() < 20)
+	{
+		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+	}
+
 	if (BaseEnemy.size() < 20)
 	{
 		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(2);

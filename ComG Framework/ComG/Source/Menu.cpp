@@ -608,7 +608,7 @@ void Menu::update()
 						}
 						start = std::clock();
 					}
-					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
+					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))//
 					{
 						craft = 2;
 						craftSelection = itemID + craftingSelection;
@@ -861,8 +861,7 @@ void Menu::Render()
 		}
 		if (menuType == 4) //Inventory
 		{
-
-			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
+			//RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
 			float y = 45.f;
 			y1 = 45.f;
 			float y2 = 45.f;
