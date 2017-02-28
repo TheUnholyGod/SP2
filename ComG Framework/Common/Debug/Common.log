@@ -1,5 +1,45 @@
+<<<<<<< HEAD
 ﻿Build started 27/2/2017 11:07:21 PM.
 
 Build succeeded.
 
 Time Elapsed 00:00:00.03
+=======
+<<<<<<< HEAD
+﻿Build started 2/27/2017 9:48:07 PM.
+     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Programs - Work\Visual Studios 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MatrixStack.cpp Source\Mtx44.cpp Source\Vector3.cpp Source\timer.cpp
+         timer.cpp
+         Vector3.cpp
+         Mtx44.cpp
+         MatrixStack.cpp
+         Generating Code...
+       Lib:
+         E:\Programs - Work\Visual Studios 2013\VC\bin\Lib.exe /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\Common.lib" /NOLOGO Debug\MatrixStack.obj
+         Debug\Mtx44.obj
+         Debug\timer.obj
+         Debug\Vector3.obj
+         Common.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\Common.lib
+     1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.16
+=======
+<<<<<<< HEAD
+﻿Build started 27/2/2017 4:20:53 PM.
+
+Build succeeded.
+
+Time Elapsed 00:00:00.01
+=======
+﻿  Vector3.cpp
+  timer.cpp
+  Mtx44.cpp
+  MatrixStack.cpp
+  Generating Code...
+  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\Common.lib
+>>>>>>> bf2d4010c269d2c3e9d8058c003bebc6caf8fde4
+>>>>>>> ccf80c50d26637c6a0a5debc8420c4ab00192b56
+>>>>>>> 5cee801aa8db87bcc890e52edbaa8ab48a983b4b

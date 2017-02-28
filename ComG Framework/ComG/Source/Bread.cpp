@@ -1,4 +1,5 @@
 #include "Bread.h"
+#include "ItemFactory.h"
 
 Bread::Bread(Vector3 position) :Food(105,"Bread", "", "", CRAFTABLE, 50, 10)
 {
@@ -12,6 +13,8 @@ Bread::Bread(Vector3 position) :Food(105,"Bread", "", "", CRAFTABLE, 50, 10)
 		allAABB.push_back(temp);
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+
+	defRecipe[104] = 2; //Wheat
 }
 
 
