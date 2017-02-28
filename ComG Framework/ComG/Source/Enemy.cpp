@@ -2,7 +2,9 @@
 
 Enemy::Enemy(int no, std::string source_location, std::string texture_location, std::string name, ENEMYTYPE type, std::string locval, float hpval, float defval, float attval) : GameObject(no, source_location, texture_location), kname_(name)
 {
-	max_health_ = health_;
+	max_health_ = health_ = hpval;
+	defence_ = defval;
+	attack_ = attval;
 	gameobjrenderer_ = new Renderer(Vector3(5, 0, 5), Vector3(0, 0, 1));
 	AABB* temp = new AABB(Vector3(20,5,20), gameobjrenderer_->getPosition());
 	allAABB.push_back(temp);

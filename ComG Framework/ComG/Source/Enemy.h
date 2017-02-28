@@ -28,7 +28,7 @@ public:
 	virtual void Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy) {}
 	const std::string getName() { return kname_; }
 	void takeDamage(int dmg) { health_ -= (int)(dmg); if (health_ < 0) { health_ = 0; }  }
-	bool isDead() { if (!health_) return true; else return false; }
+	bool isDead() { if (health_ < 1.f) return true; else return false; }
 	bool checkCollision(std::list<Building*>,std::vector<Enemy*>);
 };
 

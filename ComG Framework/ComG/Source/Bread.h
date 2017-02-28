@@ -2,8 +2,7 @@
 #define _BREAD_H
 
 #include "Food.h"
-class Bread :
-	public Food
+class Bread : public Food
 {
 public:
 	Bread(Vector3 = (0, 0, 0));

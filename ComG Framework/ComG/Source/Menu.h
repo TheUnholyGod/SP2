@@ -61,12 +61,7 @@ class Menu
 		GEO_POTATO,
 		GEO_CARROT,
 		GEO_CABBAGE,
-		GEO_WHEAT,
-		GEO_BREAD,
-		GEO_VEGETABLESTEW,
-		GEO_DRINKINGWATER,
-		GEO_CARROTJUICE,
-		GEO_SALAD,
+		GEO_WHEAT,	
 		GEO_STONE,
 		GEO_IRON,
 		GEO_COPPER,
@@ -122,6 +117,22 @@ class Menu
 		GEO_WATERWELL,
 		NUM_BUILDINGGEOMETRY,
 	};
+	enum ITEMTYPE
+	{
+		ITEM_BREAD,
+		ITEM_VEGETABLESTEW,
+		ITEM_DRINKINGWATER,
+		ITEM_CARROTJUICE,
+		ITEM_SALAD,
+		ITEM_GLOCK,
+		ITEM_SCAR_H,
+		ITEM_M200,
+		ITEM_BOW,
+		ITEM_FARMINGHOE,
+		ITEM_KATANA,
+		ITEM_KNIFE,
+		NUM_ITEMTYPE,
+	};
 
 public:
 	Menu();
@@ -153,13 +164,20 @@ public:
 	double cursorX;
 	double cursorY;
 
-	typedef std::map<Item*, int> recipe;
-	recipe::iterator it;
+	typedef std::map<Item*, int> buildingrecipe;
+	typedef std::map<int, int> itemrecipe;
 
-	recipe test;
+	buildingrecipe::iterator bit;
+	itemrecipe::iterator iit;
+
+	buildingrecipe bRecipe;
+	itemrecipe iRecipe;
 
 	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
+	std::array<Mesh*, NUM_ITEMTYPE> itemMeshList;
 	std::vector<std::string> buildingName;
+	std::vector<std::string> foodName;
+	std::vector<std::string> weaponName;
 	std::vector<std::string> resourceName;
 	std::vector<int> resourceQuantity;
 
@@ -173,6 +191,7 @@ public:
 	float y1;
 
 	const int buildingID;
+	int itemID;
 
 	int travelTo;
 	bool tpZone;

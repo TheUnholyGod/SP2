@@ -11,7 +11,7 @@ private:
 	Vector3 forward_, position_, up_, right_;
 	Mtx44 matrix_;
 	float rotatemax;
-	int scaling;
+	float scaling;
 public:
 	Renderer();
 	Renderer(Vector3 = (0,0,5), Vector3 = (1,0,0));
@@ -26,7 +26,7 @@ public:
 	Mtx44 getMatrix();
 	void setPosition(Vector3 newposition) { position_ = newposition; }
 	void rotate(Vector3 axisofrotate, double rotatespeed, Vector3 target);
-	void setScaling(int scale) { scaling = scale; }
+	void setScaling(float scale) { scaling = scale; }
 	int getScaling() { return scaling; }
 };
 

@@ -11,6 +11,7 @@ Lizard::Lizard() : Enemy(2, "OBJ//Lizard.obj", "Image//LizardUV.tga", "Lizard", 
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 	LizardBev = BEHAVIOUR_IDLE;
 	isAttaacked = false;
+	max_size_ = Randomizer::generate_range(1, 10);
 }
 
 Lizard::~Lizard()
@@ -77,8 +78,8 @@ void Lizard::Attack(double dt, std::list<Building*> Buildings, std::vector<Enemy
 
 void Lizard::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
 {
-	health_ += (1 / 10.f) * dt;
-	std::cout << health_ << std::endl;
+	if (health_ / 100 < max_size_)
+		health_ += (5 / 1.f) * dt;
 	float scalar = health_ / 100.f;
 	if (scalar < 1)
 	{
