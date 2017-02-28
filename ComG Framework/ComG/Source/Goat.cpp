@@ -1,7 +1,7 @@
 #include "Goat.h"
 #include "Randomizer.h"
 
-Goat::Goat() : Enemy(8, "OBJ//Goat.obj", "", "Goat", NORMAL, "Forest", 100, 5, 4)
+Goat::Goat() : Enemy(8, "OBJ//Goat.obj", "Image//GoatUV.tga", "Goat", NORMAL, "Forest", 100, 5, 4)
 {
 	float x = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().x;
 	float y = 0;
@@ -12,6 +12,9 @@ Goat::Goat() : Enemy(8, "OBJ//Goat.obj", "", "Goat", NORMAL, "Forest", 100, 5, 4
 	goalreached = true;
 	newDIr = Vector3(1, 0, 0);
 	GoatBev = BEHAVIOUR_IDLE;
+	Iwait = std::clock();
+	ITime = 0;
+	ignoreothers = false;
 }
 
 Goat::~Goat()
@@ -25,15 +28,13 @@ void Goat::Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*>
 	case BEHAVIOUR_IDLE:
 		Move(dt, Buildings, Enemy);
 		break;
-	case BEHAVIOUR_PLAYER:
-		PlayerInRange(dt, Buildings, Enemy);
-		break;
-	case BEHAVIOUR_ATTACK:
-		Attack(dt, Buildings, Enemy);
+	case BEHAVIOUR_RUN:
+		Run(dt, Buildings, Enemy);
 		break;
 	default:
 		break;
 	}
+	//std::cout << "State:" << std::to_string(GoatBev) << std::endl;
 }
 
 void Goat::pathfinding()
@@ -47,31 +48,36 @@ void Goat::pathfinding()
 	gameobjrenderer_->setForward(newDIr);
 }
 
-void Goat::Attack(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
-{
-	std::list<Building*> temp;
-	if (!this->checkCollision(temp, Enemy))
+void Goat::Run(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
+{	
+	std::cout << "ITime: " << ITime << std::endl;
+	ITime = (std::clock() - Iwait) / (int)CLOCKS_PER_SEC;
+	
+	
+	if (!this->checkCollision(Buildings, Enemy) && ignoreothers == false)
 	{
-		if (targeted->getAABB(0)->AABBtoAABB(*this->getAABB(0)))
-		{
-			targeted->takeDamage(attack_);
-			allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
-			allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-			//std::cout << "I ATTACKED" << std::endl;
-		}
-		else
-		{
-			gameobjrenderer_->setForward((this->gameobjrenderer_->getPosition() - targeted->getRenderer().getPosition()).Normalized());
-			gameobjrenderer_->translate(gameobjrenderer_->getForward(), 50 * dt);
-			allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
-			allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-			//std::cout << "I AM ATTACKING" << std::endl;
-		}
+		gameobjrenderer_->setForward((this->gameobjrenderer_->getPosition() - Player::getplayer()->getRenderer().getPosition()).Normalized());
+		gameobjrenderer_->translate(this->gameobjrenderer_->getForward(), 50 * dt);
 	}
-	else if (this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
+	else if (this->checkCollision(Buildings, Enemy) && ignoreothers == false)
 	{
-		GoatBev = BEHAVIOUR_PLAYER;
+		gameobjrenderer_->setForward(-gameobjrenderer_->getRight());
+		gameobjrenderer_->translate(this->gameobjrenderer_->getForward(), 50 * dt);
+		ignoreothers = true;
 	}
+
+	if (ignoreothers == true)
+	{
+		gameobjrenderer_->setForward((-gameobjrenderer_->getPosition() + Player::getplayer()->getRenderer().getPosition()).Normalized());
+		gameobjrenderer_->translate(this->gameobjrenderer_->getForward(), 80 * dt);
+	}
+
+	if (!this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()) && ignoreothers == false)
+	{
+		GoatBev = BEHAVIOUR_IDLE;
+	}
+	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 }
 
 void Goat::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
@@ -87,43 +93,9 @@ void Goat::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*> E
 		gameobjrenderer_->setForward(-gameobjrenderer_->getRight());
 		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
 	}
-	else if (this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
+	if (this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
 	{
-		GoatBev = BEHAVIOUR_PLAYER;
-	}
-	for (auto &i : Buildings)
-	{
-		if (this->allAABB[0]->AABBtoAABB(*i->getAABB(0)))
-		{
-			std::cout << i->getName() << std::endl;
-			targeted = i;
-			GoatBev = BEHAVIOUR_ATTACK;
-			break;
-		}
-	}
-	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
-	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-}
-
-void Goat::PlayerInRange(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
-{
-	if (!this->checkCollision(Buildings, Enemy))
-	{
-		if (goalreached)
-			pathfinding();
-		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
-		if (gameobjrenderer_->getPosition() == goal)
-			goalreached = true;
-
-	}
-	else if (this->checkCollision(Buildings, Enemy))
-	{
-		gameobjrenderer_->setForward(-gameobjrenderer_->getRight());
-		gameobjrenderer_->translate(gameobjrenderer_->getForward(), 35 * dt);
-	}
-	else if (!this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
-	{
-		GoatBev = BEHAVIOUR_IDLE;
+		GoatBev = BEHAVIOUR_RUN;
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());

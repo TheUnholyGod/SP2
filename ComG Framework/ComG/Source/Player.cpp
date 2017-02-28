@@ -12,6 +12,7 @@ Player::Player() : GameObject(0, "", "") , movement_speed_(50) , health_(100)
 	Inventory::getinventory();
 	AABB* temp = new AABB(Vector3(5, 5, 5), gameobjrenderer_->getPosition());
 	allAABB.push_back(temp);
+	Interact = false;
 
 	PTime = 0;
 	Pstart = 0;
@@ -63,6 +64,11 @@ void  Player::setWeapon(int key)
 {
 	playerweapon_ = (Weapon*)ItemFactory::getItemFactory()->generateItem(key);
 	playerweapon_->getRenderer().setForward(player->getRenderer().getForward());
+}
+
+bool Player::getInteract()
+{
+	return Interact;
 }
 
 void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Building*> buildings,std::vector<Enemy*> enemies, std::vector<Item*> items, std::vector<Item*> Loots)
@@ -188,6 +194,45 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 			std::cout << i->getID() << std::endl;
 		}
 	}
+
+	//Interaction
+	bool checkI = false;
+	std::vector <bool> a;
+
+	for (auto &i : items)
+	{
+		checkI = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+		a.push_back(checkI);
+	}
+	for (int i = 0; i < a.size(); i++)
+	{
+		if (a[i] == true)
+		{
+			Interact = true;
+			break;
+		}
+		else
+			Interact = false;
+	}
+
+	if (Interact == false) {
+		for (auto &i : Loots)
+		{
+			checkI = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+			a.push_back(checkI);
+		}
+		for (int i = 0; i < a.size(); i++)
+		{
+			if (a[i] == true)
+			{
+				Interact = true;
+				break;
+			}
+			else
+				Interact = false;
+		}
+	}
+
 	if (Application::IsKeyPressed('E') && (PTime - Pstart > 180))
 	{
 		Pstart = std::clock();
@@ -214,7 +259,7 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		{
 			bool pickup1 = false;
 			pickup1 = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
-			if (pickup1)
+			if (pickup1 && !i->getpickedup())
 			{
 				std::cout << i->getID() <<"picked up" << std::endl;
 				i->update();

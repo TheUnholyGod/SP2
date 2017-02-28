@@ -169,11 +169,17 @@ void SceneTest::Init()
 	meshList[GEO_SCAR_CASING]->textureID = LoadTGA("Image//ScarUV.tga");
 
 	playerMeshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Health", Color(0, 1, 0), 1.f);
-	//playerMeshList[GEO_HEALTH]->textureID = LoadTGA("Image//inventoryMenu.tga");
+	//playerMeshList[GEO_HEALTHBAR]->textureID = LoadTGA("Image//inventoryMenu.tga");
 
 	playerMeshList[GEO_HEALTH] = MeshBuilder::GenerateText("HP", 16, 16);
 	playerMeshList[GEO_HEALTH]->textureID = LoadTGA("Image//calibri.tga");
 	
+	playerMeshList[GEO_INTERACT] = MeshBuilder::GenerateText("Interact", 16, 16);
+	playerMeshList[GEO_INTERACT]->textureID = LoadTGA("Image//calibri.tga");
+
+	playerMeshList[GEO_INTERACT_IMG] = MeshBuilder::GenerateQuad("InteractImage", Color(0, 0, 0), 1.f);
+	//playerMeshList[GEO_INTERACT_IMG]->textureID = LoadTGA("Image//inventoryMenu.tga");
+
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
@@ -308,6 +314,7 @@ void SceneTest::Render()
 	RenderItems();
 	RenderLoot();
 	RenderHealth();
+	RenderInteract();
 
 	static double timee = 0.0;
 	modelStack.PushMatrix();
@@ -646,17 +653,13 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-	if (BaseEnemy.size() < 20)
-	{
-		/*Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
-		BaseEnemy.push_back(temp);*/
-
-		if (BaseEnemy.size() < 1)
+		if (BaseEnemy.size() < 20)
 		{
-			Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(8);
-			BaseEnemy.push_back(temp);
+			//BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+
+			if(BaseEnemy.size() < 3)
+			BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(8));
 		}
-	}
 }
 
 void SceneTest::RenderEnemy()
@@ -771,6 +774,15 @@ void SceneTest::RenderHealth()
 		//std::cout << hp << std::endl;
 		RenderMeshOnScreen(playerMeshList[GEO_HEALTHBAR], 7, 56, 10, 6);
 		RenderTextOnScreen(playerMeshList[GEO_HEALTH], std::to_string(hp), Color(0, 0, 1), 4.f, 1.f, 14.f);
+	}
+}
+
+void SceneTest::RenderInteract()
+{
+	if (Player::getplayer()->getInteract())
+	{
+		RenderMeshOnScreen(playerMeshList[GEO_INTERACT_IMG], 39, 8, 42, 4);
+		RenderTextOnScreen(playerMeshList[GEO_INTERACT], "Press 'E' to Interact", Color(0, 0, 1), 2.f, 10.f, 4.f);
 	}
 }
 

@@ -119,8 +119,8 @@ class SceneTest : public Scene
 		GEO_WILDBOAR,
 		GEO_CENTIPEDE,
 		GEO_ANTHILL,
-		GEO_ACRIDPLANT,
-		GEO_SCARECROW,
+		GEO_ACIDPLANT,
+		GEO_SCARECROWMECH,
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
@@ -184,6 +184,8 @@ class SceneTest : public Scene
 	{
 		GEO_HEALTHBAR,
 		GEO_HEALTH,
+		GEO_INTERACT,
+		GEO_INTERACT_IMG,
 		NUM_PLAYERGEOMETRY,
 	};
 
@@ -267,6 +269,7 @@ private:
 	void RenderLoot();
 
 	void RenderHealth();
+	void RenderInteract();
 
 	Menu pauseMenu;
 	int windowX;
