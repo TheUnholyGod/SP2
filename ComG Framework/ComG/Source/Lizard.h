@@ -7,6 +7,7 @@
 class Lizard : public Enemy
 {
 private:
+	bool isAttaacked;
 	enum BEHAVIOUR
 	{
 		BEHAVIOUR_IDLE,

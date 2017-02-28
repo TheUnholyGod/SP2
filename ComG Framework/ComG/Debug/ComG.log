@@ -1,5 +1,7 @@
 ﻿  Lizard.cpp
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
 c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\lizard.cpp(52): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\lizard.cpp(53): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\lizard.cpp(80): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\lizard.cpp(87): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Debug\ComG.exe

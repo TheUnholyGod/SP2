@@ -6,7 +6,7 @@ Enemy::Enemy(int no, std::string source_location, std::string texture_location, 
 	gameobjrenderer_ = new Renderer(Vector3(5, 0, 5), Vector3(0, 0, 1));
 	AABB* temp = new AABB(Vector3(20,5,20), gameobjrenderer_->getPosition());
 	allAABB.push_back(temp);
-	AABB* temp2 = new AABB(Vector3(200, 200, 200), gameobjrenderer_->getPosition());
+	AABB* temp2 = new AABB(Vector3(150, 150, 150), gameobjrenderer_->getPosition());
 	allAABB.push_back(temp2);
 }
 
