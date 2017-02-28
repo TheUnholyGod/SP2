@@ -219,4 +219,5 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 			//counter++;
 		}
 	}
+	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 }

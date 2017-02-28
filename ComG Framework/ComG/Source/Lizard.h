@@ -16,6 +16,8 @@ private:
 		BEHAVIOUR_RETREAT,
 	};
 	BEHAVIOUR LizardBev;
+	std::clock_t attacktime;
+	float cooldown;
 public:
 	Lizard();
 	~Lizard();

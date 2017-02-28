@@ -12,6 +12,7 @@ Lizard::Lizard() : Enemy(2, "OBJ//Lizard.obj", "Image//LizardUV.tga", "Lizard", 
 	LizardBev = BEHAVIOUR_IDLE;
 	isAttaacked = false;
 	max_size_ = Randomizer::generate_range(1, 10);
+	cooldown = 0;
 }
 
 Lizard::~Lizard()
@@ -45,7 +46,8 @@ void Lizard::pathfinding()
 
 void Lizard::Attack(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
 {
-	if (isAttaacked)
+	attacktime = (std::clock() - cooldown) / (int)CLOCKS_PER_SEC;
+	if (!isAttaacked && attacktime > 5)
 	{
 		if (!checkCollision(Buildings, Enemy))
 		{
@@ -53,10 +55,11 @@ void Lizard::Attack(double dt, std::list<Building*> Buildings, std::vector<Enemy
 			{
 				Player::getplayer()->receivedamage(attack_);
 				isAttaacked = true;
+				cooldown = std::clock();
 			}
-			else if (this->allAABB[1]->AABBtoAABB(*Player::getplayer()->getAABB(0)))
+			else if (!this->allAABB[0]->AABBtoAABB(*Player::getplayer()->getAABB(0)))
 			{
-				gameobjrenderer_->setForward((this->gameobjrenderer_->getPosition() - Player::getplayer()->getRenderer().getPosition()).Normalized());
+				gameobjrenderer_->setForward((-this->gameobjrenderer_->getPosition() - Player::getplayer()->getRenderer().getPosition()).Normalized());
 				gameobjrenderer_->translate(this->gameobjrenderer_->getForward(), 25 * dt);
 			}
 		}
@@ -66,9 +69,10 @@ void Lizard::Attack(double dt, std::list<Building*> Buildings, std::vector<Enemy
 			gameobjrenderer_->translate(gameobjrenderer_->getForward(), 25 * dt);
 		}
 	}
-	else
+	else if(isAttaacked && attacktime < 5)
 	{
-		LizardBev = BEHAVIOUR_IDLE;
+		gameobjrenderer_->translate(this->gameobjrenderer_->getForward(), 25 * dt);
+		isAttaacked = false;
 	}
 	if (health_ < (max_health_ / 2))
 	{
@@ -86,8 +90,11 @@ void Lizard::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*>
 		scalar = 1;
 	}
 	gameobjrenderer_->setScaling(scalar);
-	if (this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
+	allAABB[0]->resizeAABB(size[0] * scalar);
+	allAABB[1]->resizeAABB(size[1] * scalar);
+	if (this->allAABB[1]->AABBtoAABB(*Player::getplayer()->getAABB(0)))
 	{
+		isAttaacked = false;
 		LizardBev = BEHAVIOUR_ATTACK;
 	}
 }
@@ -100,7 +107,7 @@ void Lizard::Retreat(double dt, std::list<Building*> Buildings, std::vector<Enem
 		{
 			try
 			{
-				gameobjrenderer_->setForward(-(this->gameobjrenderer_->getPosition() - Player::getplayer()->getRenderer().getPosition()).Normalized());
+				gameobjrenderer_->setForward((this->gameobjrenderer_->getPosition() - Player::getplayer()->getRenderer().getPosition()).Normalized());
 			}
 			catch(DivideByZero)
 			{

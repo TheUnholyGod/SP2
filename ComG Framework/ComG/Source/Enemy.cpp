@@ -6,10 +6,13 @@ Enemy::Enemy(int no, std::string source_location, std::string texture_location, 
 	defence_ = defval;
 	attack_ = attval;
 	gameobjrenderer_ = new Renderer(Vector3(5, 0, 5), Vector3(0, 0, 1));
-	AABB* temp = new AABB(Vector3(20,5,20), gameobjrenderer_->getPosition());
-	allAABB.push_back(temp);
-	AABB* temp2 = new AABB(Vector3(150, 150, 150), gameobjrenderer_->getPosition());
-	allAABB.push_back(temp2);
+	size.push_back(Vector3(20, 5, 20));
+	size.push_back(Vector3(150, 150, 150));
+	for (auto &i : size)
+	{
+		AABB* temp = new AABB(i, gameobjrenderer_->getPosition());
+		allAABB.push_back(temp);
+	}
 }
 
 Enemy::~Enemy()
