@@ -111,11 +111,11 @@ class SceneTest : public Scene
 	{
 		GEO_MOLERAT,
 		GEO_LIZARD,
-		GEO_CYBORGMUTT,
-		GEO_DRONES,
-		GEO_ROGUEMECHS,
-		GEO_PATROLBOTS,
-		GEO_DEER,
+		GEO_CYBORDMUTT,
+		GEO_DRONE,
+		GEO_PATROLBOT,
+		GEO_ROGUEMECH,
+		GEO_DEER,//TO REMOVE
 		GEO_GOAT,
 		GEO_WILDBOAR,
 		GEO_CENTIPEDE,
@@ -181,6 +181,15 @@ class SceneTest : public Scene
 		NUM_LOOTGEOMETERY,
 	};
 
+	enum PLAYER
+	{
+		GEO_HEALTHBAR,
+		GEO_HEALTH,
+		GEO_INTERACT,
+		GEO_INTERACT_IMG,
+		NUM_PLAYERGEOMETRY,
+	};
+
 public:
 	SceneTest();
 	~SceneTest();
@@ -198,6 +207,7 @@ private:
 	std::array<Mesh*, NUM_PROJECTILEGEOMETERY> projectileMeshList;
 	std::array<Mesh*, NUM_FOODGEOMETERY> foodMeshList;
 	std::array<Mesh*, NUM_LOOTGEOMETERY> lootMeshList;
+	std::array<Mesh*, NUM_PLAYERGEOMETRY> playerMeshList;
 	std::array<Mesh*, NUM_SPRITES> spritesList;
 
 	unsigned m_programID;
@@ -258,6 +268,9 @@ private:
 	Vector3 Lootpos;
 	void SpawnLoot(int key);
 	void RenderLoot();
+
+	void RenderHealth();
+	void RenderInteract();
 
 	Menu pauseMenu;
 	int windowX;
