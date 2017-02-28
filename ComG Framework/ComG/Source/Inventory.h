@@ -31,7 +31,7 @@ public:
 	std::string getitemname();
 	int getsize();
 	~Inventory();
-	
+	std::map<int, int> getInventoryContents() { return inv; }
 protected:
 	std::string itemname_;
 	const std::string getName() { return itemname_; }

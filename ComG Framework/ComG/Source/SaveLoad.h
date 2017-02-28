@@ -30,6 +30,8 @@ public:
 	static void NewGame(int);
 	char* getBlank() { return &blank; }
 	~SaveLoad();
+	static void SaveInv(int);
+	static void LoadInv(int);
 };
 
 #endif
