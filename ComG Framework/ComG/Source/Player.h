@@ -20,6 +20,10 @@ private:
 	float health_;
 	float hunger_;
 	float movement_speed_;
+	bool Interact;
+
+	std::clock_t Pstart;
+	float PTime;
 
 public:
 	static Player* getplayer();
@@ -31,6 +35,8 @@ public:
 	void Update(Vector3, Vector3, double, std::list<Building*>, std::vector<Enemy*> enemies, std::vector<Item*> Items, std::vector<Item*> Loots);
 	Weapon* getWeapon() { return playerweapon_; }
 	void setWeapon(int);
+	bool getInteract();
+	
 	~Player();
 };
 
