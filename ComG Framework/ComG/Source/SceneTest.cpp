@@ -642,7 +642,7 @@ void SceneTest::SpawnEnemy(double dt)
 
 	if (BaseEnemy.size() < 20)
 	{
-		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
+		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(12);
 		BaseEnemy.push_back(temp);
 	}
 }
@@ -691,6 +691,13 @@ void SceneTest::SpawnProjectile(Vector3 position, Vector3 forward)
 void SceneTest::RenderProjectile()
 {
 	for (auto &i : BaseProjectile)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(enemyMeshList[1], true);
+		modelStack.PopMatrix();
+	}
+	for (auto &i : Acrid_Plant::acidProjectile)
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
