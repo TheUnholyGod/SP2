@@ -58,7 +58,6 @@ void Molerat::Attack(double dt, std::list<Building*> Buildings, std::vector<Enem
 			targeted->takeDamage(attack_);
 			allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 			allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-			std::cout << "I ATTACKED" << std::endl;
 		}
 		else
 		{
@@ -66,7 +65,6 @@ void Molerat::Attack(double dt, std::list<Building*> Buildings, std::vector<Enem
 			gameobjrenderer_->translate(gameobjrenderer_->getForward(), 50 * dt);
 			allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 			allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-			std::cout << "I AM ATTACKING" << std::endl;
 		}
 	}
 	else if (this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
