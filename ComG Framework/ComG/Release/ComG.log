@@ -1,40 +1,33 @@
-﻿Build started 28/2/2017 2:01:15 PM.
+﻿Build started 28/2/2017 3:25:35 PM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glew\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glfw\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneManager.cpp Source\SceneTest.cpp
-         SceneManager.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glew\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glfw\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Ant.cpp Source\Ant_Hill.cpp Source\EnemyDataBase.cpp Source\EnemyFactory.cpp
+         Ant.cpp
      1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
      1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\FastTravelRoom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         SceneTest.cpp
+     1>Source\Ant.cpp(6): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>Source\Ant.cpp(7): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+         Ant_Hill.cpp
      1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
      1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
-     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\FastTravelRoom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\DefenceTower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(171): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneTest.cpp(176): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneTest.cpp(181): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneTest.cpp(186): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneTest.cpp(191): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\SceneTest.cpp(223): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(227): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(237): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(665): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(667): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(772): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(773): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(791): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\Ant_Hill.cpp(5): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>Source\Ant_Hill.cpp(6): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+         EnemyDataBase.cpp
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+         EnemyFactory.cpp
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glew\lib" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Ability.obj
          Release\AbilityDataBase.obj
          Release\Acrid_Plant.obj
          Release\Adhesives.obj
+         Release\Ant.obj
          Release\Ant_Hill.obj
          Release\Application.obj
          Release\Barn.obj
@@ -139,4 +132,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:10.05
+Time Elapsed 00:00:13.96
