@@ -94,6 +94,7 @@ void Camera3::Update(double dt, Vector3 charpos,Vector3 righto,Vector3 for_what,
 			Reset();
 		}
 		pitch = 0;
+		yaw = 0;
 		SetCursorPos(windowX / 2, windowY / 2);
 		point.x = windowX / 2;
 		point.y = windowY / 2;

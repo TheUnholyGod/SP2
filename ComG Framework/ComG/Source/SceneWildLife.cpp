@@ -512,7 +512,7 @@ void SceneWildLife::RenderTextOnScreen(Mesh* mesh, std::string text, Color color
 void SceneWildLife::SpawnEnemy(double dt)
 {
 	if (ForestEnemy.size() < 5)
-		ForestEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(8));
+		ForestEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(12));
 }
 
 void SceneWildLife::UpdateEnemy(double dt)

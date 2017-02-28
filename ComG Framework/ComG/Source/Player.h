@@ -17,6 +17,10 @@ private:
 	Player();
 	static Player* player;
 	Weapon* playerweapon_;
+	float health_;
+	float hunger_;
+	float movement_speed_;
+	bool Interact;
 
 	std::clock_t Pstart;
 	float PTime;
@@ -26,22 +30,14 @@ public:
 	const int gethealth();
 	const int gethunger();
 	const int getattack();
-	void receivedamage();
+	void receivedamage(int dmg);
 	bool isDead();
 	void Update(Vector3, Vector3, double, std::list<Building*>, std::vector<Enemy*> enemies, std::vector<Item*> Items, std::vector<Item*> Loots);
 	Weapon* getWeapon() { return playerweapon_; }
 	void setWeapon(int);
 	bool getInteract();
-	AABB* getAABB();
 	
 	~Player();
-
-protected:
-	//Vector3 position_;
-	bool Interact;
-	float health_;
-	float hunger_;
-	float movement_speed_;
 };
 
 #endif

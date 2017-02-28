@@ -305,7 +305,7 @@ void SceneTest::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
-	RenderMesh(meshList[GEO_QUAD], false);
+	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
 
 	RenderEnemy();
@@ -656,10 +656,14 @@ void SceneTest::SpawnEnemy(double dt)
 		if (BaseEnemy.size() < 20)
 		{
 			//BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
-
 			if(BaseEnemy.size() < 3)
 			BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(8));
 		}
+	if (BaseEnemy.size() < 20)
+	{
+		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(2);
+		BaseEnemy.push_back(temp);
+	}
 }
 
 void SceneTest::RenderEnemy()
@@ -706,6 +710,13 @@ void SceneTest::SpawnProjectile(Vector3 position, Vector3 forward)
 void SceneTest::RenderProjectile()
 {
 	for (auto &i : BaseProjectile)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(enemyMeshList[1], true);
+		modelStack.PopMatrix();
+	}
+	for (auto &i : Acrid_Plant::acidProjectile)
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));

@@ -42,9 +42,9 @@ const int Player::getattack()
 	return 0;
 }
 
-void Player::receivedamage()
+void Player::receivedamage(int dmg)
 {
-
+	health_ -= dmg;
 }
 
 bool Player::isDead()
@@ -272,9 +272,5 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 			//counter++;
 		}
 	}
-}
-
-AABB* Player::getAABB()
-{
-	return allAABB[0];
+	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 }

@@ -14,6 +14,11 @@ VegetableStew::VegetableStew(Vector3 position) :Food(106,"Vegetable Stew", "", "
 		allAABB.push_back(temp);
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+
+	defRecipe[101] = 1; //Potato
+	defRecipe[102] = 1; //Cabbage
+	defRecipe[103] = 1; //Carrot
+	defRecipe[206] = 1; //Wood
 }
 
 

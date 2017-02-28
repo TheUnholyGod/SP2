@@ -14,6 +14,10 @@ Salad::Salad(Vector3 position) :Food(109,"Salad", "", "", CRAFTABLE, 25, 5)
 		allAABB.push_back(temp);
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+
+	defRecipe[102] = 1; //Cabbage
+	defRecipe[103] = 1; //Carrot
+	defRecipe[206] = 1; //Wood
 }
 
 

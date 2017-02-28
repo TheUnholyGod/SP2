@@ -5,6 +5,7 @@ Projectile::Projectile():Item(999,"","OBJ//Carrot.obj","Projectile"), proj_speed
 {
 	fired_ = false;
 	deletepls_ = false;
+	isAcid = false;
 }
 
 Projectile::~Projectile()
@@ -15,8 +16,17 @@ Projectile::~Projectile()
 void Projectile::FireProjectile(Vector3 pos, Vector3 forward)
 {
 	fired_ = true;
+	isAcid = false;
 	defaultpos = gameobjrenderer_->getPosition();
 	gameobjrenderer_->setPosition(pos);
+	gameobjrenderer_->setForward(forward);
+}
+void Projectile::FireAcidProjectile(Vector3 pos, Vector3 forward)
+{
+	fired_ = true;
+	isAcid = true;
+	defaultpos = gameobjrenderer_->getPosition();
+	gameobjrenderer_->setPosition(pos + Vector3(0, 1, 0));
 	gameobjrenderer_->setForward(forward);
 }
 
@@ -28,8 +38,19 @@ bool Projectile::hit(std::list<Building*>buildings, std::vector<Enemy*>enemies)
 		hit = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
 		if (hit)
 		{
-			i->takeDamage(attack_dmg_);
-			break;
+			if (i->getID() == 12)
+			{
+				if (!isAcid)
+				{
+					i->takeDamage(attack_dmg_);
+					break;
+				}
+			}
+			else
+			{
+				i->takeDamage(attack_dmg_);
+				break;
+			}
 		}
 	}
 	if (!hit)
@@ -55,9 +76,13 @@ void Projectile::update(double dt, std::list<Building*>buildings, std::vector<En
 
 	else
 	{
-		gameobjrenderer_->translate(gameobjrenderer_->getForward(), proj_speed_*dt);
+		if (isAcid)
+			gameobjrenderer_->translate(Vector3(gameobjrenderer_->getForward().x, (Player::getplayer()->getRenderer().getPosition().y - gameobjrenderer_->getPosition().y), gameobjrenderer_->getForward().z), proj_speed_*dt);
+		else
+			gameobjrenderer_->translate(gameobjrenderer_->getForward(), proj_speed_*dt);
 		if ((gameobjrenderer_->getPosition() - defaultpos).Length() > range_ || hit(buildings,enemies) || gameobjrenderer_->getPosition().y < 0)
 		{
+			//std::cout << Projectile::gameobjrenderer_->getPosition() << "Shots Hit!" << Player::getplayer()->getRenderer().getPosition() << std::endl;
 			deletepls_ = true;
 		}
 	}

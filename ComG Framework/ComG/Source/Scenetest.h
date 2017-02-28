@@ -15,6 +15,7 @@
 #include "Enemy.h"
 #include "Projectile.h" 
 #include "Menu.h"
+#include "Acrid_Plant.h"
 #include <vector>
 #include <array>
 
