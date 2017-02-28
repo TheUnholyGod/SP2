@@ -13,6 +13,7 @@ class Projectile :public Item
 private:
 	bool fired_;
 	bool deletepls_;
+	bool isAcid;
 	double proj_speed_;
 	float attack_dmg_;
 	float range_;
@@ -21,6 +22,8 @@ public:
 	Projectile();
 	~Projectile();
 	void FireProjectile(Vector3 pos, Vector3 forward);
+	void FireAcidProjectile(Vector3 pos, Vector3 forward);
+	void setProjectilespeed(double speed){ proj_speed_ = speed; }
 	bool hit(std::list<Building*>buildings, std::vector<Enemy*>enemies);
 	void update(double dt, std::list<Building*>buildings, std::vector<Enemy*>enemies);
 	bool toDelete() { return deletepls_; }

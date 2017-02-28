@@ -697,6 +697,13 @@ void SceneTest::RenderProjectile()
 		RenderMesh(enemyMeshList[1], true);
 		modelStack.PopMatrix();
 	}
+	for (auto &i : Acrid_Plant::acidProjectile)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(enemyMeshList[1], true);
+		modelStack.PopMatrix();
+	}
 }
 
 void SceneTest::SpawnItems(double dt)
