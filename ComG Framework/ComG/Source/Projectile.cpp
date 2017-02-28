@@ -82,7 +82,7 @@ void Projectile::update(double dt, std::list<Building*>buildings, std::vector<En
 			gameobjrenderer_->translate(gameobjrenderer_->getForward(), proj_speed_*dt);
 		if ((gameobjrenderer_->getPosition() - defaultpos).Length() > range_ || hit(buildings,enemies) || gameobjrenderer_->getPosition().y < 0)
 		{
-			std::cout << Projectile::gameobjrenderer_->getPosition() << "Shots Hit!" << Player::getplayer()->getRenderer().getPosition() << std::endl;
+			//std::cout << Projectile::gameobjrenderer_->getPosition() << "Shots Hit!" << Player::getplayer()->getRenderer().getPosition() << std::endl;
 			deletepls_ = true;
 		}
 	}

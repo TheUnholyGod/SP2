@@ -293,7 +293,7 @@ void SceneTest::Render()
 
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
-	RenderMesh(meshList[GEO_QUAD], false);
+	RenderMesh(meshList[GEO_QUAD], true);
 	modelStack.PopMatrix();
 
 	RenderEnemy();
