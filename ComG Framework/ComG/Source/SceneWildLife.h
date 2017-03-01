@@ -14,6 +14,8 @@
 #include "Building.h"
 #include "Enemy.h"
 #include "Menu.h"
+#include "Projectile.h"
+#include "Acrid_Plant.h"
 #include <vector>
 #include <array>
 
@@ -154,10 +156,19 @@ private:
 	void UpdateBuilding(double dt);
 	void RenderBuilding();
 
+	std::vector<Projectile*> ForestProjectile;
+	void SpawnProjectile(Vector3 position, Vector3 forward);
+	void RenderProjectile();
+	void UpdateProjectiles(double dt);
+
 	std::vector<Item*> ForestItems;
 	std::vector<Item*> ForestLoot;
 
 	void newForest();
+	std::clock_t Istart;
+	float ITime;
+	std::clock_t Pstart;
+	float PTime;
 };
 
 #endif

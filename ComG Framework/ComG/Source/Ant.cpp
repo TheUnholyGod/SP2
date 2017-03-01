@@ -4,11 +4,7 @@
 Ant::Ant() : Enemy(13, "OBJ//Ant.obj", "Image//Ant_Texture.tga", "AntHill", BOSS, "Base", 150, 20, 10)
 {
 	//my_hill = Ant_Hill::hills[Randomizer::generate_range(0,sizeof(Ant_Hill::hills))];
-<<<<<<< HEAD
-	float a_X = (my_hill->getRenderer().getPosition().x * my_hill->getRenderer().getScaling()) - Randomizer::generate_range((my_hill->getRenderer().getPosition().x),
-=======
 	/*float a_X = (my_hill->getRenderer().getPosition().x * my_hill->getRenderer().getScaling()) - Randomizer::generate_range((my_hill->getRenderer().getPosition().x),
->>>>>>> 9cc91eaf00a66be98b1e65622275e8541082eee7
 		                                    (my_hill->getRenderer().getPosition().x * my_hill->getRenderer().getScaling()));
 	float a_Z = (my_hill->getRenderer().getPosition().z * my_hill->getRenderer().getScaling()) - Randomizer::generate_range((my_hill->getRenderer().getPosition().z),
 		(my_hill->getRenderer().getPosition().z * my_hill->getRenderer().getScaling()));*/

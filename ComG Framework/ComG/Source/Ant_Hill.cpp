@@ -1,12 +1,7 @@
 #include "Ant_Hill.h"
 #include "Randomizer.h"
 
-<<<<<<< HEAD
 Ant_Hill::Ant_Hill() : Enemy(11, "OBJ//AntHill.obj", "Image//AntHill_Texture.tga", "AntHill", BOSS, "Base", 150, 20, 10)
-=======
-//std::vector<Enemy*> Ant_Hill::hills;
-Ant_Hill::Ant_Hill() : Enemy(11,"OBJ//AntHill.obj" ,"Image//AntHill_Texture.tga", "AntHill", BOSS, "Base", 150, 20, 10)
->>>>>>> 9cc91eaf00a66be98b1e65622275e8541082eee7
 {
 	float ah_X = Randomizer::generate_range(1, 100);
 	float ah_Z = Randomizer::generate_range(1, 100);
