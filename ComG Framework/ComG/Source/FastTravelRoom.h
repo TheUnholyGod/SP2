@@ -17,8 +17,6 @@ public:
 	virtual ~FastTravelRoom();
 
 	int get_Health();
-
-	static AABB* fastTravelling;
 	virtual void update(double dt);
 };
 

@@ -2,6 +2,9 @@
 
 POINT cursorPoint;
 
+bool Menu::tpZone = false;
+int Menu::menuType = 0;
+
 Menu::Menu() : buildingID(101), itemID(105)
 {
 	pause = false;
@@ -9,7 +12,6 @@ Menu::Menu() : buildingID(101), itemID(105)
 	isMenu = false;
 
 	craft = 0;
-	menuType = 0;
 	pauseSelection = 0;
 	optionSelection = 0;
 	buildSelection = 0;
@@ -330,29 +332,6 @@ void Menu::update()
 		}
 		start = std::clock();
 	}
-
-	if (FastTravelRoom::fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
-	{
-		if (!pause)
-		{
-			menuType = 5;
-			tpZone = true;
-		}
-	}
-	else if (!(FastTravelRoom::fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward())))
-	{
-		if (tpZone)
-		{
-			SetCursorPos(windowX / 2, windowY / 2);
-			menuType = 0;
-			pauseSelection = 0;
-			optionSelection = 0;
-			buildSelection = 0;
-			craftSelection = 0;
-			tpZone = false;
-		}
-	}
-
 	if (menuType == 0) //Options Menu
 	{
 		if (pause)
@@ -878,10 +857,10 @@ void Menu::Render()
 			y1 = 45.f;
 			float y2 = 45.f;
 
-			for (std::map<int, int>::iterator i = Inventory::getinventory()->inv.begin(); i != Inventory::getinventory()->inv.end(); i++)
+			for (auto &i : Inventory::getinventory()->getInventoryContents())
 			{
-				std::string quantity = std::to_string(i->second);
-				int key = i->first;
+				std::string quantity = std::to_string(i.second);
+				int key = i.first;
 				checkItem(key);
 				Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
 				std::string name = temp->getName();

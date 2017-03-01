@@ -159,12 +159,11 @@ void SaveLoad::SaveInv(int no)
 		first = false;
 	}
 	saver.close();
-	delete Inventory::getinventory();
 }
 
 void SaveLoad::LoadInv(int no)
 {
-	Inventory::getinventory();
+	Inventory::getinventory()->reset();
 	std::stringstream filename;
 	filename << "Saves//" << no << "//Inventory.txt";
 	std::string address;
