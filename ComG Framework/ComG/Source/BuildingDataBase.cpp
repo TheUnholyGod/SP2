@@ -66,12 +66,12 @@ BuildingDataBase::BuildingDataBase()
 	Buildingdatabase_[temp->getID()] = new WaterWell;
 	IDlist.push_back(temp->getID());
 	delete temp;
-	temp = new Tree;
-	Buildingdatabase_[temp->getID()] = new Tree;
-	IDlist.push_back(temp->getID());
-	delete temp;
 	temp = new CityBuilding1;
 	Buildingdatabase_[temp->getID()] = new CityBuilding1;
+	IDlist.push_back(temp->getID());
+	delete temp;
+	temp = new Tree;
+	Buildingdatabase_[temp->getID()] = new Tree;
 	IDlist.push_back(temp->getID());
 	delete temp;
 

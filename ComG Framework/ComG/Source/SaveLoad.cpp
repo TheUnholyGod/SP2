@@ -136,6 +136,16 @@ void SaveLoad::NewGame(int no)
 	newer.close();
 }
 
+void SaveLoad::fuckthis(int no)
+{
+	std::stringstream filename;
+	filename << "Saves//" << no << "//Base.txt";
+	std::cout << filename.str() << std::endl;
+	std::ofstream newing;
+	newing.open(filename.str(), std::ios::out | std::ios::trunc);
+	newing.close();
+}
+
 void SaveLoad::SaveInv(int no)
 {
 	char blanker = *(SaveLoad::getInstance()->getBlank());
@@ -176,7 +186,7 @@ void SaveLoad::LoadInv(int no)
 		loader.getline(temparray, 256);
 		for (int i = 0; temparray[i] != ';';)
 		{
-			int temp;
+			int temp = 0;
 			sscanf_s(temparray + i, "%d", &temp);
 			tempstorage.push_back(temp);
 			std::string sizestring = std::to_string(temp);

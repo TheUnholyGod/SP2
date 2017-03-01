@@ -15,7 +15,7 @@ CarrotJuice::CarrotJuice(Vector3 position) :Food(108, "Carrot Juice", "", "", CR
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 
-	defRecipe[108] = 1; //Carrot
+	defRecipe[103] = 1; //Carrot
 }
 
 

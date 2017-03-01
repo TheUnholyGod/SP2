@@ -20,7 +20,7 @@
 #include <sstream>
 #include "Randomizer.h"
 
-SceneCity::SceneCity() : buildingID(114)
+SceneCity::SceneCity() : buildingID(113), ItemID(101)
 {
 }
 
@@ -167,13 +167,29 @@ void SceneCity::Init()
 
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
-		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
-		//enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
+		if (i == 0)
+		{
+			enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 3)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 3)->getSourceLocation());
+			//enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 3)->getTextureLocation());
+		}
+		else
+		{
+			enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 4)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 4)->getSourceLocation());
+			//enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 4)->getTextureLocation());
+		}
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
-		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getSourceLocation());
-		buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getTextureLocation());
+		if (i == 0)
+		{
+			buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(105 + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(105 + i)->getSourceLocation());
+			buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(105 + i)->getTextureLocation());
+		}
+		else
+		{
+			buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getSourceLocation());
+			buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getTextureLocation());
+		}
 	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
@@ -215,11 +231,12 @@ void SceneCity::Update(double dt)
 			Pstart = std::clock();
 			SpawnProjectile(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward());
 		}
-		//SpawnEnemy(dt);
-		SpawnBuilding(114);
+		SpawnEnemy(dt);
+		SpawnBuilding();
 		LightUpdate(dt);
 		UpdateProjectiles(dt);
 		UpdateBuilding(dt);
+		UpdateEnemy(dt);
 
 	}
 }
@@ -585,32 +602,106 @@ void SceneCity::SpawnEnemy(double dt)
 {
 	if (CityEnemy.size() < 20)
 	{
-		//CityEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
-		if (CityEnemy.size() < 3)
-			CityEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(13));
-	}/*
-	 if (CityEnemy.size() < 20)
-	 {
-	 Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(2);
-	 CityEnemy.push_back(temp);
-	 }*/
+		srand(time(NULL));
+		int E_id;
+		int number = rand() % 3;
+		switch (number){
+		case 0:
+			E_id = 5; //Drone
+			break;
+		case 1:
+			E_id = 5; //to be changed
+			break;
+		case 2:
+			E_id = 5; //to be changed
+			break;
+
+		}
+
+		/*
+		int operator_ = 1 - (Randomizer::generate_range(1, 2));
+		Vector3 enemySpawnPoint;
+		enemySpawnPoint.x = Player::getplayer()->getRenderer().getPosition().x + (operator_ * Randomizer::generate_range(20,2000));
+		enemySpawnPoint.y = 0;
+		enemySpawnPoint.z = Player::getplayer()->getRenderer().getPosition().z + (operator_ * Randomizer::generate_range(20, 2000));*/
+		Enemy* temp = EnemyFactory::generateEnemy(E_id);
+		CityEnemy.push_back(temp);
+	}
 }
 
 void SceneCity::RenderEnemy()
 {
 	for (auto &i : CityEnemy)
 	{
-		modelStack.PushMatrix();
-		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(enemyMeshList[i->getID() - 1], true);
-		modelStack.PopMatrix();
+		if (i->getID() == 5)
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(enemyMeshList[i->getID() - 5], true);
+			modelStack.PopMatrix();
+		}
+		else
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(enemyMeshList[i->getID() - 8], true);
+			modelStack.PopMatrix();
+		}
 	}
 }
 
-void SceneCity::SpawnBuilding(int bID)
+void SceneCity::UpdateEnemy(double dt)
 {
+	std::vector<int> pos;
+	int counter = 0;
+	for (auto &i : CityEnemy)
+	{
+		i->Update(dt, CityBuildings, CityEnemy);
+		if (i->isDead())
+		{
+			Lootpos = i->getRenderer().getPosition();
+			//SpawnLoot(GenerateLoot());
+			pos.push_back(counter);
+		}
+		counter++;
+	}
+	if (pos.size())
+	{
+		int deleted = 0;
+		for (auto i : pos)
+		{
+			Enemy* temp = *(CityEnemy.begin() + (i - deleted));
+			CityEnemy.erase(CityEnemy.begin() + (i - deleted));
+			deleted++;
+			delete temp;
+			temp = nullptr;
+		}
+	}
+}
 
-	if (CityBuildings.size() < 100)
+void SceneCity::SpawnLoot(int key)
+{
+	CityLoots.push_back(ItemFactory::getItemFactory()->SpawnItem(key, Lootpos));
+}
+
+void SceneCity::RenderLoot()
+{
+	for (auto &i : CityLoots)
+	{
+		if (!i->getpickedup())
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(lootMeshList[i->getID() - ItemID], true);
+			modelStack.PopMatrix();
+		}
+	}
+}
+
+void SceneCity::SpawnBuilding()
+{
+	//CityBuildings.push_back(BuildingFactory::generateBuilding(105, ))
+	if (CityBuildings.size() < 20)
 	{
 		Vector3 spawnPoint = Player::getplayer()->getRenderer().getPosition() + (Player::getplayer()->getRenderer().getForward() * 70);/*
 																																	   Vector3 v_temp = spawnPoint;*/
@@ -620,13 +711,13 @@ void SceneCity::SpawnBuilding(int bID)
 		int operator_ = 1 - (Randomizer::generate_range(1, 2));
 		for (auto & i : CityBuildings)
 		{
-				if (i->getAABB(1)->pointtoAABB(spawnPoint, Vector3(1, 0, 0)))
-				{
-					i->getRenderer().setPosition(i->getRenderer().getPosition() + (operator_ * Vector3(10, 0, 10)));
-				}
+			if (i->getAABB(1)->pointtoAABB(spawnPoint, Vector3(1, 0, 0)))
+			{
+				i->getRenderer().setPosition(i->getRenderer().getPosition() + (operator_ * Vector3(10, 0, 10)));
+			}
 		}
 
-		Building* temp = BuildingFactory::generateBuilding(bID, spawnPoint, (spawnPoint - Player::getplayer()->getRenderer().getForward()).Normalize());
+		Building* temp = BuildingFactory::generateBuilding(114, spawnPoint, (spawnPoint - Player::getplayer()->getRenderer().getForward()).Normalize());
 		CityBuildings.push_back(temp);
 	}
 }
@@ -841,25 +932,6 @@ modelStack.PopMatrix();
 }
 }
 
-void SceneCity::SpawnLoot(int key)
-{
-CityLoots.push_back(ItemFactory::getItemFactory()->SpawnItem(key, Lootpos));
-}
-
-void SceneCity::RenderLoot()
-{
-for (auto &i : CityLoots)
-{
-if (!i->getpickedup())
-{
-modelStack.PushMatrix();
-modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-RenderMesh(lootMeshList[i->getID() - ItemID], true);
-modelStack.PopMatrix();
-}
-}
-}
-
 void SceneCity::RenderInteract()
 {
 if (Player::getplayer()->getInteract())
@@ -875,34 +947,5 @@ if (Application::IsKeyPressed('K')) {
 buildBuilding = false;
 }
 
-}
-
-void SceneCity::UpdateEnemy(double dt)
-{
-std::vector<int> pos;
-int counter = 0;
-for (auto &i : CityEnemy)
-{
-i->Update(dt, CityBuildings, CityEnemy);
-if (i->isDead())
-{
-Lootpos = i->getRenderer().getPosition();
-SpawnLoot(GenerateLoot());
-pos.push_back(counter);
-}
-counter++;
-}
-if (pos.size())
-{
-int deleted = 0;
-for (auto i : pos)
-{
-Enemy* temp = *(CityEnemy.begin() + (i - deleted));
-CityEnemy.erase(CityEnemy.begin() + (i - deleted));
-deleted++;
-delete temp;
-temp = nullptr;
-}
-}
 }
 */

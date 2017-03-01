@@ -16,6 +16,7 @@ Player::Player() : GameObject(0, "", "") , movement_speed_(50) , health_(100)
 
 	PTime = 0;
 	Pstart = 0;
+	dead = false;
 }
 
 Player* Player::getplayer() 
@@ -49,10 +50,14 @@ void Player::receivedamage(int dmg)
 
 bool Player::isDead()
 {
-	if (health_ == 0)
-		return true;
-	else
+	if (health_ > 0)
 		return false;
+	else if (health_ <= 0)
+	{
+		health_ = 0;
+		return true;
+	}
+	
 }
 
 Player::~Player()
@@ -189,9 +194,10 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 	}*/
 	if (Application::IsKeyPressed('Q'))
 	{
-		for (auto &i : Loots)
+		for (int i = 0; i < 20; i++)
 		{
-			std::cout << i->getID() << std::endl;
+			Inventory::getinventory()->Additem(202);
+			Inventory::getinventory()->Additem(206);
 		}
 	}
 

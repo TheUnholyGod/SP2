@@ -64,8 +64,8 @@ Building* BuildingFactory::generateBuilding(int key, Vector3 position, Vector3 f
 	if (key == tempID[11])
 		temp = new WaterWell(position, forward);
 	if (key == tempID[12])
-		temp = new Tree(position);
+		temp = new CityBuilding1(position, forward); 
 	if (key == tempID[13])
-		temp = new CityBuilding1(position, forward);
+		temp = new Tree(position);
 	return temp;
 }
