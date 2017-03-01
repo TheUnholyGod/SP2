@@ -17,7 +17,7 @@ public:
 	Drone();
 	~Drone();
 
-	void Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy);
+	void Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy) override;
 	void Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy);
 	void Pathfind();
 	void ComeBack();

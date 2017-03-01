@@ -3,15 +3,18 @@
 
 Drone::Drone() : Enemy(3, "OBJ//Drone01.obj", "Image//Drone01UV.tga", "Drone", NORMAL, "City", 100, 5, 4)
 {
-	float temp1 = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().x;
-	float temp2 = 4;
-	float temp3 = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().z;
-	this->gameobjrenderer_->setPosition(Vector3(temp1, temp2, temp3));
-
-	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+	float temp1 = 200 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().x;
+	float temp2 = 0;
+	float temp3 = 200 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().z;
+	gameobjrenderer_->setPosition(Vector3(temp1, temp2, temp3));
 
 	newForward = Vector3(1, 0, 0);
 	elapsedTime = 0.0f;
+
+	allAABB[0]->setMinMax(Vector3(temp1, temp2, temp3));
+	allAABB[1]->setMinMax(Vector3(temp1, temp2, temp3));
+	allAABB[0]->resizeAABB(size[0]);
+	allAABB[1]->resizeAABB(size[1]);
 }
 
 Drone::~Drone()
@@ -23,6 +26,9 @@ void Drone::Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 
 	Move(dt, Buildings, Enemy);
+
+	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 }
 
 void Drone::Pathfind()
@@ -33,12 +39,14 @@ void Drone::Pathfind()
 
 	newForward = rotation * newForward;
 	this->gameobjrenderer_->setForward(newForward);
+
+	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 }
 
 void Drone::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
 {
 	dronePos = this->gameobjrenderer_->getPosition();
-	dronePos.y = 2;
 	charPos = Player::getplayer()->getRenderer().getPosition();
 
 	if (elapsedTime < 5)
@@ -74,8 +82,9 @@ void Drone::Move(double dt, std::list<Building*> Buildings, std::vector<Enemy*> 
 		Pathfind();
 		start = std::clock();
 	}
-	
+
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 }
 
 void Drone::ComeBack()
@@ -84,4 +93,7 @@ void Drone::ComeBack()
 	{
 		gameobjrenderer_->setPosition((float)Randomizer::generate_range(1, 500));
 	}
+
+	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
 }

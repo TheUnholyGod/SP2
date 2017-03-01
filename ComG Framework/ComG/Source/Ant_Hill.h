@@ -2,6 +2,7 @@
 #define _ANT_HILL_H
 
 #include "Enemy.h"
+
 class Ant_Hill : public Enemy
 {
 public:

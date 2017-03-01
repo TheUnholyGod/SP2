@@ -15,6 +15,7 @@
 #include "SaveLoad.h"
 #include "Menu.h"
 #include "Randomizer.h"
+#include "Menu.h"
 #include <sstream>
 
 SceneWildLife::SceneWildLife():buildingID(200)
@@ -27,6 +28,9 @@ SceneWildLife::~SceneWildLife()
 
 void SceneWildLife::Init()
 {
+	//init UI
+	pauseMenu.init();
+
 	//sunup = 1;
 	LSPEED = 10.f;
 	// Init VBO here
@@ -130,7 +134,7 @@ void SceneWildLife::Init()
 
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
-		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 6)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 6)->getSourceLocation());
+		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
 	}
 	for (int i = 0; i < buildingMeshList.size(); i++)
 	{
@@ -163,14 +167,14 @@ void SceneWildLife::Init()
 void SceneWildLife::Update(double dt)
 {
 	DebugMode(dt);
+
+	pauseMenu.update();
+
 	if (Application::IsKeyPressed('E'))
 	{
 		SceneManager::currScene = 3;
 	}
-	if (Application::IsKeyPressed(VK_ESCAPE))
-	{
-		Application::IsExit = true;
-	}
+
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems, ForestLoot);
 	SpawnEnemy(dt);
@@ -225,8 +229,10 @@ void SceneWildLife::Render()
 	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
 
-	RenderEnemy();
+	//RenderEnemy();
 	RenderBuilding();
+	//Render UI
+	pauseMenu.Render();
 }
 
 void SceneWildLife::Exit()
@@ -538,7 +544,7 @@ void SceneWildLife::RenderEnemy()
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(enemyMeshList[i->getID() - 6], true);
+		RenderMesh(enemyMeshList[i->getID() - 1], true);
 		modelStack.PopMatrix();
 	}
 }

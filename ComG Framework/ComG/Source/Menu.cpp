@@ -374,28 +374,24 @@ void Menu::update()
 				{
 					optionSelection = 2;
 				}
-			}
 
-			if (optionSelection == 0) //Mouse
-			{
-				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 340 && cursorY <= 390)) || (Application::IsKeyPressed(VK_RETURN)))
+				if ((Application::IsKeyPressed(VK_RETURN)) || (Application::IsKeyPressed(VK_LBUTTON)))
 				{
+					if (optionSelection == 0)
+					{
 
-				}
-			}
-			if (optionSelection == 1) //Volume
-			{
-				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 190 && cursorY <= 230)) || (Application::IsKeyPressed(VK_RETURN)))
-				{
+					}
+					if (optionSelection == 1)
+					{
 
-				}
-			}
-			if (optionSelection == 2) //Back
-			{
-				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 40 && cursorY <= 80)) || (Application::IsKeyPressed(VK_RETURN)))
-				{
-					optionSelection = 0;
-					menuType = 1;
+					}
+					if (optionSelection == 2)
+					{
+						optionSelection = 0;
+						menuType = 1;
+					}
+
+					start = std::clock();
 				}
 			}
 		}
@@ -597,7 +593,7 @@ void Menu::update()
 						}
 						start = std::clock();
 					}
-					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
+					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))//
 					{
 						craft = 2;
 						craftSelection = itemID + craftingSelection;
@@ -654,6 +650,8 @@ void Menu::update()
 		
 		}
 	}
+
+	std::cout << optionSelection << std::endl;
 }
 
 void Menu::Render()
@@ -668,11 +666,11 @@ void Menu::Render()
 			{
 				RenderMeshOnScreen(meshList[GEO_MOUSE], 40, 30, 16, 12);
 			}
-			if (optionSelection == 1)
+			else if (optionSelection == 1)
 			{
 				RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
 			}
-			if (optionSelection == 2)
+			else if(optionSelection == 2)
 			{
 				RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
 			}
@@ -851,8 +849,7 @@ void Menu::Render()
 		}
 		if (menuType == 4) //Inventory
 		{
-
-			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
+			//RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
 			float y = 45.f;
 			y1 = 45.f;
 			float y2 = 45.f;

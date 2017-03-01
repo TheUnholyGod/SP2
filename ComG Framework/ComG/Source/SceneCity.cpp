@@ -26,6 +26,9 @@ SceneCity::~SceneCity()
 
 void SceneCity::Init()
 {
+	//init UI
+	pauseMenu.init();
+
 	//sunup = 1;
 	LSPEED = 10.f;
 	// Init VBO here
@@ -151,13 +154,12 @@ void SceneCity::Init()
 void SceneCity::Update(double dt)
 {
 	DebugMode(dt);
+
+	pauseMenu.update();
+
 	if (Application::IsKeyPressed('E'))
 	{
 		SceneManager::currScene = 3;
-	}
-	if (Application::IsKeyPressed(VK_ESCAPE))
-	{
-		Application::IsExit = true;
 	}
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 2, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	//	if (allbuildingcollision(Player::getplayer()))
@@ -218,6 +220,8 @@ void SceneCity::Render()
 
 	RenderEnemy();
 	RenderBuilding();
+	//Render UI
+	pauseMenu.Render();
 }
 
 void SceneCity::Exit()
