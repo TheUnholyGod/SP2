@@ -247,7 +247,11 @@ void SceneTest::Update(double dt)
 
 		SpawnEnemy(dt);
 		LightUpdate(dt);
+<<<<<<< HEAD
 		BTime = std::clock();
+=======
+
+>>>>>>> 9cc91eaf00a66be98b1e65622275e8541082eee7
 		UpdateProjectiles(dt);
 		UpdateEnemy(dt);
 		SpawnItems(dt);
@@ -630,18 +634,17 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-	if (BaseEnemy.size() < 5)
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(8));
-	if (BaseEnemy.size() < 20)
+	/*if (BaseEnemy.size() < 20)
 	{
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+		//BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+		if (BaseEnemy.size() < 3)
+			BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(13));
 	}
-
 	if (BaseEnemy.size() < 20)
 	{
 		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(2);
 		BaseEnemy.push_back(temp);
-	}
+	}*/
 }
 
 void SceneTest::RenderEnemy()

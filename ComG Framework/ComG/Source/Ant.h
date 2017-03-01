@@ -19,6 +19,7 @@ class Ant : public Enemy
 	Building* targeted;
 public:
 	Ant();
+	Ant(Ant_Hill*);
 	~Ant();
 	void Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy) override;
 	void pathfinding();

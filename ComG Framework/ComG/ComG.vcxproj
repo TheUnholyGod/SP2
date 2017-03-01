@@ -155,6 +155,7 @@
     <ClCompile Include="Source\MetalScraps.cpp" />
     <ClCompile Include="Source\Molerat.cpp" />
     <ClCompile Include="Source\NPCHouse.cpp" />
+    <ClCompile Include="Source\CityBuilding1.cpp" />
     <ClCompile Include="Source\OreMines.cpp" />
     <ClCompile Include="Source\PatrolBot.cpp" />
     <ClCompile Include="Source\Menu.cpp" />
@@ -263,6 +264,7 @@
     <ClInclude Include="Source\MetalScraps.h" />
     <ClInclude Include="Source\Molerat.h" />
     <ClInclude Include="Source\NPCHouse.h" />
+    <ClInclude Include="Source\CityBuilding1.h" />
     <ClInclude Include="Source\OreMines.h" />
     <ClInclude Include="Source\PatrolBot.h" />
     <ClInclude Include="Source\Menu.h" />

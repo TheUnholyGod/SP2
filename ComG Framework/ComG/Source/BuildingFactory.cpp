@@ -13,6 +13,7 @@
 #include "TrophyRoom.h"
 #include "WaterWell.h"
 #include "Tree.h"
+#include "CityBuilding1.h"
 
 BuildingFactory* BuildingFactory::BuildingF_;
 
@@ -64,5 +65,7 @@ Building* BuildingFactory::generateBuilding(int key, Vector3 position, Vector3 f
 		temp = new WaterWell(position, forward);
 	if (key == tempID[12])
 		temp = new Tree(position);
+	if (key == tempID[13])
+		temp = new CityBuilding1(position, forward);
 	return temp;
 }

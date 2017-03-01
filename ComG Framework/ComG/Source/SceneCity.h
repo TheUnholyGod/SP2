@@ -7,13 +7,15 @@
 #include "Camera3.h"
 #include "Camera4.h"
 #include "Mesh.h"
+#include "Menu.h"
 #include "MatrixStack.h"
 #include "Light.h"
 #include "Utility.h"
 #include <list>
 #include "Building.h"
 #include "Enemy.h"
-#include "Menu.h"
+#include "Acrid_Plant.h"
+#include "Projectile.h"
 #include <vector>
 #include <array>
 
@@ -46,6 +48,16 @@ class SceneCity : public Scene
 		GEO_FRONT2,
 		GEO_BACK2,
 		NUM_GEOMETRY,
+	};
+	enum SPRITES
+	{
+		GEO_BUILDUI,
+		GEO_BARNSPRITE,
+		GEO_TROPHYROOMSPRITE,
+		GEO_INVENTORYROOMSPRITE,
+		GEO_NPCHOUSESPRITE,
+		GEO_FASTTRAVELPORTALSPRITE,
+		NUM_SPRITES,
 	};
 	enum UNIFORM_TYPE
 	{
@@ -81,21 +93,55 @@ class SceneCity : public Scene
 	};
 	enum ENEMYMESHLIST
 	{
-		GEO_MOLERAT,
-		GEO_LIZARD,
+		GEO_DRONE,
+		GEO_PATROLBOT,
+		GEO_ROGUEMECH,
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
 	{
-		GEO_BARN,
-		GEO_TURRET,
+		GEO_CITYBUIULDING1,
+		//GEO_CITYBUIULDING2,
 		NUM_BUILDINGGEOMETRY,
 	};
-
+	enum PLAYER
+	{
+		GEO_HEALTHBAR,
+		GEO_HEALTH,
+		GEO_INTERACT,
+		GEO_INTERACT_IMG,
+		NUM_PLAYERGEOMETRY,
+	};
 	enum WEAPONMESHLIST
 	{
 		GEO_BOW,
 		NUM_WEAPONGEOMETERY,
+	};
+	enum FOODMESHLIST
+	{
+		GEO_POTATO,
+		GEO_CABBAGE,
+		GEO_CARROT,
+		GEO_WHEAT,
+		GEO_BREAD,
+		GEO_VEGETABLESTEW,
+		GEO_PURIFIEDWATER,
+		GEO_CARROTJUICE,
+		GEO_SALAD,
+		NUM_FOODGEOMETERY,
+	};
+	enum LOOTMESHLIST
+	{
+		GEO_LPOTATO,
+		GEO_LCABBAGE,
+		GEO_LCARROT,
+		GEO_LWHEAT,
+		GEO_LBREAD,
+		GEO_LVEGETABLESTEW,
+		GEO_LPURIFIEDWATER,
+		GEO_LCARROTJUICE,
+		GEO_LSALAD,
+		NUM_LOOTGEOMETERY,
 	};
 public:
 	SceneCity();
@@ -111,6 +157,10 @@ private:
 	std::array<Mesh*, NUM_ENEMYGEOMETRY> enemyMeshList;
 	std::array<Mesh*, NUM_WEAPONGEOMETERY> weaponmesh;
 	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
+	std::array<Mesh*, NUM_SPRITES> spritesList;
+	std::array<Mesh*, NUM_PLAYERGEOMETRY> playerMeshList;
+	std::array<Mesh*, NUM_FOODGEOMETERY> foodMeshList;
+	std::array<Mesh*, NUM_LOOTGEOMETERY> lootMeshList;
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
@@ -118,9 +168,9 @@ private:
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
 	Camera3 fp_camera;
-
 	Menu pauseMenu;
 
+	const int buildingID;
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	float LSPEED;
 	void LoadSkybox();
@@ -144,14 +194,31 @@ private:
 
 	bool allbuildingcollision(GameObject*);
 
-	std::list<Enemy*> BaseEnemy;
-	std::list<Building*> BaseBuildings;
-
+	std::vector<Enemy*> CityEnemy;
 	void SpawnEnemy(double dt);
+	void UpdateEnemy(double dt);
 	void RenderEnemy();
 
-	void SpawnBuilding(double dt);
+	std::list<Building*> CityBuildings;
+	void SpawnBuilding(int bID);
+	void UpdateBuilding(double dt);
 	void RenderBuilding();
+
+	std::vector<Projectile*>CityProjectile;
+	void SpawnProjectile(Vector3 position, Vector3 forward);
+	void UpdateProjectiles(double dt);
+	void RenderProjectile();
+
+	std::vector<Item*> CityItems;
+	std::vector<Item*> CityLoots;
+
+	void RenderHealth();
+
+	std::clock_t Pstart;
+	float PTime;
+
+	std::clock_t t_random;
+	float t_F_random;
 };
 
 #endif

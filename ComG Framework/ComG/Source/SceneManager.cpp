@@ -3,6 +3,7 @@
 #include "SceneLoading.h"
 #include "SceneSplashScreen.h"
 #include "SceneTest.h"
+#include "SceneCity.h"
 #include "SceneMainMenu.h"
 #include "Application.h"
 #include "SceneWildLife.h"
@@ -21,6 +22,7 @@ SceneManager::SceneManager()
 	SceneDataBase[4] = new SceneTest();
 	SceneDataBase[5] = new SceneBase();
 	SceneDataBase[6] = new SceneWildLife();
+	SceneDataBase[7] = new SceneCity();
 }
 
 SceneManager::~SceneManager()

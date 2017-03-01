@@ -27,6 +27,7 @@ int FastTravelRoom::get_Health(){ return health_; }
 
 void FastTravelRoom::update(double dt)
 {
+<<<<<<< HEAD
 	if (allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), GameObject::getRenderer().getForward()))
 	{
 		Menu::menuType = 5;
@@ -36,4 +37,6 @@ void FastTravelRoom::update(double dt)
 	{
 		Menu::tpZone = false;
 	}
+=======
+>>>>>>> 9cc91eaf00a66be98b1e65622275e8541082eee7
 }

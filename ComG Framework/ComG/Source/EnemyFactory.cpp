@@ -2,6 +2,7 @@
 #include "EnemyDataBase.h"
 #include "Acrid_Plant.h"
 #include "Ant_Hill.h"
+#include "Ant.h"
 #include "Centipede.h"
 #include "CyborgMutt.h"
 #include "Deer.h"
@@ -63,6 +64,8 @@ Enemy* EnemyFactory::generateEnemy(int key)
 		temp = new Scarecrow_Mech;
 	else if (key == tempID[12])
 		temp = new WildBoar;
+	else if (key == tempID[13])
+		temp = new Ant;
 
 	return temp;
 }
