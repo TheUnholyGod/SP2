@@ -1,6 +1,7 @@
 #include "EnemyDataBase.h"
 #include "Acrid_Plant.h"
 #include "Ant_Hill.h"
+#include "Ant.h"
 #include "Centipede.h"
 #include "CyborgMutt.h"
 #include "Deer.h"
@@ -67,6 +68,10 @@ EnemyDataBase::EnemyDataBase()
 	delete temp;
 	temp = new WildBoar;
 	enemydatabase_[temp->getID()] = new WildBoar;
+	IDlist.push_back(temp->getID());
+	delete temp;
+	temp = new Ant;
+	enemydatabase_[temp->getID()] = new Ant;
 	IDlist.push_back(temp->getID());
 	delete temp;
 }

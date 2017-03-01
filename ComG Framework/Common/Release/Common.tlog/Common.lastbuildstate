@@ -1,6 +1,2 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
-<<<<<<< HEAD:ComG Framework/Common/Release/Common.tlog/Common.lastbuildstate
 Release|Win32|C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\|
-=======
-Debug|Win32|F:\Work\Studio Project\SP2Framework\ComG Framework\|
->>>>>>> 5cee801aa8db87bcc890e52edbaa8ab48a983b4b:ComG Framework/Common/Debug/Common.tlog/Common.lastbuildstate

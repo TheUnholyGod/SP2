@@ -635,7 +635,7 @@ void Menu::update()
 		{
 			if (Application::IsKeyPressed(VK_RIGHT))
 			{
-				if (travelTo < 6)
+				if (travelTo < 7)
 				{
 					travelTo += 1;
 				}
@@ -653,15 +653,19 @@ void Menu::update()
 				}
 				else
 				{
-					travelTo = 6;
+					travelTo = 7;
 				}
 				start = std::clock();
 			}
-			if (Application::IsKeyPressed(VK_RETURN))
+			if (tpZone)
 			{
-				SceneManager::currScene = travelTo;
+				if (Application::IsKeyPressed(VK_RETURN))
+				{
+					SceneManager::currScene = travelTo;
+				}
 			}
-		
+
+			std::cout << "Travelling to: " << travelTo << std::endl;
 		}
 	}
 }

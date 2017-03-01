@@ -4,11 +4,12 @@
 #include "Enemy.h"
 class Ant_Hill : public Enemy
 {
+	std::vector<Enemy*> hills;
 public:
-	static std::vector<Enemy*> hills;
 	Ant_Hill();
 	~Ant_Hill();
 	void Update(double dt) {}
+	std::vector<Enemy*> getHills() { return hills; }
 };
 
 #endif

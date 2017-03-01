@@ -1,4 +1,4 @@
-﻿Build started 28/2/2017 9:02:53 AM.
+﻿Build started 28/2/2017 5:53:34 PM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MatrixStack.cpp Source\Mtx44.cpp Source\timer.cpp Source\Vector3.cpp
@@ -16,4 +16,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.34
+Time Elapsed 00:00:02.10

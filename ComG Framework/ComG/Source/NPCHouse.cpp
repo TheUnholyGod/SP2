@@ -1,11 +1,11 @@
 #include "NPCHouse.h"
 #include "ItemFactory.h"
 
-NPCHouse::NPCHouse(Vector3 position, Vector3 forward) : Building(104, "NPC HDB", "OBJ//Barn.obj", "", 100, NORMAL, true)
+NPCHouse::NPCHouse(Vector3 position, Vector3 forward) : Building(104, "NPC HDB", "OBJ//building.obj", "Image//building.tga", 100, NORMAL, true)
 {
 	gameobjrenderer_ = new Renderer(position, Vector3(1, 0, 0)/*, forward*/);
 	gameobjrenderer_->setScaling(5);
-	size.push_back(Vector3(20, 10, 11) * gameobjrenderer_->getScaling());
+	size.push_back(Vector3(22, 10, 11) * gameobjrenderer_->getScaling());
 	for (auto &i : size)
 	{
 		AABB* temp = new AABB(i, gameobjrenderer_->getPosition());

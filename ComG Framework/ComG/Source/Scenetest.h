@@ -119,9 +119,10 @@ class SceneTest : public Scene
 		GEO_GOAT,
 		GEO_WILDBOAR,
 		GEO_CENTIPEDE,
-		GEO_ANTHILL,
+		/*GEO_ANTHILL,
 		GEO_ACIDPLANT,
 		GEO_SCARECROWMECH,
+		GEO_ANT,*/
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
@@ -291,8 +292,6 @@ private:
 	std::clock_t Pstart;
 	float PTime;
 
-	std::clock_t Bstart;
-	float BTime;
 };
 
 #endif

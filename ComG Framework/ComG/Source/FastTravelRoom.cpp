@@ -27,8 +27,4 @@ int FastTravelRoom::get_Health(){ return health_; }
 
 void FastTravelRoom::update(double dt)
 {
-	if (fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), GameObject::getRenderer().getForward()))
-	{
-		
-	}
 }
