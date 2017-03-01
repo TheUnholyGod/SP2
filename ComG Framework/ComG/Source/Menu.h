@@ -205,6 +205,11 @@ public:
 	bool checkbuild();
 	std::map <int, int> Remove;
 	void Removal();
+	//Inventory(Crafting)
+	bool check1;
+	bool checkcraft();
+	std::map <int, int> RemoveC;
+	int crafting();
 
 	unsigned m_vertexArrayID;
 	unsigned m_programID;

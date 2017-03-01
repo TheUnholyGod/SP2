@@ -264,7 +264,13 @@ void SceneTest::Update(double dt)
 		}
 		if (pauseMenu.craft == 2)//Craft item selected
 		{
-			
+			if (pauseMenu.check1 == true)
+			{
+				int Item = pauseMenu.craftSelection;
+				Inventory::getinventory()->Additem(Item);
+			}
+			else
+				std::cout << "Not enough resources to craft" << std::endl;
 		}
 
 	}

@@ -604,6 +604,11 @@ void Menu::update()
 					{
 						craft = 2;
 						craftSelection = itemID + craftingSelection;
+						iRecipe = ItemFactory::getItemFactory()->generateItem(craftSelection)->getRecipe();
+						check1 = false;
+						check1 = checkcraft();
+						if (check1)
+							crafting();
 						SetCursorPos(windowX / 2, windowY / 2);
 						isMenu = false;
 						pause = false;
@@ -662,7 +667,7 @@ void Menu::update()
 		}
 	}
 
-	std::cout << optionSelection << std::endl;
+	//std::cout << optionSelection << std::endl;
 }
 
 void Menu::Render()
@@ -1047,16 +1052,16 @@ bool Menu::checkbuild()
 		int i = bit->first->getID();
 		int i_no = bit->second;
 
-		std::map <int, int> checkmap;
+		std::map <int, int> checkInv;
 		for (auto &c : Inventory::getinventory()->getInventoryContents())
 		{
-			checkmap = Inventory::getinventory()->getInventoryContents();
+			checkInv = Inventory::getinventory()->getInventoryContents();
 		}
-		std::map <int, int> ::iterator checkmapping = checkmap.find(i);
+		std::map <int, int> ::iterator checkmapping = checkInv.find(i);
 
-		for (std::map<int, int>::iterator c = checkmap.begin(); c != checkmap.end(); c++)
+		for (std::map<int, int>::iterator c = checkInv.begin(); c != checkInv.end(); c++)
 		{
-			if (checkmapping != checkmap.end());
+			if (checkmapping != checkInv.end());
 			{
 				int checkno = c->second;
 				if (checkno >= i_no)
@@ -1069,7 +1074,7 @@ bool Menu::checkbuild()
 				}
 			}
 			
-			if(checkmapping == checkmap.end())
+			if(checkmapping == checkInv.end())
 			{
 				return false;
 			}
@@ -1095,14 +1100,14 @@ void Menu::Removal()
 		int rid = bit->first->getID();
 		int r_no = bit->second;
 
-		std::map <int, int> checkmap1;
+		std::map <int, int> checkInv1;
 		for (auto &c : Inventory::getinventory()->getInventoryContents())
 		{
-			checkmap1 = Inventory::getinventory()->getInventoryContents();
+			checkInv1 = Inventory::getinventory()->getInventoryContents();
 		}
 
-		std::map <int, int> ::iterator checkmapping1 = checkmap1.find(rid);
-			if (checkmapping1 == checkmap1.end())
+		std::map <int, int> ::iterator checkmapping1 = checkInv1.find(rid);
+			if (checkmapping1 == checkInv1.end())
 			{
 				continue;
 			}
@@ -1111,4 +1116,74 @@ void Menu::Removal()
 	}
 }
 
+bool Menu::checkcraft()
+{
+	bool checking = false;
+	for (iit = iRecipe.begin(); iit != iRecipe.end(); iit++)
+	{
+		int i = iit->first;
+		int i_no = iit->second;
+
+		std::map <int, int> checkInv;
+		for (auto &c : Inventory::getinventory()->getInventoryContents())
+		{
+			checkInv = Inventory::getinventory()->getInventoryContents();
+		}
+		std::map <int, int> ::iterator checkmapping = checkInv.find(i);
+
+		for (std::map<int, int>::iterator c = checkInv.begin(); c != checkInv.end(); c++)
+		{
+			if (checkmapping != checkInv.end());
+			{
+				int checkno = c->second;
+				if (checkno >= i_no)
+				{
+					checking = true;
+				}
+				else
+				{
+					checking = false;
+				}
+			}
+
+			if (checkmapping == checkInv.end())
+			{
+				return false;
+			}
+		}
+		if (checking == false)
+		{
+			return false;
+		}
+	}
+	if (checking == true)
+	{
+		return true;
+	}
+	else
+		return false;
+}
+
+int Menu::crafting()
+{
+	for (iit = iRecipe.begin(); iit != iRecipe.end(); iit++)
+	{
+		int rid = iit->first;
+		int r_no = iit->second;
+
+		std::map <int, int> checkInv1;
+		for (auto &c : Inventory::getinventory()->getInventoryContents())
+		{
+			checkInv1 = Inventory::getinventory()->getInventoryContents();
+		}
+		std::map <int, int> ::iterator checkmapping1 = checkInv1.find(rid);
+		if (checkmapping1 == checkInv1.end())
+		{
+			continue;
+		}
+		else
+			Inventory::getinventory()->Removeitem(rid, r_no);
+	}
+	return 0;
+}
 //=========================================================================================================================================
