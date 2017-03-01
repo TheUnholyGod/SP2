@@ -15,10 +15,11 @@ class Ant : public Enemy
 		BEHAVIOUR_ATTACK,
 	};
 	BEHAVIOUR AntBev;
-	Enemy* my_hill;
+	Ant_Hill* my_hill;
 	Building* targeted;
 public:
 	Ant();
+	Ant(Ant_Hill*);
 	~Ant();
 	void Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy) override;
 	void pathfinding();

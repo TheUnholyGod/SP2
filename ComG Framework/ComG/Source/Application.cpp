@@ -14,6 +14,7 @@
 #include "SceneManager.h"
 #include "ItemDataBase.h"
 #include "EnemyDataBase.h"
+#include "Inventory.h"
 #include <iostream>
 
 const unsigned char Application::FPS = 60; // FPS of this game

@@ -82,3 +82,10 @@ int Inventory::getsize()
 	return List.size();
 }
 
+void Inventory::reset()
+{
+	if (inv.size())
+	{
+		inv.erase(inv.begin(), inv.end());
+	}
+}

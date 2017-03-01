@@ -151,7 +151,7 @@ public:
 	bool isMenu;
 
 	int craft;
-	int menuType;
+	static int menuType;
 	int pauseSelection;
 	int optionSelection;
 	int buildSelection;
@@ -196,7 +196,7 @@ public:
 	int itemID;
 
 	int travelTo;
-	bool tpZone;
+	static bool tpZone;
 
 	bool plantZone;
 

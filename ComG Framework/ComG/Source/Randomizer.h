@@ -2,7 +2,6 @@
 #define _RANDOMIZER_H
 
 #include <stdlib.h>
-#include <time.h>
 
 namespace Randomizer
 {

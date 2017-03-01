@@ -2,6 +2,9 @@
 
 POINT cursorPoint;
 
+bool Menu::tpZone = false;
+int Menu::menuType = 0;
+
 Menu::Menu() : buildingID(101), itemID(105)
 {
 	pause = false;
@@ -9,7 +12,6 @@ Menu::Menu() : buildingID(101), itemID(105)
 	isMenu = false;
 
 	craft = 0;
-	menuType = 0;
 	pauseSelection = 0;
 	optionSelection = 0;
 	buildSelection = 0;
@@ -22,6 +24,8 @@ Menu::Menu() : buildingID(101), itemID(105)
 	glfwSetCursorPos(Application::m_window, windowX / 2, windowY / 2);
 
 	start = std::clock();
+
+	Inventory::getinventory();
 }
 
 Menu::~Menu()
@@ -330,29 +334,6 @@ void Menu::update()
 		}
 		start = std::clock();
 	}
-
-	if (FastTravelRoom::fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
-	{
-		if (!pause)
-		{
-			menuType = 5;
-			tpZone = true;
-		}
-	}
-	else if (!(FastTravelRoom::fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward())))
-	{
-		if (tpZone)
-		{
-			SetCursorPos(windowX / 2, windowY / 2);
-			menuType = 0;
-			pauseSelection = 0;
-			optionSelection = 0;
-			buildSelection = 0;
-			craftSelection = 0;
-			tpZone = false;
-		}
-	}
-
 	if (menuType == 0) //Options Menu
 	{
 		if (pause)
@@ -395,28 +376,24 @@ void Menu::update()
 				{
 					optionSelection = 2;
 				}
-			}
 
-			if (optionSelection == 0) //Mouse
-			{
-				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 340 && cursorY <= 390)) || (Application::IsKeyPressed(VK_RETURN)))
+				if ((Application::IsKeyPressed(VK_RETURN)) || (Application::IsKeyPressed(VK_LBUTTON)))
 				{
+					if (optionSelection == 0)
+					{
 
-				}
-			}
-			if (optionSelection == 1) //Volume
-			{
-				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 190 && cursorY <= 230)) || (Application::IsKeyPressed(VK_RETURN)))
-				{
+					}
+					if (optionSelection == 1)
+					{
 
-				}
-			}
-			if (optionSelection == 2) //Back
-			{
-				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 40 && cursorY <= 80)) || (Application::IsKeyPressed(VK_RETURN)))
-				{
-					optionSelection = 0;
-					menuType = 1;
+					}
+					if (optionSelection == 2)
+					{
+						optionSelection = 0;
+						menuType = 1;
+					}
+
+					start = std::clock();
 				}
 			}
 		}
@@ -651,7 +628,7 @@ void Menu::update()
 		{
 			if (Application::IsKeyPressed(VK_RIGHT))
 			{
-				if (travelTo < 6)
+				if (travelTo < 7)
 				{
 					travelTo += 1;
 				}
@@ -669,17 +646,23 @@ void Menu::update()
 				}
 				else
 				{
-					travelTo = 6;
+					travelTo = 7;
 				}
 				start = std::clock();
 			}
-			if (Application::IsKeyPressed(VK_RETURN))
+			if (tpZone)
 			{
-				SceneManager::currScene = travelTo;
+				if (Application::IsKeyPressed(VK_RETURN))
+				{
+					SceneManager::currScene = travelTo;
+				}
 			}
-		
+
+			std::cout << "Travelling to: " << travelTo << std::endl;
 		}
 	}
+
+	std::cout << optionSelection << std::endl;
 }
 
 void Menu::Render()
@@ -694,11 +677,11 @@ void Menu::Render()
 			{
 				RenderMeshOnScreen(meshList[GEO_MOUSE], 40, 30, 16, 12);
 			}
-			if (optionSelection == 1)
+			else if (optionSelection == 1)
 			{
 				RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
 			}
-			if (optionSelection == 2)
+			else if(optionSelection == 2)
 			{
 				RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
 			}
@@ -882,10 +865,10 @@ void Menu::Render()
 			y1 = 45.f;
 			float y2 = 45.f;
 
-			for (std::map<int, int>::iterator i = Inventory::getinventory()->inv.begin(); i != Inventory::getinventory()->inv.end(); i++)
+			for (auto &i : Inventory::getinventory()->getInventoryContents())
 			{
-				std::string quantity = std::to_string(i->second);
-				int key = i->first;
+				std::string quantity = std::to_string(i.second);
+				int key = i.first;
 				checkItem(key);
 				Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
 				std::string name = temp->getName();
@@ -1063,11 +1046,17 @@ bool Menu::checkbuild()
 	{
 		int i = bit->first->getID();
 		int i_no = bit->second;
-		
-		std::map <int, int> ::iterator checkmap = Inventory::getinventory()->inv.find(i);
-		for (std::map<int, int>::iterator c = Inventory::getinventory()->inv.begin(); c != Inventory::getinventory()->inv.end(); c++)
+
+		std::map <int, int> checkmap;
+		for (auto &c : Inventory::getinventory()->getInventoryContents())
 		{
-			if (checkmap != Inventory::getinventory()->inv.end());
+			checkmap = Inventory::getinventory()->getInventoryContents();
+		}
+		std::map <int, int> ::iterator checkmapping = checkmap.find(i);
+
+		for (std::map<int, int>::iterator c = checkmap.begin(); c != checkmap.end(); c++)
+		{
+			if (checkmapping != checkmap.end());
 			{
 				int checkno = c->second;
 				if (checkno >= i_no)
@@ -1080,7 +1069,7 @@ bool Menu::checkbuild()
 				}
 			}
 			
-			if(checkmap == Inventory::getinventory()->inv.end())
+			if(checkmapping == checkmap.end())
 			{
 				return false;
 			}
@@ -1106,8 +1095,14 @@ void Menu::Removal()
 		int rid = bit->first->getID();
 		int r_no = bit->second;
 
-		std::map <int, int> ::iterator checkmap1 = Inventory::getinventory()->inv.find(rid);
-			if (checkmap1 == Inventory::getinventory()->inv.end())
+		std::map <int, int> checkmap1;
+		for (auto &c : Inventory::getinventory()->getInventoryContents())
+		{
+			checkmap1 = Inventory::getinventory()->getInventoryContents();
+		}
+
+		std::map <int, int> ::iterator checkmapping1 = checkmap1.find(rid);
+			if (checkmapping1 == checkmap1.end())
 			{
 				continue;
 			}

@@ -210,13 +210,14 @@ void SceneTest::Init()
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer();
-	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	
 	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
 	SaveLoad::Load(Application::saveno, "Base", BaseBuildings, BaseEnemy);
-	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	PTime = 0;
 	Pstart = 0;
+	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 }
 
 void SceneTest::Update(double dt)
@@ -246,7 +247,6 @@ void SceneTest::Update(double dt)
 
 		SpawnEnemy(dt);
 		LightUpdate(dt);
-		BTime = std::clock();
 
 		UpdateProjectiles(dt);
 		UpdateEnemy(dt);
@@ -633,18 +633,17 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-	if (BaseEnemy.size() < 5)
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(8));
-	if (BaseEnemy.size() < 20)
+	/*if (BaseEnemy.size() < 20)
 	{
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+		//BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+		if (BaseEnemy.size() < 3)
+			BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(13));
 	}
-
 	if (BaseEnemy.size() < 20)
 	{
 		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(2);
 		BaseEnemy.push_back(temp);
-	}
+	}*/
 }
 
 void SceneTest::RenderEnemy()

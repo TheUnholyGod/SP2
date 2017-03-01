@@ -3,7 +3,7 @@
 
 std::vector<Projectile*>Acrid_Plant::acidProjectile;
 
-Acrid_Plant::Acrid_Plant() : Enemy(12, "OBJ//AcidPlant.obj", "Image//AcidPlant_Texture.tga", "AcridPlant",  BOSS, "Base", 150, 15, 20)
+Acrid_Plant::Acrid_Plant() : Enemy(7, "OBJ//AcidPlant.obj", "Image//AcidPlant_Texture.tga", "AcridPlant",  BOSS, "Base", 150, 15, 20)
 {
 	float randX = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().x;
 	float randZ = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().z;
@@ -26,10 +26,8 @@ void Acrid_Plant::Update(double dt, std::list<Building*> Buildings, std::vector<
 		{
 			shootStart = std::clock();
 			Projectile* temp = dynamic_cast<Projectile*>(ItemFactory::getItemFactory()->generateItem(999));
-			//Vector3 pos = (this->getRenderer().getPosition().x + 2.f, 0, this->getRenderer().getPosition().z+2.f);
 			temp->Projectile::FireAcidProjectile(GameObject::getRenderer().getPosition(), -GameObject::getRenderer().getForward().Normalize());
 			temp->Projectile::setProjectilespeed(10);
-			//std::cout << GameObject::getRenderer().getPosition() << "SHOTS FIRED!!" << Player::getplayer()->getRenderer().getPosition() << std::endl;
 			acidProjectile.push_back(temp);
 		}
 	}

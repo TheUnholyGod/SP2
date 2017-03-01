@@ -14,13 +14,12 @@ class Inventory
 private:
 	Inventory();
 	static Inventory *inventory;
-	
-	bool openinventory;
-public:
 	std::map<int, int> inv;
 	std::list<std::string> List;
 	int quantity;
 	std::list<std::string> name;
+	bool openinventory;
+public:
 	static Inventory *getinventory();
 	void Additem(int key);
 	void Removeitem(int item, int key);
@@ -31,7 +30,8 @@ public:
 	std::string getitemname();
 	int getsize();
 	~Inventory();
-	
+	std::map<int, int> getInventoryContents() { return inv; }
+	void reset();
 protected:
 	std::string itemname_;
 	const std::string getName() { return itemname_; }

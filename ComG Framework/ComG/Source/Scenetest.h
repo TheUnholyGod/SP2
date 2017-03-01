@@ -111,17 +111,22 @@ class SceneTest : public Scene
 	{
 		GEO_MOLERAT,
 		GEO_LIZARD,
-		//GEO_CYBORDMUTT,
-		//GEO_DRONE,
+		GEO_DRONES,
+		/*GEO_CYBORGMUTT,
+		GEO_ROGUEMECHS,
+		GEO_PATROLBOTS,
+		GEO_DEER,
+		GEO_CYBORDMUTT,
 		GEO_PATROLBOT,
 		GEO_ROGUEMECH,
-		GEO_DEER,//TO REMOVE
+		GEO_DEER,
 		GEO_GOAT,
 		GEO_WILDBOAR,
 		GEO_CENTIPEDE,
-		//GEO_ANTHILL,
+		/*GEO_ANTHILL,
 		GEO_ACIDPLANT,
 		GEO_SCARECROWMECH,
+		GEO_ANT,*/
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
@@ -291,8 +296,6 @@ private:
 	std::clock_t Pstart;
 	float PTime;
 
-	std::clock_t Bstart;
-	float BTime;
 };
 
 #endif
