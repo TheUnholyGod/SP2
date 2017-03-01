@@ -1,7 +1,7 @@
 #include "Goat.h"
 #include "Randomizer.h"
 
-Goat::Goat() : Enemy(8, "OBJ//Goat.obj", "Image//GoatUV.tga", "Goat", NORMAL, "Forest", 100, 5, 4)
+Goat::Goat() : Enemy(8, "OBJ//Goat.obj", "Image//GoatUV.tga", "Goat", NORMAL, "Forest", 100, 5, 50)
 {
 	float x = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().x;
 	float y = 0;
@@ -34,7 +34,6 @@ void Goat::Update(double dt, std::list<Building*> Buildings, std::vector<Enemy*>
 	default:
 		break;
 	}
-	//std::cout << "State:" << std::to_string(GoatBev) << std::endl;
 }
 
 void Goat::pathfinding()
@@ -49,11 +48,7 @@ void Goat::pathfinding()
 }
 
 void Goat::Run(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
-{	
-	std::cout << "ITime: " << ITime << std::endl;
-	ITime = (std::clock() - Iwait) / (int)CLOCKS_PER_SEC;
-	
-	
+{		
 	if (!this->checkCollision(Buildings, Enemy) && ignoreothers == false)
 	{
 		gameobjrenderer_->setForward((this->gameobjrenderer_->getPosition() - Player::getplayer()->getRenderer().getPosition()).Normalized());
@@ -70,6 +65,12 @@ void Goat::Run(double dt, std::list<Building*> Buildings, std::vector<Enemy*> En
 	{
 		gameobjrenderer_->setForward((-gameobjrenderer_->getPosition() + Player::getplayer()->getRenderer().getPosition()).Normalized());
 		gameobjrenderer_->translate(this->gameobjrenderer_->getForward(), 80 * dt);
+
+		if (this->allAABB[0]->AABBtoAABB(*Player::getplayer()->getAABB(0)))
+		{
+			Player::getplayer()->receivedamage(attack_);
+			this->takeDamage(100);
+		}
 	}
 
 	if (!this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()) && ignoreothers == false)

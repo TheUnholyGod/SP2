@@ -1,141 +1,34 @@
-<<<<<<< HEAD
-﻿Build started 2/28/2017 10:11:16 AM.
-     1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneTest.cpp
-         SceneTest.cpp
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
-                 f:\work\studio project\sp2framework\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\defencetower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(171): warning C4018: '<' : signed/unsigned mismatch
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(176): warning C4018: '<' : signed/unsigned mismatch
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(181): warning C4018: '<' : signed/unsigned mismatch
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(186): warning C4018: '<' : signed/unsigned mismatch
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(191): warning C4018: '<' : signed/unsigned mismatch
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(223): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(227): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(237): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(665): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(667): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(765): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(766): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\scenetest.cpp(784): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\lib" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.lib" /MACHINE:X86 Debug\Ability.obj
-         Debug\AbilityDataBase.obj
-         Debug\Acrid_Plant.obj
-         Debug\Adhesives.obj
-         Debug\Ant_Hill.obj
-         Debug\Application.obj
-         Debug\Barn.obj
-         Debug\Biomass.obj
-         Debug\Bread.obj
-         Debug\Building.obj
-         Debug\BuildingDataBase.obj
-         Debug\BuildingFactory.obj
-         Debug\Burrowing.obj
-         Debug\Cabbage.obj
-         Debug\Camera.obj
-         Debug\Camera2.obj
-         Debug\Camera3.obj
-         Debug\Camera4.obj
-         Debug\Carrot.obj
-         Debug\CarrotJuice.obj
-         Debug\Centipede.obj
-         Debug\CircuitBoards.obj
-         Debug\Cloth.obj
-         Debug\Collision.obj
-         Debug\Compound_Bow.obj
-         Debug\Copper.obj
-         Debug\Corrosive.obj
-         Debug\Crafting.obj
-         Debug\CybordMutt.obj
-         Debug\Deer.obj
-         Debug\DefenceTower.obj
-         Debug\DefensiveWalls.obj
-         Debug\DrinkingWater.obj
-         Debug\Drone.obj
-         Debug\Enemy.obj
-         Debug\EnemyDataBase.obj
-         Debug\EnemyFactory.obj
-         Debug\Farming_Hoe.obj
-         Debug\FastTravelRoom.obj
-         Debug\Food.obj
-         Debug\GameObject.obj
-         Debug\Glock_17C.obj
-         Debug\Goat.obj
-         Debug\Gold.obj
-         Debug\Inventory.obj
-         Debug\InventoryWarehouse.obj
-         Debug\Iron.obj
-         Debug\Item.obj
-         Debug\ItemDataBase.obj
-         Debug\ItemFactory.obj
-         Debug\Katana_Sword.obj
-         Debug\Kitchen_Knife.obj
-         Debug\Lighting.obj
-         Debug\Lizard.obj
-         Debug\LoadATOM.obj
-         Debug\LoadOBJ.obj
-         Debug\LoadTGA.obj
-         Debug\M200_CheyTac_Intervention.obj
-         Debug\main.obj
-         Debug\Mesh.obj
-         Debug\MeshBuilder.obj
-         Debug\MetalScraps.obj
-         Debug\Molerat.obj
-         Debug\NPCHouse.obj
-         Debug\OreMines.obj
-         Debug\PatrolBot.obj
-         Debug\Menu.obj
-         Debug\Player.obj
-         Debug\Potato.obj
-         Debug\PowerGenerator.obj
-         Debug\Projectile.obj
-         Debug\Radioactive.obj
-         Debug\Renderer.obj
-         Debug\Resources.obj
-         Debug\RogueMech.obj
-         Debug\Salad.obj
-         Debug\SaveLoad.obj
-         "Debug\Scar-H.obj"
-         Debug\Scarecrow_Mech.obj
-         Debug\SceneBase.obj
-         Debug\SceneCity.obj
-         Debug\SceneMainMenu.obj
-         Debug\SceneManager.obj
-         Debug\SceneSplashScreen.obj
-         Debug\SceneTest.obj
-         Debug\SceneLoading.obj
-         Debug\SceneWildLife.obj
-         Debug\shader.obj
-         Debug\Stone.obj
-         Debug\Teleporting.obj
-         Debug\TilledSoil.obj
-         Debug\Tree.obj
-         Debug\TrophyRoom.obj
-         Debug\Utility.obj
-         Debug\VegetableStew.obj
-         Debug\Water.obj
-         Debug\WaterWell.obj
-         Debug\Weapon.obj
-         Debug\Wheat.obj
-         Debug\Wildboar.obj
-         Debug\Wood.obj
-         ComG.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Debug\ComG.exe
-     1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:08.83
-=======
-﻿  Ant_Hill.cpp
+﻿  SceneManager.cpp
 c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
 c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
 c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\tilledsoil.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  SceneTest.cpp
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\tilledsoil.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\defencetower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(183): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(188): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(193): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(198): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(203): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(235): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(239): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(249): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(662): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(664): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(789): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(790): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenetest.cpp(808): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
->>>>>>> e00f12e9a494cc7ba84848e94e65774b63d590aa
