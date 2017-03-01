@@ -1,4 +1,5 @@
 #include "OreMines.h"
+#include "Player.h"
 #include "ItemFactory.h"
 
 OreMines::OreMines(Vector3 position, Vector3 forward) : Building(110, "Ore Mines", "OBJ//Barn.obj", "", 100, RESOURCE, false)
@@ -20,3 +21,15 @@ OreMines::OreMines(Vector3 position, Vector3 forward) : Building(110, "Ore Mines
 OreMines::~OreMines(){}
 
 int OreMines::get_Health(){ return health_; }
+
+void OreMines::update(double dt)
+{
+	if (allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), GameObject::getRenderer().getForward()))
+	{
+		cancollect = true;
+	}
+	else
+	{
+		cancollect = false;
+	}
+}
