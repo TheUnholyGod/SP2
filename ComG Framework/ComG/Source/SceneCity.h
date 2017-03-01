@@ -13,6 +13,7 @@
 #include <list>
 #include "Building.h"
 #include "Enemy.h"
+#include "Menu.h"
 #include <vector>
 #include <array>
 
@@ -117,6 +118,8 @@ private:
 	Vector3 forward, right, chardirection, camForward, camRight;
 	Camera2 camera;
 	Camera3 fp_camera;
+
+	Menu pauseMenu;
 
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	float LSPEED;

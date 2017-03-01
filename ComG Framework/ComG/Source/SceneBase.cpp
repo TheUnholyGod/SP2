@@ -25,6 +25,9 @@ SceneBase::~SceneBase()
 
 void SceneBase::Init()
 {
+	//init UI
+	pauseMenu.init();
+
 	//sunup = 1;
 	LSPEED = 10.f;
 	// Init VBO here
@@ -153,14 +156,14 @@ void SceneBase::Init()
 void SceneBase::Update(double dt)
 {
 	DebugMode(dt);
+
+	pauseMenu.update();
+
 	if (Application::IsKeyPressed('E'))
 	{
 		SceneManager::currScene = 4;
 	}
-	if (Application::IsKeyPressed(VK_ESCAPE))
-	{
-		Application::IsExit = true;
-	}
+
 
 	//Player::getplayer()->Update(camForward, camRight, dt, BaseBuildings, BaseEnemy,BaseItems);
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 15, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
@@ -216,6 +219,8 @@ void SceneBase::Render()
 
 	RenderEnemy();
 	RenderBuilding();
+
+	pauseMenu.Render();
 }
 
 void SceneBase::Exit()

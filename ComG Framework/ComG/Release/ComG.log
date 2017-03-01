@@ -1,64 +1,22 @@
-﻿Build started 3/1/2017 11:27:35 AM.
+﻿Build started 3/1/2017 11:57:41 AM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Menu.cpp
-         Menu.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneWildLife.cpp
+         SceneWildLife.cpp
      1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
      1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
      1>f:\work\studio project\sp2framework\comg framework\comg\source\FastTravelRoom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>f:\work\studio project\sp2framework\comg framework\comg\source\TilledSoil.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(191): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(195): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(207): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(222): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\Menu.cpp(227): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-     1>Source\Menu.cpp(720): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(727): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(727): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(736): warning C4018: '<=' : signed/unsigned mismatch
-     1>Source\Menu.cpp(743): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(744): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(744): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(746): warning C4244: '-=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\Menu.cpp(778): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(785): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(785): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(795): warning C4018: '<=' : signed/unsigned mismatch
-     1>Source\Menu.cpp(802): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(803): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(803): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(805): warning C4244: '-=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\Menu.cpp(820): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(827): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(827): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(837): warning C4018: '<=' : signed/unsigned mismatch
-     1>Source\Menu.cpp(844): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(845): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(845): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(847): warning C4244: '-=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\Menu.cpp(891): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>Source\Menu.cpp(910): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(911): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(1011): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1013): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1015): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1017): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1019): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1021): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1023): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1025): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1027): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1029): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1031): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1033): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1035): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1037): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1039): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1041): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1043): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1045): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1047): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>Source\SceneWildLife.cpp(135): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SceneWildLife.cpp(139): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SceneWildLife.cpp(143): warning C4018: '<' : signed/unsigned mismatch
+     1>Source\SceneWildLife.cpp(583): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneWildLife.cpp(584): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneWildLife.cpp(601): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SceneWildLife.cpp(656): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\lib" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Ability.obj
          Release\AbilityDataBase.obj
@@ -169,4 +127,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:13.15
+Time Elapsed 00:00:16.70
