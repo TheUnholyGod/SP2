@@ -94,14 +94,14 @@ class SceneCity : public Scene
 	enum ENEMYMESHLIST
 	{
 		GEO_DRONE,
-		GEO_PATROLBOT,
 		GEO_ROGUEMECH,
+		GEO_PATROLBOT,
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
 	{
+		GEO_GARAGE,
 		GEO_CITYBUIULDING1,
-		//GEO_CITYBUIULDING2,
 		NUM_BUILDINGGEOMETRY,
 	};
 	enum PLAYER
@@ -200,7 +200,7 @@ private:
 	void RenderEnemy();
 
 	std::list<Building*> CityBuildings;
-	void SpawnBuilding(int bID);
+	void SpawnBuilding();
 	void UpdateBuilding(double dt);
 	void RenderBuilding();
 
@@ -210,7 +210,14 @@ private:
 	void RenderProjectile();
 
 	std::vector<Item*> CityItems;
+	const int ItemID;
+
 	std::vector<Item*> CityLoots;
+	std::map<Item*, int>CityLoots1;
+	int LootID;
+	Vector3 Lootpos;
+	void SpawnLoot(int key);
+	void RenderLoot();
 
 	void RenderHealth();
 
