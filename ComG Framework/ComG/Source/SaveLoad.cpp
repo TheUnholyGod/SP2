@@ -133,3 +133,13 @@ void SaveLoad::NewGame(int no)
 	}
 	newer.close();
 }
+
+void SaveLoad::fuckthis(int no)
+{
+	std::stringstream filename;
+	filename << "Saves//" << no << "//Base.txt";
+	std::cout << filename.str() << std::endl;
+	std::ofstream newing;
+	newing.open(filename.str(), std::ios::out | std::ios::trunc);
+	newing.close();
+}

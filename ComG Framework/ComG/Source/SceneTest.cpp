@@ -263,7 +263,7 @@ void SceneTest::Update(double dt)
 		{
 			
 		}
-
+		
 	}
 }
 
@@ -760,7 +760,6 @@ void SceneTest::RenderHealth()
 	int hp = Player::getplayer()->gethealth();
 	if (hp > 0)
 	{
-		//std::cout << hp << std::endl;
 		RenderMeshOnScreen(playerMeshList[GEO_HEALTHBAR], 7, 56, 10, 6);
 		RenderTextOnScreen(playerMeshList[GEO_HEALTH], std::to_string(hp), Color(0, 0, 1), 4.f, 1.f, 14.f);
 	}

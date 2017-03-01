@@ -1,13 +1,13 @@
-﻿Build started 3/1/2017 9:50:07 AM.
+﻿Build started 3/1/2017 9:16:52 PM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MatrixStack.cpp Source\Mtx44.cpp Source\Vector3.cpp Source\timer.cpp
+         E:\Programs - Work\Visual Studios 2013\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MatrixStack.cpp Source\Mtx44.cpp Source\Vector3.cpp Source\timer.cpp
          MatrixStack.cpp
          Mtx44.cpp
          Vector3.cpp
          timer.cpp
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\Common.lib" /NOLOGO /LTCG Release\MatrixStack.obj
+         E:\Programs - Work\Visual Studios 2013\VC\bin\Lib.exe /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\Common.lib" /NOLOGO /LTCG Release\MatrixStack.obj
          Release\Mtx44.obj
          Release\timer.obj
          Release\Vector3.obj
@@ -16,4 +16,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:14.75
+Time Elapsed 00:00:01.98

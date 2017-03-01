@@ -28,6 +28,7 @@ public:
 	static bool Load(int, std::string, std::list<Building*>&, std::vector<Enemy*>&);
 	static bool is_empty(int);
 	static void NewGame(int);
+	static void fuckthis(int);
 	char* getBlank() { return &blank; }
 	~SaveLoad();
 };
