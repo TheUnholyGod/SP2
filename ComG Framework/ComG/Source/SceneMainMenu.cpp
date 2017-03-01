@@ -92,7 +92,7 @@ void SceneMainMenu::Init()
 
 	//Options Menu
 	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//optionsMenu.tga");
+	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//optionsMenu 2.tga");
 
 	meshList[GEO_MOUSE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_MOUSE]->textureID = LoadTGA("Image//optionsMenu - Mouse.tga");
@@ -434,7 +434,6 @@ void SceneMainMenu::Render()
 
 	if (!options)
 	{
-		//RenderMeshOnScreen(meshList[GEO_MAINMENU], windowX / 20, windowY / 20, 16, 12);
 		RenderMeshOnScreen(meshList[GEO_MAINMENU], 40, 30, 80, 60);
 
 		if (play == 0)

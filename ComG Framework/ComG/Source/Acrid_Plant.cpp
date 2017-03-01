@@ -26,10 +26,8 @@ void Acrid_Plant::Update(double dt, std::list<Building*> Buildings, std::vector<
 		{
 			shootStart = std::clock();
 			Projectile* temp = dynamic_cast<Projectile*>(ItemFactory::getItemFactory()->generateItem(999));
-			//Vector3 pos = (this->getRenderer().getPosition().x + 2.f, 0, this->getRenderer().getPosition().z+2.f);
 			temp->Projectile::FireAcidProjectile(GameObject::getRenderer().getPosition(), -GameObject::getRenderer().getForward().Normalize());
 			temp->Projectile::setProjectilespeed(10);
-			//std::cout << GameObject::getRenderer().getPosition() << "SHOTS FIRED!!" << Player::getplayer()->getRenderer().getPosition() << std::endl;
 			acidProjectile.push_back(temp);
 		}
 	}

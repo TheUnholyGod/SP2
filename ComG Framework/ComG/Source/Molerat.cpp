@@ -58,21 +58,16 @@ void Molerat::Attack(double dt, std::list<Building*> Buildings, std::vector<Enem
 		if (targeted->getAABB(0)->AABBtoAABB(*this->getAABB(0)))
 		{
 			targeted->takeDamage(attack_);
-<<<<<<< HEAD
 			allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 			allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-=======
->>>>>>> e00f12e9a494cc7ba84848e94e65774b63d590aa
 		}
 		else
 		{
 			gameobjrenderer_->setForward((this->gameobjrenderer_->getPosition() - targeted->getRenderer().getPosition()).Normalized());
 			gameobjrenderer_->translate(gameobjrenderer_->getForward(), 50 * dt);
-<<<<<<< HEAD
+
 			allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 			allAABB[1]->setMinMax(gameobjrenderer_->getPosition());
-=======
->>>>>>> e00f12e9a494cc7ba84848e94e65774b63d590aa
 		}
 	}
 	else if (this->allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
