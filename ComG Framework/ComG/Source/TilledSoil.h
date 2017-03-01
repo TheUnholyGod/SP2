@@ -7,7 +7,6 @@
 class TilledSoil : public Building
 {
 protected:
-
 	const std::string kName_;
 	std::string source_location_;
 	int health_;
@@ -17,7 +16,6 @@ public:
 	virtual ~TilledSoil();
 
 	int get_Health();
-
 };
 
 #endif

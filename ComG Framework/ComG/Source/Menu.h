@@ -22,6 +22,7 @@
 #include <list>
 
 #include "FastTravelRoom.h"
+#include "TilledSoil.h"
 #include "Player.h"
 
 #include <sstream>
@@ -147,6 +148,7 @@ public:
 
 	bool pause;	
 	bool rendered;
+	bool isMenu;
 
 	int craft;
 	int menuType;
@@ -195,6 +197,8 @@ public:
 
 	int travelTo;
 	bool tpZone;
+
+	bool plantZone;
 
 	unsigned m_vertexArrayID;
 	unsigned m_programID;
