@@ -6,6 +6,7 @@ Menu::Menu() : buildingID(101), itemID(105)
 {
 	pause = false;
 	rendered = false;
+	isMenu = false;
 
 	craft = 0;
 	menuType = 0;
@@ -229,11 +230,9 @@ void Menu::update()
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + windowY;
 
-	std::cout << menuType << std::endl;
-
 	craft = 0;
 
-	if (menuType)
+	if (isMenu)
 	{
 		if (cursorX > 800)
 		{
@@ -253,6 +252,7 @@ void Menu::update()
 		{
 			menuType = 1;
 			pause = true;
+			isMenu = true;
 		}
 		else if (pause && menuType == 1)//Reset all variables and exit Pause menu
 		{
@@ -263,6 +263,7 @@ void Menu::update()
 			buildSelection = 0;
 			craftSelection = 0;
 			pause = false;
+			isMenu = false;
 		}
 		start = std::clock();
 	}
@@ -272,6 +273,7 @@ void Menu::update()
 		{
 			menuType = 2;
 			pause = true;
+			isMenu = true;
 		}
 		else if (pause && menuType == 2)//Reset all variables and exit Build menu
 		{
@@ -282,6 +284,7 @@ void Menu::update()
 			buildSelection = 0;
 			craftSelection = 0;
 			pause = false;
+			isMenu = false;
 		}
 		start = std::clock();
 	}
@@ -291,6 +294,7 @@ void Menu::update()
 		{
 			menuType = 3;
 			pause = true;
+			isMenu = true;
 		}
 		else if (pause && menuType == 3)//Reset all variables and exit Craft menu
 		{
@@ -301,6 +305,7 @@ void Menu::update()
 			buildSelection = 0;
 			craftSelection = 0;
 			pause = false;
+			isMenu = false;
 		}
 		start = std::clock();
 	}
@@ -310,6 +315,7 @@ void Menu::update()
 		{
 			menuType = 4;
 			pause = true;
+			isMenu = true;
 		}
 		else if (pause && menuType == 4)//Reset all variables and exit Inventory menu
 		{
@@ -320,9 +326,11 @@ void Menu::update()
 			buildSelection = 0;
 			craftSelection = 0;
 			pause = false;
+			isMenu = false;
 		}
 		start = std::clock();
 	}
+
 	if (FastTravelRoom::fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
 	{
 		if (!pause)
@@ -387,28 +395,24 @@ void Menu::update()
 				{
 					optionSelection = 2;
 				}
-			}
 
-			if (optionSelection == 0) //Mouse
-			{
-				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 340 && cursorY <= 390)) || (Application::IsKeyPressed(VK_RETURN)))
+				if ((Application::IsKeyPressed(VK_RETURN)) || (Application::IsKeyPressed(VK_LBUTTON)))
 				{
+					if (optionSelection == 0)
+					{
 
-				}
-			}
-			if (optionSelection == 1) //Volume
-			{
-				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 190 && cursorY <= 230)) || (Application::IsKeyPressed(VK_RETURN)))
-				{
+					}
+					if (optionSelection == 1)
+					{
 
-				}
-			}
-			if (optionSelection == 2) //Back
-			{
-				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 40 && cursorY <= 80)) || (Application::IsKeyPressed(VK_RETURN)))
-				{
-					optionSelection = 0;
-					menuType = 1;
+					}
+					if (optionSelection == 2)
+					{
+						optionSelection = 0;
+						menuType = 1;
+					}
+
+					start = std::clock();
 				}
 			}
 		}
@@ -472,6 +476,7 @@ void Menu::update()
 					menuType = 1;
 					pauseSelection = 0;
 					optionSelection = 0;
+					isMenu = false;
 					pause = false;
 				}
 			}
@@ -546,6 +551,7 @@ void Menu::update()
 						craft = 1;
 						craftSelection = buildingID + buildSelection;
 						SetCursorPos(windowX / 2, windowY / 2);
+						isMenu = false;
 						pause = false;
 					}
 				}
@@ -608,11 +614,12 @@ void Menu::update()
 						}
 						start = std::clock();
 					}
-					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
+					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))//
 					{
 						craft = 2;
 						craftSelection = itemID + craftingSelection;
 						SetCursorPos(windowX / 2, windowY / 2);
+						isMenu = false;
 						pause = false;
 					}
 				}
@@ -668,6 +675,8 @@ void Menu::update()
 			std::cout << "Travelling to: " << travelTo << std::endl;
 		}
 	}
+
+	std::cout << optionSelection << std::endl;
 }
 
 void Menu::Render()
@@ -682,11 +691,11 @@ void Menu::Render()
 			{
 				RenderMeshOnScreen(meshList[GEO_MOUSE], 40, 30, 16, 12);
 			}
-			if (optionSelection == 1)
+			else if (optionSelection == 1)
 			{
 				RenderMeshOnScreen(meshList[GEO_VOLUME], 40, 30, 16, 12);
 			}
-			if (optionSelection == 2)
+			else if(optionSelection == 2)
 			{
 				RenderMeshOnScreen(meshList[GEO_BACK], 40, 30, 16, 12);
 			}
@@ -865,8 +874,7 @@ void Menu::Render()
 		}
 		if (menuType == 4) //Inventory
 		{
-
-			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
+			//RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
 			float y = 45.f;
 			y1 = 45.f;
 			float y2 = 45.f;

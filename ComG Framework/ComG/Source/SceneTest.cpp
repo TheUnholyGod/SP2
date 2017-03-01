@@ -183,7 +183,7 @@ void SceneTest::Init()
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
-		//enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
+		enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
@@ -316,29 +316,6 @@ void SceneTest::Render()
 	RenderInteract();
 
 	static double timee = 0.0;
-	modelStack.PushMatrix();
-	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Body");
-	modelStack.Translate(0, 5, 0);
-	RenderMesh(meshList[GEO_SCAR_BODY], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Bolt");
-	modelStack.Translate(0, 5, 0);
-	RenderMesh(meshList[GEO_SCAR_BOLT], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Charging");
-	modelStack.Translate(0, 5, 0);
-	RenderMesh(meshList[GEO_SCAR_CHARGING], false);
-	modelStack.PopMatrix();
-
-	modelStack.PushMatrix();
-	LoadAtom("ATOM//Scar_Shooting.atom", &modelStack, &timee, "Scar_Casing");
-	modelStack.Translate(0, 5, 0);
-	RenderMesh(meshList[GEO_SCAR_CASING], false);
-	modelStack.PopMatrix();
 
 	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());

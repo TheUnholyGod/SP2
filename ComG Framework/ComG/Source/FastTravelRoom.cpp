@@ -10,6 +10,7 @@ FastTravelRoom::FastTravelRoom(Vector3 position, Vector3 forward) : Building(105
 	gameobjrenderer_->setScaling(7);
 	size.push_back(Vector3(19, 10, 9) * gameobjrenderer_->getScaling());
 	fastTravelling = new AABB(Vector3(18, 18, 7) * gameobjrenderer_->getScaling(), (gameobjrenderer_->getPosition() + Vector3(0, 0, 50)));
+	
 	for (auto &i : size)
 	{
 		AABB* temp = new AABB(i, gameobjrenderer_->getPosition());

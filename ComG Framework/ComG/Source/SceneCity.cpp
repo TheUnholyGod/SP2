@@ -609,24 +609,21 @@ void SceneCity::RenderEnemy()
 
 void SceneCity::SpawnBuilding(int bID)
 {
-	
+
 	if (CityBuildings.size() < 100)
 	{
 		Vector3 spawnPoint = Player::getplayer()->getRenderer().getPosition() + (Player::getplayer()->getRenderer().getForward() * 70);/*
-		Vector3 v_temp = spawnPoint;*/
+																																	   Vector3 v_temp = spawnPoint;*/
 		spawnPoint.x = 1500 - Randomizer::generate_range(20, 2000);
 		spawnPoint.y = 0;
 		spawnPoint.z = 1500 - Randomizer::generate_range(20, 2000);
-		int operator_ = 1 - (Randomizer::generate_range(1,2));
+		int operator_ = 1 - (Randomizer::generate_range(1, 2));
 		for (auto & i : CityBuildings)
 		{
-			for (auto & u : CityBuildings)
-			{
-				if (i->getAABB(1)->pointtoAABB(((u)->getRenderer().getPosition() + Vector3(50,0,50)), Vector3(1, 0, 0)))
+				if (i->getAABB(1)->pointtoAABB(spawnPoint, Vector3(1, 0, 0)))
 				{
-					i->getRenderer().setPosition(i->getRenderer().getPosition() + ( operator_ * Vector3(10, 0, 10)));
+					i->getRenderer().setPosition(i->getRenderer().getPosition() + (operator_ * Vector3(10, 0, 10)));
 				}
-			}
 		}
 
 		Building* temp = BuildingFactory::generateBuilding(bID, spawnPoint, (spawnPoint - Player::getplayer()->getRenderer().getForward()).Normalize());
@@ -665,13 +662,7 @@ void SceneCity::UpdateBuilding(double dt)
 			}
 		}
 	}
-	/*if ((CityBuildings.front()->getRenderer().getPosition().x - Player::getplayer()->getRenderer().getPosition().x) > 100
-		&&
-		(CityBuildings.front()->getRenderer().getPosition().z - Player::getplayer()->getRenderer().getPosition().z) > 100)
-	{
-		CityBuildings.pop_front();
-	}*/
-	
+
 }
 
 void SceneCity::SpawnProjectile(Vector3 position, Vector3 forward)
@@ -820,98 +811,98 @@ void SceneCity::UpdateProjectiles(double dt)
 
 /*void SceneCity::SpawnItems(double dt)
 {
-	if (CityItems.size() < 1)
-	{
-		int x = 0;
-		int y = 0;
-		int z = 0;
-		Vector3 spawn(0, 0, 5);
+if (CityItems.size() < 1)
+{
+int x = 0;
+int y = 0;
+int z = 0;
+Vector3 spawn(0, 0, 5);
 
-		CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(101, spawn));
-		spawn.x += 5;
-		spawn.z += 2;
-		CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
-		spawn.x += 2;
-		spawn.z += 2;
-		CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
-	}
+CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(101, spawn));
+spawn.x += 5;
+spawn.z += 2;
+CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
+spawn.x += 2;
+spawn.z += 2;
+CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
+}
 }
 void SceneCity::RenderItems()
 {
-	for (auto &i : CityItems)
-	{
-		if (!i->getpickedup())
-		{
-			modelStack.PushMatrix();
-			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-			RenderMesh(foodMeshList[i->getID() - ItemID], true);
-			modelStack.PopMatrix();
-		}
-	}
+for (auto &i : CityItems)
+{
+if (!i->getpickedup())
+{
+modelStack.PushMatrix();
+modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+RenderMesh(foodMeshList[i->getID() - ItemID], true);
+modelStack.PopMatrix();
+}
+}
 }
 
 void SceneCity::SpawnLoot(int key)
 {
-	CityLoots.push_back(ItemFactory::getItemFactory()->SpawnItem(key, Lootpos));
+CityLoots.push_back(ItemFactory::getItemFactory()->SpawnItem(key, Lootpos));
 }
 
 void SceneCity::RenderLoot()
 {
-	for (auto &i : CityLoots)
-	{
-		if (!i->getpickedup())
-		{
-			modelStack.PushMatrix();
-			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-			RenderMesh(lootMeshList[i->getID() - ItemID], true);
-			modelStack.PopMatrix();
-		}
-	}
+for (auto &i : CityLoots)
+{
+if (!i->getpickedup())
+{
+modelStack.PushMatrix();
+modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+RenderMesh(lootMeshList[i->getID() - ItemID], true);
+modelStack.PopMatrix();
+}
+}
 }
 
 void SceneCity::RenderInteract()
 {
-	if (Player::getplayer()->getInteract())
-	{
-		RenderMeshOnScreen(playerMeshList[GEO_INTERACT_IMG], 39, 8, 42, 4);
-		RenderTextOnScreen(playerMeshList[GEO_INTERACT], "Press 'E' to Interact", Color(0, 0, 1), 2.f, 10.f, 4.f);
-	}
+if (Player::getplayer()->getInteract())
+{
+RenderMeshOnScreen(playerMeshList[GEO_INTERACT_IMG], 39, 8, 42, 4);
+RenderTextOnScreen(playerMeshList[GEO_INTERACT], "Press 'E' to Interact", Color(0, 0, 1), 2.f, 10.f, 4.f);
+}
 }
 
 void SceneCity::buildBuildingUpdate(double dt)
 {
-	if (Application::IsKeyPressed('K')) {
-		buildBuilding = false;
-	}
+if (Application::IsKeyPressed('K')) {
+buildBuilding = false;
+}
 
 }
 
 void SceneCity::UpdateEnemy(double dt)
 {
-	std::vector<int> pos;
-	int counter = 0;
-	for (auto &i : CityEnemy)
-	{
-		i->Update(dt, CityBuildings, CityEnemy);
-		if (i->isDead())
-		{
-			Lootpos = i->getRenderer().getPosition();
-			SpawnLoot(GenerateLoot());
-			pos.push_back(counter);
-		}
-		counter++;
-	}
-	if (pos.size())
-	{
-		int deleted = 0;
-		for (auto i : pos)
-		{
-			Enemy* temp = *(CityEnemy.begin() + (i - deleted));
-			CityEnemy.erase(CityEnemy.begin() + (i - deleted));
-			deleted++;
-			delete temp;
-			temp = nullptr;
-		}
-	}
+std::vector<int> pos;
+int counter = 0;
+for (auto &i : CityEnemy)
+{
+i->Update(dt, CityBuildings, CityEnemy);
+if (i->isDead())
+{
+Lootpos = i->getRenderer().getPosition();
+SpawnLoot(GenerateLoot());
+pos.push_back(counter);
+}
+counter++;
+}
+if (pos.size())
+{
+int deleted = 0;
+for (auto i : pos)
+{
+Enemy* temp = *(CityEnemy.begin() + (i - deleted));
+CityEnemy.erase(CityEnemy.begin() + (i - deleted));
+deleted++;
+delete temp;
+temp = nullptr;
+}
+}
 }
 */

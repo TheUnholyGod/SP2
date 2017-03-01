@@ -1,4 +1,4 @@
-﻿Build started 1/3/2017 12:36:31 PM.
+﻿Build started 1/3/2017 1:44:51 PM.
      1>Project "C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glew\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glfw\include" /I"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneCity.cpp
@@ -9,6 +9,7 @@
      1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
      1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\FastTravelRoom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\TilledSoil.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\valuedacercustomer\documents\nyp gdt\sp2\comg framework\comg\source\DefenceTower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>Source\SceneCity.cpp(168): warning C4018: '<' : signed/unsigned mismatch
      1>Source\SceneCity.cpp(173): warning C4018: '<' : signed/unsigned mismatch
@@ -18,11 +19,11 @@
      1>Source\SceneCity.cpp(212): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
      1>Source\SceneCity.cpp(617): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
      1>Source\SceneCity.cpp(619): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneCity.cpp(627): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneCity.cpp(659): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneCity.cpp(724): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneCity.cpp(725): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneCity.cpp(743): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SceneCity.cpp(625): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneCity.cpp(656): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneCity.cpp(715): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneCity.cpp(716): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneCity.cpp(734): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glew\lib" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ValuedAcerCustomer\Documents\NYP GDT\SP2\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Ability.obj
          Release\AbilityDataBase.obj
@@ -134,4 +135,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.50
+Time Elapsed 00:00:10.51
