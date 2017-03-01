@@ -328,9 +328,22 @@ void SceneMainMenu::Update(double dt)
 			loadEmpty[i] = SaveLoad::is_empty(i + 1);
 		}
 
-		if (Application::IsKeyPressed(VK_LBUTTON))
+		if (Application::IsKeyPressed(VK_LBUTTON) && elapsedTime > 0.001)
 		{
-			if (load == 0) //Continue / New Game menu
+			if ((cursorX >= 690 && cursorX <= 770) && (cursorY >= 50 && cursorY <= 110)) //Back Button
+			{
+				if (load == 0)
+				{
+					isPlay = false;
+				}
+				else
+				{
+					load--;
+				}
+				start = std::clock();
+			}
+
+			else if (load == 0) //Continue / New Game menu
 			{
 				if ((cursorY >= 330 && cursorY <= 390) && (cursorX >= 170 && cursorX <= 640))
 				{

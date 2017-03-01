@@ -6,6 +6,7 @@ Menu::Menu() : buildingID(101), itemID(105)
 {
 	pause = false;
 	rendered = false;
+	isMenu = false;
 
 	craft = 0;
 	menuType = 0;
@@ -229,11 +230,9 @@ void Menu::update()
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + windowY;
 
-	std::cout << menuType << std::endl;
-
 	craft = 0;
 
-	if (menuType)
+	if (isMenu)
 	{
 		if (cursorX > 800)
 		{
@@ -253,6 +252,7 @@ void Menu::update()
 		{
 			menuType = 1;
 			pause = true;
+			isMenu = true;
 		}
 		else if (pause && menuType == 1)//Reset all variables and exit Pause menu
 		{
@@ -263,6 +263,7 @@ void Menu::update()
 			buildSelection = 0;
 			craftSelection = 0;
 			pause = false;
+			isMenu = false;
 		}
 		start = std::clock();
 	}
@@ -272,6 +273,7 @@ void Menu::update()
 		{
 			menuType = 2;
 			pause = true;
+			isMenu = true;
 		}
 		else if (pause && menuType == 2)//Reset all variables and exit Build menu
 		{
@@ -282,6 +284,7 @@ void Menu::update()
 			buildSelection = 0;
 			craftSelection = 0;
 			pause = false;
+			isMenu = false;
 		}
 		start = std::clock();
 	}
@@ -291,6 +294,7 @@ void Menu::update()
 		{
 			menuType = 3;
 			pause = true;
+			isMenu = true;
 		}
 		else if (pause && menuType == 3)//Reset all variables and exit Craft menu
 		{
@@ -301,6 +305,7 @@ void Menu::update()
 			buildSelection = 0;
 			craftSelection = 0;
 			pause = false;
+			isMenu = false;
 		}
 		start = std::clock();
 	}
@@ -310,6 +315,7 @@ void Menu::update()
 		{
 			menuType = 4;
 			pause = true;
+			isMenu = true;
 		}
 		else if (pause && menuType == 4)//Reset all variables and exit Inventory menu
 		{
@@ -320,9 +326,11 @@ void Menu::update()
 			buildSelection = 0;
 			craftSelection = 0;
 			pause = false;
+			isMenu = false;
 		}
 		start = std::clock();
 	}
+
 	if (FastTravelRoom::fastTravelling->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()))
 	{
 		if (!pause)
@@ -472,6 +480,7 @@ void Menu::update()
 					menuType = 1;
 					pauseSelection = 0;
 					optionSelection = 0;
+					isMenu = false;
 					pause = false;
 				}
 			}
@@ -546,6 +555,7 @@ void Menu::update()
 						craft = 1;
 						craftSelection = buildingID + buildSelection;
 						SetCursorPos(windowX / 2, windowY / 2);
+						isMenu = false;
 						pause = false;
 					}
 				}
@@ -613,6 +623,7 @@ void Menu::update()
 						craft = 2;
 						craftSelection = itemID + craftingSelection;
 						SetCursorPos(windowX / 2, windowY / 2);
+						isMenu = false;
 						pause = false;
 					}
 				}

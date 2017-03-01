@@ -50,7 +50,7 @@ bool SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 	filename << "Saves//" << saveno << "//" << area << ".txt";
 	std::string address;
 	filename >> address;
-	std::ifstream loader(address, std::ofstream::in);
+	std::ifstream loader(address, std::ifstream::in);
 	if (loader.fail() || loader.peek() == std::ifstream::traits_type::eof())
 	{
 		return false;
@@ -102,7 +102,7 @@ bool SaveLoad::is_empty(int saveno)
 	filename << "Saves//" << saveno << "//Base.txt";
 	std::string address;
 	filename >> address;
-	std::ifstream loader(address, std::ofstream::in);
+	std::ifstream loader(address, std::ifstream::in);
 
 	return loader.peek() == std::ifstream::traits_type::eof();
 }
@@ -139,6 +139,7 @@ void SaveLoad::NewGame(int no)
 void SaveLoad::SaveInv(int no)
 {
 	char blanker = *(SaveLoad::getInstance()->getBlank());
+	bool  first = true;
 	std::stringstream filename;
 	filename << "Saves//" << no << "//Inventory.txt";
 	std::string address;
@@ -150,7 +151,12 @@ void SaveLoad::SaveInv(int no)
 		std::stringstream saveline;
 		saveline << i.first << blanker << i.second << ";;";
 		saveline >> temp;
-		saver << temp << std::endl;
+		if (!first)
+		{
+			saver << std::endl;
+		}
+		saver << temp;
+		first = false;
 	}
 	saver.close();
 	delete Inventory::getinventory();
@@ -158,35 +164,29 @@ void SaveLoad::SaveInv(int no)
 
 void SaveLoad::LoadInv(int no)
 {
+	Inventory::getinventory();
 	std::stringstream filename;
 	filename << "Saves//" << no << "//Inventory.txt";
 	std::string address;
 	filename >> address;
-	std::ifstream loader(address, std::ofstream::in);
-	if(!loader.peek() == std::ifstream::traits_type::eof())
+	std::ifstream loader(address, std::ifstream::in);
+	while (!loader.eof())
 	{
-		while (!loader.eof())
+		char temparray[256];
+		std::vector<int> tempstorage;
+		loader.getline(temparray, 256);
+		for (int i = 0; temparray[i] != ';';)
 		{
-			char temparray[256];
-			std::vector<int> tempstorage;
-			loader.getline(temparray, 256);
-			sscanf_s(temparray, "%d");
-			for (int i = 0; temparray[i] != ';';)
-			{
-				int temp;
-				sscanf_s(temparray + i, "%d", &temp);
-				tempstorage.push_back(temp);
-				std::string sizestring = std::to_string(temp);
-				i += sizestring.size() + 1;
-			}
-			if (tempstorage[0] || tempstorage[0] != ';')
-			{
-				while (tempstorage[1])
-				{
-					Inventory::getinventory()->Additem(tempstorage[0]);
-					tempstorage[1]--;
-				}
-			}
+			int temp;
+			sscanf_s(temparray + i, "%d", &temp);
+			tempstorage.push_back(temp);
+			std::string sizestring = std::to_string(temp);
+			i += sizestring.size() + 1;
+		}
+		while (tempstorage[1])
+		{
+			Inventory::getinventory()->Additem(tempstorage[0]);
+			tempstorage[1]--;
 		}
 	}
 	loader.close();

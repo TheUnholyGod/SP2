@@ -18,7 +18,8 @@ Inventory* Inventory::getinventory()
 
 Inventory::~Inventory()
 {
-
+	inv.erase(inv.begin(), inv.end());
+	List.erase(List.begin(), List.end());
 }
 
 void Inventory::Additem(int key)
