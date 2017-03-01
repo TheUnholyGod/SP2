@@ -257,7 +257,10 @@ void SceneTest::Update(double dt)
 
 		if (pauseMenu.craft == 1)//Craft building selected
 		{
-			SpawnBuilding(pauseMenu.craftSelection);
+			if (pauseMenu.check == true)
+				SpawnBuilding(pauseMenu.craftSelection);
+			else
+				std::cout << "Not enough resources to build" << std::endl;
 		}
 		if (pauseMenu.craft == 2)//Craft item selected
 		{

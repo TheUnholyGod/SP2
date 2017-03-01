@@ -554,6 +554,11 @@ void Menu::update()
 					{
 						craft = 1;
 						craftSelection = buildingID + buildSelection;
+						bRecipe = BuildingDataBase::getBuildingDB()->getBuilding(craftSelection)->getRecipe();
+						check = false;
+						check = checkbuild();
+						if(check)
+							Removal();
 						SetCursorPos(windowX / 2, windowY / 2);
 						isMenu = false;
 						pause = false;
@@ -1049,3 +1054,66 @@ void Menu::checkItem(int key)
 
 	tempID.erase(tempID.begin(), tempID.end());
 }
+
+//====================================================check Inventory=====================================================================
+bool Menu::checkbuild()
+{
+	bool checking = false;
+	for (bit = bRecipe.begin(); bit != bRecipe.end(); bit++)
+	{
+		int i = bit->first->getID();
+		int i_no = bit->second;
+		
+		std::map <int, int> ::iterator checkmap = Inventory::getinventory()->inv.find(i);
+		for (std::map<int, int>::iterator c = Inventory::getinventory()->inv.begin(); c != Inventory::getinventory()->inv.end(); c++)
+		{
+			if (checkmap != Inventory::getinventory()->inv.end());
+			{
+				int checkno = c->second;
+				if (checkno >= i_no)
+				{
+					checking = true;
+				}
+				else
+				{
+					checking = false;
+				}
+			}
+			
+			if(checkmap == Inventory::getinventory()->inv.end())
+			{
+				return false;
+			}
+		}
+		if (checking == false)
+		{
+			return false;
+		}
+	}
+	if (checking == true)
+	{
+		return true;
+	}
+	else
+		return false;
+}
+
+void Menu::Removal()
+{
+	for (bit = bRecipe.begin(); bit != bRecipe.end(); bit++)
+	{
+		int i = bit->first->getID();
+		int rid = bit->first->getID();
+		int r_no = bit->second;
+
+		std::map <int, int> ::iterator checkmap1 = Inventory::getinventory()->inv.find(rid);
+			if (checkmap1 == Inventory::getinventory()->inv.end())
+			{
+				continue;
+			}
+			else
+				Inventory::getinventory()->Removeitem(rid, r_no);
+	}
+}
+
+//=========================================================================================================================================

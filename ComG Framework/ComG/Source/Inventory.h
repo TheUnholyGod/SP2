@@ -23,7 +23,7 @@ public:
 	std::list<std::string> name;
 	static Inventory *getinventory();
 	void Additem(int key);
-	void Removeitem(Item* item, int key);
+	void Removeitem(int item, int key);
 
 	void setupdate();
 	void Update(double dt);

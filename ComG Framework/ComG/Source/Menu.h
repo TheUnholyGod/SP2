@@ -200,6 +200,12 @@ public:
 
 	bool plantZone;
 
+	//Inventory(building)
+	bool check;
+	bool checkbuild();
+	std::map <int, int> Remove;
+	void Removal();
+
 	unsigned m_vertexArrayID;
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];

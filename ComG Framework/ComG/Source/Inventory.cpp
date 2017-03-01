@@ -34,17 +34,17 @@ void Inventory::Additem(int key)
 	}
 }
 
-void Inventory::Removeitem(Item* item, int key)
+void Inventory::Removeitem(int item, int key)
 {
-	if (inv[key])
+	if (inv[item])
 	{
-		if(inv[key]>1)
-		inv[key]--;
+		if(inv[item]>key)
+		inv[item]-=key;
 		
 		else
 		{
-			Item* Remove = item;
-			delete Remove;
+			inv[item] = 0;
+			inv.erase(item);
 		}
 	}
 	else
