@@ -12,6 +12,7 @@
 #include "TrophyRoom.h"
 #include "WaterWell.h"
 #include "Tree.h"
+#include "CityBuilding1.h"
 
 BuildingDataBase* BuildingDataBase::Buildingdb_;
 
@@ -63,6 +64,10 @@ BuildingDataBase::BuildingDataBase()
 	delete temp;
 	temp = new WaterWell;
 	Buildingdatabase_[temp->getID()] = new WaterWell;
+	IDlist.push_back(temp->getID());
+	delete temp;
+	temp = new CityBuilding1;
+	Buildingdatabase_[temp->getID()] = new CityBuilding1;
 	IDlist.push_back(temp->getID());
 	delete temp;
 	temp = new Tree;

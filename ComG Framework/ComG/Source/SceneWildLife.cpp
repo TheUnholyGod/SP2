@@ -18,7 +18,7 @@
 #include "Menu.h"
 #include <sstream>
 
-SceneWildLife::SceneWildLife():buildingID(201)
+SceneWildLife::SceneWildLife():buildingID(200)
 {
 }
 
@@ -136,9 +136,16 @@ void SceneWildLife::Init()
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
 	}
-	for (int i = 0; i<buildingMeshList.size(); i++)
+	for (int i = 0; i < buildingMeshList.size(); i++)
 	{
-		buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getSourceLocation());
+		if (i == 0)
+		{
+			buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(105 + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(105 + i)->getSourceLocation());
+		}
+		else
+		{
+			buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getSourceLocation());
+		}
 	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
@@ -147,13 +154,13 @@ void SceneWildLife::Init()
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer();
-	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
 	if (!SaveLoad::Load(Application::saveno, "Wildlife", ForestBuildings, ForestEnemy))
 	{
 		newForest();
 	}
+	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
 	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 }
 
@@ -171,6 +178,8 @@ void SceneWildLife::Update(double dt)
 	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems, ForestLoot);
 	SpawnEnemy(dt);
+	UpdateEnemy(dt);
+	UpdateBuilding(dt);
 	LightUpdate(dt);
 }
 
@@ -518,7 +527,7 @@ void SceneWildLife::RenderTextOnScreen(Mesh* mesh, std::string text, Color color
 void SceneWildLife::SpawnEnemy(double dt)
 {
 	if (ForestEnemy.size() < 5)
-		ForestEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(12));
+		ForestEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(7));
 }
 
 void SceneWildLife::UpdateEnemy(double dt)
@@ -555,14 +564,22 @@ void SceneWildLife::UpdateBuilding(double dt)
 
 void SceneWildLife::RenderBuilding()
 {
-	int y = 0;
 	for (auto &i : ForestBuildings)
 	{
-		modelStack.PushMatrix();
-		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
-		modelStack.PopMatrix();
-		y++;
+		if (i->getID() != 105)
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(buildingMeshList[i->getID() - buildingID], true);
+			modelStack.PopMatrix();
+		}
+		else
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(buildingMeshList[i->getID() - 105], true);
+			modelStack.PopMatrix();
+		}
 	}
 }
 

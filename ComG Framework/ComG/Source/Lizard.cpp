@@ -47,7 +47,7 @@ void Lizard::pathfinding()
 void Lizard::Attack(double dt, std::list<Building*> Buildings, std::vector<Enemy*> Enemy)
 {
 	attacktime = (std::clock() - cooldown) / (int)CLOCKS_PER_SEC;
-	if (!isAttaacked && attacktime > 5)
+	if (!isAttaacked && attacktime > 1.5f)
 	{
 		if (!checkCollision(Buildings, Enemy))
 		{
@@ -59,7 +59,7 @@ void Lizard::Attack(double dt, std::list<Building*> Buildings, std::vector<Enemy
 			}
 			else if (!this->allAABB[0]->AABBtoAABB(*Player::getplayer()->getAABB(0)))
 			{
-				gameobjrenderer_->setForward((-this->gameobjrenderer_->getPosition() - Player::getplayer()->getRenderer().getPosition()).Normalized());
+				gameobjrenderer_->setForward((Player::getplayer()->getRenderer().getPosition() - this->gameobjrenderer_->getPosition()).Normalized());
 				gameobjrenderer_->translate(this->gameobjrenderer_->getForward(), 25 * dt);
 			}
 		}
@@ -69,7 +69,7 @@ void Lizard::Attack(double dt, std::list<Building*> Buildings, std::vector<Enemy
 			gameobjrenderer_->translate(gameobjrenderer_->getForward(), 25 * dt);
 		}
 	}
-	else if(isAttaacked && attacktime < 5)
+	else if(isAttaacked && attacktime < 1.5f)
 	{
 		gameobjrenderer_->translate(this->gameobjrenderer_->getForward(), 25 * dt);
 		isAttaacked = false;

@@ -194,9 +194,10 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 	}*/
 	if (Application::IsKeyPressed('Q'))
 	{
-		for (auto &i : Loots)
+		for (int i = 0; i < 20; i++)
 		{
-			std::cout << i->getID() << std::endl;
+			Inventory::getinventory()->Additem(202);
+			Inventory::getinventory()->Additem(206);
 		}
 	}
 

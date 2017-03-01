@@ -3,7 +3,7 @@
 
 std::vector<Projectile*>Acrid_Plant::acidProjectile;
 
-Acrid_Plant::Acrid_Plant() : Enemy(12, "OBJ//AcidPlant.obj", "Image//AcidPlant_Texture.tga", "AcridPlant",  BOSS, "Base", 150, 15, 20)
+Acrid_Plant::Acrid_Plant() : Enemy(7, "OBJ//AcidPlant.obj", "Image//AcidPlant_Texture.tga", "AcridPlant",  BOSS, "Base", 150, 15, 20)
 {
 	float randX = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().x;
 	float randZ = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().z;

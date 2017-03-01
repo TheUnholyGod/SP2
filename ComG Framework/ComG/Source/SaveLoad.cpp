@@ -1,6 +1,7 @@
 #include "SaveLoad.h"
 #include "BuildingFactory.h"
 #include "EnemyFactory.h"
+#include "Inventory.h"
 #include <array>
 #include <fstream>
 #include <sstream>
@@ -40,16 +41,16 @@ void SaveLoad::Save(int saveno, std::string area, std::list<Building*>& building
 		saver << temp << std::endl;
 	}
 	saver.close();
+	SaveInv(saveno);
 }
 
 bool SaveLoad::Load(int saveno, std::string area, std::list<Building*>& buildingslist, std::vector<Enemy*>& enemyslist)
 {
-	const char* blanker = SaveLoad::getInstance()->getBlank();
 	std::stringstream filename;
 	filename << "Saves//" << saveno << "//" << area << ".txt";
 	std::string address;
 	filename >> address;
-	std::ifstream loader(address, std::ofstream::in);
+	std::ifstream loader(address, std::ifstream::in);
 	if (loader.fail() || loader.peek() == std::ifstream::traits_type::eof())
 	{
 		return false;
@@ -58,7 +59,7 @@ bool SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 	{
 		char temparray[256];
 		char entitytype;
-		std::vector<float> tempstorage;
+		std::vector<int> tempstorage;
 		loader.getline(temparray, 256);
 		sscanf_s(temparray, "%d", &entitytype);
 		entitytype = temparray[0];
@@ -91,6 +92,7 @@ bool SaveLoad::Load(int saveno, std::string area, std::list<Building*>& building
 		}
 	}
 	loader.close();
+	LoadInv(saveno);
 	return true;
 }
 
@@ -100,7 +102,7 @@ bool SaveLoad::is_empty(int saveno)
 	filename << "Saves//" << saveno << "//Base.txt";
 	std::string address;
 	filename >> address;
-	std::ifstream loader(address, std::ofstream::in);
+	std::ifstream loader(address, std::ifstream::in);
 
 	return loader.peek() == std::ifstream::traits_type::eof();
 }
@@ -142,4 +144,59 @@ void SaveLoad::fuckthis(int no)
 	std::ofstream newing;
 	newing.open(filename.str(), std::ios::out | std::ios::trunc);
 	newing.close();
+}
+
+void SaveLoad::SaveInv(int no)
+{
+	char blanker = *(SaveLoad::getInstance()->getBlank());
+	bool  first = true;
+	std::stringstream filename;
+	filename << "Saves//" << no << "//Inventory.txt";
+	std::string address;
+	filename >> address;
+	std::ofstream saver(address, std::ofstream::out);
+	for (auto &i : Inventory::getinventory()->getInventoryContents())
+	{
+		std::string temp;
+		std::stringstream saveline;
+		saveline << i.first << blanker << i.second << ";;";
+		saveline >> temp;
+		if (!first)
+		{
+			saver << std::endl;
+		}
+		saver << temp;
+		first = false;
+	}
+	saver.close();
+}
+
+void SaveLoad::LoadInv(int no)
+{
+	Inventory::getinventory()->reset();
+	std::stringstream filename;
+	filename << "Saves//" << no << "//Inventory.txt";
+	std::string address;
+	filename >> address;
+	std::ifstream loader(address, std::ifstream::in);
+	while (!loader.eof())
+	{
+		char temparray[256];
+		std::vector<int> tempstorage;
+		loader.getline(temparray, 256);
+		for (int i = 0; temparray[i] != ';';)
+		{
+			int temp = 0;
+			sscanf_s(temparray + i, "%d", &temp);
+			tempstorage.push_back(temp);
+			std::string sizestring = std::to_string(temp);
+			i += sizestring.size() + 1;
+		}
+		while (tempstorage[1])
+		{
+			Inventory::getinventory()->Additem(tempstorage[0]);
+			tempstorage[1]--;
+		}
+	}
+	loader.close();
 }

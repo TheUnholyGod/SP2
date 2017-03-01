@@ -155,19 +155,6 @@ void SceneTest::Init()
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
 
-
-	meshList[GEO_SCAR_BODY] = MeshBuilder::GenerateOBJ("Scar_Body", "OBJ//Scar_Body.obj");
-	meshList[GEO_SCAR_BODY]->textureID = LoadTGA("Image//ScarUV.tga");
-
-	meshList[GEO_SCAR_BOLT] = MeshBuilder::GenerateOBJ("Scar_Bolt", "OBJ//Scar_Bolt.obj");
-	meshList[GEO_SCAR_BOLT]->textureID = LoadTGA("Image//ScarUV.tga");
-
-	meshList[GEO_SCAR_CHARGING] = MeshBuilder::GenerateOBJ("Scar_Charging", "OBJ//Scar_Charging.obj");
-	meshList[GEO_SCAR_CHARGING]->textureID = LoadTGA("Image//ScarUV.tga");
-
-	meshList[GEO_SCAR_CASING] = MeshBuilder::GenerateOBJ("Scar_Casing", "OBJ//Scar_Casing.obj");
-	meshList[GEO_SCAR_CASING]->textureID = LoadTGA("Image//ScarUV.tga");
-
 	playerMeshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Health", Color(0, 1, 0), 1.f);
 	//playerMeshList[GEO_HEALTHBAR]->textureID = LoadTGA("Image//inventoryMenu.tga");
 
@@ -183,7 +170,7 @@ void SceneTest::Init()
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
-		enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
+		//enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
@@ -210,13 +197,14 @@ void SceneTest::Init()
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer();
-	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	
 	Inventory::getinventory();
 	Player::getplayer()->setWeapon(307);
 	SaveLoad::Load(Application::saveno, "Base", BaseBuildings, BaseEnemy);
-	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 	PTime = 0;
 	Pstart = 0;
+	fp_camera.Init(Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getForward(), Vector3(0, 1, 0));
+	fp_camera.Update(0, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
 }
 
 void SceneTest::Update(double dt)
@@ -246,7 +234,6 @@ void SceneTest::Update(double dt)
 
 		SpawnEnemy(dt);
 		LightUpdate(dt);
-		BTime = std::clock();
 
 		UpdateProjectiles(dt);
 		UpdateEnemy(dt);
@@ -257,11 +244,20 @@ void SceneTest::Update(double dt)
 
 		if (pauseMenu.craft == 1)//Craft building selected
 		{
-			SpawnBuilding(pauseMenu.craftSelection);
+			if (pauseMenu.check == true)
+				SpawnBuilding(pauseMenu.craftSelection);
+			else
+				std::cout << "Not enough resources to build" << std::endl;
 		}
 		if (pauseMenu.craft == 2)//Craft item selected
 		{
-			
+			if (pauseMenu.check1 == true)
+			{
+				int Item = pauseMenu.craftSelection;
+				Inventory::getinventory()->Additem(Item);
+			}
+			else
+				std::cout << "Not enough resources to craft" << std::endl;
 		}
 		
 	}
@@ -630,18 +626,17 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-	if (BaseEnemy.size() < 5)
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(8));
-	if (BaseEnemy.size() < 20)
+	/*if (BaseEnemy.size() < 20)
 	{
-		BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+		//BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
+		if (BaseEnemy.size() < 3)
+			BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(13));
 	}
-
 	if (BaseEnemy.size() < 20)
 	{
 		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(2);
 		BaseEnemy.push_back(temp);
-	}
+	}*/
 }
 
 void SceneTest::RenderEnemy()

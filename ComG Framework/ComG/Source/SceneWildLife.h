@@ -81,13 +81,14 @@ class SceneWildLife : public Scene
 	};
 	enum ENEMYMESHLIST
 	{
-		GEO_DEER,
+		GEO_ACIDPLANT,
 		GEO_GOAT,
 		GEO_BOAR,
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
-	{
+	{	
+		GEO_GARAGE,
 		GEO_TREE,
 		NUM_BUILDINGGEOMETRY,
 	};
