@@ -7,6 +7,7 @@
 #include "LoadTGA.h"
 #include "SceneManager.h"
 #include "Menu.h"
+#include "SaveLoad.h"
 
 #include <sstream>
 
@@ -88,10 +89,12 @@ void SceneSplashScreen::Update(double dt)
 {
 	DebugMode(dt);
 	elapsed = (std::clock() - start) / (int)CLOCKS_PER_SEC;
+
+	
 	if (elapsed == 2)
 		change = true;
 	if (elapsed == 5)
-		SceneManager::currScene = 2;
+		SceneManager::currScene = 2;	
 }
 
 void SceneSplashScreen::Render()

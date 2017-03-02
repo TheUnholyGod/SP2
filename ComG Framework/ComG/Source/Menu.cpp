@@ -1,4 +1,6 @@
 #include "Menu.h"
+#include "SceneSplashScreen.h"
+#include "SaveLoad.h"
 
 POINT cursorPoint;
 
@@ -238,7 +240,15 @@ void Menu::update()
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + windowY;
 
+	int HP = Player::getplayer()->gethealth();
+	
 	craft = 0;
+
+	if (HP <= 0)
+	{
+		Player::getplayer()->isDead();
+		SceneManager::currScene = 8;
+	}
 
 	if (isMenu)
 	{
@@ -253,7 +263,6 @@ void Menu::update()
 			glfwSetCursorPos(Application::m_window, cursorX, -cursorY + windowY);
 		}
 	}
-
 	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
 		if (!pause)//Go to Pause menu
@@ -674,8 +683,6 @@ void Menu::update()
 			std::cout << "Travelling to: " << travelTo << std::endl;
 		}
 	}
-
-	//std::cout << optionSelection << std::endl;
 }
 
 void Menu::Render()

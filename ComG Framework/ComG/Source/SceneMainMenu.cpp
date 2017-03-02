@@ -9,6 +9,7 @@
 #include "Menu.h"
 #include "Camera3.h"
 #include "SaveLoad.h"
+#include "Player.h"
 
 extern POINT cursorPoint;
 
