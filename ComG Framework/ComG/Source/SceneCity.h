@@ -121,12 +121,6 @@ class SceneCity : public Scene
 		GEO_POTATO,
 		GEO_CABBAGE,
 		GEO_CARROT,
-		GEO_WHEAT,
-		GEO_BREAD,
-		GEO_VEGETABLESTEW,
-		GEO_PURIFIEDWATER,
-		GEO_CARROTJUICE,
-		GEO_SALAD,
 		NUM_FOODGEOMETERY,
 	};
 	enum LOOTMESHLIST
@@ -134,14 +128,9 @@ class SceneCity : public Scene
 		GEO_LPOTATO,
 		GEO_LCABBAGE,
 		GEO_LCARROT,
-		GEO_LWHEAT,
-		GEO_LBREAD,
-		GEO_LVEGETABLESTEW,
-		GEO_LPURIFIEDWATER,
-		GEO_LCARROTJUICE,
-		GEO_LSALAD,
 		NUM_LOOTGEOMETERY,
 	};
+
 public:
 	SceneCity();
 	~SceneCity();
@@ -208,15 +197,17 @@ private:
 
 	std::vector<Item*> CityItems;
 	const int ItemID;
+	void SpawnItems(double dt);
+	void RenderItems();
 
 	std::vector<Item*> CityLoots;
-	std::map<Item*, int>CityLoots1;
 	int LootID;
 	Vector3 Lootpos;
 	void SpawnLoot(int key);
 	void RenderLoot();
 
 	void RenderHealth();
+	void RenderInteract();
 
 	std::clock_t Pstart;
 	float PTime;

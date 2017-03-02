@@ -1,0 +1,9 @@
+diff a/ComG Framework/ComG/Source/LootSystem.h b/ComG Framework/ComG/Source/LootSystem.h	(rejected hunks)
+@@ -6,6 +6,7 @@
+  
+  int GenerateLoot()
+  {
+++<<<<<<< HEAD
+ +	//int r = rand() % 2;
+ +	int key;
+ +	key = Randomizer::generate_range(101, 103);

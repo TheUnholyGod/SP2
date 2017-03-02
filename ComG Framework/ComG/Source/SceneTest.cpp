@@ -237,7 +237,6 @@ void SceneTest::Update(double dt)
 		UpdateEnemy(dt);
 		SpawnItems(dt);
 
-		//DefenceTower::turretTargetUpdate(BaseEnemy);
 		UpdateBuilding(dt);
 
 		if (pauseMenu.craft == 1)//Craft building selected
@@ -627,7 +626,7 @@ void SceneTest::SpawnEnemy(double dt)
 	if (BaseEnemy.size() < 20)
 	{
 		int type = Randomizer::generate_range(1, 2);
-		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(type);
+		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
 		BaseEnemy.push_back(temp);
 	}
 }
@@ -636,10 +635,13 @@ void SceneTest::RenderEnemy()
 {
 	for (auto &i : BaseEnemy)
 	{
-		modelStack.PushMatrix();
-		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(enemyMeshList[i->getID() - 1], true);
-		modelStack.PopMatrix();
+		if (i->getHealth() > 0)
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(enemyMeshList[i->getID() - 1], true);
+			modelStack.PopMatrix();
+		}
 	}
 }
 
@@ -858,7 +860,7 @@ void SceneTest::UpdateEnemy(double dt)
 		if (i->isDead())
 		{
 			Lootpos = i->getRenderer().getPosition();
-			SpawnLoot(GenerateLoot());
+			SpawnLoot(Loot::GenerateLoot());
 			pos.push_back(counter);
 		}
 		counter++;

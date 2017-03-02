@@ -17,6 +17,7 @@
 #include "SaveLoad.h"
 #include "DefenceTower.h"
 #include "FastTravelRoom.h"
+#include "LootSystem.h"
 #include <sstream>
 #include "Randomizer.h"
 
@@ -191,12 +192,12 @@ void SceneCity::Init()
 	for (int i = 0; i < foodMeshList.size(); i++)
 	{
 		foodMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
-		//foodMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
+		foodMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
 	}
 	for (int i = 0; i < lootMeshList.size(); i++)
 	{
 		lootMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
-		//lootMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
+		lootMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
 	}
 
 	suntimer = 1;
@@ -232,7 +233,7 @@ void SceneCity::Update(double dt)
 		UpdateProjectiles(dt);
 		UpdateBuilding(dt);
 		UpdateEnemy(dt);
-
+		SpawnItems(dt);
 	}
 }
 
@@ -280,10 +281,10 @@ void SceneCity::Render()
 	RenderEnemy();
 	RenderBuilding();
 	RenderProjectile();
-	//RenderItems();
-	//RenderLoot();
+	RenderItems();
+	RenderLoot();
 	RenderHealth();
-	//RenderInteract();
+	RenderInteract();
 
 	modelStack.PushMatrix();
 	modelStack.LoadMatrix(Player::getplayer()->getWeapon()->getRenderer().getMatrix());
@@ -637,7 +638,7 @@ void SceneCity::UpdateEnemy(double dt)
 		if (i->isDead())
 		{
 			Lootpos = i->getRenderer().getPosition();
-			//SpawnLoot(GenerateLoot());
+			SpawnLoot(Loot::GenerateLoot());
 			pos.push_back(counter);
 		}
 		counter++;
@@ -652,6 +653,39 @@ void SceneCity::UpdateEnemy(double dt)
 			deleted++;
 			delete temp;
 			temp = nullptr;
+		}
+	}
+}
+
+void SceneCity::SpawnItems(double dt)
+{
+	if (CityItems.size() < 1)
+	{
+		int x = 0;
+		int y = 0;
+		int z = 0;
+		Vector3 spawn(0, 0, 5);
+
+		CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(101, spawn));
+		spawn.x += 5;
+		spawn.z += 2;
+		CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
+		spawn.x += 2;
+		spawn.z += 2;
+		CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
+	}
+}
+
+void SceneCity::RenderItems()
+{
+	for (auto &i : CityItems)
+	{
+		if (!i->getpickedup())
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(foodMeshList[i->getID() - ItemID], true);
+			modelStack.PopMatrix();
 		}
 	}
 }
@@ -672,6 +706,25 @@ void SceneCity::RenderLoot()
 			RenderMesh(lootMeshList[i->getID() - ItemID], true);
 			modelStack.PopMatrix();
 		}
+	}
+}
+
+void SceneCity::RenderHealth()
+{
+	int hp = Player::getplayer()->gethealth();
+	if (hp > 0)
+	{
+		RenderMeshOnScreen(playerMeshList[GEO_HEALTHBAR], 7, 56, 10, 6);
+		RenderTextOnScreen(playerMeshList[GEO_HEALTH], std::to_string(hp), Color(0, 0, 1), 4.f, 1.f, 14.f);
+	}
+}
+
+void SceneCity::RenderInteract()
+{
+	if (Player::getplayer()->getInteract())
+	{
+		RenderMeshOnScreen(playerMeshList[GEO_INTERACT_IMG], 39, 8, 42, 4);
+		RenderTextOnScreen(playerMeshList[GEO_INTERACT], "Press 'E' to Interact", Color(0, 0, 1), 2.f, 10.f, 4.f);
 	}
 }
 
@@ -745,17 +798,6 @@ void SceneCity::RenderProjectile()
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
 		RenderMesh(enemyMeshList[1], true);
 		modelStack.PopMatrix();
-	}
-}
-
-void SceneCity::RenderHealth()
-{
-	int hp = Player::getplayer()->gethealth();
-	if (hp > 0)
-	{
-		//std::cout << hp << std::endl;
-		RenderMeshOnScreen(playerMeshList[GEO_HEALTHBAR], 7, 56, 10, 6);
-		RenderTextOnScreen(playerMeshList[GEO_HEALTH], std::to_string(hp), Color(0, 0, 1), 4.f, 1.f, 14.f);
 	}
 }
 
@@ -866,53 +908,3 @@ void SceneCity::UpdateProjectiles(double dt)
 		}
 	}
 }
-
-/*void SceneCity::SpawnItems(double dt)
-{
-if (CityItems.size() < 1)
-{
-int x = 0;
-int y = 0;
-int z = 0;
-Vector3 spawn(0, 0, 5);
-
-CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(101, spawn));
-spawn.x += 5;
-spawn.z += 2;
-CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
-spawn.x += 2;
-spawn.z += 2;
-CityItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
-}
-}
-void SceneCity::RenderItems()
-{
-for (auto &i : CityItems)
-{
-if (!i->getpickedup())
-{
-modelStack.PushMatrix();
-modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-RenderMesh(foodMeshList[i->getID() - ItemID], true);
-modelStack.PopMatrix();
-}
-}
-}
-
-void SceneCity::RenderInteract()
-{
-if (Player::getplayer()->getInteract())
-{
-RenderMeshOnScreen(playerMeshList[GEO_INTERACT_IMG], 39, 8, 42, 4);
-RenderTextOnScreen(playerMeshList[GEO_INTERACT], "Press 'E' to Interact", Color(0, 0, 1), 2.f, 10.f, 4.f);
-}
-}
-
-void SceneCity::buildBuildingUpdate(double dt)
-{
-if (Application::IsKeyPressed('K')) {
-buildBuilding = false;
-}
-
-}
-*/

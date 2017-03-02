@@ -240,7 +240,6 @@ private:
 	void RenderItems();
 
 	std::vector<Item*> BaseLoots;
-	std::map<Item*, int>BaseLoots1;
 	int LootID;
 	Vector3 Lootpos;
 	void SpawnLoot(int key);

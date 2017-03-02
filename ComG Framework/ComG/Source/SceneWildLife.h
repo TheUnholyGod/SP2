@@ -83,9 +83,10 @@ class SceneWildLife : public Scene
 	};
 	enum ENEMYMESHLIST
 	{
-		GEO_ACIDPLANT,
+		GEO_MOLERAT,
+		GEO_LIZARD,
 		GEO_GOAT,
-		GEO_BOAR,
+		GEO_ACIDPLANT,
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
@@ -100,6 +101,32 @@ class SceneWildLife : public Scene
 		GEO_BOW,
 		NUM_WEAPONGEOMETERY,
 	};
+
+	enum FOODMESHLIST
+	{
+		GEO_POTATO,
+		GEO_CABBAGE,
+		GEO_CARROT,
+		NUM_FOODGEOMETERY,
+	};
+
+	enum LOOTMESHLIST
+	{
+		GEO_LPOTATO,
+		GEO_LCABBAGE,
+		GEO_LCARROT,
+		NUM_LOOTGEOMETERY,
+	};
+
+	enum PLAYER
+	{
+		GEO_HEALTHBAR,
+		GEO_HEALTH,
+		GEO_INTERACT,
+		GEO_INTERACT_IMG,
+		NUM_PLAYERGEOMETRY,
+	};
+
 public:
 	SceneWildLife();
 	~SceneWildLife();
@@ -114,6 +141,9 @@ private:
 	std::array<Mesh*, NUM_ENEMYGEOMETRY> enemyMeshList;
 	std::array<Mesh*, NUM_WEAPONGEOMETERY> weaponmesh;
 	std::array<Mesh*, NUM_BUILDINGGEOMETRY> buildingMeshList;
+	std::array<Mesh*, NUM_FOODGEOMETERY> foodMeshList;
+	std::array<Mesh*, NUM_LOOTGEOMETERY> lootMeshList;
+	std::array<Mesh*, NUM_PLAYERGEOMETRY> playerMeshList;
 
 	unsigned m_programID;
 	unsigned m_parameters[U_TOTAL];
@@ -162,7 +192,17 @@ private:
 	void UpdateProjectiles(double dt);
 
 	std::vector<Item*> ForestItems;
+	const int ItemID;
+	void SpawnItems(double dt);
+	void RenderItems();
+
 	std::vector<Item*> ForestLoot;
+	Vector3 Lootpos;
+	void SpawnLoot(int key);
+	void RenderLoot();
+
+	void RenderHealth();
+	void RenderInteract();
 
 	void newForest();
 	std::clock_t Istart;

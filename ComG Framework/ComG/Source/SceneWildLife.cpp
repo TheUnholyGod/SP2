@@ -15,10 +15,11 @@
 #include "SaveLoad.h"
 #include "Menu.h"
 #include "Randomizer.h"
+#include "LootSystem.h"
 #include "Menu.h"
 #include <sstream>
 
-SceneWildLife::SceneWildLife():buildingID(200)
+SceneWildLife::SceneWildLife():buildingID(200), ItemID(101)
 {
 }
 
@@ -132,25 +133,50 @@ void SceneWildLife::Init()
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
 
+	playerMeshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Health", Color(0, 1, 0), 1.f);
+	//playerMeshList[GEO_HEALTHBAR]->textureID = LoadTGA("Image//inventoryMenu.tga");
+
+	playerMeshList[GEO_HEALTH] = MeshBuilder::GenerateText("HP", 16, 16);
+	playerMeshList[GEO_HEALTH]->textureID = LoadTGA("Image//calibri.tga");
+
+	playerMeshList[GEO_INTERACT] = MeshBuilder::GenerateText("Interact", 16, 16);
+	playerMeshList[GEO_INTERACT]->textureID = LoadTGA("Image//calibri.tga");
+
+	playerMeshList[GEO_INTERACT_IMG] = MeshBuilder::GenerateQuad("InteractImage", Color(0, 0, 0), 1.f);
+
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 7)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 7)->getSourceLocation());
+		enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 7)->getTextureLocation());
 	}
 	for (int i = 0; i < buildingMeshList.size(); i++)
 	{
 		if (i == 0)
 		{
 			buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(105 + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(105 + i)->getSourceLocation());
+			buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(105 + i)->getTextureLocation());
 		}
 		else
 		{
 			buildingMeshList[i] = MeshBuilder::GenerateOBJ(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getName(), BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getSourceLocation());
+			buildingMeshList[i]->textureID = LoadTGA(BuildingDataBase::getBuildingDB()->getBuilding(buildingID + i)->getTextureLocation());
 		}
 	}
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
 	}
+	for (int i = 0; i < foodMeshList.size(); i++)
+	{
+		foodMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
+		foodMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
+	}
+	for (int i = 0; i < lootMeshList.size(); i++)
+	{
+		lootMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
+		lootMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
+	}
+
 	suntimer = 1;
 	LoadSkybox();
 	Player::getplayer();
@@ -187,6 +213,7 @@ void SceneWildLife::Update(double dt)
 		UpdateBuilding(dt);
 		UpdateProjectiles(dt);
 		LightUpdate(dt);
+		SpawnItems(dt);
 	}
 }
 
@@ -239,6 +266,11 @@ void SceneWildLife::Render()
 	RenderEnemy();
 	RenderBuilding();
 	RenderProjectile();
+	RenderItems();
+	RenderLoot();
+	RenderHealth();
+	RenderInteract();
+
 	//Render UI
 	pauseMenu.Render();
 }
@@ -358,6 +390,9 @@ void SceneWildLife::LoadSkybox()
 void SceneWildLife::RenderSkybox()
 {
 	modelStack.PushMatrix();
+	modelStack.Translate(fp_camera.getPosition().x, fp_camera.getPosition().y, fp_camera.getPosition().z);
+
+	modelStack.PushMatrix();
 	modelStack.Translate(10, 0, 10);
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
@@ -447,6 +482,7 @@ void SceneWildLife::RenderSkybox()
 	else if (sunup == 3)
 		RenderMesh(meshList[GEO_FRONT2], false);
 
+	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }
@@ -547,8 +583,8 @@ void SceneWildLife::UpdateEnemy(double dt)
 		i->Update(dt, ForestBuildings, ForestEnemy);
 		if (i->isDead())
 		{
-		/*	Lootpos = i->getRenderer().getPosition();
-			SpawnLoot(GenerateLoot());*/
+			Lootpos = i->getRenderer().getPosition();
+			SpawnLoot(Loot::GenerateLoot());
 			pos.push_back(counter);
 		}
 		counter++;
@@ -581,6 +617,77 @@ void SceneWildLife::RenderEnemy()
 void SceneWildLife::SpawnBuilding()
 {
 
+}
+
+void SceneWildLife::SpawnItems(double dt)
+{
+	if (ForestItems.size() < 1)
+	{
+		int x = 0;
+		int y = 0;
+		int z = 0;
+		Vector3 spawn(0, 0, 5);
+
+		ForestItems.push_back(ItemFactory::getItemFactory()->SpawnItem(101, spawn));
+		spawn.x += 5;
+		spawn.z += 2;
+		ForestItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
+		spawn.x += 2;
+		spawn.z += 2;
+		ForestItems.push_back(ItemFactory::getItemFactory()->SpawnItem(103, spawn));
+	}
+}
+
+void SceneWildLife::RenderItems()
+{
+	for (auto &i : ForestItems)
+	{
+		if (!i->getpickedup())
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(foodMeshList[i->getID() - ItemID], true);
+			modelStack.PopMatrix();
+		}
+	}
+}
+
+void SceneWildLife::SpawnLoot(int key)
+{
+	ForestLoot.push_back(ItemFactory::getItemFactory()->SpawnItem(key, Lootpos));
+}
+
+void SceneWildLife::RenderLoot()
+{
+	for (auto &i : ForestLoot)
+	{
+		if (!i->getpickedup())
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(lootMeshList[i->getID() - ItemID], true);
+			modelStack.PopMatrix();
+		}
+	}
+}
+
+void SceneWildLife::RenderHealth()
+{
+	int hp = Player::getplayer()->gethealth();
+	if (hp > 0)
+	{
+		RenderMeshOnScreen(playerMeshList[GEO_HEALTHBAR], 7, 56, 10, 6);
+		RenderTextOnScreen(playerMeshList[GEO_HEALTH], std::to_string(hp), Color(0, 0, 1), 4.f, 1.f, 14.f);
+	}
+}
+
+void SceneWildLife::RenderInteract()
+{
+	if (Player::getplayer()->getInteract())
+	{
+		RenderMeshOnScreen(playerMeshList[GEO_INTERACT_IMG], 39, 8, 42, 4);
+		RenderTextOnScreen(playerMeshList[GEO_INTERACT], "Press 'E' to Interact", Color(0, 0, 1), 2.f, 10.f, 4.f);
+	}
 }
 
 void SceneWildLife::UpdateBuilding(double dt)
