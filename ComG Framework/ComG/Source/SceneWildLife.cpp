@@ -178,6 +178,7 @@ void SceneWildLife::Init()
 	}
 
 	suntimer = 1;
+	counter = 0;
 	LoadSkybox();
 	Player::getplayer();
 	Inventory::getinventory();
@@ -607,10 +608,14 @@ void SceneWildLife::RenderEnemy()
 {
 	for (auto &i : ForestEnemy)
 	{
-		modelStack.PushMatrix();
-		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(enemyMeshList[i->getID() - 7], true);
-		modelStack.PopMatrix();
+		if (counter < 5)
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(enemyMeshList[i->getID() - 7], true);
+			modelStack.PopMatrix();
+			counter++; 
+		}
 	}
 }
 
@@ -800,11 +805,11 @@ void SceneWildLife::newForest()
 {
 	Building* temp1 = (BuildingFactory::getBuildingFactory()->generateBuilding(105, Vector3(0, 0, 0), Vector3(1, 0, 0)));
 	ForestBuildings.push_back(temp1);
-	int size = Randomizer::generate_range(50, 150);
+	int size = Randomizer::generate_range(20, 40);
 	for (int i = 0; i < size; i++)
 	{
-		int x = 2500 - Randomizer::generate_range(1, 5000);
-		int z = 2500 - Randomizer::generate_range(1, 5000);
+		int x = 2000 - Randomizer::generate_range(1, 4000);
+		int z = 2000 - Randomizer::generate_range(1, 4000);
 		Building* temp = (BuildingFactory::getBuildingFactory()->generateBuilding(201, Vector3(x, 0, z), Vector3(1,0,0)));
 		ForestBuildings.push_back(temp);
 		std::cout << temp->getRenderer().getPosition() << std::endl;

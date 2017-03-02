@@ -730,13 +730,13 @@ void SceneCity::RenderInteract()
 
 void SceneCity::SpawnBuilding()
 {	
-	int operator_ = (Randomizer::generate_range(100,200));
+	int operator_ = (Randomizer::generate_range(10,30));
 	for (int i = 0; i < operator_; i++)
 	{
 		Vector3 spawnPoint = Vector3(0, 0, 0);
-		spawnPoint.x = 2000 - Randomizer::generate_range(20, 4000);
+		spawnPoint.x = 1000 - Randomizer::generate_range(20, 2000);
 		spawnPoint.y = 0;
-		spawnPoint.z = 2000 - Randomizer::generate_range(20, 4000);
+		spawnPoint.z = 1000 - Randomizer::generate_range(20, 2000);
 		Building* temp = BuildingFactory::getBuildingFactory()->generateBuilding(114, spawnPoint, Vector3(1, 0, 0));
 		CityBuildings.push_back(temp);
 	}

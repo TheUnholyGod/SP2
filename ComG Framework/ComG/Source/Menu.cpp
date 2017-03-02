@@ -128,22 +128,6 @@ void Menu::init()
 	meshList[GEO_CIRCUITBOARDS] = MeshBuilder::GenerateQuad("Circuitboards", Color(0, 1, 0), 2.f);
 	meshList[GEO_CIRCUITBOARDS]->textureID = LoadTGA("Image//Resource_CircuitBoard.tga");
 
-	
-	/*meshList[ITEM_GLOCK] = MeshBuilder::GenerateQuad("Glock", Color(0, 1, 0), 2.f);
-	meshList[ITEM_GLOCK]->textureID = LoadTGA("Image//Glock.tga");
-	meshList[ITEM_SCAR_H] = MeshBuilder::GenerateQuad("Scar", Color(0, 1, 0), 2.f);
-	meshList[ITEM_SCAR_H]->textureID = LoadTGA("Image//Scar.tga");
-	meshList[ITEM_M200] = MeshBuilder::GenerateQuad("CheyTac", Color(0, 1, 0), 2.f);
-	meshList[ITEM_M200]->textureID = LoadTGA("Image//CheyTac.tga");
-	meshList[ITEM_BOW] = MeshBuilder::GenerateQuad("Bow", Color(0, 1, 0), 2.f);
-	meshList[ITEM_BOW]->textureID = LoadTGA("Image//CompoundBow.tga");
-	meshList[ITEM_FARMINGHOE] = MeshBuilder::GenerateQuad("FarmingHoe", Color(0, 1, 0), 2.f);
-	meshList[ITEM_FARMINGHOE]->textureID = LoadTGA("Image//FarmingHoe.tga");
-	meshList[ITEM_KATANA] = MeshBuilder::GenerateQuad("Katana", Color(0, 1, 0), 2.f);
-	meshList[ITEM_KATANA]->textureID = LoadTGA("Image//Katana.tga");
-	meshList[ITEM_KNIFE] = MeshBuilder::GenerateQuad("KitchenKnife", Color(0, 1, 0), 2.f);
-	meshList[ITEM_KNIFE]->textureID = LoadTGA("Image//KitchenKnife.tga");*/
-
 	menuType = 0;
 	y1 = 45.f;
 	count = 0;
