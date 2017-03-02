@@ -98,7 +98,6 @@
     <ClCompile Include="Source\Ant.cpp" />
     <ClCompile Include="Source\Ant_Hill.cpp" />
     <ClCompile Include="Source\Application.cpp" />
-    <ClCompile Include="Source\AudioPlayer.cpp" />
     <ClCompile Include="Source\Barn.cpp" />
     <ClCompile Include="Source\Biomass.cpp" />
     <ClCompile Include="Source\Bread.cpp" />
@@ -207,7 +206,6 @@
     <ClInclude Include="Source\Ant.h" />
     <ClInclude Include="Source\Ant_Hill.h" />
     <ClInclude Include="Source\Application.h" />
-    <ClInclude Include="Source\AudioPlayer.h" />
     <ClInclude Include="Source\Barn.h" />
     <ClInclude Include="Source\Biomass.h" />
     <ClInclude Include="Source\Bread.h" />

@@ -492,9 +492,6 @@
     <ClCompile Include="Source\CityBuilding1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\AudioPlayer.cpp">
-      <Filter>Source Files\Framework</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Application.h">
@@ -823,9 +820,6 @@
     </ClInclude>
     <ClInclude Include="Source\CityBuilding1.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\AudioPlayer.h">
-      <Filter>Header Files\Framework</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

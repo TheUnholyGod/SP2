@@ -17,6 +17,7 @@ Player::Player() : GameObject(0, "", "") , movement_speed_(50) , health_(100)
 	PTime = 0;
 	Pstart = 0;
 	dead = false;
+	setMouse(0);
 }
 
 Player* Player::getplayer() 

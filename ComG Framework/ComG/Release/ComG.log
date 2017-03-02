@@ -1,82 +1,21 @@
-﻿Build started 3/2/2017 2:54:21 AM.
+﻿Build started 3/2/2017 3:12:47 PM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         E:\Programs - Work\Visual Studios 2013\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\AudioPlayer.cpp Source\Menu.cpp
-         AudioPlayer.cpp
-     1>Source\AudioPlayer.cpp(198): warning C4244: 'argument' : conversion from 'double' to 'irrklang::ik_f32', possible loss of data
-     1>Source\AudioPlayer.cpp(207): warning C4244: 'argument' : conversion from 'double' to 'irrklang::ik_f32', possible loss of data
-     1>Source\AudioPlayer.cpp(216): warning C4244: 'argument' : conversion from 'double' to 'irrklang::ik_f32', possible loss of data
-     1>Source\AudioPlayer.cpp(225): warning C4244: 'argument' : conversion from 'double' to 'irrklang::ik_f32', possible loss of data
-     1>Source\AudioPlayer.cpp(234): warning C4244: 'argument' : conversion from 'double' to 'irrklang::ik_f32', possible loss of data
-         Menu.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SaveLoad.cpp
+         SaveLoad.cpp
      1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
      1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\FastTravelRoom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\TilledSoil.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\Player.h(33): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(197): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(201): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(213): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(228): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\Menu.cpp(233): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-     1>Source\Menu.cpp(722): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(729): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(729): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(738): warning C4018: '<=' : signed/unsigned mismatch
-     1>Source\Menu.cpp(745): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(746): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(746): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(748): warning C4244: '-=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\Menu.cpp(780): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(787): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(787): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(797): warning C4018: '<=' : signed/unsigned mismatch
-     1>Source\Menu.cpp(804): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(805): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(805): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(807): warning C4244: '-=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\Menu.cpp(822): warning C4018: '<' : signed/unsigned mismatch
-     1>Source\Menu.cpp(829): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(829): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(839): warning C4018: '<=' : signed/unsigned mismatch
-     1>Source\Menu.cpp(846): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(847): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(847): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>Source\Menu.cpp(849): warning C4244: '-=' : conversion from 'double' to 'int', possible loss of data
-     1>Source\Menu.cpp(892): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>Source\Menu.cpp(911): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(912): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\Menu.cpp(1012): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1014): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1016): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1018): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1020): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1022): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1024): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1026): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1028): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1030): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1032): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1034): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1036): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1038): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1040): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1042): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1044): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1046): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1048): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>Source\Menu.cpp(1072): warning C4390: ';' : empty controlled statement found; is this the intent?
-     1>Source\Menu.cpp(1144): warning C4390: ';' : empty controlled statement found; is this the intent?
+     1>Source\SaveLoad.cpp(77): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SaveLoad.cpp(87): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
        Link:
-         E:\Programs - Work\Visual Studios 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\lib" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Ability.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\lib" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Ability.obj
          Release\AbilityDataBase.obj
          Release\Acrid_Plant.obj
          Release\Adhesives.obj
          Release\Ant.obj
          Release\Ant_Hill.obj
          Release\Application.obj
-         Release\AudioPlayer.obj
          Release\Barn.obj
          Release\Biomass.obj
          Release\Bread.obj
@@ -174,10 +113,12 @@
          Release\Wheat.obj
          Release\Wildboar.obj
          Release\Wood.obj
-     1>AudioPlayer.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) class irrklang::ISoundEngine * __cdecl irrklang::createIrrKlangDevice(enum irrklang::E_SOUND_OUTPUT_DRIVER,int,char const *,char const *)" (__imp_?createIrrKlangDevice@irrklang@@YAPAVISoundEngine@1@W4E_SOUND_OUTPUT_DRIVER@1@HPBD1@Z)
-     1>F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe : fatal error LNK1120: 1 unresolved externals
-     1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" (Build target(s)) -- FAILED.
+         Generating code
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\player.cpp(62): warning C4715: 'Player::isDead' : not all control paths return a value
+         Finished generating code
+         ComG.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe
+     1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:04.40
+Time Elapsed 00:00:16.00
