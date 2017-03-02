@@ -1,1 +1,23 @@
-﻿  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe
+﻿  SceneWildLife.cpp
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\building.h(40): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\enemy.h(31): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\glfw\include\glfw\glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\fasttravelroom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\tilledsoil.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\player.h(41): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(147): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(152): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(165): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(169): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(174): warning C4018: '<' : signed/unsigned mismatch
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(202): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(206): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(734): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(735): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(752): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\hsy00\desktop\sch\sem2\sp2\new folder\comg framework\comg\source\scenewildlife.cpp(809): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  ComG.vcxproj -> C:\Users\hsy00\Desktop\Sch\Sem2\SP2\New folder\ComG Framework\Debug\ComG.exe

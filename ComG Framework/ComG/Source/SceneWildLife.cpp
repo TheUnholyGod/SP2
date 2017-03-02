@@ -608,14 +608,10 @@ void SceneWildLife::RenderEnemy()
 {
 	for (auto &i : ForestEnemy)
 	{
-		if (counter < 5)
-		{
 			modelStack.PushMatrix();
 			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
 			RenderMesh(enemyMeshList[i->getID() - 7], true);
 			modelStack.PopMatrix();
-			counter++; 
-		}
 	}
 }
 
