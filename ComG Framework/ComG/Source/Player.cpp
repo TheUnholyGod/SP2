@@ -17,6 +17,7 @@ Player::Player() : GameObject(0, "", "") , movement_speed_(50) , health_(100)
 
 	PTime = 0;
 	Pstart = 0;
+	dead = false;
 }
 
 Player* Player::getplayer() 
@@ -50,10 +51,14 @@ void Player::receivedamage(int dmg)
 
 bool Player::isDead()
 {
-	if (health_ == 0)
-		return true;
-	else
+	if (health_ > 0)
 		return false;
+	else if (health_ <= 0)
+	{
+		health_ = 0;
+		return true;
+	}
+	
 }
 
 Player::~Player()

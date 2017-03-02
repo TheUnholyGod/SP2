@@ -155,19 +155,6 @@ void SceneTest::Init()
 
 	meshList[GEO_SUN] = MeshBuilder::GenerateSphere("sun", Color(1, 1, 0), 5.f);
 
-
-	meshList[GEO_SCAR_BODY] = MeshBuilder::GenerateOBJ("Scar_Body", "OBJ//Scar_Body.obj");
-	meshList[GEO_SCAR_BODY]->textureID = LoadTGA("Image//ScarUV.tga");
-
-	meshList[GEO_SCAR_BOLT] = MeshBuilder::GenerateOBJ("Scar_Bolt", "OBJ//Scar_Bolt.obj");
-	meshList[GEO_SCAR_BOLT]->textureID = LoadTGA("Image//ScarUV.tga");
-
-	meshList[GEO_SCAR_CHARGING] = MeshBuilder::GenerateOBJ("Scar_Charging", "OBJ//Scar_Charging.obj");
-	meshList[GEO_SCAR_CHARGING]->textureID = LoadTGA("Image//ScarUV.tga");
-
-	meshList[GEO_SCAR_CASING] = MeshBuilder::GenerateOBJ("Scar_Casing", "OBJ//Scar_Casing.obj");
-	meshList[GEO_SCAR_CASING]->textureID = LoadTGA("Image//ScarUV.tga");
-
 	playerMeshList[GEO_HEALTHBAR] = MeshBuilder::GenerateQuad("Health", Color(0, 1, 0), 1.f);
 	//playerMeshList[GEO_HEALTHBAR]->textureID = LoadTGA("Image//inventoryMenu.tga");
 
@@ -183,7 +170,7 @@ void SceneTest::Init()
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
-		enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
+		//enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
@@ -247,7 +234,6 @@ void SceneTest::Update(double dt)
 
 		SpawnEnemy(dt);
 		LightUpdate(dt);
-
 		UpdateProjectiles(dt);
 		UpdateEnemy(dt);
 		SpawnItems(dt);
@@ -272,7 +258,7 @@ void SceneTest::Update(double dt)
 			else
 				std::cout << "Not enough resources to craft" << std::endl;
 		}
-
+		
 	}
 }
 
@@ -639,17 +625,12 @@ void SceneTest::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneTest::SpawnEnemy(double dt)
 {
-	/*if (BaseEnemy.size() < 20)
-	{
-		//BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(1));
-		if (BaseEnemy.size() < 3)
-			BaseEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(13));
-	}
 	if (BaseEnemy.size() < 20)
 	{
-		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(2);
+		int type = Randomizer::generate_range(1, 2);
+		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(type);
 		BaseEnemy.push_back(temp);
-	}*/
+	}
 }
 
 void SceneTest::RenderEnemy()
@@ -768,7 +749,6 @@ void SceneTest::RenderHealth()
 	int hp = Player::getplayer()->gethealth();
 	if (hp > 0)
 	{
-		//std::cout << hp << std::endl;
 		RenderMeshOnScreen(playerMeshList[GEO_HEALTHBAR], 7, 56, 10, 6);
 		RenderTextOnScreen(playerMeshList[GEO_HEALTH], std::to_string(hp), Color(0, 0, 1), 4.f, 1.f, 14.f);
 	}

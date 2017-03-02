@@ -1,4 +1,6 @@
 #include "Menu.h"
+#include "SceneSplashScreen.h"
+#include "SaveLoad.h"
 
 POINT cursorPoint;
 
@@ -140,6 +142,8 @@ void Menu::init()
 	meshList[ITEM_KNIFE] = MeshBuilder::GenerateQuad("KitchenKnife", Color(0, 1, 0), 2.f);
 	meshList[ITEM_KNIFE]->textureID = LoadTGA("Image//KitchenKnife.tga");*/
 
+	menuType = 0;
+	y1 = 45.f;
 	count = 0;
 	travelTo = SceneManager::currScene;
 
@@ -147,50 +151,53 @@ void Menu::init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
-	meshList[GEO_ARROW_L] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_ARROW_L] = MeshBuilder::GenerateQuad("arrowL", Color(0, 1, 0), 5.f);
 	meshList[GEO_ARROW_L]->textureID = LoadTGA("Image//buildMenu - Arrows - L.tga");
 
-	meshList[GEO_ARROW_R] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_ARROW_R] = MeshBuilder::GenerateQuad("arrowR", Color(0, 1, 0), 5.f);
 	meshList[GEO_ARROW_R]->textureID = LoadTGA("Image//buildMenu - Arrows - R.tga");
 
-	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("cursor", Color(0, 1, 0), 5.f);
 	meshList[GEO_CURSOR]->textureID = LoadTGA("Image//cursorPointer.tga");
 
-	meshList[GEO_PAUSEMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_PAUSEMENU] = MeshBuilder::GenerateQuad("pause", Color(0, 1, 0), 5.f);
 	meshList[GEO_PAUSEMENU]->textureID = LoadTGA("Image//pauseMenu.tga");
 
-	meshList[GEO_OPTIONS] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_OPTIONS] = MeshBuilder::GenerateQuad("option", Color(0, 1, 0), 5.f);
 	meshList[GEO_OPTIONS]->textureID = LoadTGA("Image//pauseMenu - Options.tga");
 
-	meshList[GEO_BACKTOGAME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BACKTOGAME] = MeshBuilder::GenerateQuad("backG", Color(0, 1, 0), 5.f);
 	meshList[GEO_BACKTOGAME]->textureID = LoadTGA("Image//pauseMenu - BackToGame.tga");
 
-	meshList[GEO_BACKTOMAIN] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BACKTOMAIN] = MeshBuilder::GenerateQuad("backM", Color(0, 1, 0), 5.f);
 	meshList[GEO_BACKTOMAIN]->textureID = LoadTGA("Image//pauseMenu - BackToMenu.tga");
 
 	//Options Menu
-	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("optionmenu", Color(0, 1, 0), 5.f);
 	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//optionsMenu 2.tga");
 
-	meshList[GEO_MOUSE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_MOUSE] = MeshBuilder::GenerateQuad("mouse", Color(0, 1, 0), 5.f);
 	meshList[GEO_MOUSE]->textureID = LoadTGA("Image//optionsMenu - Mouse.tga");
 
-	meshList[GEO_VOLUME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_VOLUME] = MeshBuilder::GenerateQuad("volume", Color(0, 1, 0), 5.f);
 	meshList[GEO_VOLUME]->textureID = LoadTGA("Image//optionsMenu - Volume.tga");
 
-	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("back", Color(0, 1, 0), 5.f);
 	meshList[GEO_BACK]->textureID = LoadTGA("Image//optionsMenu - Back.tga");
 
 	//Crafting Menu
-	meshList[GEO_CRAFTMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CRAFTMENU] = MeshBuilder::GenerateQuad("craftmenu", Color(0, 1, 0), 5.f);
 	meshList[GEO_CRAFTMENU]->textureID = LoadTGA("Image//craftMenu.tga");
 
 	//Building Menu
-	meshList[GEO_BUILDMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BUILDMENU] = MeshBuilder::GenerateQuad("buildmenu", Color(0, 1, 0), 5.f);
 	meshList[GEO_BUILDMENU]->textureID = LoadTGA("Image//buildMenu.tga");
 
-	meshList[GEO_CRAFTBUTTON] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CRAFTBUTTON] = MeshBuilder::GenerateQuad("craftmenu", Color(0, 1, 0), 5.f);
 	meshList[GEO_CRAFTBUTTON]->textureID = LoadTGA("Image//buildcraftMenu - Craft.tga");
+
+	meshList[GEO_FASTTRAVEL] = MeshBuilder::GenerateQuad("Fasttravel", Color(0, 1, 0), 5.f);
+	meshList[GEO_FASTTRAVEL]->textureID = LoadTGA("Image//FAstTravel.tga");
 
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
@@ -234,7 +241,15 @@ void Menu::update()
 	glfwGetCursorPos(Application::m_window, &cursorX, &cursorY);
 	cursorY = -cursorY + windowY;
 
+	int HP = Player::getplayer()->gethealth();
+	
 	craft = 0;
+
+	if (HP <= 0)
+	{
+		Player::getplayer()->isDead();
+		SceneManager::currScene = 8;
+	}
 
 	if (isMenu)
 	{
@@ -249,7 +264,6 @@ void Menu::update()
 			glfwSetCursorPos(Application::m_window, cursorX, -cursorY + windowY);
 		}
 	}
-
 	if (Application::IsKeyPressed(VK_ESCAPE) && elapsedTime > 0.01)
 	{
 		if (!pause)//Go to Pause menu
@@ -659,6 +673,10 @@ void Menu::update()
 			{
 				if (Application::IsKeyPressed(VK_RETURN))
 				{
+					SetCursorPos(windowX / 2, windowY / 2);
+					menuType = 0;
+					isMenu = false;
+					pause = false;
 					SceneManager::currScene = travelTo;
 				}
 			}
@@ -666,8 +684,6 @@ void Menu::update()
 			std::cout << "Travelling to: " << travelTo << std::endl;
 		}
 	}
-
-	//std::cout << optionSelection << std::endl;
 }
 
 void Menu::Render()
@@ -869,24 +885,50 @@ void Menu::Render()
 			float y = 45.f;
 			y1 = 43.5f;
 			float y2 = 1.f;
+			int count = 0;
 
 			for (auto &i : Inventory::getinventory()->getInventoryContents())
 			{
 				std::string quantity = std::to_string(i.second);
 				int key = i.first;
-				checkItem(key);
-				Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
-				std::string name = temp->getName();
-				RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y1);
-				RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
-				y1 -= 5.5f;
+				
+				if (count < 8)
+				{
+					checkItem(key);
+					Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
+					std::string name = temp->getName();
+					RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y1);
+					RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
+					y1 -= 5.5f;
+					count++;
+				}
+				if (count == 8)
+				{
+					y1 = 43.5f;
+					count = 0;
+				}
 			}
 		}
 		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);		
 	}
-	if (tpZone)
+	if (menuType==5 && tpZone)
 	{
+		RenderMeshOnScreen(meshList[GEO_FASTTRAVEL], 40, 30, 10, 10);
+		switch (travelTo){
+		case 4:
+			RenderTextOnScreen(meshList[GEO_TEXT], "Sandbox", Color(0, 1, 0), 3.f, 28.f, 27.f);
+			break;
+		case 5:
+			RenderTextOnScreen(meshList[GEO_TEXT], "Barn", Color(0, 1, 0), 3.f, 28.f, 27.f);
+			break;
+		case 6:
+			RenderTextOnScreen(meshList[GEO_TEXT], "Wild Life", Color(0, 1, 0), 3.f, 28.f, 27.f);
+			break;
+		case 7:
+			RenderTextOnScreen(meshList[GEO_TEXT], "City", Color(0, 1, 0), 3.f, 28.f, 27.f);
+			break;
 
+		}
 	}
 }
 

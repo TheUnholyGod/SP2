@@ -1,7 +1,7 @@
 #include "Lizard.h"
 #include "Randomizer.h"
 
-Lizard::Lizard() : Enemy(2, "OBJ//Lizard.obj", "Image//LizardUV.tga", "Lizard", NORMAL, "Base", 100, 10, 2)
+Lizard::Lizard() : Enemy(2, "OBJ//Lizard.obj", "Image//LizardUV.tga", "Lizard", NORMAL, "Base", 100, 10, 150)
 {
 	float temp1 = 1000 - Randomizer::generate_range(1, 2000) + Player::getplayer()->getRenderer().getPosition().x;
 	float temp2 = 0;

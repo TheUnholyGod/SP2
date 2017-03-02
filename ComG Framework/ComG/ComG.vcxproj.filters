@@ -174,7 +174,6 @@
       <Filter>Shader</Filter>
     </None>
     <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Application.cpp">
@@ -435,6 +434,9 @@
     <ClCompile Include="Source\BuildingDataBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\BuildingFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Source\SceneTest.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
@@ -483,11 +485,8 @@
     <ClCompile Include="Source\Ant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\BuildingFactory.cpp">
-      <Filter>Source Files\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CityBuilding1.cpp">
-      <Filter>Source Files\GameObject\Buildings</Filter>
+    <ClCompile Include="Source\SceneGameOver.cpp">
+      <Filter>Source Files\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -812,8 +811,8 @@
     <ClInclude Include="Source\Ant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CityBuilding1.h">
-      <Filter>Header Files\GameObject\Buildings</Filter>
+    <ClInclude Include="Source\SceneGameOver.h">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

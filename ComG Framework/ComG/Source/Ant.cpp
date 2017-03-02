@@ -3,11 +3,6 @@
 
 Ant::Ant() : Enemy(13, "OBJ//Ant.obj", "Image//Ant_Texture.tga", "AntHill", BOSS, "Base", 150, 20, 10)
 {
-	/*float a_X = (my_hill->getRenderer().getPosition().x * my_hill->getRenderer().getScaling()) - Randomizer::generate_range((my_hill->getRenderer().getPosition().x),
->>>>>>> 9cc91eaf00a66be98b1e65622275e8541082eee7
-		                                    (my_hill->getRenderer().getPosition().x * my_hill->getRenderer().getScaling()));
-	float a_Z = (my_hill->getRenderer().getPosition().z * my_hill->getRenderer().getScaling()) - Randomizer::generate_range((my_hill->getRenderer().getPosition().z),
-		(my_hill->getRenderer().getPosition().z * my_hill->getRenderer().getScaling()));*/
 	gameobjrenderer_->setPosition(Vector3(10, 0, 10));
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
 	allAABB[1]->setMinMax(gameobjrenderer_->getPosition());

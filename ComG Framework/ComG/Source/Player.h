@@ -35,12 +35,15 @@ public:
 	const int gethealth();
 	const int gethunger();
 	const int getattack();
+	const void setHealth(int health) { health_ = health; }
 	void receivedamage(int dmg);
 	bool isDead();
+	bool dead;
 	void Update(Vector3, Vector3, double, std::list<Building*>, std::vector<Enemy*> enemies, std::vector<Item*> Items, std::vector<Item*> Loots);
 	Weapon* getWeapon() { return playerweapon_; }
 	void setWeapon(int);
 	bool getInteract();
+	
 	
 	~Player();
 };
