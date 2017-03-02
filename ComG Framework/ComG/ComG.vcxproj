@@ -91,8 +91,6 @@
     <None Include="Shader\SimpleVertexShader.vertexshader" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Ability.cpp" />
-    <ClCompile Include="Source\AbilityDataBase.cpp" />
     <ClCompile Include="Source\Acrid_Plant.cpp" />
     <ClCompile Include="Source\Adhesives.cpp" />
     <ClCompile Include="Source\Ant.cpp" />
@@ -104,7 +102,6 @@
     <ClCompile Include="Source\Building.cpp" />
     <ClCompile Include="Source\BuildingDataBase.cpp" />
     <ClCompile Include="Source\BuildingFactory.cpp" />
-    <ClCompile Include="Source\Burrowing.cpp" />
     <ClCompile Include="Source\Cabbage.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Camera2.cpp" />
@@ -112,16 +109,12 @@
     <ClCompile Include="Source\Camera4.cpp" />
     <ClCompile Include="Source\Carrot.cpp" />
     <ClCompile Include="Source\CarrotJuice.cpp" />
-    <ClCompile Include="Source\Centipede.cpp" />
     <ClCompile Include="Source\CircuitBoards.cpp" />
     <ClCompile Include="Source\Cloth.cpp" />
     <ClCompile Include="Source\Collision.cpp" />
     <ClCompile Include="Source\Compound_Bow.cpp" />
     <ClCompile Include="Source\Copper.cpp" />
-    <ClCompile Include="Source\Corrosive.cpp" />
     <ClCompile Include="Source\Crafting.cpp" />
-    <ClCompile Include="Source\CybordMutt.cpp" />
-    <ClCompile Include="Source\Deer.cpp" />
     <ClCompile Include="Source\DefenceTower.cpp" />
     <ClCompile Include="Source\DefensiveWalls.cpp" />
     <ClCompile Include="Source\DrinkingWater.cpp" />
@@ -158,21 +151,16 @@
     <ClCompile Include="Source\NPCHouse.cpp" />
     <ClCompile Include="Source\CityBuilding1.cpp" />
     <ClCompile Include="Source\OreMines.cpp" />
-    <ClCompile Include="Source\PatrolBot.cpp" />
     <ClCompile Include="Source\Menu.cpp" />
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Potato.cpp" />
     <ClCompile Include="Source\PowerGenerator.cpp" />
     <ClCompile Include="Source\Projectile.cpp" />
-    <ClCompile Include="Source\Radioactive.cpp" />
     <ClCompile Include="Source\Renderer.cpp" />
     <ClCompile Include="Source\Resources.cpp" />
-    <ClCompile Include="Source\RogueMech.cpp" />
     <ClCompile Include="Source\Salad.cpp" />
     <ClCompile Include="Source\SaveLoad.cpp" />
     <ClCompile Include="Source\Scar-H.cpp" />
-    <ClCompile Include="Source\Scarecrow_Mech.cpp" />
-    <ClCompile Include="Source\SceneBase.cpp" />
     <ClCompile Include="Source\SceneCity.cpp" />
     <ClCompile Include="Source\SceneGameOver.cpp" />
     <ClCompile Include="Source\SceneMainMenu.cpp" />
@@ -183,7 +171,6 @@
     <ClCompile Include="Source\SceneWildLife.cpp" />
     <ClCompile Include="Source\shader.cpp" />
     <ClCompile Include="Source\Stone.cpp" />
-    <ClCompile Include="Source\Teleporting.cpp" />
     <ClCompile Include="Source\TilledSoil.cpp" />
     <ClCompile Include="Source\Tree.cpp" />
     <ClCompile Include="Source\TrophyRoom.cpp" />
@@ -197,7 +184,6 @@
     <ClCompile Include="Source\Wood.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Ability.h" />
     <ClInclude Include="Source\AbilityDataBase.h" />
     <ClInclude Include="Source\Acrid_Plant.h" />
     <ClInclude Include="Source\Adhesives.h" />
@@ -212,7 +198,6 @@
     <ClInclude Include="Source\Building.h" />
     <ClInclude Include="Source\BuildingDataBase.h" />
     <ClInclude Include="Source\BuildingFactory.h" />
-    <ClInclude Include="Source\Burrowing.h" />
     <ClInclude Include="Source\Cabbage.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Camera2.h" />
@@ -220,16 +205,12 @@
     <ClInclude Include="Source\Camera4.h" />
     <ClInclude Include="Source\Carrot.h" />
     <ClInclude Include="Source\CarrotJuice.h" />
-    <ClInclude Include="Source\Centipede.h" />
     <ClInclude Include="Source\CircuitBoards.h" />
     <ClInclude Include="Source\Cloth.h" />
     <ClInclude Include="Source\Collision.h" />
     <ClInclude Include="Source\Compound_Bow.h" />
     <ClInclude Include="Source\Copper.h" />
-    <ClInclude Include="Source\Corrosive.h" />
     <ClInclude Include="Source\Crafting.h" />
-    <ClInclude Include="Source\CyborgMutt.h" />
-    <ClInclude Include="Source\Deer.h" />
     <ClInclude Include="Source\DefenceTower.h" />
     <ClInclude Include="Source\DefensiveWalls.h" />
     <ClInclude Include="Source\DrinkingWater.h" />
@@ -268,34 +249,28 @@
     <ClInclude Include="Source\NPCHouse.h" />
     <ClInclude Include="Source\CityBuilding1.h" />
     <ClInclude Include="Source\OreMines.h" />
-    <ClInclude Include="Source\PatrolBot.h" />
     <ClInclude Include="Source\Menu.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Potato.h" />
     <ClInclude Include="Source\PowerGenerator.h" />
     <ClInclude Include="Source\Projectile.h" />
-    <ClInclude Include="Source\Radioactive.h" />
     <ClInclude Include="Source\Randomizer.h" />
     <ClInclude Include="Source\Renderer.h" />
     <ClInclude Include="Source\Resources.h" />
-    <ClInclude Include="Source\RogueMech.h" />
     <ClInclude Include="Source\Salad.h" />
     <ClInclude Include="Source\SaveLoad.h" />
     <ClInclude Include="Source\Scar-H.h" />
-    <ClInclude Include="Source\Scarecrow_Mech.h" />
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\SceneCity.h" />
     <ClInclude Include="Source\SceneGameOver.h" />
     <ClInclude Include="Source\SceneMainMenu.h" />
     <ClInclude Include="Source\SceneManager.h" />
-    <ClInclude Include="Source\SceneBase.h" />
     <ClInclude Include="Source\SceneSplashScreen.h" />
     <ClInclude Include="Source\Scenetest.h" />
     <ClInclude Include="Source\SceneLoading.h" />
     <ClInclude Include="Source\SceneWildLife.h" />
     <ClInclude Include="Source\shader.hpp" />
     <ClInclude Include="Source\Stone.h" />
-    <ClInclude Include="Source\Teleporting.h" />
     <ClInclude Include="Source\TilledSoil.h" />
     <ClInclude Include="Source\Tree.h" />
     <ClInclude Include="Source\TrophyRoom.h" />
