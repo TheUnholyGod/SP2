@@ -75,6 +75,7 @@ class Menu
 		GEO_CLOTH,
 		GEO_CIRCUITBOARDS,
 
+		GEO_FASTTRAVEL,
 
 		//Cursor
 		GEO_CURSOR,
