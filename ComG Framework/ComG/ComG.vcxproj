@@ -184,6 +184,7 @@
     <ClCompile Include="Source\Wood.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Source\AbilityDataBase.h" />
     <ClInclude Include="Source\Acrid_Plant.h" />
     <ClInclude Include="Source\Adhesives.h" />
@@ -283,6 +284,12 @@
     <ClInclude Include="Source\Wheat.h" />
     <ClInclude Include="Source\Wildboar.h" />
     <ClInclude Include="Source\Wood.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ComG.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Azuresol-Sketchy-Fallout.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -145,6 +145,7 @@ private:
 	void LightReset(double dt);
 	int Day;
 	const int buildingID;
+	int counter;
 
 	std::vector<Enemy*> ForestEnemy;
 	void SpawnEnemy(double dt);
