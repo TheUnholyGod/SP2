@@ -134,7 +134,7 @@ void SceneWildLife::Init()
 
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
-		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
+		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 7)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 7)->getSourceLocation());
 	}
 	for (int i = 0; i < buildingMeshList.size(); i++)
 	{
@@ -534,8 +534,8 @@ void SceneWildLife::RenderTextOnScreen(Mesh* mesh, std::string text, Color color
 
 void SceneWildLife::SpawnEnemy(double dt)
 {
-	if (ForestEnemy.size() < 5)
-		ForestEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(7));
+	if (ForestEnemy.size() < 20)
+		ForestEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(Randomizer::generate_range(7,8)));
 }
 
 void SceneWildLife::UpdateEnemy(double dt)
@@ -548,8 +548,8 @@ void SceneWildLife::UpdateEnemy(double dt)
 		if (i->isDead())
 		{
 		/*	Lootpos = i->getRenderer().getPosition();
-			SpawnLoot(GenerateLoot());
-			pos.push_back(counter);*/
+			SpawnLoot(GenerateLoot());*/
+			pos.push_back(counter);
 		}
 		counter++;
 	}

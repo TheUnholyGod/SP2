@@ -7,7 +7,7 @@ namespace Randomizer
 {
 	static int generate_range(unsigned from, unsigned to)
 	{
-		int returnno = (rand() % (to - from)) + from;
+		int returnno = (rand() % (to - from + 1)) + from;
 		if (returnno > (int)to)
 		{
 			returnno = (int)to;
