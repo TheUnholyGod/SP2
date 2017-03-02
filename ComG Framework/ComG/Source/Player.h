@@ -21,6 +21,7 @@ private:
 	float hunger_;
 	float movement_speed_;
 	bool Interact;
+	int mouseType;
 
 	std::clock_t Pstart;
 	float PTime;
@@ -35,6 +36,8 @@ public:
 	const int gethealth();
 	const int gethunger();
 	const int getattack();
+	const int getMouse() { return mouseType; }
+	const void setMouse(int mouse) { mouseType = mouse; }
 	const void setHealth(int health) { health_ = health; }
 	void receivedamage(int dmg);
 	bool isDead();

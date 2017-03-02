@@ -84,6 +84,11 @@ class Menu
 
 		//Cursor
 		GEO_CURSOR,
+		GEO_CURSOR1,
+		GEO_CURSOR2,
+		GEO_CURSOR3,
+
+		GEO_MOUSEMENU,
 
 		//Misc
 		GEO_TEXT,
@@ -216,6 +221,9 @@ public:
 	bool checkcraft();
 	std::map <int, int> RemoveC;
 	int crafting();
+	//Mouse
+	int mouseSelection;
+	int mouse;
 
 	unsigned m_vertexArrayID;
 	unsigned m_programID;
