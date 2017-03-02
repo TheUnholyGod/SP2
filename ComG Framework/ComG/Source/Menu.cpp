@@ -388,15 +388,15 @@ void Menu::update()
 
 				if ((Application::IsKeyPressed(VK_RETURN)) || (Application::IsKeyPressed(VK_LBUTTON)))
 				{
-					if (optionSelection == 0)
+					if (optionSelection == 0)//Mouse
 					{
 
 					}
-					if (optionSelection == 1)
+					if (optionSelection == 1)//Volume
 					{
 
 					}
-					if (optionSelection == 2)
+					if (optionSelection == 2)//Back
 					{
 						optionSelection = 0;
 						menuType = 1;
