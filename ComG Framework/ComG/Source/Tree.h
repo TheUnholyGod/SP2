@@ -11,7 +11,7 @@ public:
 	Tree();
 	Tree(Vector3 position);
 	~Tree();
-	void Update();
+	virtual void update(double dt) override;
 };
 
 #endif
