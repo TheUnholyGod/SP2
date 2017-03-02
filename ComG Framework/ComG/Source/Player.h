@@ -46,7 +46,7 @@ public:
 	Weapon* getWeapon() { return playerweapon_; }
 	void setWeapon(int);
 	bool getInteract();
-	
+	void reset();
 	
 	~Player();
 };

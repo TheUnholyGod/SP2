@@ -57,9 +57,9 @@ bool Player::isDead()
 	else if (health_ <= 0)
 	{
 		health_ = 0;
-		return true;
+		this->reset();
 	}
-	
+	return true;
 }
 
 Player::~Player()
@@ -189,14 +189,9 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 			playerweapon_->getRenderer().setPosition(gameobjrenderer_->getPosition() + ((0, 1, 0) * 12) + (camForward * 5) + (camRight));
 		}
 	}
-	/*std::cout << "Drops: " << std::endl;
-	for (auto &i : Loots)
-	{
-		std::cout <<  i->getID() << std::endl;
-	}*/
 	if (Application::IsKeyPressed('Q'))
 	{
-		for (int i = 0; i < 20; i++)
+		for (int i = 0; i < 99; i++)
 		{
 			Inventory::getinventory()->Additem(101);
 			Inventory::getinventory()->Additem(102);
@@ -333,4 +328,11 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		}
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());
+}
+
+void Player::reset()
+{
+	gameobjrenderer_->setPosition(Vector3(0, 0, 0));
+	gameobjrenderer_->setForward(Vector3(1, 0, 0));
+	health_ = 100;
 }

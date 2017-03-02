@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿Build started 3/2/2017 3:12:47 PM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -156,3 +157,6 @@ c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\co
   Finished generating code
   ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
 >>>>>>> 19cb2e70f813e809bef230e78dd71f41671a43ce
+=======
+﻿  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
+>>>>>>> f7094f60d7ef024c13df60fd61f4f2a2e8177112
