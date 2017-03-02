@@ -126,7 +126,6 @@ void SceneTest::Init()
 	glUniform1f(m_parameters[U_LIGHT0_COSINNER], light[0].cosInner);
 	glUniform1f(m_parameters[U_LIGHT0_EXPONENT], light[0].exponent);
 	glUniform1i(m_parameters[U_NUMLIGHTS], 1);
-	//meshList[Player::getplayer()->getID()] = MeshBuilder::GenerateOBJ("player", "OBJ//player.obj");
 
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
@@ -170,7 +169,7 @@ void SceneTest::Init()
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
 		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
-		//enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
+		enemyMeshList[i]->textureID = LoadTGA(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getTextureLocation());
 	}
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
@@ -180,17 +179,17 @@ void SceneTest::Init()
 	for (int i = 0; i < weaponmesh.size(); i++)
 	{
 		weaponmesh[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getName(), ItemDataBase::getItemDB()->getItem(300 + i + 7)->getSourceLocation());
-		//weaponmesh[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getTextureLocation());
+		weaponmesh[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(300 + i + 7)->getTextureLocation());
 	}
 	for (int i = 0; i < foodMeshList.size(); i++)
 	{
 		foodMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
-		//foodMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
+		foodMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
 	}
 	for (int i = 0; i < lootMeshList.size(); i++)
 	{
 		lootMeshList[i] = MeshBuilder::GenerateOBJ(ItemDataBase::getItemDB()->getItem(100 + i + 1)->getName(), ItemDataBase::getItemDB()->getItem(100 + i + 1)->getSourceLocation());
-		//lootMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
+		lootMeshList[i]->textureID = LoadTGA(ItemDataBase::getItemDB()->getItem(100 + i + 3)->getTextureLocation());
 	}
 
 	buildBuilding = false;
