@@ -732,10 +732,13 @@ void SceneMainMenu::Render()
 		}
 	}
 
-	std::ostringstream oss;
-	oss << cursorX << " : " << cursorY;
-	RenderTextOnScreen(meshList[GEO_CURSORPOS], oss.str(), 2, 2, 8, 10);
-	oss.str("");
+	if (Application::IsKeyPressed(VK_NUMPAD0))
+	{
+		std::ostringstream oss;
+		oss << cursorX << " : " << cursorY;
+		RenderTextOnScreen(meshList[GEO_CURSORPOS], oss.str(), 2, 2, 8, 10);
+		oss.str("");
+	}
 }
 
 void SceneMainMenu::Exit()
