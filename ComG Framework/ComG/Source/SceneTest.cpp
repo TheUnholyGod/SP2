@@ -628,7 +628,7 @@ void SceneTest::SpawnEnemy(double dt)
 	if (BaseEnemy.size() < 20)
 	{
 		int type = Randomizer::generate_range(1, 2);
-		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(type);
+		Enemy* temp = EnemyFactory::getEnemyFactory()->generateEnemy(1);
 		BaseEnemy.push_back(temp);
 	}
 }
@@ -637,10 +637,13 @@ void SceneTest::RenderEnemy()
 {
 	for (auto &i : BaseEnemy)
 	{
-		modelStack.PushMatrix();
-		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(enemyMeshList[i->getID() - 1], true);
-		modelStack.PopMatrix();
+		if (i->getHealth() > 0)
+		{
+			modelStack.PushMatrix();
+			modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+			RenderMesh(enemyMeshList[i->getID() - 1], true);
+			modelStack.PopMatrix();
+		}
 	}
 }
 

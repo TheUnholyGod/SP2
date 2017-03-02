@@ -28,6 +28,7 @@ public:
 	void takeDamage(int dmg) { health_ -= (int)(dmg); if (health_ < 1) { health_ = 0; }  }
 	bool isDead() { if (health_ < 1.f) return true; else return false; }
 	bool checkCollision(std::list<Building*>,std::vector<Enemy*>);
+	int getHealth() { return health_; }
 };
 
 #endif

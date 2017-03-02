@@ -33,23 +33,30 @@ void Projectile::FireAcidProjectile(Vector3 pos, Vector3 forward)
 bool Projectile::hit(std::list<Building*>buildings, std::vector<Enemy*>enemies)
 {
 	bool hit = false;
+	if (Player::getplayer()->getAABB(0)->pointtoAABB(this->gameobjrenderer_->getPosition(), this->gameobjrenderer_->getForward()) && isAcid)
+	{
+		Player::getplayer()->receivedamage(attack_dmg_);
+		hit = true;
+	}
 	for (auto &i : enemies)
 	{
 		hit = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), gameobjrenderer_->getForward());
 		if (hit)
 		{
-			if (i->getID() == 12)
+			if (i->getID() == 7)
 			{
 				if (!isAcid)
 				{
+					std::cout << i->getHealth() << std::endl;
 					i->takeDamage(attack_dmg_);
-					break;
+					//break;
 				}
 			}
 			else
 			{
+				std::cout << "other hit" << std::endl;
 				i->takeDamage(attack_dmg_);
-				break;
+				//break;
 			}
 		}
 	}

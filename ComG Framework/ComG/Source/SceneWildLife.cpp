@@ -134,7 +134,7 @@ void SceneWildLife::Init()
 
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
-		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
+		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 7)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 7)->getSourceLocation());
 	}
 	for (int i = 0; i < buildingMeshList.size(); i++)
 	{
