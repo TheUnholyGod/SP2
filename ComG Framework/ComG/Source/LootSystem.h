@@ -6,7 +6,16 @@
 
 int GenerateLoot()
 {
-	int key = Randomizer::generate_range(101, 104);
+	int r = rand() % 2;
+	int key;
+	if (r == 0)
+	{
+		key = Randomizer::generate_range(101, 105);
+	}
+	else
+	{
+		key = Randomizer::generate_range(201, 211);
+	}
 	std::cout << key << std::endl;
 	return key;
 }

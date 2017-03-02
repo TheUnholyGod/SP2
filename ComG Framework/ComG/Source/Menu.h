@@ -197,6 +197,8 @@ public:
 	int count;
 	void checkItem(int key);
 	float y1;
+	int page;
+	int currpage;
 
 	const int buildingID;
 	int itemID;

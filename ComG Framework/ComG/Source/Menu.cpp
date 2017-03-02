@@ -28,6 +28,8 @@ Menu::Menu() : buildingID(101), itemID(105)
 	start = std::clock();
 
 	Inventory::getinventory();
+	page = 1;
+	currpage = 1;
 }
 
 Menu::~Menu()
@@ -124,7 +126,7 @@ void Menu::init()
 	meshList[GEO_CLOTH] = MeshBuilder::GenerateQuad("Cloth", Color(0, 1, 0), 2.f);
 	meshList[GEO_CLOTH]->textureID = LoadTGA("Image//Resource_Cloth.tga");
 	meshList[GEO_CIRCUITBOARDS] = MeshBuilder::GenerateQuad("Circuitboards", Color(0, 1, 0), 2.f);
-	meshList[GEO_CIRCUITBOARDS]->textureID = LoadTGA("Image//Resource_CircuitBoards.tga");
+	meshList[GEO_CIRCUITBOARDS]->textureID = LoadTGA("Image//Resource_CircuitBoard.tga");
 
 	
 	/*meshList[ITEM_GLOCK] = MeshBuilder::GenerateQuad("Glock", Color(0, 1, 0), 2.f);
@@ -614,7 +616,7 @@ void Menu::update()
 						}
 						start = std::clock();
 					}
-					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))//
+					if ((cursorX >= 440 && cursorX <= 735) && (cursorY >= 10 && cursorY <= 60))
 					{
 						craft = 2;
 						craftSelection = itemID + craftingSelection;
@@ -638,6 +640,37 @@ void Menu::update()
 			if (elapsedTime > 0.01)
 			{
 				count = Inventory::getinventory()->getsize();
+				
+				page =  count % 8;
+				if (Application::IsKeyPressed(VK_LBUTTON))
+				{
+					if ((cursorX >= 720 && cursorX <= 760) && (cursorY >= 10 && cursorY <= 60))
+					{
+						currpage++;
+						if (currpage > page)
+						{
+							currpage = 1;
+						}
+						start = std::clock();
+						std::cout << "Current Page: " << currpage << std::endl;
+					}
+					if ((cursorX >= 720 && cursorX <= 760) && (cursorY >= 400 && cursorY <= 450))
+					{
+						currpage--;
+						if (currpage > page)
+						{
+							currpage = page;
+						}
+						if (currpage <= 0)
+						{
+							currpage = page;
+						}
+						start = std::clock();
+						std::cout << "Current Page: " << currpage << std::endl;
+					}
+					std::cout << "Pages: " << page << std::endl;
+					
+				}
 			}
 		}
 	}
@@ -882,30 +915,120 @@ void Menu::Render()
 		if (menuType == 4) //Inventory
 		{
 			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
-			float y = 45.f;
-			y1 = 43.5f;
-			float y2 = 1.f;
+			y1 = 44.f;
 			int count = 0;
-
+			bool render1 = false;
+			bool render2 = false;
+			bool render3 = false;
+			bool render4 = false;
+			
 			for (auto &i : Inventory::getinventory()->getInventoryContents())
 			{
 				std::string quantity = std::to_string(i.second);
 				int key = i.first;
-				
-				if (count < 8)
+				if (currpage == 1)
 				{
-					checkItem(key);
-					Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
-					std::string name = temp->getName();
-					RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y1);
-					RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
-					y1 -= 5.5f;
-					count++;
+					if (count < 8)
+					{
+						render1 = true;
+						render2 = false;
+						render3 = false;
+						render4 = false;
+
+						Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
+						std::string name = temp->getName();
+						if (render1 == true)
+						{
+							checkItem(key);
+							RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y1);
+							RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
+							y1 -= 5.5f;
+							count++;
+						}
+					}
+					else
+						count++;
 				}
-				if (count == 8)
+				else if (currpage == 2)
 				{
-					y1 = 43.5f;
-					count = 0;
+					if (count == 8)
+					{
+						y1 = 44.f;
+					}
+					if (count > 8 && count < 17)
+					{
+						render1 = false;
+						render2 = true;
+						render3 = false;
+						render4 = false;
+
+						Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
+						std::string name = temp->getName();
+						if (render2 == true)
+						{
+							checkItem(key);
+							RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y1);
+							RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
+							y1 -= 5.5f;
+							count++;
+						}
+					}
+					else
+						count++;
+				}
+				else if (currpage == 3)
+				{
+					if (count == 17)
+					{
+						y1 = 44.f;
+					}
+					if (count > 17 && count < 25)
+					{
+						render1 = false;
+						render2 = false;
+						render3 = true;
+						render4 = false;
+
+						Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
+						std::string name = temp->getName();
+
+						if (render3 == true)
+						{
+							checkItem(key);
+							RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y1);
+							RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
+							y1 -= 5.5f;
+							count++;
+						}
+					}
+					else
+						count++;
+				}
+				else if (currpage == 4)
+				{
+					if (count == 25)
+					{
+						y1 = 44.f;
+					}
+					if (count > 25 && count < 33)
+					{
+						render1 = false;
+						render2 = false;
+						render3 = false;
+						render4 = true;
+
+						Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
+						std::string name = temp->getName();
+
+						if (render4 == true)
+						{
+							checkItem(key);
+							RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y1);
+							RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
+							y1 -= 5.5f;
+							count++;
+						}
+					}
 				}
 			}
 		}
@@ -1042,45 +1165,47 @@ void Menu::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float s
 void Menu::checkItem(int key)
 {
 	std::vector<int> tempID(ItemDataBase::getItemDB()->getIDList());
-	int y = (int)y1 + 1;
+	int pos = (int)y1 + 1;
 	if (key == tempID[0])
-		RenderMeshOnScreen(meshList[GEO_POTATO], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_POTATO], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[1])
-		RenderMeshOnScreen(meshList[GEO_CABBAGE], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_CABBAGE], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[2])
-		RenderMeshOnScreen(meshList[GEO_CARROT], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_CARROT], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[3])
-		RenderMeshOnScreen(meshList[GEO_WHEAT], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_WHEAT], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[4])
-		RenderMeshOnScreen(meshList[GEO_BREAD], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_BREAD], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[5])
-		RenderMeshOnScreen(meshList[GEO_VEGETABLESTEW], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_VEGETABLESTEW], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[6])
-		RenderMeshOnScreen(meshList[GEO_DRINKINGWATER], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_DRINKINGWATER], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[7])
-		RenderMeshOnScreen(meshList[GEO_CARROTJUICE], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_CARROTJUICE], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[8])
-		RenderMeshOnScreen(meshList[GEO_SALAD], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_SALAD], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[9])
-		RenderMeshOnScreen(meshList[GEO_STONE], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_STONE], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[10])
-		RenderMeshOnScreen(meshList[GEO_IRON], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_IRON], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[11])
-		RenderMeshOnScreen(meshList[GEO_COPPER], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_COPPER], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[12])
-		RenderMeshOnScreen(meshList[GEO_GOLD], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_GOLD], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[13])
-		RenderMeshOnScreen(meshList[GEO_WATER], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_WATER], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[14])
-		RenderMeshOnScreen(meshList[GEO_BIOMASS], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_WOOD], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[15])
-		RenderMeshOnScreen(meshList[GEO_ADHESIVES], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_BIOMASS], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[16])
-		RenderMeshOnScreen(meshList[GEO_METALSCRAPS], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_ADHESIVES], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[17])
-		RenderMeshOnScreen(meshList[GEO_CLOTH], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_METALSCRAPS], 8.f, pos, 3.f, 3.f);
 	else if (key == tempID[18])
-		RenderMeshOnScreen(meshList[GEO_CIRCUITBOARDS], 8.f, y, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_CLOTH], 8.f, pos, 3.f, 3.f);
+	else if (key == tempID[19])
+		RenderMeshOnScreen(meshList[GEO_CIRCUITBOARDS], 8.f, pos, 3.f, 3.f);
 
 	tempID.erase(tempID.begin(), tempID.end());
 }

@@ -79,7 +79,7 @@ std::string Inventory::getitemname()
 
 int Inventory::getsize()
 {
-	return List.size();
+	return inv.size();
 }
 
 void Inventory::reset()

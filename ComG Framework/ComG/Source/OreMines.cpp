@@ -26,7 +26,7 @@ void OreMines::update(double dt)
 {
 	//std::cout << "collecttime: " << collecttime << std::endl;
 	if (start == true)
-		collecttime = (std::clock() - Timer) / (INT)CLOCKS_PER_SEC;
+		this->collecttime = (std::clock() - Timer) / (INT)CLOCKS_PER_SEC;
 }
 
 void OreMines::collected()
