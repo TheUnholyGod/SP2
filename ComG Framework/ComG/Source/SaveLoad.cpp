@@ -136,7 +136,7 @@ void SaveLoad::NewGame(int no)
 	newer.close();
 }
 
-void SaveLoad::fuckthis(int no)
+void SaveLoad::DeadNewGame(int no)
 {
 	std::stringstream filename1;
 	filename1 << "Saves//" << no << "//Base.txt";

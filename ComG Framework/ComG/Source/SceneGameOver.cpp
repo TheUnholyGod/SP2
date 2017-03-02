@@ -90,7 +90,7 @@ void SceneGameOver::Update(double dt)
 	if (elapsed == 5)
 	{
 		Player::getplayer()->getRenderer().setPosition(Vector3(0, 0, 0));
-		SaveLoad::fuckthis(Application::saveno);
+		SaveLoad::DeadNewGame(Application::saveno);
 		SceneManager::currScene = 2;
 	}
 }
