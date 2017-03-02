@@ -1,1 +1,27 @@
-﻿  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
+﻿  SceneCity.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\Renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\Building.h(40): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\FastTravelRoom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\TilledSoil.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\Player.h(38): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\DefenceTower.h(19): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(168): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneCity.cpp(173): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneCity.cpp(186): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneCity.cpp(191): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneCity.cpp(196): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneCity.cpp(224): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+Source\SceneCity.cpp(599): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+Source\SceneCity.cpp(684): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(686): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(714): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(773): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(774): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(792): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  Generating code
+  Finished generating code
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
