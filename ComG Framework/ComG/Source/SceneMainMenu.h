@@ -48,6 +48,11 @@ class SceneMainMenu : public Scene
 
 		//Cursor
 		GEO_CURSOR,
+		GEO_CURSOR1,
+		GEO_CURSOR2,
+		GEO_CURSOR3,
+
+		GEO_MOUSEMENU,
 		GEO_CURSORPOS,
 
 		NUM_GEOMETRY,
@@ -94,11 +99,16 @@ private:
 	bool options;
 	bool back;
 	bool isPlay;
+	bool mouseMenu;
 	bool loadEmpty[5];
 
 	int play;
 	int optionHighlight;
 	int load;
+
+	//Mouse
+	int mouseSelection;
+	int mouse;
 
 	std::clock_t start;
 	float elapsedTime;

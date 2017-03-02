@@ -1,7 +1,7 @@
 #include "Goat.h"
 #include "Randomizer.h"
 
-Goat::Goat() : Enemy(8, "OBJ//Goat.obj", "Image//GoatUV.tga", "Goat", NORMAL, "Forest", 100, 5, 50)
+Goat::Goat() : Enemy(8, "OBJ//Goat.obj", "Image//GoatUV.tga", "Goat", NORMAL, "Forest", 100, 5, 20)
 {
 	float x = 250 - Randomizer::generate_range(1, 500) + Player::getplayer()->getRenderer().getPosition().x;
 	float y = 0;

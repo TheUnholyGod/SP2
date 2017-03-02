@@ -2,7 +2,7 @@
 #include "Randomizer.h"
 #include "Player.h"
 
-WildBoar::WildBoar() : Enemy(9, "OBJ//Boar.obj", "Image//boarUV.tga", "WildBoar", NORMAL, "Forest", 100, 10, 5)
+WildBoar::WildBoar() : Enemy(10, "OBJ//Boar.obj", "Image//boarUV.tga", "WildBoar", NORMAL, "Forest", 100, 10, 5)
 {
 	float temp1 = 2000 - Randomizer::generate_range(500, 1000) + Player::getplayer()->getRenderer().getPosition().x;
 	float temp2 = 0;

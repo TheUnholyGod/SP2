@@ -1,7 +1,7 @@
 #include "Projectile.h"
 #include "Player.h"
 
-Projectile::Projectile():Item(999,"","OBJ//Carrot.obj","Projectile"), proj_speed_(500), attack_dmg_(100), range_(1000)
+Projectile::Projectile():Item(999,"","OBJ//Carrot.obj","Projectile"), proj_speed_(500), attack_dmg_(10), range_(1000)
 {
 	fired_ = false;
 	deletepls_ = false;

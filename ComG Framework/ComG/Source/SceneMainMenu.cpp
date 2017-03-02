@@ -129,6 +129,18 @@ void SceneMainMenu::Init()
 	meshList[GEO_5SAVE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_5SAVE]->textureID = LoadTGA("Image//SaveGame - Load Game - 5.tga");
 
+	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR]->textureID = LoadTGA("Image//cursorPointer.tga");
+	meshList[GEO_CURSOR1] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR1]->textureID = LoadTGA("Image//cursorPointer - 2.tga");
+	meshList[GEO_CURSOR2] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR2]->textureID = LoadTGA("Image//cursorPointer - 3.tga");
+	meshList[GEO_CURSOR3] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR3]->textureID = LoadTGA("Image//cursorPointer - 4.tga");
+
+	meshList[GEO_MOUSEMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_MOUSEMENU]->textureID = LoadTGA("Image//MouseSelect.tga");
+
 	cursorX = 0;
 	cursorY = 0;
 
@@ -140,6 +152,9 @@ void SceneMainMenu::Init()
 
 	options = false;
 	optionHighlight = 0;
+	mouseMenu = false;
+	mouse = 0;
+	mouseSelection = 0;
 
 	loadEmpty[5] = { false };
 
@@ -170,7 +185,7 @@ void SceneMainMenu::Update(double dt)
 	elapsedTime = (std::clock() - start) / (int)CLOCKS_PER_SEC;
 	DebugMode(dt);
 
-	if (!options)
+	if (!options && !mouseMenu)
 	{
 		if (elapsedTime > 0.01)
 		{
@@ -255,15 +270,17 @@ void SceneMainMenu::Update(double dt)
 					if (play == 2)
 					{
 						options = true;
+						mouseMenu = false;
 					}
 					start = std::clock();
 				}
+				start = std::clock();
 			}
 		}
 	}
-	if (options)
+	if (options && !mouseMenu)
 	{
-		if (elapsedTime > 0.01)
+		if (elapsedTime > 0.05)
 		{
 			if (Application::IsKeyPressed(VK_UP))
 			{
@@ -301,23 +318,48 @@ void SceneMainMenu::Update(double dt)
 			{
 				optionHighlight = 2;
 			}
-			if (Application::IsKeyPressed(VK_RETURN) || Application::IsKeyPressed(VK_LBUTTON))
+			if (Application::IsKeyPressed(VK_RETURN))
 			{
-				if (optionHighlight == 0)
+				if (optionHighlight == 0) //Mouse
 				{
-
+					options = false;
+					mouseMenu = true;
+					start = std::clock();
 				}
-				if (optionHighlight == 1)
+				if (optionHighlight == 1) //Volume - WIP
 				{
-
+					//No time to implement.
+					start = std::clock();
 				}
-				if (optionHighlight == 2)
+				if (optionHighlight == 2) //Back to Main Menu
 				{
 					play = 1;
 					optionHighlight = 0;
 					options = false;
+					start = std::clock();
 				}
 				start = std::clock();
+			}
+			if (Application::IsKeyPressed(VK_LBUTTON))
+			{
+				if (cursorY >= 340 && cursorY <= 390)
+				{
+					options = false;
+					mouseMenu = true;
+					start = std::clock();
+				}
+				if (cursorY >= 190 && cursorY <= 230)
+				{
+					//No time to implement.
+					start = std::clock();
+				}
+				if (cursorY >= 40 && cursorY <= 80)
+				{
+					play = 1;
+					optionHighlight = 0;
+					options = false;
+					start = std::clock();
+				}
 			}
 		}
 	}
@@ -339,7 +381,7 @@ void SceneMainMenu::Update(double dt)
 				}
 				else
 				{
-					load--;
+					load = 0;
 				}
 				start = std::clock();
 			}
@@ -418,6 +460,76 @@ void SceneMainMenu::Update(double dt)
 			}
 		}
 	}
+	if (mouseMenu)
+	{
+		if (elapsedTime > 0.01)
+		{
+			if (Application::IsKeyPressed(VK_LEFT))
+			{
+				if (mouseSelection >= 0)
+				{
+					mouseSelection--;
+				}
+				if (mouseSelection < 0)
+				{
+					mouseSelection = 3;
+				}
+				start = std::clock();
+			}
+			if (Application::IsKeyPressed(VK_RIGHT))
+			{
+				if (mouseSelection < 4)
+				{
+					mouseSelection++;
+				}
+				if (mouseSelection > 3)
+				{
+					mouseSelection = 0;
+				}
+				start = std::clock();
+			}
+
+			if (Application::IsKeyPressed(VK_RETURN))
+			{
+				Player::getplayer()->setMouse(mouseSelection);
+				mouseMenu = false;
+				start = std::clock();
+			}
+			if (Application::IsKeyPressed(VK_LBUTTON))
+			{
+				if ((cursorX >= 120 && cursorX <= 170) && (cursorY >= 220 && cursorY <= 270))
+				{
+					if (mouseSelection >= 0)
+					{
+						mouseSelection--;
+					}
+					if (mouseSelection < 0)
+					{
+						mouseSelection = 3;
+					}
+					start = std::clock();
+				}
+				if ((cursorX >= 630 && cursorX <= 670) && (cursorY >= 220 && cursorY <= 270))
+				{
+					if (mouseSelection < 4)
+					{
+						mouseSelection++;
+					}
+					if (mouseSelection > 3)
+					{
+						mouseSelection = 0;
+					}
+					start = std::clock();
+				}
+				if ((cursorX >= 195 && cursorX <= 600) && (cursorY >= 70 && cursorY <= 130))
+				{
+					Player::getplayer()->setMouse(mouseSelection);
+					mouseMenu = false;
+					start = std::clock();
+				}
+			}
+		}
+	}
 }
 
 void SceneMainMenu::Render()
@@ -433,7 +545,7 @@ void SceneMainMenu::Render()
 
 	modelStack.LoadIdentity();
 
-	if (!options)
+	if (!options && !mouseMenu)
 	{
 		RenderMeshOnScreen(meshList[GEO_MAINMENU], 40, 30, 80, 60);
 
@@ -450,7 +562,7 @@ void SceneMainMenu::Render()
 			RenderMeshOnScreen(meshList[GEO_OPTIONS], 40, 30, 16, 12);
 		}
 	}
-	else if (options)
+	else if (options && !mouseMenu)
 	{
 		RenderMeshOnScreen(meshList[GEO_OPTIONSMENU], 40, 30, 16, 12);
 
@@ -575,14 +687,58 @@ void SceneMainMenu::Render()
 			}
 		}
 	}
+	if (mouseMenu) //Mouse
+	{
+		RenderMeshOnScreen(meshList[GEO_MOUSEMENU], 40, 30, 16, 12);
 
-	std::ostringstream oss;
-	oss << cursorX << " : " << cursorY;
+		if (mouseSelection == 0)
+		{
+			RenderMeshOnScreen(meshList[GEO_CURSOR], 40, 25, 8, 10);
+			RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 10, 12);
+		}
+		if (mouseSelection == 1)
+		{
+			RenderMeshOnScreen(meshList[GEO_CURSOR1], 40, 25, 8, 10);
+			RenderMeshOnScreen(meshList[GEO_CURSOR1], cursorX / 10, cursorY / 10, 10, 12);
+		}
+		if (mouseSelection == 2)
+		{
+			RenderMeshOnScreen(meshList[GEO_CURSOR2], 40, 25, 8, 10);
+			RenderMeshOnScreen(meshList[GEO_CURSOR2], cursorX / 10, cursorY / 10, 10, 12);
+		}
+		if (mouseSelection == 3)
+		{
+			RenderMeshOnScreen(meshList[GEO_CURSOR3], 40, 25, 8, 10);
+			RenderMeshOnScreen(meshList[GEO_CURSOR3], cursorX / 10, cursorY / 10, 10, 12);
+		}
+	}
+	else if (!mouseMenu)
+	{
+		if (Player::getplayer()->getMouse() == 0)
+		{
+			RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
+		}
+		if (Player::getplayer()->getMouse() == 1)
+		{
+			RenderMeshOnScreen(meshList[GEO_CURSOR1], cursorX / 10, cursorY / 10, 8, 10);
+		}
+		if (Player::getplayer()->getMouse() == 2)
+		{
+			RenderMeshOnScreen(meshList[GEO_CURSOR2], cursorX / 10, cursorY / 10, 8, 10);
+		}
+		if (Player::getplayer()->getMouse() == 3)
+		{
+			RenderMeshOnScreen(meshList[GEO_CURSOR3], cursorX / 10, cursorY / 10, 8, 10);
+		}
+	}
 
-	RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
-	RenderTextOnScreen(meshList[GEO_CURSORPOS], oss.str(), 2, 2, 8, 10);
-
-	oss.str("");
+	if (Application::IsKeyPressed(VK_NUMPAD0))
+	{
+		std::ostringstream oss;
+		oss << cursorX << " : " << cursorY;
+		RenderTextOnScreen(meshList[GEO_CURSORPOS], oss.str(), 2, 2, 8, 10);
+		oss.str("");
+	}
 }
 
 void SceneMainMenu::Exit()
