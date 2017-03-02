@@ -161,6 +161,15 @@ void Menu::init()
 
 	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("cursor", Color(0, 1, 0), 5.f);
 	meshList[GEO_CURSOR]->textureID = LoadTGA("Image//cursorPointer.tga");
+	meshList[GEO_CURSOR1] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR1]->textureID = LoadTGA("Image//cursorPointer - 2.tga");
+	meshList[GEO_CURSOR2] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR2]->textureID = LoadTGA("Image//cursorPointer - 3.tga");
+	meshList[GEO_CURSOR3] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR3]->textureID = LoadTGA("Image//cursorPointer - 4.tga");
+
+	meshList[GEO_MOUSEMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_MOUSEMENU]->textureID = LoadTGA("Image//MouseSelect.tga");
 
 	meshList[GEO_PAUSEMENU] = MeshBuilder::GenerateQuad("pause", Color(0, 1, 0), 5.f);
 	meshList[GEO_PAUSEMENU]->textureID = LoadTGA("Image//pauseMenu.tga");
@@ -233,6 +242,9 @@ void Menu::init()
 
 	width = (windowX / 50);
 	height = (windowY / 18.5);
+
+	mouse = 0;
+	mouseSelection = 0;
 }
 
 void Menu::update()
@@ -251,6 +263,11 @@ void Menu::update()
 	{
 		Player::getplayer()->isDead();
 		SceneManager::currScene = 8;
+	}
+
+	if (Application::IsKeyPressed('G'))
+	{
+		Player::getplayer()->setHealth(0);
 	}
 
 	if (isMenu)
@@ -395,15 +412,15 @@ void Menu::update()
 
 				if ((Application::IsKeyPressed(VK_RETURN)) || (Application::IsKeyPressed(VK_LBUTTON)))
 				{
-					if (optionSelection == 0)
+					if (optionSelection == 0)//Mouse
 					{
-
+						menuType = 6;
 					}
-					if (optionSelection == 1)
+					if (optionSelection == 1)//Volume
 					{
-
+						//No Time to Implement.
 					}
-					if (optionSelection == 2)
+					if (optionSelection == 2)//Back
 					{
 						optionSelection = 0;
 						menuType = 1;
@@ -463,6 +480,7 @@ void Menu::update()
 				if ((Application::IsKeyPressed(VK_LBUTTON) && (cursorY >= 285 && cursorY <= 325)) || (Application::IsKeyPressed(VK_RETURN)))
 				{
 					menuType = 0;
+					start = std::clock();
 				}
 			}
 			if (pauseSelection == 1) //Back to Game
@@ -674,7 +692,7 @@ void Menu::update()
 			}
 		}
 	}
-	if (menuType == 5)
+	if (menuType == 5) //Fast Travel
 	{
 		if (elapsedTime > 0.01)
 		{
@@ -715,6 +733,79 @@ void Menu::update()
 			}
 
 			std::cout << "Travelling to: " << travelTo << std::endl;
+		}
+	}
+	if (menuType == 6) //Mouse Cursor
+	{
+		if (pause)
+		{
+			if (elapsedTime > 0.01)
+			{
+				if (Application::IsKeyPressed(VK_LEFT))
+				{
+					if (mouseSelection >= 0)
+					{
+						mouseSelection--;
+					}
+					if (mouseSelection < 0)
+					{
+						mouseSelection = 3;
+					}
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_RIGHT))
+				{
+					if (mouseSelection < 4)
+					{
+						mouseSelection++;
+					}
+					if (mouseSelection > 3)
+					{
+						mouseSelection = 0;
+					}
+					start = std::clock();
+				}
+
+				if (Application::IsKeyPressed(VK_RETURN))
+				{
+					Player::getplayer()->setMouse(mouseSelection);
+					menuType = 0;
+					start = std::clock();
+				}
+				if (Application::IsKeyPressed(VK_LBUTTON))
+				{
+					if ((cursorX >= 120 && cursorX <= 170) && (cursorY >= 220 && cursorY <= 270))
+					{
+						if (mouseSelection >= 0)
+						{
+							mouseSelection--;
+						}
+						if (mouseSelection < 0)
+						{
+							mouseSelection = 3;
+						}
+						start = std::clock();
+					}
+					if ((cursorX >= 630 && cursorX <= 670) && (cursorY >= 220 && cursorY <= 270))
+					{
+						if (mouseSelection < 4)
+						{
+							mouseSelection++;
+						}
+						if (mouseSelection > 3)
+						{
+							mouseSelection = 0;
+						}
+						start = std::clock();
+					}
+					if ((cursorX >= 195 && cursorX <= 600) && (cursorY >= 70 && cursorY <= 130))
+					{
+						Player::getplayer()->setMouse(mouseSelection);
+						menuType = 0;
+						start = std::clock();
+					}
+				}
+			}
 		}
 	}
 }
@@ -1032,7 +1123,50 @@ void Menu::Render()
 				}
 			}
 		}
-		RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);		
+		if (menuType == 6) //Mouse
+		{
+			RenderMeshOnScreen(meshList[GEO_MOUSEMENU], 40, 30, 16, 12);
+
+			if (mouseSelection == 0)
+			{
+				RenderMeshOnScreen(meshList[GEO_CURSOR], 40, 25, 8, 10);
+				RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 10, 12);
+			}
+			if (mouseSelection == 1)
+			{
+				RenderMeshOnScreen(meshList[GEO_CURSOR1], 40, 25, 8, 10);
+				RenderMeshOnScreen(meshList[GEO_CURSOR1], cursorX / 10, cursorY / 10, 10, 12);
+			}
+			if (mouseSelection == 2)
+			{
+				RenderMeshOnScreen(meshList[GEO_CURSOR2], 40, 25, 8, 10);
+				RenderMeshOnScreen(meshList[GEO_CURSOR2], cursorX / 10, cursorY / 10, 10, 12);
+			}
+			if (mouseSelection == 3)
+			{
+				RenderMeshOnScreen(meshList[GEO_CURSOR3], 40, 25, 8, 10);
+				RenderMeshOnScreen(meshList[GEO_CURSOR3], cursorX / 10, cursorY / 10, 10, 12);
+			}
+		}
+		if (menuType != 6)
+		{
+			if (Player::getplayer()->getMouse() == 0)
+			{
+				RenderMeshOnScreen(meshList[GEO_CURSOR], cursorX / 10, cursorY / 10, 8, 10);
+			}
+			if (Player::getplayer()->getMouse() == 1)
+			{
+				RenderMeshOnScreen(meshList[GEO_CURSOR1], cursorX / 10, cursorY / 10, 8, 10);
+			}
+			if (Player::getplayer()->getMouse() == 2)
+			{
+				RenderMeshOnScreen(meshList[GEO_CURSOR2], cursorX / 10, cursorY / 10, 8, 10);
+			}
+			if (Player::getplayer()->getMouse() == 3)
+			{
+				RenderMeshOnScreen(meshList[GEO_CURSOR3], cursorX / 10, cursorY / 10, 8, 10);
+			}
+		}
 	}
 	if (menuType==5 && tpZone)
 	{

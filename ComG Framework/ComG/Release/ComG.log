@@ -1,17 +1,68 @@
-﻿Build started 3/2/2017 1:48:17 AM.
+<<<<<<< HEAD
+﻿  SceneCity.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+          C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\Renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\Building.h(40): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\FastTravelRoom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\TilledSoil.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\Player.h(38): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\users\theunholygod\documents\school\year 1 semester 2\studio project 2\sp2\comg framework\comg\source\DefenceTower.h(19): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(168): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneCity.cpp(173): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneCity.cpp(186): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneCity.cpp(191): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneCity.cpp(196): warning C4018: '<' : signed/unsigned mismatch
+Source\SceneCity.cpp(224): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+Source\SceneCity.cpp(599): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+Source\SceneCity.cpp(684): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(686): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(714): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(773): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(774): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+Source\SceneCity.cpp(792): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  Generating code
+  Finished generating code
+  ComG.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\ComG.exe
+=======
+﻿Build started 3/2/2017 4:50:34 PM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         E:\Programs - Work\Visual Studios 2013\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneTest.cpp
-         SceneTest.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\include" /I"F:\Work\Studio Project\SP2Framework\ComG Framework\\Common\Source" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\SceneMainMenu.cpp Source\SceneTest.cpp
+         SceneMainMenu.cpp
      1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
      1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\Building.h(40): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
      1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
                  F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
      1>f:\work\studio project\sp2framework\comg framework\comg\source\FastTravelRoom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>f:\work\studio project\sp2framework\comg framework\comg\source\TilledSoil.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\Player.h(33): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\DefenceTower.h(20): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\Player.h(41): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneMainMenu.cpp(185): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>Source\SceneMainMenu.cpp(697): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>Source\SceneMainMenu.cpp(702): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>Source\SceneMainMenu.cpp(707): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>Source\SceneMainMenu.cpp(712): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>Source\SceneMainMenu.cpp(719): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>Source\SceneMainMenu.cpp(723): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>Source\SceneMainMenu.cpp(727): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>Source\SceneMainMenu.cpp(731): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>Source\SceneMainMenu.cpp(883): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneMainMenu.cpp(884): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         SceneTest.cpp
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(31): warning C4520: 'Renderer' : multiple default constructors specified
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(17): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\Renderer.h(30): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\Building.h(40): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
+     1>C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 F:\Work\Studio Project\SP2Framework\ComG Framework\glfw\include\GLFW/glfw3.h(92) : see previous definition of 'APIENTRY'
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\FastTravelRoom.h(16): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\TilledSoil.h(15): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\Player.h(41): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>f:\work\studio project\sp2framework\comg framework\comg\source\DefenceTower.h(19): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>Source\SceneTest.cpp(170): warning C4018: '<' : signed/unsigned mismatch
      1>Source\SceneTest.cpp(175): warning C4018: '<' : signed/unsigned mismatch
      1>Source\SceneTest.cpp(180): warning C4018: '<' : signed/unsigned mismatch
@@ -19,15 +70,13 @@
      1>Source\SceneTest.cpp(190): warning C4018: '<' : signed/unsigned mismatch
      1>Source\SceneTest.cpp(223): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
      1>Source\SceneTest.cpp(227): warning C4244: '=' : conversion from 'clock_t' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(657): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(659): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(783): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(784): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>Source\SceneTest.cpp(802): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Source\SceneTest.cpp(651): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneTest.cpp(653): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneTest.cpp(777): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneTest.cpp(778): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>Source\SceneTest.cpp(796): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
        Link:
-         E:\Programs - Work\Visual Studios 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\lib" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Ability.obj
-         Release\AbilityDataBase.obj
-         Release\Acrid_Plant.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glew\lib" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\\glfw\lib-msvc120" /LIBPATH:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib Common.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.lib" /MACHINE:X86 /SAFESEH Release\Acrid_Plant.obj
          Release\Adhesives.obj
          Release\Ant.obj
          Release\Ant_Hill.obj
@@ -38,7 +87,6 @@
          Release\Building.obj
          Release\BuildingDataBase.obj
          Release\BuildingFactory.obj
-         Release\Burrowing.obj
          Release\Cabbage.obj
          Release\Camera.obj
          Release\Camera2.obj
@@ -46,16 +94,12 @@
          Release\Camera4.obj
          Release\Carrot.obj
          Release\CarrotJuice.obj
-         Release\Centipede.obj
          Release\CircuitBoards.obj
          Release\Cloth.obj
          Release\Collision.obj
          Release\Compound_Bow.obj
          Release\Copper.obj
-         Release\Corrosive.obj
          Release\Crafting.obj
-         Release\CybordMutt.obj
-         Release\Deer.obj
          Release\DefenceTower.obj
          Release\DefensiveWalls.obj
          Release\DrinkingWater.obj
@@ -92,21 +136,16 @@
          Release\NPCHouse.obj
          Release\CityBuilding1.obj
          Release\OreMines.obj
-         Release\PatrolBot.obj
          Release\Menu.obj
          Release\Player.obj
          Release\Potato.obj
          Release\PowerGenerator.obj
          Release\Projectile.obj
-         Release\Radioactive.obj
          Release\Renderer.obj
          Release\Resources.obj
-         Release\RogueMech.obj
          Release\Salad.obj
          Release\SaveLoad.obj
          "Release\Scar-H.obj"
-         Release\Scarecrow_Mech.obj
-         Release\SceneBase.obj
          Release\SceneCity.obj
          Release\SceneGameOver.obj
          Release\SceneMainMenu.obj
@@ -117,7 +156,6 @@
          Release\SceneWildLife.obj
          Release\shader.obj
          Release\Stone.obj
-         Release\Teleporting.obj
          Release\TilledSoil.obj
          Release\Tree.obj
          Release\TrophyRoom.obj
@@ -130,11 +168,11 @@
          Release\Wildboar.obj
          Release\Wood.obj
          Generating code
-     1>f:\work\studio project\sp2framework\comg framework\comg\source\player.cpp(61): warning C4715: 'Player::isDead' : not all control paths return a value
          Finished generating code
          ComG.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Release\ComG.exe
      1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\ComG\ComG.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:05.51
+Time Elapsed 00:00:15.52
+>>>>>>> 542b388cde8d64f4ed8bb2371320e09471990237

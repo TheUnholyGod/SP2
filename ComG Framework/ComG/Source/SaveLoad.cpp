@@ -138,12 +138,33 @@ void SaveLoad::NewGame(int no)
 
 void SaveLoad::fuckthis(int no)
 {
-	std::stringstream filename;
-	filename << "Saves//" << no << "//Base.txt";
-	std::cout << filename.str() << std::endl;
-	std::ofstream newing;
-	newing.open(filename.str(), std::ios::out | std::ios::trunc);
-	newing.close();
+	std::stringstream filename1;
+	filename1 << "Saves//" << no << "//Base.txt";
+	std::cout << filename1.str() << std::endl;
+	std::ofstream newBase;
+	newBase.open(filename1.str(), std::ios::out | std::ios::trunc);
+	newBase.close();
+
+	std::stringstream filename2;
+	filename2 << "Saves//" << no << "//City.txt";
+	std::cout << filename2.str() << std::endl;
+	std::ofstream newCity;
+	newCity.open(filename2.str(), std::ios::out | std::ios::trunc);
+	newCity.close();
+
+	std::stringstream filename3;
+	filename3 << "Saves//" << no << "//Inventory.txt";
+	std::cout << filename3.str() << std::endl;
+	std::ofstream newInv;
+	newInv.open(filename3.str(), std::ios::out | std::ios::trunc);
+	newInv.close();
+
+	std::stringstream filename4;
+	filename4 << "Saves//" << no << "//Wildlife.txt";
+	std::cout << filename4.str() << std::endl;
+	std::ofstream newWild;
+	newWild.open(filename4.str(), std::ios::out | std::ios::trunc);
+	newWild.close();
 }
 
 void SaveLoad::SaveInv(int no)
