@@ -24,12 +24,13 @@ int OreMines::get_Health(){ return health_; }
 
 void OreMines::update(double dt)
 {
-	if (allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), GameObject::getRenderer().getForward()))
-	{
-		cancollect = true;
-	}
-	else
-	{
-		cancollect = false;
-	}
+	//std::cout << "collecttime: " << collecttime << std::endl;
+	if (start == true)
+		collecttime = (std::clock() - Timer) / (INT)CLOCKS_PER_SEC;
+}
+
+void OreMines::collected()
+{
+	if(start == true)
+	Timer = std::clock();
 }

@@ -25,6 +25,11 @@ private:
 	std::clock_t Pstart;
 	float PTime;
 
+	//mines
+	std::clock_t collecttime;
+	float Timer;
+	bool start;
+
 public:
 	static Player* getplayer();
 	const int gethealth();

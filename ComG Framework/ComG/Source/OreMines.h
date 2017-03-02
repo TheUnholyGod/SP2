@@ -12,9 +12,8 @@ protected:
 	std::string source_location_;
 	int health_;
 	bool enter_;
-	bool cancollect;
-	bool collected;
 
+	bool start;
 	std::clock_t collecttime;
 	float Timer;
 
@@ -23,7 +22,9 @@ public:
 	virtual ~OreMines();
 
 	int get_Health();
-	virtual void update(double dt);
+	void update(double dt);
+	void collected();
+	float getcollecttime() { return collecttime; }
 };
 
 #endif
