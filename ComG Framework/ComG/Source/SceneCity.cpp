@@ -600,9 +600,11 @@ void SceneCity::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, fl
 
 void SceneCity::SpawnEnemy(double dt)
 {
-	if (CityEnemy.size() < 20)
+	ETime = (std::clock() - Estart) / (int)CLOCKS_PER_SEC;
+	if (CityEnemy.size() < 20 && ETime > .3)
 	{
-		srand(time(NULL));
+		Estart = std::clock();
+		//srand(time(NULL));
 		int E_id;
 		int number = rand() % 3;
 		switch (number){
@@ -700,15 +702,27 @@ void SceneCity::RenderLoot()
 
 void SceneCity::SpawnBuilding()
 {
+	BTime = (std::clock() - Bstart) / (int)CLOCKS_PER_SEC;
 	//CityBuildings.push_back(BuildingFactory::generateBuilding(105, ))
-	if (CityBuildings.size() < 20)
+	if (CityBuildings.size() < 20 && BTime > .3)
 	{
-		Vector3 spawnPoint = Player::getplayer()->getRenderer().getPosition() + (Player::getplayer()->getRenderer().getForward() * 70);/*
-																																	   Vector3 v_temp = spawnPoint;*/
-		spawnPoint.x = 1500 - Randomizer::generate_range(20, 2000);
+		Bstart = std::clock();
+		//srand(time(NULL));
+		Vector3 spawnPoint = Player::getplayer()->getRenderer().getPosition() + (Player::getplayer()->getRenderer().getForward() * 70);
+		spawnPoint.x = 500 - Randomizer::generate_range(20, 1000);
 		spawnPoint.y = 0;
-		spawnPoint.z = 1500 - Randomizer::generate_range(20, 2000);
+		spawnPoint.z = 500 - Randomizer::generate_range(20, 1000);
 		int operator_ = 1 - (Randomizer::generate_range(1, 2));
+		/*int num = rand() % 1;
+		int operator_;
+		switch (num){
+		case 0:
+			operator_ = 1;
+			break;
+		case 1:
+			operator_ = -1;
+			break;
+		}*/
 		for (auto & i : CityBuildings)
 		{
 			if (i->getAABB(1)->pointtoAABB(spawnPoint, Vector3(1, 0, 0)))
@@ -726,6 +740,7 @@ void SceneCity::RenderBuilding()
 {
 	for (auto &i : CityBuildings)
 	{
+		std::cout << i->getRenderer().getPosition() << std::endl;
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
 		RenderMesh(buildingMeshList[i->getID() - buildingID], true);
