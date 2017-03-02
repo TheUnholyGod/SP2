@@ -80,11 +80,8 @@ class Menu
 		GEO_CLOTH,
 		GEO_CIRCUITBOARDS,
 
-<<<<<<< HEAD
-=======
 		GEO_FASTTRAVEL,
 
->>>>>>> 19cb2e70f813e809bef230e78dd71f41671a43ce
 		//Cursor
 		GEO_CURSOR,
 		GEO_CURSOR1,

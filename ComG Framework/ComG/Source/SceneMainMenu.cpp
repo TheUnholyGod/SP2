@@ -381,7 +381,7 @@ void SceneMainMenu::Update(double dt)
 				}
 				else
 				{
-					load--;
+					load = 0;
 				}
 				start = std::clock();
 			}
@@ -530,8 +530,6 @@ void SceneMainMenu::Update(double dt)
 			}
 		}
 	}
-
-	std::cout << mouseMenu << " : " << Player::getplayer()->getMouse() << std::endl;
 }
 
 void SceneMainMenu::Render()

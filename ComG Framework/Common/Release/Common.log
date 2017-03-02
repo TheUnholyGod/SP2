@@ -1,23 +1,9 @@
-<<<<<<< HEAD
-﻿Build started 3/2/2017 12:10:35 PM.
+﻿Build started 3/2/2017 4:50:34 PM.
      1>Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MatrixStack.cpp Source\Mtx44.cpp Source\Vector3.cpp Source\timer.cpp
-         MatrixStack.cpp
-         Mtx44.cpp
-         Vector3.cpp
-         timer.cpp
-       Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"F:\Work\Studio Project\SP2Framework\ComG Framework\Release\Common.lib" /NOLOGO /LTCG Release\MatrixStack.obj
-         Release\Mtx44.obj
-         Release\timer.obj
-         Release\Vector3.obj
+     1>Lib:
          Common.vcxproj -> F:\Work\Studio Project\SP2Framework\ComG Framework\Release\Common.lib
      1>Done Building Project "F:\Work\Studio Project\SP2Framework\ComG Framework\Common\Common.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:11.45
-=======
-﻿  Common.vcxproj -> C:\Users\TheUnholyGod\Documents\School\Year 1 Semester 2\Studio Project 2\SP2\ComG Framework\Release\Common.lib
->>>>>>> 19cb2e70f813e809bef230e78dd71f41671a43ce
+Time Elapsed 00:00:00.16
