@@ -93,9 +93,8 @@ class SceneCity : public Scene
 	};
 	enum ENEMYMESHLIST
 	{
+		GEO_GOAT,
 		GEO_DRONE,
-		GEO_ROGUEMECH,
-		GEO_PATROLBOT,
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
@@ -191,8 +190,6 @@ private:
 	void LightUpdate(double dt);
 	void LightReset(double dt);
 	int Day;
-
-	bool allbuildingcollision(GameObject*);
 
 	std::vector<Enemy*> CityEnemy;
 	void SpawnEnemy(double dt);

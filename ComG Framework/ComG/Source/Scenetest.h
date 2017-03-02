@@ -111,7 +111,6 @@ class SceneTest : public Scene
 	{
 		GEO_MOLERAT,
 		GEO_LIZARD,
-		GEO_DRONES,
 		NUM_ENEMYGEOMETRY,
 	};
 	enum BUILDINGMESHLIST
