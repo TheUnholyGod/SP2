@@ -21,6 +21,9 @@ protected:
 	bool deletethis_;
 	std::string source_location_;
 	recipe defaultrecipe;
+	float collecttime;
+	bool start;
+	float Timer;
 public:
 	
 	Building(const int id, const std::string name, std::string source_, std::string texture_, int health, BUILDINGFUNCTION, bool enter);
@@ -31,6 +34,21 @@ public:
 	const std::string getName() { return kName_; }
 	virtual recipe getRecipe() { return defaultrecipe; }
 	void takeDamage(int dmg) { health_ -= dmg; }
+	float getcollecttime() { return collecttime;  };
+	void collected() {
+		start = true;
+		Timer = std::clock();
+	};
+	void setstart()
+	{
+		start = true;
+	}
+	void setinit()
+	{
+		collecttime = 60;
+		Timer = 0;
+		start = false;
+	}
 };
 
 #endif

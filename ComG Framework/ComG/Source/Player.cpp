@@ -3,6 +3,7 @@
 #include "Compound_Bow.h"
 #include "Collision.h"
 #include "Item.h"
+#include "Randomizer.h"
 
 Player* Player::player;
 
@@ -197,8 +198,25 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 	{
 		for (int i = 0; i < 20; i++)
 		{
+			Inventory::getinventory()->Additem(101);
+			Inventory::getinventory()->Additem(102);
+			Inventory::getinventory()->Additem(103);
+			Inventory::getinventory()->Additem(104);
+			Inventory::getinventory()->Additem(105);
+			Inventory::getinventory()->Additem(106);
+			Inventory::getinventory()->Additem(107);
+			Inventory::getinventory()->Additem(108);
+			Inventory::getinventory()->Additem(201);
 			Inventory::getinventory()->Additem(202);
+			Inventory::getinventory()->Additem(203);
+			Inventory::getinventory()->Additem(204);
+			Inventory::getinventory()->Additem(205);
 			Inventory::getinventory()->Additem(206);
+			Inventory::getinventory()->Additem(207);
+			Inventory::getinventory()->Additem(208);
+			Inventory::getinventory()->Additem(209);
+			Inventory::getinventory()->Additem(210);
+			Inventory::getinventory()->Additem(211);
 		}
 	}
 
@@ -240,6 +258,27 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 		}
 	}
 
+	if (Interact == false) {
+		for (auto &i : buildings)
+		{
+			if (i->getID() == 110)
+			{
+				i->setinit();
+				std::cout << "collecttime: " << i->getcollecttime() << std::endl;
+				checkI = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+				i->update(dt);
+				if (checkI && i->getcollecttime() >= 60)
+				{
+					Interact = true;
+				}
+				else
+				{
+					Interact = false;
+				}
+			}
+		}
+	}
+
 	if (Application::IsKeyPressed('E') && (PTime - Pstart > 180))
 	{
 		Pstart = std::clock();
@@ -270,13 +309,27 @@ void Player::Update(Vector3 camForward, Vector3 camRight, double dt,std::list<Bu
 			{
 				std::cout << i->getID() <<"picked up" << std::endl;
 				i->update();
-				//Item* temp = i;
 				Inventory::getinventory()->Additem(i->getID());
-				//pos.push_back(counter);
 				Inventory::getinventory()->Update(dt);
 				delete i->getAABB(0);
 			}
-			//counter++;
+		}
+		for (auto &i : buildings)
+		{
+			if (i->getID() == 110)
+			{
+				i->setstart();
+
+				bool collect = false;
+				collect = i->getAABB(0)->pointtoAABB(gameobjrenderer_->getPosition(), camForwardTemp);
+				if (collect && i->getcollecttime() >= 60)
+				{
+					i->collected();
+					int ID = Randomizer::generate_range(201, 205);
+					Inventory::getinventory()->Additem(ID);
+					std::cout << "Added" << std::endl;
+				}
+			}
 		}
 	}
 	allAABB[0]->setMinMax(gameobjrenderer_->getPosition());

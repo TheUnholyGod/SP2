@@ -224,6 +224,12 @@ private:
 	std::clock_t Pstart;
 	float PTime;
 
+	std::clock_t Bstart;
+	float BTime;
+
+	std::clock_t Estart;
+	float ETime;
+
 	std::clock_t t_random;
 	float t_F_random;
 };

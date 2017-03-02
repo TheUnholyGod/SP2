@@ -37,7 +37,7 @@ Tree::~Tree()
 
 }
 
-void Tree::Update()
+void Tree::update(double dt)
 {
 	if (allAABB[1]->pointtoAABB(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward()) && Application::IsKeyPressed('E'))
 	{

@@ -73,8 +73,8 @@ void Menu::init()
 	m_parameters[U_TEXT_COLOR] = glGetUniformLocation(m_programID, "textColor");
 
 	//Inventory Menu
-	meshList[GEO_INVENTORYMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
-	meshList[GEO_INVENTORYMENU]->textureID = LoadTGA("Image//inventoryMenu.tga");
+	meshList[GEO_INVENTORYMENU] = MeshBuilder::GenerateQuad("Inventorymenu", Color(0, 1, 0), 5.f);
+	meshList[GEO_INVENTORYMENU]->textureID = LoadTGA("Image//inventorymenu.tga");
 
 	meshList[GEO_ITEMS] = MeshBuilder::GenerateText("ItemNames", 16, 16);
 	meshList[GEO_ITEMS]->textureID = LoadTGA("Image//calibri.tga");
@@ -85,62 +85,64 @@ void Menu::init()
 	meshList[GEO_IMAGE] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
 	meshList[GEO_IMAGE]->textureID = LoadTGA("Image//Resource_Adhesive.tga");
 
-	meshList[GEO_POTATO] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_POTATO] = MeshBuilder::GenerateQuad("Potato", Color(0, 1, 0), 2.f);
 	meshList[GEO_POTATO]->textureID = LoadTGA("Image//Food_Potato.tga");
-	meshList[GEO_CARROT] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_CARROT] = MeshBuilder::GenerateQuad("Carrot", Color(0, 1, 0), 2.f);
 	meshList[GEO_CARROT]->textureID = LoadTGA("Image//Food_Carrot.tga");
-	meshList[GEO_CABBAGE] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_CABBAGE] = MeshBuilder::GenerateQuad("Cabbage", Color(0, 1, 0), 2.f);
 	meshList[GEO_CABBAGE]->textureID = LoadTGA("Image//Food_Cabbage.tga");
-	meshList[GEO_WHEAT] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_WHEAT] = MeshBuilder::GenerateQuad("Wheat", Color(0, 1, 0), 2.f);
 	meshList[GEO_WHEAT]->textureID = LoadTGA("Image//Food_Wheat.tga");
-	meshList[GEO_STONE] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_BREAD] = MeshBuilder::GenerateQuad("Bread", Color(0, 1, 0), 2.f);
+	meshList[GEO_BREAD]->textureID = LoadTGA("Image//Food_Bread.tga");
+	meshList[GEO_VEGETABLESTEW] = MeshBuilder::GenerateQuad("Vegetablestew", Color(0, 1, 0), 2.f);
+	meshList[GEO_VEGETABLESTEW]->textureID = LoadTGA("Image//Food_VegetableStew.tga");
+	meshList[GEO_DRINKINGWATER] = MeshBuilder::GenerateQuad("Drinking_Water", Color(0, 1, 0), 2.f);
+	meshList[GEO_DRINKINGWATER]->textureID = LoadTGA("Image//Food_PurifiedWater.tga");
+	meshList[GEO_CARROTJUICE] = MeshBuilder::GenerateQuad("CarrotJuice", Color(0, 1, 0), 2.f);
+	meshList[GEO_CARROTJUICE]->textureID = LoadTGA("Image//Food_CarrotJuice.tga");
+	meshList[GEO_SALAD] = MeshBuilder::GenerateQuad("Salad", Color(0, 1, 0), 2.f);
+	meshList[GEO_SALAD]->textureID = LoadTGA("Image//Food_Salad.tga");
+	meshList[GEO_STONE] = MeshBuilder::GenerateQuad("Stone", Color(0, 1, 0), 2.f);
 	meshList[GEO_STONE]->textureID = LoadTGA("Image//Resource_Stone.tga");
-	meshList[GEO_IRON] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_IRON] = MeshBuilder::GenerateQuad("Iron", Color(0, 1, 0), 2.f);
 	meshList[GEO_IRON]->textureID = LoadTGA("Image//Resource_Iron.tga");
-	meshList[GEO_COPPER] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_COPPER] = MeshBuilder::GenerateQuad("Copper", Color(0, 1, 0), 2.f);
 	meshList[GEO_COPPER]->textureID = LoadTGA("Image//Resource_Copper.tga");
-	meshList[GEO_GOLD] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_GOLD] = MeshBuilder::GenerateQuad("Gold", Color(0, 1, 0), 2.f);
 	meshList[GEO_GOLD]->textureID = LoadTGA("Image//Resource_Gold.tga");
-	meshList[GEO_WATER] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_WATER] = MeshBuilder::GenerateQuad("Water", Color(0, 1, 0), 2.f);
 	meshList[GEO_WATER]->textureID = LoadTGA("Image//Resource_Water.tga");
-	meshList[GEO_WOOD] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_WOOD] = MeshBuilder::GenerateQuad("Wood", Color(0, 1, 0), 2.f);
 	meshList[GEO_WOOD]->textureID = LoadTGA("Image//Resource_Wood.tga");
-	meshList[GEO_BIOMASS] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_BIOMASS] = MeshBuilder::GenerateQuad("Biomass", Color(0, 1, 0), 2.f);
 	meshList[GEO_BIOMASS]->textureID = LoadTGA("Image//Resource_Biomass.tga");
-	meshList[GEO_ADHESIVES] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_ADHESIVES] = MeshBuilder::GenerateQuad("Adhesive", Color(0, 1, 0), 2.f);
 	meshList[GEO_ADHESIVES]->textureID = LoadTGA("Image//Resource_Adhesive.tga");
-	meshList[GEO_METALSCRAPS] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_METALSCRAPS] = MeshBuilder::GenerateQuad("Metalscraps", Color(0, 1, 0), 2.f);
 	meshList[GEO_METALSCRAPS]->textureID = LoadTGA("Image//Resource_MetalScrap.tga");
-	meshList[GEO_CLOTH] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_CLOTH] = MeshBuilder::GenerateQuad("Cloth", Color(0, 1, 0), 2.f);
 	meshList[GEO_CLOTH]->textureID = LoadTGA("Image//Resource_Cloth.tga");
-	meshList[GEO_CIRCUITBOARDS] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[GEO_CIRCUITBOARDS] = MeshBuilder::GenerateQuad("Circuitboards", Color(0, 1, 0), 2.f);
 	meshList[GEO_CIRCUITBOARDS]->textureID = LoadTGA("Image//Resource_CircuitBoards.tga");
 
-	meshList[ITEM_BREAD] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
-	meshList[ITEM_BREAD]->textureID = LoadTGA("Image//Food_Bread.tga");
-	meshList[ITEM_VEGETABLESTEW] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
-	meshList[ITEM_VEGETABLESTEW]->textureID = LoadTGA("Image//Food_VegetableStew.tga");
-	meshList[ITEM_DRINKINGWATER] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
-	meshList[ITEM_DRINKINGWATER]->textureID = LoadTGA("Image//Food_PurifiedWater.tga");
-	meshList[ITEM_CARROTJUICE] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
-	meshList[ITEM_CARROTJUICE]->textureID = LoadTGA("Image//Food_CarrotJuice.tga");
-	meshList[ITEM_SALAD] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
-	meshList[ITEM_SALAD]->textureID = LoadTGA("Image//Food_Salad.tga");
-	meshList[ITEM_GLOCK] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	
+	/*meshList[ITEM_GLOCK] = MeshBuilder::GenerateQuad("Glock", Color(0, 1, 0), 2.f);
 	meshList[ITEM_GLOCK]->textureID = LoadTGA("Image//Glock.tga");
-	meshList[ITEM_SCAR_H] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[ITEM_SCAR_H] = MeshBuilder::GenerateQuad("Scar", Color(0, 1, 0), 2.f);
 	meshList[ITEM_SCAR_H]->textureID = LoadTGA("Image//Scar.tga");
-	meshList[ITEM_M200] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[ITEM_M200] = MeshBuilder::GenerateQuad("CheyTac", Color(0, 1, 0), 2.f);
 	meshList[ITEM_M200]->textureID = LoadTGA("Image//CheyTac.tga");
-	meshList[ITEM_BOW] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[ITEM_BOW] = MeshBuilder::GenerateQuad("Bow", Color(0, 1, 0), 2.f);
 	meshList[ITEM_BOW]->textureID = LoadTGA("Image//CompoundBow.tga");
-	meshList[ITEM_FARMINGHOE] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[ITEM_FARMINGHOE] = MeshBuilder::GenerateQuad("FarmingHoe", Color(0, 1, 0), 2.f);
 	meshList[ITEM_FARMINGHOE]->textureID = LoadTGA("Image//FarmingHoe.tga");
-	meshList[ITEM_KATANA] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
+	meshList[ITEM_KATANA] = MeshBuilder::GenerateQuad("Katana", Color(0, 1, 0), 2.f);
 	meshList[ITEM_KATANA]->textureID = LoadTGA("Image//Katana.tga");
-	meshList[ITEM_KNIFE] = MeshBuilder::GenerateQuad("Image", Color(0, 1, 0), 2.f);
-	meshList[ITEM_KNIFE]->textureID = LoadTGA("Image//KitchenKnife.tga");
+	meshList[ITEM_KNIFE] = MeshBuilder::GenerateQuad("KitchenKnife", Color(0, 1, 0), 2.f);
+	meshList[ITEM_KNIFE]->textureID = LoadTGA("Image//KitchenKnife.tga");*/
 
+	menuType = 0;
 	y1 = 45.f;
 	count = 0;
 	travelTo = SceneManager::currScene;
@@ -149,13 +151,13 @@ void Menu::init()
 	meshList[GEO_TEXT] = MeshBuilder::GenerateText("text", 16, 16);
 	meshList[GEO_TEXT]->textureID = LoadTGA("Image//calibri.tga");
 
-	meshList[GEO_ARROW_L] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_ARROW_L] = MeshBuilder::GenerateQuad("arrowL", Color(0, 1, 0), 5.f);
 	meshList[GEO_ARROW_L]->textureID = LoadTGA("Image//buildMenu - Arrows - L.tga");
 
-	meshList[GEO_ARROW_R] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_ARROW_R] = MeshBuilder::GenerateQuad("arrowR", Color(0, 1, 0), 5.f);
 	meshList[GEO_ARROW_R]->textureID = LoadTGA("Image//buildMenu - Arrows - R.tga");
 
-	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CURSOR] = MeshBuilder::GenerateQuad("cursor", Color(0, 1, 0), 5.f);
 	meshList[GEO_CURSOR]->textureID = LoadTGA("Image//cursorPointer.tga");
 	meshList[GEO_CURSOR1] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_CURSOR1]->textureID = LoadTGA("Image//cursorPointer - 2.tga");
@@ -167,41 +169,44 @@ void Menu::init()
 	meshList[GEO_MOUSEMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
 	meshList[GEO_MOUSEMENU]->textureID = LoadTGA("Image//MouseSelect.tga");
 
-	meshList[GEO_PAUSEMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_PAUSEMENU] = MeshBuilder::GenerateQuad("pause", Color(0, 1, 0), 5.f);
 	meshList[GEO_PAUSEMENU]->textureID = LoadTGA("Image//pauseMenu.tga");
 
-	meshList[GEO_OPTIONS] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_OPTIONS] = MeshBuilder::GenerateQuad("option", Color(0, 1, 0), 5.f);
 	meshList[GEO_OPTIONS]->textureID = LoadTGA("Image//pauseMenu - Options.tga");
 
-	meshList[GEO_BACKTOGAME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BACKTOGAME] = MeshBuilder::GenerateQuad("backG", Color(0, 1, 0), 5.f);
 	meshList[GEO_BACKTOGAME]->textureID = LoadTGA("Image//pauseMenu - BackToGame.tga");
 
-	meshList[GEO_BACKTOMAIN] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BACKTOMAIN] = MeshBuilder::GenerateQuad("backM", Color(0, 1, 0), 5.f);
 	meshList[GEO_BACKTOMAIN]->textureID = LoadTGA("Image//pauseMenu - BackToMenu.tga");
 
 	//Options Menu
-	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_OPTIONSMENU] = MeshBuilder::GenerateQuad("optionmenu", Color(0, 1, 0), 5.f);
 	meshList[GEO_OPTIONSMENU]->textureID = LoadTGA("Image//optionsMenu 2.tga");
 
-	meshList[GEO_MOUSE] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_MOUSE] = MeshBuilder::GenerateQuad("mouse", Color(0, 1, 0), 5.f);
 	meshList[GEO_MOUSE]->textureID = LoadTGA("Image//optionsMenu - Mouse.tga");
 
-	meshList[GEO_VOLUME] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_VOLUME] = MeshBuilder::GenerateQuad("volume", Color(0, 1, 0), 5.f);
 	meshList[GEO_VOLUME]->textureID = LoadTGA("Image//optionsMenu - Volume.tga");
 
-	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BACK] = MeshBuilder::GenerateQuad("back", Color(0, 1, 0), 5.f);
 	meshList[GEO_BACK]->textureID = LoadTGA("Image//optionsMenu - Back.tga");
 
 	//Crafting Menu
-	meshList[GEO_CRAFTMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CRAFTMENU] = MeshBuilder::GenerateQuad("craftmenu", Color(0, 1, 0), 5.f);
 	meshList[GEO_CRAFTMENU]->textureID = LoadTGA("Image//craftMenu.tga");
 
 	//Building Menu
-	meshList[GEO_BUILDMENU] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_BUILDMENU] = MeshBuilder::GenerateQuad("buildmenu", Color(0, 1, 0), 5.f);
 	meshList[GEO_BUILDMENU]->textureID = LoadTGA("Image//buildMenu.tga");
 
-	meshList[GEO_CRAFTBUTTON] = MeshBuilder::GenerateQuad("quad", Color(0, 1, 0), 5.f);
+	meshList[GEO_CRAFTBUTTON] = MeshBuilder::GenerateQuad("craftmenu", Color(0, 1, 0), 5.f);
 	meshList[GEO_CRAFTBUTTON]->textureID = LoadTGA("Image//buildcraftMenu - Craft.tga");
+
+	meshList[GEO_FASTTRAVEL] = MeshBuilder::GenerateQuad("Fasttravel", Color(0, 1, 0), 5.f);
+	meshList[GEO_FASTTRAVEL]->textureID = LoadTGA("Image//FAstTravel.tga");
 
 	for (int i = 0; i<buildingMeshList.size(); i++)
 	{
@@ -686,6 +691,10 @@ void Menu::update()
 			{
 				if (Application::IsKeyPressed(VK_RETURN))
 				{
+					SetCursorPos(windowX / 2, windowY / 2);
+					menuType = 0;
+					isMenu = false;
+					pause = false;
 					SceneManager::currScene = travelTo;
 				}
 			}
@@ -963,21 +972,32 @@ void Menu::Render()
 		}
 		if (menuType == 4) //Inventory
 		{
-			//RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
+			RenderMeshOnScreen(meshList[GEO_INVENTORYMENU], 40, 30, 16, 12);
 			float y = 45.f;
-			y1 = 45.f;
-			float y2 = 45.f;
+			y1 = 43.5f;
+			float y2 = 1.f;
+			int count = 0;
 
 			for (auto &i : Inventory::getinventory()->getInventoryContents())
 			{
 				std::string quantity = std::to_string(i.second);
 				int key = i.first;
-				checkItem(key);
-				Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
-				std::string name = temp->getName();
-				RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y1);
-				RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
-				y1 -= 5.f;
+				
+				if (count < 8)
+				{
+					checkItem(key);
+					Item* temp = new Item(*ItemFactory::getItemFactory()->generateItem(key));
+					std::string name = temp->getName();
+					RenderTextOnScreen(meshList[GEO_ITEMS], name, Color(0, 0, 1), 3.f, 15.f, y1);
+					RenderTextOnScreen(meshList[GEO_QUANTITY], quantity, Color(0, 0, 1), 3.f, 60.f, y1);
+					y1 -= 5.5f;
+					count++;
+				}
+				if (count == 8)
+				{
+					y1 = 43.5f;
+					count = 0;
+				}
 			}
 		}
 		if (menuType == 6) //Mouse
@@ -1025,9 +1045,24 @@ void Menu::Render()
 			}
 		}
 	}
-	if (tpZone)
+	if (menuType==5 && tpZone)
 	{
+		RenderMeshOnScreen(meshList[GEO_FASTTRAVEL], 40, 30, 10, 10);
+		switch (travelTo){
+		case 4:
+			RenderTextOnScreen(meshList[GEO_TEXT], "Sandbox", Color(0, 1, 0), 3.f, 28.f, 27.f);
+			break;
+		case 5:
+			RenderTextOnScreen(meshList[GEO_TEXT], "Barn", Color(0, 1, 0), 3.f, 28.f, 27.f);
+			break;
+		case 6:
+			RenderTextOnScreen(meshList[GEO_TEXT], "Wild Life", Color(0, 1, 0), 3.f, 28.f, 27.f);
+			break;
+		case 7:
+			RenderTextOnScreen(meshList[GEO_TEXT], "City", Color(0, 1, 0), 3.f, 28.f, 27.f);
+			break;
 
+		}
 	}
 }
 
@@ -1141,45 +1176,45 @@ void Menu::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, float s
 void Menu::checkItem(int key)
 {
 	std::vector<int> tempID(ItemDataBase::getItemDB()->getIDList());
-
+	int y = (int)y1 + 1;
 	if (key == tempID[0])
-		RenderMeshOnScreen(meshList[GEO_POTATO], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_POTATO], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[1])
-		RenderMeshOnScreen(meshList[GEO_CABBAGE], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_CABBAGE], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[2])
-		RenderMeshOnScreen(meshList[GEO_CARROT], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_CARROT], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[3])
-		RenderMeshOnScreen(meshList[GEO_WHEAT], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_WHEAT], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[4])
-		RenderMeshOnScreen(meshList[ITEM_BREAD], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_BREAD], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[5])
-		RenderMeshOnScreen(meshList[ITEM_VEGETABLESTEW], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_VEGETABLESTEW], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[6])
-		RenderMeshOnScreen(meshList[ITEM_DRINKINGWATER], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_DRINKINGWATER], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[7])
-		RenderMeshOnScreen(meshList[ITEM_CARROTJUICE], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_CARROTJUICE], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[8])
-		RenderMeshOnScreen(meshList[ITEM_SALAD], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_SALAD], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[9])
-		RenderMeshOnScreen(meshList[GEO_STONE], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_STONE], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[10])
-		RenderMeshOnScreen(meshList[GEO_IRON], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_IRON], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[11])
-		RenderMeshOnScreen(meshList[GEO_COPPER], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_COPPER], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[12])
-		RenderMeshOnScreen(meshList[GEO_GOLD], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_GOLD], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[13])
-		RenderMeshOnScreen(meshList[GEO_WATER], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_WATER], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[14])
-		RenderMeshOnScreen(meshList[GEO_BIOMASS], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_BIOMASS], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[15])
-		RenderMeshOnScreen(meshList[GEO_ADHESIVES], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_ADHESIVES], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[16])
-		RenderMeshOnScreen(meshList[GEO_METALSCRAPS], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_METALSCRAPS], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[17])
-		RenderMeshOnScreen(meshList[GEO_CLOTH], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_CLOTH], 8.f, y, 3.f, 3.f);
 	else if (key == tempID[18])
-		RenderMeshOnScreen(meshList[GEO_CIRCUITBOARDS], 8.f, y1, 3.f, 3.f);
+		RenderMeshOnScreen(meshList[GEO_CIRCUITBOARDS], 8.f, y, 3.f, 3.f);
 
 	tempID.erase(tempID.begin(), tempID.end());
 }

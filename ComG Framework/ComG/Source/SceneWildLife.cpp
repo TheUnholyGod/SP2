@@ -134,7 +134,7 @@ void SceneWildLife::Init()
 
 	for (int i = 0; i<enemyMeshList.size(); i++)
 	{
-		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 1)->getSourceLocation());
+		enemyMeshList[i] = MeshBuilder::GenerateOBJ(EnemyDataBase::getEnemyDB()->getEnemy(i + 7)->getName(), EnemyDataBase::getEnemyDB()->getEnemy(i + 7)->getSourceLocation());
 	}
 	for (int i = 0; i < buildingMeshList.size(); i++)
 	{
@@ -170,17 +170,24 @@ void SceneWildLife::Update(double dt)
 
 	pauseMenu.update();
 
-	if (Application::IsKeyPressed('E'))
+	if (!pauseMenu.pause)
 	{
-		SceneManager::currScene = 3;
-	}
+		ITime = (std::clock() - Istart) / (int)CLOCKS_PER_SEC;
 
-	fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 20, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
-	Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems, ForestLoot);
-	SpawnEnemy(dt);
-	UpdateEnemy(dt);
-	UpdateBuilding(dt);
-	LightUpdate(dt);
+		Player::getplayer()->Update(camForward, camRight, dt, ForestBuildings, ForestEnemy, ForestItems, ForestLoot);
+		fp_camera.Update(dt, Player::getplayer()->getRenderer().getPosition() + Vector3(0, 12, 0), Player::getplayer()->getRenderer().getRight(), Player::getplayer()->getRenderer().getForward(), &camForward, &camRight);
+		PTime = std::clock();
+		if (Application::IsKeyPressed(VK_LBUTTON) && (PTime - Pstart > 180))
+		{
+			Pstart = std::clock();
+			SpawnProjectile(Player::getplayer()->getRenderer().getPosition(), Player::getplayer()->getRenderer().getForward());
+		}
+		SpawnEnemy(dt);
+		UpdateEnemy(dt);
+		UpdateBuilding(dt);
+		UpdateProjectiles(dt);
+		LightUpdate(dt);
+	}
 }
 
 void SceneWildLife::Render()
@@ -229,8 +236,9 @@ void SceneWildLife::Render()
 	RenderMesh(weaponmesh[0], true);
 	modelStack.PopMatrix();
 
-	//RenderEnemy();
+	RenderEnemy();
 	RenderBuilding();
+	RenderProjectile();
 	//Render UI
 	pauseMenu.Render();
 }
@@ -526,15 +534,36 @@ void SceneWildLife::RenderTextOnScreen(Mesh* mesh, std::string text, Color color
 
 void SceneWildLife::SpawnEnemy(double dt)
 {
-	if (ForestEnemy.size() < 5)
-		ForestEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(7));
+	if (ForestEnemy.size() < 20)
+		ForestEnemy.push_back(EnemyFactory::getEnemyFactory()->generateEnemy(Randomizer::generate_range(7,8)));
 }
 
 void SceneWildLife::UpdateEnemy(double dt)
 {
+	std::vector<int> pos;
+	int counter = 0;
 	for (auto &i : ForestEnemy)
 	{
 		i->Update(dt, ForestBuildings, ForestEnemy);
+		if (i->isDead())
+		{
+		/*	Lootpos = i->getRenderer().getPosition();
+			SpawnLoot(GenerateLoot());*/
+			pos.push_back(counter);
+		}
+		counter++;
+	}
+	if (pos.size())
+	{
+		int deleted = 0;
+		for (auto i : pos)
+		{
+			Enemy* temp = *(ForestEnemy.begin() + (i - deleted));
+			ForestEnemy.erase(ForestEnemy.begin() + (i - deleted));
+			deleted++;
+			delete temp;
+			temp = nullptr;
+		}
 	}
 }
 
@@ -544,7 +573,7 @@ void SceneWildLife::RenderEnemy()
 	{
 		modelStack.PushMatrix();
 		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
-		RenderMesh(enemyMeshList[i->getID() - 1], true);
+		RenderMesh(enemyMeshList[i->getID() - 7], true);
 		modelStack.PopMatrix();
 	}
 }
@@ -662,7 +691,9 @@ void SceneWildLife::LightReset(double dt)
 
 void SceneWildLife::newForest()
 {
-	int size = Randomizer::generate_range(50, 200);
+	Building* temp1 = (BuildingFactory::getBuildingFactory()->generateBuilding(105, Vector3(0, 0, 0), Vector3(1, 0, 0)));
+	ForestBuildings.push_back(temp1);
+	int size = Randomizer::generate_range(50, 150);
 	for (int i = 0; i < size; i++)
 	{
 		int x = 2500 - Randomizer::generate_range(1, 5000);
@@ -670,5 +701,60 @@ void SceneWildLife::newForest()
 		Building* temp = (BuildingFactory::getBuildingFactory()->generateBuilding(201, Vector3(x, 0, z), Vector3(1,0,0)));
 		ForestBuildings.push_back(temp);
 		std::cout << temp->getRenderer().getPosition() << std::endl;
+	}
+}
+
+void SceneWildLife::SpawnProjectile(Vector3 position, Vector3 forward)
+{
+	Projectile* temp = dynamic_cast<Projectile*>(ItemFactory::getItemFactory()->generateItem(999));
+	temp->FireProjectile(position, forward);
+	ForestProjectile.push_back(temp);
+}
+
+void SceneWildLife::RenderProjectile()
+{
+	for (auto &i : ForestProjectile)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(enemyMeshList[1], true);
+		modelStack.PopMatrix();
+	}
+	for (auto &i : Acrid_Plant::acidProjectile)
+	{
+		modelStack.PushMatrix();
+		modelStack.LoadMatrix((i->getRenderer().getMatrix()));
+		RenderMesh(enemyMeshList[1], true);
+		modelStack.PopMatrix();
+	}
+}
+
+void SceneWildLife::UpdateProjectiles(double dt)
+{
+	if (ForestProjectile.size())
+	{
+		std::vector<int> pos;
+		int counter = 0;
+		for (auto &i : ForestProjectile)
+		{
+			i->update(dt, ForestBuildings, ForestEnemy);
+			if (i->toDelete())
+			{
+				pos.push_back(counter);
+			}
+			counter++;
+		}
+		if (pos.size())
+		{
+			int deleted = 0;
+			for (auto i : pos)
+			{
+				Projectile* temp = *(ForestProjectile.begin() + (i - deleted));
+				ForestProjectile.erase(ForestProjectile.begin() + (i - deleted));
+				deleted++;
+				delete temp;
+				temp = nullptr;
+			}
+		}
 	}
 }

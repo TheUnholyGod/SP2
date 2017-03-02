@@ -1,5 +1,4 @@
 #include "SceneManager.h"
-#include "SceneBase.h"
 #include "SceneLoading.h"
 #include "SceneSplashScreen.h"
 #include "SceneTest.h"
@@ -21,9 +20,8 @@ SceneManager::SceneManager()
 	SceneDataBase[2] = new SceneMainMenu();
 	SceneDataBase[3] = new SceneLoading();
 	SceneDataBase[4] = new SceneTest();
-	SceneDataBase[5] = new SceneBase();
-	SceneDataBase[6] = new SceneWildLife();
-	SceneDataBase[7] = new SceneCity();
+	SceneDataBase[5] = new SceneWildLife();
+	SceneDataBase[6] = new SceneCity();
 	SceneDataBase[8] = new SceneGameOver();
 }
 

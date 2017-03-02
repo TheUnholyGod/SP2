@@ -1,4 +1,5 @@
 #include "OreMines.h"
+#include "Player.h"
 #include "ItemFactory.h"
 
 OreMines::OreMines(Vector3 position, Vector3 forward) : Building(110, "Ore Mines", "OBJ//Barn.obj", "", 100, RESOURCE, false)
@@ -20,3 +21,16 @@ OreMines::OreMines(Vector3 position, Vector3 forward) : Building(110, "Ore Mines
 OreMines::~OreMines(){}
 
 int OreMines::get_Health(){ return health_; }
+
+void OreMines::update(double dt)
+{
+	//std::cout << "collecttime: " << collecttime << std::endl;
+	if (start == true)
+		collecttime = (std::clock() - Timer) / (INT)CLOCKS_PER_SEC;
+}
+
+void OreMines::collected()
+{
+	if(start == true)
+	Timer = std::clock();
+}

@@ -1,7 +1,6 @@
 #ifndef _ENEMY_H
 #define _ENEMY_H
 
-#include "Ability.h"
 #include "GameObject.h"
 #include "Building.h"
 #include <string>
@@ -20,7 +19,6 @@ protected:
 	float max_health_;			//Enemy HP
 	float defence_;			//Enemy Armour
 	float attack_;			//Enemy Damage
-	const std::list<Ability*> Abilities;
 	const std::string kname_;	//Name of Object
 public:
 	Enemy(int, std::string, std::string, std::string, ENEMYTYPE, std::string, float, float, float);

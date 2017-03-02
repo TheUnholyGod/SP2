@@ -20,9 +20,9 @@ void Acrid_Plant::Update(double dt, std::list<Building*> Buildings, std::vector<
 	GameObject::getRenderer().setForward(GameObject::getRenderer().getPosition() - Player::getplayer()->getRenderer().getPosition());
 	if (elapsed > 1)
 	{
-		if ((GameObject::getRenderer().getPosition().x - Player::getplayer()->getRenderer().getPosition().x) < 50 &&
-			((GameObject::getRenderer().getPosition().y - Player::getplayer()->getRenderer().getPosition().y) < 50) &&
-			((GameObject::getRenderer().getPosition().z - Player::getplayer()->getRenderer().getPosition().z) < 50))
+		if ((GameObject::getRenderer().getPosition().x - Player::getplayer()->getRenderer().getPosition().x) < 25 &&
+			((GameObject::getRenderer().getPosition().y - Player::getplayer()->getRenderer().getPosition().y) < 25) &&
+			((GameObject::getRenderer().getPosition().z - Player::getplayer()->getRenderer().getPosition().z) < 25))
 		{
 			shootStart = std::clock();
 			Projectile* temp = dynamic_cast<Projectile*>(ItemFactory::getItemFactory()->generateItem(999));
