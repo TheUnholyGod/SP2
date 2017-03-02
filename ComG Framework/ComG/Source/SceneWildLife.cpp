@@ -358,6 +358,9 @@ void SceneWildLife::LoadSkybox()
 void SceneWildLife::RenderSkybox()
 {
 	modelStack.PushMatrix();
+	modelStack.Translate(fp_camera.getPosition().x, fp_camera.getPosition().y, fp_camera.getPosition().z);
+
+	modelStack.PushMatrix();
 	modelStack.Translate(10, 0, 10);
 	modelStack.PushMatrix();
 	modelStack.Scale(1000, 1000, 1000);
@@ -447,6 +450,7 @@ void SceneWildLife::RenderSkybox()
 	else if (sunup == 3)
 		RenderMesh(meshList[GEO_FRONT2], false);
 
+	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 	modelStack.PopMatrix();
 }

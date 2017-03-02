@@ -22,7 +22,7 @@ SceneManager::SceneManager()
 	SceneDataBase[4] = new SceneTest();
 	SceneDataBase[5] = new SceneWildLife();
 	SceneDataBase[6] = new SceneCity();
-	SceneDataBase[8] = new SceneGameOver();
+	SceneDataBase[7] = new SceneGameOver();
 }
 
 SceneManager::~SceneManager()

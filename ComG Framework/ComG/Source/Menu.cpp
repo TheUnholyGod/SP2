@@ -260,7 +260,7 @@ void Menu::update()
 	if (HP <= 0)
 	{
 		Player::getplayer()->isDead();
-		SceneManager::currScene = 8;
+		SceneManager::currScene = 7;
 	}
 
 	if (Application::IsKeyPressed('G'))
@@ -665,7 +665,7 @@ void Menu::update()
 		{
 			if (Application::IsKeyPressed(VK_RIGHT))
 			{
-				if (travelTo < 7)
+				if (travelTo < 6)
 				{
 					travelTo += 1;
 				}
@@ -683,7 +683,7 @@ void Menu::update()
 				}
 				else
 				{
-					travelTo = 7;
+					travelTo = 6;
 				}
 				start = std::clock();
 			}
@@ -1053,14 +1053,12 @@ void Menu::Render()
 			RenderTextOnScreen(meshList[GEO_TEXT], "Sandbox", Color(0, 1, 0), 3.f, 28.f, 27.f);
 			break;
 		case 5:
-			RenderTextOnScreen(meshList[GEO_TEXT], "Barn", Color(0, 1, 0), 3.f, 28.f, 27.f);
-			break;
-		case 6:
 			RenderTextOnScreen(meshList[GEO_TEXT], "Wild Life", Color(0, 1, 0), 3.f, 28.f, 27.f);
 			break;
-		case 7:
+		case 6:
 			RenderTextOnScreen(meshList[GEO_TEXT], "City", Color(0, 1, 0), 3.f, 28.f, 27.f);
 			break;
+			
 
 		}
 	}
